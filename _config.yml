@@ -1,3 +1,5 @@
 name: OnePageCRM Developer Site
 markdown: redcarpet
 pygments: true
+gems:
+- jekyll-compass
