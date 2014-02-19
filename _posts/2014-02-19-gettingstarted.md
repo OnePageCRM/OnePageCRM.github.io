@@ -8,7 +8,7 @@ order: 1
 
 
 
-##Welcome & Getting started
+## [Welcome & Getting started](#Getting_Started)
 
 If you are looking at this page you’re hopefully thinking about developing a cool plugin or service for OnePageCRM using our API access. Check out our documentation and spread the OnePage love and eco-system.
 

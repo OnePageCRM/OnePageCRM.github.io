@@ -8,7 +8,7 @@
     {% if forloop.first %}
     <li class="disabled">{{ label }}</li>
     {% endif %}
-    <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+    <li data-order="{{ page.order }}"><a href="#{{ page.title }}">{{ page.title }}</a></li>
     {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
