@@ -29,90 +29,14 @@
 
       {% include header.html %}
 
-      <div class="row">
-        {% assign post_count = site.posts|size %}
-        {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-        <div id="navigation" class="col-md-2">
-          {% include navigation.html %}
-        </div>
+      {{ content }}
 
-        <div id="content" class="col-md-10">
-          {{ content }}
-        </div>
-        {% else %}
-        <div id="content" class="col-md12">
-          {{ content }}
-        </div>
-        {% endif %}
-      </div>
 
-      <div class="row">
-        <div id="footer" class="col-md-12">
-          {% include footer.html %}
-        </div>
-      </div>
-    </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  </body>
-  </html>
-
-  <body>
-
-
-
-    <script>
-      function orderNav() {
-        var list,
-        section,
-        header,
-        sections = [],
-        lists = {},
-        headers = {};
-
-        var navUl = document.querySelectorAll('#navigation ul')[0],
-        navLis = document.querySelectorAll('#navigation ul li');
-
-        if (!navUl) return;
-
-        for (var i = 0; i < navLis.length; i++) {
-          var order, li = navLis[i];
-
-          if (li.classList.contains('nav-header')) {
-            section = li.textContent || li.innerText;
-            sections.push(section);
-            headers[section] = li;
-            continue;
-          }
-
-          if (!lists[section]) {
-            lists[section] = [];
-          }
-
-          order = parseFloat(li.getAttribute('data-order'))
-          lists[section].push([order, li]);
-        }
-
-        for (var i = 0; i < sections.length; i++) {
-          section = sections[i];
-          list = lists[section].sort(function(a, b) {
-            return a[0] - b[0];
-          });
-
-          if (header = headers[section]) {
-            navUl.appendChild(header);
-          }
-          for (var j = 0; j < list.length; j++) {
-            navUl.appendChild(list[j][1]);
-          }
-        }
-      }
-
-      if (document.querySelectorAll) orderNav();
-    </script>
   </body>
   </html>
