@@ -1,63 +1,117 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width">
 
-        <!-- Bootstrap 3 from SASS -->
-        <link rel="stylesheet" href="/css/bootstrap.css" >
+  <!-- Bootstrap 3 from SASS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      <![endif]-->
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+      <!-- syntax highlighting CSS -->
+      <link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <body>
 
 
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"> <img src="/img/on_dark.png"> </a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-            {% for page in site.pages %}
-              <li class="active">
-                <a href="{{ page.url }}">{{ page.title }}</a>
-              </li>
-            {% endfor %}
-            </ul>
-          </div><!--/.nav-collapse -->
+      {% include header.html %}
+
+      <div class="row">
+        {% assign post_count = site.posts|size %}
+        {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
+        <div id="navigation" class="col-md-2">
+          {% include navigation.html %}
         </div>
+
+        <div id="content" class="col-md-10">
+          {{ content }}
+        </div>
+        {% else %}
+        <div id="content" class="col-md12">
+          {{ content }}
+        </div>
+        {% endif %}
       </div>
 
-      <div class="container">
-        {{ content }}
-      </div><!-- /.container -->
+      <div class="row">
+        <div id="footer" class="col-md-12">
+          {% include footer.html %}
+        </div>
+      </div>
+    </div>
 
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    </body>
-</html>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+  </html>
 
+  <body>
+
+
+
+    <script>
+      function orderNav() {
+        var list,
+        section,
+        header,
+        sections = [],
+        lists = {},
+        headers = {};
+
+        var navUl = document.querySelectorAll('#navigation ul')[0],
+        navLis = document.querySelectorAll('#navigation ul li');
+
+        if (!navUl) return;
+
+        for (var i = 0; i < navLis.length; i++) {
+          var order, li = navLis[i];
+
+          if (li.classList.contains('nav-header')) {
+            section = li.textContent || li.innerText;
+            sections.push(section);
+            headers[section] = li;
+            continue;
+          }
+
+          if (!lists[section]) {
+            lists[section] = [];
+          }
+
+          order = parseFloat(li.getAttribute('data-order'))
+          lists[section].push([order, li]);
+        }
+
+        for (var i = 0; i < sections.length; i++) {
+          section = sections[i];
+          list = lists[section].sort(function(a, b) {
+            return a[0] - b[0];
+          });
+
+          if (header = headers[section]) {
+            navUl.appendChild(header);
+          }
+          for (var j = 0; j < list.length; j++) {
+            navUl.appendChild(list[j][1]);
+          }
+        }
+      }
+
+      if (document.querySelectorAll) orderNav();
+    </script>
+  </body>
+  </html>

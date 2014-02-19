@@ -1,3 +1,19 @@
-name: OnePageCRM Developer Site
+# Site title and subtitle. This is used in _includes/header.html
+title: 'OnePageCRM Developer Portal'
+
+name: 'OnePageCRM'
+
+codeurl: 'http://www.onepagecrm.com'
+
+sections: [
+    ['doc', 'Documentation'],
+    ['tut', 'Tutorial'],
+    ['ref', 'Reference'],
+    ['dev', 'Developers'],
+    ['post', 'Posts']
+]
 markdown: redcarpet
 pygments: true
+exclude: ['README.md']
+
+baseurl: ''
