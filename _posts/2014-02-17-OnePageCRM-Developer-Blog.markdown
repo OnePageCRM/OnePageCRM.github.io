@@ -2,7 +2,7 @@
 layout: post
 title:  "OnePageCRM Developer Blog"
 date:   2014-02-17 18:37:16
-categories: onepagecrm 
+categories: blog 
 ---
 
 Welcome to the OnePageCRM Developer Portal. As you can plainly see, this project is still a work in progress.
