@@ -1,7 +1,9 @@
 body { 
   padding-top: 90px; 
   padding-bottom: 70px;
+  background: #F8F8F8;
 }
+
 
 .navbar-logo {
   padding-top:10px;

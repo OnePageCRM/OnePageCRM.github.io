@@ -3,8 +3,7 @@ layout: api
 title: "Introduction & Updates"
 slug: "intro"
 category: intro
-date: 2014-02-20 09:59:09
-order: 2
+date: 2014-02-19 09:59:09
 ---
 
 

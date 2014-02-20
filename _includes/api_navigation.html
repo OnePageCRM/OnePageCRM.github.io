@@ -3,7 +3,7 @@
     {% assign attr = section[0] %}
     {% assign label = section[1] %}
 
-    {% for page in site.categories[attr] %}
+    {% for page in site.categories[attr] reversed %}
     {% if forloop.first %}
     <li class="disabled">{{ label }}</li>
     {% endif %}

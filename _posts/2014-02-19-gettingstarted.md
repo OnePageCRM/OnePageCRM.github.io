@@ -3,7 +3,7 @@ layout: api
 title: "Welcome & Getting Started"
 slug: "gettingstarted"
 category: intro
-date: 2014-02-20 09:59:10
+date: 2014-02-19 09:59:00
 ---
 
 
