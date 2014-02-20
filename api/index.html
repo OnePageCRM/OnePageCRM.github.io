@@ -3,11 +3,19 @@ layout: api
 title: API
 ---
 
-{% for section in site.sections %}
+
+{% for section in site.api_sections %}
     {% assign attr = section[0] %}
     {% assign label = section[1] %}
 
+
+
     {% for page in site.categories[attr] %}
+    {% if forloop.index == 1 %}
+      <h2 id="{{ page.slug }}">{{ page.title }}</h2>
+    {% else %}
+      <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}</h2>
+    {% endif %}
         {{ page.content }}
     {% endfor %}
 {% endfor %}

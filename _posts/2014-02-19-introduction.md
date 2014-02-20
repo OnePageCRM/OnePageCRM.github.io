@@ -1,14 +1,12 @@
 ---
 layout: api
-title: "Introduction"
+title: "Introduction & Updates"
+slug: "intro"
 category: doc
-date: 2014-02-19 14:05:55
+date: 2014-02-20 09:59:09
 order: 2
 ---
 
-
-
-## Introduction & Updates
 
 Welcome to our new updated APi Version 3.0.
 

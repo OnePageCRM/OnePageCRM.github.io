@@ -5,7 +5,7 @@ name: 'OnePageCRM'
 
 codeurl: 'http://www.onepagecrm.com'
 
-sections: [
+api_sections: [
     ['doc', 'Documentation'],
     ['tut', 'Tutorial'],
     ['ref', 'Reference'],
