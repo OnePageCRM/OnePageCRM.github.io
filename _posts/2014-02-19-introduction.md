@@ -7,7 +7,7 @@ date: 2014-02-19 09:59:09
 ---
 
 
-<p>Welcome to our new updated APi Version 3.0.</p>
+<p>Welcome to our new updated API Version 3. v3 is still in Beta.</p>
 <p>There are some major changes for interacting with the API and some useful new features we will go over here:</p>
 <h3>Sending/Receiving Data</h3>
 <p>The API can now send <span class="underlined">and</span> receive data in XML, YAML and JSON, as well as receive data as URL encoded query strings.</p>

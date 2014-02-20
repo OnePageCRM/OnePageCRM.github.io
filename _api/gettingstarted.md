@@ -1,1 +1,0 @@
-/home/peter/devsite/_posts/2014-02-19-gettingstarted.md
