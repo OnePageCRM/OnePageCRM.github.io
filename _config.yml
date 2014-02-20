@@ -10,7 +10,11 @@ api_sections: [
     ['tut', 'Tutorial'],
     ['ref', 'Reference'],
     ['dev', 'Developers'],
-    ['post', 'Posts']
+    ['post', 'Posts'],
+    ['intro', 'Introduction'],
+    ['basics', 'Basics & Logging In'],
+    ['mainresoures', 'Main Resources'],
+    ['otherresources', 'Other Resources & Helper functions']
 ]
 markdown: redcarpet
 pygments: true

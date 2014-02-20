@@ -2,7 +2,7 @@
 layout: api
 title: "Data Types"
 slug: "datatypes"
-category: doc
+category: basics
 date: 2014-02-20 09:48:13
 ---
 

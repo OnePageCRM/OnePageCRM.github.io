@@ -2,7 +2,7 @@
 layout: api
 title: "Request Parameters"
 slug: "requestparams"
-category: doc
+category: basics
 date: 2014-02-19 14:05:55
 
 ---

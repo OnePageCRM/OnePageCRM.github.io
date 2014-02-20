@@ -2,7 +2,7 @@
 layout: api
 title: "Introduction & Updates"
 slug: "intro"
-category: doc
+category: intro
 date: 2014-02-20 09:59:09
 order: 2
 ---

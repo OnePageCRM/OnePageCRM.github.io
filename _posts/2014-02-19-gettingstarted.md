@@ -2,7 +2,7 @@
 layout: api
 title: "Welcome & Getting Started"
 slug: "gettingstarted"
-category: doc
+category: intro
 date: 2014-02-20 09:59:10
 ---
 
