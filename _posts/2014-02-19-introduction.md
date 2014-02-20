@@ -7,29 +7,43 @@ date: 2014-02-19 09:59:09
 ---
 
 
-Welcome to our new updated APi Version 3.0.
+<p>Welcome to our new updated APi Version 3.0.</p>
+<p>There are some major changes for interacting with the API and some useful new features we will go over here:</p>
+<h3>Sending/Receiving Data</h3>
+<p>The API can now send <span class="underlined">and</span> receive data in XML, YAML and JSON, as well as receive data as URL encoded query strings.</p>
+<p>To send and receive XML, YAML or JSON you need to include the correct content-type header and replace the .format in the url.</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Content-Type</td>
+      <td>.format</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="name">JSON</td>
+      <td>application/json</td>
+      <td>.json</td>
+    </tr>
+    <tr>
+      <td class="name">YAML</td>
+      <td>application/x-yaml</td>
+      <td>.yml</td>
+    </tr>
+    <tr>
+      <td class="name">XML</td>
+      <td>application/xml</td>
+      <td>.xml</td>
+    </tr>
+  </tbody>
+</table>
+<p>When sending a <span class="post-text">POST</span>/<span class="put-text">PUT</span> request with an empty body you need to make sure that the content-length header is present and set to zero, otherwise the API will throw an error. This is handled for you by most HTTP or Network libraries in most languages but some such as Python don't’ set the content-length header when sending an empty request body.</p>
+<h3>Partial Updates</h3>
+<p>You can partially update or create resources through our API now by including the value partial=1 in the <span class="post-text">POST</span>/<span class="put-text">PUT</span> request’s body or url query string. This is the equivalent of using the emerging RESTful API standard’s PATCH method.</p>
+<p>When creating a resource ‘partially’ using a <span class="post-text">POST</span> request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the <span class="post-text">POST</span> could still fail when partially creating a resource but not including the minimum required fields.</p> 
+<p>When updating a resource ‘partially’ using a <span class="put-text">PUT</span> request any fields you don’t include will stay the same as before.</p>
+<p><span class="strong">Warning:</span> You need to exercise caution though when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.</p>
+<h3>Sparse Responses:</h3>
+<p>You can request sparse responses now by including the value sparse=1 in the <span class="put-text">PUT</span>/<span class="post-text">POST</span> request’s body or url query string for GET calls. This will give you a faster response as any empty fields will be completely omitted from the response body.</p>
 
-There are some major changes for interacting with the API and some useful new features we will go over here:
-Sending/Receiving Data
-
-The API can now send and receive data in XML, YAML and JSON, as well as receive data as URL encoded query strings.
-
-To send and receive XML, YAML or JSON you need to include the correct content-type header and replace the .format in the url.
-Type  Content-Type  .format
-JSON  application/json  .json
-YAML  application/x-yaml  .yml
-XML   application/xml   .xml
-
-When sending a POST/PUT request with an empty body you need to make sure that the content-length header is present and set to zero, otherwise the API will throw an error. This is handled for you by most HTTP or Network libraries in most languages but some such as Python don't’ set the content-length header when sending an empty request body.
-Partial Updates
-
-You can partially update or create resources through our API now by including the value partial=1 in the POST/PUT request’s body or url query string. This is the equivalent of using the emerging RESTful API standard’s PATCH method.
-
-When creating a resource ‘partially’ using a POST request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the POST could still fail when partially creating a resource but not including the minimum required fields.
-
-When updating a resource ‘partially’ using a PUT request any fields you don’t include will stay the same as before.
-
-Warning: You need to exercise caution though when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.
-Sparse Responses:
-
-You can request sparse responses now by including the value sparse=1 in the PUT/POST request’s body or url query string for GET calls. This will give you a faster response as any empty fields will be completely omitted from the response body.

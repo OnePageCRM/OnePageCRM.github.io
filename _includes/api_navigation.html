@@ -4,16 +4,16 @@
     {% assign label = section[1] %}
 
     {% for page in site.categories[attr] reversed %}
-    {% if forloop.first %}
-    <li class="disabled">{{ label }}</li>
-    {% endif %}
-    <li data-order="{{ page.order }}"><a href="#{{ page.slug }}">{{ page.title }}</a></li>
-    {% endfor %}
+        {% if forloop.first %}
+            <li class="disabled">{{ label }}</li>
+        {% endif %}
+            <li data-order="{{ page.order }}"><a href="#{{ page.slug }}">{{ page.title }}</a></li>
+        {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
     e.g. <li class=divider></li> first to break up the content. -->
-    <li class="disabled">External Links</li>
+    <hr></hr>
     <li>
-        <a href="https://github.com/OnePageCRM">GitHub</a>
+        <a target="blank" href="https://github.com/OnePageCRM">GitHub</a>
     </li>
 </ul>

@@ -78,18 +78,21 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#objectivec" data-toggle="tab">Objective-C</a></li>
+  <li class="active"><a href="#ruby" data-toggle="tab">Ruby</a></li>
+  <li><a href="#objectivec" data-toggle="tab">Objective-C</a></li>
   <li><a href="#javascript" data-toggle="tab">Javascript</a></li>
   <li><a href="#csharp" data-toggle="tab">C#</a></li>
   <li><a href="#java" data-toggle="tab">Java</a></li>
-  <li><a href="#ruby" data-toggle="tab">Ruby</a></li>
   <li><a href="#python" data-toggle="tab">Python</a></li>
   <li><a href="#PHP" data-toggle="tab">PHP</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="objectivec">
+<div class="tab-pane fade in active" id="ruby">
+    <script src="https://gist.github.com/OnePageCTO/5910804.js"></script>
+  </div>
+  <div class="tab-pane fade" id="objectivec">
     <script src="https://gist.github.com/OnePageCTO/6012092.js"></script>
   </div>
   <div class="tab-pane fade" id="javascript">
