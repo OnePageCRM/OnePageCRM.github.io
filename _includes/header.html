@@ -14,29 +14,30 @@
               <a href="/"><img src="/img/on_dev_dark.png"> </a>
             </div>
           </div>
+
           <div class="collapse navbar-collapse pull-right">
             <ul class="nav navbar-nav">
-              <li>
+              <li {% if page.url == '/index.html'%} class="active" {% endif %} >
                 <a href="/">
                   <i class="fa fa-home fa-lg"></i>
                 </a>
               </li>
-              <li>
+              <li {% if page.url == '/api/index.html'%} class="active" {% endif %}>
                 <a href="/api">API v3</a>
               </li>
               <li>
-                <a href="http://www.onepagecrm.com/api/sales-crm-api.html">API v2</a>
+                <a target="blank" href="http://www.onepagecrm.com/api/sales-crm-api.html" title="Link to our old API documentation">API v2</a>
               </li>
-              <li>
+              <li {% if page.url == '/webhooks/index.html'%} class="active" {% endif %}>
                 <a href="/webhooks">WebHooks</a>
               </li>
-              <li>
+              <li {% if page.url == '/blog/index.html'%} class="active" {% endif %}>
                 <a href="/blog">Developer Blog</a>
               </li>
-              <li>
+              <li {% if page.url == '/forum/index.html'%} class="active" {% endif %}>
                 <a href="/forum">Forum</a>
               </li>
-              <li>
+              <li {% if page.url == '/status/index.html'%} class="active" {% endif %}>
                 <a href="/status">Status</a>
               </li>
             </ul>
@@ -45,3 +46,4 @@
       </div>
     </div>
   </div>
+
