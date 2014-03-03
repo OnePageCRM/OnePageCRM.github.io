@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: webhooks
 title: WebHooks
 ---
 
-<div class="panel">
+<div class="maincontent" data-spy="scroll" data-target="webhook-nav">
 
-<h3>What are Webhooks?</h3>
+<h3 id="top" class="top-padding">What are Webhooks?</h3>
   <p>Webhooks are a simple, efficient way of integrating with web applications. Instead of polling to see if data has been updated in OnePage, you can register a URL to which we will send POSTs containing the updated data. This has benefits for both sides.</p><p>OnePage has to respond to less API requests and you have to send less requests, reducing server load on both ends. Along with this you receive the data the moment it is available, not when you think it should be available.
 </p>
-  <h3>Activate Webhooks in OnePageCRM</h3>
+  <h3 id="activate" class="top-padding">Activate Webhooks in OnePageCRM</h3>
   <p>First the OnePage administrator will have to activate Webhooks on the Apps page and configure them by supplying the URL we will send hooks to and optionally add a secretkey.</p><p>The secret key will be sent with every POST, to validate that we sent the webhook and not an imposter. For added security it is advised to supply a https instead of http URL.</p>
-  <h3>Configure your application</h3>
+  <h3 id="configure" class="top-padding">Configure your application</h3>
   <p>Now that we send Webhooks you can configure your server to react to the different types of data which we send. We send POSTs whose params contain the following data: a type, reason, secretkey and the data which has been updated.</p>
   <div class="overview">
     <p class="overview-title">Note:</p>
@@ -159,3 +159,11 @@ title: WebHooks
 
   
 </div>
+
+<script>
+$('body').scrollspy({ 
+    target: '#webhook-nav',
+    offset: 50
+  })
+
+</script>

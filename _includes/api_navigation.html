@@ -1,19 +1,28 @@
-<ul class="nav nav-stacked" data-spy="affix">
-    {% for section in site.api_sections %}
-    {% assign attr = section[0] %}
-    {% assign label = section[1] %}
+<div id="api-nav">
+    <ul class="nav nav-pills nav-stacked" data-spy="affix">
+        {% for section in site.api_sections %}
+        {% assign attr = section[0] %}
+        {% assign label = section[1] %}
 
-    {% for page in site.categories[attr] reversed %}
-        {% if forloop.first %}
-            <li class="disabled">{{ label }}</li>
-        {% endif %}
-            <li data-order="{{ page.order }}"><a href="#{{ page.slug }}">{{ page.title }}</a></li>
+        {% for page in site.categories[attr] reversed %}
+            {% if forloop.first %}
+                <li class="disabled">{{ label }}</li>
+            {% endif %}
+                <li data-order="{{ page.order }}"><a href="#{{ page.slug }}">{{ page.title }}</a></li>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-<!-- List additional links. It is recommended to add a divider
-    e.g. <li class=divider></li> first to break up the content. -->
-    <hr></hr>
-    <li>
-        <a target="blank" href="https://github.com/OnePageCRM">GitHub</a>
-    </li>
-</ul>
+    <!-- List additional links. It is recommended to add a divider
+        e.g. <li class=divider></li> first to break up the content. -->
+        <hr></hr>
+        <li>
+            <a target="blank" href="https://github.com/OnePageCRM">GitHub</a>
+        </li>
+    </ul>
+</div>
+<script>
+$(function() {
+  $('li').click( function() {
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+})
+</script>
