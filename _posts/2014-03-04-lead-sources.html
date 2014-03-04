@@ -1,0 +1,171 @@
+---
+layout: api
+title: "Lead Sources"
+slug: "leadsources"
+category: otherresources
+date: 2014-03-04 10:35:27
+---
+
+
+<p>Lead sources are a way for you to classify the source of any contact that you add to OnePageCRM. Using this resource you can create new lead sources so that you can classify exactly where any lead was pulled from. You can also manage your lead sources, get a list of your current lead sources and get all contacts with a particular lead source.</p>
+
+<h3 id="urls">URLs</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">lead_sources.format</code></td>
+      <td>Get a list of lead sources</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">lead_sources/{id}.format</code></td>
+      <td>Get a lead source and a list of contacts with this lead source</td>
+    </tr>
+    <tr>
+      <td><span class="post-text">POST</span></td>
+      <td><code class="bluetext">lead_sources/{id}.format</code></td>
+      <td>Create a lead source</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td><code class="bluetext">lead_sources/{id}.format</code></td>
+      <td>Update a lead source name</td>
+    </tr>
+    <tr>
+      <td><span class="delete-text">DELETE</span></td>
+      <td><code class="bluetext">lead_sources/{id}.format</code></td>
+      <td>Delete a lead source</td>
+    </tr>
+  </tbody>
+</table>
+<div class="overview">
+  <p class="overview-title">NOTES:</p>
+  <p class="overview-content">
+    Only managers can use the <span class="post-text">POST</span>, <span class="put-text">PUT</span> and <span class="delete-text">DELETE</span> methods<br/>
+    You can’t <span class="delete-text">DELETE</span> a lead source if there is only 1 remaining
+  </p>
+</div>
+
+<h3 id="resource-fields">Resource Fields</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">id</code></td>
+      <td>Lead Source ID. This matches the lead_source field in contacts (read only).</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">text</code></td>
+      <td>Lead source text to be displayed.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">counts</code></td>
+      <td>Number of contacts the api user has with this lead_source
+        (read only).</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><code class="redtext">string</code></td>
+        <td class="nowrap"><code class="bluetext">total_count</code></td>
+        <td>Number of contacts this user’s team has with this lead_source
+          (read only).</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">array</code></td>
+          <td class="nowrap"><code class="bluetext">team_counts</code></td>
+          <td>Number of contacts with this lead_source grouped by user.
+            Every item is a <span class="redtext">hash</span> with 2 elements:
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <td>Type</td>
+                  <td>Name</td>
+                  <td>Description</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nowrap"><code class="redtext">string</code></td>
+                  <td><code class="bluetext">counts</code></td>
+                  <td>Number of contacts the following user has with this lead_source (read_only)</td>
+                </tr>
+                <tr>
+                  <td><code class="redtext">string</code></td>
+                  <td class="nowrap"><code class="bluetext">user_id</code></td>
+                  <td>ID of one ot the api user’s team members (read_only)</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3 id="additional-data">Additional Data</h3>
+    <p>When you get a single custom filter it also returns a list of contacts. They are returned as a resource list just as they would be if you were to get contacts through their own endpoint.</p>
+    <p>By default the contacts will only return their id field. To get more information about the contacts use the fields parameter. You can also paginate, sort and filter contacts by dates. For more info check out the listing fields section of contacts.</p>
+    
+    <h3 id="extra-fields">Extra Fields</h3>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Type</td>
+          <td>Name</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nowrap"><code class="redtext">array</code></td>
+          <td><code class="bluetext">contacts</code></td>
+          <td>List of contacts that match this filter</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">page</code></td>
+          <td>Which page of the contacts is returned with this request</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">per_page</code></td>
+          <td>Number of contacts returned per page</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">max_page</code></td>
+          <td>Total number of pages of contacts with this status</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td class="nowrap"><code class="bluetext">total_count</code></td>
+          <td>Number of contacts this user’s team has with this status</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Sample from GitHub -->
+    <h3 id="sample-code">Sample code</h3>
+    <div class="sample-code">
+      <div class="sample-code-title">Sample JSON server response for lead sources.</div>
+      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=lead_sources.json"></script>
+    </div>
+    <!-- /Sample from GitHub -->
+    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/lead_sources.json</p>
+    
+    <p><a href="#content">Top</a></p> 

@@ -1,0 +1,247 @@
+---
+layout: api
+title: "Deals"
+slug: "deals"
+category: mainresources
+date: 2014-03-04 10:29:23
+---
+
+<p>Deals store information about a deal that is taking place or has closed. They contain data on the name of the deal, the amount of money the deal is worth, the number of months the deal will last for, when a deal is expected to close or when it was closed and notes about the deal.</p>
+<p>Using this resource you can create new deals, update already existing deals, delete deals or list a single deal or list deals for an individual company, individual contact or by whether they were won lost or are still pending.</p> 
+<h3 id="urls">URLs</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td>
+        <code class="bluetext">deals.format</code>
+      </td>
+      <td>Get most recently updated deals</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td>
+        <code class="bluetext">
+          deals.format?contact_id={contact_id}<br/>
+          contacts/{contact_id}/deals.format
+        </code>
+      </td>
+      <td>Get a list of deals for a contact</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td>
+        <code class="bluetext">
+          deals.format?company_id={company_id}<br/>
+          companies/{company_id}/deals.format
+        </code>
+      </td>
+      <td class="nowrap">Get a list of deals for a company</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td>
+        <code class="bluetext">deals.format?status={status}</code>
+      </td>
+      <td>Get deals with a particular status</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td>
+        <code class="bluetext">deals/{id}.format</code>
+      </td>
+      <td>Get a single deal</td>
+    </tr>
+    <tr>
+      <td><span class="post-text">POST</span></td>
+      <td>
+        <code class="bluetext">
+          deals.format?contact_id={contact_id}<br/>
+          contacts/{contact_id}/deals.format
+        </code>
+      </td>
+      <td>Create a deal</td>
+    </tr>
+    <tr>
+      <td><span class="post-text">POST</span></td>
+      <td>
+        <code class="bluetext">
+          deals.format?contact_id={contact_id}&partial=1<br/>
+          contacts/{contact_id}/deals.format?partial=1
+        </code>
+      </td>
+      <td>Create a deal with unprovided<br/> fields filled with default values</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td>
+        <code class="bluetext">deals/{id}.format</code>
+      </td>
+      <td>Update a contact</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td>
+        <code class="bluetext">deals/{id}.format?partial=1</code>
+      </td>
+      <td>Partially update a deal</td>
+    </tr>
+    <tr>
+      <td><span class="delete-text">DELETE</span></td>
+      <td>
+        <code class="bluetext">deals/{id}.format</code>
+      </td>
+      <td>Delete a deal</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="listing-fields">Listing Fields</h3>
+<p>Following parameters are supported when fetching a list of Deals:</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nowrap"><code class="redtext">string</code></td>
+      <td><code class="bluetext">status</code></td>
+      <td>Return deals that have the provided status type. Status can be one of: <strong>won, lost</strong> or <strong>pending</strong>.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">date_filter</code></td>
+      <td>Filter returned data by a particular field when combined with since and until.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">since</code></td>
+      <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">until</code></td>
+      <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td class="nowrap"><code class="bluetext">unmodified_since</code></td>
+      <td>Return only records that were unmodified since specified time.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">modified_since</code></td>
+      <td>Return only records that were modified since specified time.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resource-fields">Resource Fields</h3>
+<p>Following parameters are supported when fetching a list of contacts:</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nowrap"><code class="redtext">bson_id</code></td>
+      <td><code class="bluetext">id</code></td>
+      <td>id of the deal (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">bson_id</code></td>
+      <td><code class="bluetext">contact_id</code></td>
+      <td>id of the contact this deal belongs to (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">date</code></td>
+      <td><code class="bluetext">date</code></td>
+      <td>Date related to the deal’s creation</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">name</code></td>
+      <td>Name of the deal (required)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">text</code></td>
+      <td>The text in the body of the deal</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">author</code></td>
+      <td>First name and first letter of last name of the author of the deal (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">float</code></td>
+      <td><code class="bluetext">amount</code></td>
+      <td>Total amount of money to be paid per month</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">int</code></td>
+      <td><code class="bluetext">months</code></td>
+      <td>Number of months the above amount will be paid for</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">float</code></td>
+      <td class="nowrap"><code class="bluetext">total_amount</code></td>
+      <td>Product of amount and months (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">int</code></td>
+      <td><code class="bluetext">stage</code></td>
+      <td>What stage this deal is at. This can be converted to a label using the deal stages list in the settings resource.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">status</code></td>
+      <td>Status of the deal this is one of won, lost or pending</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">date</code></td>
+      <td class="nowrap"><code class="bluetext">expected_close_date</code></td>
+      <td>Date when the deal is expected to be closed</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">date</code></td>
+      <td><code class="bluetext">closed_date</code></td>
+      <td>Date that the deal was closed. This is set automatically when a deal is marked as won or lost (read only).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="additional-resources">Additional Resources</h3>
+<p>Related notes can also be returned with a deal. They are returned as a resource just as they would be if you were to get notes for a contact. By default the notes will only return their id field. To get more information about the returned notes use the fields parameter.</p>
+<p>For example you would also like to return notes with their text field and author you could make a request like the one below.</p>
+<p class="url">
+  <code class="bluetext">
+    <span class="get-text">GET</span>
+    deals/abcdef1234567890abcdef12.json?fields=notes(text,author)
+  </code>
+</p>
+<!-- Sample from GitHub -->
+<h3 id="sample-code">Sample code</h3>
+<div class="sample-code">
+  <div class="sample-code-title">Sample JSON server response for deals</div>
+  <script src="https://gist.github.com/OnePageCTO/6575061.js?file=deals.json"></script>
+</div>
+<!-- /Sample from GitHub -->
+<p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/deals.json?contact_id=523637e1391ba11500000255</p>
+
+<p><a href="#content">Top</a></p> 

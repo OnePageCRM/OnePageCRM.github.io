@@ -118,9 +118,13 @@
   > li {
     float: left;
 
+
+
     // Links rendered as pills
     > a {
       border-radius: $nav-pills-border-radius;
+      padding: $nav-pills-link-padding;
+      font-size: $nav-pills-link-font-size;
     }
     + li {
       margin-left: 2px;

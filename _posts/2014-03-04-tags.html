@@ -1,0 +1,147 @@
+---
+layout: api
+title: "Tags"
+slug: "tags"
+category: otherresources
+date: 2014-03-04 10:35:48
+---
+
+<p>Tags provide a means to classify contacts by however many tags you choose to attach to them. This endpoint allows you to manage your tags.</p>
+<p>The methods here allow you to:</p>
+<ul>
+  <li>Get a list of all tags and information about how many contacts have that tag.</li>
+  <li>Get information about a single tag and the contacts associated with it.</li>
+  <li>Create a new tag where no contacts have it assigned to them yet.</li>
+  <li>Update the name of a tag and have that new name be reflected for all contacts with it.</li>
+  <li>Delete a tag and have it removed from all contacts.</li>
+  <li>Undo the deletion of a tag restoring it to all contacts who had it when it was deleted.</li>
+</ul>
+
+<h3 id="urls">URLs</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">tags.format</code></td>
+      <td>Get a list of lead sources</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">tags/{name}.format</code></td>
+      <td>Get a lead source and a list of contacts with this lead source</td>
+    </tr>
+    <tr>
+      <td><span class="post-text">POST</span></td>
+      <td><code class="bluetext">tags/{name}.format</code></td>
+      <td>Create a new tag</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td><code class="bluetext">tags/{name}.format</code></td>
+      <td>Update a tag name</td>
+    </tr>
+    <tr>
+      <td><span class="delete-text">DELETE</span></td>
+      <td><code class="bluetext">tags/{name}.format</code></td>
+      <td class="nowrap">Delete a tag. This removes that tag from all contacts that had it.</td>
+    </tr>
+    <tr>
+      <td><span class="delete-text">DELETE</span></td>
+      <td class="nowrap"><code class="bluetext">tags/{name}.format?undo=1</code></td>
+      <td>Undo deletion of a tag</td>
+    </tr>
+  </tbody>
+</table>
+<p class="overview">
+  <strong>NOTES:</strong> If you don’t urlencode the {name} then it is possible that an error will be thrown.
+</p>
+
+<h3 id="resource-fields">Resource Fields</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nowrap"><code class="redtext">string</code></td>
+      <td><code class="bluetext">name</code></td>
+      <td>Status text to be displayed</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">counts</code></td>
+      <td>Number of contacts the api user has with this lead_source
+        (read only)</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">string</code></td>
+        <td class="nowrap"><code class="bluetext">total_count</code></td>
+        <td>Number of contacts this user’s team has with this lead_source
+          (read only)</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3 id="additional-resources">Additional Resources</h3>
+    <p>When returning a single tag it will also embed a contacts list resource within it. This will return the following fields along with those mentioned above.</p>
+    <p>By default only a contact id will be returned but by using the fields parameter you can return exactly the contact data you need.</p>
+    
+    <h3 id="extra-fields">Extra Fields</h3>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Type</td>
+          <td>Name</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nowrap"><code class="redtext">array</code></td>
+          <td><code class="bluetext">contacts</code></td>
+          <td>An array containing contact resources</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">page</code></td>
+          <td>Which page of the contacts is returned with this request</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">per_page</code></td>
+          <td>Number of contacts returned per page</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td><code class="bluetext">max_page</code></td>
+          <td>Total number of pages of contacts with this lead source</td>
+        </tr>
+        <tr>
+          <td><code class="redtext">int</code></td>
+          <td class="nowrap"><code class="bluetext">total_count</code></td>
+          <td>Number of contacts this user’s team has with lead source</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Sample from GitHub -->
+    <h3 id="sample-code">Sample code</h3>
+    <div class="sample-code">
+      <div class="sample-code-title">Sample JSON server response for tags</div>
+      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=tags.json"></script>
+    </div>
+    <!-- /Sample from GitHub -->
+    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/tags.json</p>
+    
+    <p><a href="#content">Top</a></p> 

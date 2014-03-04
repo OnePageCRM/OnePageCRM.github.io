@@ -1,0 +1,137 @@
+---
+layout: api
+title: "Custom Fields"
+slug: "customfields"
+category: otherresources
+date: 2014-03-04 10:35:11
+---
+
+
+<p>Custom fields can be viewed by any user but only created and updated by the Account Owner.</p>
+<div class="overview">
+  <p class="overview-title">Important Note:</p>
+  <p class="overview-content">Updating a custom field through the API differs from updating through the App.<br/> When you update the list of choices of a custom field with a type of <span class="italic">multiple_choice</span> or <span class="italic">select_box</span> all contacts with this custom_field filled out are updated. The existing selected choice(s) are replaced on the new ones based on their index.</p>
+  <p class="overview-title">Example:</p>
+  <p class="overview-content">multiple choice custom field with choices <code>= [“a”, “b”, “c”, “d”]</code> is updated to <code>[“1”, “2”, “3”, “4”]</code><br/>
+    One contact had the field filled out with choices <code>[“a”,”d”]</code> selected. Now <code>[“1”,”4”]</code> will be selected for the contact after the update.</p>
+    <p class="overview-title">Similarly:</p>
+  </div>
+  
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Old choices</td>
+        <td>New choices</td>
+        <td>Old selected</td>
+        <td>New selected</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>[“a”,”b”,”c”,”d”]</td>
+        <td>[“1”,”2”,”3”]</td>
+        <td>[“a”,”b”,”c”,”d”]</td>
+        <td>[“1”,”2”,”3”]</td>
+      </tr>
+      <tr>
+        <td>[“a”,”b”,”c”,”d”]</td>
+        <td>[“3”,”4”]</td>
+        <td>[“a”,”c”,”d”]</td>
+        <td>[”3”]</td>
+      </tr>
+      <tr>
+        <td>[“a”,”b”,”c”,”d”]</td>
+        <td>[“3”,”2”,”1”]</td>
+        <td>[“b”,”d”]</td>
+        <td>[”2”]</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3 id="urls">URLs</h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Method</td>
+        <td>Url</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="get-text">GET</span></td>
+        <td><code class="bluetext">custom_fields.format</code></td>
+        <td>Get a list of custom fields</td>
+      </tr>
+      <tr>
+        <td><span class="get-text">GET</span></td>
+        <td><code class="bluetext">custom_fields/{id}.format</code></td>
+        <td>Get a single custom field</td>
+      </tr>
+      <tr>
+        <td><span class="post-text">POST</span></td>
+        <td><code class="bluetext">custom_fields.format</code></td>
+        <td>Create a custom field</td>
+      </tr>
+      <tr>
+        <td><span class="put-text">PUT</span></td>
+        <td><code class="bluetext">custom_fields/{id}.format</code></td>
+        <td>Update a custom field</td>
+      </tr>
+      <tr>
+        <td><span class="put-text">PUT</span></td>
+        <td><code class="bluetext">custom_fields/{id}.format?partial=1</code></td>
+        <td>Partially update a custom field</td>
+      </tr>
+      <tr>
+        <td><span class="delete-text">DELETE</span></td>
+        <td><code class="bluetext">custom_fields/{id}.format</code></td>
+        <td>Delete a custom field</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3 id="resource-fields">Resource Fields</h3>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Type</td>
+        <td>Name</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><code class="redtext">bson_id</code></td>
+        <td><code class="bluetext">id</code></td>
+        <td>ID of the custom field (read only)</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><code class="redtext">string</code></td>
+        <td><code class="bluetext">name</code></td>
+        <td>Name of the custom field. Used for identification of custom fields.</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">string</code></td>
+        <td><code class="bluetext">type</code></td>
+        <td>Type of custom field. This can be one ofthe following:
+          <span class="italic">multiple_choice, select_box, single_line_text, multi_line_text, date or number</span></td>
+        </tr>
+        <tr>
+          <td><code class="redtext">array</code></td>
+          <td class="nowrap"><code class="bluetext">choices</code></td>
+          <td>An array of possible choices. This needs to be present only for custom fields of <code class="bluetext">type</code> <span class="italic">multiple_choice</span> or  <span class="italic">select_box</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Sample from GitHub -->
+    <h3 id="sample-code">Sample code</h3>
+    <div class="sample-code">
+      <div class="sample-code-title">Sample JSON server response for custom_fields</div>
+      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=custom_fields.json"></script>
+    </div>
+    <!-- /Sample from GitHub -->
+    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/custom_fields.json</p>
+    
+    <p><a href="#content">Top</a></p> 

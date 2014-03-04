@@ -1,0 +1,142 @@
+---
+layout: api
+title: "Users"
+slug: "users"
+category: mainresources
+date: 2014-03-04 10:29:41
+---
+
+
+<p>You can get useful information about other people on your team or you can update your own account information. If you are an administrator you can edit all of your team members details.</p>
+
+<h3 id="urls">URLs</h3>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">users.format</code></td>
+      <td>Get a list of users on your team</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">users/{id}.format</code></td>
+      <td>Get information on a single user</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td><code class="bluetext">users/{id}.format</code></td>
+      <td>Update a user</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td><code class="bluetext">users/{id}.format?partial=1</code></td>
+      <td>Partially update a user</td>
+    </tr>
+  </tbody>
+</table>
+<div class="overview">
+  <p class="overview-title">NOTES:</p>
+  <div class="overview-content">
+    <ul>
+      <li>You can only <strong>update</strong> your own user if you have administrator rights.</li>
+      <li>You can’t <strong>update</strong> the company name of any user unless you have administrator rights.</li>
+      <li>To <strong>update</strong> a user’s bcc email set <strong>bcc_email=‘new’</strong> in the <span class="put-text">PUT</span> and the user’s current bcc_email will be deactivated and a new one will be provided.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="resource-fields">Resource Fields</h3>
+<p>Following parameters are supported when fetching a list of notes:</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nowrap"><code class="redtext">string</code></td>
+      <td><code class="bluetext">first_name</code></code></td>
+      <td>First name of user</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">last_name</code></td>
+      <td>Last name of user</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">company_name</code></td>
+      <td>Name of the company that this user works for<br/>
+        (read only, except by administrator).</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">string</code></td>
+        <td><code class="bluetext">email</code></td>
+        <td>Email address (read only)</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">string</code></td>
+        <td><code class="bluetext">bcc_email</code></td>
+        <td>Email address of user’s dropbox</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">string</code></td>
+        <td><code class="bluetext">photo_url</code></td>
+        <td>Url of user’s profile picture (read_only)</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">array</code></td>
+        <td class="nowrap"><code class="bluetext">account_rights</code></td>
+        <td>List of permissions this user has</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="overview">
+    <p class="overview-title">NOTES:</p>
+    <p class="overview-content">You can change the bcc_email by setting the bcc_email to ‘new’ when updating a user.</p>
+  </div>
+  <h3 id="shortcut-methods">Shortcut Methods</h3>
+  <p>These methods make it easier to carry out assigning and unassigning actions to and from users.</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td class="smaller">Method</td>
+        <td>Url</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="put-text">PUT</span></td>
+        <td>
+          <code class="bluetext">
+            users/{user_id}/assign_action/<br/>
+            {action_id}.format
+          </code>
+        </td>
+        <td>Assign the action with id {action_id} to the user<br/> with id {user_id}</td>
+      </tr>
+      <tr>
+        <td><span class="put-text">PUT</span></td>
+        <td>
+          <code class="bluetext">
+            users/{user_id}/unassign_action/<br/>
+            {action_id}.format
+          </code>
+        </td>
+        <td>Unassign the action with id {action_id} to the user<br/> with id {user_id}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p><a href="#content">Top</a></p> 
