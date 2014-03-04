@@ -7,10 +7,6 @@ body {
 .maincontent {
   background-color: white;
   height:100%;
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
-
 }
 
 .navbar-logo {
@@ -20,4 +16,10 @@ body {
 .top-padding {
   padding-top:90px;
   margin-top: -70px;
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
 }
