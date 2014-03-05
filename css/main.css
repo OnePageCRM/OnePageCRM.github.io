@@ -1,25 +1,60 @@
 body { 
-  padding-top: 90px; 
+  padding-top: 102px; 
   padding-bottom: 70px;
   background: #F8F8F8;
 }
-
 .maincontent {
-  background-color: white;
+  background-color: #fff;
   height:100%;
+  border: 1px solid #E9E5E5;
+  color: #333333;
+  min-height: 460px;
+  padding: 35px 50px;
 }
-
 .navbar-logo {
   padding-top:10px;
 }
-
 .top-padding {
-  padding-top:90px;
-  margin-top: -70px;
+  /*padding-top:90px;
+  margin-top: -70px;*/
 }
-
 .shadow {
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow:         3px 3px 5px 6px #ccc;
+}
+#api-nav li.disabled{
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+a {
+    color: #558BB2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #111111;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 0 0.5em;
+}
+h2{
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 0.3em;
+}
+h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+p {
+    color: #5A5A59;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0 0 1.5em;
 }
