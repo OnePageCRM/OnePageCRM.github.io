@@ -1,7 +1,10 @@
 body { 
-  padding-top: 102px; 
+  padding-top: 112px; 
   padding-bottom: 70px;
   background: #F8F8F8;
+}
+.container {
+    max-width: 970px;
 }
 .maincontent {
   background-color: #fff;
@@ -24,11 +27,12 @@ body {
   box-shadow:         3px 3px 5px 6px #ccc;
 }
 #api-nav li.disabled{
-  font-size: 14px;
+  color: #333333;
+  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 0;
   margin-top: 1em;
+  padding: 3px 0;
+  text-transform: uppercase;
 }
 a {
     color: #558BB2;
