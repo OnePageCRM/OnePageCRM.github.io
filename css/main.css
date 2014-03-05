@@ -15,8 +15,8 @@ body {
   padding-top:10px;
 }
 .top-padding {
-  /*padding-top:90px;
-  margin-top: -70px;*/
+  padding-top:90px;
+  margin-top: -70px;
 }
 .shadow {
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
