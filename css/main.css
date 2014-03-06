@@ -29,6 +29,10 @@ body {
 a {
   color: #558BB2;
 }
+a:hover, a:focus {
+  color: #3A6380;
+  text-decoration: underline;
+}
 h1, h2, h3, h4, h5, h6 {
   color: #111111;
   font-size: 25px;
@@ -57,6 +61,9 @@ h3 {
 }
 p, ul, ol {
   margin: 0 0 1.5em;
+}
+ul, ol {
+  padding-left: 30px;
 }
 
 #api-nav{
