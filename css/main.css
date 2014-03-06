@@ -93,14 +93,21 @@ p, ul, ol {
   line-height: 18px;
 }
 
+.blog-content.col-md-8{
+  width:72%;
+  margin-right: 3%;
+}
+.blog-content h2 a{
+  color: #333;
+}
+.blog-content h2 a:hover{
+  color: #558BB2;
+  text-decoration: none;
+}
 .blog-content p {
   color: #5A5A59;
   font-size: 15px;
   line-height: 23px;
   margin: 0 0 1.5em;
-}
-.blog-content.col-md-8{
-  width:72%;
-  margin-right: 3%;
 }
 
