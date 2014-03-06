@@ -94,10 +94,16 @@ ul, ol {
 .api-content h4{
   font-size: 1.4em;
 }
-.api-contemt p{
+.api-content p{
   color: #333333;
   font-size: 13px;
   line-height: 18px;
+}
+.api-content .table-bordered > thead > tr > th,
+.api-content .table-bordered > thead > tr > td  {
+  background: #E7F4FD;
+  border-bottom-width: 1px;
+  font-weight: 700;
 }
 
 .blog-content.col-md-8{
