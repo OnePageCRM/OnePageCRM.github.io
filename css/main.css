@@ -55,9 +55,11 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
 }
+p, ul, ol {
+  margin: 0 0 1.5em;
+}
 
-#api-nav,
-#webhook-nav{
+#api-nav{
   margin-top: -19px;
 }
 #api-nav li.disabled,
@@ -74,9 +76,13 @@ h3 {
   color: #1680B9;
 }
 
+.api-content.maincontent {
+  padding-top: 15px;
+}
 .api-content h3{
   color: #386A9B;
-    font-size: 1.7em;
+  font-size: 1.7em;
+  font-weight: 400;
 }
 .api-content h4{
   font-size: 1.4em;
@@ -92,5 +98,9 @@ h3 {
   font-size: 15px;
   line-height: 23px;
   margin: 0 0 1.5em;
+}
+.blog-content.col-md-8{
+  width:72%;
+  margin-right: 3%;
 }
 
