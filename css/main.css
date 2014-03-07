@@ -100,6 +100,16 @@ ul, ol {
   border-bottom-width: 1px;
   font-weight: 700;
 }
+.api-content .table > thead > tr > th, .table > thead > tr > td,
+.api-content .table > tbody > tr > th, .table > tbody > tr > td,
+.api-content .table > tfoot > tr > th, .table > tfoot > tr > td{
+  padding: 8px 5px;
+}
+.api-content .table > tbody > tr > th, .table > tbody > tr > td code{
+  font-size: 80%;
+  padding:2px;
+}
+
 code.inline{
 -ms-word-break: break-all;
     word-break: break-all;
@@ -140,6 +150,7 @@ white-space: normal;
 }
 .sidebar p {
   color: #777777;
+  font-size: 0.9em;
 }
 
 @media (max-width: 768px) {
