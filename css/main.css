@@ -54,11 +54,6 @@ h3 {
   font-size: 1.3em;
   font-weight: 700;
 }
-.sidebar h3 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
 p, ul, ol {
   margin: 0 0 1.5em;
 }
@@ -105,6 +100,17 @@ ul, ol {
   border-bottom-width: 1px;
   font-weight: 700;
 }
+code,
+.api-content td code{
+-ms-word-break: break-all;
+    word-break: break-all;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+word-wrap: break-word;
+max-width:100%;
+display: block;
+}
 
 .blog-content.col-md-8{
   width:72%;
@@ -124,3 +130,21 @@ ul, ol {
   margin: 0 0 1.5em;
 }
 
+.sidebar .block {
+  margin-bottom: 3em;
+}
+.sidebar h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sidebar p {
+  color: #777777;
+}
+
+@media (min-width: 768px) {
+  .navbar-collapse {
+    width: 100%;
+    margin-right: 0;
+  }
+}
