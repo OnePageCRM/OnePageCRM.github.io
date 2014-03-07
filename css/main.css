@@ -142,7 +142,7 @@ display: block;
   color: #777777;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .navbar-collapse {
     width: 100%;
     margin-right: 0;
