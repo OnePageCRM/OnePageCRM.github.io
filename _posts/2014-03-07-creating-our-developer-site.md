@@ -25,7 +25,7 @@ When starting any project from scratch, I like to keep the following in mind whe
 
 We decided to use [Jekyll](http://jekyllrb.com) to create this site. Jekyll is a static site generator that generates a HTML site from a collection of HTML or markdown files. It includes a templating engine so you don't have to repeat yourself and because the end result is just HTML, you don't need to setup any databases.
 
-A great thing about Jekyll is that it's compatible with [Github Pages](http://pages.github.com). Github let you host a website on their infrastructure for free. It's very simple, all you need to do is create a repository with a particular name, upload your HTML or Jekyll based site to it and a few minutes later your site will appear. We use Mercurial internally at OnePageCRM, but I'm a git user at heart so it was nice to be back in my comfort zone!
+A great thing about Jekyll is that it's compatible with [Github Pages](http://pages.github.com). Github let you host a website on their infrastructure for free. It's very simple, all you need to do is create a repository with a particular name, upload your HTML or Jekyll based site to it and a few minutes later your site will appear. We use Mercurial internally at OnePageCRM, but I'm a git fan at heart so it was nice to be back in my comfort zone!
 
 To make the site look presentable, we've used the [Bootstrap](http://getbootstrap.com) framework. This resulted in a site that looks similar to many other developer sites out there. We regard this as a good thing - it's clean, simple and as a busy developer we know you wouldn't have time to appreciate our photoshop skills anyway!
 
