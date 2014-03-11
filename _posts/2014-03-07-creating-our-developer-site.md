@@ -41,7 +41,3 @@ We have included a [developer forum](/forum) to help us engage directly with dev
 The OnePageCRM development team will be monitoring the forum and will answer any queries here.
 
 We would also love to hear any ideas or suggestions about how we could improve the developer portal.
-
-For now, let's part with this:
-
-<iframe width="420" height="315" src="//www.youtube.com/embed/8To-6VIJZRE" frameborder="0" allowfullscreen></iframe>
