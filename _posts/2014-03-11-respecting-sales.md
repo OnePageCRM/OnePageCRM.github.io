@@ -23,7 +23,7 @@ But as I listen to Kevin, Carmel and the rest of the team make their calls, I fi
 I find myself thinking maybe if I got a call from one of these guys maybe I wouldn't be so quick to hang up the phone.
 
 ## Similarities and Differences
-One similarity that stood out to me is the importance of their sales tools. While we developers have our gits, our Jiras, our terminals, the sales team have Talkdesk, Mailchimp and OnePageCRM. I used to think an excel spreadsheet was all a sales person would need and I suppose the sales team wouldn't readily notice the difference between Windows Notepad and SublimeText.
+One similarity that stood out to me is the importance picking the right tools. While we developers have our gits, our Jiras, our terminals, the sales team have Talkdesk, Mailchimp and OnePageCRM. I used to think an excel spreadsheet was all a sales person would need and I suppose the sales team wouldn't readily notice the difference between Windows Notepad and SublimeText.
 
 The differences too are obvious - the main difference between our workflows seems to be the turn around time on tasks. Where I might need to spend a day or two researching an issue, the sales team are always focused on that one Next Action - a quick phone call, a follow up email, an introductory tweet.
 This difference could cause misunderstandings - "Why can't that dev just check those server logs like I asked?" vs "Can't they see I'm in the middle of something, I can't do that now!". Each side has a point and it's hard to find the perfect balance.
