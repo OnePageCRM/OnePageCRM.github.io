@@ -1,11 +1,12 @@
 ---
-layout: api
+layout: post
 title: "Creating developer.OnePageCRM.com"
 slug: "creatingdevsite"
 category: blog
 date: 2014-03-07 12:39:48
 ---
 
+{{ title }}
 ![Developers!]({{ site.url }}/img/developers.jpg)
 
 
@@ -31,10 +32,6 @@ To make the site look presentable, we've used the [Bootstrap](http://getbootstra
 
 This setup is 100% [Buzzword Compliant](http://en.wikipedia.org/wiki/Buzzword_compliant) and is used by a huge number of project pages and blogs. 
 
-### CTRL - F
-We have kept the API page as simple as possible - it's just one long page with all of our API documentation. This was intentional - I'm a heavy user of the ctrl-f function of my browser. By keeping all the documentation on the same page you can quickly find what you're looking for. 
-
-Of course we've also included a normal navigation bar to to help if you're not sure what you're looking for.
 
 ### Get in touch
 We have included a [developer forum](/forum) to help us engage directly with developers who are creating integrations and apps using the OnePageCRM API. 

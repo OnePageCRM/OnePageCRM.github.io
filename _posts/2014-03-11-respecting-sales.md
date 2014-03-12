@@ -1,5 +1,5 @@
 ---
-layout: api
+layout: post
 title: "Respecting Sales"
 slug: "respecting-sales"
 category: blog
@@ -15,12 +15,12 @@ I listen to the sales team, their discussions, their planning sessions and most 
 
 <img class="img-responsive" src="/img/always_be_closing.jpg" />
 
-<small> I can't stand this guy! </small>
+<small> I'm not a fan! </small>
 
 Personally, I don't like being sold to, I'll try to get off the phone as quickly as possible when I get a call from my mobile phone or health insurance supplier. It's just the way I am - I figure I don't need to listen to these characters and can find a better deal somewhere else without the hard sell.
 But as I listen to Kevin, Carmel and the rest of the team make their calls, I find myself thinking maybe I've underestimated the work these guys do. I'm amazed how cheerful, interested and concerned these guys are when dealing with our customers. They never seem to be in a bad mood and always willing to chat. From hearing the other side of the conversation, I'm convinced they're interested in helping people get the most from OnePageCRM if it's the right tool for them. 
 
-I find myself thinking maybe if I got a call from these guys maybe I wouldn't be so quick to hang up the phone.
+I find myself thinking maybe if I got a call from one of these guys maybe I wouldn't be so quick to hang up the phone.
 
 ## Similarities and Differences
 One similarity that stood out to me is the importance of their sales tools. While we developers have our gits, our Jiras, our terminals, the sales team have Talkdesk, Mailchimp and OnePageCRM. I used to think an excel spreadsheet was all a sales person would need and I suppose the sales team wouldn't readily notice the difference between Windows Notepad and SublimeText.
