@@ -2,7 +2,8 @@
 layout: post
 title: "Creating developer.OnePageCRM.com"
 slug: "creatingdevsite"
-category: blog
+author: peter
+category: blog_drafts
 date: 2014-03-07 12:39:48
 ---
 

@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Respecting Sales"
-slug: "respecting-sales"
+title: "Living with Salespeople"
+slug: "living-with-salespeople"
 category: blog
+author: peter
 date: 2014-03-11 22:34:22
 ---
 
@@ -12,7 +13,6 @@ OnePageCRM's Galway headquarters are currently being renovated and the accommoda
 I've moved into the same room as the sales team, and while this has it's disadvantages (no space for my second monitor!), it's not a big problem for me. 
 Like many developers, I like to program with earphones on - sometimes I play blues rock, sometimes it's something more upbeat - but sometimes like to leave the music off and listen to what's going on in the office.
 I listen to the sales team, their discussions, their planning sessions and most interestingly, their phone calls. 
-
 <img class="img-responsive" src="/img/always_be_closing.jpg" />
 
 
@@ -27,7 +27,7 @@ One similarity that stood out to me is the importance of picking the right tools
 The differences too are obvious - the main difference between our workflows seems to be the turn around time on tasks. Where I might need to spend a day or two researching an issue, the sales team are always focused on that one Next Action - a quick phone call, a follow up email, an introductory tweet.
 This difference could cause misunderstandings - "Why can't that dev just check those server logs like I asked?" vs "Can't they see I'm in the middle of something, I can't do that now!". Each side has a point and it's hard to find the perfect balance.
 
-## Respect
+## Respect for Salespeople
 In a previous life, I ran my own business in adventure tourism sector. As a one man show, I had to shoehorn my skills into every aspect of the business. 
 
 I wasn't a good salesman - I got a fright every time the phone rang. Watching the professionals do it, it's now clear to me what I was lacking. 
@@ -35,4 +35,4 @@ I wasn't a good salesman - I got a fright every time the phone rang. Watching th
 It's been great to spend some time in close quarters learning about each other's jobs and workflows. I have a new found respect for "Sales Guys" and quickly realised there's no way I could do what they do. 
 I'm looking forward to the quieter surroundings of our new offices, but I'll be keeping an ear on the other side of the room every now and then. 
 
-Who knows, I might even pick up a few sales tips.
+Who knows, I could even pick up a few sales tips.
