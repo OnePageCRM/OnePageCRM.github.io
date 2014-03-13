@@ -15,9 +15,8 @@ I listen to the sales team, their discussions, their planning sessions and most 
 
 <img class="img-responsive" src="/img/always_be_closing.jpg" />
 
-<small> I'm not a fan! </small>
 
-Personally, I don't like being sold to, I'll try to get off the phone as quickly as possible when I get a call from my mobile phone or health insurance supplier. It's just the way I am - I figure I don't need to listen to these characters and can find a better deal somewhere else without the hard sell.
+Personally, I not a fan of being sold to, I'll try to get off the phone as quickly as possible when I get a call from my mobile phone or health insurance supplier. It's just the way I am - I figure I don't need to listen to these characters and can find a better deal somewhere else without the hard sell.
 But as I listen to Kevin, Carmel and the rest of the team make their calls, I find myself thinking maybe I've underestimated the work these guys do. I'm amazed how cheerful, interested and concerned these guys are when dealing with our customers. They never seem to be in a bad mood and always willing to chat. From hearing the other side of the conversation, I'm convinced they're interested in helping people get the most from OnePageCRM if it's the right tool for them. 
 
 I find myself thinking maybe if I got a call from one of these guys maybe I wouldn't be so quick to hang up the phone.
