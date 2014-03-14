@@ -153,6 +153,11 @@ white-space: normal;
   font-size: 0.9em;
 }
 
+.status-page{
+  min-width: 990px;
+  padding: 35px 14px;
+}
+
 @media (max-width: 768px) {
   .navbar-collapse {
     width: 100%;
