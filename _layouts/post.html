@@ -1,0 +1,32 @@
+---
+layout: blog
+---
+
+{% assign author = site.authors[page.author] %}
+<article class="entry">
+  <header>
+    <span>
+      <h1>{{ page.title }}</h1>
+      <p class="date text-right">
+        <span class="month">{{ page.date | date: '%b' }}</span>
+        <span class="day">{{ page.date | date: '%d' }}</span>
+        <span class="year">{{ page.date | date: '%Y' }}</span>
+      </p>
+    </span>
+  </header>
+  <div class="text-justify">
+  {{ content }}
+  </div>
+  <footer>
+    <div class="media well">
+      <a class="pull-left" href="#">
+        <img class="media-object img-rounded" src="{{ author.image }}" alt="author image">
+      </a>
+      <div class="media-body">
+      <h4 class="media-heading"> {{ author.name }}</h4>
+        {{ author.description}}
+      </div>
+    </div>
+
+  </footer>
+</article>
