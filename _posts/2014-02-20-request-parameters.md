@@ -3,10 +3,10 @@ layout: api
 title: "Request Parameters"
 slug: "requestparams"
 category: basics
+tags: beta
 date: 2014-02-19 14:05:55
 
 ---
-
 
 <p>You can configure your requests with standard HTTP parameters.<br/>Just add them to HTTP query string for any request:</p>
 <p class="url">
@@ -31,12 +31,12 @@ date: 2014-02-19 14:05:55
     <tr>
       <td class="nowrap"><code class="redtext">integer</code></td>
       <td class="nowrap"><code class="bluetext">page</code></td>
-      <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
+      <td>Page number. Starts from 1. Default is 1.</td>
     </tr>
     <tr>
       <td><code class="redtext">integer</code></td>
       <td><code class="bluetext">page_size</code></td>
-      <td>Page number. Starts from 1. Default is 1.</td>
+      <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
     </tr>
   </tbody>
 </table>

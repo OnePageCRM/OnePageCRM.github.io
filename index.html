@@ -12,7 +12,11 @@ title: API
 
   {% for page in site.categories[attr] reversed %}
 
-    <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}</h2>
+    <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}
+      {% if page.tags contains 'beta' %}
+        <span class="pull-right label label-warning">Beta</span>
+      {% endif %}
+    </h2> 
     {{ page.content }}
   {% endfor %}
 {% endfor %}
