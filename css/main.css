@@ -110,6 +110,13 @@ ul, ol {
   padding:2px;
 }
 
+.api-element {
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+  padding-top: 10px;
+}
+}
+
 code.inline{
 -ms-word-break: break-all;
     word-break: break-all;
