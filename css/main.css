@@ -171,3 +171,7 @@ white-space: normal;
     margin-right: 0;
   }
 }
+
+.strike {
+    text-decoration: line-through;
+}
