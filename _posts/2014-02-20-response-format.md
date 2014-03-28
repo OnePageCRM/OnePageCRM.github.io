@@ -18,7 +18,7 @@ date: 2014-02-20 11:20:17
 </p>
 <p>Each response is a hash. Only response time and status fields are always present.</p>
 
-<h3 id="status-codes">Status Codes</h3>
+<h3 id="status-codes">HTTP Status Codes</h3>
 <p>Responses return with one of the following standard HTTP status codes:</p>
 <table class="table table-striped table-bordered">
   <thead>

@@ -3,15 +3,15 @@ layout: api
 title: "Request Parameters"
 slug: "requestparams"
 category: basics
+tags: beta
 date: 2014-02-19 14:05:55
 
 ---
 
-
 <p>You can configure your requests with standard HTTP parameters.<br/>Just add them to HTTP query string for any request:</p>
 <p class="url">
   <code class="bluetext">
-    <span class="get-text">GET</span> contacts.json?page_size=10,page=2
+    <span class="get-text">GET</span> contacts.json?per_page=10&page=2
   </code>
 </p>
 <p>Or as part of HTTP request body for <span class="post-text">POST</span> and <span class="put-text">PUT</span> requests.</p>
@@ -31,19 +31,19 @@ date: 2014-02-19 14:05:55
     <tr>
       <td class="nowrap"><code class="redtext">integer</code></td>
       <td class="nowrap"><code class="bluetext">page</code></td>
-      <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
+      <td>Page number. Starts from 1. Default is 1.</td>
     </tr>
     <tr>
       <td><code class="redtext">integer</code></td>
-      <td><code class="bluetext">page_size</code></td>
-      <td>Page number. Starts from 1. Default is 1.</td>
+      <td><code class="bluetext">per_page</code></td>
+      <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
     </tr>
   </tbody>
 </table>
 <p>So, for example, to fetch first batch of 20 contacts:</p>
-<p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?page_size=20,page=1</code></p>
+<p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=1</code></p>
 <p>To fetch second batch of 20 contacts, you would use:</p>
-<p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?page_size=20,page=2</code></p>
+<p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
 
 <h3 id="specifying-the-fields-you-need">Specifying the Fields You Need <span class="get-text indexup">GET</span></h3>
 <table class="table table-striped table-bordered">
