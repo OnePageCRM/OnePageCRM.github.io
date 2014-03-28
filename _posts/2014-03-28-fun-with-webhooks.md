@@ -11,7 +11,9 @@ date: 2014-03-28 11:34:22
 
 This is Dan. 
 
-Dan recently started working with us here at OnePageCRM. He's just finished a degree in Mechanical Engineering and he's now working on becoming a web developer.
+<img class="img-responsive" src="/img/Dan.jpg"/>
+
+Dan is working with us here at OnePageCRM. He's just finished a degree in Energy/Mechanical Engineering and he's now working on becoming a web developer.
 He's learning fast and is already making great contributions to our developer site.
 
 Recently, I was explaining the concept of Webhooks to Dan. I used the usual examples for simple integrations - you could auto tweet every time you close a deal, you could have a SMS message automatically sent to you every time a new contact signs up with a web form, or ...
@@ -20,7 +22,7 @@ Recently, I was explaining the concept of Webhooks to Dan. I used the usual exam
 
 
 ## Arduino, Servo Motor, Bicycle Bell 
-As a mechanical engineer brought up messing with cars, of course Dan wanted a tangible example. So we had a quick think about it to see if we could setup a "Deal Bell" for our new offices. 
+As an engineer brought up working in a garage -the family business, of course Dan wants a tangible example. So we had a quick think about it to see if we could setup a "Deal Bell" for our new offices. 
 So Dan is going to take this project on. He's going to blog about the process here and any code he uses will be put up on Github.
 Let's see if Dan can get a deal bell working before our new office launch party in a few weeks time.
 
