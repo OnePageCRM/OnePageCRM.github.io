@@ -13,8 +13,8 @@ api_sections: [
     ['post', 'Posts'],
     ['intro', 'Introduction'],
     ['basics', 'Basics & Logging In'],
-    ['mainresources', 'Main Resources'],
-    ['otherresources', 'Other Resources']
+    ['mainresources', 'Main Methods'],
+    ['otherresources', 'Beta Methods']
 ]
 markdown: redcarpet
 pygments: true

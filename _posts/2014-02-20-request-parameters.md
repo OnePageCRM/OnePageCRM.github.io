@@ -3,7 +3,6 @@ layout: api
 title: "Request Parameters"
 slug: "requestparams"
 category: basics
-tags: beta
 date: 2014-02-19 14:05:55
 
 ---
