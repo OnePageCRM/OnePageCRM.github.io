@@ -146,6 +146,30 @@ white-space: normal;
   line-height: 23px;
   margin: 0 0 1.5em;
 }
+.blog-element {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.blog-element .author{
+  font-size: 15px;
+  color: #a2a2a2;
+}
+.blog-element .read-more{
+  display: block;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.blog-content .date{
+  font-size: 12px;
+  color: #a2a2a2;
+}
+.blog-content .blog-element .date{
+  font-size: 11px;
+  border-top: 1px solid #e2e2e2;
+}
+.blog-content .post-title{
+  margin:0;
+}
 
 .sidebar .block {
   margin-bottom: 3em;

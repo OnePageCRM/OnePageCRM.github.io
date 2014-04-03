@@ -5,14 +5,12 @@ layout: blog
 {% assign author = site.authors[page.author] %}
 <article class="entry">
   <header>
-    <span>
-      <h1>{{ page.title }}</h1>
-      <p class="date text-right">
-        <span class="day">{{ page.date | date: '%d' }}</span>
-        <span class="month">{{ page.date | date: '%b' }}</span>
-        <span class="year">{{ page.date | date: '%Y' }}</span>
-      </p>
-    </span>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="date">
+      <span class="day">{{ page.date | date: '%d' }}</span>
+      <span class="month">{{ page.date | date: '%b' }}</span>
+      <span class="year">{{ page.date | date: '%Y' }}</span>
+    </p>
   </header>
   <div class="text-justify">
   {{ content }}
