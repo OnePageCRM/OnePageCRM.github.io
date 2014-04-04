@@ -1,24 +1,36 @@
 <div id="webhook-nav">
     <ul class="nav nav-pills nav-stacked" data-spy="affix">
-        <li class="active">
-            <a href="#top">What are Webhooks</a>
+        <li class="disabled">Webhooks</li>
+        <li>
+            <a href="index.html#top">What are Webhooks</a>
         </li>
         <li>
-            <a href="#activate">Activate Webhooks</a>
+            <a href="index.html#activate">Activate Webhooks</a>
         </li>
         <li>
-            <a href="#configure">Configure Webhooks</a>
+            <a href="index.html#configure">Configure Webhooks</a>
         </li>
         <li>
-            <a href="#sampledata">Sample Data </a>
+            <a href="index.html#sampledata">Sample Data </a>
         </li>
         <li>
-            <a href="#testing">Testing Webhooks</a>
+            <a href="index.html#testing">Testing Webhooks</a>
         </li>
 
         <hr></hr>
+
+        <li class="disabled">More</li>
+        <li {% if page.url == '/webhooksmore/quickcreateurlparams.html'%} class="active" {% endif %}>
+            <a href="quickcreateurlparams.html">Create Contact via URL</a>
+        </li>
         <li>
-            <a target="blank" href="https://github.com/OnePageCRM">GitHub</a>
+            <a target="blank" href="https://github.com/OnePageCRM">OnePageCRM GitHub</a>
+        </li>
+
+        <hr></hr>
+        <li class="disabled"> 3rd Party </li>
+         <li>
+            <a target="blank" href="https://github.com/davekelly/aaOnepageCrm">OnePageCRM Wordpress Plugin</a>
         </li>
     </ul>
 </div>
