@@ -2,12 +2,14 @@
 layout: blog
 title: Blog
 ---
+
 <div>
   {% for post in site.categories["blog"] %}
+  {% assign author = site.authors[post.author] %}
   <section class="blog-element">
     <header>
       <h1 class="post-title"> <a href="{{ post.url }}"> {{ post.title }}</a></h1>
-      <p class="author"></p>
+      <p class="author"> {{ author.name }} </p>
     </header>
     <div class="text-justify">
       {{ post.excerpt }}
