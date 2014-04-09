@@ -61,11 +61,10 @@ ul, ol {
   padding-left: 30px;
 }
 
-#api-nav{
+.dev-nav{
   margin-top: -19px;
 }
-#api-nav li.disabled,
-#webhook-nav li.disabled{
+.dev-nav li.disabled{
   color: #333333;
   font-size: 12px;
   font-weight: 700;
@@ -73,8 +72,7 @@ ul, ol {
   padding: 3px 0;
   text-transform: uppercase;
 }
-#api-nav a
-#webhook-nav a{
+.dev-nav a{
   color: #1680B9;
 }
 
@@ -109,12 +107,13 @@ ul, ol {
   font-size: 80%;
   padding:2px;
 }
-
-.api-element {
+.api-element{
   padding-bottom: 20px;
   border-bottom: 1px solid;
   padding-top: 10px;
 }
+.api-content .text-box{
+  padding: 0 1.5em 1.5em 0;
 }
 
 code.inline{
