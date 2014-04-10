@@ -38,7 +38,6 @@ title: APIv2.3
     <li>There are some restrictions regarding specific data types, these are outlined in the table below. (more specific information will follow in later sections).</li>
   </ul>
   <table class="table table-striped table-bordered">
-    <caption>Request message format</caption>
     <thead>
       <tr>
         <td width="100">Data type</td>
@@ -73,7 +72,6 @@ title: APIv2.3
   <h3 id="request-authorization">Request authorization</h3>
   <p class="overview-content">In order to authorize request, client should send following HTTP headers (except login method).</p>
   <table class="table table-striped table-bordered">
-  <caption>Request authorization</caption>
     <thead>
       <tr>
 	<td>Header name</td>
@@ -158,7 +156,6 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="overview-content">Response data can be sent in 3 different formats: XML, JSON and YAML<a id="note1" href="#note1-content" class="footnote">1</a> (all of these are returning the same set of data, but one of them has to be explicitly chosen during request, e.g. contacts list can be retrieved through URL /api/contacts.xyz, where xyz can be xml, json or yaml). Date, time and country codes are returned in the same way as they are required in request message format.<br /><br />
   Every response document is a map/hash/associated table (name depends on the terminology of programming language used<a id="note2" href="#note2-content" class="footnote">2</a>) with the following elements:</p>
   <table class="table table-striped table-bordered">
-    <caption>Response message format</caption>
     <thead>
       <tr>
 	<td width="100">Element name</td>
@@ -229,7 +226,6 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3 id="additional-sales-element">Additional <em>sales</em> element</h3>
   <p class="overview-content">This element provides short sales summary. It contains information which can be found in the footer in the web version of the application. It contains following data:</p>
   <table class="table table-striped table-bordered">
-    <caption>Additional <em>sales</em> element</caption>
     <thead>
       <tr>
 	<td>Name</td>
@@ -265,7 +261,6 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3 id="additional-statuses-element">Additional <em>statuses</em> element</h3>
   <p class="overview-content">This element provides information about current contacts count divided into contact types. It is an array of two-element hashes (instead of element with name=team, which contains data for whole team) (one per contact type), which have following format:</p>
   <table class="table table-striped table-bordered">
-  <caption>Additional <em>statuses</em> element</caption>
     <thead>
       <tr>
 	<td>Name</td>
@@ -291,7 +286,6 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3 id="additional-tags-element">Additional <em>tags</em> element</h3>
   <p class="overview-content">This element provides information about current user tags. It consists of three elements:</p>
   <table class="table table-striped table-bordered">
-  <caption>Additional <em>tags</em> element</caption>
     <thead>
       <tr>
 	<td>Name</td>
