@@ -21,6 +21,19 @@ body {
   padding-top:90px;
   margin-top: -70px;
 }
+.top-padding2,
+ol.footnote li,
+a.footnote{
+  padding-top:90px;
+  margin-top: -90px;
+}
+ol.footnote{list-style:none;font-size:.9em;margin:0 1em;padding:0 0 30px 0}
+ol.footnote li a{outline: none;}
+a.footnote{color:#00F;font-size:.7em;line-height:1.2em;vertical-align:top;outline: none;}
+a.footnote:target,
+ol.footnote li a:target{color:red;}
+a.footnote:active {outline: none;}
+
 .shadow {
   -webkit-box-shadow: -9px -9px 9px rgba(204, 204, 204, 0.2);
      -moz-box-shadow: -9px -9px 9px rgba(204, 204, 204, 0.2);
