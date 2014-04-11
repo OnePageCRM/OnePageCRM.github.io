@@ -1,0 +1,3798 @@
+---
+layout: api2
+title: APIv2.3
+---
+
+<div data-spy="scroll" data-target="api2-nav">
+  
+<!-- Welcome section -->
+<div class="api-element">
+  <h2 class="top-padding" id="top">API 2.3</h2>
+  <div class="alert alert-warning"> 
+    <strong>This documentation is for Version 2.3 of our API. Support for Version 2 is being phased out.</strong> See documentation for
+    <a title="Link to our API 0.3 documentation" href="/" class="alert-link"> Version 3 of our API</a>.
+  
+</div>
+  <h3  class="top-padding2" id="">What kind of really useful stuff can I build?</h3>
+  <p class="">You can access and work with most of our features allowing you to create solutions. We’ve listed some examples below.</p>
+  <table cellspacing="0" cellpadding="10" border="0" class="welcome">
+    <tr>
+      <td class="text-box"><strong>Collect leads in web forms.</strong> Perfect for Lead Gen, you can drive traffic to a landing page and use a web form to collect and send the prospect’s details directly to OnePageCRM.</td>
+      <td class="text-box"><strong>Connect to our cloud app.</strong> The beauty of the cloud is being able to connect with other useful business apps to offer our users a seamless and hassle-free experience.</td>
+    </tr>
+    <tr>
+      <td class="text-box"><strong>Extract specific contacts.</strong> Filter your contacts by tag to only get what you need from the OnePage database.</td>
+      <td class="text-box"><strong>Set or save details.</strong> Without accessing your account you can use the API to set next actions, add deals or notes to contacts.</td>
+    </tr>
+  </table>
+  <h3  class="top-padding2" id="">Ready to get started?</h3>
+  <p class="">In the documentation we cover the basics of interacting with the OnePage API, but if you have any queries, we’d love to hear from you!</p>
+</div>
+<!-- /Welcome section -->
+
+<!-- Request message format section -->
+<div class="api-element">
+  <h2 class="top-padding" id="request-message-format">Request message format</h2>
+  <ul class="list">
+    <li>Data requests should be sent as a typical HTTP request (i.e. in query string for GET and DELETE requests and as a body in format param1=value1&amp;param2=value2... for PUT and POST requests)</li>
+    <li>Character data must be encoded in Unicode (UTF-8). Any invalid data will be ignored.</li>
+    <li>Successful update operations require every element describing the given resource to be provided. Update operations will fail if all required elements are not provided, resulting in corresponding resource property being lost.</li>
+    <li>There are some restrictions regarding specific data types, these are outlined in the table below. (more specific information will follow in later sections).</li>
+  </ul>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td width="100">Data type</td>
+        <td>Notes</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Time</code></td>
+        <td>Must be sent as unix time (in seconds) (<a href="http://en.wikipedia.org/wiki/Unix_time">http://en.wikipedia.org/wiki/Unix_time</a>)</td>
+      </tr>
+      <tr>
+        <td><code>Date</code></td>
+        <td>Must be sent in in dd.mm.yyyy (e.g. 16.06.2011) format</td>
+      </tr>
+      <tr>
+        <td><code>Country</code></td>
+        <td>Must be sent as ISO-3166 2-letter country code (ISO 3166-1-alpha-2 code) <strong>except</strong> Greece, where EL must be sent</td>
+      </tr>
+      <tr>
+        <td><code>Boolean</code></td>
+        <td>Must be sent 0 (false) or 1 (true)</td>
+      </tr>
+      <tr>
+        <td><code>String</code></td>
+        <td>Leading and trailing spaces will be ignored and removed from the value</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="request-authorization">Request authorization</h3>
+  <p class="overview-content">In order to authorize request, client should send following HTTP headers (except login method).</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td>Header name</td>
+	<td>Content Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>X-OnePageCRM-UID</code></td>
+	<td>Unique user ID inside system (technically, 192-bit number written in hex)</td>
+      </tr>
+      <tr>
+	<td><code>X-OnePageCRM-TS</code></td>
+	<td>Current timestamp in unix time</td>
+      </tr>
+      <tr>
+	<td><code>X-OnePageCRM-Auth</code></td>
+	<td>HMAC-SHA256 request signature (signature data has been described below)</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="request-signature-value">Calculating request signature value</h3>
+  <p>The Request signature is a HMAC-SHA256 hash (written in hex using lowercase for a-f) of a string which consists of 4 (for GET and DELETE requests) or 5 (for PUT and POST requests) dot-separated elements, which are (in this exact order):</p>
+  <ol class="ordered-list">
+    <li>X-OnePageCRM-UID header value,</li>
+    <li>X-OnePageCRM-TS header value,</li>
+    <li>HTTP request method name, uppercase (GET, POST, PUT or DELETE),</li>
+    <li>SHA-1 (written in hex using lowercase for a-f) hash of the full request URL,</li>
+    <li>(only for PUT and POST requests) SHA-1 hash (written in hex using lowercase for a-f) has of the raw request body.</li>
+  </ol>
+  <h4>Request signature - sample</h4>
+  <p>Let’s assume the following conditions:</p>
+  <ul class="list">
+    <li>Our UID is <code>"4e0046526381906f7e000002"</code></li>
+    <li>The current timestamp written as unixtime is <code>"1308640873"</code></li>
+    <li>We are updating a contact with ID <code>"4d91d3ea6381904e44000026"</code> and 
+    we're taking response in XML (so we are making PUT request to URL 
+    <code>"https://app.onepagecrm.com/api/contacts/4d91d3ea6381904e44000026.xml"</code>), raw 
+    request body is firstname=John&amp;lastname=Doe.</li>
+    <li>Our API key is (Base64 encoded) <code>"AJfSRLr7uhsa9lOIgKQ4Vu72zzg3QTE7pJL2iSeA6Mo="</code></li>
+  </ul>
+  <p>In order to calculate the request signature, we have to first calculate the SHA-1 hash for the request URL (which is <code>"f0f5acefc2d21a1d60cd8e7f52f157442419f5d7"</code>) and for the request body (which is <code>"42aa106ea05cada5b20a49844c9ea5878432f4e0"</code>). So, we have to sign following string: <code class="inline">"4e0046526381906f7e000002.1308640873.PUT.f0f5acefc2d21a1d60cd8e7f52f157442419f5d7.42aa106ea05cada5b20a49844c9ea5878432f4e0"</code>. 
+HMAC-SHA256 hash for such string and key is <code class="inline"><strong>"54d40f0284a23552eae5c62f6e848e636980e88cd13e7e7b58cc43d0825cc307"</strong></code>.</p>
+  <p>Now you can sign your request with these headers:<p>
+  <ul>
+    <li>X-OnePageCRM-UID : <code>4e0046526381906f7e000002</code></li>
+    <li>X-OnePageCRM-TS  : <code>1308640873</code></li>
+    <li>X-OnePageCRM-Auth : <code>54d40f0284a23552eae5c62f6e848e636980e88cd13e7e7b58cc43d0825cc307</code></li>
+  </ul>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="obtain-resources-data">How to obtain resources data</h3>
+  <p>The OnePageCRM data model is based on 8 types of resources:</p>
+  <ul class="list">
+    <li>contact</li>
+    <li>contact action</li>
+    <li>predefined sales action</li>
+    <li>contact note</li>
+    <li>contact deal</li>
+    <li>custom filter</li>
+    <li>linked company</li>
+    <li>invoice</li>
+  </ul>
+  <p class="classname">Besides of that, there is some number of additional, standard controllers (accessible through standard GET/POST HTTP requests); all of them are described further in this document.
+Operations on the resources must be made with the following HTTP requests (according to RESTful rules). Assuming, that we are working on contact resource and using XML format following methods should be used in order to make required actions (some additional, specific parameters will be described further in this document in subsections related to specific resources and actions):</p>
+  <ul class="list">
+    <li>getting list of all contacts: <strong>GET /api/contacts.xml</strong></li>
+    <li>getting information about specific contact: <strong>GET /api/contacts/123456789abcdef.xml</strong></li>
+    <li>creating new contact (contact data in request body): <strong>POST /api/contacts.xml</strong></li>
+    <li>updating existing contact (contact data in request body): <strong>PUT /api/contacts/1234567890abcdef.xml</strong></li>
+    <li>deleting contact: <strong>DELETE /api/contacts/1234567890abcdef.xml.</strong></li>
+  </ul>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Request message format section -->
+
+<!-- Response message format section -->
+<div class="api-element">
+  <h2 class="top-padding" id="response-message-format">Response message format</h2>
+  <p class="overview-content">Response data can be sent in 3 different formats: XML, JSON and YAML<a id="note1" href="#note1-content" class="footnote">1</a> (all of these are returning the same set of data, but one of them has to be explicitly chosen during request, e.g. contacts list can be retrieved through URL /api/contacts.xyz, where xyz can be xml, json or yaml). Date, time and country codes are returned in the same way as they are required in request message format.<br /><br />
+  Every response document is a map/hash/associated table (name depends on the terminology of programming language used<a id="note2" href="#note2-content" class="footnote">2</a>) with the following elements:</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td width="100">Element name</td>
+	<td>Content description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>timestamp</code></td>
+	<td>Current server time</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td>Status code of the operation result (0 means success, other codes mean fail); whole list of available status codes can be found in the end of this document.</td>
+      </tr>
+      <tr>
+	<td><code>message</code></td>
+	<td>Human-readable message associated with <em>status</em> element</td>
+      </tr>
+      <tr>
+	<td><code>data</code></td>
+	<td>Operation result; this element is optional and may not be present in the response. Every time, some operation result is described, it will be placed inside this element<a id="note3" href="#note3-content" class="footnote">3</a></td>
+      </tr>
+      <tr>
+	<td><code>tags</code></td>
+	<td>Optional element, provides information about current user tags state (i.e. names and usage counts). Every time, when it occurs, client view should be updated with this data. Element content will be described in one of the subsections below.</td>
+      </tr>
+      <tr>
+	<td><code>statuses</code></td>
+	<td>Optional element provides information about current contact statuses state (i.e. status types and usage counts). Every time it occurs, client view should be updated with this data. Element content will be described in one of the subsections below.</td>
+      </tr>
+      <tr>
+	<td><code>sales</code></td>
+	<td>Optional element, provides basic sales summary. Every time, when it occurs, client view should be updated with this data. Element content will be described in one of the subsections below.</td>
+      </tr>
+      <tr>
+	<td><code>notifications</code></td>
+	<td>Optional element, visible when user will reach some account restrictions. It’s an array of strings with following possible values:
+	<ul class="list">
+	  <li><em>deals_limit_reached</em> - user reached maximum allowed number of deals. Adding additional deals or contacts is not allowed and will be rejected by system</li>
+	  <li><em>contacts_list_full</em> - user reached maximum allowed number of contacts. Adding additional contacts or deals is not allowed and will be rejected by system</li>
+	  <li><em>too_many_contacts</em> - allowed number of contacts exceeded. Any edit action on contacts, notes, tags or actions is not allowed and will be rejected by the system. Only contact deletion is allowed</li>
+	</ul>
+	</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr class="footnote" />
+  <ol class="footnote">
+    <li id="note1-content"><a href="#note1">1</a>) If format will not be specified or it will be invalid, server will return empty response with &quot;406 Not Acceptable&quot; HTTP status code</li>
+    <li id="note2-content"><a href="#note2">2</a>) A term <em>hash</em> will be used in this document</li>
+    <li id="note3-content"><a href="#note3">3</a>) Please note, that even if some specific API method is not returning any data, optional elements can be still present in output data</li>
+  </ol>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="xml-response-document-format">XML response document format</h3>
+  <p>XML document specification does not provide strict data type definition, therefore the following rules apply for the response data:</p>
+  <ul class="list">
+    <li>character data is encoded in UTF-8 format</li>
+    <li>binary data is represented in Base64 format</li>
+    <li>document is root element name is named <em>hash</em></li>
+    <li>empty (AKA null/nil) values are represented by &lsquo;nil=&quot;true&quot;&lsquo; element attribute</li>
+    <li>integer values are marked by &lsquo;type=&quot;integer&quot;&lsquo; element attribute</li>
+    <li>float values are marked by &lsquo;type=&quot;float&quot;&lsquo; element attribute</li>
+    <li>array are marked by &lsquo;type=&quot;array&quot;&lsquo; element attribute; typically such element is a plural form of noun which describes stored data and this element nodes name is a singular form of such noun</li>
+  </ul>
+  
+  <h3  class="top-padding2" id="additional-sales-element">Additional <em>sales</em> element</h3>
+  <p class="overview-content">This element provides short sales summary. It contains information which can be found in the footer in the web version of the application. It contains following data:</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>target</code></td>
+	<td><code>float</code></td>
+	<td>Current sales target amount.</td>
+      </tr>
+      <tr>
+	<td><code>period</code></td>
+	<td><code>string</code></td>
+	<td>Current sales target period. May be <em>month</em> or <em>quarter</em>.</td>
+      </tr>
+      <tr>
+	<td><code>won</code></td>
+	<td><code>float</code></td>
+	<td>Total won deals amount for present period.</td>
+      </tr>
+      <tr>
+	<td><code>pending</code></td>
+	<td><code>float</code></td>
+	<td>Total pending deals amount.</td>
+      </tr>
+      </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="additional-statuses-element">Additional <em>statuses</em> element</h3>
+  <p class="overview-content">This element provides information about current contacts count divided into contact types. It is an array of two-element hashes (instead of element with name=team, which contains data for whole team) (one per contact type), which have following format:</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Contact status name.</td>
+      </tr>
+      <tr>
+	<td><code>count</code></td>
+	<td><code>integer</code></td>
+	<td>Data and this element nodes name is a singular form of such noun.</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="additional-tags-element">Additional <em>tags</em> element</h3>
+  <p class="overview-content">This element provides information about current user tags. It consists of three elements:</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>system</code></td>
+	<td><code>array</code></td>
+	<td>So called system tags, i.e. contact tags which cannot be edited by user. All system tags used are:
+          <ul class="list">
+            <li><em>recently_viewed</em> - contacts, which have been recently viewed (in web application such operation is called “expanding”)</li>
+            <li><em>recently_edited</em> - contacts, for which some property has been changed recently (i.e. status changed, tags added etc.)</li>
+            <li><em>recently_imported</em> - contacts, which have been imported in last import operation</li>
+            <li><em>pending_deals</em> - all contacts, which have some pending deal</li>
+            <li><em>waiting</em> - number of contacts marked as waiting</li>
+            <li><em>starred</em> - number of starred contacts</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+	<td><code>custom</code></td>
+	<td><code>array</code></td>
+	<td>So called custom tags, i.e. contact tags which can be edited by user</td>
+      </tr>
+      <tr>
+	<td><code>team</code></td>
+	<td><code>array</code></td>
+	<td>contains pendings, custom, waiting and imported elements for whole team</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Every element of such array consists 2 elements:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Tag name</td>
+      </tr>
+      <tr>
+	<td><code>count</code></td>
+	<td><code>integer</code></td>
+	<td>Usage count</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Response message format section -->
+  
+<!-- Authorization method section -->
+<div class="api-element">
+  <h2 class="top-padding" id="authorization-methods">Authorization methods</h2>
+  <h3  class="top-padding2" id="login-method"><span>Login</span> method</h3>
+  <p class="url"><strong>URL:</strong> /api/auth/login.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">This method is used to login (i.e. fetch key to sign further requests) and fetch some basic information about users.</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>login</code></td>
+	<td><code>string</code></td>
+	<td>User login (email address)</td>
+      </tr>
+      <tr>
+	<td><code>password</code></td>
+	<td><code>password</code></td>
+	<td>User password</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data</caption>
+    <thead>
+      <tr>
+	<td>NAME</td>
+	<td>TYPE</td>
+	<td>DESCRIPTION</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>uid</code></td>
+	<td><code>string</code></td>
+	<td>User’s unique ID, which is used during further request authorization</td>
+      </tr>
+      <tr>
+	<td><code>key</code></td>
+	<td><code>string</code></td>
+	<td>User key (bytes data Base64 format) which has to be used during further request authorization</td>
+      </tr>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>User’s first name</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>User’s last name</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>User’s company name</td>
+      </tr>
+      <tr>
+	<td><code>listing</code></td>
+	<td><code>hash</code></td>
+	<td>Information about default mode of displayed contacts list (according to users settings). It consists of two elements:
+	<ul>
+	  <li><em>mode</em> - contact with given status should be only displayed (this element has value all if <em>all</em> values should be displayed) </li>
+	  <li><em>size</em> - number of elements in one page</li>
+	</ul>
+	</td>
+      </tr>
+      <tr>
+	<td><code>timezone</code></td>
+	<td><code>string</code></td>
+	<td>User’s timezone (in format +HH:MM/-HH:MM)</td>
+      </tr>
+      <tr>
+	<td><code>currency</code></td>
+	<td><code>hash</code></td>
+	<td>Information about user’s currency. Consists of two elements:
+	<ul>
+	  <li><em>symbol</em> - currency symbol (like $, £)</li>
+	  <li><em>code</em> - 3-letter ISO code</li>
+	</ul>
+	</td>
+      </tr>
+      <tr>
+	<td><code>pipeline_mode</code></td>
+	<td><code>string</code></td>
+	<td>Sales pipeline mode. One of three values: <em>off, simple</em> or <em>full</em>. See sales section for more details.</td>
+      </tr>
+      <tr>
+	<td><code>customerlabel</code></td>
+	<td><code>string</code></td>
+	<td>Label which is used to describe “customer” contact status</td>
+      </tr>
+      <tr>
+	<td><code>dateformat</code></td>
+	<td><code>string</code></td>
+	<td>Date format used by the user (e.g. dd/mm/yyyy)</td>
+      </tr>
+      <tr>
+	<td><code>team_names</code></td>
+	<td><code>array</code></td>
+	<td>Team members. Every item is a hash consisted from 2 elements:
+	<ul>
+	  <li><em>id</em> - user ID</li>
+	  <li><em>name</em> - user full name</li>
+	</ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for login method</div>
+    <script src="https://gist.github.com/OnePageCTO/5948711.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="logout-method"><span>Logout</span> method</h3>
+  <p class="url"><strong>URL:</strong> /api/auth/logout.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Calling this method will invalidate key used for signing request. <strong>Use it with caution!</strong> In result every logged API client will be logged out (i.e. for regular logout action your application should simply forget the key and should call this method only when user will require &quot;logout from all devices&quot; action)</p>
+ <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for logout method</div>
+    <script src="https://gist.github.com/OnePageCTO/5948897.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="change-api-key-method"><span>change_api_key</span> method</h3>
+  <p class="url"><strong>URL:</strong> /api/auth/change_api_key.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Calling this method will result in API key change (can be used for logging out of other connected applications)</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>NAME</td>
+	<td>TYPE</td>
+	<td>DESCRIPTION</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>key</code></td>
+	<td><code>string</code></td>
+	<td>New API key (Base64 encoded binary data)</td>
+      </tr>
+     </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for change API key method</div>
+    <script src="https://gist.github.com/OnePageCTO/5948893.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Authorization method section -->
+  
+<!-- Contacts section -->
+<div class="api-element">
+  <h2 class="top-padding" id="contacts">Contacts</h2>
+  <h3  class="top-padding2" id="getting-list-of-contacts">Getting list of contacts</h3>
+  <p class="url"><strong>URL:</strong> /api/contacts.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">This resource contains all summarized information about contacts.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input (optional) parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>system_tag</code></td>
+	<td><code>string</code></td>
+	<td>Show contacts only with given system tag attached.</td>
+      </tr>
+      <tr>
+	<td><code>tag</code></td>
+	<td><code>string</code></td>
+	<td>Show contacts only with given custom tag attached.<a id="note6" href="#note6-content" class="footnote">1</a></td>
+      </tr>
+      <tr>
+	<td><code>search</code></td>
+	<td><code>string</code></td>
+	<td>Search phrase (only contacts with this phrase in first/last/company name will be returned</td>
+      </tr>
+      <tr>
+	<td><code>page</code></td>
+	<td><code>integer</code></td>
+	<td>Number of the page which should be displayed (number of items in page are stored in users settings and have been provided during login process). When this number will exceed maximum number of available pages, empty result will return.</td>
+      </tr>
+      <tr>
+	<td><code>waiting</code></td>
+	<td><code>boolean</code></td>
+	<td>When <em>true</em>, only contacts with "waiting for" next action will be returned. If <em>false</em> or if this parameter will not be given, such contacts won’t be returned.</td>
+      </tr>
+      <tr>
+	<td><code>starred</code></td>
+	<td><code>boolean</code></td>
+	<td>When <em>true</em>, only starred contacts will be returned.</td>
+      </tr>
+      <tr>
+	<td><code>whole_team</code></td>
+	<td><code>boolean</code></td>
+	<td>When <em>true</em>, full contacts list will be returned; when <em>false</em> or not present, only contacts owned by current user will be returned.</td>
+      </tr>
+      <tr>
+	<td><code>filter_id</code></td>
+	<td><code>string</code></td>
+	<td>Custom filter ID. If valid provided, <em>tag, system_tag</em> and <em>mode</em> parameters will be ignored.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>count</code></td>
+	<td><code>integer</code></td>
+	<td>Total count of contacts found</td>
+      </tr>
+      <tr>
+	<td><code>page</code></td>
+	<td><code>integer</code></td>
+	<td>Current page number</td>
+      </tr>
+      <tr>
+	<td><code>maxpage</code></td>
+	<td><code>integer</code></td>
+	<td>Max. page number available for these filter conditions.</td>
+      </tr>
+      <tr>
+	<td><code>contacts</code></td>
+	<td><code>array</code></td>
+	<td>Array of contacts data (each element is described in the table below).</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Single contact element data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>First name</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>Last name</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td><code>string</code></td>
+	<td>Contact status</td>
+      </tr>
+	<tr>
+	<td><code>tags</code></td>
+	<td><code>array[string]</code></td>
+	<td>Tags attached to contact</td>
+      </tr>
+	<tr>
+	<td><code>pendingdeal</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if there are some pending deals attached to this contact</td>
+      </tr>
+	<tr>
+	<td><code>starred</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if contact is starred</td>
+      </tr>
+	<tr>
+	<td><code>nextaction</code></td>
+	<td><code>hash</code></td>
+	<td>Information about next action (may be empty). It contains three elements:
+	<ul class="list">
+	  <li><em>text</em> (string) - next action text</li>
+	  <li><em>next</em> (boolean) - information if this action is marked as &quot;next&quot;</li>
+	  <li><em>date</em> (date) - action's date (may be nil)</li>
+	</ul>
+	</td>
+      </tr>
+	<tr>
+	<td><code>owner</code></td>
+	<td><code>string</code></td>
+	<td>Contact owner ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr class="footnote" />
+  <ol class="footnote">
+    <li id="note6-content">
+      <a href="#note6">1</a>) This parameter will be ignored if <em>system_tag</em> parameter is present and is valid.
+    </li>
+  </ol>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of contacts.</div>
+    <script src="https://gist.github.com/OnePageCTO/5948911.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="getting-contact-data">Getting single contact data</h3>
+  <p class="url"><strong>URL:</strong> /api/contacts/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Returned information is almost the same as that which is visible in the expanded view/edit form and this data can be used to prefill edit form (if exists)</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>First name</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>Last name</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+      <tr>
+	<td><code>linked_company</code></td>
+	<td><code>string</code></td>
+	<td>Linked company ID (if contact is linked)</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td><code>string</code></td>
+	<td>Contact status</td>
+      </tr>
+	<tr>
+	<td><code>tags</code></td>
+	<td><code>array[string]</code></td>
+	<td>Tags attached to contact</td>
+      </tr>
+	<tr>
+	<td><code>pendingdeal</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if there are some pending deals attached to this contact</td>
+      </tr>
+	<tr>
+	<td><code>starred</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if contact is starred</td>
+      </tr>
+	<tr>
+	<td><code>nextaction</code></td>
+	<td><code>hash</code></td>
+	<td>Information about next action (may be empty). See subsection related to contact action in order to get element content details).</td>
+      </tr>
+	<tr>
+	<td><code>owner</code></td>
+	<td><code>string</code></td>
+	<td>Contact’s owner ID</td>
+      </tr>
+       <tr>
+	<td><code>jobtitle</code></td>
+	<td><code>string</code></td>
+	<td>Contact’s job title</td>
+      </tr>
+      <tr>
+	<td><code>address</code></td>
+	<td><code>string</code></td>
+	<td>Contact address - misc</td>
+      </tr>
+      <tr>
+	<td><code>city</code></td>
+	<td><code>string</code></td>
+	<td>Contact address - city</td>
+      </tr>
+      <tr>
+	<td><code>state</code></td>
+	<td><code>string</code></td>
+	<td>Contact address - state</td>
+      </tr>
+      <tr>
+	<td><code>zip</code></td>
+	<td><code>string</code></td>
+	<td>Contact address - ZIP code</td>
+      </tr>
+      <tr>
+	<td><code>country</code></td>
+	<td><code>string</code></td>
+	<td>Contact address - ISO country code</td>
+      </tr>
+      <tr>
+	<td><code>description</code></td>
+	<td><code>string</code></td>
+	<td>Contact description (AKA background)</td>
+      </tr>
+      <tr>
+	<td><code>phones</code></td>
+	<td><code>array[string]</code></td>
+	<td>Contact phones. Every hash contains 2 elements:
+	<ul class="list">
+	  <li><em>type</em> (string) - phone type - list of all supported phone types is attached further in this document</li>
+	  <li><em>number</em> (string) - phone number</li>
+	</ul></td>
+      </tr>
+      <tr>
+	<td><code>company_phones</code></td>
+	<td><code>array[string]</code></td>
+	<td>Linked company phones. Every hash has the same structure as in <em>phones</em> element, but <em>type</em> is always set to <em>main</em> here. This field is read-only. If you want to change this, edit linked company details instead.</td>
+      </tr>
+      <tr>
+	<td><code>emails</code></td>
+	<td><code>array[string]</code></td>
+	<td>Contact email addresses. Every hash contains 2 elements:
+	<ul class="list">
+	  <li><em>type</em> (string) - email type - list of all supported email types is attached further in this document</li>
+	  <li><em>address</em> (string) - email address</li>
+	</ul></td>
+      </tr>
+      <tr>
+	<td><code>urls</code></td>
+	<td><code>array[string]</code></td>
+	<td>Contact URL addresses. Every hash contains 2 elements:
+	<ul class="list">
+	  <li><em>type</em> (string) - URL type - list of all supported URL types is attached further in this document</li>
+	</ul></td>
+      </tr>
+      <tr>
+	<td><code>actions</code></td>
+	<td><code>array</code></td>
+	<td>Two last closed actions (see subsection related to contact actions in order to get elements content details)</td>
+      </tr>
+      <tr>
+	<td><code>notes</code></td>
+	<td><code>array</code></td>
+	<td>Three last notes/deals (see subsection related to contact notes in order to get elements content details.)</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single contact </div>
+    <script src="https://gist.github.com/OnePageCTO/5948910.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="creating-new-contact">Creating new contact</h3>
+  <p class="url"><strong>URL:</strong> /api/contacts.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">In order to create a new contact, company or lastname need to be provided.<br/>The following character limits apply:</br>firstname = max 25 characters<br/>lastname = max 25 characters<br/>company name = max 55 characters</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>Contact firstname</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>Contact lastname</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+      <tr>
+	<td><code>job_title</code></td>
+	<td><code>string</code></td>
+	<td>Contact’s job title</td>
+      </tr>
+      <tr>
+	<td><code>address</code></td>
+	<td><code>string</code></td>
+	<td>Address</td>
+      </tr>
+	<tr>
+	<td><code>city</code></td>
+	<td><code>string</code></td>
+	<td>City (address)</td>
+      </tr>
+	<tr>
+	<td><code>state</code></td>
+	<td><code>string</code></td>
+	<td>State (address)</td>
+      </tr>
+	<tr>
+	<td><code>zip_code</code></td>
+	<td><code>string</code></td>
+	<td>ZIP code (address)</td>
+      </tr>
+	<tr>
+	<td><code>country</code></td>
+	<td><code>string</code></td>
+	<td>Country ISO code (address)</td>
+      </tr>
+       <tr>
+	<td><code>description</code></td>
+	<td><code>string</code></td>
+	<td>Contact description (AKA background)</td>
+      </tr>
+      <tr>
+	<td><code>phones</code></td>
+	<td><code>string</code></td>
+	<td>Contact phones (comma-separated list, every item in the format <strong>"phone_type|phone_number"</strong>, list of possible phone types is attached in the further part of this document)</td>
+      </tr>
+      <tr>
+	<td><code>emails</code></td>
+	<td><code>string</code></td>
+	<td>Contact emails (comma-separated list, every item in the format <strong>"email_type|email_address"</strong>, list of possible email types is attached in the further part of this document)</td>
+      </tr>
+      <tr>
+	<td><code>urls</code></td>
+	<td><code>string</code></td>
+	<td>Contact URLs (comma-separated list, every item in the format <strong>"url_type|url_address"</strong>, list of possible email types is attached in the further part of this document)</td>
+      </tr>
+      <tr>
+	<td><code>starred</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if contact is starred</td>
+      </tr>
+      <tr>
+	<td><code>owner_id</code></td>
+	<td><code>string</code></td>
+	<td>Owner ID, defaults to logged user ID</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td><code>string</code></td>
+	<td>Contact status, if invalid, <strong>lead</strong> will be used.<br/>For possible values see the <a href="#values">values page</a>.</td>
+      </tr>
+      <tr>
+	<td><code>lead_source</code></td>
+	<td><code>string</code></td>
+	<td>Lead source.<br/>For possible values see the <a href="#values">values page</a>.</td>
+      </tr>
+      <tr>
+	<td><code>tags</code></td>
+	<td><code>string</code></td>
+	<td>Comma-separated tags list.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Detailed contact information (exactly the same as returned when <a href="#getting-contact-data">getting single contact data</a>).</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for create contact</div>
+    <script src="https://gist.github.com/OnePageCTO/5949256.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="updating-contact-data">Updating contact data</h3>
+  <p class="url"><strong>URL:</strong> /api/contacts/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <p class="overview-content">In order to update an existing contact, company or lastname need to be provided. Company name and address fields are not editable if the contact has linked company.<br/> If you want to edit those fields, edit company details instead.<br/>Note that any fields not included in the update call will be overwritten as null.<br/>The following character limits apply:</br>firstname = max 25 characters<br/>lastname = max 25 characters<br/>company name = max 55 characters</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">The same as when <a href="#creating-new-contact">creating new contact</a></td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Detailed contact information (exactly the same as returned when <a href="#getting-contact-data">getting single contact data</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for updating contact</div>
+    <script src="https://gist.github.com/OnePageCTO/5949299.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="deleting-contact">Deleting contact</h3>
+  <p class="url"><strong>URL:</strong> /api/contacts/123456789abcdef.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>  
+  <p class="overview-content">Marks the contact as deleted.The last contact deleted through the API can be undeleted with the <a href="#undo-contact-deletion">undo contact deletion</a> function. When a contact is deleted through the APi, the contact previously marked as deleted through the API is completely deleted.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for delete contact</div>
+    <script src="https://gist.github.com/OnePageCTO/5948716.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="undo-contact-deletion">Undo contact deletion</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/undo_contact_deletion.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <p class="overview-content">Undo the deletion of the last contact deleted through the API. This can't undo any deletion occuring through the web app interface.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">List of restored contacts in the same format as <em>contacts</em> element in <a href="#contacts">listing method</a> output data. When no contacts are found, an error message will be returned.</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Contacts section -->
+  
+<!-- Companies section -->
+<div class="api-element">
+  <h2 class="top-padding" id="companies">Companies</h2>
+  <h3  class="top-padding2" id="getting-list-of-companies">Getting list of companies</h3>
+  <p class="url"><strong>URL:</strong> /api/companies.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <div class="overview-content">
+    <p>Companies are the way of linking a number of contacts together. We are distinguish two types of companies:</p>
+    <ul>
+      <li>unlinked - which simply represent contacts, which are not linked with other contacts (i.e. company related to this contact has one staff member). Unlinked company ID is the same as the contact one. Only contacts with non-empty company name are assigned to unlinked companies.</li>
+      <li>linked - this type of company contains a bigger number of assigned contacts and has its own unique ID; contact which is assigned to linked company is called linked contact.</li>
+    </ul>
+    <p>Linked companies are created automatically using company name, i.e. when you’ll create contact with company name which already exists in database, such contacts will be linked</p>
+  </div>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>linked</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if linked (<em>true</em>) or (<em>unlinked</em>) companies should be shown, defaults to <em>true</em>.</td>
+      </tr>
+      <tr>
+	<td><code>page_number</code></td>
+	<td><code>integer</code></td>
+	<td>Listing page number (first page = 1), defaults to 1</td>
+      </tr>
+      <tr>
+	<td><code>page_size</code></td>
+	<td><code>integer</code></td>
+	<td>Listing page size (number from 1 to 100, defaults to 50)</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: <br/>array of elements describing single company, where single element has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Company ID</td>
+      </tr>
+      <tr>
+	<td><code>linked</code></td>
+	<td><code>boolean</code></td>
+	<td>Information if company is linked one</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+      <tr>
+	<td><code>contacts_count</code></td>
+	<td><code>integer</code></td>
+	<td>Number of contacts assigned to this company</td>
+      </tr>
+      <tr>
+	<td><code>phone</code></td>
+	<td><code>string</code></td>
+	<td>Company phone number</td>
+      </tr>
+      <tr>
+	<td><code>address</code></td>
+	<td><code>string</code></td>
+	<td>Address</td>
+      </tr>
+      <tr>
+	<td><code>city</code></td>
+	<td><code>string</code></td>
+	<td>City part of the address</td>
+      </tr>
+      <tr>
+	<td><code>state</code></td>
+	<td><code>string</code></td>
+	<td>State part of the address</td>
+      </tr>
+      <tr>
+	<td><code>zip</code></td>
+	<td><code>string</code></td>
+	<td>Zip code part of the address</td>
+      </tr>
+      <tr>
+	<td><code>country</code></td>
+	<td><code>string</code></td>
+	<td>Country code part of the address</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of companies.</div>
+    <script src="https://gist.github.com/OnePageCTO/5948900.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="getting-single-company-details">Getting single company details</h3>
+  <p class="url"><strong>URL:</strong> /api/companies/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Given company details. Response format is the same as when retrieving full list of companies, except that it contains one additional element contacts, which is an array of contacts details assigned to this company. This array element is the same format as when getting list of contacts using <em>/api/contacts.format</em> method.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single company details.</div>
+    <script src="https://gist.github.com/1245043.js?file=get_single_company.json"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  
+  <h3  class="top-padding2" id="creating-and-updating-companies">Creating and updating companies</h3>
+  <p>There is no method for creating and updating companies. In order to modify such make some changes on related contacts</p>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Companies section -->
+  
+<!-- Contact notes section -->
+<div class="api-element">
+  <h2 class="top-padding" id="contact-notes">Contact notes</h2>
+  <h3  class="top-padding2" id="contact-notes-list">Getting list of contact notes</h3>
+  <p class="url"><strong>URL:</strong> /api/notes.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Resource which contains all notes for specific contact.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: <br/>Full list of contact notes. Every list item has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Note ID</td>
+      </tr>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>body</code></td>
+	<td><code>string</code></td>
+	<td>Note body</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>date</code></td>
+	<td>Note date</td>
+      </tr>
+      <tr>
+	<td><code>contact</code></td>
+	<td><code>hash</code></td>
+	<td>(Only when note data is returned by sales methods) Contact specific data. This element will be described in the table below.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Element contact has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>Contact firstname</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>Contact lastname</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of contact notes</div>
+    <script src="https://gist.github.com/OnePageCTO/5949193.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="single-note-details">Getting single note details</h3>
+  <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Note details (format the same as in <a href="#contact-notes">previous subsection</a>)</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single note details</div>
+    <script src="https://gist.github.com/OnePageCTO/5949191.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="create-new-note">Create new note</h3>
+  <p class="url"><strong>URL:</strong> /api/notes.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">In order to create a new note, the body, cid and date fields need to be provided.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>body</code></td>
+	<td><code>string</code></td>
+	<td>Note body</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>string</code></td>
+	<td>Note date</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Note details (see <a href="#contact-notes">previous subsection</a> for element description)</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for create new note</div>
+    <script src="https://gist.github.com/OnePageCTO/5949276.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="">Updating existing note</h3>
+  <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <p class="overview-content">In order to update an existing note, the body, cid and date fields need to be provided.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">The same as when <a href="#create-new-note">creating new note</a>, except <em>cid parameter</em></td>
+      </tr>
+      </tbody>
+	</table>
+	<table class="table table-striped table-bordered">
+	<caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Note details (see <a href="#contact-notes">previous subsection</a> for element description)</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for updating existing note</div>
+    <script src="https://gist.github.com/OnePageCTO/5949306.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="deleting-note">Deleting note</h3>
+  <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for deleting note</div>
+    <script src="https://gist.github.com/OnePageCTO/5948729.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Contact notes section -->
+  
+<!-- Contact deals section -->
+<div class="api-element">
+  <h2 class="top-padding" id="contact-deals">Contact deals</h2>
+  <h3  class="top-padding2" id="contact-deals-list">Getting list of contact deals</h3>
+  <p class="url"><strong>URL:</strong> /api/deals.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Resource which contains all deals related to specific contact.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data: <br/>List of contact deals. Every item has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Deal ID</td>
+      </tr>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Deal name</td>
+      </tr>
+      <tr>
+	<td><code>body</code></td>
+	<td><code>string</code></td>
+	<td>Deal body</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>date</code></td>
+	<td>Deal date</td>
+      </tr>
+      <tr>
+	<td><code>amount</code></td>
+	<td><code>floate</code></td>
+	<td>Deal amount</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td><code>string</code></td>
+	<td>Deal status; one of values: <em>won, lost, pending</em></td>
+      </tr>
+      <tr>
+	<td><code>closed</code></td>
+	<td><code>date</code></td>
+	<td>Deal close date; usable only for <em>won</em> and <em>lost</em> deals.</td>
+      </tr>
+      <tr>
+	<td><code>stage</code></td>
+	<td><code>integer</code></td>
+	<td>Deal stage; present only for pending deals and when full pipeline mode is turned on; one of the values: <em>10, 25, 50, 75, 90</em></td>
+      </tr>
+      <tr>
+	<td><code>exp_close</code></td>
+	<td><code>date</code></td>
+	<td>Pending deal expected close date; present only for pending deals except situation when pipeline mode is turned off</td>
+      </tr>
+      <tr>
+	<td><code>contact</code></td>
+	<td><code>hash</code></td>
+	<td>Contactdata</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Element <em>contact</em> has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>firstname</code></td>
+	<td><code>string</code></td>
+	<td>Contact firstname</td>
+      </tr>
+      <tr>
+	<td><code>lastname</code></td>
+	<td><code>string</code></td>
+	<td>Contact lastname</td>
+      </tr>
+      <tr>
+	<td><code>company</code></td>
+	<td><code>string</code></td>
+	<td>Company name</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of contact deals</div>
+    <script src="https://gist.github.com/OnePageCTO/5948929.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="single-deal-details">Getting single deal details</h3>
+  <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">Deal details (format the same as in <a href="#contact-deals">previous subsection</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single deal details</div>
+    <script src="https://gist.github.com/OnePageCTO/5948925.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="creating-contact-deal">Creating contact deal</h3>
+  <p class="url"><strong>URL:</strong> /api/deal.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">In order to create a new deal, the name, cid, amount and date fields need to be provided.<br/>The following character limits apply:</br>name = max 30 characters</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Deal name</td>
+      </tr>
+      <tr>
+	<td><code>body</code></td>
+	<td><code>string</code></td>
+	<td>Deal body</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>date</code></td>
+	<td>Deal date</td>
+      </tr>
+      <tr>
+	<td><code>amount</code></td>
+	<td><code>floate</code></td>
+	<td>Deal amount</td>
+      </tr>
+      <tr>
+	<td><code>status</code></td>
+	<td><code>string</code></td>
+	<td>Deal status; one of values: <em>won, lost, pending</em></td>
+      </tr>
+      <tr>
+	<td><code>stage</code></td>
+	<td><code>integer</code></td>
+	<td>Deal stage; present only for pending deals and when full pipeline mode is turned on; one of the values: <em>10, 25, 50, 75, 90</em></td>
+      </tr>
+      <tr>
+	<td><code>exp_close</code></td>
+	<td><code>date</code></td>
+	<td>Pending deal expected close date; present only for pending deals except situation when pipeline mode is turned off</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: <br/>List of contact deals. Every item has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Created deal details (see <a href="#contact-deals">previous subsection</a> for element description).</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for creating contact deal</div>
+    <script src="https://gist.github.com/OnePageCTO/5949259.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="updating-deal-data">Updating deal data</h3>
+  <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <p class="overview-content">In order to update an existing deal, the name, cid, amount and date fields need to be provided.<br/>Note that any fields not included in the update call will be overwritten as null or default values.<br/>The following character limits apply:</br>name = max 30 characters</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">The same as when creating deal, except <em>cid</em> parameter.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for updating deal data</div>
+    <script src="https://gist.github.com/OnePageCTO/5949301.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="deleting-deal">Deleting deal</h3>
+  <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for deleting deal</div>
+    <script src="https://gist.github.com/OnePageCTO/5948725.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Contact deals section -->
+  
+<!-- Contact action section -->
+<div class="api-element">
+  <h2 class="top-padding" id="contact-actions">Contact actions</h2>
+  <h3  class="top-padding2" id="contact-actions-list">Getting list of contact actions</h3>
+  <p class="url"><strong>URL:</strong> /api/actions.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Methods relating to Contact Actions are divided into two parts: typical RESTful methods and some additional methods available through standard HTTP calls which are making action management easier.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: List of all contact actions</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Action ID</td>
+      </tr>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>assignee_id</code></td>
+	<td><code>string</code></td>
+	<td>Assignee ID: ID of user to whom this action is assigned, if nil then the action is unassigned</td>
+      </tr>
+      <tr>
+	<td><code>name</td>
+	<td><code>string</code></td>
+	<td>Action name/text</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>string</code></td>
+	<td>Action date; nil if action has no date or is marked as &quot;next&quot; action</td>
+      </tr>
+      <tr>
+	<td><code>next</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action is marked as &quot;next&quot;</td>
+      </tr>
+      <tr>
+	<td><code>waiting</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action should be marked as &quot;waiting for&quot;. Note: <em>next</em> and <em>waiting</em> parameters cannot be both true.</td>
+      </tr>
+      <tr>
+	<td><code>done</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if action is done; there may only be one undone action per user per contact.</td>
+      </tr>
+      <tr>
+	<td><code>closed</code></td>
+	<td><code>time</code></td>
+	<td>Time when action was marked as done.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of contact actions</div>
+    <script src="https://gist.github.com/OnePageCTO/5948889.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="information-about-specific-action">Get information about specific action</h3>
+  <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Single action element. See <a href="#contact-actions">previous subsection</a> in order to get element content description.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting information about single action</div>
+    <script src="https://gist.github.com/OnePageCTO/5948885.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="create-new-action">Create new action</h3>
+  <p class="url"><strong>URL:</strong> /api/actions.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>The following character limits apply:</br>name = max 140 characters</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Action ID</td>
+      </tr>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>assignee_id</code></td>
+	<td><code>string</code></td>
+	<td>Assignee ID: ID of user to whom this action is assigned, if nil then the action is unassigned</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Action name/text</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>string</code></td>
+	<td>Action date; nil if action has no date or is marked as &quot;next&quot; action</td>
+      </tr>
+      <tr>
+	<td><code>next</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action is marked as &quot;next&quot;</td>
+      </tr>
+      <tr>
+	<td><code>waiting</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action should be marked as &quot;waiting for&quot;. Note: <em>next</em> and <em>waiting</em> parameters cannot be both true.</td>
+      </tr>
+      <tr>
+	<td><code>done</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if action is done; there may only be one undone action per user per contact.</td>
+      </tr>
+      <tr>
+	<td><code>closed</code></td>
+	<td><code>time</code></td>
+	<td>Time when action was marked as done.</td>
+      </tr>
+      <tr>
+	<td><code>unassigned</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if the action shouldd be marked as unassigned.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">New action element; see <a href="#contact-actions">previous subsection</a> in order to get element content description.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for create new action</div>
+    <script src="https://gist.github.com/OnePageCTO/5949242.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="updating-action-data">Updating action data</h3>
+  <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>Note that any fields not included in the update call will be overwritten as null.<br/>The following character limits apply:</br>name = max 140 characters</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Action ID</td>
+      </tr>
+      <tr>
+	<td><code>cid</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>assignee_id</code></td>
+	<td><code>string</code></td>
+	<td>Assignee ID: ID of user to whom this action is assigned</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Action name/text</td>
+      </tr>
+      <tr>
+	<td><code>date</code></td>
+	<td><code>string</code></td>
+	<td>Action date; nil if action has no date or is marked as &quot;next&quot; action</td>
+      </tr>
+      <tr>
+	<td><code>next</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action is marked as &quot;next&quot;</td>
+      </tr>
+      <tr>
+	<td><code>waiting</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if this action should be marked as &quot;waiting for&quot;. Note: <em>next</em> and <em>waiting</em> parameters cannot be both true.</td>
+      </tr>
+      <tr>
+	<td><code>done</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if action is done; there may only be one undone action per user per contact.</td>
+      </tr>
+      <tr>
+	<td><code>closed</code></td>
+	<td><code>time</code></td>
+	<td>Time when action was been marked as done.</td>
+      </tr>
+      <tr>
+	<td><code>unassigned</code></td>
+	<td><code>boolean</code></td>
+	<td>True (1) if the action shouldd be marked as unassigned.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">New action element; see <a href="#contact-actions">previous subsection</a> in order to get element content description.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for updating action data</div>
+    <script src="https://gist.github.com/OnePageCTO/5949290.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="delete-contact-action">Delete contact action</h3>
+  <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>
+  <p class="overview-content">Only done actions can be deleted</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for delete contact action</div>
+    <script src="https://gist.github.com/OnePageCTO/5948714.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="mark-current-action-as-done">Mark current action as done</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/mark_action_as_done.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">Mark an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cid</code></td>
+        <td><code>string</code></td>
+        <td>Contact ID: Contact for whom the next action assigned to you(logged in user) will be marked as completed</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Done action element. see <a href="#contact-actions">previous subsection</a> in order to get element content description.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for mark current action as done</div>
+    <script src="https://gist.github.com/OnePageCTO/5949265.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="undo-marking-action-as-done">Undo marking action as done</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/undo_action_completion.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <p class="overview-content">Undo marking an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cid</code></td>
+        <td><code>string</code></td>
+        <td>Contact ID: Contact for whom the most recently closed action assigned to you(the logged in user) will be re opened, unless a new action has already been created.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Reopened action element. See <a href="#contact-actions">previous subsection</a> in order to get information about element content description.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for undo marking action as done</div>
+    <script src="https://gist.github.com/OnePageCTO/5949272.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Contact action section -->
+
+<!-- Predefined sales actions section -->
+<div class="api-element">
+<h2 class="top-padding" id="predefined-sales-actions">Predefined sales actions</h2>
+<h3  class="top-padding2" id="predefined-sales-actions-list">Get list of predefined sales actions</h3>
+  <p class="url"><strong>URL:</strong> /api/predefined_actions.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Predefined sales actions allow user to predefine some mostly used next action names, which will be displayed in autocompletion list when creating/updating next action data.
+Predefined action name allows to use special markers (i.e. <em>[Firstname]</em> - square brackets are important here) which will be replaced with specified contact details.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Predefined sales action ID</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Predefined sales action name</td>
+      </tr>
+      <tr>
+	<td><code>days</code></td>
+	<td><code>integer</code></td>
+	<td>Number of days which will be used to compute next action date</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of predefined sales actions</div>
+    <script src="https://gist.github.com/OnePageCTO/5949201.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="single-predefined-sales-action-details">Get single predefined sales action details</h3>
+  <p class="url"><strong>URL:</strong> /api/predefined_actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Predefined sales action details. See <a href="#predefined-sales-actions">previous subsection</a> for element description.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single predefined sales action details</div>
+    <script src="https://gist.github.com/OnePageCTO/5949197.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="create-predefined-sales-action">Create predefined sales action</h3>
+  <p class="url"><strong>URL:</strong> /api/predefined_actions.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Predefined sales action name</td>
+      </tr>
+      <tr>
+	<td><code>days</code></td>
+	<td><code>integer</code></td>
+	<td>Number of days which will be used to compute next action date; negative number is not allowed here;</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Created sales action details. See <a href="#predefined-sales-actions">previous subsection</a> for element description.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for creating predefined sales action</div>
+    <script src="https://gist.github.com/OnePageCTO/5949281.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="update-predefined-sales-action-data">Update predefined sales action data</h3>
+  <p class="url"><strong>URL:</strong> /api/predefined_actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Predefined sales action name</td>
+      </tr>
+      <tr>
+	<td><code>days</code></td>
+	<td><code>integer</code></td>
+	<td>Number of days which will be used to compute next action date; negative number is not allowed here;</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Updated sales action details. See <a href="#predefined-sales-actions">previous subsection</a> for element description.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for updating predefined sales action data</div>
+    <script src="https://gist.github.com/OnePageCTO/5949364.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="delete-predefined-sales-action">Delete predefined sales action</h3>
+  <p class="url"><strong>URL:</strong> /api/predefined_actions/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+       </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for deleting predefined sales action data</div>
+    <script src="https://gist.github.com/OnePageCTO/5948731.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Predefined sales actions section -->
+
+<!-- User custom tags section -->
+<div class="api-element">
+  <h2 class="top-padding" id="user-custom-tags">User custom tags</h2>
+  <p class="overview-content">This section describes methods which allow custom tags to be modified (i.e. those which can be added/edited/deleted by user).<br /><br />When speaking about 'tag element' further in this document, we mean that it is consisted of two elements:</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>tag name</td>
+      </tr>
+       <tr>
+	<td><code>count</code></td>
+	<td><code>integer</code></td>
+	<td>tag usage count</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Please also note that any action which modifies tags will not return any result but tags optional result element will be returned with “fresh” tags state.</p>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="list-all-custom-tags">List all custom tags</h3>
+  <p class="url"><strong>URL:</strong> /api/tags.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">List of elements describing all custom tags.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for list all custom tags</div>
+  <script src="https://gist.github.com/OnePageCTO/5949238.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="information-about-specific-tag">Get information about specific tag</h3>
+  <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">Element describing specified tag</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for information about single tag</div>
+    <script src="https://gist.github.com/OnePageCTO/5949235.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="create-new-tag">Create new tag</h3>
+  <p class="url"><strong>URL:</strong> /api/tags.format</p>
+  <p class="method"><strong>Method:</strong> POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>New tag name.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for create new tag</div>
+    <script src="https://gist.github.com/OnePageCTO/5949286.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="change-existing-tag-name">Change existing tag name</h3>
+  <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
+  <p class="method"><strong>Method:</strong> PUT</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>New tag name.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for change existing tag name.</div>
+    <script src="https://gist.github.com/OnePageCTO/5949365.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="delete-existing-tag">Delete existing tag</h3>
+  <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
+  <p class="method"><strong>Method:</strong> DELETE</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for delete existing tag</div>
+    <script src="https://gist.github.com/OnePageCTO/5948736.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="assign-single-tag-to-contact">Assign single tag to a contact</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/assign_tag.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>id</code></td>
+	<td><code>string</code></td>
+	<td>Contact ID</td>
+      </tr>
+      <tr>
+	<td><code>name</code></td>
+	<td><code>string</code></td>
+	<td>Tag name.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for assign single tag to a contact</div>
+    <script src="https://gist.github.com/OnePageCTO/5949181.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="unassign-tag-from-contact">Unassign tag from contact</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/unassign_tag.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>id</code></td>
+        <td><code>string</code></td>
+        <td>Contact ID</td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>Tag name.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for unassign tag from contact</div>
+    <script src="https://gist.github.com/OnePageCTO/5949185.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="remove-unused-tags">Remove unused tags</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/remove_unused_tags.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't produce any output data.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for removing unused tag</div>
+    <script src="https://gist.github.com/OnePageCTO/5949183.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /User custom tags section -->
+
+<!-- Custom filters section -->
+<div class="api-element">
+  <h2 class="top-padding" id="custom-filters">Custom filters</h2>
+  <h3  class="top-padding2" id="custom-filters-list">Getting list of custom filters</h3>
+  <p class="url"><strong>URL:</strong> /api/filters.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <p class="overview-content">Custom filters allow to store predefined contact shortlists (e.g. showing only Prospects with pending deals)</p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+  <caption>Output data: <br/>Full list of custom filters. Every list item has following format:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>id</code></td>
+        <td><code>string</code></td>
+        <td>Filter ID</td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>Filter name</td>
+      </tr>
+      <tr>
+        <td><code>contacts</code></td>
+        <td><code>array[string]</code></td>
+        <td>Array of contact statuses, which should be shown</td>
+      </tr>
+      <tr>
+        <td><code>tags</code></td>
+        <td><code>array[string]</code></td>
+        <td>Tag names</td>
+      </tr>
+      <tr>
+        <td><code>deals</code></td>
+        <td><code>array[string]</code></td>
+        <td>Only contacts which have deals with given statuses will be shown</td>
+      </tr>
+      <tr>
+        <td><code>starred</code></td>
+        <td><code>boolean</code></td>
+        <td>When true, only starred contacts will be fetched</td>
+      </tr>
+      <tr>
+        <td><code>address</code></td>
+        <td><code>hash</code></td>
+        <td>
+          Information which address field will be filtered. Contains from two elements: 
+          <i>type</i> which describes field type and <i>value</i> which contains filtered 
+          field value. <i>type</i> can be one of the following:
+          <ul>
+            <li><i>country_code</i> (ISO country code),</li>
+            <li><i>city_state</i> (city or state/region) or</li>
+            <li><i>zip_code</i> (ZIP/postal code).</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting list of contact notes</div>
+    <script src="https://gist.github.com/OnePageCTO/5948941.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="single-filter-details">Getting single filter details</h3>
+  <p class="url"><strong>URL:</strong> /api/filters/1234567890abcdef.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+      </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Requested filter details. See <a href="#custom-filters">previous subsection</a> in order to get response data deatils.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting single note details</div>
+    <script src="https://gist.github.com/OnePageCTO/5948938.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Custom filters section -->
+
+<!-- Settings methods section -->
+<div class="api-element">
+<h2 class="top-padding" id="settings-methods">Settings methods</h2>
+  <h3  class="top-padding2" id="user-settings">User settings</h3>
+  <p class="url"><strong>URL:</strong> /api/settings/user.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <p class="overview-content">Methods responsible for account settings work in following way:<br />
+    - GET method reads settings data<br />
+    - POST method updates settings data<br />  <br />
+    Note: The company field can only be edited by the account owner
+  </p>
+  <table class="table table-striped table-bordered">
+  <caption>Input parameters/output data:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>firstname</code></td>
+        <td><code>string</code></td>
+        <td>User’s firstname</td>
+      </tr>
+      <tr>
+        <td><code>lastname</code></td>
+        <td><code>string</code></td>
+        <td>User’s lastname</td>
+      </tr>
+      <tr>
+        <td><code>company</code></td>
+        <td><code>string</code></td>
+        <td>User’s company/business name</td>
+      </tr>
+      <tr>
+        <td><code>email</code></td>
+        <td><code>string</code></td>
+        <td>User’s email</td>
+      </tr>
+      <tr>
+        <td><code>bcc_email</code></td>
+        <td><code>string</code></td>
+        <td>User’s custom dropbox email address. If you want to generate new one, put "new" word as a parameter value here.</td>
+      </tr>
+      <tr>
+        <td><code>password</code></td>
+        <td><code>string</code></td>
+        <td>(input only) New password (leave empty if password has to be untouched)</td>
+      </tr>
+      <tr>
+        <td><code>confirm_password</code></td>
+        <td><code>string</code></td>
+        <td>(input only) New password confirmation</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for user settings</div>
+    <script src="https://gist.github.com/OnePageCTO/5949229.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="system-settings">System settings</h3>
+  <p class="url"><strong>URL:</strong> /api/settings/system.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <p class="overview-content">Methods responsible for account settings work in following way:<br />
+    - GET method reads settings data<br />
+    - POST method updates settings data<br />  <br />
+    Note: All variables need to be present for a POST to succeed. For valid currencies and timezones, see <a href="#other-methods">other methods</a>.</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters/output data:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>status</code></td>
+        <td><code>string</code></td>
+        <td>Customer label. Whole list of possible values is available on the end of this document. Defaults to <em>customer</em></td>
+      </tr>
+      <tr>
+        <td><code>reminder_type</code></td>
+        <td><code>string</code></td>
+        <td>Information when to send "daily emails" to the user. One of the values: <em>never, every_day</em> (send email every day with a list of today’s, late and next actions) or <em>new_task</em> (send emails only when there are actions with todays date). Defaults to <em>new_task</em>.</td>
+      </tr>
+      <tr>
+        <td><code>reminder_hour</code></td>
+        <td><code>integer</code></td>
+        <td>Hour when daily email should be sent (value between 0 and 23). Defaults to 6</td>
+      </tr>
+      <tr>
+        <td><code>timezone</code></td>
+        <td><code>string</code></td>
+        <td>User timezone code. See 'Other methods' section in order to get information how to obtain full list of supported timezones. Defaults to pacifictimeusacanada</td>
+      </tr>
+      <tr>
+        <td><code>currency</code></td>
+        <td><code>string</code></td>
+        <td>User currency code. See 'Other methods' section in order to get information how to obtain full list of supported currencies. Defaults to USD</td>
+      </tr>
+      <tr>
+        <td><code>date_format</code></td>
+        <td><code>string</code></td>
+        <td>User date format. Possible values (%d - day, %m - month, %Y - year): %d/%m/%Y, %m/%d/%Y. Defaults to the second one.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for system settings</div>
+    <script src="https://gist.github.com/OnePageCTO/5949226.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="basic-subscription-data">Basic subscription data</h3>
+  <p class="url"><strong>URL:</strong> /api/settings/subscription.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td><code>string</code></td>
+        <td>Account type. One of the values: <em>trial, free</em> or <em>pro</em></td>
+      </tr>
+      <tr>
+        <td><code>expiry</code></td>
+        <td><code>date</code></td>
+        <td>(only for trial accounts) Trial account expiration date</td>
+      </tr>
+      <tr>
+        <td><code>currency</code></td>
+        <td><code>string</code></td>
+        <td>(only for pro accounts) Currency symbol used for subscription payment</td>
+      </tr>
+      <tr>
+        <td><code>price</code></td>
+        <td><code>float</code></td>
+        <td>(only for pro accounts) Next billing amount</td>
+      </tr>
+      <tr>
+        <td><code>date</code></td>
+        <td><code>date</code></td>
+        <td>(only for pro accounts) Next billing date</td>
+      </tr>
+      <tr>
+        <td><code>cctype</code></td>
+        <td><code>string</code></td>
+        <td>(only for pro accounts) CC type used for payments (VISA or MC)</td>
+      </tr>
+      <tr>
+        <td><code>ccnumber</code></td>
+        <td><code>string</code></td>
+        <td>(only for pro accounts) last 4 digits of CC used for payments</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for basic subscription data</div>
+    <script src="https://gist.github.com/OnePageCTO/5949224.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Settings methods section -->
+
+<!-- Sales methods section -->
+<div class="api-element">
+  <h2 class="top-padding" id="sales-methods">Sales method</h2>
+  <h3  class="top-padding2" id="sales-summary">Sales summary</h3>
+  <p class="url"><strong>URL:</strong> /api/sales/index.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>breakdown</code></td>
+        <td><code>hash</code></td>
+        <td>Current sales breakdown data. It contains 3 elements with keys: <em>30days, 60days</em> and <em>90days</em> containg data respectively for 30, 60 and 90 days. Every element contains two keys: <em>won</em> and <em>lost</em>, which contain total deal amount of given type from given period</td>
+      </tr>
+      <tr>
+        <td><code>closed</code></td>
+        <td><code>array</code></td>
+        <td>List of last 10 closed deals. See section describing contact notes in order to get element content description.</td>
+      </tr>
+      <tr>
+        <td><code>pending</code></td>
+        <td><code>array</code></td>
+        <td>All pending deals. See section describing contact notes in order to get element content description.</td>
+      </tr>
+      <tr>
+        <td><code>target</code></td>
+        <td><code>hash</code></td>
+        <td>Informations about current sales target. It contains 2 elements: <em>type</em> - period type (string, <em>quarterly</em> or <em>monthly</em>) and <em>amount</em> - which is actual sales target amount.</td>
+      </tr>
+      <tr>
+        <td><code>pipeline_mode</code></td>
+        <td><code>string</code></td>
+        <td>Current pipeline mode (<em>off, simple</em> or <em>full</em>).</td>
+      </tr>
+      <tr>
+        <td><code>hitting_history</td>
+        <td><code>array</code></td>
+        <td>Four-element array where every one contains sales hitting history for last 4 sales periods (quarters or months). First element contains data from the oldest period, and the last one contains data from the current one. Every element contains two elements: <em>target</em> which is historical sales target for given period and <em>actual</em> which is sales target worked out in given period (calculated as a sum of won deals amount).</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for sales method</div>
+    <script src="https://gist.github.com/OnePageCTO/5949210.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="all-closed-deals">Get all closed deals</h3>
+  <p class="url"><strong>URL:</strong> /api/sales/closed_deals.format</p>
+  <p class="method"><strong>Method:</strong> GET/POST</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">Array of all closed deals; see <a href="#contact-notes">contact notes</a> section in order to get element content description.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting all closed deals</div>
+    <script src="https://gist.github.com/OnePageCTO/5949208.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Sales methods section -->
+
+<!-- Other methods section -->
+<div class="api-element">
+  <h2 class="top-padding" id="other-methods">Other methods</h2>
+  <h3  class="top-padding2" id="supported-timezones">Get list of supported timezones</h3>
+  <p class="url"><strong>URL:</strong> /api/settings/timezone_list.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: Array of elements describing single timezone:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>code</code></td>
+        <td><code>string</code></td>
+        <td>Timezone code used by application</td>
+      </tr>
+      <tr>
+        <td><code>offset</code></td>
+        <td><code>string</code></td>
+        <td>Timezone offset from UTC in format HH:MM (e.e. +02:00, -06:00)</td>
+      </tr>
+      <tr>
+        <td><code>system</code></td>
+        <td><code>string</code></td>
+        <td>Commonly used timezone name in various systems</td>
+      </tr>
+      <tr>
+        <td><code>translation</code></td>
+        <td><code>string</code></td>
+        <td>English translation of timezone name</td>
+      </tr>
+      </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for supported timezones</div>
+    <script src="https://gist.github.com/OnePageCTO/5949216.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="supported-currencies">Get list of supported currencies</h3>
+  <p class="url"><strong>URL:</strong> /api/settings/currency_list.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data: <br/>Array with information about supported currencies. Every element has following format:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>code</code></td>
+        <td><code>string</code></td>
+        <td>3-letter ISO currency code (e.g. USD, EUR)</td>
+      </tr>
+      <tr>
+        <td><code>short</code></td>
+        <td><code>string</code></td>
+        <td>Short currency symbol (e.g. $)</td>
+      </tr>
+      <tr>
+        <td><code>long</code></td>
+        <td><code>string</code></td>
+        <td>Long currency symbol (e.g. &quot;$ - USD&quot;)</td>
+      </tr>
+      </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for supported currencies</div>
+    <script src="https://gist.github.com/OnePageCTO/5949219.js"></script>
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+  
+  <h3  class="top-padding2" id="current-api-version">Get current API version</h3>
+  <p class="url"><strong>URL:</strong> /api/misc/api_version.format</p>
+  <p class="method"><strong>Method:</strong> GET</p>
+  <table class="table table-striped table-bordered">
+    <caption>Input parameters:</caption>
+    <thead>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td colspan="3">This method doesn't require any inputs parameters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Output data:</caption>	
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>version</code></td>
+        <td><code>string</code></td>
+        <td>Current API version</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Sample from GitHub -->
+  <div class="sample-code">
+    <div class="sample-code-title">Sample JSON server response for getting current API version</div>
+    <script src="https://gist.github.com/OnePageCTO/5949178.js"></script> 
+  </div>
+  <!-- /Sample from GitHub -->
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+<!-- /Other methods section -->
+
+<div class="api-element">
+  <h2 class="top-padding" id="values">Possible values of some variables</h2>
+  <h3  class="top-padding2" id="contact-statuses">Contact statuses</h3>
+  <p><strong>Every contact can have one of the following statuses:</strong></p>
+  <p><strong>Note:</strong> These can be changed in <a href="https://app.onepagecrm.com/account/preferences">your settings</a>, but they will still be accessible by their default names.</p>
+  <ul class="list">
+    <li>lead</li>
+    <li>prospect</li>
+    <li>customer</li>
+    <li>inactive</li>
+    <li>general</li>
+  </ul>
+  <h3  class="top-padding2" id="contact-lead-source">Contact Lead Source</h3>
+  <p><strong>Every contact can have one of the following lead sources:</strong></p>
+  <p><strong>Note:</strong> These can be changed in <a href="https://app.onepagecrm.com/account/preferences">your settings</a>, but they will still be accessible by their default names.</p>
+  <ul class="list">
+    <li>advertisement</li>
+    <li>email_web</li>
+    <li>list_generation</li>
+    <li>partner</li>
+    <li>referral</li>
+    <li>seminar</li>
+    <li>social</li>
+    <li>tradeshow</li>
+    <li>word_of_mouth</li>
+    <li>other</li>
+  </ul>
+  <h3  class="top-padding2" id="email-types">Possible email types</h3>
+  <ul class="list">
+    <li>work</li>
+    <li>home</li>
+    <li>other</li>	
+  </ul>
+  <h3  class="top-padding2" id="phone-types">Possible phone types</h3>
+  <ul class="list">
+    <li>work</li>
+    <li>mobile</li>
+    <li>home</li>
+    <li>direct</li>
+    <li>fax</li>
+    <li>other</li>
+  </ul>
+  <h3  class="top-padding2" id="url-types">Possible URL types</h3>
+  <ul class="list">
+    <li>website</li>
+    <li>blog</li>
+    <li>twitter</li>
+    <li>linkedin</li>
+    <li>facebook</li>
+    <li>other</li>
+  </ul>
+</div>
+
+<div class="api-element">
+  <h2 class="top-padding" id="response-codes">API Response Codes</h2>
+  <table class="table table-striped table-bordered">
+    <caption>API Error Status Codes</caption>
+    <thead>
+      <tr>
+	<td>status</td>
+	<td>message</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td><code>0</code></td>
+	<td>OK (no error - returned with successfull response)</td>
+      </tr>
+      <tr>
+	<td><code>101</code></td>
+	<td>Expired (regarding to auth signature)</td>
+      </tr>
+      <tr>
+	<td><code>102</code></td>
+	<td>Account inactive or blocked</td>
+      </tr>
+      <tr>
+	<td><code>103</code></td>
+	<td>Invalid login details</td>
+      </tr>
+      <tr>
+	<td><code>104</code></td>
+	<td>Invalid authorization token</td>
+      </tr>
+      <tr>
+	<td><code>105</code></td>
+	<td>Authorization data not found</td>
+      </tr>
+      <tr>
+	<td><code>106</code></td>
+	<td>Requested resource has not been found</td>
+      </tr>
+      <tr>
+	<td><code>107</code></td>
+	<td>Trying to add existing resource / Resource with given details already exists</td>
+      </tr>
+      <tr>
+	<td><code>108</code></td>
+	<td>Invalid request data</td>
+      </tr>
+      <tr>
+	<td><code>109</code></td>
+	<td>Incomplete request data</td>
+      </tr>
+      <tr>
+	<td><code>201</code></td>
+	<td>Cannot proceed requested operation. User exceeded allowed number of contacts</td>
+      </tr>
+      <tr>
+	<td><code>202</code></td>
+	<td>Cannot proceed requested operation. User has exceeded allowed number of given resource</td>
+      </tr>
+      <tr>
+	<td><code>999</code></td>
+	<td>Internal server error. Please contact with OnePageCRM support team.</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
+</div>
+
+<div class="api-element"> 
+  <h2 class="top-padding" id="version-history">Version History</h2>
+  <p>See the version history of the OnePage API below.</p>
+  <table class="table table-striped table-bordered">
+  <caption>History of changes</caption>
+    <thead>
+      <tr>
+	<td width="50">Version</td>
+	<td width="100">Date</td>
+	<td width="100">Who</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td>1.1</td>
+	<td>JUL 02.2011</td>
+	<td>Paweł Smoliński</td>
+	<td>Replaced <em>website</em> attribute in contacts data with <em>urls</em> array</td>
+      </tr>
+      <tr>
+	<td>1.1.1</td>
+	<td>JUL 07.2011</td>
+	<td>Paweł Smoliński</td>
+	<td>Added two methods for:
+	  <ul>
+	    <li>undo contact deletion</li>
+	    <li>information about API version</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>SEP 27.2011</td>
+        <td>Paweł Smoliński</td>
+        <td>
+          <ul>
+            <li>&quot;waiting for&quot; contact actions</li>
+            <li>custom filters</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>1.3</td>
+        <td>NOV 07.2011</td>
+        <td>Paweł Smoliński</td>
+        <td>Added deal stages functionallity.</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>FEB 06.2012</td>
+        <td>Paweł Smoliński</td>
+        <td>
+          <ul>
+            <li>sales pipeline</li>
+            <li>linked companies</li>
+	    <li>small changes which reflects modifications in sales performance page</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>MAR 20.2012</td>
+        <td>Paweł Smoliński</td>
+        <td>
+          <ul>
+            <li>changes in contacts</li>
+            <li>some methods are available only with POST requests</li>
+	    <li>automated company linking</li>
+	    <li>team mode</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>APR 05.2012</td>
+        <td>Paweł Smoliński</td>
+        <td>
+          <ul>
+            <li>deals/notes separation</li>
+            <li>minor fixes</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2.2</td>
+        <td>JUN 06.2012</td>
+        <td>Paweł Smoliński</td>
+        <td>
+          <ul>
+            <li>new resource: predefined sales actions</li>
+            <li>removed feedback message sending functionallity</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>2.3</td>
+        <td>JUL 04.2013</td>
+        <td>Liam Krewer</br>Ruairi Fahy</td>
+        <td>
+          <ul>
+            <li>multiple next actions</li>
+            <li>fixed settings & misc for app updates</li>
+            <li>minor fixes</li>
+            <li>removed outdated functions.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $('body').scrollspy({ 
+    target: '#api2-nav',
+    offset: 50
+  })
+
+</script>
