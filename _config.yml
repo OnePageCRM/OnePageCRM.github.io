@@ -33,3 +33,12 @@ authors:
     github: peterOnePageCRM
     description: 'Peter is a developer at OnePageCRM.'
     image: '/img/peter.jpg'
+  pawel:
+    name: Paweł Smoliński
+    display_name: Paweł
+    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
+    email: pawel@onepagecrm.com
+    web: http://www.onepagecrm.com
+    github: ZipoKing
+    twitter: ZipoKing
+    description: "Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it."
