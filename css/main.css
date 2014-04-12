@@ -184,25 +184,29 @@ white-space: normal;
 .blog-element {
   margin-bottom: 20px;
   padding-top: 10px;
-  border-bottom: 1px solid #e2e2e2;
 }
-.blog-element .date-author{
+.blog-element h1{
+  font-size: 1.8em;
+}
+.blog-element .author{
   font-size: 15px;
   color: #a2a2a2;
   margin-top: 4px;
+}
+.blog-element .date{
+  font-size: 11px;
+  color: #a2a2a2;
+  margin-left: 14px
 }
 .blog-element .read-more{
   display: inline-block;
   font-size: 15px;
   margin-bottom: 1.5em;
 }
+
 .blog-content .date{
   font-size: 12px;
   color: #a2a2a2;
-}
-.blog-content .blog-element .date{
-  font-size: 11px;
-  border-top: 1px solid #e2e2e2;
 }
 .blog-content .post-title{
   margin:0;
