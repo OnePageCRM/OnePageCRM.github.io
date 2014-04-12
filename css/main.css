@@ -182,17 +182,19 @@ white-space: normal;
   margin: 0 0 1.5em;
 }
 .blog-element {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   padding-top: 10px;
+  border-bottom: 1px solid #e2e2e2;
 }
-.blog-element .author{
+.blog-element .date-author{
   font-size: 15px;
   color: #a2a2a2;
+  margin-top: 6px;
 }
 .blog-element .read-more{
-  display: block;
+  display: inline-block;
   font-size: 15px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .blog-content .date{
   font-size: 12px;
@@ -205,7 +207,6 @@ white-space: normal;
 .blog-content .post-title{
   margin:0;
 }
-
 .sidebar .block {
   margin-bottom: 3em;
 }
@@ -218,7 +219,6 @@ white-space: normal;
   color: #777777;
   font-size: 0.9em;
 }
-
 .status-page{
   min-width: 990px;
   padding: 35px 14px;
