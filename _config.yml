@@ -42,3 +42,12 @@ authors:
     github: ZipoKing
     twitter: ZipoKing
     description: "Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it."
+    image: '/img/pawel.jpg'
+  dan:
+    name: Dan Fahy
+    display_name: Dan
+    email: dan@onepagecrm.com
+    web: http://onepagecrm.com
+    description: 'Dan is an intern at OnePageCRM.'
+    image: '/img/dan.jpg'
+
