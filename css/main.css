@@ -96,6 +96,15 @@ ul, ol {
   font-size: 13px;
   line-height: 18px;
 }
+.api-content p.strong{
+  font-weight: bold;
+  margin: 0;
+}
+.api-content p.no-parameters{
+  padding: 8px 5px;
+  background:#F9F9F9;
+  border: 1px solid #ddd;
+}
 .api-content ul,
 .api-content ol{
   font-size: 13px;
@@ -229,6 +238,21 @@ white-space: normal;
 .status-page{
   min-width: 990px;
   padding: 35px 14px;
+}
+.sample-code{
+  display: none;
+}
+.sample-code-title:after{
+  content: "show code";
+  margin: 0 0 0 10px;
+  color: #1680B9;
+  cursor: pointer;
+}
+.sample-code-title:hover:after{
+  text-decoration:underline;
+}
+.sample-code-title.open:after{
+  content: "hide code";
 }
 
 @media (max-width: 768px) {
