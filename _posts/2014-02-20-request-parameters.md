@@ -159,8 +159,8 @@ date: 2014-02-19 14:05:55
   </tbody>
 </table>
 <p>By default, all <span class="post-text">POST</span> and <span class="put-text">PUT</span> requests require all resource fields to be provided, otherwise throwing an error.<br/> 
-With <code class="bluetext">partial</code> flag set, If you don’t provide a field then for <span class="post-text">PUT</span> requests it would be set to its default value (an empty string for most fields), and for <span class="put-text">PUT</span> requests it would remain its current value.</p>
-<p>For example the following request would update contact’s name to Jane, leaving all other fields untouched:</p>
+With <code class="bluetext">partial</code> flag set, If you don't provide a field then for <span class="post-text">POST</span> requests it would be set to its default value (an empty string for most fields), and for <span class="put-text">PUT</span> requests it would remain its current value.</p>
+<p>For example the following request would update contact's name to Jane, leaving all other fields untouched:</p>
 <p class="url"><code class="bluetext"><span class="put-text">PUT</span> contacts/51f251d5eb899749f7000006.json?partial=1&first_name=Jane</code></p>
 <p>And here is how you can create a contact named Jane Doe with all other fields set to their default values:</p>
 <p class="url"><code class="bluetext"><span class="post-text">POST</span> contacts.json?partial=1&first_name=Jane&last_name=Doe</code></p>
