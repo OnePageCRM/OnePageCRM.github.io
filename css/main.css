@@ -239,19 +239,19 @@ white-space: normal;
   min-width: 990px;
   padding: 35px 14px;
 }
-.sample-code{
+.api2-content .sample-code{
   display: none;
 }
-.sample-code-title:after{
+.api2-content .sample-code-title:after{
   content: "show code";
   margin: 0 0 0 10px;
   color: #1680B9;
   cursor: pointer;
 }
-.sample-code-title:hover:after{
+.api2-content .sample-code-title:hover:after{
   text-decoration:underline;
 }
-.sample-code-title.open:after{
+.api2-content .sample-code-title.open:after{
   content: "hide code";
 }
 
