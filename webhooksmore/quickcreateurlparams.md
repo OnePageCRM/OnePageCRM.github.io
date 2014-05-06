@@ -22,15 +22,15 @@ As the records come into your internal database, you could add a link to each on
 <table class="table">
   <thead>
     <tr>
-      <td>
+      <th>
         Firstname
-      </td>
-      <td>
+      </th>
+      <th>
         Lastname
-      </td>
-      <td>
+      </th>
+      <th>
         Company
-      </td>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -79,17 +79,19 @@ https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&compan
 {% endhighlight %}
 
 <table class="table">
-  <tr><td>Field</td><td>Example</td></tr>
-  <tr><td>firstname</td><td>Johnny</td></tr>
-  <tr><td>lastname</td><td>Bravo</td></tr>
-  <tr><td>company</td><td>Cartoon Network</td></tr>
-  <tr><td>email</td><td>jb@cartoonnetwork.com</td></tr>
-  <tr><td>phone</td><td>+555 555</td></tr>
-  <tr><td>web</td><td>www.cartoonnetwork.com</td></tr>
-  <tr><td>job_title</td><td>Model</td></tr>
-  <tr><td>background</td><td>Johny tried to hit on me</td></tr>
-  <tr><td>status</td><td>Prospect</td></tr>
-  <tr><td>tags[]</td><td>Beefcake</td></tr>
+  <thead><tr><th>Field</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>firstname</td><td>Johnny</td></tr>
+    <tr><td>lastname</td><td>Bravo</td></tr>
+    <tr><td>company</td><td>Cartoon Network</td></tr>
+    <tr><td>email</td><td>jb@cartoonnetwork.com</td></tr>
+    <tr><td>phone</td><td>+555 555</td></tr>
+    <tr><td>web</td><td>www.cartoonnetwork.com</td></tr>
+    <tr><td>job_title</td><td>Model</td></tr>
+    <tr><td>background</td><td>Johny tried to hit on me</td></tr>
+    <tr><td>status</td><td>Prospect</td></tr>
+    <tr><td>tags[]</td><td>Beefcake</td></tr>
+  </tbody>
 </table>
 For each tag, you will need to pass in a separate `tags[]` parameter. For example:
 
