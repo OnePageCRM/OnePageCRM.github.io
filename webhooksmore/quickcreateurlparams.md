@@ -20,6 +20,7 @@ We think there's loads of situations this could come in handy. For example, if y
 As the records come into your internal database, you could add a link to each one.
 
 <table class="table">
+  <thead>
     <tr>
       <th>
         Firstname
@@ -59,6 +60,7 @@ As the records come into your internal database, you could add a link to each on
         <a target="blank" href="http://app.onepagecrm.com/add_new_contact?firstname=Kung%20Foo&lastname=Panda&company=Dreamworks">Add to OnePageCRM </a>
       </td>
     </tr>
+  </tbody>
 </table>
 
 Clicking on a link will open OnePageCRM in a new tab, with the Add Contact form open and filled out with the relevant details.
@@ -74,18 +76,20 @@ This feature will work on most parameters in the create contact form. Currently 
 https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&company=Cartoon Network&tags[]=beefcake&email=jb@cartoonnetwork.com&phone=555555&web=http://en.wikipedia.org/wiki/Johnny_Bravo&job_title=model&background=Johny tried to hit on me&status=prospect
 {% endhighlight %}
 
-<table class="table table-bordered">
-  <tr><th>Field</th><th>Example</th></tr>
-  <tr><td>`firstname`</td><td>Johnny</td></tr>
-  <tr><td>`lastname`</td><td>Bravo</td></tr>
-  <tr><td>`company`</td><td>Cartoon Network</td></tr>
-  <tr><td>`email`</td><td>jb@cartoonnetwork.com</td></tr>
-  <tr><td>`phone`</td><td>+555 555</td></tr>
-  <tr><td>`web`</td><td>www.cartoonnetwork.com</td></tr>
-  <tr><td>`job_title`</td><td>Model</td></tr>
-  <tr><td>`background`</td><td>Johny tried to hit on me</td></tr>
-  <tr><td>`status`</td><td>Prospect</td></tr>
-  <tr><td>`tags[]`</td><td>Beefcake</td></tr>
+<table class="table">
+  <thead><tr><th>Field</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>`firstname`</td><td>Johnny</td></tr>
+    <tr><td>`lastname`</td><td>Bravo</td></tr>
+    <tr><td>`company`</td><td>Cartoon Network</td></tr>
+    <tr><td>`email`</td><td>jb@cartoonnetwork.com</td></tr>
+    <tr><td>`phone`</td><td>+555 555</td></tr>
+    <tr><td>`web`</td><td>www.cartoonnetwork.com</td></tr>
+    <tr><td>`job_title`</td><td>Model</td></tr>
+    <tr><td>`background`</td><td>Johny tried to hit on me</td></tr>
+    <tr><td>`status`</td><td>Prospect</td></tr>
+    <tr><td>`tags[]`</td><td>Beefcake</td></tr>
+  </tbody>
 </table>
 
 Tags are stored as an array, so `tags[]` is the parameter required.For each tag, you will need to pass in a separate `tags[]` parameter. For example:
