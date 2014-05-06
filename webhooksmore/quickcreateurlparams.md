@@ -31,6 +31,7 @@ As the records come into your internal database, you could add a link to each on
       <th>
         Company
       </th>
+      <th></th>
     </tr>
     <tr>
       <td>
