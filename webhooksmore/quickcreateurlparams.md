@@ -80,16 +80,16 @@ https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&compan
 <table class="table">
   <thead><tr><th>Field</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>`firstname`</td><td>Johnny</td></tr>
-    <tr><td>`lastname`</td><td>Bravo</td></tr>
-    <tr><td>`company`</td><td>Cartoon Network</td></tr>
-    <tr><td>`email`</td><td>jb@cartoonnetwork.com</td></tr>
-    <tr><td>`phone`</td><td>+555 555</td></tr>
-    <tr><td>`web`</td><td>www.cartoonnetwork.com</td></tr>
-    <tr><td>`job_title`</td><td>Model</td></tr>
-    <tr><td>`background`</td><td>Johny tried to hit on me</td></tr>
-    <tr><td>`status`</td><td>Prospect</td></tr>
-    <tr><td>`tags[]`</td><td>Beefcake</td></tr>
+    <tr><td><code>firstname</code></td><td>Johnny</td></tr>
+    <tr><td><code>lastname</code></td><td>Bravo</td></tr>
+    <tr><td><code>company</code></td><td>Cartoon Network</td></tr>
+    <tr><td><code>email</code></td><td>jb@cartoonnetwork.com</td></tr>
+    <tr><td><code>phone</code></td><td>+555 555</td></tr>
+    <tr><td><code>web</code></td><td>www.cartoonnetwork.com</td></tr>
+    <tr><td><code>job_title</code></td><td>Model</td></tr>
+    <tr><td><code>background</code></td><td>Johny tried to hit on me</td></tr>
+    <tr><td><code>status</code></td><td>Prospect</td></tr>
+    <tr><td><code>tags[]</code></td><td>Beefcake</td></tr>
   </tbody>
 </table>
 
