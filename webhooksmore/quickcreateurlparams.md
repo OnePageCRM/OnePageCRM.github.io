@@ -70,3 +70,29 @@ Clicking on a link will open OnePageCRM in a new tab, with the Add Contact form 
 <img class="img-responsive" src="/img/quickcontact.png"/>
 
 You can then edit the contacts details, and when you are happy, hit save.
+
+### Parameters
+This feature will work on most parameters in the create contact form. Currently it won't work with the address and lead source fields, or any custom fields.
+
+{% highlight http %}
+https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&company=Cartoon Network&tags[]=beefcake&email=jb@cartoonnetwork.com&phone=555555&web=http://en.wikipedia.org/wiki/Johnny_Bravo&job_title=model&background=Johny tried to hit on me&status=prospect
+{% endhighlight %}
+
+<table class="table">
+  <tr><td>Field</td><td>Example</td></tr>
+  <tr><td>firstname</td><td>Johnny</td></tr>
+  <tr><td>lastname</td><td>Bravo</td></tr>
+  <tr><td>company</td><td>Cartoon Network</td></tr>
+  <tr><td>email</td><td>jb@cartoonnetwork.com</td></tr>
+  <tr><td>phone</td><td>+555 555</td></tr>
+  <tr><td>web</td><td>www.cartoonnetwork.com</td></tr>
+  <tr><td>job_title</td><td>Model</td></tr>
+  <tr><td>background</td><td>Johny tried to hit on me</td></tr>
+  <tr><td>status</td><td>Prospect</td></tr>
+  <tr><td>tags[]</td><td>Beefcake</td></tr>
+</table>
+For each tag, you will need to pass in a separate `tags[]` parameter. For example:
+
+{% highlight http %}
+http://app.onepagecrm.com/add_new_contact?firstname=Johny&tags[]=beefcake&tags[]=pompadour
+{% endhighlight %}
