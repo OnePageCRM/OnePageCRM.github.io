@@ -93,7 +93,8 @@ https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&compan
   </tbody>
 </table>
 
-Tags are stored as an array, so `tags[]` is the parameter required.For each tag, you will need to pass in a separate `tags[]` parameter. For example:
+Tags are stored as an array, so `tags[]` is the parameter required.For each tag, you will need to pass in a separate `tags[]` parameter. 
+For example:
 
 {% highlight http %}
 http://app.onepagecrm.com/add_new_contact?firstname=Johny&tags[]=beefcake&tags[]=pompadour
