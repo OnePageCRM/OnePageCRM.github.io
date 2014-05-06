@@ -71,7 +71,7 @@ Clicking on a link will open OnePageCRM in a new tab, with the Add Contact form 
 You can then edit the contacts details, and when you are happy, hit save.
 
 ### Parameters
-This feature will work on most parameters in the create contact form. Currently it won't work with the address and lead source fields, or any custom fields.
+This feature will work on most parameters in the create contact form. Currently it won't work with the address and lead source fields, or custom fields.
 
 {% highlight http %}
 https://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&company=Cartoon Network&tags[]=beefcake&email=jb@cartoonnetwork.com&phone=555555&web=http://en.wikipedia.org/wiki/Johnny_Bravo&job_title=model&background=Johny tried to hit on me&status=prospect
