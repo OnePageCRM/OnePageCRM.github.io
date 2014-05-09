@@ -7,13 +7,12 @@ date: 2014-02-20 11:20:17
 ---
 
 
-<p>Response can be sent in one of the following formats: JSON, XML, YAML.</p>
+<p>Response can be sent in one of the following formats: JSON, XML</p>
 <p>You must specify the format to be used for each request in a form of file extension:</p>
 <p>
   <code class="bluetext">
     /contacts.json<br/>
-    /contacts.xml<br/>
-    /contacts.yaml
+    /contacts.xml
   </code>
 </p>
 <p>Each response is a hash. Only response time and status fields are always present.</p>
@@ -107,7 +106,7 @@ date: 2014-02-20 11:20:17
       <td class="nowrap"><code class="redtext">string</code></td>
       <td><code class="bluetext">error_name</code></td>
       <td>Short description of a failure to be used in your failure handling codes.
-        You can see full lists of possible errors in every resource’s section.</td>
+        You can see full lists of possible errors in every resource's section.</td>
       </tr>
       <tr>
         <td><code class="redtext">string</code></td>
