@@ -111,6 +111,6 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
     <script src="https://gist.github.com/OnePageCTO/5910790.js"></script>
   </div>
   <div class="tab-pane fade" id="PHP">
-    <script src="https://gist.github.com/OnePageCTO/5566617.js"></script>
+    <script src="https://gist.github.com/peterOnePageCRM/93c7af55e5063fbf2097.js"></script>
   </div>
 </div>
