@@ -31,7 +31,7 @@ date: 2014-02-20 11:22:32
   </ol>
   <p>On each resource’s page, you can see a list of its main fields, as well as available complementary data and associated resources.</p>
   
-  <h3 id="fetching-associated-resources">Fetching Associated Resources</h3>
+  <h3 id="fetching-associated-resources" class="top-padding">Fetching Associated Resources</h3>
   <p>In every resource’s section you can see a list of associated resources. For example, contacts can have actions, deals and notes associated with them. To grab those in the same request, just specify them as a field.<br/>If you are familiar with SQL, this is similar to <a target="_blank" href="http://en.wikipedia.org/wiki/Join_(SQL)#Left_outer_join">Left Outer Join</a> operation.</p>
   <p>So if you’d like to add deals to our basic example above, just use:</p>
   <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,deals</code></p>
