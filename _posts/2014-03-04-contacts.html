@@ -552,32 +552,32 @@ date: 2014-03-04 10:28:04
     <tbody>
       <tr>
         <td class="nowrap"><code class="redtext">array</code></td>
-        <td><code class="bluetext">deals</code></td>
+        <td><code class="bluetext">deals()</code></td>
         <td>Last 4 deals associated with a contact.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">notes</code></td>
+        <td><code class="bluetext">notes()</code></td>
         <td>Last 4 notes associated with a contact.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">next_actions</code></td>
+        <td><code class="bluetext">next_actions()</code></td>
         <td>List of all assigned next actions for a contact sorted by action date and modification time.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td class="nowrap"><code class="bluetext">unassigned_actions</code></td>
+        <td class="nowrap"><code class="bluetext">unassigned_actions()</code></td>
         <td>List of unassigned next actions for a contact sorted by modification time.</td>
       </tr>
       <tr>
         <td class="nowrap"><code class="redtext">action</code></td>
-        <td><code class="bluetext">next_action</code></td>
-        <td>Active user's next action for a contact. Request this field in case you only need "that one next action to move a sale forward" for currently logged in user. If current user doesn't have a next action for this contact, this field is <span class="italic">null</span>.</td>
+        <td><code class="bluetext">next_action()</code></td>
+        <td>Active user's next action for a contact. Request this field in case you only need "that one next action to move a sale forward" for currently logged in user. If current user doesn't have a next action for this contact, this field is empty.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">completed_actions</code></td>
+        <td><code class="bluetext">completed_actions()</code></td>
         <td>Last 4 completed actions for this contact sorted by completion time.</td>
       </tr>
     </tbody>
@@ -585,9 +585,9 @@ date: 2014-03-04 10:28:04
   
   <p>For example, to fetch a list of contacts containing only IDs, names and current user's next actions, you could use a following request (note that <code class="bluetext">id</code> is always included - no point specifying it in the list):</p>
 
-  <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,company_name,next_action</code></p>
+  <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,company_name,next_action()</code></p>
 
-  <p>Requesting <code class="bluetext">next_action</code> field doesn't remove that main next action from <code class="bluetext">next_actions</code> list, so you can request both fields if you like to have both full list of next actions and quick access to the main one.</p>
+  <p>Requesting <code class="bluetext">next_action()</code> field doesn't remove that main next action from <code class="bluetext">next_actions</code> list, so you can request both fields if you like to have both full list of next actions and quick access to the main one.</p>
 
   <!-- Sample from GitHub -->
   <h3 id="sample-code">Sample code</h3>
