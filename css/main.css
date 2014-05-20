@@ -265,3 +265,8 @@ white-space: normal;
 .strike {
     text-decoration: line-through;
 }
+
+.code-snippet {
+  max-height: 300px;
+  overflow: auto;
+}
