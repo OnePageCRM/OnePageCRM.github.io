@@ -18,6 +18,12 @@ date: 2014-03-04 10:11:26
     <tr>
       <td><span class="get-text">GET</span></td>
       <td><code class="bluetext">action_stream.format</code></td>
+      <td> Returns contacts with actions, sorted correctly</td>
+    </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">action_stream.format?has_actions=false</code></td>
+      <td> Returns all contacts, sorted correctly </td>
     </tr>
   </tbody>
 </table>
@@ -27,15 +33,10 @@ date: 2014-03-04 10:11:26
   <li><strong>Contacts are sorted by actions.</strong> So instead of an alphabetical order, contacts are sorted by action’s assignee presence (assigned first), action’s date and action’s last modification time. For contacts with multiple actions, only top action participates in sorting.</li>
   <li><strong>Returned data includes actions by default.</strong> Default value of <code class="bluetext"><a href="fields.html">fields</a></code> parameter for this request is ”all,next_actions,unassigned_actions”.  You can still change the value to whatever suits your needs however. </li>
   <li><strong>Filtering by <code class="bluetext">letter</code> is removed, “waiting” is added.</strong> letter filtering parameter is not supported. However, you can use <code class="redtext">boolean</code> <code class="bluetext">waiting</code> flag to limit results to contacts having an action with “waiting” date (assigned to a specified user if <code class="bluetext">user_id</code> parameter is provided).</li>
-  <li><strong>With actions only.</strong> In app the action stream has changed to allow a switch between showing all contacts for a user plus contacts with actions assigned to the user, or only contacts with actions assigned to the user.</li>
+  <li><strong>With actions only.</strong> By default a call to <code>actions.json</code> will return only contacts with a next action.
+  This can be overridden by changing the call to: <code>actions.json?has_actions=false</code></li>
 </ul>
-<!-- Sample from GitHub -->
-<h3 id="sample-code">Sample code</h3>
-<div class="sample-code">
-  <div class="sample-code-title">Sample JSON server response for action stream</div>
-  <!-- <script src="https://gist.github.com/OnePageCTO/6575061.js"></script> -->
-</div>
-<!-- /Sample from GitHub -->
+
 <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/action_stream.json</p>
 <div class="code-snippet">
 
