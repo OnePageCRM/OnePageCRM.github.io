@@ -1,1 +1,1 @@
-/home/peter/devsite/_posts/2014-02-20-api-endpoint.md
+../_posts/2014-02-20-api-endpoint.md

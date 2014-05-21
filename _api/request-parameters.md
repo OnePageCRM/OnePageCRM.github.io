@@ -1,1 +1,1 @@
-/home/peter/devsite/_posts/2014-02-20-request-parameters.md
+../_posts/2014-02-20-request-parameters.md
