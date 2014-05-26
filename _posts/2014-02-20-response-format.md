@@ -120,3 +120,26 @@ date: 2014-02-20 11:20:17
       </tr>
     </tbody>
   </table>
+
+<h3 id="suppress-http-status">Suppress HTTP Response Status</h3>
+You can suppress the HTTP response status if required by adding a `suppress_http_status=1` parameter to the end of your call. This will return a HTTP status of `200`, but the response body will contain response codes and error detail.
+
+For example the following request for a non existing contact will return HTTP status `404`.
+{% highlight http %}
+ https://app.onepagecrm.com/api/v3/contacts/1341.json
+{% endhighlight %}
+
+By adding the `suppress_http_status=1` parameter, the call will return HTTP status `200`.
+{% highlight http %}
+ https://app.onepagecrm.com/api/v3/contacts/1341.json?suppress_http_status=1
+{% endhighlight %}
+
+Both requests will return the same body response:
+{% highlight json %}
+{
+  "status": 404,
+  "message": "Resource not found",
+  "error_name": "resource_not_found",
+  "error_message": "Couldn't find contact for id, .\nThe contact may have been deleted or you may have used the wrong id"
+}
+{% endhighlight %}
