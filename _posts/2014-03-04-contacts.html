@@ -382,7 +382,7 @@ date: 2014-03-04 10:28:04
             <tr>
               <td class="nowrap"><code class="redtext">string</code></td>
               <td class="nowrap"><code class="bluetext">type</code></td>
-              <td>Phone type ('work', 'mobile', 'home', 'direct', 'fax' or 'other')</td>
+              <td>Phone type ('work', 'mobile', 'home', 'direct', 'fax', 'skype' or 'other')</td>
             </tr>
             <tr>
               <td><code class="redtext">string</code></td>
@@ -397,7 +397,7 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">array</code></td>
       <td><code class="bluetext">emails</code></td>
       <td>
-        Contact’s email addresses. Every item is a <code class="redtext">hash</code> with 2 elements: 
+        Contact’s email addresses. Every item is a <code class="redtext">hash</code> with 2 elements:
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -438,7 +438,7 @@ date: 2014-03-04 10:28:04
             <tr>
               <td><code class="redtext">string</code></td>
               <td><code class="bluetext">type</code></td>
-              <td>URL type - ('website', 'twitter', 'linkedin', 'facebook' or 'other')</td>
+              <td>URL type - ('website', 'blog', 'twitter', 'linkedin', 'facebook', 'google_plus' or 'other')</td>
             </tr>
             <tr>
               <td class="nowrap"><code class="redtext">string</code></td>
@@ -453,7 +453,7 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">array</code></td>
       <td class="nowrap"><code class="bluetext">custom_fields</code></td>
       <td>
-        Contact’s custom fields. Every item is a <code class="redtext">hash</code> with 3 elements: 
+        Contact’s custom fields. Every item is a <code class="redtext">hash</code> with 3 elements:
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -582,7 +582,7 @@ date: 2014-03-04 10:28:04
       </tr>
     </tbody>
   </table>
-  
+
   <p>For example, to fetch a list of contacts containing only IDs, names and current user's next actions, you could use a following request (note that <code class="bluetext">id</code> is always included - no point specifying it in the list):</p>
 
   <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,company_name,next_action()</code></p>
@@ -597,5 +597,5 @@ date: 2014-03-04 10:28:04
   </div>
   <!-- /Sample from GitHub -->
   <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/contacts.json</p>
-  
+
   <p><a href="#content">Top</a></p>
