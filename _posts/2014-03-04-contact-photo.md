@@ -1,6 +1,6 @@
 ---
 layout: api
-title: "Contact Photo - Coming Soon!"
+title: "Contact Photo - Beta"
 slug: "contactphoto"
 category: otherresources
 date: 2014-03-04 10:35:28
