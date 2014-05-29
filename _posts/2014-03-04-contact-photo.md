@@ -50,3 +50,23 @@ Images will be cropped to a square and resized to 73px.
 </table>
 
 
+### Response
+
+{% highlight json %}
+{
+  "status" : 0,
+  "message" : "OK",
+  "timestamp" : 1401350305,
+  "data" : 
+    {"contact" :
+      {"id" : "5384753e1da41754eb000015",
+       "photo_url" :
+        "https://onepagecrm-uploads.s3.amazonaws.com/5384753e1da41754eb000015/1401350304000/5386e8a01da4170ce500000e.png"
+      }
+    }
+}
+
+{% endhighlight %}
+
+
+
