@@ -4,7 +4,7 @@ title: "Email addresses everywhere!"
 slug: "email-addresses-everywhere"
 category: blog
 author: peter
-date: 2014-05-09 13:24:22
+date: 2014-05-30 13:24:22
 excerpt: OnePageCRM uses an email address as the unique account identifier. This means that you can only have a single OnePageCRM account per email address. Our team uses different ways to get around this during testing.
 
 ---
