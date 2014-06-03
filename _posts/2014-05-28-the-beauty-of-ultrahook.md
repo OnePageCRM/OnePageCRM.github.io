@@ -4,7 +4,7 @@ title: "The Beauty of Ultrahook"
 slug: "the-beauty-of-ultrahook"
 category: blog
 author: john
-date: 2014-05-28 15:11:22
+date: 2014-06-03 15:11:22
 ---
 
 
@@ -26,7 +26,7 @@ Firstly pop over to the [Ultrahook website][1] and hit the, intuitively named, G
 <img src='https://xapdocs.atlassian.net/wiki/download/thumbnails/2621456/image2014-5-21%2014%3A32%3A3.png?version=1&modificationDate=1400679125157&api=v2'>
 
 
-Go ahead and fill it out, making sure to take note of the namespace you choose, I will be using this ultrahook to send information from a [Wufoo][2] form, one of the many integrations One Page CRM offers, to our One page CRM account that is running on the localhost so I will cleverly call my namespace wufoo, but choose anything you like just make sure to make note of it for later.
+Go ahead and fill it out, making sure to take note of the namespace you choose, I will be using this ultrahook to send information from my OnePage CRM account to my web application, so I will call the namespace 'onepage', just to keep things clear and simple.
 
 Hit the Sign me up! button and you will now be presented with an API key, make note of this too, although ultrahook even send you a friendly email with your API key just so you wont forget, what a great bunch of lads!
 
@@ -38,30 +38,36 @@ The API key is now saved in your system and you wont have to worry about it agai
 
      gem install ultrahook
 
-Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. http://wufoo.wufoo.ultrahook.com this is where we will tell our wufoo form to send the webhook data. On the wufoo form input this namespace in the URL part if the webhook form
+Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. http://onepage.onepage.ultrahook.com this is where we will tell OnePage CRM to send the webhook data. In the 'Add Apps' page of your OnePage CRM account enable the webhooks app and click configure
 
-<img src='https://d1cre6klihqrbh.cloudfront.net/assets/integrations/wufoo_screen-1e14a6933d1e42b17999cb5fa37e0ec8.png'>
-
-The key is taken from the wufoo app page from OnePage CRM
+<img src="http://i62.tinypic.com/2rwxr8n.png">
 
 
-<img src='http://oi59.tinypic.com/24gog0x.jpg'>
+In this configure page, you simple need to tell OnePageCRM where to send information too. Input the ultrahook namesapce from earlier. For example you can see that I am using the namespace onepage.
 
-The other Webhook URL shown above, from the OnePage CRM account is our webhook on the localhost where we want Ultrahook to send the data to. All thats left to do is run Ultrahook, open a new terminal and run the command 
+<img src="http://i62.tinypic.com/2i91kyu.png">
+
+Hit save and as simple as that OnePageCRM is now ready to start sending data using the webhook address. All thats left to do is run Ultrahook, open a new terminal and run the command 
 
     ultrahook UltraHookNamesapce  LocalHostWebhook
 
-replacing UltraHookNamespace with the namespace you set up and LocalHostWebhook with the webhook located on the localhost. For example my namespace is called wufoo and my local webhook is shown above on the OnePageCRM Wufoo app page, therefore to start my ultrahook I must run 
+replacing UltraHookNamespace with the namespace you set up and LocalHostWebhook with the webhook located on the localhost. For example my namespace is called onepage and my local webhook is for my motivational web app, therefore to start my ultrahook I must run 
 
-    ultrahook wufoo http://localhost:3000/webhooks/wufoo_form/537c8f0ec00f260ccd000001
+    ultrahook onepage http://localhost:3000/motivation/webhook/2
 
 You should now have two terminal windows open with your rails server running in one and the Ultrahook running in the other. Now all you have to do is simply sit back and enjoy the beauty of Ultrahooks.
 
-Any data sent from the Wufoo form will be sent to the ultrahook namespace where ultrahook will pass it into our localhost. All the magic of webhooks running on your right there on your own machine! 
+My motivational web application simply keeps track of each time I win a deal in OnePageCRM and gives me a little motivational message based on how many deals I've won, because we all need a little pick me up now and again.
 
-Once your application is tested and  working you can make that all important push to the development server with confidence, saving you time and hopefully a few grey hairs.
+When a deal is won in OnePageCRM, the webhook sends information about what just happened to my application, If its a deal that has been won it will increment my won deals in the database and update the motivational message accordingly. The end result giving the following page:
+
+<img src="http://i61.tinypic.com/25hpzr9.png">
+
+To learn more about what events trigger a Webhook and what information is sent with the webhook have a look at our [WebHooks and More][2] page for more information on integrating your application with OnePageCRM using webhooks.
+
+Once your application is tested and  working you can make that all important push to the development server with confidence, saving you time and hopefully a few gray hairs.
       
 
 
   [1]: http://www.ultrahook.com/
-  [2]: http://www.wufoo.com/
+  [2]: http://developer.onepagecrm.com/webhooksmore/
