@@ -250,6 +250,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
     <tr>
       <td>Type</td>
       <td>Name</td>
+      <td>Values</td>
       <td>Description</td>
     </tr>
   </thead>
@@ -257,6 +258,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">order</code></td>
+      <td><code> asc || desc </code></td>
       <td>Return records in a specified order, ascending or descending.</td>
     </tr>
   </tbody>
