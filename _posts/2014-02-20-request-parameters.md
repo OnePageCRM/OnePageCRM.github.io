@@ -245,7 +245,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
 </table>
 
 <h3 id="order-listings-by-field">Order Listing By Field <span class="get-text indexup">GET</span></h3>
-  <div class="alert">Coming soon </div>
+  <div class="alert alert-warning">Coming soon </div>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
