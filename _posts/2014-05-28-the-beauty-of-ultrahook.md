@@ -9,9 +9,9 @@ date: 2014-06-03 15:11:22
 
 
 
-While webhooks are providing new and exciting ways for us to develop web applications and have them integrate with eachother it can often be quite tiresome to push your entire project to a development server just to test every little fix you make. 
+While webhooks are providing new and exciting ways for us to develop web applications and have them integrate with each other, it can often be quite tiresome to push your entire project to a development server just to test every little fix you make. 
 "But why push to the development server each time" I hear you cry out! 
-"why not just test on the localhost where its quick and easy to test new code." Well I can't argue with you there, but unfortunatley webhooks can't send data to your localhost, if only there was a way of connecting public webhooks with those located on your localhost.
+"why not just test on the localhost where its quick and easy to test new code." Well I can't argue with you there, but unfortunatley webhooks can't send data to your localhost. If only there was a way of connecting public webhooks with those located on your localhost.
 
 *Enter stage left: Ultrahook*
 
