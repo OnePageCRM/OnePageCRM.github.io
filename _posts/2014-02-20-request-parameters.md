@@ -14,9 +14,9 @@ date: 2014-02-19 14:05:55
   </code>
 </p>
 <p>Or as part of HTTP request body for <span class="post-text">POST</span> and <span class="put-text">PUT</span> requests.</p>
-<p>This section outlines the main parameters. To see all parameters supported by a particular resource, please visit that resource’s section.</p>
+<p>This section outlines the main parameters. To see all parameters supported by a particular resource, please visit that resource's section.</p>
 
-<h3 id="paginating-responses">Paginating Responses <span class="get-text indexup">GET</span></h3>
+<h3 id="paginating-responses"><span class="label label-default">DELETE</span>  Paginating Responses </h3>
 <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
 <table class="table table-striped table-bordered">
   <thead>
@@ -44,7 +44,7 @@ date: 2014-02-19 14:05:55
 <p>To fetch second batch of 20 contacts, you would use:</p>
 <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
 
-<h3 id="specifying-the-fields-you-need">Specifying the Fields You Need <span class="get-text indexup">GET</span></h3>
+<h3 id="specifying-the-fields-you-need"><span class="label label-default">GET</span> Specifying the Fields You Need </h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -61,10 +61,10 @@ date: 2014-02-19 14:05:55
     </tr>
   </tbody>
 </table>
-<p><code class="bluetext">fields </code>parameter allows you to exclude data you don’t need from response, include additional data that is not returned by default, and/or include associated resources to the response.<br/>
+<p><code class="bluetext">fields </code>parameter allows you to exclude data you don't need from response, include additional data that is not returned by default, and/or include associated resources to the response.<br/>
   For detailed description of this parameter, see <a href="fields.html">Fields</a> section.</p>
 
-<h3 id="undoing-delete">Undoing a Delete <span class="delete-text indexup">DELETE</span></h3>
+<h3 id="undoing-delete"><span class="label label-default">DELETE</span> Undoing a Delete </h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -86,7 +86,11 @@ date: 2014-02-19 14:05:55
 <p>You can undo it by specifying an undo flag:</p>
 <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json?undo=1</code></p>
 
-<h3 id="switching-active-user">Switching Active User <span class="get-text indexup">GET</span> <span class="post-text indexup">POST</span> <span class="put-text indexup">PUT</span></h3>
+<h3 id="switching-active-user">
+  <span class="label label-default">GET</span>
+  <span class="label label-default">POST</span>
+  <span class="label label-default">PUT</span> Switching Active User 
+</h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -110,7 +114,7 @@ date: 2014-02-19 14:05:55
 <p>User ID specified in this parameter would also be used to populate any fields where otherwise logged in user’s ID would be default. For example, if you create a contact without specifying <code class="bluetext">owner_id</code>, but with <code class="bluetext">user_id</code> provided:</p>
 <p class="url"><code class="bluetext"><span class="post-text">POST</span> contacts.json?user_id=51f251d5eb899749f7000006&first_name=Jane&last_name=Doe</code></p>
 
-<h3 id="stripping-empty-fields">Stripping Empty Fields <span class="get-text indexup">GET</span></h3>
+<h3 id="stripping-empty-fields"><span class="label label-default">GET</span>Stripping Empty Fields </h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -141,7 +145,11 @@ date: 2014-02-19 14:05:55
   <li>Empty hash (a hash for which all fields have been stripped)</li>
 </ul>
 
-<h3 id="providing-partial-data">Providing Partial Data <span class="post-text indexup">POST</span> <span class="put-text indexup">PUT</span></h3>
+<h3 id="providing-partial-data">
+  <span class="label label-default">POST</span> 
+  <span class="label label-default">PUT</span>
+  Providing Partial Data
+</h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -167,7 +175,7 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
 <p><span class="strong">Warning:</span> Beware that if you use this option, any fields that you misspell or accidentally leave out from request will be ignored and their values would be lost, without any warnings or errors. <br/>
 This is why, starting from version 3 of our API, partial <span class="post-text">POST</span> requests are rejected by default, and this feature is active only if you specifically request it.</p>
 
-<h3 id="limiting-listings-by-time">Limiting Listings By Time <span class="get-text indexup">GET</span></h3>
+<h3 id="limiting-listings-by-time"><span class="label label-default">GET</span> Limiting Listings By Time </h3>
 <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
 <table class="table table-striped table-bordered">
   <thead>
@@ -206,7 +214,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
   </tbody>
 </table>
 
-<h3 id="avoiding-data-you-already-have">Avoiding Data You Already Have <span class="get-text indexup">GET</span></h3>
+<h3 id="avoiding-data-you-already-have"><span class="label label-default">GET</span> Avoiding Data You Already Have </h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -226,7 +234,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
 <p>This parameter is similar to HTTP “If-Unmodified-Since” header, and will result in HTTP 304 “Not Modified” status returned if the data was not modified since the specified time.</p>
 <p>Note that because of the complexity of our data, as well flexibility of API, if data is returned, it does not necessarily mean that it has been changed. If status 304 is returned however - it is guaranteed that the data has <span class="italic">not</span> been changed.</p>
 
-<h3 id="sorting-listings-by-field">Sorting Listings By Field <span class="get-text indexup">GET</span></h3>
+<h3 id="sorting-listings-by-field"><span class="label label-default">GET</span> Sorting Listings By Field </h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -244,8 +252,11 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
   </tbody>
 </table>
 
-<h3 id="order-listings-by-field">Order Listing By Field <span class="get-text indexup">GET</span></h3>
-  <div class="alert alert-warning">Coming soon </div>
+<h3 id="order-listings-by-field"> <span class="label label-default">GET</span>
+Order Listing By Field 
+  <span class="label label-warning">Coming soon </span>
+  </h3>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -265,7 +276,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
   </tbody>
 </table>
 
-<h3 id="selecting-listings-by-date-field">Selecting Listings By Date Field <span class="get-text indexup">GET</span></h3>
+<h3 id="selecting-listings-by-date-field"><span class="label label-default">GET</span> Selecting Listings By Date Field</h3>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
