@@ -11,11 +11,11 @@ date: 2014-06-03 15:11:22
 
 While webhooks are providing new and exciting ways for us to develop web applications and have them integrate with each other, it can often be quite tiresome to push your entire project to a development server just to test every little fix you make. 
 "But why push to the development server each time" I hear you cry out! 
-"why not just test on the localhost where its quick and easy to test new code." Well I can't argue with you there, but unfortunatley webhooks can't send data to your localhost. If only there was a way of connecting public webhooks with those located on your localhost.
+"Why not just test on the localhost where its quick and easy to test new code." Well I can't argue with you there, but unfortunatley webhooks can't send data to your localhost. If only there was a way of connecting public webhooks with those located on your localhost.
 
 *Enter stage left: Ultrahook*
 
-Ultrahook is a brilliant tool that can connect public webhooks with development webhooks located on the localhost. Amazing! but a tool that useful must be pretty expensive and it probably takes a few days to sign up, set up and integrate it into my application, right?
+Ultrahook is a brilliant tool that can connect public webhooks with development webhooks located on the localhost. Amazing! But a tool that useful must be pretty expensive and it probably takes a few days to sign up, set up and integrate it into my application, right?
 Wrong! Ultrahook is completley free and takes a grand total of 5 minutes configuration, 3 if your a fast typer.
  "Well It all sounds fantastic, if only there was somehwere I could go to read more about this" I hear you sigh, well you're in luck! It just so happens that the rest of this blog post does just that!
 
@@ -28,7 +28,7 @@ Firstly pop over to the [Ultrahook website][1] and hit the, intuitively named, G
 
 Go ahead and fill it out, making sure to take note of the namespace you choose, I will be using this ultrahook to send information from my OnePage CRM account to my web application, so I will call the namespace 'onepage', just to keep things clear and simple.
 
-Hit the Sign me up! button and you will now be presented with an API key, make note of this too, although ultrahook even send you a friendly email with your API key just so you wont forget, what a great bunch of lads!
+Hit the Sign me up! button and you will now be presented with an API key. Make note of this too, although ultrahook will also send you a friendly email with your API key just so you wont forget. What a great bunch of lads!
 
 Next open up your terminal and enter the following command, replacing YourAPIKeyHere with the API key you got from the previous step
 
@@ -38,12 +38,12 @@ The API key is now saved in your system and you wont have to worry about it agai
 
      gem install ultrahook
 
-Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. http://onepage.onepage.ultrahook.com this is where we will tell OnePage CRM to send the webhook data. In the 'Add Apps' page of your OnePage CRM account enable the webhooks app and click configure
+Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. `http://onepage.onepage.ultrahook.com`. This is where we will tell OnePage CRM to send the webhook data. In the 'Add Apps' page of your OnePage CRM account enable the webhooks app and click configure
 
 <img src="http://i62.tinypic.com/2rwxr8n.png"  height="72" width="612">
 
 
-In this configure page, you simple need to tell OnePageCRM where to send information too. Input the ultrahook namesapce from earlier. For example you can see that I am using the namespace onepage.
+In this configure page, you simply need to tell OnePageCRM where to send information too. Input the ultrahook namesapce from earlier. For example you can see that I am using the namespace onepage.
 
 <img src="http://i62.tinypic.com/2i91kyu.png"  height="231" width="612">
 
