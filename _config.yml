@@ -19,7 +19,7 @@ api_sections: [
     ['otherresources', 'Beta Methods']
 ]
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 exclude: ['README.md']
 
 baseurl: ''
@@ -35,3 +35,13 @@ authors:
     github: peterOnePageCRM
     description: 'Peter is a developer at OnePageCRM.'
     image: '/img/peter.jpg'
+  john:
+    name: John Maguire
+    display_name: John
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: john@onepagecrm.com
+    web: http://onepagecrm.com
+   # twitter: company
+    github: JohnMaguir
+    description: 'John is a graduate developer at OnePageCRM.'
+    image: '/img/john.jpg'
