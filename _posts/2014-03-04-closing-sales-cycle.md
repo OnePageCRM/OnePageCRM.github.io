@@ -26,9 +26,9 @@ When closing the sales cycle, you can add a closing comment.
         <code class="bluetext">contacts/{id}/close_sales_cycle.format</code>
       </td>
       <td>
-      	<code>
-      		{ "comment" : "closed because not interested" }
-      	</code>
+        <code>
+        { "comment" : "no interest" }
+        </code>
       </td>
       <td>Close the sales cycle</td>
     </tr>

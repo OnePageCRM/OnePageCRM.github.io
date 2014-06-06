@@ -21,14 +21,14 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><span class="get-text">GET</span></td>
       <td>
-        <code class="bluetext">deals.format</code>
+        <code >deals.format</code>
       </td>
       <td>Get most recently updated deals</td>
     </tr>
     <tr>
       <td><span class="get-text">GET</span></td>
       <td>
-        <code class="bluetext">
+        <code >
           deals.format?contact_id={contact_id}<br/>
           contacts/{contact_id}/deals.format
         </code>
@@ -38,7 +38,7 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><span class="get-text">GET</span></td>
       <td>
-        <code class="bluetext">
+        <code >
           deals.format?company_id={company_id}<br/>
           companies/{company_id}/deals.format
         </code>
@@ -48,21 +48,21 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><span class="get-text">GET</span></td>
       <td>
-        <code class="bluetext">deals.format?status={status}</code>
+        <code >deals.format?status={status}</code>
       </td>
       <td>Get deals with a particular status</td>
     </tr>
     <tr>
       <td><span class="get-text">GET</span></td>
       <td>
-        <code class="bluetext">deals/{id}.format</code>
+        <code >deals/{id}.format</code>
       </td>
       <td>Get a single deal</td>
     </tr>
     <tr>
       <td><span class="post-text">POST</span></td>
       <td>
-        <code class="bluetext">
+        <code >
           deals.format?contact_id={contact_id}<br/>
           contacts/{contact_id}/deals.format
         </code>
@@ -72,7 +72,7 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><span class="post-text">POST</span></td>
       <td>
-        <code class="bluetext">
+        <code >
           deals.format?contact_id={contact_id}&partial=1<br/>
           contacts/{contact_id}/deals.format?partial=1
         </code>
@@ -82,21 +82,21 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><span class="put-text">PUT</span></td>
       <td>
-        <code class="bluetext">deals/{id}.format</code>
+        <code >deals/{id}.format</code>
       </td>
       <td>Update a contact</td>
     </tr>
     <tr>
       <td><span class="put-text">PUT</span></td>
       <td>
-        <code class="bluetext">deals/{id}.format?partial=1</code>
+        <code >deals/{id}.format?partial=1</code>
       </td>
       <td>Partially update a deal</td>
     </tr>
     <tr>
       <td><span class="delete-text">DELETE</span></td>
       <td>
-        <code class="bluetext">deals/{id}.format</code>
+        <code >deals/{id}.format</code>
       </td>
       <td>Delete a deal</td>
     </tr>
@@ -115,33 +115,33 @@ date: 2014-03-04 10:29:23
   </thead>
   <tbody>
     <tr>
-      <td class="nowrap"><code class="redtext">string</code></td>
-      <td><code class="bluetext">status</code></td>
+      <td class="nowrap"><code >string</code></td>
+      <td><code >status</code></td>
       <td>Return deals that have the provided status type. Status can be one of: <strong>won, lost</strong> or <strong>pending</strong>.</td>
     </tr>
     <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">date_filter</code></td>
+      <td><code >time</code></td>
+      <td><code >date_filter</code></td>
       <td>Filter returned data by a particular field when combined with since and until.</td>
     </tr>
     <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">since</code></td>
+      <td><code >time</code></td>
+      <td><code >since</code></td>
       <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
     </tr>
     <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">until</code></td>
+      <td><code >time</code></td>
+      <td><code >until</code></td>
       <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
     </tr>
     <tr>
-      <td><code class="redtext">time</code></td>
-      <td class="nowrap"><code class="bluetext">unmodified_since</code></td>
+      <td><code >time</code></td>
+      <td class="nowrap"><code >unmodified_since</code></td>
       <td>Return only records that were unmodified since specified time.</td>
     </tr>
     <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">modified_since</code></td>
+      <td><code >time</code></td>
+      <td><code >modified_since</code></td>
       <td>Return only records that were modified since specified time.</td>
     </tr>
   </tbody>
@@ -159,68 +159,75 @@ date: 2014-03-04 10:29:23
   </thead>
   <tbody>
     <tr>
-      <td class="nowrap"><code class="redtext">bson_id</code></td>
-      <td><code class="bluetext">id</code></td>
+      <td class="nowrap"><code >bson_id</code></td>
+      <td><code >id</code></td>
       <td>id of the deal (read only)</td>
     </tr>
     <tr>
-      <td><code class="redtext">bson_id</code></td>
-      <td><code class="bluetext">contact_id</code></td>
+      <td><code >bson_id</code></td>
+      <td><code >contact_id</code></td>
       <td>id of the contact this deal belongs to (read only)</td>
     </tr>
     <tr>
-      <td><code class="redtext">date</code></td>
-      <td><code class="bluetext">date</code></td>
+      <td><code >object</code></td>
+      <td><code >contact_info</code></td>
+      <td>
+        JSON object containing contact_name and company relating to deal (read only) 
+      </td>
+    </tr>
+    <tr>
+      <td><code >date</code></td>
+      <td><code >date</code></td>
       <td>Date related to the deal’s creation</td>
     </tr>
     <tr>
-      <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">name</code></td>
+      <td><code >string</code></td>
+      <td><code >name</code></td>
       <td>Name of the deal (required)</td>
     </tr>
     <tr>
-      <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">text</code></td>
+      <td><code >string</code></td>
+      <td><code >text</code></td>
       <td>The text in the body of the deal</td>
     </tr>
     <tr>
-      <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">author</code></td>
+      <td><code >string</code></td>
+      <td><code >author</code></td>
       <td>First name and first letter of last name of the author of the deal (read only)</td>
     </tr>
     <tr>
-      <td><code class="redtext">float</code></td>
-      <td><code class="bluetext">amount</code></td>
+      <td><code >float</code></td>
+      <td><code >amount</code></td>
       <td>Total amount of money to be paid per month</td>
     </tr>
     <tr>
-      <td><code class="redtext">int</code></td>
-      <td><code class="bluetext">months</code></td>
+      <td><code >int</code></td>
+      <td><code >months</code></td>
       <td>Number of months the above amount will be paid for</td>
     </tr>
     <tr>
-      <td><code class="redtext">float</code></td>
-      <td class="nowrap"><code class="bluetext">total_amount</code></td>
+      <td><code >float</code></td>
+      <td class="nowrap"><code >total_amount</code></td>
       <td>Product of amount and months (read only)</td>
     </tr>
     <tr>
-      <td><code class="redtext">int</code></td>
-      <td><code class="bluetext">stage</code></td>
+      <td><code >int</code></td>
+      <td><code >stage</code></td>
       <td>What stage this deal is at. This can be converted to a label using the deal stages list in the settings resource.</td>
     </tr>
     <tr>
-      <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">status</code></td>
+      <td><code >string</code></td>
+      <td><code >status</code></td>
       <td>Status of the deal this is one of won, lost or pending</td>
     </tr>
     <tr>
-      <td><code class="redtext">date</code></td>
-      <td class="nowrap"><code class="bluetext">expected_close_date</code></td>
+      <td><code >date</code></td>
+      <td class="nowrap"><code >expected_close_date</code></td>
       <td>Date when the deal is expected to be closed</td>
     </tr>
     <tr>
-      <td><code class="redtext">date</code></td>
-      <td><code class="bluetext">closed_date</code></td>
+      <td><code >date</code></td>
+      <td><code >closed_date</code></td>
       <td>Date that the deal was closed. This is set automatically when a deal is marked as won or lost (read only).</td>
     </tr>
   </tbody>
@@ -230,7 +237,7 @@ date: 2014-03-04 10:29:23
 <p>Related notes can also be returned with a deal. They are returned as a resource just as they would be if you were to get notes for a contact. By default the notes will only return their id field. To get more information about the returned notes use the fields parameter.</p>
 <p>For example you would also like to return notes with their text field and author you could make a request like the one below.</p>
 <p class="url">
-  <code class="bluetext">
+  <code >
     <span class="get-text">GET</span>
     deals/abcdef1234567890abcdef12.json?fields=notes(text,author)
   </code>
