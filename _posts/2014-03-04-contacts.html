@@ -133,11 +133,11 @@ date: 2014-03-04 10:28:04
       <td><code class="bluetext">search</code></td>
       <td>Search phrase. Only contacts having this phrase in first, last or company name will be returned.</td>
     </tr>
-    <tr>
+<!--     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">filter_id</code></td>
       <td>ID of a user-defined filter (formerly custom filter). If provided, <code class="bluetext">letter</code>, <code class="bluetext">tag</code>, <code class="bluetext">status_id</code>, <code class="bluetext">starred</code>, <code class="bluetext">waiting</code> and <code class="bluetext">user_id</code> parameters would be ignored.</td>
-    </tr>
+    </tr> -->
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">letter</code></td>
@@ -183,12 +183,17 @@ date: 2014-03-04 10:28:04
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">owner_id</code></td>
-      <td>Return contacts owned by specified user. If not provided, contacts for the whole team are returned.</td>
+      <td>Return contacts owned by specified user. If not provided, contacts for current user are returned.</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">email</code></td>
       <td>Search for contacts with matching email address. Search is case insensitive.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">url</code></td>
+      <td>Search for contacts with matching url. Search is case insensitive, but must be an exact match - ie a search for http://www.example.com will not find a contact with url www.example.com</td>
     </tr>
     <tr>
       <td><code class="redtext">id</code></td>
@@ -220,7 +225,7 @@ date: 2014-03-04 10:28:04
     </tr>
     <tr>
       <td><code class="redtext">integer</code></td>
-      <td><code class="bluetext">page_size</code></td>
+      <td><code class="bluetext">per_page</code></td>
       <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
     </tr>
     <tr>
@@ -260,7 +265,7 @@ date: 2014-03-04 10:28:04
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">type</code></td>
-      <td>Type of the contact ('company' or 'individual'). Default is ‘company’.</td>
+      <td>Type of the contact ('company' or 'individual'). Default is the administrator's default.</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -309,7 +314,7 @@ date: 2014-03-04 10:28:04
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">address</code></td>
+      <td><code class="bluetext">address_list</code></td>
       <td>
         List of address <code class="redtext">hashes</code>, each containing the following fields
         <table class="table table-striped table-bordered">
@@ -377,7 +382,7 @@ date: 2014-03-04 10:28:04
             <tr>
               <td class="nowrap"><code class="redtext">string</code></td>
               <td class="nowrap"><code class="bluetext">type</code></td>
-              <td>Phone type ('work', 'mobile', 'home', 'direct', 'fax' or 'other')</td>
+              <td>Phone type ('work', 'mobile', 'home', 'direct', 'fax', 'skype' or 'other')</td>
             </tr>
             <tr>
               <td><code class="redtext">string</code></td>
@@ -392,7 +397,7 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">array</code></td>
       <td><code class="bluetext">emails</code></td>
       <td>
-        Contact’s email addresses. Every item is a <code class="redtext">hash</code> with 2 elements: 
+        Contact’s email addresses. Every item is a <code class="redtext">hash</code> with 2 elements:
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -433,7 +438,7 @@ date: 2014-03-04 10:28:04
             <tr>
               <td><code class="redtext">string</code></td>
               <td><code class="bluetext">type</code></td>
-              <td>URL type - ('website', 'twitter', 'linkedin', 'facebook' or 'other')</td>
+              <td>URL type - ('website', 'blog', 'twitter', 'linkedin', 'facebook', 'google_plus' or 'other')</td>
             </tr>
             <tr>
               <td class="nowrap"><code class="redtext">string</code></td>
@@ -448,7 +453,7 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">array</code></td>
       <td class="nowrap"><code class="bluetext">custom_fields</code></td>
       <td>
-        Contact’s custom fields. Every item is a <code class="redtext">hash</code> with 3 elements: 
+        Contact’s custom fields. Every item is a <code class="redtext">hash</code> with 3 elements:
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -476,7 +481,7 @@ date: 2014-03-04 10:28:04
 </table>
 
 <h3 id="complementary-data">Сomplementary Data</h3>
-<p>The following data is not part of the resource, but it can be returned for <span class="get-text">GET</span> requests if specified in <a href="fields.html">fields</a>  parameter. If any of this data is provided with <span class="post-text">POST</span> or <span class="put-text">PUT</span> requests, it will be ignored.</p>
+<p>The following data is not part of the resource, but it can be returned for <span class="get-text">GET</span> requests if specified in <a href="#fields">fields</a>  parameter. If any of this data is provided with <span class="post-text">POST</span> or <span class="put-text">PUT</span> requests, it will be ignored.</p>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -491,11 +496,12 @@ date: 2014-03-04 10:28:04
       <td class="nowrap"><code class="bluetext">photo_url</code></td>
       <td>URL to contact's photo</td>
     </tr>
-    <tr>
+    <!-- missing feature so docs removed see API-39 -->
+    <!-- <tr>
       <td class="nowrap"><code class="redtext">integer</code></td>
       <td class="nowrap"><code class="bluetext">pending_total</code></td>
       <td>Total amount of pending deals attached to a contact.</td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
 
@@ -546,42 +552,42 @@ date: 2014-03-04 10:28:04
     <tbody>
       <tr>
         <td class="nowrap"><code class="redtext">array</code></td>
-        <td><code class="bluetext">deals</code></td>
+        <td><code class="bluetext">deals()</code></td>
         <td>Last 4 deals associated with a contact.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">notes</code></td>
+        <td><code class="bluetext">notes()</code></td>
         <td>Last 4 notes associated with a contact.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">next_actions</code></td>
+        <td><code class="bluetext">next_actions()</code></td>
         <td>List of all assigned next actions for a contact sorted by action date and modification time.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td class="nowrap"><code class="bluetext">unassigned_actions</code></td>
+        <td class="nowrap"><code class="bluetext">unassigned_actions()</code></td>
         <td>List of unassigned next actions for a contact sorted by modification time.</td>
       </tr>
       <tr>
         <td class="nowrap"><code class="redtext">action</code></td>
-        <td><code class="bluetext">next_action</code></td>
-        <td>Active user's next action for a contact. Request this field in case you only need "that one next action to move a sale forward" for currently logged in user. If current user doesn't have a next action for this contact, this field is <span class="italic">null</span>.</td>
+        <td><code class="bluetext">next_action()</code></td>
+        <td>Active user's next action for a contact. Request this field in case you only need "that one next action to move a sale forward" for currently logged in user. If current user doesn't have a next action for this contact, this field is empty.</td>
       </tr>
       <tr>
         <td><code class="redtext">array</code></td>
-        <td><code class="bluetext">completed_actions</code></td>
+        <td><code class="bluetext">completed_actions()</code></td>
         <td>Last 4 completed actions for this contact sorted by completion time.</td>
       </tr>
     </tbody>
   </table>
-  
+
   <p>For example, to fetch a list of contacts containing only IDs, names and current user's next actions, you could use a following request (note that <code class="bluetext">id</code> is always included - no point specifying it in the list):</p>
 
-  <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,company_name,next_action</code></p>
+  <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,company_name,next_action()</code></p>
 
-  <p>Requesting <code class="bluetext">next_action</code> field doesn't remove that main next action from <code class="bluetext">next_actions</code> list, so you can request both fields if you like to have both full list of next actions and quick access to the main one.</p>
+  <p>Requesting <code class="bluetext">next_action()</code> field doesn't remove that main next action from <code class="bluetext">next_actions</code> list, so you can request both fields if you like to have both full list of next actions and quick access to the main one.</p>
 
   <!-- Sample from GitHub -->
   <h3 id="sample-code">Sample code</h3>
@@ -591,5 +597,5 @@ date: 2014-03-04 10:28:04
   </div>
   <!-- /Sample from GitHub -->
   <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/contacts.json</p>
-  
+
   <p><a href="#content">Top</a></p>

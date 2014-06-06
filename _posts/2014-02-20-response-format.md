@@ -7,13 +7,12 @@ date: 2014-02-20 11:20:17
 ---
 
 
-<p>Response can be sent in one of the following formats: JSON, XML, YAML.</p>
+<p>Response can be sent in one of the following formats: JSON, XML</p>
 <p>You must specify the format to be used for each request in a form of file extension:</p>
 <p>
   <code class="bluetext">
     /contacts.json<br/>
-    /contacts.xml<br/>
-    /contacts.yaml
+    /contacts.xml
   </code>
 </p>
 <p>Each response is a hash. Only response time and status fields are always present.</p>
@@ -107,7 +106,7 @@ date: 2014-02-20 11:20:17
       <td class="nowrap"><code class="redtext">string</code></td>
       <td><code class="bluetext">error_name</code></td>
       <td>Short description of a failure to be used in your failure handling codes.
-        You can see full lists of possible errors in every resource’s section.</td>
+        You can see full lists of possible errors in every resource's section.</td>
       </tr>
       <tr>
         <td><code class="redtext">string</code></td>
@@ -121,3 +120,26 @@ date: 2014-02-20 11:20:17
       </tr>
     </tbody>
   </table>
+
+<h3 id="suppress-http-status">Suppress HTTP Response Status</h3>
+You can suppress the HTTP response status if required by adding a `suppress_http_status=1` parameter to the end of your call. This will return a HTTP status of `200`, but the response body will contain response codes and error detail.
+
+For example the following request for a non existing contact will return HTTP status `404`.
+{% highlight http %}
+ https://app.onepagecrm.com/api/v3/contacts/1341.json
+{% endhighlight %}
+
+By adding the `suppress_http_status=1` parameter, the call will return HTTP status `200`.
+{% highlight http %}
+ https://app.onepagecrm.com/api/v3/contacts/1341.json?suppress_http_status=1
+{% endhighlight %}
+
+Both requests will return the same body response:
+{% highlight json %}
+{
+  "status": 404,
+  "message": "Resource not found",
+  "error_name": "resource_not_found",
+  "error_message": "Couldn't find contact for id, .\nThe contact may have been deleted or you may have used the wrong id"
+}
+{% endhighlight %}

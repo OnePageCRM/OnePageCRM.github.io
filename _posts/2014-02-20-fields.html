@@ -26,12 +26,12 @@ date: 2014-02-20 11:22:32
   <p>There are three types of fields in our API:</p>
   <ol>
     <li><strong id="resource-fields">Resource fields</strong> - These fields make up a resource, comprising its default fieldset. When you <span class="put-text">PUT</span> or <span class="post-text">POST</span> to a resource, only these fields are handled, all others are ignored.</li>
-    <li><strong>Complementary data</strong> - These fields can be added for <span class="get-text">GET</span> requests, providing some additional data for convenience. For example, Contacts resource has a <code class="bluetext">pending_total</code> complementary field providing total amount of pending deals attached to a contact. If provided in <span class="put-text">PUT</span> or <span class="post-text">POST</span> requests - these fields are ignored.</li>
+    <li><strong>Complementary data</strong> - These fields can be added for <span class="get-text">GET</span> requests, providing some additional data for convenience. For example, Contacts resource has a <code class="bluetext">photo_url</code> complementary field providing the url of the contact's photo. If provided in <span class="put-text">PUT</span> or <span class="post-text">POST</span> requests - these fields are ignored.</li>
     <li><strong>Associated resources</strong> - These fields allow you to get resources that are linked to the resource you are fetching, in the same request. For example, if you fetch a contact, you can request to add its deals to the response. See the <a href="#fetching-associated-resources">section</a> below for more info on associated resources.</li>
   </ol>
   <p>On each resource’s page, you can see a list of its main fields, as well as available complementary data and associated resources.</p>
   
-  <h3 id="fetching-associated-resources">Fetching Associated Resources</h3>
+  <h3 id="fetching-associated-resources" class="top-padding">Fetching Associated Resources</h3>
   <p>In every resource’s section you can see a list of associated resources. For example, contacts can have actions, deals and notes associated with them. To grab those in the same request, just specify them as a field.<br/>If you are familiar with SQL, this is similar to <a target="_blank" href="http://en.wikipedia.org/wiki/Join_(SQL)#Left_outer_join">Left Outer Join</a> operation.</p>
   <p>So if you’d like to add deals to our basic example above, just use:</p>
   <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?fields=first_name,last_name,deals</code></p>

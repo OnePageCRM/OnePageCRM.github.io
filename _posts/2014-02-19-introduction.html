@@ -1,19 +1,19 @@
 ---
 layout: api
-title: "Introduction"
+title: "API 3.0 Introduction"
 slug: "intro"
 category: intro
 date: 2014-02-19 09:59:09
 ---
 <div class="alert alert-info"> 
   <strong>This documentation is for Version 3 of our API. </strong> See documentation for
-  <a class="alert-link" href="http://www.onepagecrm.com/api/sales-crm-api.html" title="Link to our old API documentation"> Version 2 of our API</a>.
+  <a class="alert-link" href="/api2" title="Link to our old API documentation"> Version 2 of our API</a>.
   <span class="label label-warning">Support for Version 2 is being phased out. </span>
 </div>
 
 <h3>Sending/Receiving Data</h3>
-<p>The API can send <span class="underlined">and</span> receive data in XML, YAML and JSON, as well as receive data as URL encoded query strings.</p>
-<p>To send and receive XML, YAML or JSON you need to include the correct content-type header and replace the .format in the url.</p>
+<p>The API can send <span class="underlined">and</span> receive data in XML and JSON, as well as receive data as URL encoded query strings.</p>
+<p>To send and receive XML or JSON you need to include the correct content-type header and replace the .format in the url.</p>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -27,11 +27,6 @@ date: 2014-02-19 09:59:09
       <td class="name">JSON</td>
       <td>application/json</td>
       <td>.json</td>
-    </tr>
-    <tr>
-      <td class="name">YAML</td>
-      <td>application/x-yaml</td>
-      <td>.yml</td>
     </tr>
     <tr>
       <td class="name">XML</td>

@@ -26,11 +26,23 @@ authors:
   peter:
     name: Peter Armstrong
     display_name: Peter
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: peter@onepagecrm.com
     web: http://onepagecrm.com
+   # twitter: company
     github: peterOnePageCRM
     description: 'Peter is a developer at OnePageCRM.'
     image: '/img/peter.jpg'
+  john:
+    name: John Maguire
+    display_name: John
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: john@onepagecrm.com
+    web: http://onepagecrm.com
+   # twitter: company
+    github: JohnMaguir
+    description: 'John is a graduate developer at OnePageCRM.'
+    image: '/img/john.jpg'
   pawel:
     name: Paweł Smoliński
     display_name: Paweł
@@ -48,4 +60,3 @@ authors:
     web: http://onepagecrm.com
     description: 'Dan is an intern at OnePageCRM.'
     image: '/img/dan.jpg'
-
