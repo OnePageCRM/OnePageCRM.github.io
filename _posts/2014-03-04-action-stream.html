@@ -30,9 +30,9 @@ date: 2014-03-04 10:11:26
 </table>
 <p>Action Stream is a special listing of contacts, with following differences:</p>
 <ul>
-  <li><strong>All contacts with suitable actions are returned, others excluded.</strong> If <code class="bluetext">user_id</code> parameter is provided, list would consist of contacts with next action assigned to the user (not necessarily owned by him) and contacts owned by the user with at least one unassigned action. If <code class="bluetext">user_id</code> is not provided, contacts with assigned next actions or unassigned actions are returned.</li>
+  <li><strong>All contacts with suitable actions are returned, others excluded.</strong> If <code class="bluetext">user_id</code> parameter is provided, list would consist of contacts with next action assigned to the user (not necessarily owned by him).. If <code class="bluetext">user_id</code> is not provided, contacts with assigned next actions or unassigned actions are returned.</li>
   <li><strong>Contacts are sorted by actions.</strong> So instead of an alphabetical order, contacts are sorted by action’s assignee presence (assigned first), action’s date and action’s last modification time. For contacts with multiple actions, only top action participates in sorting.</li>
-  <li><strong>Returned data includes actions by default.</strong> Default value of <code class="bluetext"><a href="fields.html">fields</a></code> parameter for this request is ”all,next_actions,unassigned_actions”.  You can still change the value to whatever suits your needs however. </li>
+  <li><strong>Returned data includes actions by default.</strong> Default value of <code class="bluetext"><a href="fields.html">fields</a></code> parameter for this request is ”all,next_actions(all),next_action(all)”.  You can still change the value to whatever suits your needs however. </li>
   <li><strong>Filtering by <code class="bluetext">letter</code> is removed, “waiting” is added.</strong> letter filtering parameter is not supported. However, you can use <code class="redtext">boolean</code> <code class="bluetext">waiting</code> flag to limit results to contacts having an action with “waiting” date (assigned to a specified user if <code class="bluetext">user_id</code> parameter is provided).</li>
   <li><strong>With actions only.</strong> By default a call to <code>actions.json</code> will return only contacts with a next action.
   This can be overridden by changing the call to: <code>actions.json?has_actions=false</code></li>
@@ -42,11 +42,10 @@ date: 2014-03-04 10:11:26
 <div class="code-snippet">
 
 {% highlight json %}
-
 {
   "status": 0,
   "message": "OK",
-  "timestamp": 1400577826,
+  "timestamp": 1401357078,
   "data": {
     "contacts": [
       {
@@ -67,37 +66,23 @@ date: 2014-03-04 10:11:26
           "emails": [
             {
               "type": "work",
-              "value": "mamma@cn.com"
+              "value": "mamma@cn.co"
             }
           ],
           "status_id": "536c954fd4ca1a56c8000006",
           "status": "Lead",
           "starred": true,
           "lead_source_id": "",
-          "company_type": true,
+          "type": "company",
           "company_name": "Cartoon Network",
           "company_id": "537b1df8d4ca1a55e2000001",
-          "next_actions": {
-            "536c9546d4ca1a56c8000003": [
-              {
-                "id": "537b1eead4ca1a55e2000008",
-                "name": "Call Mama",
-                "type": "date",
-                "date": "2014-05-20T00:00:00Z",
-                "assignee": "536c9546d4ca1a56c8000003",
-                "queued": false,
-                "update_count": 1,
-                "changed_at": "2014-05-20T09:22:50Z"
-              }
-            ]
-          },
           "tags": [
 
           ],
           "custom_fields": [
 
           ],
-          "modified_at": "2014-05-20T09:23:08Z",
+          "modified_at": "2014-05-27T20:33:34Z",
           "address_list": [
             {
               "address": null,
@@ -107,6 +92,29 @@ date: 2014-03-04 10:11:26
               "country_code": null
             }
           ]
+        },
+        "next_actions": [
+          {
+            "id": "537b1eead4ca1a55e2000008",
+            "assignee_id": "536c9546d4ca1a56c8000003",
+            "contact_id": "53762162d4ca1a31d7000001",
+            "text": "Call Mama",
+            "date": "2014-05-20",
+            "done": false,
+            "modified_at": "2014-05-20T09:23:04Z",
+            "status": "date"
+          }
+        ],
+        "next_actions_count": 1,
+        "next_action": {
+          "id": "537b1eead4ca1a55e2000008",
+          "assignee_id": "536c9546d4ca1a56c8000003",
+          "contact_id": "53762162d4ca1a31d7000001",
+          "text": "Call Mama",
+          "date": "2014-05-20",
+          "done": false,
+          "modified_at": "2014-05-20T09:23:04Z",
+          "status": "date"
         }
       },
       {
@@ -140,22 +148,9 @@ date: 2014-03-04 10:11:26
           "status": "Lead",
           "starred": false,
           "lead_source_id": "",
-          "company_type": true,
+          "type": "company",
           "company_name": "Cartoon Network",
           "company_id": "537b1df8d4ca1a55e2000001",
-          "next_actions": {
-            "536c9546d4ca1a56c8000003": [
-              {
-                "id": "537b1e10d4ca1a55e2000003",
-                "name": "Johnny to call...",
-                "type": "waiting",
-                "assignee": "536c9546d4ca1a56c8000003",
-                "queued": false,
-                "update_count": 0,
-                "changed_at": "2014-05-20T09:19:12Z"
-              }
-            ]
-          },
           "tags": [
 
           ],
@@ -172,6 +167,29 @@ date: 2014-03-04 10:11:26
               "country_code": null
             }
           ]
+        },
+        "next_actions": [
+          {
+            "id": "537b1e10d4ca1a55e2000003",
+            "assignee_id": "536c9546d4ca1a56c8000003",
+            "contact_id": "53761df7d4ca1a2c2f000042",
+            "text": "Johnny to call...",
+            "done": false,
+            "modified_at": "2014-05-20T09:19:12Z",
+            "status": "waiting",
+            "date": null
+          }
+        ],
+        "next_actions_count": 1,
+        "next_action": {
+          "id": "537b1e10d4ca1a55e2000003",
+          "assignee_id": "536c9546d4ca1a56c8000003",
+          "contact_id": "53761df7d4ca1a2c2f000042",
+          "text": "Johnny to call...",
+          "done": false,
+          "modified_at": "2014-05-20T09:19:12Z",
+          "status": "waiting",
+          "date": null
         }
       }
     ],
