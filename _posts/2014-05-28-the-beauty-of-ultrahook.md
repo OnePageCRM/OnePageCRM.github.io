@@ -23,7 +23,7 @@ Wrong! Ultrahook is completley free and takes a grand total of 5 minutes configu
 
 Firstly pop over to the [Ultrahook website][1] and hit the, intuitively named, Get started now button, you will be presented with the following form to obtain your  ultrahook API key and namespace:
 
-<img src='http://i60.tinypic.com/344z15j.png'>
+<img src="/img/ultrahook.png">
 
 
 Go ahead and fill it out, making sure to take note of the namespace you choose, I will be using this ultrahook to send information from my OnePage CRM account to my web application, so I will call the namespace 'onepage', just to keep things clear and simple.
@@ -40,12 +40,12 @@ The API key is now saved in your system and you wont have to worry about it agai
 
 Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. http://onepage.onepage.ultrahook.com this is where we will tell OnePage CRM to send the webhook data. In the 'Add Apps' page of your OnePage CRM account enable the webhooks app and click configure
 
-<img src="http://i62.tinypic.com/2rwxr8n.png"  height="72" width="612">
+<img src="/img/OPCRMWebhooks.png"  height="72" width="612">
 
 
 In this configure page, you simple need to tell OnePageCRM where to send information too. Input the ultrahook namesapce from earlier. For example you can see that I am using the namespace onepage.
 
-<img src="http://i62.tinypic.com/2i91kyu.png"  height="231" width="612">
+<img src="/img/Webhookconfig.png"  height="231" width="612">
 
 Hit save and as simple as that OnePageCRM is now ready to start sending data using the webhook address. All thats left to do is run Ultrahook, open a new terminal and run the command 
 
@@ -61,7 +61,7 @@ My motivational web application simply keeps track of each time I win a deal in 
 
 When a deal is won in OnePageCRM, the webhook sends information about what just happened to my application, If its a deal that has been won it will increment my won deals in the database and update the motivational message accordingly. The end result giving the following page:
 
-<img src="http://i61.tinypic.com/25hpzr9.png">
+<img src="/img/Motivational.png">
 
 To learn more about what events trigger a Webhook and what information is sent with the webhook have a look at our [WebHooks and More][2] page for more information on integrating your application with OnePageCRM using webhooks. To try this motivational app and see a simple method fo integrating your app with OnePageCRM you can get the code [here][3]
 
