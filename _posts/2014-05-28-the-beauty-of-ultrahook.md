@@ -20,16 +20,16 @@ Ultrahook is a brilliant tool that can connect public webhooks with development 
 Wrong! Ultrahook is completley free and takes a grand total of 5 minutes configuration, 3 if your a fast typist.
  "Well It all sounds fantastic, if only there was somehwere I could go to read more about this" I hear you sigh, well you're in luck! It just so happens that the rest of this blog post does just that!
 
-**Getting started with Ultrahook**
+## Getting started with Ultrahook
 
-Firstly pop over to the [Ultrahook website][1] and hit the, intuitively named, Get started now button, you will be presented with the following form to obtain your  ultrahook API key and namespace:
+Firstly pop over to the [Ultrahook website][1] and hit the intuitively named "Get Started Now!" button. You will be presented with the following form to obtain your ultrahook API key and namespace:
 
 <img src='http://i60.tinypic.com/344z15j.png'>
 
 
-Go ahead and fill it out, making sure to take note of the namespace you choose, I will be using this ultrahook to send information from my OnePage CRM account to my web application, so I will call the namespace `onepage`, just to keep things clear and simple.
+Go ahead and fill it out, making sure to take note of the namespace you choose. I will be using this ultrahook to send information from my OnePage CRM account to my web application, so I will call the namespace `onepage`, just to keep things clear and simple.
 
-Hit the Sign me up! button and you will now be presented with an API key. Make note of this too, although ultrahook will also send you a friendly email with your API key just so you wont forget. What a great bunch of lads!
+Hit the "Sign Me Up!" button and you will be presented with an API key. Make note of this too, although ultrahook will also send you a friendly email with your API key just so you wont forget. What a great bunch of lads!
 
 Next open up your terminal and enter the following command, replacing `YourAPIKeyHere` with the API key you got from the previous step
 
@@ -38,6 +38,9 @@ Next open up your terminal and enter the following command, replacing `YourAPIKe
 The API key is now saved in your system and you wont have to worry about it again while still enjoying all the security it offers. In the terminal navigate to the directory of your rails application and install the ultrahook gem.
 
      gem install ultrahook
+
+
+## Using Ultrahook with OnePageCRM
 
 Now Ultrahook is set up and ready to go, all thats left to do is to tell Ultrahook where to look for the data being sent (the public webhook) and where to send it (the localhost webhook). The public webhook is the namespace you created earlier on e.g. `http://onepage.onepage.ultrahook.com`. This is where we will tell OnePage CRM to send the webhook data. In the 'Add Apps' page of your OnePage CRM account enable the webhooks app and click configure
 
@@ -52,11 +55,13 @@ Hit save and as simple as that OnePageCRM is now ready to start sending data usi
 
     ultrahook UltraHookNamesapce  LocalHostWebhook
 
-- replacing `UltraHookNamespace` with the namespace you set up and `LocalHostWebhook` with the webhook located on the localhost. For example my namespace is called onepage and my local webhook is for my motivational web app, therefore to start my ultrahook I must run 
+Replace `UltraHookNamespace` with the namespace you set up and `LocalHostWebhook` with the webhook located on the localhost. For example my namespace is called onepage and my local webhook is for my motivational web app, therefore to start my ultrahook I must run 
 
     ultrahook onepage http://localhost:3000/motivation/webhook/2
 
 You should now have two terminal windows open with your rails server running in one and the Ultrahook running in the other. Now all you have to do is simply sit back and enjoy the beauty of Ultrahooks.
+
+## Demo App 
 
 My motivational web application simply keeps track of each time I win a deal in OnePageCRM and gives me a little motivational message based on how many deals I've won, because we all need a little pick me up now and again.
 
