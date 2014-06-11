@@ -413,11 +413,9 @@ date: 2014-02-20 11:22:06
     </tbody>
   </table>
   
-  <!-- Sample from GitHub -->
   <h3 id="sample-code">Sample code</h3>
   <div class="sample-code">
     <div class="sample-code-title">Sample JSON server response for bootstrap</div>
     <script src="https://gist.github.com/OnePageCTO/6575061.js?file=bootstrap.json"></script>
   </div>
-  <!-- /Sample from GitHub -->
   <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/bootstrap.json</p>
