@@ -1,6 +1,6 @@
 ---
 layout: api
-title: "Closing Sales Cycle"
+title: "Closing Sales Cycle - Beta"
 slug: "closing-sales-cycle"
 category: otherresources
 date: 2014-03-04 10:35:27
