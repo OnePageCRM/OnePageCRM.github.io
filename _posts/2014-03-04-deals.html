@@ -242,13 +242,48 @@ date: 2014-03-04 10:29:23
     deals/abcdef1234567890abcdef12.json?fields=notes(text,author)
   </code>
 </p>
-<!-- Sample from GitHub -->
-<h3 id="sample-code">Sample code</h3>
-<div class="sample-code">
-  <div class="sample-code-title">Sample JSON server response for deals</div>
-  <script src="https://gist.github.com/OnePageCTO/6575061.js?file=deals.json"></script>
-</div>
-<!-- /Sample from GitHub -->
-<p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/deals.json?contact_id=523637e1391ba11500000255</p>
 
-<p>>Top</a></p> 
+<h3 id="sample-code">Sample response</h3>
+<div class="sample-code">
+  <div class="sample-code-title">Sample JSON server response for a call to  <code>deals.json</code></div>
+
+{% highlight json %}
+{
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1402476678,
+  "data": {
+    "deals": [
+      {
+        "deal": {
+          "id": "539817b5eb8997481c000002",
+          "contact_id": "53721750aa76206e8a000001",
+          "contact_info": {
+            "contact_name": "John Deer",
+            "company": "John Deer Farm Machinery"
+          },
+          "owner_id": "52d3d90beb899776e400000e",
+          "name": "Tractor Wheels",
+          "text": "John Deer want 10k of tractor wheels",
+          "date": "2014-06-11",
+          "amount": 10,
+          "total_amount": 10,
+          "status": "pending",
+          "stage": 10,
+          "expected_close_date": "2014-06-11",
+          "author": "Peter A.",
+          "months": 1,
+          "modified_at": "2014-06-11T08:48:31Z",
+          "close_date": null
+        },
+        "related_notes": []
+      }
+    ],
+    "total_count": 1,
+    "page": 1,
+    "max_page": 1,
+    "per_page": 10
+  }
+}
+
+{% endhighlight %}
