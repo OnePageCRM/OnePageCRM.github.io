@@ -9,7 +9,7 @@ date: 2014-02-20 11:22:22
 
 <h3 id="header-parameters">Header Parameters</h3>
 <p>These parameters need to be included with every request made to the API other than the initial call to <code class="bluetext">login.format</code>.</p>
-<table class="api-table">
+<table class="table table-bordered table-striped">
   <thead>
     <td>Parameters</td>
     <td>Description</td>
@@ -58,7 +58,7 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
 <ul>
   <li>The full url for this request is: <code class="inline">‘https://app.onepagecrm.com/api/v3/contacts/4d91d3ea6381904e44000026.json?partial=1’</code></li>
   <li>The raw request body to partially update the contact’s name is: <code class="inline">‘{"firstname":"John", "lastname":"Doe"}’</code></li>
-  <li>The request type in uppercase is: <span class="put-text">PUT</span></li>
+  <li>The request type in uppercase is: <span class="label label-default">PUT</span></li>
   <li>The unix timestamp used for this request is: <code class="inline">1401366488</code></li>
   <li>The user id as received from the login function is: <code class="inline">4e0046526381906f7e000002</code></li>
   <li>The api key as received from the login function is: <code class="inline">AJfSRLr7uhsa9lOIgKQ4Vu72zzg3QTE7pJL2iSeA6Mo=</code></li>
