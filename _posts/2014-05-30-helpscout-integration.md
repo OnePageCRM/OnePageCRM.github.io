@@ -4,7 +4,7 @@ title: "Helpscout Integration"
 slug: "helpscout-integration"
 category: blog
 author: peter
-date: 2014-05-30 13:24:22
+date: 2014-06-12 13:24:22
 excerpt: We have recently completed an integration with Helpscout, a great help desk application. This integration was super simple and doesn't use either API. Here's how we did it.
 ---
 
@@ -19,7 +19,7 @@ We simply build a URL based on the contact details sent from Helpscout.
 
 For example, if Johnny Bravo sent us an email to support, and wasn't already in our OnePageCRM account, a link to a URL like this would be generated in our Helpscout sidebar.
 
-{% highlight html %}
+{% highlight http %}
 http://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&email=jb@cartoonnetwork.com
 
 {% endhighlight %}
@@ -29,4 +29,4 @@ The user can simply click on this link and they are brought to their OnePageCRM 
 
 Our integration was initially created as a Custom App in Helpscout. This made it really easy for us to test it during development. When we were happy with the application, the team from Helpscout wrapped it up into an official, one-click install integration.
 
-You can checkout our [Helpscout app here](https://www.helpscout.net/apps/onepagecrm/), and enable it in your OnePageCRM account on the [apps page](https://app.onepagecrm.com/apps/)
+You can checkout our [Helpscout app here](https://www.helpscout.net/apps/onepagecrm/), read the marketing blurb [here](http://blog.onepagecrm.com/applications-updates/integration-helpscout) and enable it in your OnePageCRM account on the [apps page](https://app.onepagecrm.com/apps/)
