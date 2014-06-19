@@ -34,10 +34,10 @@ What is all boils down to is the better our application gels with others the bet
 
 I am currently developing an integration with Twitter. See if you can guess which section it is classified under on our new <a href="https://app.onepagecrm.com/apps">Integration's page</a>
 
-For me it is really exciting to know that when this integration goes live, it will make many peoples day to day lives that little bit easier. This is why I work in a start-up.
+For me it is really exciting to know that when this integration goes live, it will make many peoples day to day lives that little bit easier. This is why I work in a SMB.
 
 Since we have already filled our <a href="http://blog.onepagecrm.com/blog/onepagecrm-expands-and-moves-to-a-bigger-bolder-new-office">new office</a> with developers you can see why we have set such an ambitious goal for ourselves ! <a href="http://blog.onepagecrm.com/blog/sales-ecosystem">10 integrations in 10 weeks</a>
 
 I now understand why so many applications exist and also it spurs me on to get to work on the integration I've been tasked with !
 
-This excitement is exactly why I chose to work in a start up
+This excitement is exactly why I chose to work in a growing SMB
