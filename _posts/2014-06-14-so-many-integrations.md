@@ -32,7 +32,7 @@ This clear simple layout shows where each integration slots into the sales proce
 
 What is all boils down to is the better our application gels with others the better the user experience. That's what were all about here at OnePageCRM. 
 
-I am currently developing an integration with Twitter. See if you can guess which section it will be classified under on our new <a href="https://app.onepagecrm.com/apps">Integration's page</a>
+I am currently developing an integration with Twitter. See if you can guess which section it is classified under on our new <a href="https://app.onepagecrm.com/apps">Integration's page</a>
 
 For me it is really exciting to know that when this integration goes live, it will make many peoples day to day lives that little bit easier. This is why I work in a start-up.
 
