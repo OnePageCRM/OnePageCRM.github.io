@@ -45,3 +45,13 @@ authors:
     github: JohnMaguir
     description: 'John is a graduate developer at OnePageCRM.'
     image: '/img/john.jpg'
+  dan:
+    name: Daniel Fahy
+    display_name: Dan
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: dan@onepagecrm.com
+    web: http://onepagecrm.com
+   # twitter: company
+    github: danielfahy
+    description: 'Dan is a graduate developer at OnePageCRM.'
+    image: '/img/dan.jpg'
