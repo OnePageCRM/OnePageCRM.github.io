@@ -270,7 +270,7 @@ Order Listing By Field
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">order</code></td>
       <td><code> asc || desc </code></td>
-      <td>Return records in a specified order, ascending or descending.</td>
+      <td>Return records in a specified order, ascending or descending. If not specified, the default order is ascending.</td>
     </tr>
   </tbody>
 </table>
