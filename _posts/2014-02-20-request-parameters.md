@@ -254,8 +254,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
 
 <h3 id="order-listings-by-field"> <span class="label label-default">GET</span>
 Order Listing By Field 
-  <span class="label label-warning">Coming soon </span>
-  </h3>
+</h3>
 
 <table class="table table-striped table-bordered">
   <thead>
