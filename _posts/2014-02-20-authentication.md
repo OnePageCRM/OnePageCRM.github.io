@@ -23,7 +23,7 @@ date: 2014-02-20 11:22:06
     <tr>
       <td class="post-text strong">POST</td>
       <td><code>login.format</code></td>
-      <td>Create a new tag</td>
+      <td>Log in to your OnePageCRM account</td>
     </tr>
     <tr>
       <td class="get-text strong">GET</td>
