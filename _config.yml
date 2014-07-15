@@ -1,8 +1,10 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'OnePageCRM Developer Portal'
 
-name: 'OnePageCRM'
+name: 'OnePageCRM Developer'
 
+url: 'http://developer.onepagecrm.com'
+rss_path: "/blog"
 codeurl: 'http://www.onepagecrm.com'
 
 api_sections: [
@@ -17,7 +19,7 @@ api_sections: [
     ['otherresources', 'Beta Methods']
 ]
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 exclude: ['README.md']
 
 baseurl: ''
