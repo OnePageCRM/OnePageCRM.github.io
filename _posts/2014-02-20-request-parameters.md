@@ -16,7 +16,7 @@ date: 2014-02-19 14:05:55
 <p>Or as part of HTTP request body for <span class="post-text">POST</span> and <span class="put-text">PUT</span> requests.</p>
 <p>This section outlines the main parameters. To see all parameters supported by a particular resource, please visit that resource's section.</p>
 
-<h3 id="paginating-responses"><span class="label label-default">DELETE</span>  Paginating Responses </h3>
+<h3 id="paginating-responses"><span class="label label-default">GET</span>  Paginating Responses </h3>
 <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
 <table class="table table-striped table-bordered">
   <thead>
