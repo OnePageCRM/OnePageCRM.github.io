@@ -62,3 +62,11 @@ authors:
     web: http://onepagecrm.com
     description: 'Dan is an intern at OnePageCRM.'
     image: '/img/dan.jpg'
+
+  ruairi:
+    name: Ruairi Fahy
+    display_name: Ruairi
+    email: ruairi@onepagecrm.com
+    web: http://onepagecrm.com
+    description: 'Ruairi is a developer at OnePageCRM.'
+    # image: '/img/ruairi.jpg'
