@@ -4,6 +4,7 @@ title: "API Tools Updated"
 category: blog
 author: ruairi
 tags: draft
+excerpt: Lately we have been focusing on making it easier for developers to use the OnePageCRM API. We've put together an API browser and a new python client.
 date: 2014-07-21 09:18:00
 ---
 
