@@ -25,7 +25,7 @@ Best of all it gives you most of these features straight out of the box.
 
 Here's how I installed Fish Shell on my Ubuntu 14.04 machine.
 
-    sudo apt install fish
+    sudo apt-get install fish
 
 If you aren't using Ubuntu, you can find downloads for other Linux distros, OSX and even Windows on the [Fish Shell][1] homepage.
 
