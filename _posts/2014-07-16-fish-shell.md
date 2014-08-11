@@ -5,7 +5,7 @@ slug: "fish-shell"
 category: blog
 author: peter
 date: 2014-08-01 13:24:22
-excerpt: I've been using Linux since 2007 and have been learning more and more about the Terminal. I recently changed my default shell from Bash to Fish Shell, and I really love the improvement. It's easy to install and comes with loads of features out of the box. Read on to see how to install and configure Fish.
+excerpt: I've been using Linux since 2007 and have been constantly learning more shell terminal tricks. I recently changed my default shell from Bash to Fish Shell, and I really love the improvement. It's easy to install and comes with loads of features out of the box. Read on to see how to install and configure Fish.
 ---
 
 I've been using Linux since 2007 and since then I've gradually been learning more and more about Linux's killer app, the Terminal. As my career is developing I find I spend more and more time in the shell and I'm constantly finding quicker and easier ways to do common things using the command line.
