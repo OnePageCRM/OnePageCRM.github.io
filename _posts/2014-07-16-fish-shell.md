@@ -139,7 +139,7 @@ end
 </div>
 
 
-If you would like to use my theme, just copy the code below to:
+If you would like to use my theme, just copy the code above to:
 
     ~/.oh-my-fish/themes/peterarmstrong/fish_prompt.fish
 
