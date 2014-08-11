@@ -39,7 +39,7 @@ Then logout and log back in.
 ## It gets even better
 Fish shell by itself is a huge improvement on bash, but for me it got even better when I found the [Oh my fish][2] project.  
 The Oh my fish project page has detailed installation instructions and I'm not going to repeat them here.  
-Once you have Oh my fish installed, edit the ~/.config/fish/config.fish file to specify the themes and plugins you want to use.  
+Once you have Oh my fish installed, edit the `~/.config/fish/config.fish` file to specify the themes and plugins you want to use.  
 I'm using the following plugins:
 
  -  git
@@ -48,15 +48,10 @@ I'm using the following plugins:
  -  sublime
  -  node
 
-Copied from the default `robbyrussell` theme and adds better support Mercurial repositories.
+The default theme is great - it gives a nice neat command line prompt and git repository information in the command prompt.
+As I use a mix of Mercurial and Git, I decided to change this theme slightly to also show Mercurial repo information on the command prompt.
+I copied my theme from the default `robbyrussell` theme. Click on the link below to see the full code for my theme.
 
-#####  Theme Characteristics
-
-* Displays git and mercurial information in the command prompt when available.
-* Neat arrow for shell prompt indicator.
-* If the last command was failed, the indicator would be red, otherwise it's green.
-
-Click on the link below to see the full code for my theme.
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -144,10 +139,19 @@ end
 </div>
 
 
-I've really enjoyed using Fish Shell for the past while and feel like I'd be lost without it!
+If you would like to use my theme, just copy the code below to:
+
+    ~/.oh-my-fish/themes/peterarmstrong/fish_prompt.fish
+
+Then in your `~/.config/fish/config.fish` file, change the theme line to
+    
+    # Theme
+    set fish_theme peterarmstrong
+
+
+I've really enjoyed using Fish Shell for the past while and now feel like I'd be lost without it!
 I hope you get a chance to try out Fish Shell. 
 If you do, let us know how you get on by posting a comment or sharing your config file in the forum!
-
 
 
 
