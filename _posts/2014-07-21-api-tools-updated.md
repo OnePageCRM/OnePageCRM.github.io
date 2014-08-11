@@ -4,19 +4,20 @@ title: "API Tools Updated"
 category: blog
 author: ruairi
 tags: draft
+excerpt: Lately we have been focusing on making it easier for developers to use the OnePageCRM API. We've put together an API browser and a new python client.
 date: 2014-07-21 09:18:00
 ---
 
 Lately we have been focusing on making it easier for developers to
 use the OnePageCRM API. We had some discussions amongst ourselves about how
-best to do this I think we got some nice tools together that will hopefully be
+best to do this I think we've put together some nice tools together that will hopefully be
 of use to everybody.
 
 The first tool we have created is an API browser which allows anybody to login
 with their OnePageCRM account and make GET requests to our API. To try it out
-head to [developer.onepagecrm.com/api_browser](http://developer.onepagecrm.com/api_browser) log in with your user name
-and password and then try some requests to see what they return. The browser is
-still under active development so if anybody has any thoughts on how to make it
+head to [developer.onepagecrm.com/api_browser](http://developer.onepagecrm.com/api_browser). 
+Log in with your user name and password and then try some requests to see what they return. 
+The browser is still under active development so if anybody has any thoughts on how to make it
 better we want to hear about it so post them in the forum.
 
 Another project we have been working on is updating the python sample.

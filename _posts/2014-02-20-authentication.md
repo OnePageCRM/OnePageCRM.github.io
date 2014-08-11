@@ -107,7 +107,7 @@ date: 2014-02-20 11:22:06
     <tr>
       <td><code>object</code></td>
       <td><code>settings</code></td>
-      <td>User’s date format, reminders, currency, timezone, popular countries and contacts listing size. For more information visit the user settings documentation page.</td>
+      <td>User's date format, reminders, currency, timezone, default contact type, popular countries and contacts listing size.</td>
     </tr>
   </tbody>
 </table>
