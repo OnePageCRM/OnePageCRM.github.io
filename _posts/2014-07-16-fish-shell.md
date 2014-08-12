@@ -1,10 +1,9 @@
----
 layout: post
 title: "Fish Shell"
 slug: "fish-shell"
 category: blog
 author: peter
-date: 2014-08-01 13:24:22
+date: 2014-08-11 13:24:22
 excerpt: I've been using Linux since 2007 and have been constantly learning more shell terminal tricks. I recently changed my default shell from Bash to Fish Shell, and I really love the improvement. It's easy to install and comes with loads of features out of the box. Read on to see how to install and configure Fish.
 ---
 
