@@ -18,7 +18,7 @@ as quickly as possible.
 As for the changes themselves they are quite minor. Here are a list of them:
 
 1. In some places the error string has been changed from `incomplete_request_data` to `invalid_request_data`. The error code remains the same.
-2. A contact can no longer be created without an owner id. To use the current user's id as the owner id add `partial=1` to the query parameters
+2. A contact can no longer be updated without specifying an owner id. To use the existing contact owner id as the owner id add `partial=1` to the query parameters
 3. New error format:
 
 ```javascript
