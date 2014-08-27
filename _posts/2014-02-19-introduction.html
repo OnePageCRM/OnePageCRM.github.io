@@ -42,7 +42,9 @@ date: 2014-02-19 09:59:09
 <p>When creating a resource ‘partially’ using a <span class="post-text">POST</span> request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the <span class="post-text">POST</span> could still fail when partially creating a resource but not including the minimum required fields.</p> 
 <p>When updating a resource ‘partially’ using a <span class="put-text">PUT</span> request any fields you don’t include will stay the same as before.</p>
 
-<p><span class="strong">Warning:</span> You need to exercise caution when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.</p>
+<div class="alert alert-danger"> 
+<strong>Warning:</strong> You need to exercise caution when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.
+</div>
 
 <h3>Sparse Responses</h3>
 <p>You can request sparse responses now by including the value sparse=1 in the <span class="put-text">PUT</span>/<span class="post-text">POST</span> request’s body or url query string for GET calls. This will give you a faster response as any empty fields will be completely omitted from the response body.</p>

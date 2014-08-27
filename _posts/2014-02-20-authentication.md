@@ -364,9 +364,8 @@ date: 2014-02-20 11:22:06
     </tr>
   </tbody>
 </table>
-<div class="overview">
-  <p class="overview-title warning">WARNING</p>
-  <p class="overview-content">This will log the user out of all applications the user has logged into using this auth key. If you wish to log a user out just forget their auth key.<br/><span class="italic">Note: this includes the mobile application.</span></p>
+<div class="alert alert-danger">
+  <strong>Warning:</strong> This will log the user out of all applications the user has logged into using this auth key. If you wish to log a user out just forget their auth key.<br/><span class="italic">Note: this includes the mobile application.</span>
 </div>
 
 <h3 id="change-auth-key">Change Auth Key</h3>
@@ -387,11 +386,9 @@ date: 2014-02-20 11:22:06
     </tr>
   </tbody>
 </table>
-<div class="overview">
-  <p class="overview-title warning">WARNING</p>
-  <p class="overview-content">This will log the user out of all applications the user has logged into using this
-    auth key.<br/><span class="italic">Note: this includes the mobile application.</span></p>
-  </div>
+<div class="alert alert-danger">
+  <strong>Warning:</strong> This will log the user out of all applications the user has logged into using this auth key. If you wish to log a user out just forget their auth key.<br/><span class="italic">Note: this includes the mobile application.</span>
+</div>
 
   <h4 id="auth-key-resource-fields">Resource Fields</h4>
   <table class="table table-striped table-bordered">
