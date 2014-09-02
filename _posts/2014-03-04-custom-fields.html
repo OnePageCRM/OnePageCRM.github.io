@@ -123,15 +123,122 @@ date: 2014-03-04 10:35:11
           <td class="nowrap"><code class="bluetext">choices</code></td>
           <td>An array of possible choices. This needs to be present only for custom fields of <code class="bluetext">type</code> <span class="italic">multiple_choice</span> or  <span class="italic">select_box</span></td>
         </tr>
+        <tr>
+          <td><code>integer</code></td>
+          <td><code>position</code></td>
+          <td>The position of this custom field in the list of custom fields</td>
+        </tr>
+        <tr>
+          <td><code>integer</code></td>
+          <td><code>reminder_days</code></td>
+          <td>The number of days an anniversary reminder is set for. Only for anniversary type custom fields. It is null for other fields.</td>
+        </tr>
       </tbody>
     </table>
-    <!-- Sample from GitHub -->
-    <h3 id="sample-code">Sample code</h3>
-    <div class="sample-code">
-      <div class="sample-code-title">Sample JSON server response for custom_fields</div>
-      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=custom_fields.json"></script>
-    </div>
-    <!-- /Sample from GitHub -->
-    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/custom_fields.json</p>
     
-    <p>>Top</a></p> 
+
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#customfields">
+            Sample <code> GET </code> response from <code>custom_fields.json</code>
+          </a>
+        </h4>
+      </div>
+      <div id="customfields" class="panel-collapse collapse">
+        <div class="panel-body">
+{% highlight json %}
+
+{
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1409672751,
+  "data": {
+    "custom_fields": [
+      {
+        "custom_field": {
+          "id": "5405be471787fa6b1f000001",
+          "name": "Wedding Anniversary",
+          "type": "anniversary",
+          "choices": [],
+          "position": 0,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405be521787fa6b1f000008",
+          "name": "Groom's Name",
+          "type": "single_line_text",
+          "choices": [],
+          "position": 1,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405be6c1787fa6b4900000f",
+          "name": "Flower description",
+          "type": "multi_line_text",
+          "choices": [],
+          "position": 2,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405be981787fa6bca000007",
+          "name": "Payment type",
+          "type": "select_box",
+          "choices": [
+            "Card",
+            "Cheque"
+          ],
+          "position": 3,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405bede1787fa6ceb000004",
+          "name": "Number of bridesmaids",
+          "type": "number",
+          "choices": [],
+          "position": 4,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405bef51787fa6ceb000012",
+          "name": "Extras",
+          "type": "multiple_choice",
+          "choices": [
+            "Drinks on arrival",
+            "Flowers for mothers"
+          ],
+          "position": 5,
+          "reminder_days": null
+        }
+      },
+      {
+        "custom_field": {
+          "id": "5405bf031787fa6d34000006",
+          "name": "Engagement date",
+          "type": "date",
+          "choices": [],
+          "position": 6,
+          "reminder_days": null
+        }
+      }
+    ],
+    "total_count": 7,
+    "page": 1,
+    "max_page": 1,
+    "per_page": 10
+  }
+}
+{% endhighlight %}
+        </div>
+      </div>
+    </div>

@@ -117,7 +117,7 @@ date: 2014-03-04 10:35:39
               <tr>
                 <td><code class="redtext">string</code></td>
                 <td><code class="bluetext">counts</code></td>
-                <td>Number of contacts the following user has with this status (read_only)</td>
+                <td>Number of contacts the following user owns with this status (read_only)</td>
               </tr>
               <tr>
                 <td class="nowrap"><code class="redtext">string</code></td>
@@ -129,7 +129,59 @@ date: 2014-03-04 10:35:39
         </td>
       </tr>
     </table>
+
+    <h3> Optional Contact Count </h3>
+    The OnePageCRM web application also shows the number of contacts has actions with or owns.
     
+    This is the sum of all contacts owned by that user and all other team members contacts that the current user has actions with.
+    You can retrieve this count by adding a parameter <code>action_stream_count</code> to the statuses url. This is a boolean parameter and takes the value <code>1</code> or <code>true</code>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#statusactioncount">
+            Sample <code> GET </code> response from <code>statuses.json?action_stream_count=true</code>
+          </a>
+        </h4>
+      </div>
+      <div id="statusactioncount" class="panel-collapse collapse">
+        <div class="panel-body">
+{% highlight json %}
+
+{
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1408440334,
+  "data": [
+    {
+      "status": {
+        "counts": 4,
+        "total_count": 4,
+        "team_counts": [
+          {
+            "user_id": "53d110de1da417788100000d",
+            "counts": 0
+          },
+          {
+            "user_id": "53b66a221da41710e9000001",
+            "counts": 4
+          }
+        ],
+        "id": "53b66a2e1da41710e9000004",
+        "status": "lead",
+        "text": "Lead",
+        "description": "description",
+        "color": "f96600",
+        "action_stream_count": 4
+      }
+    }
+  ]
+}
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
+
+
     <h3 id="additional-resources">Additional Resources</h3>
     <p>When returning a single status it will also embed a contacts list resource within it. This will return the following fields along with those mentioned above.</p>
     <p>By default the contacts will only return their id field. To get more information about the contacts use the fields parameter. You can also paginate, sort and filter contacts by dates. For more info check out the listing fields section of contacts.</p>
