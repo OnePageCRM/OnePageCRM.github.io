@@ -172,8 +172,9 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
 <p class="url"><code class="bluetext"><span class="put-text">PUT</span> contacts/51f251d5eb899749f7000006.json?partial=1&first_name=Jane</code></p>
 <p>And here is how you can create a contact named Jane Doe with all other fields set to their default values:</p>
 <p class="url"><code class="bluetext"><span class="post-text">POST</span> contacts.json?partial=1&first_name=Jane&last_name=Doe</code></p>
-<p><span class="strong">Warning:</span> Beware that if you use this option, any fields that you misspell or accidentally leave out from request will be ignored and their values would be lost, without any warnings or errors. <br/>
-This is why, starting from version 3 of our API, partial <span class="post-text">POST</span> requests are rejected by default, and this feature is active only if you specifically request it.</p>
+<div class="alert alert-danger">
+<strong>Warning:</strong> Beware that if you use this option, any fields that you misspell or accidentally leave out from request will be ignored and their values would be lost, without any warnings or errors. <br/>
+</div>
 
 <h3 id="limiting-listings-by-time"><span class="label label-default">GET</span> Limiting Listings By Time </h3>
 <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>

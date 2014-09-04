@@ -30,6 +30,10 @@ date: 2014-02-20 11:22:22
   </tbody>
 </table>
 
+<div class="alert alert-danger">
+<strong>Warning:</strong> These headers are case sensitive! If you do not send these headers exactly as they appear here you will obtain a <strong>"401 Unauthorized"</strong> error when making signed requests.
+</div>
+
 <h3 id="authentication-signature">Authentication Signature</h3>
 <p>The signing process ensures that all API requests are secure, using a similar signing process to the OAuth standard. It is based on 5 separate variables:</p>
 <ol>
