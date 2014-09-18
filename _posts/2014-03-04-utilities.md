@@ -132,7 +132,7 @@ This returns general user settings. These settings are also included in a call t
 </table>
 
 <h3 id="time-zones">Time Zones</h3>
-<p>This returns a list of currencies accepted and used by OnePageCRM. When updating a currency you must use one of these.</p>
+<p>This returns a list of timezones used in OnePageCRM.</p>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
