@@ -390,29 +390,260 @@ date: 2014-02-20 11:22:06
   <strong>Warning:</strong> This will log the user out of all applications the user has logged into using this auth key. If you wish to log a user out just forget their auth key.<br/><span class="italic">Note: this includes the mobile application.</span>
 </div>
 
-  <h4 id="auth-key-resource-fields">Resource Fields</h4>
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <td>Type</td>
-        <td>Name</td>
-        <td>Description</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>string</code></td>
-        <td><code>auth_key</code></td>
-        <td>
-          This is a base64 encoded string that you must use to sign further api requests.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <h3 id="sample-code">Sample code</h3>
-  <div class="sample-code">
-    <div class="sample-code-title">Sample JSON server response for bootstrap</div>
-    <script src="https://gist.github.com/OnePageCTO/6575061.js?file=bootstrap.json"></script>
+<h4 id="auth-key-resource-fields">Resource Fields</h4>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>string</code></td>
+      <td><code>auth_key</code></td>
+      <td>
+        This is a base64 encoded string that you must use to sign further api requests.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sample-code">Sample code</h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse"  href="#bootstrapjson">
+        Sample <code> GET </code> response from <code>bootstrap.json</code>
+      </a>
+    </h4>
   </div>
-  <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/bootstrap.json</p>
+  <div id="bootstrapjson" class="panel-collapse collapse">
+    <div class="panel-body">
+{% highlight json %}
+{
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1411038598,
+  "data": {
+    "user_id": "540586ae12321312300391",
+    "auth_key": "asdfasdfasfwer/rwerwrwfad=",
+    "account_type": "trial",
+    "custom_fields": [
+      {
+        "custom_field": {
+          "id": "541067771da41730b50007d3",
+          "name": "Select Box CF",
+          "type": "select_box",
+          "choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "position": 0,
+          "reminder_days": null
+        }
+      }
+    ],
+    "team": [],
+    "settings": {
+      "reminder": {
+        "type": "new_task",
+        "hour": 6
+      },
+      "time_zone": "london",
+      "date_format": "%m/%d/%Y",
+      "listing_size": 25,
+      "currency": "USD",
+      "popular_countries": [
+        "US",
+        "IE",
+        "AE",
+        "AO",
+        "AF"
+      ],
+      "deal_stages": [
+        {
+          "stage": 10,
+          "label": "Qualification"
+        },
+        {
+          "stage": 25,
+          "label": null
+        },
+        {
+          "stage": 50,
+          "label": "Decision"
+        },
+        {
+          "stage": 75,
+          "label": null
+        },
+        {
+          "stage": 90,
+          "label": "Negotiation"
+        }
+      ],
+      "default_contact_type": "company"
+    },
+    "user": {
+      "user": {
+        "id": "540586ae1da41731e2000391",
+        "first_name": "Johnny",
+        "last_name": "Bravo",
+        "email": "jb@cartoonnetwork.com",
+        "company_name": "Cartoon Network",
+        "photo_url": "",
+        "bcc_email": "540586b41da41731e2000394@users.onepagecrm.com",
+        "account_rights": []
+      }
+    }
+  },
+  "tags": {
+    "tags": [
+      {
+        "name": "VIP",
+        "counts": 2,
+        "total_count": 2,
+        "action_stream_count": 2
+      }
+    ],
+    "system_tags": [
+      {
+        "name": "pendings",
+        "counts": 0,
+        "total_count": 0
+      },
+      {
+        "name": "starred",
+        "counts": 0,
+        "total_count": 0
+      },
+      {
+        "name": "waiting",
+        "counts": 0,
+        "total_count": 0
+      }
+    ]
+  },
+  "statuses": [
+    {
+      "status": {
+        "counts": 28,
+        "total_count": 28,
+        "team_counts": [
+          {
+            "user_id": "540586ae1da41731e2000391",
+            "counts": 28
+          }
+        ],
+        "id": "540586b41da41731e2000395",
+        "status": "lead",
+        "text": "Lead",
+        "description": "",
+        "color": "f96600",
+        "action_stream_count": 28
+      }
+    }
+  ],
+  "sales": {
+    "target": 5000,
+    "won": 0,
+    "pending": 0,
+    "expires": "2014-09-30"
+  },
+  "team_stream": {
+    "users": [
+      {
+        "user_id": "540586ae1da41731e2000391",
+        "counts": 28
+      }
+    ],
+    "all": 28
+  },
+  "lead_sources": [
+    {
+      "counts": 0,
+      "total_count": 0,
+      "team_counts": [
+        {
+          "user_id": "540586ae1da41731e2000391",
+          "counts": 0
+        }
+      ],
+      "id": "advertisement",
+      "text": "Advertisement"
+    }
+  ],
+  "contacts_count": {
+    "all": {
+      "1": 0,
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "d": 4,
+      "e": 3,
+      "f": 1,
+      "g": 0,
+      "h": 2,
+      "i": 0,
+      "j": 1,
+      "k": 2,
+      "l": 2,
+      "m": 2,
+      "n": 1,
+      "o": 1,
+      "p": 2,
+      "q": 0,
+      "r": 0,
+      "s": 2,
+      "t": 0,
+      "u": 2,
+      "v": 0,
+      "w": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "total_count": 28
+    },
+    "users": [
+      {
+        "1": 0,
+        "user_id": "540586ae1da41731e2000391",
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 4,
+        "e": 3,
+        "f": 1,
+        "g": 0,
+        "h": 2,
+        "i": 0,
+        "j": 1,
+        "k": 2,
+        "l": 2,
+        "m": 2,
+        "n": 1,
+        "o": 1,
+        "p": 2,
+        "q": 0,
+        "r": 0,
+        "s": 2,
+        "t": 0,
+        "u": 2,
+        "v": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "total_count": 28
+      }
+    ]
+  }
+}
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
