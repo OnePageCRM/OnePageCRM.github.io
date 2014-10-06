@@ -263,14 +263,131 @@ date: 2014-03-04 10:35:39
         </tr>
       </tbody>
     </table>
-    
-    <!-- Sample from GitHub -->
-    <h3 id="sample-code">Sample code</h3>
-    <div class="sample-code">
-      <div class="sample-code-title">Sample JSON server response for statuses</div>
-      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=statuses.json"></script>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#statusesjson">
+            Sample <code> GET </code> response from <code>statuses.json</code>
+          </a>
+        </h4>
+      </div>
+      <div id="statusesjson" class="panel-collapse collapse">
+        <div class="panel-body">
+    {% highlight json %}
+    {
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1412609627,
+  "data": [
+    {
+      "status": {
+        "counts": 3,
+        "total_count": 3,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 3
+          }
+        ],
+        "id": "542bff241da417179900000c",
+        "status": "lead",
+        "text": "Lead",
+        "description": "You intend to sell to.",
+        "color": "f96600"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000d",
+        "status": "prospect",
+        "text": "Prospect",
+        "description": "You are actively selling to.",
+        "color": "cc0000"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000e",
+        "status": "customer",
+        "text": "Customer",
+        "description": "You have had a transaction with.",
+        "color": "3399ff"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000f",
+        "status": "inactive",
+        "text": "Inactive",
+        "description": "You are not actively selling to.",
+        "color": "666666"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da4171799000010",
+        "status": "general",
+        "text": "General",
+        "description": "Non-sales related contacts.",
+        "color": "000000"
+      }
+    }
+  ]
+}
+    {% endhighlight %}
+        </div>
+      </div>
     </div>
-    <!-- /Sample from GitHub -->
-    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/statuses.json</p>
-    
-    <p>>Top</a></p> 
