@@ -457,6 +457,7 @@ date: 2014-02-20 11:22:06
       "date_format": "%m/%d/%Y",
       "listing_size": 25,
       "currency": "USD",
+      "currency_symbol": "$",
       "popular_countries": [
         "US",
         "IE",
