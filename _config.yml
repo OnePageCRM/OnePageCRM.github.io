@@ -45,3 +45,28 @@ authors:
     github: JohnMaguir
     description: 'John is a graduate developer at OnePageCRM.'
     image: '/img/john.jpg'
+  pawel:
+    name: Paweł Smoliński
+    display_name: Paweł
+    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
+    email: pawel@onepagecrm.com
+    web: http://www.onepagecrm.com
+    github: ZipoKing
+    twitter: ZipoKing
+    description: "Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it."
+    image: '/img/pawel.jpg'
+  dan:
+    name: Dan Fahy
+    display_name: Dan
+    email: dan@onepagecrm.com
+    web: http://onepagecrm.com
+    description: 'Dan is a graduate developer at OnePageCRM.'
+    image: '/img/dan.jpg'
+
+  ruairi:
+    name: Ruairi Fahy
+    display_name: Ruairi
+    email: ruairi@onepagecrm.com
+    web: http://onepagecrm.com
+    description: 'Ruairi is a developer at OnePageCRM.'
+    # image: '/img/ruairi.jpg'

@@ -18,7 +18,9 @@ layout: blog
   <footer>
     <div class="media well">
       <a class="pull-left" href="#">
+        {% if author.image %}
         <img class="media-object img-rounded" src="{{ author.image }}" alt="author image">
+        {% endif %}
       </a>
       <div class="media-body">
         <h4 class="media-heading"> {{ author.name }}</h4>

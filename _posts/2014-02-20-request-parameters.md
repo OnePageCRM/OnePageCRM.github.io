@@ -16,7 +16,7 @@ date: 2014-02-19 14:05:55
 <p>Or as part of HTTP request body for <span class="post-text">POST</span> and <span class="put-text">PUT</span> requests.</p>
 <p>This section outlines the main parameters. To see all parameters supported by a particular resource, please visit that resource's section.</p>
 
-<h3 id="paginating-responses"><span class="label label-default">DELETE</span>  Paginating Responses </h3>
+<h3 id="paginating-responses"><span class="label label-default">GET</span>  Paginating Responses </h3>
 <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
 <table class="table table-striped table-bordered">
   <thead>
@@ -172,8 +172,9 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
 <p class="url"><code class="bluetext"><span class="put-text">PUT</span> contacts/51f251d5eb899749f7000006.json?partial=1&first_name=Jane</code></p>
 <p>And here is how you can create a contact named Jane Doe with all other fields set to their default values:</p>
 <p class="url"><code class="bluetext"><span class="post-text">POST</span> contacts.json?partial=1&first_name=Jane&last_name=Doe</code></p>
-<p><span class="strong">Warning:</span> Beware that if you use this option, any fields that you misspell or accidentally leave out from request will be ignored and their values would be lost, without any warnings or errors. <br/>
-This is why, starting from version 3 of our API, partial <span class="post-text">POST</span> requests are rejected by default, and this feature is active only if you specifically request it.</p>
+<div class="alert alert-danger">
+<strong>Warning:</strong> Beware that if you use this option, any fields that you misspell or accidentally leave out from request will be ignored and their values would be lost, without any warnings or errors. <br/>
+</div>
 
 <h3 id="limiting-listings-by-time"><span class="label label-default">GET</span> Limiting Listings By Time </h3>
 <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
@@ -254,8 +255,7 @@ This is why, starting from version 3 of our API, partial <span class="post-text"
 
 <h3 id="order-listings-by-field"> <span class="label label-default">GET</span>
 Order Listing By Field 
-  <span class="label label-warning">Coming soon </span>
-  </h3>
+</h3>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -271,7 +271,7 @@ Order Listing By Field
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">order</code></td>
       <td><code> asc || desc </code></td>
-      <td>Return records in a specified order, ascending or descending.</td>
+      <td>Return records in a specified order, ascending or descending. If not specified, the default order is ascending.</td>
     </tr>
   </tbody>
 </table>

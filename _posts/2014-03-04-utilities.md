@@ -6,10 +6,95 @@ category: otherresources
 date: 2014-03-04 10:36:19
 ---
 
+### Settings
+This returns general user settings. These settings are also included in a call to the `bootstrap.format` endpoint.
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">settings.format</code></td>
+      <td>Gets user settings</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse"  href="#settingsjson">
+          Sample response from <code>settings.json</code>
+        </a>
+      </h4>
+    </div>
+    <div id="settingsjson" class="panel-collapse collapse">
+      <div class="panel-body">
+{% highlight json %}
+  {
+    "status": 0,
+    "message": "OK",
+    "timestamp": 1406882735,
+    "data": {
+      "reminder": {
+        "type": "new_task",
+        "hour": 6
+      },
+      "time_zone": "london",
+      "date_format": "%d/%m/%Y",
+      "listing_size": 25,
+      "currency": "EUR",
+      "popular_countries": [
+        "US"
+      ],
+      "deal_stages": [
+        {
+          "stage": 10,
+          "label": "Qualification"
+        },
+        {
+          "stage": 25,
+          "label": null
+        },
+        {
+          "stage": 50,
+          "label": "Decision"
+        },
+        {
+          "stage": 75,
+          "label": null
+        },
+        {
+          "stage": 90,
+          "label": "Negotiation"
+        }
+      ],
+      "default_contact_type": "company"
+    }
+  }
+
+{% endhighlight %}
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
 <h3 id="currencies">Currencies</h3>
 <p>This returns a list of currencies accepted and used by OnePageCRM. When updating a currency you must use one of these.</p>
-<h4>URL</h4>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -27,9 +112,27 @@ date: 2014-03-04 10:36:19
   </tbody>
 </table>
 
+<h3 id="currencies">Countries</h3>
+<p>This returns a list of countries used for addresses in OnePageCRM.</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Method</td>
+      <td>Url</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">countries.format</code></td>
+      <td>Get a list of countries</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="time-zones">Time Zones</h3>
-<p>This returns a list of currencies accepted and used by OnePageCRM. When updating a currency you must use one of these.</p>
-<h4>URL</h4>
+<p>This returns a list of timezones used in OnePageCRM.</p>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -49,7 +152,6 @@ date: 2014-03-04 10:36:19
 
 <h3 id="resource-fields">Resource Fields</h3>
 <p>You can use this to get a list of fields that can be returned for each resource type. This should be used in conjunction with the rest of the documentation but you could also use it to dynamically build object to store responses from the server.</p>
-<h4>URLs</h4>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>

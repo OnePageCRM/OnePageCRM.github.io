@@ -31,7 +31,7 @@ date: 2014-03-04 10:35:39
     </tr>
     <tr>
       <td><span class="post-text">POST</span></td>
-      <td><code class="bluetext">statuses/{id}.format</code></td>
+      <td><code class="bluetext">statuses.format</code></td>
       <td>Create a status</td>
     </tr>
     <tr>
@@ -117,7 +117,7 @@ date: 2014-03-04 10:35:39
               <tr>
                 <td><code class="redtext">string</code></td>
                 <td><code class="bluetext">counts</code></td>
-                <td>Number of contacts the following user has with this status (read_only)</td>
+                <td>Number of contacts the following user owns with this status (read_only)</td>
               </tr>
               <tr>
                 <td class="nowrap"><code class="redtext">string</code></td>
@@ -129,7 +129,59 @@ date: 2014-03-04 10:35:39
         </td>
       </tr>
     </table>
+
+    <h3> Optional Contact Count </h3>
+    The OnePageCRM web application also shows the number of contacts has actions with or owns.
     
+    This is the sum of all contacts owned by that user and all other team members contacts that the current user has actions with.
+    You can retrieve this count by adding a parameter <code>action_stream_count</code> to the statuses url. This is a boolean parameter and takes the value <code>1</code> or <code>true</code>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#statusactioncount">
+            Sample <code> GET </code> response from <code>statuses.json?action_stream_count=true</code>
+          </a>
+        </h4>
+      </div>
+      <div id="statusactioncount" class="panel-collapse collapse">
+        <div class="panel-body">
+{% highlight json %}
+
+{
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1408440334,
+  "data": [
+    {
+      "status": {
+        "counts": 4,
+        "total_count": 4,
+        "team_counts": [
+          {
+            "user_id": "53d110de1da417788100000d",
+            "counts": 0
+          },
+          {
+            "user_id": "53b66a221da41710e9000001",
+            "counts": 4
+          }
+        ],
+        "id": "53b66a2e1da41710e9000004",
+        "status": "lead",
+        "text": "Lead",
+        "description": "description",
+        "color": "f96600",
+        "action_stream_count": 4
+      }
+    }
+  ]
+}
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
+
+
     <h3 id="additional-resources">Additional Resources</h3>
     <p>When returning a single status it will also embed a contacts list resource within it. This will return the following fields along with those mentioned above.</p>
     <p>By default the contacts will only return their id field. To get more information about the contacts use the fields parameter. You can also paginate, sort and filter contacts by dates. For more info check out the listing fields section of contacts.</p>
@@ -173,7 +225,7 @@ date: 2014-03-04 10:35:39
     </table>
     
     <h3 id="valid-color-strings">Valid Color Strings</h3>
-    <table class="table table-striped table-bordered">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <td>Hex</td>
@@ -186,12 +238,12 @@ date: 2014-03-04 10:35:39
       </thead>
       <tbody>
         <tr>
-          <td>6cd8ff</td>
-          <td class="color-6cd8ff"><span></span></td>
           <td>666666</td>
           <td class="color-666666"><span></span></td>
           <td>3399ff</td>
           <td class="color-3399ff"><span></span></td>
+           <td>cc0000</td>
+          <td class="color-cc0000"><span></span></td>
         </tr>
         <tr>
           <td>f96600</td>
@@ -202,23 +254,140 @@ date: 2014-03-04 10:35:39
           <td class="color-ff00ff"><span></span></td>
         </tr>
         <tr>
-          <td>cc0000</td>
-          <td class="color-cc0000"><span></span></td>
           <td>009900</td>
           <td class="color-009900"><span></span></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
         </tr>
       </tbody>
     </table>
-    
-    <!-- Sample from GitHub -->
-    <h3 id="sample-code">Sample code</h3>
-    <div class="sample-code">
-      <div class="sample-code-title">Sample JSON server response for statuses</div>
-      <script src="https://gist.github.com/OnePageCTO/6575061.js?file=statuses.json"></script>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse"  href="#statusesjson">
+            Sample <code> GET </code> response from <code>statuses.json</code>
+          </a>
+        </h4>
+      </div>
+      <div id="statusesjson" class="panel-collapse collapse">
+        <div class="panel-body">
+    {% highlight json %}
+    {
+  "status": 0,
+  "message": "OK",
+  "timestamp": 1412609627,
+  "data": [
+    {
+      "status": {
+        "counts": 3,
+        "total_count": 3,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 3
+          }
+        ],
+        "id": "542bff241da417179900000c",
+        "status": "lead",
+        "text": "Lead",
+        "description": "You intend to sell to.",
+        "color": "f96600"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000d",
+        "status": "prospect",
+        "text": "Prospect",
+        "description": "You are actively selling to.",
+        "color": "cc0000"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000e",
+        "status": "customer",
+        "text": "Customer",
+        "description": "You have had a transaction with.",
+        "color": "3399ff"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da417179900000f",
+        "status": "inactive",
+        "text": "Inactive",
+        "description": "You are not actively selling to.",
+        "color": "666666"
+      }
+    },
+    {
+      "status": {
+        "counts": 0,
+        "total_count": 0,
+        "team_counts": [
+          {
+            "user_id": "542bff721da417179900004b",
+            "counts": 0
+          },
+          {
+            "user_id": "542bfef51da4171799000008",
+            "counts": 0
+          }
+        ],
+        "id": "542bff241da4171799000010",
+        "status": "general",
+        "text": "General",
+        "description": "Non-sales related contacts.",
+        "color": "000000"
+      }
+    }
+  ]
+}
+    {% endhighlight %}
+        </div>
+      </div>
     </div>
-    <!-- /Sample from GitHub -->
-    <p class="url"><strong>URL:</strong> https://app.onepagecrm.com/api/v3/statuses.json</p>
-    
-    <p>>Top</a></p> 

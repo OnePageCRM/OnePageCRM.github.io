@@ -29,27 +29,27 @@ title: WebHooks
   </thead>
   <tbody>
     <tr>
-      <td class="name">timestamp</td>
+      <td><code>timestamp</code></td>
       <td>int</td>
       <td>Sent as unix time (<a href="http://en.wikipedia.org/wiki/Unix_time">http://en.wikipedia.org/wiki/Unix_time</a>)</td>
     </tr>
     <tr>
-      <td class="name">secretkey</td>
+      <td><code>secretkey</code></td>
       <td>string</td>
       <td>If you provided a SecretKey it will be included here, otherwise this field is empty</td>
     </tr>
     <tr>
-      <td class="name">data</td>
+      <td><code>data</code></td>
       <td>hash</td>
       <td>A data hash containing the same data as returned from a API call but as a POST parameter body.</td>
     </tr>
     <tr>
-      <td class="name">type</td>
+      <td><code>type</code></td>
       <td>string</td>
       <td>What type of data was changed(Contact, Action, Deal etc..)</td>
     </tr>
     <tr>
-      <td class="name">reason</td>
+      <td><code>reason</code></td>
       <td>string</td>
       <td>What change triggered the Webhook(Created, Deleted, Updated etc..)</td>
     </tr>
@@ -57,6 +57,9 @@ title: WebHooks
 </table>
 
 <h3 id="sampledata"  class="top-padding">Sample Data</h3>
+
+<div class="alert alert-warning"><strong>Note:</strong> Due to a legacy issue, the response from the <code>contact</code> endpoint has a slightly different format than the other endpoints. Please see the sample data.</div>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -66,44 +69,68 @@ title: WebHooks
   </thead>
   <tbody>
     <tr>
-      <td class="name">contact</td>
+      <td><code>contact</code></td>
       <td>
-      {% highlight json %}
-        {
-          "data": {
-            "id": "51a8852aceb9976888000007",
-            "pendingdeal": true,
-            "starred": true,
-            "owner": "51a88516ceb9976888000001",
-            "type": "contact",
-            "firstname": "Jane",
-            "lastname": "Doe",
-            "company": "Acme Inc.",
-            "status": "customer",
-            "tags": [],
-            "photo_url": "https://opcrm.com/jane_doe.png",
-            "next_actions": {
-              "51a88516ceb9976888000001": [
-                {
-                "id": "BSON::ObjectId('51c422aaceb997128700026c')",
-                "name": "Contact Jane to confirm she has received our deal",
-                "type": "date",
-                "date": "2013-06-26 00:00:00 UTC"
-                }
-              ]
-            },
-            "company_id": "nil"
-          },
-          "type": "contact",
-          "reason": "updated",
-          "secretkey": "mysecretkey",
-          "timestamp": "1371810060"
-        }
+    {% highlight json %}
+    {
+      "timestamp": 1410857130,
+      "secretkey": null,
+      "reason": "updated",
+      "type": "contact",
+      "data": {
+          "contact": {
+              "address_list": [
+                  {
+                      "country_code": null,
+                      "zip_code": null,
+                      "state": null,
+                      "city": null,
+                      "address": null
+                  }
+              ],
+              "modified_at": "2014-09-16T08:45:30Z",
+              "custom_fields": [],
+              "tags": [],
+              "sales_closed_for": [],
+              "company_id": "5417f8291da4171227000042",
+              "company_name": "Cartoon Network",
+              "type": "company",
+              "lead_source_id": "",
+              "status_id": "5417f3741da4171227000005",
+              "status": "Lead",
+              "emails": [
+                  {
+                      "value": "jb@cartoonnetwork.com",
+                      "type": "work"
+                  }
+              ],
+              "phones": [
+                  {
+                      "value": "+55 5555",
+                      "type": "work"
+                  }
+              ],
+              "urls": [
+                  {
+                      "value": "cartoonnetwork.com",
+                      "type": "website"
+                  }
+              ],
+              "background": "",
+              "job_title": "Model",
+              "photo_url": "",
+              "last_name": "Bravo",
+              "first_name": "Johnny",
+              "owner_id": "5417f36d1da4171227000001",
+              "id": "5417f8291da4171227000041"
+          }
+      }
+  }
   {% endhighlight %}
 </td>
 </tr>
 <tr>
-  <td class="name">action</td>
+  <td><code>action</code></td>
   <td>
   {% highlight json %}
   {
@@ -127,7 +154,7 @@ title: WebHooks
   </td>
 </tr>
 <tr>
-  <td class="name">deal</td>
+  <td><code>deal</code></td>
   <td>
   {% highlight json %}
   {
@@ -153,7 +180,7 @@ title: WebHooks
   </td>
 </tr>
 <tr>
-  <td class="name">note</td>
+  <td><code>note</code></td>
   <td>
   {% highlight json %}
   {
@@ -183,23 +210,23 @@ title: WebHooks
   </thead>
   <tbody>
     <tr>
-      <td class="name">Created</td>
+      <td><code>Created</code></td>
       <td>Object has been created.</td>
     </tr>
     <tr>
-      <td class="name">Updated</td>
+      <td><code>Updated</code></td>
       <td>Object has been updated.</td>
     </tr>
     <tr>
-      <td class="name">Deleted</td>
+      <td><code>Deleted</code></td>
       <td>The object has been deleted. If it can still be undone, then the object data will be sent along, otherwise the data object will only contain the objects id.</td>
     </tr>
     <tr>
-      <td class="name">Undeleted</td>
+      <td><code>Undeleted</code></td>
       <td><span class="bold">Contact only:</span> The delete action has been undone and the contact has been reactivated.</td>
     </tr>
     <tr>
-      <td class="name">expected_close_time_updated</td>
+      <td><code>expected_close_time_updated</code></td>
       <td>
         <span class="bold">Deal only:</span> The expected close date for this deal has been changed.<br/>
         <span class="italic">
@@ -208,7 +235,7 @@ title: WebHooks
       </td>
     </tr>
     <tr>
-      <td class="name">changed_to_pending</td>
+      <td><code>changed_to_pending</code></td>
       <td>
         <span class="bold">Deal only:</span> The deal has been updated to pending, check the deal_stage param to see at what stage it is.<br />
         <span class="italic">
@@ -217,7 +244,7 @@ title: WebHooks
       </td>
     </tr>
     <tr>
-      <td class="name">changed_to_won</td>
+      <td><code>changed_to_won</code></td>
       <td>
         <span class="bold">Deal only:</span> The deal has been updated to won.<br/>
         <span class="italic">
@@ -226,7 +253,7 @@ title: WebHooks
       </td>
     </tr>
     <tr>
-      <td class="name">changed_to_lost</td>
+      <td><code>changed_to_lost</code></td>
       <td>
         <span class="bold">Deal only:</span> The deal has been updated to lost.<br/>
         <span class="italic">
@@ -235,11 +262,11 @@ title: WebHooks
       </td>
     </tr>
     <tr>
-      <td class="name">Completed</td>
+      <td><code>Completed</code></td>
       <td><span class="bold">Action only:</span>  The action has been marked as done.</td>
     </tr>
     <tr>
-      <td class="name">Uncompleted</td>
+      <td><code>Uncompleted</code></td>
       <td><span class="bold">Action only:</span>  The done action has been reopened.</td>
     </tr>
   </tbody>

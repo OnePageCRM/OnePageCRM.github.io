@@ -1,6 +1,6 @@
 ---
 layout: api
-title: "Login with Google"
+title: "Login with Google - Beta"
 slug: "google-login"
 category: basics
 date: 2014-02-20 11:22:07
