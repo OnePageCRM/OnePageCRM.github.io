@@ -5,7 +5,7 @@ slug: "mercurial-precommit"
 category: blog
 author: peter
 date: 2014-12-18 13:24:22
-excerpt: Mercurial precommit hooks let you prevent rouge code getting committed to your repository. At OnePageCRM, we use it to stop debugging information
+excerpt: Mercurial precommit hooks let you prevent rouge code getting committed to your repository. At OnePageCRM, we use it to stop debugging information reaching our development servers.
 ---
 
 As our development team has expanded over the last year, debug information has crept into the repository on more than one occasion.
