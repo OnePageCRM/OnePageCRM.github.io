@@ -11,7 +11,9 @@ When I started working here in OnePageCRM nearly a year ago, I was asked to read
 
 ## Don't Make Me Think
 The first was '[Don't Make Me Think][1]' by Steve Krug.
+
 <img class="img-responsive" src="/img/dontmakemethink.jpg" />
+
 This book is a really simple set of guidelines on designing user interfaces for web usability.
 Simple and easy to read, the author uses his own advice to make the book easy to absorb, without making you think too hard.
 Although much of his advice was what you could call common sense, I found this book really valuable.
@@ -19,7 +21,9 @@ As the old saying goes, common sense isn't really that common, and I think this 
 
 ## Delivering Happiness
 Next up for me was '[Delivering Happiness][2]', by Tony Hsieh
+
 <img class="img-responsive" src="/img/deliveringhappiness.jpg" />
+
 Tony Hsieh is the CEO of Zappos, an e-commerce company that mostly sells shoes.
 As they don't post to Ireland, I had never heard of Zappos before reading this book, but I found it an interesting read.
 The book is part autobiography, part company management handbook. Zappos seem to put a lot of focus on developing their company culture and in particular their customer service.
@@ -35,6 +39,9 @@ As the company has expanded over the last year, I am watching our company cultur
 
 ## Getting Things Done
 The final book on the original list is pretty fundamental to OnePageCRM.
+
+<img class="img-responseive" src="/img/gettingthingsdone.jpg">
+
 The time management methods described in '[Getting Things Done][3]' by David Allen are what inspired the OnePageCRM 'Next Action' sales process.
 Ironically I haven't managed to 'get things done' and this is the last book on the reading list for me to read.
 I'm looking forward to getting stuck into this book and interested to see how David's methods can help me in both my personal and professional life.
@@ -48,12 +55,13 @@ We started with '[Confident Ruby][4]' by Avdi Grimm. The author describes this a
 Next on the list is '[Practicing Rails][5]' by Justin Weiss. I've just started it, but it seems to be a really useful, practical book that is packed with examples.
 
 Reading technical books is a great way to upskill but long books about management or programming can be tough to slog through.
-It's difficult for technical books to strike a balance between readability and usefullness.
+It's difficult for technical books to strike a balance between readability and usefulness.
 After a day at work I like to sit down with a book, but I find that if I start reading non fiction I soon fall asleep in the chair. In this situation I like to read fiction instead to unwind.
 I've found that a quiet coffee shop on a Sunday afternoon is the ideal place to read something more technical.
 
 So, what are your favourite reads? Fiction or non fiction, we would love to hear what books inspired your business or helped develop your technology stack.
-Tweet us your recommendations - @onepagecrm!
+Tweet us your recommendations - <a href="https://twitter.com/intent/tweet?screen_name=onepagecrm" class="twitter-mention-button" data-related="peteretepeter">Tweet us your recommendations - @onepagecrm</a>
+
 
   [1]: http://www.sensible.com/dmmt.html
   [2]: http://deliveringhappiness.com/
