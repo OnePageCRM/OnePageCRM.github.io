@@ -11,30 +11,22 @@ When I started working here in OnePageCRM nearly a year ago, I was asked to read
 <img class="img-responsive" src="/img/library.jpg" />
 
 ## Don't Make Me Think
-The first was '[Don't Make Me Think][1]' by Steve Krug.
+The first book was '[Don't Make Me Think][1]' by Steve Krug.
 
 <img class="img-responsive" src="/img/dontmakemethink.jpg" />
 
-This book is a really simple set of guidelines on designing user interfaces for web usability.
-Simple and easy to read, the author uses his own advice to make the book easy to absorb, without making you think too hard.
-Although much of his advice was what you could call common sense, I found this book really valuable.
-As the old saying goes, common sense isn't really that common, and I think this is a book I'll revisit before taking on any design projects in the future.
+This book gives a really simple set of guidelines on designing user interfaces for web usability. Simple and easy to read, the author uses his own advice to make the book easy to absorb, without making you think too hard. Although much of his advice was what you could call common sense, I found this book really valuable. As the old saying goes, common sense isn't really that common, and I think this is a book I'll revisit before taking on any design projects in the future.
 
 ## Delivering Happiness
 Next up for me was '[Delivering Happiness][2]', by Tony Hsieh
 
 <img class="img-responsive" src="/img/deliveringhappiness.jpg" />
 
-Tony Hsieh is the CEO of Zappos, an e-commerce company that mostly sells shoes.
-As they don't post to Ireland, I had never heard of Zappos before reading this book, but I found it an interesting read.
-The book is part autobiography, part company management handbook. Zappos seem to put a lot of focus on developing their company culture and in particular their customer service.
+Hsieh is the CEO of Zappos, an e-commerce company that mostly sells shoes. As they don't post to Ireland, I had never heard of Zappos before reading this book, but I found it an interesting read. The book is part autobiography, part company management handbook. Zappos seem to put a lot of focus on developing their company culture and in particular their customer service.
 
-Customer service is something we are also really proud of here at OnePageCRM, and I can see why this book is on the reading list.
-One thing we have in common with Zappos is that everyone at OnePageCRM spends some time working with the customer success team.
-In Zappos, new hires spend their first few weeks manning the phones. Here we do things a little differently - every day someone from the development, marketing or management team helps the customer success team, answering calls, emails and instant messages from our customers.
+Excellent customer service is something we are also really proud of here at OnePageCRM, and I can see why this book is on the reading list. One thing we have in common with Zappos is that everyone at OnePageCRM spends some time working with the customer success team. In Zappos, new hires spend their first few weeks manning the phones. Here we do things a little differently - every day someone from the development, marketing or management team helps the customer success team, answering calls, emails and instant messages from our customers.
 
-As a developer, I love this customer interaction. Firstly it gives me an insight into how the systems I am building are used - what issues our customers have and where the pain points are.
-Secondly, every now and then, a customer compliments a feature I have been working hard on. It's great to hear how our work affects our customers working day and it really helps to keep the development team motivated.
+As a developer, I love this customer interaction. Firstly it gives me an insight into how the systems I am building are used - what issues our customers have and where the pain points are. Secondly, every now and then, a customer compliments a feature I have been working hard on. It's great to hear how our work affects our customers working day and it really helps to keep the development team motivated.
 
 As the company has expanded over the last year, I am watching our company culture developing before my eyes. I think we can take some pointers from Zappos and Tony and keep our team and culture developing in a positive way.
 
@@ -56,12 +48,13 @@ We started with '[Confident Ruby][4]' by Avdi Grimm. The author describes this a
 Next on the list is '[Practicing Rails][5]' by Justin Weiss. I've just started it, but it seems to be a really useful, practical book that is packed with examples.
 
 Reading technical books is a great way to upskill but long books about management or programming can be tough to slog through.
-It's difficult for technical books to strike a balance between readability and usefulness.
+It's difficult for authors of technical books to strike a balance between readability and usefulness.
 After a day at work I like to sit down with a book, but I find that if I start reading non fiction I soon fall asleep in the chair. In this situation I like to read fiction instead to unwind.
 I've found that a quiet coffee shop on a Sunday afternoon is the ideal place to read something more technical.
 
-So, what are your favourite reads? Fiction or non fiction, we would love to hear what books inspired your business or helped develop your technology stack.
-Tweet us your recommendations - <a href="https://twitter.com/intent/tweet?screen_name=onepagecrm" class="twitter-mention-button" data-related="peteretepeter">Tweet us your recommendations - @onepagecrm</a>
+This is my experience with the OnePageCRM reading list to date, I have no doubt it will continue to expand as our company does. 
+So, what are your favourite reads? 
+Fiction or nonfiction, we would love to hear what books inspired your business or helped develop your technology stack - <a href="https://twitter.com/intent/tweet?screen_name=onepagecrm" class="twitter-mention-button" data-related="onepagecrm">Tweet us your recommendations - @onepagecrm</a>
 
 
   [1]: http://www.sensible.com/dmmt.html
