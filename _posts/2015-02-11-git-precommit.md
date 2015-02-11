@@ -57,8 +57,7 @@ When I try to run `git commit` with some dirty code, I get the following error:
 # spec/models/user_spec.rb contains :focus\ =>\ true at line 59.
 {% endhighlight %}
 
-
-As this hook is added to the repository, the other developers on my team won't have to add this.
+All I need to do now is to ask the rest of the development team to add this file to their .git/hooks directory.
 
 I was surprised at how easy and useful this feature is. The temptation to add other hooks enforcing coding style is strong, but I'll hold myself back for now!
 
