@@ -19,6 +19,11 @@ By default, every Git repository has a `.git/hooks` folder which contains sample
 
 To create a pre-commit hook, you need write a script, name the file `pre-commit` and make it executable.
 
+{% highlight bash %}
+touch pre-commit
+chmod 775 pre-commit
+{% endhighlight %}
+
 I copied our new pre-commit script from [Bartłomiej Danek][2] on Coderwall (Thanks Bartłomiej!). I edited it slightly to add some extra keywords that we want to exclude.
 Here's the final script we are using:
 
