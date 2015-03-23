@@ -61,18 +61,12 @@ date: 2014-03-04 10:22:29
   </tbody>
 </table>
 
-<p>Action collections are sorted by completion time (not completed first), assignee presence (assigned first), action date and modification time. So that completed actions always go after open ones and unassigned open actions go after assigned open ones. Putting it simple, the order is as follows:</p>
+<p>Action collections are sorted by completion time (not completed first), assignee, action date and modification time. Completed actions always go after open ones and queued actions go after assigned open ones. Putting it simple, the order is as follows:</p>
 <ol>
-  <li>Assigned open actions sorted by action date and modification time.</li>
-  <li>Unassigned open actions sorted by modification time (unassigned actions don’t have a date).</li>
+  <li>Next actions sorted by action date and modification time.</li>
+  <li>Queued actions sorted by modification time.</li>
   <li>Completed actions sorted by completion time.</li>
 </ol>
-<p>When listing all actions for a user, following actions are included:</p>
-
-<ul>
-  <li>Actions assigned to the user.</li>
-  <li>Unassigned actions associated with a contact owned by the user.</li>
-</ul>
 
 <h3 id="shortcut-methods">Shortcut Methods</h3>
 <table class="table table-striped table-bordered">
@@ -86,20 +80,6 @@ date: 2014-03-04 10:22:29
   <tbody>
     <tr>
       <td><span class="put-text">PUT</span></td>
-      <td class="nowrap">
-        <code class="bluetext">actions/{id}/assign_to/{user_id}.format</code>
-      </td>
-      <td>Assign action to a specified user (must be on logged in user’s team)</td>
-    </tr>
-    <tr>
-      <td><span class="put-text">PUT</span></td>
-      <td>
-        <code class="bluetext">actions/{id}/unassign.format</code>
-      </td>
-      <td>Unassign Action</td>
-    </tr>
-    <tr>
-      <td><span class="put-text">PUT</span></td>
       <td>
         <code class="bluetext">actions/{id}/mark_as_done.format</code>
       </td>
@@ -111,15 +91,6 @@ date: 2014-03-04 10:22:29
         <code class="bluetext">actions/{id}/undo_completion.format</code>
       </td>
       <td>Undo marking action as completed</td>
-    </tr>
-    <tr>
-      <td><span class="put-text">PUT</span></td>
-      <td>
-        <code class="bluetext inline">
-          contacts/{id}/assign_predefined_action/{action_id}.format
-        </code>
-      </td>
-      <td>Assign a predefined action to a contact, accepts assignee_id as a param, as well as status and date to override value given for predefined action.</td>
     </tr>
   </tbody>
 </table>
@@ -152,12 +123,12 @@ date: 2014-03-04 10:22:29
     <tr>
       <td class="nowrap"><code class="redtext">string</code></td>
       <td class="nowrap"><code class="bluetext">assignee_id</code></td>
-      <td>ID of user an action is assigned to. Empty if action is unassigned.</td>
+      <td>ID of user an action is assigned to. Defaults to API user on creation if empty.</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">date</code></td>
-      <td>Action’s date. Either as <span class="italic">'yyyy-mm-dd'</span> or nil when status is ‘no_date’.</td>
+      <td>Action’s date. Either as <span class="italic">'yyyy-mm-dd'</span> or nil when status is ‘queued’.</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -168,7 +139,7 @@ date: 2014-03-04 10:22:29
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">status</code></td>
       <td>Replaces next, waiting, has_date. Can be one of the following values: 
-        <span class="italic">date, asap, waiting, no_date</span>.</td>
+        <span class="italic">date, asap, waiting, queued</span>.</td>
       </tr>
       <tr>
         <td><code class="redtext">date</code></td>

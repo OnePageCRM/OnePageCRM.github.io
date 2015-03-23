@@ -1,1 +1,0 @@
-../_posts/2014-02-20-response-format.md
