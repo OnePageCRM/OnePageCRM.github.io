@@ -76,17 +76,19 @@ title: API Browser
   </div>
   <div ng-controller="APIRequestController">
     <div class="row">
-      <div class="col-lg-10">
-        <div class="input-group">
-          <span class="input-group-addon">{(baseURL)}</span>
-          <input type="text" ng-model='requestPath' class="form-control" placeholder="Enter resource path" />
+      <form>
+        <div class="col-lg-10">
+          <div class="input-group">
+            <span class="input-group-addon">{(baseURL)}</span>
+            <input type="text" ng-model='requestPath' class="form-control" placeholder="Enter resource path" />
+          </div>
         </div>
-      </div>
-      <div class="col-lg-2">
-        <button type="button" class="btn btn-primary btn-block" ng-click="responseData.getData(item, $event)">
-          GET
-        </button>
-      </div>
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-primary btn-block" ng-click="responseData.getData(item, $event)">
+            GET
+          </button>
+        </div>
+      </form>
     </div>
     <br />
     <div class="row">
