@@ -43,7 +43,7 @@ authors:
     web: http://onepagecrm.com
    # twitter: company
     github: JohnMaguir
-    description: 'John is a graduate developer at OnePageCRM.'
+    description: 'John is a software engineer at OnePageCRM.'
     image: '/img/john.jpg'
   pawel:
     name: Paweł Smoliński
@@ -60,7 +60,7 @@ authors:
     display_name: Dan
     email: dan@onepagecrm.com
     web: http://onepagecrm.com
-    description: 'Dan is a graduate developer at OnePageCRM.'
+    description: 'Dan is a software engineer at OnePageCRM.'
     image: '/img/dan.jpg'
 
   ruairi:
