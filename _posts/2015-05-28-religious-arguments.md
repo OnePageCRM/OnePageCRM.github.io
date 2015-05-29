@@ -8,9 +8,9 @@ date: 2015-05-28 13:24:22
 excerpt: Religious arguments over software are commonplace in most technology companies, and OnePageCRM is no different. The current argument here is between two great communication tools, Slack and HipChat. The team hasn't decided what to use yet, but the evaluation process is valuable in itself.
 ---
 
-Religious arguments over software are commonplace in most technology companies, and OnePageCRM is no different. The team here have previously disagreed about choice of revision control software (git ftw!) and there's daily slagging about Linux distributions and choice of text editor (vim vs Sublime vs Ruby Mine).
+Religious arguments over software are commonplace in most technology companies, and OnePageCRM is no different. The team here have previously disagreed about choice of revision control software (git ftw!) and there's daily slagging about Linux distributions and choice of text editor (vim vs Sublime vs RubyMine).
 
-The latest argument is over company communication tools - specifically [Slack ][1] vs [HipChat][2].
+The latest debate is over company communication tools - specifically [Slack ][1] vs [HipChat][2].
 
 
 I recently took a few weeks off. Before I left the development team were mainly using Google Hangouts for tech discussions, social planning and the odd `/ponystream` session.
