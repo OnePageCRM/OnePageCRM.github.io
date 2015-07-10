@@ -5,7 +5,7 @@ slug: "rails-girls-galway"
 category: blog
 author: peter
 date: 2015-07-01 13:24:22
-excerpt: Last weekend I helped out with a Rails Girls event in Galway. 
+excerpt: Last weekend I helped out with a Rails Girls event in Galway, Ireland. The event was being held just up the road from our main office, it was a great way to get in touch with a local community of existing and potential Rails developers. 
 ---
 
 Last weekend I coached at a [Rails Girls][1] event in Galway, Ireland. The event was being held just up the road from our main office, and since OnePageCRM is built on Ruby on Rails, it felt like an ideal way to get in touch with a local community of existing and potential Rails developers.
