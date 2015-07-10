@@ -30,17 +30,16 @@ authors:
     display_name: Peter
     #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: peter@onepagecrm.com
-    web: http://onepagecrm.com
+    web: http://peterarmstrong.ie
    # twitter: company
     github: peterOnePageCRM
-    description: 'Peter is a developer at OnePageCRM.'
+    description: 'Peter is a software engineer at OnePageCRM.'
     image: '/img/peter.jpg'
   john:
     name: John Maguire
     display_name: John
     #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: john@onepagecrm.com
-    web: http://onepagecrm.com
    # twitter: company
     github: JohnMaguir
     description: 'John is a software engineer at OnePageCRM.'
@@ -50,7 +49,6 @@ authors:
     display_name: Paweł
     gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
     email: pawel@onepagecrm.com
-    web: http://www.onepagecrm.com
     github: ZipoKing
     twitter: ZipoKing
     description: "Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it."
@@ -59,7 +57,6 @@ authors:
     name: Dan Fahy
     display_name: Dan
     email: dan@onepagecrm.com
-    web: http://onepagecrm.com
     description: 'Dan is a software engineer at OnePageCRM.'
     image: '/img/dan.jpg'
 
@@ -67,6 +64,5 @@ authors:
     name: Ruairi Fahy
     display_name: Ruairi
     email: ruairi@onepagecrm.com
-    web: http://onepagecrm.com
     description: 'Ruairi is a developer at OnePageCRM.'
     # image: '/img/ruairi.jpg'
