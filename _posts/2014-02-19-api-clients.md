@@ -8,8 +8,8 @@ date: 2014-02-19 09:59:10
 
 We have a number of API Clients available to help you quickly get started:
 
-* Python client available on [Pypi][1] and [Github][2]
 * Web [API Browser](api_browser). The API Browser is currently limited to `GET` requests. Built in Angular.js and code available on [Github][3]
+* Python client available on [Pypi][1] and [Github][2]
 * Basic Ruby client available on [Github][4]
 
 You can sign into these clients with your existing OnePageCRM account.
