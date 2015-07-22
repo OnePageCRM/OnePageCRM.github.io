@@ -109,6 +109,7 @@ app.factory('apirequestInterceptor', function ($q, $rootScope) {
               config.headers['X-OnePageCRM-UID'] = $rootScope.user_id;
               config.headers['X-OnePageCRM-TS'] =  sendTime;
               config.headers['X-OnePageCRM-Auth'] = signature;
+              config.headers['X-OnePageCRM-Source'] = 'staging_api_browser';
               config.headers['Content-Type'] = 'application/json';
               config.headers['accept'] = 'application/json';
           }
