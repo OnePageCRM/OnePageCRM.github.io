@@ -22,7 +22,7 @@ You can try out the gem in an interactive ruby session like this:
 
 {% highlight ruby %}
 irb:> require 'onepagecrm'
-irb:> api_client = OnePageCRM.new('peter@xap.ie', 'p3t3r3t3p')
+irb:> api_client = OnePageCRM.new('user@example.com', 'password')
 irb:> api_client.get('contacts.json')
 irb:> api_client.post('contacts.json', {'last_name': 'Bravo', 'first_name': 'Johnny'} )
 {% endhighlight %}
