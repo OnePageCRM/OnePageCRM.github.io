@@ -248,33 +248,25 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">sort_by</code></td>
-      <td>Return records sorted by a particular field.</td>
+      <td>Name of field to sort results by (eg. 'email' or 'date').</td>
     </tr>
-  </tbody>
-</table>
-
-<h3 id="order-listings-by-field"> <span class="label label-default">GET</span>
-Order Listing By Field 
-</h3>
-
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <td>Type</td>
-      <td>Name</td>
-      <td>Values</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">order</code></td>
       <td><code> asc || desc </code></td>
-      <td>Return records in a specified order, ascending or descending. If not specified, the default order is ascending.</td>
     </tr>
   </tbody>
 </table>
+<p>
+  Using these two fields you can sort the response by a specific field in either ascending or descending order. Ascending is the default order. Here is an example for sorting contacts by firstname in reverse alphabetical order:
+</p>
+<p class="url">
+  <code class="bluetext">
+    <span class="get-text">GET</span>
+    contacts.json?sort_by=first_name&order=desc
+  </code>
+</p>
+
 
 <h3 id="selecting-listings-by-date-field"><span class="label label-default">GET</span> Selecting Listings By Date Field</h3>
 <table class="table table-striped table-bordered">
