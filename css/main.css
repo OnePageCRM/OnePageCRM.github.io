@@ -67,7 +67,11 @@ ul, ol {
   padding-left: 30px;
 }
 .dev-nav{
-  margin-top: -19px;
+  bottom: 0;
+  overflow: scroll;
+  position: fixed;
+  left:10px;
+  top: 100px;
 }
 .dev-nav li.disabled{
   color: #333333;
@@ -160,6 +164,10 @@ ol.footnote li a:target{
 }
 a.footnote:active {
   outline: none;
+}
+
+code {
+  white-space: normal;
 }
 code.inline{
 -ms-word-break: break-all;
