@@ -266,22 +266,3 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
     contacts.json?sort_by=first_name&order=desc
   </code>
 </p>
-
-
-<h3 id="selecting-listings-by-date-field"><span class="label label-default">GET</span> Selecting Listings By Date Field</h3>
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <td>Type</td>
-      <td>Name</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="redtext">string</code></td>
-      <td><code class="bluetext">date_field</code></td>
-      <td>Return records where their provided date field falls in a specific time.</td>
-    </tr>
-  </tbody>
-</table>
