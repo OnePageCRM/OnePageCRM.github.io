@@ -68,7 +68,7 @@ ul, ol {
 }
 .dev-nav{
   bottom: 0;
-  overflow: scroll;
+  overflow: auto;
   position: fixed;
   left:10px;
   top: 100px;
