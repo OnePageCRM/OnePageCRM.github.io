@@ -7,8 +7,8 @@ app.config([
 ]);
 
 app.run(function($rootScope, $store) {
-  $rootScope.apiKey = $store.get('user_id');
-  $rootScope.user_id = $store.get('auth_key');
+  $rootScope.apiKey = $store.get('auth_key');
+  $rootScope.user_id = $store.get('user_id');
   $rootScope.responseData = '';
   $rootScope.firstname = $store.get('first_name');
   $rootScope.lastname = $store.get('last_name');
