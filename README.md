@@ -46,3 +46,7 @@ When you're happy with the changes, simply commit and push to the master branch.
 
 A javascript API browser is also in this repo at `/api_browser`.
 It's built in Angular.js. There are also dev and staging versions for testing with development servers.
+
+  [1]: http://jekyllrb.com/
+  [2]: http://getbootstrap.com
+  [3]: https://pages.github.com/
