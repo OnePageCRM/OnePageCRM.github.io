@@ -1,23 +1,48 @@
 OnePageCRM.github.io
 ====================
 
-OnePageCRM Developer Site
+The developer site is built using [Jekyll][1] with [bootstrap 3][2] as it's front end framework. It's hosted on [Github Pages][3]
 
-#How to create a new API section
-Run the bin/jekyll-api-section file to generate the correct file:
+## Changes - OPCRM staff
+To create a new blog post on the developer forum, create a new file in the `_posts` directory.
+You can use markdown or HTML. The filename must be in this format: `YYYY-MM-DD-title.md`
+The first bit of a post should be like this:
 
-    usage: jekyll-api-section TITLE SLUG CATEGORY \[FILENAME\] \[OPTIONS\]
+    ---
+    layout: post
+    title: "API Client Ruby Gem"
+    slug: "api-client-gem"
+    category: blog
+    author: peter
+    date: 2015-07-21 13:24:22
+    ---
 
-    Options
-        -e, --edit                       Edit the section
-        -l, --link                       Relink sections
-        -p, --path PATH                  Path to project root
+You can also add an optional `extract:` if you want to customize the extract shown on the `/blog` page. If you don't specify this it will use the first paragraph.
+
+To add a new section to the actual API docs (v3), add a post as normal. The posts are sorted by date, so change the date in the filename and at the start of the file to fit in the appropriate sort order.
+
+The start of an API document part needs to look like this:
+   
+    ---
+    layout: api
+    title: "Notes"
+    slug: "notes"
+    category: mainresources
+    date: 2014-03-04 10:29:33
+    ---
+
+### Changes - non OPCRM staff
+
+If you find a bug in our documentation, or think something could be clearer, we'd love to hear from you.
+Just open a ticket in the repo and one of our developers will get to it when time allows.
+Alternatively, if you would like to make the changes yourself, we'd love to accept pull requests. Just fork the repo make your changes and submit a pull request related to the ticket you've opened.
+
+## Deployment
+
+When you're happy with the changes, simply commit and push to the master branch. Github pages takes care of the deployment.
 
 
-To create a new API section for the Request Parameters section, run the following command:
+# API Browsers
 
-    ruby bin/jekyll-api-section "Request Parameters" requestparams doc
-
-This script will create a new file in _posts datestamped with the correct format for Jekyll
-It also creates a symlink without the datestamp to this file in the _api folder.
-Edit this new file to add your api section.
+A javascript API browser is also in this repo at `/api_browser`.
+It's built in Angular.js. There are also dev and staging versions for testing with development servers.
