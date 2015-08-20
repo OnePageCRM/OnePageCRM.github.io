@@ -7,7 +7,8 @@ category: mainresources
 date: 2014-03-04 10:11:27
 ---
 
-This endpoint corresponds to the Team Stream view in the OnePageCRM web application.
+This endpoint corresponds to the Team Stream view in the OnePageCRM web application. It is similar to the Action Stream but shows the whole teams stream.
+
 A `user_id` parameter can be applied to only show that users action stream.
 
 <table class="table table-striped table-bordered">
