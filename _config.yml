@@ -31,7 +31,7 @@ authors:
     #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: peter@onepagecrm.com
     web: http://peterarmstrong.ie
-   # twitter: company
+    #twitter: company
     github: peterOnePageCRM
     description: 'Peter is a software engineer at OnePageCRM.'
     image: '/img/peter.jpg'
@@ -40,7 +40,7 @@ authors:
     display_name: John
     #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: john@onepagecrm.com
-   # twitter: company
+    #twitter: company
     github: JohnMaguir
     description: 'John is a software engineer at OnePageCRM.'
     image: '/img/john.jpg'
@@ -59,10 +59,16 @@ authors:
     email: dan@onepagecrm.com
     description: 'Dan is a software engineer at OnePageCRM.'
     image: '/img/dan.jpg'
-
   ruairi:
     name: Ruairi Fahy
     display_name: Ruairi
     email: ruairi@onepagecrm.com
     description: 'Ruairi is a developer at OnePageCRM.'
-    # image: '/img/ruairi.jpg'
+    #image: '/img/ruairi.jpg'
+  cillian:
+    name: Cillian Myles
+    display_name: Cillian
+    email: cillian@onepagecrm.com
+    github: CillianMyles
+    description: "Cillian is a software engineer at OnePageCRM."
+    image: '/img/cillian.jpg'
