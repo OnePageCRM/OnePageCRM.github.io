@@ -39,8 +39,9 @@ Alternatively, if you would like to make the changes yourself, we'd love to acce
 
 ## Deployment
 
-When you're happy with the changes, simply commit and push to the master branch. Github pages takes care of the deployment.
+If you've made local changes to the repository, you can start the server with the command "jekyll serve".
 
+When you're happy with the changes, simply commit and push to the master branch. Github pages takes care of the deployment.
 
 # API Browsers
 

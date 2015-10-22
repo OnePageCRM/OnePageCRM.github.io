@@ -16,15 +16,15 @@ date: 2014-02-20 11:22:22
   </thead>
   <tbody>
     <tr>
-      <td class="strong nowrap">X-OnePageCRM-UID</td>
+      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;UID</td>
       <td>The user’s unique identification number(<code class="bluetext">user_id</code>), received after sending email and password to <code class="bluetext">login.format</code>.</td>
     </tr>
     <tr>
-      <td class="strong nowrap">X-OnePageCRM-TS</td>
+      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;TS</td>
       <td>The current timestamp in unix time (in seconds)</td>
     </tr>
     <tr>
-      <td class="strong nowrap">X-OnePageCRM-Auth</td>
+      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;Auth</td>
       <td>SHA-256 of the authentication signature calculated for every request based on the data sent.</td>
     </tr>
   </tbody>
