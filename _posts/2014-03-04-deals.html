@@ -84,7 +84,7 @@ date: 2014-03-04 10:29:23
       <td>
         <code >deals/{id}.format</code>
       </td>
-      <td>Update a contact</td>
+      <td>Update a deal</td>
     </tr>
     <tr>
       <td><span class="put-text">PUT</span></td>
@@ -161,12 +161,22 @@ date: 2014-03-04 10:29:23
     <tr>
       <td class="nowrap"><code >bson_id</code></td>
       <td><code >id</code></td>
-      <td>id of the deal (read only)</td>
+      <td>Deal ID (read only)</td>
     </tr>
     <tr>
       <td><code >bson_id</code></td>
       <td><code >contact_id</code></td>
-      <td>id of the contact this deal belongs to (read only)</td>
+      <td>ID of the Contact this deal belongs to (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">created_at</code></td>
+      <td>Date the deal was created at (read-only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">time</code></td>
+      <td><code class="bluetext">modified_at</code></td>
+      <td>Deal’s last modification time (read-only)</td>
     </tr>
     <tr>
       <td><code >object</code></td>
@@ -176,8 +186,13 @@ date: 2014-03-04 10:29:23
       </td>
     </tr>
     <tr>
-      <td><code >date</code></td>
-      <td><code >date</code></td>
+      <td><code>bson_id</code></td>
+      <td><code>owner_id</code></td>
+      <td>ID of the User this deal belongs to</td>
+    </tr>
+    <tr>
+      <td><code>date</code></td>
+      <td><code>date</code></td>
       <td>Date related to the deal’s creation</td>
     </tr>
     <tr>
@@ -227,7 +242,7 @@ date: 2014-03-04 10:29:23
     </tr>
     <tr>
       <td><code >date</code></td>
-      <td><code >closed_date</code></td>
+      <td><code >close_date</code></td>
       <td>Date that the deal was closed. This is set automatically when a deal is marked as won or lost (read only).</td>
     </tr>
   </tbody>
