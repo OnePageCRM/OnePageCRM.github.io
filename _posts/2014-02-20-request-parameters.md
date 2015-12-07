@@ -114,37 +114,6 @@ date: 2014-02-19 14:05:55
 <p>User ID specified in this parameter would also be used to populate any fields where otherwise logged in user’s ID would be default. For example, if you create a contact without specifying <code class="bluetext">owner_id</code>, but with <code class="bluetext">user_id</code> provided:</p>
 <p class="url"><code class="bluetext"><span class="post-text">POST</span> contacts.json?user_id=51f251d5eb899749f7000006&first_name=Jane&last_name=Doe</code></p>
 
-<h3 id="stripping-empty-fields"><span class="label label-default">GET</span>Stripping Empty Fields </h3>
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <td>Type</td>
-      <td>Name</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="nowrap"><code class="redtext">boolean</code></td>
-      <td class="nowrap"><code class="bluetext">sparse</code></td>
-      <td>Only include non-empty fields in the response.</td>
-    </tr>
-  </tbody>
-</table>
-<p>If you specify the <code class="bluetext">sparse</code> flag, all fields which values are considered empty will be stripped from the response, even if they are specified in the <code class="bluetext">fields</code> parameter.</p>
-<p>Values that are considered empty:</p>
-<ul>
-  <li>Empty string</li>
-  <li>Null</li>
-  <li>Boolean false</li>
-  <li>Empty array</li>
-</ul>
-<p>Values that are <span class="italic">not</span> considered empty:</p>
-<ul>
-  <li>Integer or float zero</li>
-  <li>Empty hash (a hash for which all fields have been stripped)</li>
-</ul>
-
 <h3 id="providing-partial-data">
   <span class="label label-default">POST</span> 
   <span class="label label-default">PUT</span>
