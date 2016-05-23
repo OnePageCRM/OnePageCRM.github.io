@@ -3,17 +3,17 @@ layout: api_browser
 title: API Browser
 ---
 
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/core-min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/cipher-core-min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/enc-base64-min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/sha1-min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/sha256-min.js"></script>
+<script type="text/javascript" src="/js/cryptojs/hmac-min.js"></script>
+<script type="text/javascript" src="/js/ng-prettyjson.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/2.5.4/src/Crypto.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/2.5.4/src/SHA1.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/2.5.4/src/SHA256.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/2.5.4/src/HMAC.js"></script>
-<script src="ng-prettyjson.min.js"></script>
-<script src="script.js"></script>
-
-<style>
+<style type="text/css">
   pre {
     outline: 1px solid #e9e9e9;
     padding: 5px;
@@ -35,7 +35,6 @@ title: API Browser
     color:red;
   }
 </style>
-
 
 <div ng-app="OnePageCRM-API-interaction">
   <div ng-controller="AuthController" >
@@ -98,5 +97,3 @@ title: API Browser
     </div>
   </div>
 </div>
-
-

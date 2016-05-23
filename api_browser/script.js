@@ -80,7 +80,7 @@ app.controller("AuthController", function($scope, $rootScope, $http, $store) {
 app.controller("APIRequestController", function($scope, $rootScope, $http)
 {
     $scope.responseData = {data: $rootScope.responseData};
-    $scope.baseURL = $rootScope.baseURL; //"http://app.onepagecrm.com/api/v3/"
+    $scope.baseURL = $rootScope.baseURL;
     $scope.$watch(function()
         {
             return $rootScope.responseData;
