@@ -133,7 +133,6 @@ app.config(function ($httpProvider) {
 
 onepagecrmSignature = function (UID, APIKey, timestamp, requestMethod, requestURL, requestBody) {
     var decodedAPIKey, requestURLHash, requestBodyHash, signatureMessage;
-    decodedAPIKey = Crypto.util.base64ToBytes(APIKey);
     requestURLHash = Crypto.SHA1(requestURL);
     signatureMessage = UID + "." + timestamp + "." + requestMethod + "." + requestURLHash;
 
@@ -141,7 +140,7 @@ onepagecrmSignature = function (UID, APIKey, timestamp, requestMethod, requestUR
         requestBodyHash = Crypto.SHA1(requestBody);
         signatureMessage += "." + requestBodyHash;
     }
-    return Crypto.HMAC(Crypto.SHA256, signatureMessage, Crypto.util.base64ToBytes(APIKey) );
+    return Crypto.HMAC(Crypto.SHA256, signatureMessage, Base64.parse(APIKey) );
 }
 
 var ls = angular.module('localStorage',[]);
