@@ -7,7 +7,7 @@ date: 2014-03-04 10:29:33
 ---
 
 <p>Notes allow you to keep track of your interactions with a customer, include important information that will help you with that contact or store any other information you see fit.</p>
-<p>Using this resource you can create a new note, update an existing note, delete an old note, attach a note to a deal or list notes for a company, contact or all notes made by your team.</p> 
+<p>Using this resource you can create a new note, update an existing note, delete an old note, attach a note to a deal or list notes for a company, contact or all notes made by your team.</p>
 <h3 id="urls">URLs</h3>
 <table class="table table-striped table-bordered">
   <thead>
@@ -134,7 +134,7 @@ date: 2014-03-04 10:29:33
       </tr>
     </tbody>
   </table>
-  
+
   <h3 id="resource-fields">Resource Fields</h3>
   <table class="table table-striped table-bordered">
     <thead>
@@ -148,12 +148,12 @@ date: 2014-03-04 10:29:33
       <tr>
         <td><code class="redtext">bson_id</code></td>
         <td><code class="bluetext">id</code></td>
-        <td>id of the note (read only)</td>
+        <td>ID of the note. (read only)</td>
       </tr>
       <tr>
         <td><code class="redtext">bson_id</code></td>
         <td><code class="bluetext">contact_id</code></td>
-        <td>id of the contact this note belongs to (read only)</td>
+        <td>id of the contact this note belongs to. (read only)</td>
       </tr>
       <tr>
         <td><code class="redtext">date</code></td>
@@ -161,14 +161,24 @@ date: 2014-03-04 10:29:33
         <td>Date related to the note’s creation</td>
       </tr>
       <tr>
+        <td><code class="redtext">date</code></td>
+        <td><code class="bluetext">created_at</code></td>
+        <td>The note's creation date.</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">date</code></td>
+        <td><code class="bluetext">modified_at</code></td>
+        <td>The note's modification date.</td>
+      </tr>
+      <tr>
         <td><code class="redtext">string</code></td>
         <td><code class="bluetext">text</code></td>
-        <td>The text in the body of the note (required)</td>
+        <td>The text in the body of the note. (required)</td>
       </tr>
       <tr>
         <td><code class="redtext">string</code></td>
         <td><code class="bluetext">author</code></td>
-        <td>First name and first letter of last name of the author of the note (read only)</td>
+        <td>First name and first letter of last name of the author of the note. (read only)</td>
       </tr>
       <tr>
         <td><code class="redtext">bson_id</code></td>

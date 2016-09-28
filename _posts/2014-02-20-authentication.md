@@ -107,11 +107,36 @@ date: 2014-02-20 11:22:06
     <tr>
       <td><code>object</code></td>
       <td><code>settings</code></td>
-      <td>User's date format, reminders, currency, timezone, default contact type, popular countries and contacts listing size.</td>
+      <td>User's date format, reminders, currency, timezone, default contact type, popular countries, contacts listing size and deal stages.</td>
+    </tr>
+    <tr>
+      <td><code>array</code></td>
+      <td><code>company_fields</code></td>
+      <td>A list of company's custom fields object.</td>
+    </tr>
+    <tr>
+      <td><code>array</code></td>
+      <td><code>call_results</code></td>
+      <td>A list of call result types.</td>
+    </tr>
+    <tr>
+      <td><code>array</code></td>
+      <td><code>next_action_dates</code></td>
+      <td>A list of custom dates for an action.</td>
+    </tr>
+    <tr>
+      <td><code>array</code></td>
+      <td><code>contact_titles</code></td>
+      <td>A list of contact titles. Only available if this option is enabled by the user.</td>
+    </tr>
+    <tr>
+      <td><code>array</code></td>
+      <td><code>predefined_actions</code></td>
+      <td>A list of generic actions configured by the user. The tag <strong>[Firstname]</strong> should be replaced by the contact's first name.</td>
     </tr>
   </tbody>
 </table>
-      
+
 <h4 id="login-additional-data">Additional data</h4>
 <p>When logging in you will also receive additional data which provides information about a user’s account. This information includes statuses, lead sources, tags, sales data, team stream. This information is returned outside of the data object.</p>
 <table class="table table-striped table-bordered">
@@ -345,7 +370,7 @@ date: 2014-02-20 11:22:06
     </tr>
   </tbody>
 </table>
-      
+
 <h3 id="logout">Logout</h3>
 <h4 id="logout-urls">URLs</h4>
 <table class="table table-striped table-bordered">
