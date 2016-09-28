@@ -282,6 +282,16 @@ date: 2014-03-04 10:28:04
       <td>Company name - truncated to 55 characters.</td>
     </tr>
     <tr>
+      <td><code class="redtext">int</code></td>
+      <td><code class="bluetext">company_size</code></td>
+      <td>The number of contacts in the company.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">company_id</code></td>
+      <td>Company ID.</td>
+    </tr>
+    <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">job_title</code></td>
       <td>Contact's job title</td>
@@ -300,6 +310,11 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">array</code></td>
       <td><code class="bluetext">tags</code></td>
       <td>Tags attached to a contact</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">title</code></td>
+      <td>Contact’s title. It's avaliable when this option is enabled by the user.</td>
     </tr>
     <tr>
       <td class="nowrap"><code class="redtext">boolean</code></td>
@@ -364,6 +379,31 @@ date: 2014-03-04 10:28:04
       <td><code class="redtext">string</code></td>
       <td class="nowrap"><code class="bluetext">lead_source_id</code></td>
       <td>Contact’s lead source id</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">boolean</code></td>
+      <td><code class="bluetext">pending_deal</code></td>
+      <td>True if the contact has pending deals. (read-only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">float</code></td>
+      <td><code class="bluetext">total_pendings</code></td>
+      <td>The sum of contact's pending deals. (read-only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">letter</code></td>
+      <td>The first letter of the contacts's name. (read-only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">array</code></td>
+      <td><code class="bluetext">sales_closed_for</code></td>
+      <td>A list of user's ID that closed the sales cycle for this contacts. (read-only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">array</code></td>
+      <td><code class="bluetext">closed_sales</code></td>
+      <td>A list of closed sales objects. (read-only)</td>
     </tr>
     <tr>
       <td><code class="redtext">array</code></td>
@@ -480,9 +520,9 @@ date: 2014-03-04 10:28:04
 
         {% highlight json %}
         'custom_fields' : [
-        {       
+        {
           'custom_field' : {
-            'id' : cf_id 
+            'id' : cf_id
           },
           'value' : 'B'
         },

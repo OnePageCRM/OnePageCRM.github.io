@@ -108,12 +108,12 @@ date: 2014-03-04 10:22:29
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">id</code></td>
-      <td>Action ID (read only).</td>
+      <td>Action ID. (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">time</code></td>
       <td><code class="bluetext">modified_at</code></td>
-      <td>Action’s last modification time (read-only)</td>
+      <td>Action’s last modification time. (read-only)</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -138,8 +138,8 @@ date: 2014-03-04 10:22:29
     <tr>
       <td><code class="redtext">string</code></td>
       <td><code class="bluetext">status</code></td>
-      <td>Replaces next, waiting, has_date. Can be one of the following values: 
-        <span class="italic">date, asap, waiting, queued</span>.</td>
+      <td>Replaces next, waiting, has_date. Can be one of the following values:
+        <span class="italic">date, asap, waiting, queued, date_time</span>.</td>
       </tr>
       <tr>
         <td><code class="redtext">date</code></td>
@@ -150,6 +150,11 @@ date: 2014-03-04 10:22:29
         <td><code class="redtext">bool</code></td>
         <td><code class="bluetext">done</code></td>
         <td>True if the action has been completed. (read-only)</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">int</code></td>
+        <td><code class="bluetext">exact_time</code></td>
+        <td>The unix timestamp. It's only avaliable when the action has time.</td>
       </tr>
     </tbody>
   </table>
@@ -191,7 +196,7 @@ date: 2014-03-04 10:22:29
       </tr>
     </tbody>
   </table>
-  
+
   <!-- Sample from GitHub -->
   <h3 id="sample-code">Sample code</h3>
   <div class="sample-code">
