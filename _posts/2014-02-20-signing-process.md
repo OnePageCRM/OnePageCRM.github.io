@@ -16,15 +16,15 @@ date: 2014-02-20 11:22:22
   </thead>
   <tbody>
     <tr>
-      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;UID</td>
+      <td class="strong nowrap">X-OnePageCRM-UID</td>
       <td>The user’s unique identification number(<code class="bluetext">user_id</code>), received after sending email and password to <code class="bluetext">login.format</code>.</td>
     </tr>
     <tr>
-      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;TS</td>
+      <td class="strong nowrap">X-OnePageCRM-TS</td>
       <td>The current timestamp in unix time (in seconds)</td>
     </tr>
     <tr>
-      <td class="strong nowrap">X&#8209;OnePageCRM&#8209;Auth</td>
+      <td class="strong nowrap">X-OnePageCRM-Auth</td>
       <td>SHA-256 of the authentication signature calculated for every request based on the data sent.</td>
     </tr>
   </tbody>
@@ -53,7 +53,7 @@ date: 2014-02-20 11:22:22
   <li>SHA-1 (written in hex using lowercase for a-f) hash of the full request URL</li>
   <li>(only for <span class="put-text">PUT</span> and <span class="post-text">POST</span> requests) SHA-1 hash (written in hex using lowercase for a-f) has of the raw request body.</li>
 </ol>
-<p>The HMAC-SHA256 signature is calculated using the API-KEY as the signing key. 
+<p>The HMAC-SHA256 signature is calculated using the API-KEY as the signing key.
 The API key as received from the API is Base-64 encoded, so it has to be decoded into whatever format the HMAC-SHA256 function you are using requires. Usually this is a byte array.</p>
 <p>The resulting lowercase hex is the value for the <strong>X-OnePageCRM-Auth</strong> header field.</p>
 
