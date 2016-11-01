@@ -115,9 +115,29 @@ date: 2014-03-04 10:29:23
   </thead>
   <tbody>
     <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">search</code></td>
+      <td>Search phrase. Only deals having this phrase in deal, contact or company names will be returned.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">tag</code></td>
+      <td>Only return deals with a specified tag attached.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">filter_id</code></td>
+      <td>Only return deals that match the custom filter.</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">owner_id</code></td>
+      <td>Only return deals with a specified owner.</td>
+    </tr>
+    <tr>
       <td class="nowrap"><code >string</code></td>
       <td><code >status</code></td>
-      <td>Return deals that have the provided status type. Status can be one of: <strong>won, lost</strong> or <strong>pending</strong>.</td>
+      <td>Return deals that have the provided status type. Status can be one of: <strong>won, lost, closed</strong> (sorted by close date DESC) or <strong>pending</strong> (sorted by expected close ASC).</td>
     </tr>
     <tr>
       <td><code >time</code></td>
@@ -208,12 +228,12 @@ date: 2014-03-04 10:29:23
     <tr>
       <td><code >string</code></td>
       <td><code >name</code></td>
-      <td>Name of the deal (required)</td>
+      <td>Name of the deal - truncated to 60 characters. (required)</td>
     </tr>
     <tr>
       <td><code >string</code></td>
       <td><code >text</code></td>
-      <td>The text in the body of the deal</td>
+      <td>The text in the body of the deal - truncated to 7168 characters.</td>
     </tr>
     <tr>
       <td><code >string</code></td>
