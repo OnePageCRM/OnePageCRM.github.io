@@ -4,11 +4,13 @@ title: "Remote Working - Get out of the house!"
 slug: "remote-working - Get out of the house!"
 category: blog
 author: john
-date: 2016-11-15 09:00:00
+date: 2016-11-18 09:00:00
 ---
 
 
 Last year I moved to Germany and was lucky enough to continue working here at OnePageCRM.
+
+<img class="img-responsive" src="/img/berliner_dom.jpg" />
 
 It was my first time working remotely, I learned a lot from this experience and would like to share
 some of the important points that I discovered about productivity and what it is like to work away from the office.
