@@ -18,7 +18,7 @@ some of the important points that I discovered about productivity and what it is
 I'll break this post up into a few smaller ones and try to hit on a different point each time, so as to keep it short and interesting.
 
 When I first started working from Germany I thought it would be great to work from home, I would have no commute, I could get those extra few minutes in bed, I wouldn't have to spend anything eating out for lunch, as soon as work was over I would already be home and ready to take full advantage of my evening. What's not to like!
-I tried this for about a week and i think it's safe to say I quickly realised it was not for me.
+I tried this for about a week and I think it's safe to say I quickly realised it was not for me.
 
 On the first day of working from home I actually was quite productive, having a the apartment to myself gave me complete peace and quiet to work away and I was able to dedicate the whole day to working on my project. When lunchtime came I was able to grab a quick sandwich from the kitchen and get straight back to it, I loved the idea of getting so much work done in such a short space of time. As the day was drawing to a close I found myself in the middle of a task that I wanted to finish, I thought I would just work an extra hour and it would be the same as the commuting time I would usually spend anyway. This hour doubled into about two hours without me realising it and pretty soon I was completely drained. I was delighted to have gotten done as much work as I did but it wasn't long before I was passed out asleep.
 
