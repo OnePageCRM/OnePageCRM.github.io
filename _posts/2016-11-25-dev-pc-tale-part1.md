@@ -88,17 +88,17 @@ we were able to temporary connect to our machine.
 
 <br />
 
-When our brand new shiny machine&trade;&reg;&copy; machine has been extended by
+When our brand new shiny machine&trade;&reg;&copy; has been extended by
 graphics unit, we have connected some spare monitor and we have found
 very interesting things:
 * [SecureBoot][9] was on, so no way of having easy way of booting custom-build
   boot images,
-* Default boot settings were set to "boot from Samsung SDD & Windows Boot Manager",
-* During the boot we have been welcomed by Windows setup wizard (does it mean
+* default boot settings were set to "boot from Samsung SDD & Windows Boot Manager",
+* during the boot we have been welcomed by Windows setup wizard (does it mean
   that if you will select <em>No Operating System Required</em> in your
   hardware specification then you are getting free gift from Redmond?).
 
-But when we have find out reasons of our previous problems and by fixing them
+But when we have found out reasons of our previous problems and by fixing them
 with few BIOS settings updates, we have finally been welcomed by
 <strong>proper</strong> installation screen.
 
