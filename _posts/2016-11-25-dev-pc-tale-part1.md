@@ -29,9 +29,9 @@ and finally we have ended up with following configuration:
 * ASUS M5A97 motherboard,
 * AMD FX-8300 CPU (8 cores ready for hard work with speed of 3.3GHz),
 * 32GB 1.6GHz Kingston-made RAM (4x8GB),
-* 120GB Samsung SSD disk (for being past, dedicated for root partition),
+* 120GB Samsung SSD disk (for being fast, dedicated for root partition),
 * 2TB Toshiba magnetic spin disk (for big storage, dedicated for /home mount point),
-* graphics card... none (who needs it for the server which will be sitting,
+* graphics card... none (who needs it for the server which will be sitting
   somewhere in the office corner doing its job and producing some additional
   heat so needed during cold winter days...).
 
