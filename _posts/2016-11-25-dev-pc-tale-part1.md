@@ -48,8 +48,9 @@ When we got the hardware, it was the best time to think about software and its
 main part, which is operating system. There were few ideas what should be
 installed by finally decision has been made to take CentOS. There are few
 reasons for that:
+
 * in our [AWS environment][6] our servers are running under [Amazon Linux][7],
-  which is based on Red Hat Enterprise Linux and CentOs is known as open source
+  which is based on Red Hat Enterprise Linux and CentOS is known as open source
   alternative of it,
 * current version will provide full packages update up to the end of 2020
   and security packages update up to middle of 2024, which will allow us
