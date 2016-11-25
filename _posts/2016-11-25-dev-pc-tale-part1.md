@@ -92,6 +92,7 @@ we were able to temporary connect to our machine.
 When our brand new shiny machine&trade;&reg;&copy; has been extended by
 graphics unit, we have connected some spare monitor and we have found
 very interesting things:
+
 * [SecureBoot][9] was on, so no way of having easy way of booting custom-build
   boot images,
 * default boot settings were set to "boot from Samsung SDD & Windows Boot Manager",
