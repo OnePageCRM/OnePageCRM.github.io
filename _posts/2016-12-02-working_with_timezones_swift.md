@@ -7,19 +7,19 @@ author: elano
 date: 2016-12-02 09:00:00
 ---
 
-
 The new OnePageCRM mobile app for iOS was developed in Swift 2.3 and one of many things that I needed to worry about was timezones.
 
+<div style="text-align: center">
 <img class="img-responsive" src="/img/timezone.png" />
+</div>
 
-One of the fields returned by the API in the login request (https://app.onepagecrm.com/api/v3/login.json
-) is the time zone configured in that account, for example:  
+One of the fields returned by the API in the login request (https://app.onepagecrm.com/api/v3/login.json) is the time zone configured in that account, for example:  
 
 ```json
 "time_zone": "Europe/Amsterdam"
 ```
 
-Any time information that needs to be shown first needs to be converted to the right timezone. It's import to notice that the time information come in timestamp format and the **NSDate object doesn't have timezone information**, so we need to set it in the **NSDateFormatter**.
+Any time information that needs to be shown first needs to be converted to the right timezone. It's import to notice that the time information comes in timestamp format and the **NSDate object doesn't have timezone information**, so we need to set it in the **NSDateFormatter**.
 
 We can do this with the code:
 
