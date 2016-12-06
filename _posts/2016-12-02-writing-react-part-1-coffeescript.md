@@ -56,9 +56,179 @@ This is what makes React special. Traditionally, web developers would make web s
 
 The unidirectional data flow of React solves many of these problems - but only if strictly adhered to. As per the image below, data can only flow from a parent component to a child component, trickling down through the DOM. This means the application's state won't suddenly be modified by a child component.
 
-For a component to change the state, it has to trigger an `action` which modifies the data at the top level.
+For a component to change the state, it has to trigger an `action` which modifies the data at the top level. This can be done using only react - by passing a callback function from the root parent component to child components. This is fine for example code but for large applications a more robust methodology is used; the [Flux][12] architecture. FluxJS is Facebook's own implementation of this architecture, but there are [many others][13]. The architecture boils down to having a data store outside of React which acts as a publisher / subscriber. It subscribes (ie. listens) to actions, and once it's data is updated via an action, it publishes this to any listening React components, from which the data trickles down to all other components.
+
+###Let's write some code
+
+Now to dive into some code. If you've looked at any React sample code, you will have come across this syntax:
+
+```
+class Welcome extends React.Component {
+  render() {
+    return (
+    <div>
+      <h1> Hello, {this.props.name}</h1>
+    </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Welcome name="Liam" />,
+  document.getElementById('mountpoint')
+);
+```
+This is a React component written as an ES6 class, using the [JSX][14] JavaScript preprocessor. This lets you write XML syntax in your JS, meaning your components will look a little more like HTML. You don't have to use JSX, but it is advised and most resources online for React are written in it. Personally, I'm not a fan of this syntax. It reminds me of traditional server-side templating / view rendering languages such as PHP or Ruby's ERB. In these you can embed code in your HTML. JSX reverses the process and you write HTML in your JS code.
+This means you break out of the flow of one language to write another, which I find disruptive and can wreck havok with your editors syntax highlighters.
+
+You can of course write the exact same code in plain old JS (ES6):
+```
+class Welcome extends React.Component {
+  render() {
+    return (
+    React.createElement('div', null,
+      React.DOM.h1(null,
+        "Hello, " + this.props.name
+      )
+     );
+  }
+}
+
+ReactDOM.render(
+  React.createElement(Welcome, {name="Liam"}, null),
+  document.getElementById('mountpoint')
+);
+```
+Without the JSX syntax. some extra boilerplate is needed. There are two ways of creating a DOM element:
+by passing the element name as a string (used for `div` above):
+
+`React.CreateElement('elementName', props, children)`
+
+or by using a Factory function, as supplied by React (used for `h1` above):
+
+`React.DOM.elementName(props, children)`
+
+You can also create your own factories from your own component classes using `React.createFactory(klass)`
 
 
+It's really up to everyone themselves to decide which syntax they prefer, though the plain JS will get very verbose once you have deeply nested components with conditional logic.
+
+###Coffeescript to the rescue!
+
+Let me present you with the third option of using [Coffeescript][15] to write React. I chose coffeescript as it is already in the Rails stack, and it makes for some very clean syntax.
+
+```
+{div, h1} = React.DOM
+
+class Welcome extends React.Component
+  render: ->
+    div {},
+      h1 {},
+        "Hello, #{@props.name}"
+
+WelcomeFactory = React.createFactory Welcome
+
+ReactDOM.render(
+  WelcomeFactory { name: 'Liam' }
+  document.getElementById 'mountpoint'
+)
+```
+This example is both shorter and neater than either JSX or JS - but I do use some nifty Coffeescript tricks, so let's go over them:
+
+####General Syntax
+
+I would advise you to read a little about coffeescript via [The Little Book on Coffeescript][15] and just installing it and trying it out via the interactive `coffee` console. Here is a quick run down of the core features:
+
+ - Coffeescript is a superset language of JS. That is, it is transpiled to JS for execution in the browser
+ - It forgoes excessive brackets in exchange for indentation to show nesting
+ - Functions are written as `->` arrow functions. `(x) -> null` is equivalent of `function(x){return null;}`
+ - As you may have noticed above, the last expression from any block (function, loop etc.) is implicitly returned. No need for `return` statements (though they are still valid) .
+ -  To call a method, parenthesis are only needed if there are no arguments being passed to the method.
+ - Objects can be declared without curly braces. The same applies to Class definitions:
+```
+   obj:
+     a: 1
+     b: 2
+     c:
+       d: 3
+  # => {a: 1, b: 2, c: {d: 3} }
+```
+- `@` is equivalent of `this`
+-  There is lots of syntactic sugar for conditional logic
+ -  `is` is the same as `===`
+ - `isnt` is the same as `!==`
+ -  `unless ...` is the same as `if( !(...) )`
+ - `false`, `off`, `no` are the same as `false`
+ - `true`, `on`, `yes` are the same as `true`
+ - `variable?` is the same as ` typeof variable !== undefined && variable !== null`
+- for loops are comprehensions and are awesome
+ - given an array `ar`, you use `for item in ar`
+ - given an object `obj`, you use `for key, value of obj`
+
+
+
+####Destructuring Assignment
+
+Given some arbitrarily massive object, such as a library (eg. `lodash`, `React.DOM`), you are likely to only use a small subset in each file. If the library has a long name, it makes your code longer and more typo prone. With the destructuring assignment you can pluck just the values from the object which you care about and place them into local variables:
+
+```
+# let's create an object:
+charCodes =
+  utf8:
+    A: 41
+    B: 42
+    C: 43
+    D: 44
+    E: 45
+    F: 46
+
+# now assume I only need A and C in part of my code
+{ A, C } = charCodes.utf8
+
+A
+# => 41
+
+C
+# => 43
+
+```
+
+####Nested function calling
+
+This is a core part of Coffeescript which is easy to get wrong initially. The code from the above render method with an added span:
+```
+  render: ->
+    div {},
+      h1 {},
+        "Hello, #{@props.name}"
+      span {},
+        "Welcome to my sample code"
+```
+is equivalent to this JS:
+```
+  render():
+    return(
+      div({},
+        [h1({}, "Hello, " + this.props.name),
+        span({}, "Welcome to my sample code")]);
+    );
+```
+
+There are two things to notice here:
+- The comma at the end of the line followed by an indented line means we are passing the second property (`children`) to the parent react component
+- As both `h1` and  `span` are nested on the same level, and neither ends with a comma (after the function call, ie. after the child string), coffescript passes the as an array to become the child elements of div.
+
+Both of these combined mean that Coffeescript's syntax can be used to mimic the nesting of the DOM, making it easily readable, even for those not familiar with the syntax.
+
+
+
+###Conclusion
+
+There we have part 1 of my foray into the world of React with Coffeescript. So far I've looked at what problems React tries to solve, and given a quick insight into how components can be written in JSX, JS and Coffeescript. React's re-usable components and stateful representation of the view give a clean, modular approach to writing views in the front end.
+
+But so far I haven't even scratched the surface of all the cool stuff which React enables you to do. I plan to follow up by showing how components can be reused, nested, inherited and wrapped to form HOCs. If anything wasn't clear, or if you'd like me to cover any related topics, please comment on the [forum][4].
+
+Thank you for reading.Summary
 
 
 ###Resources I like
@@ -84,6 +254,10 @@ For a component to change the state, it has to trigger an `action` which modifie
 [9]: http://webcomponents.org/
 [10]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes
 [11]: https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.dn2vt0pcx
+[12]: https://facebook.github.io/flux/
+[13]: http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/
+[14]: http://buildwithreact.com/tutorial/jsx
+[15]: https://arcturo.github.io/library/coffeescript/
 
 [19]: http://arkency.com/
 [20]: http://blog.arkency.com/2015/11/arkency-react-dot-js-resources/
@@ -92,6 +266,7 @@ For a component to change the state, it has to trigger an `action` which modifie
 [23]: http://www.skorks.com/2010/05/why-i-love-reading-other-peoples-code-and-you-should-too/
 [24]: https://facebook.github.io/react/docs/hello-world.html
 [25]: https://facebook.github.io/react/feed.xml
+
 
 
 
