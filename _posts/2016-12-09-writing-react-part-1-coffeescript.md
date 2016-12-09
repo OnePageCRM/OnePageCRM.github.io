@@ -1,23 +1,24 @@
 ---
 layout: post
-title: "Writing React - part 1 : Coffeescript"
+title: "Writing React - Part 1 : Coffeescript"
 slug: "writing-react-part-1-coffeescript"
 category: blog
 author: liam
 date: 2016-12-09 09:00:00
-excerpt: "his week I gave a talk on building a chess game using Ruby on Rails and Reactjs..."
+excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs..."
 ---
 
 
+
+
+>Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
+>If you are interested in this talk (or even attending any future if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
 
 <div style="text-align: center; margin: 0 auto;">
   <img src="/img/react/react.png" class="img-responsive" alt="Delivery time!" />
   <em>The future?</em>
 </div>
 <br />
-
->Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
->If you are interested in this talk (or even attending any future if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
 
@@ -62,7 +63,8 @@ For a component to change the state, it has to trigger an `action` which modifie
 
 Now to dive into some code. If you've looked at any React sample code, you will have come across this syntax:
 
-```
+
+```javascript
 class Welcome extends React.Component {
   render() {
     return (
@@ -77,12 +79,17 @@ ReactDOM.render(
   <Welcome name="Liam" />,
   document.getElementById('mountpoint')
 );
+
 ```
+
 This is a React component written as an ES6 class, using the [JSX][14] JavaScript preprocessor. This lets you write XML syntax in your JS, meaning your components will look a little more like HTML. You don't have to use JSX, but it is advised and most resources online for React are written in it. Personally, I'm not a fan of this syntax. It reminds me of traditional server-side templating / view rendering languages such as PHP or Ruby's ERB. In these you can embed code in your HTML. JSX reverses the process and you write HTML in your JS code.
 This means you break out of the flow of one language to write another, which I find disruptive and can wreck havok with your editors syntax highlighters.
 
+
 You can of course write the exact same code in plain old JS (ES6):
-```
+
+
+```javascript
 class Welcome extends React.Component {
   render() {
     return (
@@ -99,14 +106,19 @@ ReactDOM.render(
   document.getElementById('mountpoint')
 );
 ```
+
 Without the JSX syntax. some extra boilerplate is needed. There are two ways of creating a DOM element:
 by passing the element name as a string (used for `div` above):
 
-`React.CreateElement('elementName', props, children)`
+```javascript
+React.CreateElement('elementName', props, children);
+```
 
 or by using a Factory function, as supplied by React (used for `h1` above):
 
-`React.DOM.elementName(props, children)`
+```javascript
+React.DOM.elementName(props, children)
+```
 
 You can also create your own factories from your own component classes using `React.createFactory(klass)`
 
@@ -117,7 +129,7 @@ It's really up to everyone themselves to decide which syntax they prefer, though
 
 Let me present you with the third option of using [Coffeescript][15] to write React. I chose coffeescript as it is already in the Rails stack, and it makes for some very clean syntax.
 
-```
+```coffeescript
 {div, h1} = React.DOM
 
 class Welcome extends React.Component
@@ -133,6 +145,7 @@ ReactDOM.render(
   document.getElementById 'mountpoint'
 )
 ```
+
 This example is both shorter and neater than either JSX or JS - but I do use some nifty Coffeescript tricks, so let's go over them:
 
 ####General Syntax
@@ -171,7 +184,7 @@ I would advise you to read a little about coffeescript via [The Little Book on C
 
 Given some arbitrarily massive object, such as a library (eg. `lodash`, `React.DOM`), you are likely to only use a small subset in each file. If the library has a long name, it makes your code longer and more typo prone. With the destructuring assignment you can pluck just the values from the object which you care about and place them into local variables:
 
-```
+```coffeescript
 # let's create an object:
 charCodes =
   utf8:
@@ -190,13 +203,13 @@ A
 
 C
 # => 43
-
 ```
 
 ####Nested function calling
 
 This is a core part of Coffeescript which is easy to get wrong initially. The code from the above render method with an added span:
-```
+
+```coffeescript
   render: ->
     div {},
       h1 {},
@@ -204,8 +217,10 @@ This is a core part of Coffeescript which is easy to get wrong initially. The co
       span {},
         "Welcome to my sample code"
 ```
+
 is equivalent to this JS:
-```
+
+```coffeescript
   render():
     return(
       div({},
@@ -228,7 +243,10 @@ There we have part 1 of my foray into the world of React with Coffeescript. So f
 
 But so far I haven't even scratched the surface of all the cool stuff which React enables you to do. I plan to follow up by showing how components can be reused, nested, inherited and wrapped to form HOCs. If anything wasn't clear, or if you'd like me to cover any related topics, please comment on the [forum][4].
 
-Thank you for reading.Summary
+Thank you for reading.
+
+
+##Summary
 
 
 ###Resources I like
@@ -237,11 +255,6 @@ Thank you for reading.Summary
 - Read through projects written in React. A good way to learn a new framework is to read how others write it. [React Rocks][22] has a couple of reactjs CoffeeScript examples for you too explore. They of course also offer examples in other languages. Reading code is difficult - it takes longer to read code than write it. Take a look here for some great tips on [how to read code][23]
 - Read the [official docs][24] from back to front at least once. Get familiar with them and it will be easier to find what you need when you need it, and you will learn about the most time consuming "gotchas" and edge cases before getting stuck on them.
 - Sign up to the [official blog][25] feed with your favourite RSS reader. This will keep you ahead of the courve for future updates and features.
-
-
-
-
-
 
 [1]: https://drive.google.com/file/d/0B-mJaOUNSKhlS1BPM1dwRGpzeXc/view?usp=sharing
 [2]: https://github.com/caffeinated-tech/board-game-demo
@@ -266,7 +279,3 @@ Thank you for reading.Summary
 [23]: http://www.skorks.com/2010/05/why-i-love-reading-other-peoples-code-and-you-should-too/
 [24]: https://facebook.github.io/react/docs/hello-world.html
 [25]: https://facebook.github.io/react/feed.xml
-
-
-
-
