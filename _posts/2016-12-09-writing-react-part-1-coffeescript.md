@@ -5,13 +5,13 @@ slug: "writing-react-part-1-coffeescript"
 category: blog
 author: liam
 date: 2016-12-09 09:00:00
-excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs..."
+excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails and ReactJS..."
 ---
 
 
 
 
->Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
+>Last week I gave a talk on building a chess game using Ruby on Rails and ReactJS. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
 >If you are interested in this talk (or even attending any future if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
 
 <div style="text-align: center; margin: 0 auto;">
@@ -22,8 +22,7 @@ excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails a
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
 
-One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were e
-xperienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
+One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
 
 
 ##Introduction to React
@@ -37,10 +36,10 @@ Whatever you hear about performance improvements, this is the core feature of Re
 ###Components
 
 
-In React, a UI is written via a series of [components][8]. These are custom versions of HTML elements (`<div>`, `<span>`, `<a>` etc. ), which comprise of both visual elements and some self-contained logic. In essence, it's just another [web components][9] implementation. These components and be nested and reused, just like HTML elements.
+In React, a UI is written via a series of [components][8]. These are custom versions of HTML elements (`<div>`, `<span>`, `<a>` etc. ), which comprise of both visual elements and some self-contained logic. In essence, it's just another [web components][9] implementation. These components can be nested and reused, just like HTML elements.
 
 HTML's nested DOM structure is a great way of representing UI. But it can get cumbersome. When you have a defined and strict UI, you will have to keep on repeating yourself, using the same nesting and css classes for common elements.
-This is similar to writing a game and not being able to get productive because you keep on operating on `int X`, `int Y` and `int Z` and manually manipulating them with matrices. You get stuck down with the low level and lose oversight. Somewhere an `X` and `Y` co-ordinate will be mistakenly swapped and errors occur. You should just move on to defining `Coordinate`, `Vector` and `Object` classes and abstract away teh details.
+This is similar to writing a game and not being able to get productive because you keep on operating on `int X`, `int Y` and `int Z` and manually manipulating them with matrices. You get stuck down with the low level and lose oversight. Somewhere an `X` and `Y` co-ordinate will be mistakenly swapped and errors occur. You should just move on to defining `Coordinate`, `Vector` and `Object` classes and abstract away the details.
 
 React components enable you to use this abstraction for those nitty-gritty HTML components. Components can be inherited from (given an ES 6 + compatible language with [classes][10]), or wrapped in other components to create [Higher Order Components][11] (HOC).
 
@@ -59,7 +58,7 @@ This is what makes React special. Traditionally, web developers would make web s
 
 The unidirectional data flow of React solves many of these problems - but only if strictly adhered to. As per the image below, data can only flow from a parent component to a child component, trickling down through the DOM. This means the application's state won't suddenly be modified by a child component.
 
-For a component to change the state, it has to trigger an `action` which modifies the data at the top level. This can be done using only react - by passing a callback function from the root parent component to child components. This is fine for example code but for large applications a more robust methodology is used; the [Flux][12] architecture. FluxJS is Facebook's own implementation of this architecture, but there are [many others][13]. The architecture boils down to having a data store outside of React which acts as a publisher / subscriber. It subscribes (ie. listens) to actions, and once it's data is updated via an action, it publishes this to any listening React components, from which the data trickles down to all other components.
+For a component to change the state, it has to trigger an `action` which modifies the data at the top level. This can be done using only react - by passing a callback function from the root parent component to child components. This is fine for example code but for large applications a more robust methodology is used; the [Flux][12] architecture. FluxJS is Facebook's own implementation of this architecture, but there are [many others][13]. The architecture boils down to having a data store outside of React which acts as a publisher / subscriber. The store subscribes (ie. listens) to actions, and once its data is updated via an action, it publishes this to any listening React components, from which the data trickles down to all other components.
 
 
 
@@ -88,7 +87,7 @@ ReactDOM.render(
 ```
 
 This is a React component written as an ES6 class, using the [JSX][14] JavaScript preprocessor. This lets you write XML syntax in your JS, meaning your components will look a little more like HTML. You don't have to use JSX, but it is advised and most resources online for React are written in it. Personally, I'm not a fan of this syntax. It reminds me of traditional server-side templating / view rendering languages such as PHP or Ruby's ERB. In these you can embed code in your HTML. JSX reverses the process and you write HTML in your JS code.
-This means you break out of the flow of one language to write another, which I find disruptive and can wreck havok with your editors syntax highlighters.
+This means you break out of the flow of one language to write another, which I find disruptive and can wreak havok with your editors syntax highlighters.
 
 
 You can of course write the exact same code in plain old JS (ES6):
@@ -247,7 +246,7 @@ is equivalent to this JS:
 
 There are two things to notice here:
 - The comma at the end of the line followed by an indented line means we are passing the second property (`children`) to the parent react component
-- As both `h1` and  `span` are nested on the same level, and neither ends with a comma (after the function call, ie. after the child string), coffescript passes the as an array to become the child elements of div.
+- As both `h1` and  `span` are nested on the same level, and neither ends with a comma (after the function call, ie. after the child string), coffescript passes them as an array to become the child elements of div.
 
 Both of these combined mean that Coffeescript's syntax can be used to mimic the nesting of the DOM, making it easily readable, even for those not familiar with the syntax.
 
@@ -269,7 +268,7 @@ Thank you for reading.
 
 
 - [Arkency][19] are actively blogging and teaching about using React with Coffeescript and Rails. Their [resources][20] give a great insight into working with this stack, and they have some nice [teaching bundles][21] on the subject at the moment.
-- Read through projects written in React. A good way to learn a new framework is to read how others write it. [React Rocks][22] has a couple of reactjs CoffeeScript examples for you too explore. They of course also offer examples in other languages. Reading code is difficult - it takes longer to read code than write it. Take a look here for some great tips on [how to read code][23]
+- Read through projects written in React. A good way to learn a new framework is to read how others write it. [React Rocks][22] has a couple of ReactJS CoffeeScript examples for you too explore. They of course also offer examples in other languages. Reading code is difficult - it takes longer to read code than write it. Take a look here for some great tips on [how to read code][23]
 - Read the [official docs][24] from back to front at least once. Get familiar with them and it will be easier to find what you need when you need it, and you will learn about the most time consuming "gotchas" and edge cases before getting stuck on them.
 - Sign up to the [official blog][25] feed with your favourite RSS reader. This will keep you ahead of the courve for future updates and features.
 
