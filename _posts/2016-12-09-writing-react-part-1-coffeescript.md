@@ -12,7 +12,7 @@ excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails a
 
 
 >Last week I gave a talk on building a chess game using Ruby on Rails and ReactJS. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
->If you are interested in this talk (or even attending any future if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
+>If you are interested in this talk (or even attending any future talks - if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
 
 <div style="text-align: center; margin: 0 auto;">
   <img src="/img/react/react.png" class="img-responsive" alt="Delivery time!" />
@@ -270,7 +270,7 @@ Thank you for reading.
 - [Arkency][19] are actively blogging and teaching about using React with Coffeescript and Rails. Their [resources][20] give a great insight into working with this stack, and they have some nice [teaching bundles][21] on the subject at the moment.
 - Read through projects written in React. A good way to learn a new framework is to read how others write it. [React Rocks][22] has a couple of ReactJS CoffeeScript examples for you too explore. They of course also offer examples in other languages. Reading code is difficult - it takes longer to read code than write it. Take a look here for some great tips on [how to read code][23]
 - Read the [official docs][24] from back to front at least once. Get familiar with them and it will be easier to find what you need when you need it, and you will learn about the most time consuming "gotchas" and edge cases before getting stuck on them.
-- Sign up to the [official blog][25] feed with your favourite RSS reader. This will keep you ahead of the courve for future updates and features.
+- Sign up to the [official blog][25] feed with your favourite RSS reader. This will keep you ahead of the curve for future updates and features.
 
 [1]: https://drive.google.com/file/d/0B-mJaOUNSKhlS1BPM1dwRGpzeXc/view?usp=sharing
 [2]: https://github.com/caffeinated-tech/board-game-demo
