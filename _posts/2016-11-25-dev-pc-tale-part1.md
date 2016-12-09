@@ -8,35 +8,36 @@ date: 2016-11-25 09:00:00
 excerpt: "We, as developers, are spending most of our time with computers..."
 ---
 
-We, as developers, are spending most of our time with computers. No matter if
-we are writing new lines of code, [blaming existing code][1] written by other
-team members, running tests suite, [Googling][2] or checking [StackOverflow][3]
-with big hope of finding solution for coding problems, every single component
-of our laptops does not have easy life. Moreover, some of those operations
-like running all [Cucumber][4] tests take a lot of time and/or a lot of
-hardware resources which makes our computers very busy, and, let's state that,
-almost unusuable.
+We, as developers, spend most of our time with computers. It doesn’t matter if
+we are writing new lines of code, [blaming existing code][1] (written by other
+team members), running test suites, [Googling][2] or checking [StackOverflow][3]
+with hopes of finding a solution for coding problems; we make our laptops work
+hard! On top of this, certain operations (like running all [Cucumber][4] tests)
+take a lot of time and/or hardware resources which can put strain on even
+the most powerful computers.
 
-Therefore to keep us (and our laptops) [more happy][5], we have
-decided to delegate the most heavy work somewhere else. And from word to word
-we have decided to purchase new machine to the office where every of us
-will have easy access. And that's how project "Dev's PC" started.
+So, to keep us (and our laptops) [more happy][5], we’ve decided to outsource
+most of this ‘heavy work’ to a special ‘server’. And as a result, we bought a
+new, shared developer machine for the office to act as the server for what we
+call project “Dev’s PC” (or DPC for short).
 
-Because building computers by having a choice of chosing every single
-component is so nerdy (and therefore fun) we have decided to go this way
-and finally we have ended up with following configuration:
+Building a computer from scratch and choosing the individual components is
+about the nerdiest thing you can do. And as developers it is our duty to
+follow this path to the end (it’s also a lot of fun).
 
-* ASUS M5A97 motherboard,
-* AMD FX-8300 CPU (8 cores ready for hard work with speed of 3.3GHz),
-* 32GB 1.6GHz Kingston-made RAM (4x8GB),
-* 120GB Samsung SSD disk (for being fast, dedicated for root partition),
-* 2TB Toshiba magnetic spin disk (for big storage, dedicated for /home mount point),
-* graphics card... none (who needs it for the server which will be sitting
+We settled on the following configuration for DPC:
+
+* ASUS M5A97 motherboard.
+* AMD FX-8300 CPU (8 cores ready for hard work with speeds of 3.3GHz).
+* 32GB 1.6GHz Kingston-made RAM (4x8GB).
+* 120GB Samsung SSD disk (for being fast, dedicated for root partition).
+* 2TB Toshiba magnetic spin disk (for big storage, dedicated for /home mount point).
+* Graphics card… none (who needs it for a server which will be sitting
   somewhere in the office corner doing its job and producing some additional
-  heat so needed during cold winter days...).
+  heat so badly needed during cold winter days...).
 
-After completing order we just had to wait for our new toy being delivered.
-And after few days big box appeared in our office...
+After completing the order, we just had to wait for our new toy to be delivered.
+And after few days this big box appeared in the office...
 
 <div style="text-align: center">
 <img src="/img/devpc/part1-box.jpg" class="img-responsive" alt="Delivery time!" />
@@ -44,22 +45,20 @@ And after few days big box appeared in our office...
 </div>
 <br />
 
-When we got the hardware, it was the best time to think about software and its
-main part, which is operating system. There were few ideas what should be
-installed by finally decision has been made to take CentOS. There are few
-reasons for that:
+After receiving the hardware, the next step was to decide what software we
+would use - starting with the operating system. We had a few different
+suggestions but in the end CentOS won out. Here’s our logic behind this:
+* Our [AWS environment][6] servers are running [Amazon Linux][7], which is
+  based on Red Hat Enterprise Linux and CentOS and is known as open
+  source alternative of it.
+* The current version will provide full package updates up to the end of 2020
+  and security package updates up to middle of 2024, so we can forget about
+  major OS updates for long time.
+* The “enterprise” distribution provides very stable environment.
 
-* in our [AWS environment][6] our servers are running under [Amazon Linux][7],
-  which is based on Red Hat Enterprise Linux and CentOS is known as open source
-  alternative of it,
-* current version will provide full packages update up to the end of 2020
-  and security packages update up to middle of 2024, which will allow us
-  to forget about major OS updates for long time,
-* as "enterprise" distribution provides very stable environment.
-
-Because our server does not contain any graphics card, we have decided to go
-with headless installation. With [small help of the Internet][8] proper
-installation image has been prepared and transferred into spare USB stick...
+We went for a headless installation since DPC doesn’t have a graphics card.
+We [used the Internet][8] proper installation image on a USB to install the
+OS on the machine.
 
 <div style="text-align: center">
 <img src="/img/devpc/part1-usb.jpg" class="img-responsive" alt="Transferring data" />
@@ -67,13 +66,14 @@ installation image has been prepared and transferred into spare USB stick...
 </div>
 <br />
 
-Everything has been connected, VNC viewer has been launched in one of the
-laptops, computer has been booted, blinking LED started indicating that there
-is some I/O traffic but... we haven't received any incoming VNC session.
+With everything connected, the VNC viewer was launched on one of the laptops
+and DPC was booted. The blinking LED was telling us that
+there’s some I/O traffic but we were not receiving any incoming VNC session,
+so it was time to do some investigating.
 
-So we have no other choice than introduce "Plan B". With great help of Liam
-after small chat his computer allowed us to borrow its graphics card which
-we were able to temporary connect to our machine.
+In the end, we had to introduce “Plan B” to the equation. With the help of
+Liam’s (voluntarily dismantled) personal computer, we ‘borrowed’ it’s graphics
+card so we could temporarily it to connect to DPC.
 
 <div style="text-align: center">
 <img src="/img/devpc/part1-before.jpg" class="img-responsive" alt="Preparation for update" />
@@ -89,20 +89,18 @@ we were able to temporary connect to our machine.
 
 <br />
 
-When our brand new shiny machine&trade;&reg;&copy; has been extended by
-graphics unit, we have connected some spare monitor and we have found
-very interesting things:
+Thanks to the the new graphics unit, our brand new shiny machine - DPC&trade;&reg;&copy;
+was also hooked up to a monitor and we could begin the investigation.
 
-* [SecureBoot][9] was on, so no way of having easy way of booting custom-build
-  boot images,
-* default boot settings were set to "boot from Samsung SDD & Windows Boot Manager",
-* during the boot we have been welcomed by Windows setup wizard (does it mean
-  that if you will select <em>No Operating System Required</em> in your
-  hardware specification then you are getting free gift from Redmond?).
+* We found that [SecureBoot][9] was on, so there was no easy way to boot
+  the custom-built boot images. Also the default boot settings were set to
+  “boot from Samsung SDD & Windows Boot Manager”.
+* During the boot we were also welcomed by the Windows setup wizard
+  (apparently if you select ‘No Operating System Required’ in your
+  hardware specification then you still get a free gift from Redmond?).
 
-But when we have found out reasons of our previous problems and by fixing them
-with few BIOS settings updates, we have finally been welcomed by
-<strong>proper</strong> installation screen.
+Once we discovered the reasons behind the previous problems, a few simple fixes
+and BIOS settings updates, we were finally been welcomed by **proper** installation screen.
 
 <div style="text-align: center">
 <img src="/img/devpc/part1-grub.jpg" class="img-responsive" alt="CentOS 7 GRUB" />
