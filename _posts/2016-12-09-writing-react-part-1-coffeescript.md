@@ -135,7 +135,7 @@ It's really up to everyone themselves to decide which syntax they prefer, though
 
 
 
-Let me present you with the third option of using [Coffeescript][15] to write React. I chose coffeescript as it is already in the Rails stack, and it makes for some very clean syntax.
+Let me present you with the third option of using [Coffeescript][15] to write React. I chose Coffeescript as it is already in the Rails stack, and it makes for some very clean syntax.
 
 ```coffeescript
 {div, h1} = React.DOM
