@@ -70,3 +70,9 @@ authors:
     github: CillianMyles
     description: "Cillian is a software engineer at OnePageCRM."
     image: '/img/cillian.jpg'
+  elano:
+    name: Elano Vasconcelos
+    display_name: Elano
+    email: elano@onepagecrm.com
+    description: "Elano is a software engineer at OnePageCRM."
+    image: '/img/elano_2.jpg'
