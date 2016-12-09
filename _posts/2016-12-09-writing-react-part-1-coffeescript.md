@@ -4,7 +4,7 @@ title: "Writing React - part 1 : Coffeescript"
 slug: "writing-react-part-1-coffeescript"
 category: blog
 author: liam
-date: 2016-12-02 09:00:00
+date: 2016-12-09 09:00:00
 excerpt: "his week I gave a talk on building a chess game using Ruby on Rails and Reactjs..."
 ---
 
@@ -16,7 +16,7 @@ excerpt: "his week I gave a talk on building a chess game using Ruby on Rails an
 </div>
 <br />
 
->This week I gave a talk on building a chess game using Ruby on Rails and Reactjs. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
+>Last week I gave a talk on building a chess game using Ruby on Rails and Reactjs. The questions and discussions afterwards reminded me of the struggle of starting with a new framework - and prompted me to write up our experiences with adopting an edge framework into an existing app.
 >If you are interested in this talk (or even attending any future if you are lucky enough to live in Galway), here are links to the [presentation][1], [code][2] and [event][3]
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
