@@ -22,7 +22,7 @@ excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails a
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
 
-One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
+One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy / efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
 
 
 ##Introduction to React
@@ -87,7 +87,7 @@ ReactDOM.render(
 ```
 
 This is a React component written as an ES6 class, using the [JSX][14] JavaScript preprocessor. This lets you write XML syntax in your JS, meaning your components will look a little more like HTML. You don't have to use JSX, but it is advised and most resources online for React are written in it. Personally, I'm not a fan of this syntax. It reminds me of traditional server-side templating / view rendering languages such as PHP or Ruby's ERB. In these you can embed code in your HTML. JSX reverses the process and you write HTML in your JS code.
-This means you break out of the flow of one language to write another, which I find disruptive and can wreak havok with your editors syntax highlighters.
+This means you break out of the flow of one language to write another, which I find disruptive and can wreak havoc with your editors syntax highlighters.
 
 
 You can of course write the exact same code in plain old JS (ES6):
@@ -111,7 +111,7 @@ ReactDOM.render(
 );
 ```
 
-Without the JSX syntax. some extra boilerplate is needed. There are two ways of creating a DOM element:
+Extra boilerplate code is needed without the JSX syntax. There are two ways of creating a DOM element:
 by passing the element name as a string (used for `div` above):
 
 ```javascript
