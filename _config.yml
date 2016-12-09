@@ -6,6 +6,7 @@ name: 'OnePageCRM Developer'
 url: 'http://developer.onepagecrm.com'
 rss_path: "/blog"
 codeurl: 'http://www.onepagecrm.com'
+markdown: 'redcarpet'
 
 api_sections: [
     ['doc', 'Documentation'],
@@ -76,3 +77,9 @@ authors:
     email: elano@onepagecrm.com
     description: "Elano is a software engineer at OnePageCRM."
     image: '/img/elano_2.jpg'
+  liam:
+    name: Liam Krewer
+    display_name: Liam
+    email: elano@onepagecrm.com
+    description: "Liam works as a full stack web developer at OnePageCRM."
+    image: '/img/liam.jpg'
