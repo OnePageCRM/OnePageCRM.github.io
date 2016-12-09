@@ -22,19 +22,20 @@ excerpt: "Last week I gave a talk on building a chess game using Ruby on Rails a
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
 
-One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
+One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were e
+xperienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
 
 
 ##Introduction to React
+
 
 
 [React][5] was developed by Facebook to fix User Interface (UI) consistency - interacting with one part of the complex page wouldn't always update a notification or unread counter.
 Whatever you hear about performance improvements, this is the core feature of React. It is a **Declarative view rendering library** which depends upon a **uni-directional data flow**. It isn't a fully fledged framework like [AngularJS][6] or [Ember][7]
 
 
-
-
 ###Components
+
 
 In React, a UI is written via a series of [components][8]. These are custom versions of HTML elements (`<div>`, `<span>`, `<a>` etc. ), which comprise of both visual elements and some self-contained logic. In essence, it's just another [web components][9] implementation. These components and be nested and reused, just like HTML elements.
 
@@ -45,6 +46,7 @@ React components enable you to use this abstraction for those nitty-gritty HTML 
 
 
 ###Uni Directional data flow
+
 
 <div style="text-align: center">
 <img src="/img/react/react-flow-diagram.png" class="img-responsive" alt="Delivery time!" />
@@ -59,7 +61,11 @@ The unidirectional data flow of React solves many of these problems - but only i
 
 For a component to change the state, it has to trigger an `action` which modifies the data at the top level. This can be done using only react - by passing a callback function from the root parent component to child components. This is fine for example code but for large applications a more robust methodology is used; the [Flux][12] architecture. FluxJS is Facebook's own implementation of this architecture, but there are [many others][13]. The architecture boils down to having a data store outside of React which acts as a publisher / subscriber. It subscribes (ie. listens) to actions, and once it's data is updated via an action, it publishes this to any listening React components, from which the data trickles down to all other components.
 
+
+
 ###Let's write some code
+
+
 
 Now to dive into some code. If you've looked at any React sample code, you will have come across this syntax:
 
@@ -79,7 +85,6 @@ ReactDOM.render(
   <Welcome name="Liam" />,
   document.getElementById('mountpoint')
 );
-
 ```
 
 This is a React component written as an ES6 class, using the [JSX][14] JavaScript preprocessor. This lets you write XML syntax in your JS, meaning your components will look a little more like HTML. You don't have to use JSX, but it is advised and most resources online for React are written in it. Personally, I'm not a fan of this syntax. It reminds me of traditional server-side templating / view rendering languages such as PHP or Ruby's ERB. In these you can embed code in your HTML. JSX reverses the process and you write HTML in your JS code.
@@ -125,7 +130,11 @@ You can also create your own factories from your own component classes using `Re
 
 It's really up to everyone themselves to decide which syntax they prefer, though the plain JS will get very verbose once you have deeply nested components with conditional logic.
 
+
+
 ###Coffeescript to the rescue!
+
+
 
 Let me present you with the third option of using [Coffeescript][15] to write React. I chose coffeescript as it is already in the Rails stack, and it makes for some very clean syntax.
 
@@ -148,7 +157,11 @@ ReactDOM.render(
 
 This example is both shorter and neater than either JSX or JS - but I do use some nifty Coffeescript tricks, so let's go over them:
 
+
+
 ####General Syntax
+
+
 
 I would advise you to read a little about coffeescript via [The Little Book on Coffeescript][15] and just installing it and trying it out via the interactive `coffee` console. Here is a quick run down of the core features:
 
@@ -158,7 +171,7 @@ I would advise you to read a little about coffeescript via [The Little Book on C
  - As you may have noticed above, the last expression from any block (function, loop etc.) is implicitly returned. No need for `return` statements (though they are still valid) .
  -  To call a method, parenthesis are only needed if there are no arguments being passed to the method.
  - Objects can be declared without curly braces. The same applies to Class definitions:
-```
+```coffeescript
    obj:
      a: 1
      b: 2
@@ -181,6 +194,7 @@ I would advise you to read a little about coffeescript via [The Little Book on C
 
 
 ####Destructuring Assignment
+
 
 Given some arbitrarily massive object, such as a library (eg. `lodash`, `React.DOM`), you are likely to only use a small subset in each file. If the library has a long name, it makes your code longer and more typo prone. With the destructuring assignment you can pluck just the values from the object which you care about and place them into local variables:
 
@@ -205,7 +219,9 @@ C
 # => 43
 ```
 
+
 ####Nested function calling
+
 
 This is a core part of Coffeescript which is easy to get wrong initially. The code from the above render method with an added span:
 
@@ -239,6 +255,8 @@ Both of these combined mean that Coffeescript's syntax can be used to mimic the 
 
 ###Conclusion
 
+
+
 There we have part 1 of my foray into the world of React with Coffeescript. So far I've looked at what problems React tries to solve, and given a quick insight into how components can be written in JSX, JS and Coffeescript. React's re-usable components and stateful representation of the view give a clean, modular approach to writing views in the front end.
 
 But so far I haven't even scratched the surface of all the cool stuff which React enables you to do. I plan to follow up by showing how components can be reused, nested, inherited and wrapped to form HOCs. If anything wasn't clear, or if you'd like me to cover any related topics, please comment on the [forum][4].
@@ -246,10 +264,9 @@ But so far I haven't even scratched the surface of all the cool stuff which Reac
 Thank you for reading.
 
 
-##Summary
-
-
 ###Resources I like
+
+
 
 - [Arkency][19] are actively blogging and teaching about using React with Coffeescript and Rails. Their [resources][20] give a great insight into working with this stack, and they have some nice [teaching bundles][21] on the subject at the moment.
 - Read through projects written in React. A good way to learn a new framework is to read how others write it. [React Rocks][22] has a couple of reactjs CoffeeScript examples for you too explore. They of course also offer examples in other languages. Reading code is difficult - it takes longer to read code than write it. Take a look here for some great tips on [how to read code][23]
