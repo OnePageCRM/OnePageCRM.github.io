@@ -6,7 +6,6 @@ name: 'OnePageCRM Developer'
 url: 'http://developer.onepagecrm.com'
 rss_path: "/blog"
 codeurl: 'http://www.onepagecrm.com'
-markdown: 'redcarpet'
 
 api_sections: [
     ['doc', 'Documentation'],
