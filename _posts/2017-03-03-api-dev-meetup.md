@@ -33,6 +33,7 @@ where we covered the API topic in some detail.
 <span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em>
 </div>
 
+<br />
 We had 4 spearkers on the night covering the following:
 
 * **Introduction to API**: Liam introduced us to the magic world of API
