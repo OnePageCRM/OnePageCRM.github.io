@@ -53,11 +53,12 @@ We had 4 spearkers on the night covering the following:
 <em>
 Sample sever-less API solution presented during the meeting utilizing
 few Amazon Web Services like [Lambda][6] and [API Gateway][7]
-<span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em></em>
+<span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em>
 </div>
 
-Our meetup was a great success and we’ve received so much positive feedback from
-attendees. Thanks to [OnePageCRM][8] for sponsoring the event and Finn
+<br />
+Our meetup was a great success and we’ve received so much positive feedback from 
+attendees. Thanks to [OnePageCRM][8] for sponsoring the event and Finn 
 from [9th Impact][5] for taking the time to present and speak with our attendees after.
 
 We hope that all of you have great time during the meetup either by listening
