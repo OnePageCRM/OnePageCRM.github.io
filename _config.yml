@@ -22,6 +22,8 @@ api_sections: [
 exclude: ['README.md']
 
 baseurl: ''
+host: 0.0.0.0
+port: 4000
 
 authors:
   peter:
@@ -50,7 +52,9 @@ authors:
     email: pawel@onepagecrm.com
     github: ZipoKing
     twitter: ZipoKing
-    description: "Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it."
+    description: |
+      Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it.<br />
+      Also supports local economy be spending a lot of time in local pubs.
     image: '/img/pawel.jpg'
   dan:
     name: Dan Fahy
