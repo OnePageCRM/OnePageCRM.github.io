@@ -76,8 +76,8 @@ and sample code from our talks, see the resources section below.
 * Liam's introduction talk slides: [slides.com][11]
 * Paweł's server-less API talk slides and code samples: [bitbucket.org][12]
 * Cillian's mobile API client talk slides: [docs.google.com][13]
-* Finn's In App Purchases talk slides: [docs.google.com][15]
 * Source code of the Android Spotify player: [github.com][14]
+* Finn's In App Purchases talk slides: [docs.google.com][15]
 
  [1]: http://mcswiggans.ie/
  [2]: https://www.meetup.com/rubyreact/
