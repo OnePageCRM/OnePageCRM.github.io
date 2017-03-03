@@ -53,7 +53,8 @@ We had 4 spearkers on the night covering the following:
 <em>
 Sample sever-less API solution presented during the meeting utilizing
 few Amazon Web Services like [Lambda][6] and [API Gateway][7]
-<span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em>
+<span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span>
+</em>
 </div>
 
 <br />
