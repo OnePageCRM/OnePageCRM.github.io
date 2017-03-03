@@ -15,7 +15,7 @@ making our life easier with them? Because we have asked those questions to
 ourselves, did some research in the subject and decided to share the knowledge
 about it.
 
-Last night we have meet in [McSwiggans Pub & Restaurant][1] for the second 
+Last night we have met in [McSwiggans Pub & Restaurant][1] for the second 
 [Galway Developer Meetup][2] where we had 4 speaks about following subjects:
 
 <div class="text-align: center">
