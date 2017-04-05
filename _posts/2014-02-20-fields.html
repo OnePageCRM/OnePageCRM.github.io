@@ -7,17 +7,9 @@ date: 2014-02-20 11:22:32
 ---
 
 
-<h2>Fields Parameter</h2>
 <p>
-  The optional <code class="bluetext">fields</code> parameter is a powerful tool allowing you to do a handful of things:</p>
-  <ul>
-    <li>Request complementary data for resources like total pending amount for contacts.</li>
-    <li>Request associated resources in the same request. For example, to include linked deals when getting contacts.</li>
-  </ul>
+  The optional <code class="bluetext">fields</code> parameter is a powerful tool allowing you to requested related resources to the main resource which you are fetching
   
-  <h3 id="basic-use">Basic Use</h3>
-  <p><code class="bluetext">fields</code> is a comma-separated list of resource names you want returned.</p>
-
   <h3 id="fetching-associated-resources" class="top-padding">Fetching Associated Resources</h3>
   <p>If you want to receive associated resources in addition to a default fieldset, you can use eith the resource name with all, or empty - both defailt to sending all fields for the sub resource <span class="bluetext">deals(all)</span> or <span class="bluetext">deals()</span>. The following request would return all default contact fields plus linked deals:</p>
 
