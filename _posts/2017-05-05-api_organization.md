@@ -9,16 +9,16 @@ date: 2017-05-05 15:00:00
 
 The mobile version 3.4.0 of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally it was called companies). To work with organization the API was updated and I'm going to show some of the new functionalities.
 
-<div class="text-align: center">
+<div style="text-align: center; margin: 0 auto;">
 <img src="/img/api-organization/contact.png" alt="" class="img-responsive"
- style="width: 50%; position: relative; left: 25%" /><br />
+ style="width: 25%; position: relative;" /><br />
 </div>
 
 An organization now have its own section in a contact and after click on it, it's possible see all the organization's information.
 
-<div class="text-align: center">
+<div style="text-align: center; margin: 0 auto;">
 <img src="/img/api-organization/organization.png" alt="" class="img-responsive"
- style="width: 50%; position: relative; left: 25%" /><br />
+ style="width: 50%; position: relative;" /><br />
 </div>
 
 To request the organization's information: companies/{company_id}.format
@@ -30,7 +30,7 @@ In the mobile version the linked contacts are listed after the organization's co
 
 <div class="text-align: center">
 <img src="/img/api-organization/linked_contact.png" alt="" class="img-responsive"
- style="width: 50%; position: relative; left: 25%" /><br />
+ style="width: 25%; position: relative; left: 25%" /><br />
 </div>
 
 Other important new functionality is change a contact's organization. It could be to a new one (which will create a new organization automatically) or to one that already exists.
