@@ -59,7 +59,7 @@ date: 2014-03-04 10:35:00
     <tr>
       <td class="nowrap"><code class="redtext">string</code></td>
       <td><code class="bluetext">synced_status_id</code></td>
-      <td>The system id for the status that is synced across the company (read only)</td>
+      <td>System id for status synced across this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -99,22 +99,22 @@ date: 2014-03-04 10:35:00
     <tr>
       <td><code class="redtext">float</code></td>
       <td class="nowrap"><code class="bluetext">total_pending_amount</code></td>
-      <td>Total monetary amount of deals pending with this company (read only)</td>
+      <td>Total monetary amount of deals pending for this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">int</code></td>
       <td class="nowrap"><code class="bluetext">won_deals_count</code></td>
-      <td>Total of won deals with this company (read only)</td>
+      <td>Number of won deals for this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">int</code></td>
       <td class="nowrap"><code class="bluetext">pending_deals_count</code></td>
-      <td>Total of pending deals with this company (read only)</td>
+      <td>Number of pending deals for this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">int</code></td>
       <td><code class="bluetext">contacts_count</code></td>
-      <td>Number of Contacts in this company (read only)</td>
+      <td>Number of contacts in this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -144,7 +144,7 @@ date: 2014-03-04 10:35:00
     <tr>
       <td><code class="redtext">array</code></td>
       <td class="nowrap"><code class="bluetext">pending_deals()</code></td>
-      <td class="nowrap">Most recently updated pending deals associated with this company.</td>
+      <td class="nowrap">Pending deals associated with this company with the earliest expected close date first.</td>
     </tr>
   </tbody>
 </table>
