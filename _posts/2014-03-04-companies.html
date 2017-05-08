@@ -33,6 +33,11 @@ date: 2014-03-04 10:35:00
       <td><code class="bluetext">companies/{id}.format</code></td>
       <td>Update a company</td>
     </tr>
+    <tr>
+      <td><span class="get-text">GET</span></td>
+      <td><code class="bluetext">companies/{id}/linked_contacts.format</code></td>
+      <td>Get contacts linked with the company</td>
+    </tr>
   </tbody>
 </table>
 
@@ -50,6 +55,11 @@ date: 2014-03-04 10:35:00
       <td class="nowrap"><code class="redtext">string</code></td>
       <td><code class="bluetext">id</code></td>
       <td>Company ID (read only)</td>
+    </tr>
+    <tr>
+      <td class="nowrap"><code class="redtext">string</code></td>
+      <td><code class="bluetext">synced_status_id</code></td>
+      <td>System id for status synced across this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">string</code></td>
@@ -82,19 +92,34 @@ date: 2014-03-04 10:35:00
       <td>Company description - truncated to 10000 characters.</td>
     </tr>
     <tr>
-      <td><code class="redtext">int</code></td>
+      <td><code class="redtext">float</code></td>
       <td><code class="bluetext">total_won_amount</code></td>
-      <td>Total monetary amount of deals won with this company (read only)</td>
+      <td>Total monetary amount of deals pending for this company (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">float</code></td>
+      <td class="nowrap"><code class="bluetext">total_pending_amount</code></td>
+      <td>Total monetary amount of deals pending for this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">int</code></td>
-      <td class="nowrap"><code class="bluetext">total_pending_amount</code></td>
-      <td>Total monetary amount of deals pending with this company (read only)</td>
+      <td class="nowrap"><code class="bluetext">won_deals_count</code></td>
+      <td>Number of won deals for this company (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">int</code></td>
+      <td class="nowrap"><code class="bluetext">pending_deals_count</code></td>
+      <td>Number of pending deals for this company (read only)</td>
     </tr>
     <tr>
       <td><code class="redtext">int</code></td>
       <td><code class="bluetext">contacts_count</code></td>
-      <td>Number of Contacts in this company (read only)</td>
+      <td>Number of contacts in this company (read only)</td>
+    </tr>
+    <tr>
+      <td><code class="redtext">string</code></td>
+      <td><code class="bluetext">created_at</code></td>
+      <td>The company's creation date (read only)</td>
     </tr>
   </tbody>
 </table>
@@ -114,12 +139,12 @@ date: 2014-03-04 10:35:00
     <tr>
       <td class="nowrap"><code class="redtext">array</code></td>
       <td><code class="bluetext">contacts()</code></td>
-      <td>First Ten Contacts associated with this company</td>
+      <td>Contacts associated with this company</td>
     </tr>
     <tr>
       <td><code class="redtext">array</code></td>
       <td class="nowrap"><code class="bluetext">pending_deals()</code></td>
-      <td class="nowrap">Most recently updated pending deals associated with this company (limited to 10).</td>
+      <td class="nowrap">Pending deals associated with this company with the earliest expected close date first.</td>
     </tr>
   </tbody>
 </table>

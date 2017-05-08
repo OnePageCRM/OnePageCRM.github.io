@@ -109,9 +109,16 @@ date: 2014-03-04 10:28:04
     <tr>
       <td><span class="put-text">PUT</span></td>
       <td>
-        <code class="bluetext">contacts/{id}/unassign_tag/{tag_id}.format</code>
+        <code class="bluetext">contacts/{id}/split.format</code>
       </td>
-      <td>Remove a tag from a contact by name or ID</td>
+      <td>Split contact from a company. Send the field <code class="bluetext">company_name</code> in the body with the new company name.</td>
+    </tr>
+    <tr>
+      <td><span class="put-text">PUT</span></td>
+      <td>
+        <code class="bluetext">contacts/{id}/close_sales_cycle.format</code>
+      </td>
+      <td>Add an optional closing comment with the <code class="bluetext">comment</code> field in the request body.</td>
     </tr>
   </tbody>
 </table>
@@ -636,6 +643,11 @@ date: 2014-03-04 10:28:04
         <td><code class="redtext">array</code></td>
         <td><code class="bluetext">completed_actions()</code></td>
         <td>Last 4 completed actions for this contact sorted by completion time.</td>
+      </tr>
+      <tr>
+        <td><code class="redtext">company</code></td>
+        <td><code class="bluetext">company()</code></td>
+        <td>The contact's company.</td>
       </tr>
     </tbody>
   </table>
