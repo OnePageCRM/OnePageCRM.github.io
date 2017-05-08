@@ -1,51 +1,67 @@
 ---
 layout: post
-title: "Organization API update"
-slug: "organization-api-update"
+title: "Organizations for Mobile"
+slug: "organizations-for-mobile"
 category: blog
 author: elano
 date: 2017-05-05 15:00:00
 ---
 
-The mobile version 3.4.0 of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally it was called companies). To work with organization the API was updated and I'm going to show some of the new functionalities.
+The mobile version `3.4.0` of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally called companies). 
+
+To work with organizations, the API was updated, and I'm going to show some of the new features of the mobile update.
+
+See Anakin's organization information at the bottom of the screen, beside the organization icon:
 
 <div class="text-align: center">
 <img src="/img/api-organization/contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
 
-An organization now have its own section in a contact and after click on it, it's possible see all the organization's information.
+After clicking the organization info, you will be brought to a a seperate screen to view all the information of the organization in more detail. See below:
 
 <div class="text-align: center">
 <img src="/img/api-organization/organization.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
 
-To request the organization's information: **companies/{company_id}.format**
+With the new API updates:
 
-Now it's possible to list(POST)/link(PUT)/unlink(DELETE) a contact to an organization: **companies/{company_id}/linked_contacts.json**
+To request an organization's information and resources we now use the following: 
+`companies/{company_id}.format`
 
-In the mobile version the linked contacts are listed after the organization's contacts.
+Using the following sub-endpoint: 
+`companies/{company_id}/linked_contacts.json`
+We can do the following:
+- (GET) list the linked contacts of a company
+- (POST) link a contact to a company
+- (DELETE) un-link a contact from a company
+
+In the new mobile update, linked contacts are listed after the organization's contacts. See R2-D2 below:
 
 <div class="text-align: center">
 <img src="/img/api-organization/linked_contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
 
-Other important new functionality is change a contact's organization. It could be to a new one (which will create a new organization automatically) or to one that already exists.
+Another important change is how to change a contact's organization. We call this act of changing a contact's organization a `SPLIT`.
 
-Example:
-**https://app.onepagecrm.com/api/v3/contacts/{contact_id}/split.format**
+We can change to another existing organization, or it could be a new one (which will be created automatically).
 
-Body:
-`{"company_name":"new organization"}`
+To split a contact from one organization to another (or to remove org. altogether):
+`contacts/{contact_id}/split.format`
+
+Request body:     
+`{"company_name":"New Organization Name"}`
+
+To change the organization on mobile, simply change the text in the Organization field in the edit contact form:
 
 <div class="text-align: center">
 <img src="/img/api-organization/edit_contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
 
-You can search for more information in the [API page][1] and any doubt can be posted in the [forum][2] .
+You can read more in our [API docs][1] and any questions you may have can be asked in our [developer forum][2].
 
  [1]: http://developer.onepagecrm.com/#companies
  [2]: http://forum.developer.onepagecrm.com
