@@ -94,25 +94,25 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
 <!-- Tab panes -->
 <div class="tab-content">
 <div class="tab-pane fade in active" id="ruby">
-    <script src="https://gist.github.com/OnePageCTO/5910804.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/d6551ebe68317da1f1ff41a1abf0018c.js"></script>
   </div>
   <div class="tab-pane fade" id="objectivec">
     <script src="https://gist.github.com/OnePageCTO/6012092.js"></script>
   </div>
   <div class="tab-pane fade" id="javascript">
-    <script src="https://gist.github.com/OnePageCTO/5998588.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/efa669a1cfff64dc4bf16995f8c2aa31.js"></script>
   </div>
   <div class="tab-pane fade" id="csharp">
-    <script src="https://gist.github.com/OnePageCTO/5955980.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/ce1191c06f836cc5313ee46c52dc65ba.js"></script>
   </div>
   <div class="tab-pane fade" id="java">
-    <script src="https://gist.github.com/OnePageCTO/5950270.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/b4af01d1940dd86fcc55a0b7f87fa553.js"></script>
   </div>
   <div class="tab-pane fade" id="ruby">
-    <script src="https://gist.github.com/OnePageCTO/5910804.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/d6551ebe68317da1f1ff41a1abf0018c.js"></script>
   </div>
   <div class="tab-pane fade" id="python">
-    <script src="https://gist.github.com/OnePageCTO/5910790.js"></script>
+    <script src="https://gist.github.com/JohnMaguir/b3100afe5897f75e3b59fb4f1040ed55.js"></script>
   </div>
   <div class="tab-pane fade" id="PHP">
     <script src="https://gist.github.com/peterOnePageCRM/93c7af55e5063fbf2097.js"></script>
