@@ -61,7 +61,7 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
 <p>We want to edit a contact with an id of <code class="inline">‘4d91d3ea6381904e44000026’</code> and partially update his first and last name.</p>
 <ul>
   <li>The full url for this request is: <code class="inline">‘https://app.onepagecrm.com/api/v3/contacts/4d91d3ea6381904e44000026.json?partial=1’</code></li>
-  <li>The raw request body to partially update the contact’s name is: <code class="inline">‘{"firstname":"John", "lastname":"Doe"}’</code></li>
+  <li>The raw request body to partially update the contact’s name is: <code class="inline">‘{"first_name":"John", "last_name":"Doe"}’</code></li>
   <li>The request type in uppercase is: <span class="label label-default">PUT</span></li>
   <li>The unix timestamp used for this request is: <code class="inline">1401366488</code></li>
   <li>The user id as received from the login function is: <code class="inline">4e0046526381906f7e000002</code></li>
