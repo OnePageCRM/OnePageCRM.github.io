@@ -86,3 +86,10 @@ authors:
     email: elano@onepagecrm.com
     description: "Liam works as a full stack web developer at OnePageCRM."
     image: '/img/liam.jpg'
+  leonard:
+    name: Leonard Reidy
+    display_name: Leonard
+    email: leonard@onepagecrm.com
+    github: leonardreidy
+    description: "Leonard is a software engineer at OnePageCRM"
+    image: '/img/leonard.jpg'
