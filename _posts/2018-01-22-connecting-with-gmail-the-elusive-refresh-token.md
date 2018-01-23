@@ -4,7 +4,7 @@ title: "Connecting with Gmail - The elusive refresh token"
 slug: "connecting_with_gmail_elusive_refresh_token"
 category: blog
 author: john
-date: 2018-01-22 09:00:00
+date: 2018-01-23 09:00:00
 excerpt: "Here at OnePageCRM we recently released a new beta feature where we integrated with the Gmail API."
 ---
 
