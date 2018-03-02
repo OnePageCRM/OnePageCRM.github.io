@@ -4,18 +4,18 @@ title: "Rails to AWS lambda: JSON Web Tokens"
 slug: "rails_to_aws_lambda_json_web_tokens"
 category: blog
 author: liam
-date: 2018-03-09 09:00:00
+date: 2018-03-08 09:00:00
 draft: true
 excerpt: "JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens"
 ---
 
-*Continuation from last weeks post on [communication and authorization]({% post_url 2018-03-02-rails-to-aws-lambda-communication-and-authentication %}) between Rails and Lambda (NodeJS).*
+*Continuation from our last post on [communication and authorization]({% post_url 2018-03-02-rails-to-aws-lambda-communication-and-authentication %}) between Rails and Lambda (NodeJS).*
 
 JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens. By this fact, we should be able to find popular, reliable and actively supported gems / packages for both Ruby and NodeJS which will do the hard work for us.
 
 ### Ruby
 
-Though the authentication flow will be two-way, let's start by creating a signed & encrypted JWT in ruby. I'll use the [json-jwt](https://github.com/nov/json-jwt) gem as it offers all the options I need for creating the JWT, and has a [simple API](https://github.com/nov/json-jwt/wiki). 
+The authentication flow will be two-way, I will start by creating a signed & encrypted JWT in ruby. I'll use the [json-jwt](https://github.com/nov/json-jwt) gem as it offers all the options I need for creating the JWT, and has a [simple API](https://github.com/nov/json-jwt/wiki). 
 
 Let's assume we have a user model with an id, and a boolean telling us whether they are a superuser or not:
 ```ruby
@@ -230,7 +230,7 @@ function decrypt(token){
 
 The decryption and verify algorithms don't need to be explicitly specified as they are specified within the JWT. But unlike the ruby gem, the payload needs to be parsed from its JSON string into an object. You need to be careful to convert the payload returned from the NODE-JSON library to a string while specifying the encoding as UTF-8 to avoid malformed data.
 
-## Conclusion
+<br/>
 
 There is a good variety of communication and authorization methods available for communicating between web services. Using JWT auth token headers to authorize HTTP requests was surprisingly convoluted to setup. But once I understood all of the libraries and configurations available, this method works reliably and is very secure thanks to asymmetric key encryption with added randomization in the payloads thanks to nonces and timestamps.
 

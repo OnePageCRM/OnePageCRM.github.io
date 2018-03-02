@@ -31,13 +31,13 @@ Checkout the [Lambda FAQ](https://aws.amazon.com/lambda/faqs/) for more details
 
 As ruby isn't supported (or at least [not easily](http://www.adomokos.com/2016/06/using-ruby-in-aws-lambda.html)), we are opting for a NodeJS setup. As we already use ReactJS, this will let us tinker with the server-side rendering feature and keep with a familiar language. 
 
-To develop Lambda functions locally, there is a useful toolkit - the [serverless framework](https://github.com/serverless/serverless#). It supports Javascript and speeds up development as the lambda stack can be emulated locally, saving you the time of waiting for lengthy deployments.
+To develop Lambda functions locally, we used a handy toolkit - the [serverless framework](https://github.com/serverless/serverless#). It supports Javascript and speeds up development as the lambda stack can be emulated locally, saving you the time of waiting for lengthy deployments.
 
-After deciding on our new features stack, it's time to sort out the main act - authentication. Implementing a new feature as a micro-service offers many benefits, but before we reap these benefits we have to overcome the hurdles of communication, authentication and authorization from our existing stack to the lambda functions.
+After deciding on our new features stack, it was time to sort out the main act -  communication, authentication and authorization.
 
 
 <br/>
-## Communication
+## Communication formats to consider
 
 As briefly mentioned, there are two main methods to trigger Lambda functions: a [Web API](https://en.wikipedia.org/wiki/Web_API) or a [message queue](https://en.wikipedia.org/wiki/Message_queue). There is a third option, of using the [AWS SDK](https://aws.amazon.com/tools/) (in our case the [ruby gem](https://rubygems.org/gems/aws-sdk-lambda/versions/1.0.0.rc8)) from within a rails server to [invoke](https://docs.aws.amazon.com/sdkforruby/api/Aws/Lambda/Client.html#invoke-instance_method) lambda functions directly. I'm dismissing this as it removes one of the core advantages I'm looking for; to reduce load on the rails server.
 
@@ -51,20 +51,20 @@ This should be relatively straightforward to anyone familiar with web applicatio
 
 There is a plethora of message queue system which would be suitable for this integration. AWS's most suitable offering is [AWS Kinesis](https://aws.amazon.com/kinesis/) into which messages can be inserted via the corresponding [ruby gem](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/Kinesis/Client.html#put_record-instance_method). The alternative of [AWS SQS](https://aws.amazon.com/sqs/) (simple queue service) needs to be paired with [AWS SNS](https://aws.amazon.com/sns/) (simple notification service) so that the lambda function can be informed that there is a new message for it to process. 
 
-Compared to interfacing with the AWS SDK lambda gem to execute functions, these solutions have the advantage of being fire-and-forget requests made by the rails server. This means the rails server doesn't waste time waiting for the lambda function to complete and return it's result.
+Compared to interfacing with the AWS SDK lambda gem to execute functions, these solutions have the advantage of being fire-and-forget requests made by the rails server. Time is saved rails server doesn't have to wait for the lambda function to complete and return it's result.
 
 <br/>
 ### Choice
 
-My choice of communication method is the Web API. It gives the advantage of completely decoupling the lambda function from the rails server, as it can be interfaced with directly from the client (the user's browser). This does however mean that our method of Authentication needs to be suitable for HTTP requests.
+My choice of communication method is the Web API. It gives the advantage of completely decoupling the lambda function from the rails server, as it can be accessed directly from the client (the user's browser). This does however mean that our method of Authentication needs to be suitable for HTTP requests.
 
 <br/>
-## Authentication
+## Authentication formats to consider
 
-There exist almost too authentication methods for HTTP requests to count. Thankfully they are all fairly similar and can be split by two properties: format and encryption. As you can choose almost any encryption algorithm depending on how secure you need to be vs how fast the authentication needs to occur, let's focus on the format:
+There exist almost too authentication methods for HTTP requests to count. Thankfully they are all fairly similar and can be split by two properties: format and encryption. You can choose almost any encryption algorithm depending on how secure you need it to be or how fast the authentication needs to occur. Let's focus on the format:
 
 <br/>
-### Basic Auth
+### Basic Authentication
 
 [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) is very straightforward and offers no encryption by default, which is why it should be exclusively used with secure HTTPS requests. It appends username and password to the front of the URL:
 
@@ -75,9 +75,9 @@ There exist almost too authentication methods for HTTP requests to count. Thankf
 <br/>
 ### Cookies
 
-[Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) are a form of authentication specific to browsers (though they could be could be used for server-server communication too). A Cookie is simply a text field containing some metadata such as:
+[Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) are a form of authentication specific to browsers (though they could be used for server-server communication too). A Cookie is simply a text field containing some metadata such as:
 
-* what domain it originated from
+* What domain it originated from
 * If it can be read by the client side Javascript, or only the browser
 * How long it should be kept
 
@@ -86,9 +86,9 @@ Typically a session cookie (ie. one used for authentication) is created by the s
 <br/>
 ### Token
 
-[Tokens](https://jwt.io/introduction/) work in the same vein as cookies, except we skip the automated browser functionality which includes the cookie with every request. One reason to manually do what cookies do for free is the domain limitation of cookies. A session cookie can only be sent to the domain where it originated. So auth data set by example.com cannot be sent to google.com. 
+[Tokens](https://jwt.io/introduction/) work in the same vein as cookies, except we skip the automated browser functionality which includes the cookie with every request. One reason to manually do what cookies do for free is the domain limitation of cookies. A session cookie can only be sent to the domain where it originated. So authentication data set by example.com cannot be sent to google.com. 
 
-One major downside of tokens is that they are lost on page refresh/redirect as they are usually handled by javascript. Cookies, on the other hand, can be kept for years. But this is inconvenience is greatly reduced by the rise of [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application), where the page is as the webpage is almost never reloaded / changed.
+One major downside of tokens is that they are lost on page refresh/redirect as they are usually handled by javascript. Cookies, on the other hand, can be kept for years. But this inconvenience is greatly reduced by the rise of [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application), where the page is almost never reloaded / changed.
 
 <br/>
 ### Choice
@@ -101,7 +101,7 @@ By default, basic auth is unencrypted so it isn't the safest method to use. This
 
 ## Summary
 
-Going through the options available, I've decided on HTTP requests with JWT authentication. JWT is a well defined standard but the [official specifications](https://tools.ietf.org/html/rfc7519) are terse to read so I would always advise using libraries rather than generating complicated auth data yourself. Next week I will post a follow up going into the details of implementing JWT authentication in Ruby and NodeJS.
+Going through the options available, I've decided on HTTP requests with JWT authentication. JWT is a well defined standard but the [official specifications](https://tools.ietf.org/html/rfc7519) are terse to read so I would always advise using libraries rather than generating complicated auth data yourself. Check back for my next blog post on implementing JWT authentication in Ruby and NodeJS.
 
 <br/>
 <br/>
