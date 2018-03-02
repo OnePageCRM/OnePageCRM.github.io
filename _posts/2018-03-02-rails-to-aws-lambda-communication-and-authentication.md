@@ -5,7 +5,6 @@ slug: "rails_to_aws_lambda_communication_and_authentication"
 category: blog
 author: liam
 date: 2018-03-02 09:00:00
-draft: true
 excerpt: "Here at OnePageCRM our stack predominantly consists of a Ruby on Rails backend with a coffeescript Frontend of ReactJS and some legacy JQuery"
 ---
 
