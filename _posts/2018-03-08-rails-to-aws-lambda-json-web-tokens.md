@@ -5,6 +5,7 @@ slug: "rails_to_aws_lambda_json_web_tokens"
 category: blog
 author: liam
 date: 2018-03-08 09:00:00
+draft: true
 excerpt: "JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens"
 ---
 
