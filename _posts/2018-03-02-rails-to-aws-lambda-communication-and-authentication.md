@@ -9,6 +9,13 @@ excerpt: "Here at OnePageCRM our stack predominantly consists of a Ruby on Rails
 ---
 
 
+
+<div class="text-align: center">
+    <img src="/img/lambda.png" alt="" class="img-responsive"
+     style="width: 100%; position: relative" /><br />
+</div>
+
+
 Here at OnePageCRM our stack predominantly consists of a Ruby on Rails backend with a coffeescript Frontend of ReactJS and some legacy JQuery. But that doesn't mean we don't like to branch out and delve into new technologies.
 
 As we are looking to maintain performance and reduce strain on our [Majestic Monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228), the shiny new buzz-word of serverless computation  caught our eye. Specifically we have been looking at [AWS Lambda](https://aws.amazon.com/lambda/?sc_channel=PS&sc_campaign=acquisition_UK&sc_publisher=google&sc_medium=lambda_b&sc_content=lambda_e&sc_detail=aws%20lambda&sc_category=lambda&sc_segment=186455828798&sc_matchtype=e&sc_country=UK&s_kwcid=AL!4422!3!186455828798!e!!g!!aws%20lambda&ef_id=WZqeZAAAAbjkoozC:20180219162517:s), a service where functions can be executed on various triggers (including the AWS Api Gateway). This means you will only be billed for the execution time, rather than for keeping a server running 24/7. 
