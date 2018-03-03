@@ -11,7 +11,7 @@ excerpt: "Here at OnePageCRM our stack predominantly consists of a Ruby on Rails
 
 
 <div class="text-align: center">
-    <img src="/img/lambda.png" alt="" class="img-responsive"
+    <img src="/img/aws/lambda.svg" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
