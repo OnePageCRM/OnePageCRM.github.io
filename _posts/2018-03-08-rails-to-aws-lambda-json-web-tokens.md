@@ -14,13 +14,13 @@ excerpt: "JWTs are a well defined standard for creating, signing, verifying, enc
      style="width: 100%; position: relative" /><br />
 </div>
 
-*Continuation from our last post on [communication and authorization]({% post_url 2018-03-02-rails-to-aws-lambda-communication-and-authentication %}) between Rails and Lambda (NodeJS).*
+*Continuation from our last post on [communication and authorization]({% post_url 2018-03-02-rails-to-aws-lambda-communication-and-authentication %}){:target='_blank'} between Rails and Lambda (NodeJS).*
 
 JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens. By this fact, we should be able to find popular, reliable and actively supported gems / packages for both Ruby and NodeJS which will do the hard work for us.
 
 ### Ruby
 
-The authentication flow will be two-way, I will start by creating a signed & encrypted JWT in ruby. I'll use the [json-jwt](https://github.com/nov/json-jwt) gem as it offers all the options I need for creating the JWT, and has a [simple API](https://github.com/nov/json-jwt/wiki). 
+The authentication flow will be two-way, I will start by creating a signed & encrypted JWT in ruby. I'll use the [json-jwt](https://github.com/nov/json-jwt){:target='_blank'} gem as it offers all the options I need for creating the JWT, and has a [simple API](https://github.com/nov/json-jwt/wiki){:target='_blank'}. 
 
 Let's assume we have a user model with an id, and a boolean telling us whether they are a superuser or not:
 ```ruby
@@ -37,12 +37,12 @@ To represent this user and what they are Authorized to do, we will want to send 
 <br/>
 ### Nonce
 
-A [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) is a randomly generated number which can only be used once. It's primary use is to prevent replay attacks, as the same auth data can't be used twice, and to prevent breaking the encryption. If the encrypted data is always the same (eg. the above user data only) then the encrypted data may contain the same pattern of characters which can (potentially) be used to find the encryption key if the algorithm used is too weak.
+A [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce){:target='_blank'} is a randomly generated number which can only be used once. It's primary use is to prevent replay attacks, as the same auth data can't be used twice, and to prevent breaking the encryption. If the encrypted data is always the same (eg. the above user data only) then the encrypted data may contain the same pattern of characters which can (potentially) be used to find the encryption key if the algorithm used is too weak.
 
 <br/>
 ### Timestamp
 
-The timestamp has a similar purpose to the nonce, but instead of having to save every nonce ever received to check that it hasn't been used before, there is a limited window (eg. 5 minutes) during which the auth data is valid. If a token with an outdated timestamp is received, then the request should be ignored. The one downside of this approach is that the servers will need to have accurate times (eg. synced via [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol)), but this is a given for almost all servers connected to the internet
+The timestamp has a similar purpose to the nonce, but instead of having to save every nonce ever received to check that it hasn't been used before, there is a limited window (eg. 5 minutes) during which the auth data is valid. If a token with an outdated timestamp is received, then the request should be ignored. The one downside of this approach is that the servers will need to have accurate times (eg. synced via [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol){:target='_blank'}), but this is a given for almost all servers connected to the internet
 
 <br/>
 ### Algorithms
@@ -52,11 +52,11 @@ There are a variety of encryption algorithms supported by by the json-jwt gem. M
 * I can verify who created the token
 * It can only be read by it's intended recipient
 
-For this, asymmetric public-private key encryption is well suited. The [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) public-private key cryptosystem is well suited for this. 
+For this, asymmetric public-private key encryption is well suited. The [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)){:target='_blank'} public-private key cryptosystem is well suited for this. 
 
 Using the 512 bit key variety is sufficient, as in this configuration the public key will never be publicly available. It will only be handed to the other service which we are communicating with. The specific algorithm for signing is RS256, which is a RSA Signature with SHA-256.
 
-For the encryption algorithm we will need to specify a slightly different algorithm with [padding](https://en.wikipedia.org/wiki/Padding_(cryptography)#Public_key_cryptography), in this case RSA with [OAEP](https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding)( Optimal Asymmetric Encryption Padding):
+For the encryption algorithm we will need to specify a slightly different algorithm with [padding](https://en.wikipedia.org/wiki/Padding_(cryptography)#Public_key_cryptography){:target='_blank'}, in this case RSA with [OAEP](https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding){:target='_blank'}( Optimal Asymmetric Encryption Padding):
 
 ```ruby
 JWT_SIGNATURE_ALGORITHM = :RS256
@@ -113,7 +113,7 @@ def create_jwt(payload_data)
 
 Here the create_jwt function is defined to take a payload_data hash. This is set in the JWT payload along with a nonce and timestamp. The data is used to initialize a JWT object. This is then signed with the rails app's private key. Then the signed JWT is encrypted with the lambda functions public key.
 
-There are some defaults employed by the JSON JWT gem which you need to be aware of. It follows the default specification of a JWT (see the [official spec](https://tools.ietf.org/html/rfc7519#section-1)) and uses the compact notation of JWS (JSON Web Serialization) and JWE (JSON Web Encryption). In this case we are using the later as the JWT is encrypted.
+There are some defaults employed by the JSON JWT gem which you need to be aware of. It follows the default specification of a JWT (see the [official spec](https://tools.ietf.org/html/rfc7519#section-1){:target='_blank'}) and uses the compact notation of JWS (JSON Web Serialization) and JWE (JSON Web Encryption). In this case we are using the later as the JWT is encrypted.
 
 #### Decrypt and verify JWT
 
@@ -134,9 +134,9 @@ end
 
 ### Implementation in NodeJS
 
-In nodeJS, there exists the excellent [NODE-JOSE](https://www.npmjs.com/package/node-jose) (JSON Object Signing and Encryption) package. This is a lot more verbose and customizable than it's ruby counterpart. 
+In nodeJS, there exists the excellent [NODE-JOSE](https://www.npmjs.com/package/node-jose){:target='_blank'} (JSON Object Signing and Encryption) package. This is a lot more verbose and customizable than it's ruby counterpart. 
 
-There is also a lack of examples available for this library, which is why I hope my code below will be useful to others. One of the few samples I came across was a [blog post by codeburst.io](https://codeburst.io/securing-tokens-with-help-from-jose-33d8c31835a1). I highly recommend checking it out to better understand the options available.
+There is also a lack of examples available for this library, which is why I hope my code below will be useful to others. One of the few samples I came across was a [blog post by codeburst.io](https://codeburst.io/securing-tokens-with-help-from-jose-33d8c31835a1){:target='_blank'}. I highly recommend checking it out to better understand the options available.
 
 ### Here are examples on how to sign, verify, encrypt and decrypt JWT via  the NODE-JOSE library:
 
