@@ -8,6 +8,12 @@ date: 2018-03-08 09:00:00
 excerpt: "JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens"
 ---
 
+
+<div class="text-align: center">
+    <img src="/img/jwt.png" alt="" class="img-responsive"
+     style="width: 100%; position: relative" /><br />
+</div>
+
 *Continuation from our last post on [communication and authorization]({% post_url 2018-03-02-rails-to-aws-lambda-communication-and-authentication %}) between Rails and Lambda (NodeJS).*
 
 JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens. By this fact, we should be able to find popular, reliable and actively supported gems / packages for both Ruby and NodeJS which will do the hard work for us.
