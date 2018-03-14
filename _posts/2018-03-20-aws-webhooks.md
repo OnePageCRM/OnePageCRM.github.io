@@ -7,9 +7,9 @@ author: pawel
 date: 2018-03-12 16:51:15
 ---
 
-_**Dissclaimer:** This post contains implementation details (AKA Nerd content) of one of OnePageCRM
-features. If you don't fully understand it or you have any comments about that, feel free to put a 
-comment and join the discussion._
+_**Disclaimer:** This post contains short description from technology point of view
+how we are serving webhooks in our system. If you are more interested in details,
+please let us know._
 
 ### Introduction
 
@@ -24,6 +24,7 @@ In this post I will try to describe from technical site how the whole system is 
 
 ### The medium: webhook
 
+<img src="/img/aws-webhooks/webhooks.svg" alt="Webhooks" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 What is that "webhook" you may ask. Following [Wikipedia definition][wikipedia] webhook is
 nothing else than user-defined HTTP callback which is usually triggered by some
 event like pushing new commit to your repository, placing comment on some blog post
@@ -32,6 +33,8 @@ when some event will occur, one server when it happened will send HTTP request t
 other one with information about such event. So we can call it one way communication
 channel between different servers. And how such webhook will be processed is only
 under the matter of developer creativity :). 
+
+<div class="clear: both"></div>
 
 ### The actor: Nylas webhook
 
@@ -70,17 +73,149 @@ those two methods in this scenario).
 
 ### The operation room: Amazon Lambda
 
+<img src="/img/aws/lambda.svg" alt="AWS Lambda" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+When our webhook will be received by API Gateway it is further delivered to by processed by
+[AWS Lambda][lambda] service. Lambda is Amazon's serverless function execution service which allows
+us to run our code in "pure cloud" without need of having and configuring our server (and yes, we know
+old Chinese proverb saying that _there is no cloud and only someone's else computer_ :)).
+
+There is important to know that within Amazon infrastructure Lambda function is not focused
+only on serving HTTP requests coming through API Gateway and may be triggered e.g. after some
+object will be uploaded to S3 storage service, an email will come through SES service or simply
+execution may be triggered manually. Every lambda function which is being called with 
+three parameters: `event` which is subject of the call (in our case it is object describing
+HTTP request together with webhook data itself prepared by API Gateway method configuration),
+`context` which describes environment within which function is being called and `callback` which
+is "pointer" (yes, it's hard to speak about pointers in such languages like Javascript) to 
+callback function which Lambda execution environment is expecting to be called with function
+execution result.
+
+Result of such function call is then sent back to API Gateway service where it may or may not be
+processed (it comes as an object and when unprocessed JSON response with such object will
+be prepared by default) and sent back to the client.   
+
+<div class="clear: both"></div>
+
 ### The servant: NodeJS
+
+<img src="/img/aws/nodejs-sdk.svg" alt="NodeJS SDK" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+AWS Lambda allows developers to run code with use of various programming languages; when
+this post was written, it was possible to write Lambda function with NodeJS, Java, C#
+or Python. In our case we have chosen NodeJS as we are having a number of very
+good developers skilled within this technology.
+
+In order to use NodeJS within Lambda, we will need to create ZIP archive containing
+all package files (including `package.json`) - if you are having project in
+separate directory, ZIP archive should contain content of it, not the directory itself.
+
+If you are having some module (let's say it's index.js in main project directory)
+and you want to create some function which will be executed as Lambda one,
+you have to define it within following way:
+
+<pre>
+  <code class="javascript">
+  // index.js file content
+  
+  exports.functionName = function(event, context, callback)
+  {
+    /* ... function body ... */
+  }
+  </code>
+</pre>
+
+Such function will be further accessible through `index.functionName` identifier.
+
+When providing webhook URL within Nylas dashboard, it is required that given URL
+will accept following requests:
+* GET request is "challenge-response" one which is being used by Nylas if given
+  URL is valid; Such request should literally return string given as query
+  parameter
+* POST request which will contain data about events like new email creation,
+  account sync status change etc.
+  
+In order to provide required feature, we are creating single resource within
+API Gateway service which responds to GET and POST methods and for every method
+we are defining corresponding lambda functions:
+* for GET request we are simply returning string found as query parameter; the
+  important thing here is that when we will return string from Lambda function
+  it will be still treated as "JSON data" within API Gateway and by default
+  it will be serialized which means that double quotes will be added around the
+  string; and because it's not exactly the same what Nylas expects to get in
+  response, it will tell us that our callback URL is invalid; therefore we have
+  to configure our API gateway to convert "string object" into actual string
+  and return plain text response
+* for POST response where we are having webhook data, first we are validating
+  data by signature check (Nylas sends us signature within HTTP request
+  headers), and then data itself is being processed, multiple events are being
+  isolated (as within single webhook we can receive information about more
+  than one event), initially filtered and then sent to further processing
+  via Amazon SQS described below.
+
+<div class="clear: both"></div>
 
 ### The messenger: Amazon SQS
 
+<img src="/img/aws/sqs.svg" alt="Amazon SQS" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+[Amazon Simple Queue Service][sqs] is the perfect method to implement communication
+between different independent elements of the system. It is being built as system
+of message queues where various system components can either send or receive
+messages. In our case after webhook data will be processed, we are creating
+a number of messages like "new email with ID1 in account X" or "account Y sync
+status has changed to Z" and Lambda function sends such message to predefined
+list of queues. From the other side, OnePageCRM servers responsible for
+all background jobs processing are reading frequently messages from those queues
+and finally processing emails itself deciding if it should be stored within your
+account or not. 
+
+<div class="clear: both"></div>
+
 ### The glue: Amazon CloudFormation
 
-<script type="text/javascript">
-setTimeout(function(){document.location.reload();}, 10000);
-</script> 
+<img src="/img/aws/cloudformation.svg" alt="Amazon CloudFormation" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+As you can see from above description, we are using a number of different services
+from Amazon Web Services palette. And, as you may expect, manual configuration
+of all of those will be small hell even for experienced system administrator.
+In order to help with that, AWS provides service called [Amazon CloudFormation][awscfn].
+CloudFormation implements "infrastructure as a code" process which allows to
+manage your architecture via machine-readable configuration files instead of
+command-line tools of web interfaces. With use of CloudFormation for this particular
+scenario we are defining following elements:
+* API Gateway resource with corresponding methods
+* Lambda functions
+* Connections between API Gateway methods and corresponding Lambda functions
+* API Gateway request & response processing rules
+* various execution policies and execution roles
+
+Elements like SQS queues are not included within configuration itself (but we
+can always create SQS queue as part of it) but queue names are being passed
+as stack parameter (single configuration instance of CloudFormation is being called stack).
+Also Nylas secret key, which then is being used in Lambda to check request signature
+is being provided as stack parameter.
+
+Amazon CloudFormation is using JSON files to describe the infrastructure itself.
+As the system grows, it is very hard to manage such files, therefore there is a number
+of tools which may help you with that. Here in OnePageCRM we are using library
+called [Troposphere][troposphere] which allows to define your stack
+as Python script.
+
+<div class="clear: both"></div>
+
+### The end
+
+And that is how the whole process of webhooks processing looks within OnePageCRM
+system. If you think, that this description should be more technical and should
+go more into details e.g. of CloudFront configuration or API Gateway
+request/response processing, let us know! And remember that 
+[we are still hiring][hiring] so if you think that you can try your skills
+within world of Rails, MongoDB and NodeJS, then we will be happy to see you
+on board!
 
 [aws]: https://aws.amazon.com 
 [nylas]: https://www.nylas.com/
-[webhook]: https://en.wikipedia.org/wiki/Webhook
+[wikipedia]: https://en.wikipedia.org/wiki/Webhook
 [apigateway]: https://aws.amazon.com/api-gateway/
+[lambda]: https://aws.amazon.com/lambda/
+[sqs]: https://aws.amazon.com/sqs/
+[awscfn]: https://aws.amazon.com/cloudformation/
+[troposphere]: https://github.com/cloudtools/troposphere
+[hiring]: https://www.onepagecrm.com/hiring
