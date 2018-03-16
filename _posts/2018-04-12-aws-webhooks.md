@@ -5,48 +5,55 @@ slug: "aws-webhooks"
 category: blog
 author: pawel
 date: 2018-03-12 16:51:15
+excerpt: "Here in OnePageCRM we are utilizing some of Amazon Web Services in
+          order to provide the best CRM system on the planet. One of our latest 
+          features, which is currently in a closed beta program, is email sync 
+          which is being provided by our partner Nylas."
 ---
 
-_**Disclaimer:** This post contains short description from technology point of view
-how we are serving webhooks in our system. If you are more interested in details,
-please let us know._
+<div class="text-align: center">
+    <img src="/img/aws-webhooks/top.png" alt="" class="img-responsive"
+     style="width: 100%; position: relative" /><br />
+</div>
 
-### Introduction
+_**Disclaimer:** This post contains a short description from a technology point of
+view on how we are serving webhooks in our system. If you are interested in more 
+details, please contact us at [devteam@onepagecrm.com](mailto:devteam@onepagecrm.com)._
 
-As Liam mentioned in his few previous posts, here in OnePageCRM we are utilizing some of
-[Amazon Web Services][aws] on order to provide the best CRM system on this planet. One of 
-elements highly using it, which is currently in closed beta program, is email sync feature
-which is being provided by our partner [Nylas][nylas]. This feature allows you, almost in
-real time, sync emails which you exchange with your customers with corresponding 
-contact in your OnePagecrm account. 
+Here in OnePageCRM we are utilizing some of [Amazon Web Services][aws] in order to 
+provide the best CRM system on the planet. One of our latest features, which is 
+currently in a closed beta program, is email sync which is being provided by our 
+partner [Nylas][nylas]. This feature allows you,  in real time to sync emails from 
+your email provider with the corresponding contact in your OnePagecrm account.
 
-In this post I will try to describe from technical site how the whole system is operating.
+In this post I will  discuss  how the whole system operates.
 
 ### The medium: webhook
 
 <img src="/img/aws-webhooks/webhooks.svg" alt="Webhooks" style="margin: 0 10px 10px 0; width: 100px; float: left" />
-What is that "webhook" you may ask. Following [Wikipedia definition][wikipedia] webhook is
-nothing else than user-defined HTTP callback which is usually triggered by some
-event like pushing new commit to your repository, placing comment on some blog post
-or when someone will submit contact form on your website. In plain English,
-when some event will occur, one server when it happened will send HTTP request to
-other one with information about such event. So we can call it one way communication
-channel between different servers. And how such webhook will be processed is only
-under the matter of developer creativity :). 
+What is that “webhook” you may ask. Following [Wikipedia definition][wikipedia]
+webhook is nothing else than user-defined HTTP callback which is usually 
+triggered by some event like pushing new commit to your repository, comments 
+on a blog post or when someone  submits a contact form on your website. 
+In plain English, when some event will occur, one server will send a HTTP 
+request to another server with information about such event. So we can call 
+it a one way communication channel between different servers and how such 
+webhook will be processed is only under the matter of developer creativity!
 
 <div class="clear: both"></div>
 
 ### The actor: Nylas webhook
 
 <img src="/img/aws-webhooks/nylas-email-sync.svg" alt="Nylas" style="margin: 0 10px 10px 0; width: 100px; float: left" />
-Let's start at the moment when you will send an email to your customer or you
-will receive such and you have contact in your OnePageCRM account which corresponds
-to your customer (i.e. your contact has proper email address assigned). And when you
-have our email sync feature on and connected your email account, Nylas Sync Engine
-will detect this event and will send webhook to OnePageCRM server with information
-about new email in your either inbox or outbox. Have I said "OnePageCRM servers"? My
-mistake; webhooks actually is being sent to AWS and processed there before the
-email itself will be subject of investigation within OnePageCRM system itself.
+Let’s start at the moment when you will send an email to your customer or you 
+will receive such and this contact exists in your OnePageCRM account (i.e. your 
+contact has proper email address assigned). When you have our email sync 
+feature on and connected to your email account, Nylas Sync Engine will detect 
+this event and will send a webhook to the OnePageCRM server. This webhook will 
+contain information about a new email in your either inbox or outbox. Have I 
+said “OnePageCRM servers”? My mistake; webhooks are actually being sent to AWS 
+and processed there before the email itself will be subject to investigation 
+within the OnePageCRM system itself.
 
 <div class="clear: both"></div>
 
