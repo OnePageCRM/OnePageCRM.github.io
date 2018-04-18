@@ -24,6 +24,16 @@ baseurl: ''
 host: 0.0.0.0
 port: 4000
 
+# Build settings
+markdown:               kramdown
+theme:                  minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate:               6
+permalink:              pretty
+
 authors:
   peter:
     name: Peter Armstrong

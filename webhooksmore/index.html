@@ -4,287 +4,279 @@ title: WebHooks
 ---
 
 <div data-spy="scroll" data-target="webhook-nav">
-
   <h3 id="top" class="top-padding">What are Webhooks?</h3>
-  <p>Webhooks are a simple, efficient way of integrating with web applications. Instead of polling to see if data has been updated in OnePage, you can register a URL to which we will send POSTs containing the updated data. This has benefits for both sides.</p><p>OnePage has to respond to less API requests and you have to send less requests, reducing server load on both ends. Along with this you receive the data the moment it is available, not when you think it should be available.
-</p>
-<h3 id="activate" class="top-padding">Activate Webhooks in OnePageCRM</h3>
-<p>First the OnePage administrator will have to activate Webhooks on the Apps page and configure them by supplying the URL we will send hooks to and optionally add a secretkey.</p><p>The secret key will be sent with every POST, to validate that we sent the webhook and not an imposter. For added security it is advised to supply a https instead of http URL.</p>
-<h3 id="configure" class="top-padding">Configure your application</h3>
-<p>Now that we send Webhooks you can configure your server to react to the different types of data which we send. We send POSTs whose params contain the following data: a type, reason, secretkey and the data which has been updated.</p>
-<div class="overview">
-  <div class="alert alert-info">
-  <strong>Note:</strong>
-  the data object will be empty if the object which was changed has been permanently deleted.
+  <p>Webhooks are a simple, efficient way of integrating with web applications. Instead of polling to see if data has been updated in OnePage, you can register a URL to which we will send POSTs containing the updated data. This has benefits for both sides.</p><p>OnePage has to respond to less API requests and you have to send less requests, reducing server load on both ends. Along with this you receive the data the moment it is available, not when you think it should be available.</p>
+  <h3 id="activate" class="top-padding">Activate Webhooks in OnePageCRM</h3>
+  <p>First the OnePage administrator will have to activate Webhooks on the Apps page and configure them by supplying the URL we will send hooks to and optionally add a secretkey.</p><p>The secret key will be sent with every POST, to validate that we sent the webhook and not an imposter. For added security it is advised to supply a https instead of http URL.</p>
+  <h3 id="configure" class="top-padding">Configure your application</h3>
+  <p>Now that we send Webhooks you can configure your server to react to the different types of data which we send. We send POSTs whose params contain the following data: a type, reason, secretkey and the data which has been updated.</p>
+  <div class="overview">
+    <div class="alert alert-info">
+      <strong>Note:</strong>
+      the data object will be empty if the object which was changed has been permanently deleted.
+    </div>
   </div>
-</div>
 
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <td>Element Name</td>
-      <td>Type</td>
-      <td>Notes</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>timestamp</code></td>
-      <td>int</td>
-      <td>Sent as unix time (<a href="http://en.wikipedia.org/wiki/Unix_time">http://en.wikipedia.org/wiki/Unix_time</a>)</td>
-    </tr>
-    <tr>
-      <td><code>secretkey</code></td>
-      <td>string</td>
-      <td>If you provided a SecretKey it will be included here, otherwise this field is empty</td>
-    </tr>
-    <tr>
-      <td><code>data</code></td>
-      <td>hash</td>
-      <td>A data hash containing the same data as returned from a API call but as a POST parameter body.</td>
-    </tr>
-    <tr>
-      <td><code>type</code></td>
-      <td>string</td>
-      <td>What type of data was changed(Contact, Action, Deal etc..)</td>
-    </tr>
-    <tr>
-      <td><code>reason</code></td>
-      <td>string</td>
-      <td>What change triggered the Webhook(Created, Deleted, Updated etc..)</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Element Name</td>
+        <td>Type</td>
+        <td>Notes</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>timestamp</code></td>
+        <td>int</td>
+        <td>Sent as unix time (<a href="http://en.wikipedia.org/wiki/Unix_time">http://en.wikipedia.org/wiki/Unix_time</a>)</td>
+      </tr>
+      <tr>
+        <td><code>secretkey</code></td>
+        <td>string</td>
+        <td>If you provided a SecretKey it will be included here, otherwise this field is empty</td>
+      </tr>
+      <tr>
+        <td><code>data</code></td>
+        <td>hash</td>
+        <td>A data hash containing the same data as returned from a API call but as a POST parameter body.</td>
+      </tr>
+      <tr>
+        <td><code>type</code></td>
+        <td>string</td>
+        <td>What type of data was changed(Contact, Action, Deal etc..)</td>
+      </tr>
+      <tr>
+        <td><code>reason</code></td>
+        <td>string</td>
+        <td>What change triggered the Webhook(Created, Deleted, Updated etc..)</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h3 id="sampledata"  class="top-padding">Sample Data</h3>
+  <h3 id="sampledata"  class="top-padding">Sample Data</h3>
 
-<div class="alert alert-warning"><strong>Note:</strong> Due to a legacy issue, the response from the <code>contact</code> endpoint has a slightly different format than the other endpoints. Please see the sample data.</div>
+  <div class="alert alert-warning"><strong>Note:</strong> Due to a legacy issue, the response from the <code>contact</code> endpoint has a slightly different format than the other endpoints. Please see the sample data.</div>
 
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <td>Request Type</td>
-      <td>Sample Data (json formatted)</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>contact</code></td>
-      <td>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <td>Request Type</td>
+        <td>Sample Data (json formatted)</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>contact</code></td>
+        <td>
+      {% highlight json %}
+      {
+        "timestamp": 1410857130,
+        "secretkey": null,
+        "reason": "updated",
+        "type": "contact",
+        "data": {
+            "contact": {
+                "address_list": [
+                    {
+                        "country_code": null,
+                        "zip_code": null,
+                        "state": null,
+                        "city": null,
+                        "address": null
+                    }
+                ],
+                "modified_at": "2014-09-16T08:45:30Z",
+                "custom_fields": [],
+                "tags": [],
+                "sales_closed_for": [],
+                "company_id": "5417f8291da4171227000042",
+                "company_name": "Cartoon Network",
+                "type": "company",
+                "lead_source_id": "",
+                "status_id": "5417f3741da4171227000005",
+                "status": "Lead",
+                "emails": [
+                    {
+                        "value": "jb@cartoonnetwork.com",
+                        "type": "work"
+                    }
+                ],
+                "phones": [
+                    {
+                        "value": "+55 5555",
+                        "type": "work"
+                    }
+                ],
+                "urls": [
+                    {
+                        "value": "cartoonnetwork.com",
+                        "type": "website"
+                    }
+                ],
+                "background": "",
+                "job_title": "Model",
+                "photo_url": "",
+                "last_name": "Bravo",
+                "first_name": "Johnny",
+                "owner_id": "5417f36d1da4171227000001",
+                "id": "5417f8291da4171227000041"
+            }
+        }
+    }
+    {% endhighlight %}
+  </td>
+  </tr>
+  <tr>
+    <td><code>action</code></td>
+    <td>
     {% highlight json %}
     {
-      "timestamp": 1410857130,
-      "secretkey": null,
-      "reason": "updated",
-      "type": "contact",
       "data": {
-          "contact": {
-              "address_list": [
-                  {
-                      "country_code": null,
-                      "zip_code": null,
-                      "state": null,
-                      "city": null,
-                      "address": null
-                  }
-              ],
-              "modified_at": "2014-09-16T08:45:30Z",
-              "custom_fields": [],
-              "tags": [],
-              "sales_closed_for": [],
-              "company_id": "5417f8291da4171227000042",
-              "company_name": "Cartoon Network",
-              "type": "company",
-              "lead_source_id": "",
-              "status_id": "5417f3741da4171227000005",
-              "status": "Lead",
-              "emails": [
-                  {
-                      "value": "jb@cartoonnetwork.com",
-                      "type": "work"
-                  }
-              ],
-              "phones": [
-                  {
-                      "value": "+55 5555",
-                      "type": "work"
-                  }
-              ],
-              "urls": [
-                  {
-                      "value": "cartoonnetwork.com",
-                      "type": "website"
-                  }
-              ],
-              "background": "",
-              "job_title": "Model",
-              "photo_url": "",
-              "last_name": "Bravo",
-              "first_name": "Johnny",
-              "owner_id": "5417f36d1da4171227000001",
-              "id": "5417f8291da4171227000041"
-          }
-      }
-  }
+        "id": "51c422aaceb997128700026c",
+        "cid": "51a8852aceb9976888000007",
+        "assignee_id": "51a88516ceb9976888000001",
+        "name": "Contact Jane to confirm she has received our deal",
+        "date": "26.06.2013",
+        "next": false,
+        "waiting": false,
+        "done": false,
+        "closed": "nil"
+      },
+      "type": "action",
+      "reason": "created",
+      "secretkey": "mysecretkey",
+      "timestamp": "1371808446"
+    }
+    {% endhighlight %}
+    </td>
+  </tr>
+  <tr>
+    <td><code>deal</code></td>
+    <td>
+    {% highlight json %}
+    {
+      "data": {
+        "id": "51c32a19ceb9972c1a00002d",
+        "cid": "BSON::ObjectId('51a8852cceb9976888000038')",
+        "name": "May deal",
+        "body": "Sent him estimate today.. fingers crossed!",
+        "date": "20.06.2013",
+        "amount": 5130.0,
+        "status": "pending",
+        "closed": "nil",
+        "stage": 50,
+        "exp_close": "23.05.2013"
+      },
+      "type": "deal",
+      "reason": "created",
+      "secretkey": "mysecretkey",
+      "timestamp": "1371744807"
+    }
+    {% endhighlight %}
+  
+    </td>
+  </tr>
+  <tr>
+    <td><code>note</code></td>
+    <td>
+    {% highlight json %}
+    {
+      "data": {
+        "id": "51c32989ceb9972c1a000008",
+        "cid": "BSON::ObjectId('51a8852cceb9976888000038')",
+        "body": "Joe just called to schedule a meeting for 03/23.",
+        "date": "20.06.2013"
+      },
+      "type": "note",
+      "reason": "created",
+      "secretkey": "mysecretkey",
+      "timestamp": "1371744656"
+    }
   {% endhighlight %}
-</td>
-</tr>
-<tr>
-  <td><code>action</code></td>
-  <td>
-  {% highlight json %}
-  {
-    "data": {
-      "id": "51c422aaceb997128700026c",
-      "cid": "51a8852aceb9976888000007",
-      "assignee_id": "51a88516ceb9976888000001",
-      "name": "Contact Jane to confirm she has received our deal",
-      "date": "26.06.2013",
-      "next": false,
-      "waiting": false,
-      "done": false,
-      "closed": "nil"
-    },
-    "type": "action",
-    "reason": "created",
-    "secretkey": "mysecretkey",
-    "timestamp": "1371808446"
-  }
-  {% endhighlight %}
-  </td>
-</tr>
-<tr>
-  <td><code>deal</code></td>
-  <td>
-  {% highlight json %}
-  {
-    "data": {
-      "id": "51c32a19ceb9972c1a00002d",
-      "cid": "BSON::ObjectId('51a8852cceb9976888000038')",
-      "name": "May deal",
-      "body": "Sent him estimate today.. fingers crossed!",
-      "date": "20.06.2013",
-      "amount": 5130.0,
-      "status": "pending",
-      "closed": "nil",
-      "stage": 50,
-      "exp_close": "23.05.2013"
-    },
-    "type": "deal",
-    "reason": "created",
-    "secretkey": "mysecretkey",
-    "timestamp": "1371744807"
-  }
-  {% endhighlight %}
-
-  </td>
-</tr>
-<tr>
-  <td><code>note</code></td>
-  <td>
-  {% highlight json %}
-  {
-    "data": {
-      "id": "51c32989ceb9972c1a000008",
-      "cid": "BSON::ObjectId('51a8852cceb9976888000038')",
-      "body": "Joe just called to schedule a meeting for 03/23.",
-      "date": "20.06.2013"
-    },
-    "type": "note",
-    "reason": "created",
-    "secretkey": "mysecretkey",
-    "timestamp": "1371744656"
-  }
-{% endhighlight %}
-  </td>
-</tr>
-</tbody>
-</table>
-<table class="table table-striped table-bordered">
-  <caption>Reasons</caption>
-  <thead>
-    <tr>
-      <td>Reasons</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Created</code></td>
-      <td>Object has been created.</td>
-    </tr>
-    <tr>
-      <td><code>Updated</code></td>
-      <td>Object has been updated.</td>
-    </tr>
-    <tr>
-      <td><code>Deleted</code></td>
-      <td>The object has been deleted. If it can still be undone, then the object data will be sent along, otherwise the data object will only contain the objects id.</td>
-    </tr>
-    <tr>
-      <td><code>Undeleted</code></td>
-      <td><span class="bold">Contact only:</span> The delete action has been undone and the contact has been reactivated.</td>
-    </tr>
-    <tr>
-      <td><code>expected_close_time_updated</code></td>
-      <td>
-        <span class="bold">Deal only:</span> The expected close date for this deal has been changed.<br/>
-        <span class="italic">
-          <span class="bold">Note:</span> A deal can also be rescheduled in a update POST
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td><code>changed_to_pending</code></td>
-      <td>
-        <span class="bold">Deal only:</span> The deal has been updated to pending, check the deal_stage param to see at what stage it is.<br />
-        <span class="italic">
-          <span class="bold">Note:</span> A deal status can also be changed in an update POST
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td><code>changed_to_won</code></td>
-      <td>
-        <span class="bold">Deal only:</span> The deal has been updated to won.<br/>
-        <span class="italic">
-          <span class="bold">Note:</span> A deal status can also be changed in an update POST
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td><code>changed_to_lost</code></td>
-      <td>
-        <span class="bold">Deal only:</span> The deal has been updated to lost.<br/>
-        <span class="italic">
-          <span class="bold">Note:</span> A deal status can also be changed in an update POST
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td><code>Completed</code></td>
-      <td><span class="bold">Action only:</span>  The action has been marked as done.</td>
-    </tr>
-    <tr>
-      <td><code>Uncompleted</code></td>
-      <td><span class="bold">Action only:</span>  The done action has been reopened.</td>
-    </tr>
+    </td>
+  </tr>
   </tbody>
-</table>
+  </table>
+  <table class="table table-striped table-bordered">
+    <caption>Reasons</caption>
+    <thead>
+      <tr>
+        <td>Reasons</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Created</code></td>
+        <td>Object has been created.</td>
+      </tr>
+      <tr>
+        <td><code>Updated</code></td>
+        <td>Object has been updated.</td>
+      </tr>
+      <tr>
+        <td><code>Deleted</code></td>
+        <td>The object has been deleted. If it can still be undone, then the object data will be sent along, otherwise the data object will only contain the objects id.</td>
+      </tr>
+      <tr>
+        <td><code>Undeleted</code></td>
+        <td><span class="bold">Contact only:</span> The delete action has been undone and the contact has been reactivated.</td>
+      </tr>
+      <tr>
+        <td><code>expected_close_time_updated</code></td>
+        <td>
+          <span class="bold">Deal only:</span> The expected close date for this deal has been changed.<br/>
+          <span class="italic">
+            <span class="bold">Note:</span> A deal can also be rescheduled in a update POST
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><code>changed_to_pending</code></td>
+        <td>
+          <span class="bold">Deal only:</span> The deal has been updated to pending, check the deal_stage param to see at what stage it is.<br />
+          <span class="italic">
+            <span class="bold">Note:</span> A deal status can also be changed in an update POST
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><code>changed_to_won</code></td>
+        <td>
+          <span class="bold">Deal only:</span> The deal has been updated to won.<br/>
+          <span class="italic">
+            <span class="bold">Note:</span> A deal status can also be changed in an update POST
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><code>changed_to_lost</code></td>
+        <td>
+          <span class="bold">Deal only:</span> The deal has been updated to lost.<br/>
+          <span class="italic">
+            <span class="bold">Note:</span> A deal status can also be changed in an update POST
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><code>Completed</code></td>
+        <td><span class="bold">Action only:</span>  The action has been marked as done.</td>
+      </tr>
+      <tr>
+        <td><code>Uncompleted</code></td>
+        <td><span class="bold">Action only:</span>  The done action has been reopened.</td>
+      </tr>
+    </tbody>
+  </table>
 
-
-<h3 id="testing" class="top-padding">Testing Webhooks</h3>
-
-<p>
-  The easiest way to test the output of your webhooks is to use a service such as <a href="http://requestb.in">RequestBin</a> or <a href="http://postcatcher.in">Postcatcher.in</a> 
-</p>
-
-<p>
-  These services will give you a URL that will collect requests made to it and let you inspect them in a human-friendly way.
-</p>
-
-
-
+  <h3 id="testing" class="top-padding">Testing Webhooks</h3>
+  <p>
+    The easiest way to test the output of your webhooks is to use a service such as <a href="http://requestb.in">RequestBin</a> or <a href="http://postcatcher.in">Postcatcher.in</a> 
+  </p>
+  <p>
+    These services will give you a URL that will collect requests made to it and let you inspect them in a human-friendly way.
+  </p>
 </div>
 
 <script>
@@ -292,5 +284,4 @@ title: WebHooks
     target: '#webhook-nav',
     offset: 50
   })
-
 </script>

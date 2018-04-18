@@ -3,6 +3,7 @@ layout: post
 title: "Living with Salespeople"
 slug: "living-with-salespeople"
 category: blog
+post_image: "/assets/images/articles/always_be_closing.jpg"
 author: peter
 date: 2014-03-13 22:34:22
 ---
@@ -13,8 +14,6 @@ OnePageCRM's Galway headquarters are currently being renovated and the accommoda
 I've moved into the same room as the sales team, and while this has it's disadvantages (no space for my second monitor!), it's not a big problem for me. 
 Like many developers, I like to program with earphones on - sometimes I play blues rock, sometimes it's something more upbeat - but sometimes like to leave the music off and listen to what's going on in the office.
 I listen to the sales team, their discussions, their planning sessions and most interestingly, their phone calls. 
-
-<img class="img-responsive" src="/img/always_be_closing.jpg" />
 
 Personally, I not a fan of being sold to, I'll try to get off the phone as quickly as possible when I get a call from my mobile phone company or health insurance supplier. It's just the way I am - I figure I don't need to listen to these characters and can find a better deal somewhere else without the hard sell.
 But as I listen to Kevin, Carmel and the rest of the team make their calls, I find myself thinking maybe I've underestimated the work these guys do. I'm amazed how cheerful, interested and concerned these guys are when dealing with our customers. They never seem to be in a bad mood and always willing to chat. From hearing the other side of the conversation, I'm convinced they're interested in helping people get the most from OnePageCRM if it's the right tool for them. 

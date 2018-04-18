@@ -13,14 +13,14 @@ To work with organizations, the API was updated, and I'm going to show some of t
 
 See Anakin's organization information at the bottom of the screen, beside the organization icon:
 
-<div class="text-align: center">
+<div style="text-align: center">
 <img src="/img/api-organization/contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
 
 After clicking the organization info, you will be brought to a a seperate screen to view all the information of the organization in more detail. See below:
 
-<div class="text-align: center">
+<div style="text-align: center">
 <img src="/img/api-organization/organization.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
@@ -39,7 +39,7 @@ We can do the following:
 
 In the new mobile update, linked contacts are listed after the organization's contacts. See R2-D2 below:
 
-<div class="text-align: center">
+<div style="text-align: center">
 <img src="/img/api-organization/linked_contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>
@@ -56,7 +56,7 @@ Request body:
 
 To change the organization on mobile, simply change the text in the Organization field in the edit contact form:
 
-<div class="text-align: center">
+<div style="text-align: center">
 <img src="/img/api-organization/edit_contact.png" alt="" class="img-responsive"
  style="width: 50%; position: relative; left: 25%" /><br />
 </div>

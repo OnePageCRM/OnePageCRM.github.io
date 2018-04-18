@@ -1,0 +1,12 @@
+<div class="column">
+    <div class="widget-title">
+        <h3>Most Popular Tags</h3>
+    </div>
+    <div class="tag-clouds">
+        {% for tag in site.tags | limit: 9 %}
+          {% assign t = tag | first %}
+          {% assign posts = tag | last %}
+          <a href="/pages/tagpage/"> {{ t }} </a>
+        {% endfor %}
+    </div>
+</div>

@@ -7,13 +7,13 @@ title: APIv2.3
   
 <!-- Welcome section -->
 <div class="api-element">
-  <h2 class="top-padding" id="top">API 2.3</h2>
+  <h2 class="top-padding2" id="top">API 2.3</h2>
   <div class="alert alert-warning"> 
     <strong>This documentation is for Version 2.3 of our API. Version 2 is no longer supported and will soon be removed.</strong> See documentation for
     <a title="Link to our API 0.3 documentation" href="/" class="alert-link"> Version 3 of our API</a>.
   
 </div>
-  <h3  class="top-padding2" id="">What kind of really useful stuff can I build?</h3>
+  <h3  class="top-padding" id="">What kind of really useful stuff can I build?</h3>
   <p class="">You can access and work with most of our features allowing you to create solutions. We’ve listed some examples below.</p>
   <table cellspacing="0" cellpadding="10" border="0" class="welcome">
     <tr>
@@ -25,7 +25,7 @@ title: APIv2.3
       <td class="text-box"><strong>Set or save details.</strong> Without accessing your account you can use the API to set next actions, add deals or notes to contacts.</td>
     </tr>
   </table>
-  <h3  class="top-padding2" id="">Ready to get started?</h3>
+  <h3  class="top-padding" id="">Ready to get started?</h3>
   <p class="">In the documentation we cover the basics of interacting with the OnePage API, but if you have any queries, we’d love to hear from you!</p>
 </div>
 <!-- /Welcome section -->
@@ -71,7 +71,7 @@ title: APIv2.3
   </table>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="request-authorization">Request authorization</h3>
+  <h3  class="top-padding" id="request-authorization">Request authorization</h3>
   <p class="overview-content">In order to authorize request, client should send following HTTP headers (except login method).</p>
   <table class="table table-striped table-bordered">
     <thead>
@@ -97,7 +97,7 @@ title: APIv2.3
   </table>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="request-signature-value">Calculating request signature value</h3>
+  <h3  class="top-padding" id="request-signature-value">Calculating request signature value</h3>
   <p>The Request signature is a HMAC-SHA256 hash (written in hex using lowercase for a-f) of a string which consists of 4 (for GET and DELETE requests) or 5 (for PUT and POST requests) dot-separated elements, which are (in this exact order):</p>
   <ol class="ordered-list">
     <li>X-OnePageCRM-UID header value,</li>
@@ -127,7 +127,7 @@ HMAC-SHA256 hash for such string and key is <code class="inline"><strong>"54d40f
   </ul>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="obtain-resources-data">How to obtain resources data</h3>
+  <h3  class="top-padding" id="obtain-resources-data">How to obtain resources data</h3>
   <p>The OnePageCRM data model is based on 8 types of resources:</p>
   <ul class="list">
     <li>contact</li>
@@ -213,7 +213,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   </ol>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="xml-response-document-format">XML response document format</h3>
+  <h3  class="top-padding" id="xml-response-document-format">XML response document format</h3>
   <p>XML document specification does not provide strict data type definition, therefore the following rules apply for the response data:</p>
   <ul class="list">
     <li>character data is encoded in UTF-8 format</li>
@@ -260,7 +260,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   </table>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="additional-statuses-element">Additional <em>statuses</em> element</h3>
+  <h3  class="top-padding" id="additional-statuses-element">Additional <em>statuses</em> element</h3>
   <p class="overview-content">This element provides information about current contacts count divided into contact types. It is an array of two-element hashes (instead of element with name=team, which contains data for whole team) (one per contact type), which have following format:</p>
   <table class="table table-striped table-bordered">
     <thead>
@@ -285,7 +285,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   </table>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="additional-tags-element">Additional <em>tags</em> element</h3>
+  <h3  class="top-padding" id="additional-tags-element">Additional <em>tags</em> element</h3>
   <p class="overview-content">This element provides information about current user tags. It consists of three elements:</p>
   <table class="table table-striped table-bordered">
     <thead>
@@ -471,7 +471,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="logout-method"><span>Logout</span> method</h3>
+  <h3  class="top-padding" id="logout-method"><span>Logout</span> method</h3>
   <p class="url"><strong>URL:</strong> /api/auth/logout.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Calling this method will invalidate key used for signing request. <strong>Use it with caution!</strong> In result every logged API client will be logged out (i.e. for regular logout action your application should simply forget the key and should call this method only when user will require &quot;logout from all devices&quot; action)</p>
@@ -487,7 +487,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="change-api-key-method"><span>change_api_key</span> method</h3>
+  <h3  class="top-padding" id="change-api-key-method"><span>change_api_key</span> method</h3>
   <p class="url"><strong>URL:</strong> /api/auth/change_api_key.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Calling this method will result in API key change (can be used for logging out of other connected applications)</p>
@@ -693,7 +693,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="getting-contact-data">Getting single contact data</h3>
+  <h3  class="top-padding" id="getting-contact-data">Getting single contact data</h3>
   <p class="url"><strong>URL:</strong> /api/contacts/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Returned information is almost the same as that which is visible in the expanded view/edit form and this data can be used to prefill edit form (if exists)</p>
@@ -850,7 +850,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="creating-new-contact">Creating new contact</h3>
+  <h3  class="top-padding" id="creating-new-contact">Creating new contact</h3>
   <p class="url"><strong>URL:</strong> /api/contacts.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new contact, company or lastname need to be provided.<br/>The following character limits apply:</br>firstname = max 25 characters<br/>lastname = max 25 characters<br/>company name = max 55 characters</p>
@@ -966,7 +966,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="updating-contact-data">Updating contact data</h3>
+  <h3  class="top-padding" id="updating-contact-data">Updating contact data</h3>
   <p class="url"><strong>URL:</strong> /api/contacts/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <p class="overview-content">In order to update an existing contact, company or lastname need to be provided. Company name and address fields are not editable if the contact has linked company.<br/> If you want to edit those fields, edit company details instead.<br/>Note that any fields not included in the update call will be overwritten as null.<br/>The following character limits apply:</br>firstname = max 25 characters<br/>lastname = max 25 characters<br/>company name = max 55 characters</p>
@@ -983,7 +983,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="deleting-contact">Deleting contact</h3>
+  <h3  class="top-padding" id="deleting-contact">Deleting contact</h3>
   <p class="url"><strong>URL:</strong> /api/contacts/123456789abcdef.format</p>
   <p class="method"><strong>Method:</strong> DELETE</p>  
   <p class="overview-content">Marks the contact as deleted.The last contact deleted through the API can be undeleted with the <a href="#undo-contact-deletion">undo contact deletion</a> function. When a contact is deleted through the APi, the contact previously marked as deleted through the API is completely deleted.</p>
@@ -999,7 +999,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="undo-contact-deletion">Undo contact deletion</h3>
+  <h3  class="top-padding" id="undo-contact-deletion">Undo contact deletion</h3>
   <p class="url"><strong>URL:</strong> /api/misc/undo_contact_deletion.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <p class="overview-content">Undo the deletion of the last contact deleted through the API. This can't undo any deletion occuring through the web app interface.</p>
@@ -1123,7 +1123,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="getting-single-company-details">Getting single company details</h3>
+  <h3  class="top-padding" id="getting-single-company-details">Getting single company details</h3>
   <p class="url"><strong>URL:</strong> /api/companies/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1138,7 +1138,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="creating-and-updating-companies">Creating and updating companies</h3>
+  <h3  class="top-padding" id="creating-and-updating-companies">Creating and updating companies</h3>
   <p>There is no method for creating and updating companies. In order to modify such make some changes on related contacts</p>
 </div>
 <!-- /Companies section -->
@@ -1239,7 +1239,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="single-note-details">Getting single note details</h3>
+  <h3  class="top-padding" id="single-note-details">Getting single note details</h3>
   <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1254,7 +1254,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="create-new-note">Create new note</h3>
+  <h3  class="top-padding" id="create-new-note">Create new note</h3>
   <p class="url"><strong>URL:</strong> /api/notes.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new note, the body, cid and date fields need to be provided.</p>
@@ -1295,7 +1295,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="">Updating existing note</h3>
+  <h3  class="top-padding" id="">Updating existing note</h3>
   <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <p class="overview-content">In order to update an existing note, the body, cid and date fields need to be provided.</p>
@@ -1311,7 +1311,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="deleting-note">Deleting note</h3>
+  <h3  class="top-padding" id="deleting-note">Deleting note</h3>
   <p class="url"><strong>URL:</strong> /api/notes/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> DELETE</p>
   <p class="strong">Input parameters:</p>
@@ -1454,7 +1454,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="single-deal-details">Getting single deal details</h3>
+  <h3  class="top-padding" id="single-deal-details">Getting single deal details</h3>
   <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1470,7 +1470,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="creating-contact-deal">Creating contact deal</h3>
+  <h3  class="top-padding" id="creating-contact-deal">Creating contact deal</h3>
   <p class="url"><strong>URL:</strong> /api/deal.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new deal, the name, cid, amount and date fields need to be provided.<br/>The following character limits apply:</br>name = max 30 characters</p>
@@ -1536,7 +1536,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="updating-deal-data">Updating deal data</h3>
+  <h3  class="top-padding" id="updating-deal-data">Updating deal data</h3>
   <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <p class="overview-content">In order to update an existing deal, the name, cid, amount and date fields need to be provided.<br/>Note that any fields not included in the update call will be overwritten as null or default values.<br/>The following character limits apply:</br>name = max 30 characters</p>
@@ -1550,7 +1550,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="deleting-deal">Deleting deal</h3>
+  <h3  class="top-padding" id="deleting-deal">Deleting deal</h3>
   <p class="url"><strong>URL:</strong> /api/deals/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> DELETE</p>
   <p class="strong">Input parameters:</p>
@@ -1656,7 +1656,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="information-about-specific-action">Get information about specific action</h3>
+  <h3  class="top-padding" id="information-about-specific-action">Get information about specific action</h3>
   <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1671,7 +1671,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="create-new-action">Create new action</h3>
+  <h3  class="top-padding" id="create-new-action">Create new action</h3>
   <p class="url"><strong>URL:</strong> /api/actions.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>The following character limits apply:</br>name = max 140 characters</p>
@@ -1747,7 +1747,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="updating-action-data">Updating action data</h3>
+  <h3  class="top-padding" id="updating-action-data">Updating action data</h3>
   <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>Note that any fields not included in the update call will be overwritten as null.<br/>The following character limits apply:</br>name = max 140 characters</p>
@@ -1823,7 +1823,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="delete-contact-action">Delete contact action</h3>
+  <h3  class="top-padding" id="delete-contact-action">Delete contact action</h3>
   <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> DELETE</p>
   <p class="overview-content">Only done actions can be deleted</p>
@@ -1839,7 +1839,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="mark-current-action-as-done">Mark current action as done</h3>
+  <h3  class="top-padding" id="mark-current-action-as-done">Mark current action as done</h3>
   <p class="url"><strong>URL:</strong> /api/misc/mark_action_as_done.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">Mark an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
@@ -1871,7 +1871,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="undo-marking-action-as-done">Undo marking action as done</h3>
+  <h3  class="top-padding" id="undo-marking-action-as-done">Undo marking action as done</h3>
   <p class="url"><strong>URL:</strong> /api/misc/undo_action_completion.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">Undo marking an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
@@ -1933,7 +1933,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p>Please also note that any action which modifies tags will not return any result but tags optional result element will be returned with “fresh” tags state.</p>
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="list-all-custom-tags">List all custom tags</h3>
+  <h3  class="top-padding" id="list-all-custom-tags">List all custom tags</h3>
   <p class="url"><strong>URL:</strong> /api/tags.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1948,7 +1948,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="information-about-specific-tag">Get information about specific tag</h3>
+  <h3  class="top-padding" id="information-about-specific-tag">Get information about specific tag</h3>
   <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -1963,7 +1963,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="create-new-tag">Create new tag</h3>
+  <h3  class="top-padding" id="create-new-tag">Create new tag</h3>
   <p class="url"><strong>URL:</strong> /api/tags.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <table class="table table-striped table-bordered">
@@ -1993,7 +1993,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="change-existing-tag-name">Change existing tag name</h3>
+  <h3  class="top-padding" id="change-existing-tag-name">Change existing tag name</h3>
   <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <table class="table table-striped table-bordered">
@@ -2023,7 +2023,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="delete-existing-tag">Delete existing tag</h3>
+  <h3  class="top-padding" id="delete-existing-tag">Delete existing tag</h3>
   <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
   <p class="method"><strong>Method:</strong> DELETE</p>
   <p class="strong">Input parameters:</p>
@@ -2038,7 +2038,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="assign-single-tag-to-contact">Assign single tag to a contact</h3>
+  <h3  class="top-padding" id="assign-single-tag-to-contact">Assign single tag to a contact</h3>
   <p class="url"><strong>URL:</strong> /api/misc/assign_tag.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <table class="table table-striped table-bordered">
@@ -2073,7 +2073,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="unassign-tag-from-contact">Unassign tag from contact</h3>
+  <h3  class="top-padding" id="unassign-tag-from-contact">Unassign tag from contact</h3>
   <p class="url"><strong>URL:</strong> /api/misc/unassign_tag.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <table class="table table-striped table-bordered">
@@ -2108,7 +2108,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="remove-unused-tags">Remove unused tags</h3>
+  <h3  class="top-padding" id="remove-unused-tags">Remove unused tags</h3>
   <p class="url"><strong>URL:</strong> /api/misc/remove_unused_tags.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <p class="strong">Input parameters:</p>
@@ -2198,7 +2198,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="single-filter-details">Getting single filter details</h3>
+  <h3  class="top-padding" id="single-filter-details">Getting single filter details</h3>
   <p class="url"><strong>URL:</strong> /api/filters/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -2281,7 +2281,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="system-settings">System settings</h3>
+  <h3  class="top-padding" id="system-settings">System settings</h3>
   <p class="url"><strong>URL:</strong> /api/settings/system.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <p class="overview-content">Methods responsible for account settings work in following way:<br />
@@ -2338,7 +2338,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="basic-subscription-data">Basic subscription data</h3>
+  <h3  class="top-padding" id="basic-subscription-data">Basic subscription data</h3>
   <p class="url"><strong>URL:</strong> /api/settings/subscription.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
@@ -2458,7 +2458,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <!-- /Sample from GitHub -->
   <span class="row"><a href="#top" class="pull-right btn btn-default">Back To Top</a></span>
   
-  <h3  class="top-padding2" id="all-closed-deals">Get all closed deals</h3>
+  <h3  class="top-padding" id="all-closed-deals">Get all closed deals</h3>
   <p class="url"><strong>URL:</strong> /api/sales/closed_deals.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
   <p class="strong">Input parameters:</p>
@@ -2491,7 +2491,7 @@ Operations on the resources must be made with the following HTTP requests (accor
     <li>inactive</li>
     <li>general</li>
   </ul>
-  <h3  class="top-padding2" id="contact-lead-source">Contact Lead Source</h3>
+  <h3  class="top-padding" id="contact-lead-source">Contact Lead Source</h3>
   <p><strong>Every contact can have one of the following lead sources:</strong></p>
   <p><strong>Note:</strong> These can be changed in <a href="https://app.onepagecrm.com/account/preferences">your settings</a>, but they will still be accessible by their default names.</p>
   <ul class="list">
@@ -2506,13 +2506,13 @@ Operations on the resources must be made with the following HTTP requests (accor
     <li>word_of_mouth</li>
     <li>other</li>
   </ul>
-  <h3  class="top-padding2" id="email-types">Possible email types</h3>
+  <h3  class="top-padding" id="email-types">Possible email types</h3>
   <ul class="list">
     <li>work</li>
     <li>home</li>
     <li>other</li>	
   </ul>
-  <h3  class="top-padding2" id="phone-types">Possible phone types</h3>
+  <h3  class="top-padding" id="phone-types">Possible phone types</h3>
   <ul class="list">
     <li>work</li>
     <li>mobile</li>
@@ -2521,7 +2521,7 @@ Operations on the resources must be made with the following HTTP requests (accor
     <li>fax</li>
     <li>other</li>
   </ul>
-  <h3  class="top-padding2" id="url-types">Possible URL types</h3>
+  <h3  class="top-padding" id="url-types">Possible URL types</h3>
   <ul class="list">
     <li>website</li>
     <li>blog</li>

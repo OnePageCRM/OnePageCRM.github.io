@@ -1,34 +1,40 @@
 ---
-layout: api
-title: API
+layout: default
+title: "Appix"
+sub_title: "Thoughts, stories and ideas."
+slider_image: "/assets/images/slider.jpg"
 ---
+ 
+    {% include slider.html %}
 
-
-{% for section in site.api_sections %}
-  {% assign attr = section[0] %}
-  {% assign label = section[1] %}
-
-  {% for page in site.categories[attr] reversed %}
-
-  <div class="api-element">
-    <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}
-      {% if page.tags contains 'beta' %}
-        <span class="pull-right label label-warning">Beta</span>
-      {% endif %}
-    </h2> 
-    {{ page.content }}
-
-    <span class="row"><a class="pull-right btn btn-default" href="#top">Back To Top</a></span>
-  </div>
-  {% endfor %}
-{% endfor %}
-
-
-
-<script>
-$('body').scrollspy({ 
-    target: '#api-nav',
-    offset: 40
-  })
-
-</script>
+    <div class="appix-blog-content section-ptb">
+        <div class="container">
+            <div class="row">
+              {% include post_loops.html %}
+            </div>
+            <!-- pagination -->
+            <div class="row">
+             <div class="col-md-12"> 
+                <div class="pagination-wrapper">
+                    <nav class="pagination w-100" role="navigation">
+                        <div class="w-25 text-left"> 
+                        {% if paginator.previous_page %}
+                          <a class="older-posts" href="{{ paginator.previous_page_path }}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+                        {% endif %}
+                        </div>
+                        <div class="w-50 float-left">
+                            <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+                        </div>
+                        <div class="w-25 float-right text-right">
+                          {% if paginator.next_page %}
+                           <a class="older-posts" href="{{ paginator.next_page_path }}">Next Posts <span aria-hidden="true">&rarr;</span></a>
+                          {% endif %}
+                        </div>
+                    </nav>
+                 </div>
+               
+                </div>
+            </div>
+            <!-- end pagination -->
+        </div>
+    </div>

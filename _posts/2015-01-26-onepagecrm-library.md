@@ -3,12 +3,12 @@ layout: post
 title: "The OnePageCRM Library"
 slug: "onepagecrm-library"
 category: blog
+post_image: "/assets/images/articles/library.jpg"
 author: peter
 date: 2015-1-26 10:24:22
 ---
 
 When I started working here in OnePageCRM nearly a year ago, I was asked to read three books to learn more about the company culture.
-<img class="img-responsive" src="/img/library.jpg" />
 
 ## Don't Make Me Think
 The first book was '[Don't Make Me Think][1]' by Steve Krug.

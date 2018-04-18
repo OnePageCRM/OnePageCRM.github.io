@@ -3,13 +3,16 @@ layout: post
 title: "Rails to AWS lambda: JSON Web Tokens"
 slug: "rails_to_aws_lambda_json_web_tokens"
 category: blog
+post_image: "/assets/images/articles/jwt.png"
 author: liam
+author_image: "/assets/images/authors/liam.jpg"
+author_bio: " Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Ipsum has been the industry's standard dummy"
 date: 2018-03-08 09:00:00
 excerpt: "JWTs are a well defined standard for creating, signing, verifying, encrypting and decrypting web tokens"
 ---
 
 
-<div class="text-align: center">
+<div class="text-align: center" style="display:none">
     <img src="/img/jwt.png" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>

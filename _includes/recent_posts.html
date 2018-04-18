@@ -1,0 +1,11 @@
+  
+  <section class="recent-posts">
+      <div class="widget-title">
+          <h3>Recent Posts</h3>
+      </div>
+      <ul>
+          {% for post in site.posts limit: 5 %}
+           <li><a href="{{post.url}}">{{post.title}}</a></li>
+          {% endfor %}
+      </ul>
+  </section>

@@ -21,7 +21,7 @@ There is considerable dissensus about what the term microservices refers to. Som
 The microservices architectural pattern is best understood by contrasting it to more monolithic patterns. A monolith, for our purposes, is an application that may be described as a 'single logical executable,' to borrow a phrase from Martin Fowler. Or simply put, it is one big app with many small responsibilities. 
 
 
-<div class="text-align: center">
+<div style="text-align: center">
     <img src="/img/microservices/monolithic-architecture.jpg" alt="" class="img-responsive"
      style="width: 50%; position: relative; left: 25%" /><br />
 </div>
@@ -44,7 +44,7 @@ The microservice architectural pattern is one answer to the problem of complexit
 2. Each component or service of a system is **independent**. Components and services can be changed, deployed, replaced, scaled and so on in relative isolation, that is without affecting other unrelated components and services. Loose coupling!!! 
 3. To each microservice component belongs a **single responsibility**. Each does one thing, and one thing well. Greater modularity and looser coupling, reduced complexity and therefore cognitive load, benefitting design, implementation, debugging, scaling and maintainenance activities.
 4. Each microservice component is a **black box** to every other component and communication between services occurs via APIs over a network, thus avoiding implicit or hidden dependencies.         
-    <div class="text-align: center">
+    <div style="text-align: center">
         <img src="/img/microservices/microservices-architecture.jpg" alt="This image was borrowed from " class="img-responsive"
          style="width: 50%; position: relative; left: 25%" /><br />
     </div>
