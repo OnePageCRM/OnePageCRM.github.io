@@ -1,0 +1,14 @@
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nylas-Solutions" transform="translate(-680.000000, -1027.000000)">
+            <g id="Group-4" transform="translate(680.000000, 1027.000000)">
+                <rect id="Rectangle-12" fill="#CEF4D5" x="0" y="0" width="80" height="80" rx="12"></rect>
+                <g id="Group-6" transform="translate(18.000000, 19.000000)" fill="#00CD48">
+                    <rect id="Rectangle-13" x="0" y="1" width="42" height="26" rx="2"></rect>
+                    <polygon id="Triangle-2" stroke="#CEF4D5" stroke-width="3" transform="translate(21.000000, 7.000000) scale(1, -1) translate(-21.000000, -7.000000) " points="21 0 42 14 0 14"></polygon>
+                    <path d="M17,45.955157 C11.3935,45.4499282 7,40.7380426 7,35 C7,28.9248678 11.9248678,24 18,24 C19.1379941,24 20.2356268,24.1728077 21.2680883,24.4936133 C23.0463895,21.2212996 26.5137886,19 30.5,19 C36.2989899,19 41,23.7010101 41,29.5 C41,29.7552425 40.9908926,30.0083578 40.9729852,30.2590387 C41.6203499,30.0899905 42.2996658,30 43,30 C47.418278,30 51,33.581722 51,38 C51,42.418278 47.418278,46 43,46 L17,46 L17,45.955157 Z" id="Combined-Shape" stroke="#CEF4D5" stroke-width="3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
