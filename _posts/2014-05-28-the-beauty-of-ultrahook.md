@@ -3,7 +3,7 @@ layout: post
 title: "The Beauty of Ultrahook"
 slug: "the-beauty-of-ultrahook"
 category: blog
-author_name: john
+author: john
 date: 2014-06-03 15:11:22
 excerpt: While webhooks are providing new and exciting ways for us to develop web applications and have them integrate with each other, it can often be quite tiresome to push your entire project to a development server just to test every little fix you make. Here's how you could use Ultrahook to help during development.
 ---
