@@ -1,30 +1,30 @@
 <div class="author-box">
     <div class="author-img">
-        {% if site.data.authors.author_one.image %}
-         <img src="{{ site.data.authors.author_one.image }}" alt="Author image" />
+        {% if site.data.authors.author.image %}
+         <img src="{{ site.data.authors.author.image }}" alt="Author image" />
         {% else %}
          <img src="/assets/images/default-user-image.jpg" alt="Author image" />
         {% endif %} 
     </div>
     <div class="author-details">
         <div class="author-name">
-            <h4 class="john">{{site.data.authors.author_one.name}}</h4>
-            <ul class="author-link">
-            </ul>
+            <h4 class="">{{site.data.authors.author.name}}</h4>
         </div>
-        <p class="author-bio">{{ site.data.authors.author_one.bio }}</p>
+        <p class="author-bio">{{ site.data.authors.author.bio }}</p>
     </div>
 </div>
 
+<!-- code from old theme -->
 <div class="media well">
-      <a class="pull-left" href="#">
+    <a class="pull-left" href="#">
         {% if author.image %}
         <img class="media-object img-rounded" src="{{ author.image }}" alt="author image">
         {% endif %}
-      </a>
-      <div class="media-body">
+    </a>
+    <div class="media-body">
         <h4 class="media-heading"> {{ author.name }}</h4>
         {{ author.bio }}
         <a href="{{ author.web }}">{{ author.web }}</a>
-      </div>
     </div>
+</div>
+<!-- /code from old theme -->
