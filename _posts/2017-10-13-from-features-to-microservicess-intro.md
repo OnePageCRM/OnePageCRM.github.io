@@ -22,8 +22,7 @@ The microservices architectural pattern is best understood by contrasting it to 
 
 
 <div style="text-align: center">
-    <img src="/img/microservices/monolithic-architecture.jpg" alt="" class="img-responsive"
-     style="width: 50%; position: relative; left: 25%" /><br />
+    <img src="/assets/images/microservices/monolithic-architecture.jpg" alt="" class="img-responsive" style="width: 50%" /><br />
 </div>
 
 
@@ -45,8 +44,7 @@ The microservice architectural pattern is one answer to the problem of complexit
 3. To each microservice component belongs a **single responsibility**. Each does one thing, and one thing well. Greater modularity and looser coupling, reduced complexity and therefore cognitive load, benefitting design, implementation, debugging, scaling and maintainenance activities.
 4. Each microservice component is a **black box** to every other component and communication between services occurs via APIs over a network, thus avoiding implicit or hidden dependencies.         
     <div style="text-align: center">
-        <img src="/img/microservices/microservices-architecture.jpg" alt="This image was borrowed from " class="img-responsive"
-         style="width: 50%; position: relative; left: 25%" /><br />
+        <img src="/assets/images/microservices/microservices-architecture.jpg" alt="This image was borrowed from " class="img-responsive" style="width: 50%" /><br />
     </div>
 5. Responsibility for a microservice throughout its lifecycle belongs to the team that build it, otherwise known (very roughly) as **DevOps**. There is an organisational symmetry here too, a la Conway's Law. Microservice oriented applications tend to be delivered by small agile teams who take ownership of the application across the entire development lifecycle which brings them closer to the coalface of business, user and system. You build it; you run it.
 6. Microservices architectures tend to be **tool agnostic** or 'polyglot': operating systems, languages, frameworks, data stores and so on, are chosen to best reflect the demands of the solution domain rather than reflecting the existing codebase, infrastructure or preferences. Hammers to nails. 

@@ -44,7 +44,7 @@ authors:
     #twitter: company
     github: peterOnePageCRM
     description: 'Peter is a software engineer at OnePageCRM.'
-    image: '/img/peter.jpg'
+    image: '/assets/images/authors/peter.jpg'
   john:
     name: John Maguire
     display_name: John
@@ -53,7 +53,7 @@ authors:
     #twitter: company
     github: JohnMaguir
     description: 'John is a software engineer at OnePageCRM.'
-    image: '/img/john.jpg'
+    image: '/assets/images/authors/john.jpg'
   pawel:
     name: Paweł Smoliński
     display_name: Paweł
@@ -64,13 +64,13 @@ authors:
     description: |
       Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it.<br />
       Also supports local economy by spending a lot of time in local pubs.
-    image: '/img/pawel.jpg'
+    image: '/assets/images/authors/pawel.jpg'
   dan:
     name: Dan Fahy
     display_name: Dan
     email: dan@onepagecrm.com
     description: 'Dan is a software engineer at OnePageCRM.'
-    image: '/img/dan.jpg'
+    image: '/assets/images/authors/dan.jpg'
   ruairi:
     name: Ruairi Fahy
     display_name: Ruairi
@@ -83,13 +83,13 @@ authors:
     email: cillian@onepagecrm.com
     github: CillianMyles
     description: "Cillian is a software engineer at OnePageCRM."
-    image: '/img/cillian.jpg'
+    image: '/assets/images/authors/cillian.jpg'
   elano:
     name: Elano Vasconcelos
     display_name: Elano
     email: elano@onepagecrm.com
     description: "Elano is a software engineer at OnePageCRM."
-    image: '/img/elano_2.jpg'
+    image: '/assets/images/authors/elano_2.jpg'
   liam:
     name: Liam Krewer
     display_name: Liam
@@ -102,4 +102,4 @@ authors:
     email: leonard@onepagecrm.com
     github: leonardreidy
     description: "Leonard is a software engineer at OnePageCRM"
-    image: '/img/leonard.jpg'
+    image: '/assets/images/authors/leonard.jpg'

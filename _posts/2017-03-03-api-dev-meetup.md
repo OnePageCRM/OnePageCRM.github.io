@@ -24,9 +24,9 @@ where we covered the API topic in some detail.
 
 <div style="text-align: center">
 <div class="img-responsive">
-<img src="/img/api-meetup/java.png" alt="Java API" style="width: 35%" />
-<img src="/img/api-meetup/jason.png" alt="JSON" style="width: 35%" />
-<img src="/img/api-meetup/restapi.png" alt="REST API" style="width: 20%" />
+<img src="/assets/images/api-meetup/java.png" alt="Java API" style="width: 35%" />
+<img src="/assets/images/api-meetup/jason.png" alt="JSON" style="width: 35%" />
+<img src="/assets/images/api-meetup/restapi.png" alt="REST API" style="width: 20%" />
 </div>
 <em>Java JSON REST API with some wrapper on the top of it.
 <span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em>
@@ -46,8 +46,8 @@ We had 4 spearkers on the night covering the following:
 
 <div style="text-align: center">
 <div class="img-responsive">
-<img src="/img/api-meetup/lambda.png" alt="AWS Lambda" style="width: 45%" />
-<img src="/img/api-meetup/api-gateway.png" alt="AWS API Gateway" style="width: 45%" />
+<img src="/assets/images/api-meetup/lambda.png" alt="AWS Lambda" style="width: 45%" />
+<img src="/assets/images/api-meetup/api-gateway.png" alt="AWS API Gateway" style="width: 45%" />
 
 </div>
 <em>

@@ -746,6 +746,9 @@ ul.blog-author-name li i {
     font-size: 16px;
     line-height: 30px;
 }
+.blog-details img{
+	margin: 20px 0;
+}
 .themeix-second-button .btn-read {
     background-color: #3A4E63;
     color: #fff;
@@ -1539,6 +1542,13 @@ textarea:-moz-placeholder {
     color:#34495e;
 }
 
+.block{
+	margin: 3em 0;
+	font-size: 0.8em;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 20px;
+}
+
 .top-padding {
   padding-top:90px;
   margin-top: -70px;
@@ -1564,6 +1574,9 @@ textarea:-moz-placeholder {
 }
 .dev-nav a{
   color: #1680B9;
+}
+.dev-nav a:hover{
+  text-decoration:underline;
 }
 
 .footer-area{
