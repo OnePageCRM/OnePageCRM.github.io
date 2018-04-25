@@ -4,7 +4,7 @@ title: "CodeNinja Results"
 slug: "code-ninja-2017-18-results"
 category: blog
 author: cillian
-date: 2018-04-20 09:00:00
+date: 2018-04-26 09:00:00
 excerpt: "The results are in... CodeNinja concludes after its third year running in Galway, crowning this years winner!"
 ---
 
