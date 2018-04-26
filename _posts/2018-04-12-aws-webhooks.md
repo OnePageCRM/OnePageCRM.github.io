@@ -9,6 +9,7 @@ excerpt: "Here in OnePageCRM we are utilizing some of Amazon Web Services in
           order to provide the best CRM system on the planet. One of our latest 
           features, which is currently in a closed beta program, is email sync 
           which is being provided by our partner Nylas."
+graphic: /img/aws-webhooks/top.png
 ---
 
 <div class="text-align: center">
