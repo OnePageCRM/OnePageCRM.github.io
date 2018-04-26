@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
-  <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Bootstrap 3 from SASS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap 3 from SASS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-      <!-- syntax highlighting CSS -->
-      <link rel="stylesheet" href="/css/syntax.css">
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="/css/main.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
 
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% endif %}">
-  <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
-  <meta itemprop="image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
+    <!-- Info -->
+    <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
+    <meta name="author" content="{% if page.author %}{{ site.authors[page.author].name }}{% endif %}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}"/>
 
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@OnePageCRM">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
-  <meta name="twitter:creator" content="@OnePageCRM">
-  <meta name="twitter:image:src" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% endif %}">
+    <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
+    <meta itemprop="image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
 
-  <!-- Open Graph data -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% endif %}"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-  <meta property="og:image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}"/>
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}"/>
-  <meta property="og:site_name" content="{{ site.title }}"/>
-  <meta property="article:published_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
-  <meta property="article:modified_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
-  <meta property="article:section" content="Technology"/>
-  <meta property="article:tag" content="Software"/>
-  <meta property="article:tag" content="Technology"/>
-  <meta property="article:tag" content="Development"/>
-  <meta property="article:tag" content="CRM"/>
-  <meta property="article:tag" content="API"/>
-  <meta property="article:tag" content="Forum"/>
-  <meta property="article:tag" content="Engineering"/>
-  <meta property="article:tag" content="Blog"/>
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@OnePageCRM">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
+    <meta name="twitter:creator" content="@OnePageCRM">
+    <meta name="twitter:image:src" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% endif %}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta property="og:image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}"/>
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}"/>
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="article:published_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
+    <meta property="article:modified_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
+    <meta property="article:section" content="Technology"/>
+    <meta property="article:tag" content="Software"/>
+    <meta property="article:tag" content="Technology"/>
+    <meta property="article:tag" content="Development"/>
+    <meta property="article:tag" content="CRM"/>
+    <meta property="article:tag" content="API"/>
+    <meta property="article:tag" content="Forum"/>
+    <meta property="article:tag" content="Engineering"/>
+    <meta property="article:tag" content="Blog"/>
 
 </head>
 <body>
-   <div class="wrapper">
+<div class="wrapper">
 
-      {% include header.html %}
-      {{ content }}
-      {% include footer.html %}
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
 
-   </div>
+</div>
 
 </body>
 </html>
