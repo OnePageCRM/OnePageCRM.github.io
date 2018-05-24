@@ -37,14 +37,14 @@ To successfully observe the end of a call, we can do something like:
 ```swift
 class ViewController {
 
-import CallKit
+    import CallKit
 
-let callObserver = CXCallObserver()
+    let callObserver = CXCallObserver()
 
-override func viewDidLoad()
-{
-callObserver.setDelegate(self, queue: nil)
-}
+    override func viewDidLoad()
+    {
+        callObserver.setDelegate(self, queue: nil)
+    }
 }
 
 @available(iOS 10.0, *)
@@ -75,14 +75,14 @@ var isMakingCall = false
 
 func makeCall()
 {
-self.isMakingCall = true
-  UIApplication.shared.open(URL(string: "tel://999888777"), options: [:], completionHandler: nil)
+    self.isMakingCall = true
+    UIApplication.shared.open(URL(string: "tel://999888777"), options: [:], completionHandler: nil)
 }
 
 func openAfterCall()
 {
-  self.isMakingCall = false
-  Print("after make call!")
+    self.isMakingCall = false
+    Print("after make call!")
 }
 
 @available(iOS 10.0, *)
