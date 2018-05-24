@@ -23,7 +23,7 @@ But when you do this, the system asks the user if they want to allow the call be
 
 <div class="text-align: center">
     <img src="/img/ios/onepagecrm_contact.PNG" alt="" class="img-responsive"
-     style="width: 100%; position: relative;" /><br />
+     style="width: 50%; position: relative;" /><br />
 </div>
 
 Since we do not have access to the system menu selections, only performing some action following a successful call initiation was a little tricky.
