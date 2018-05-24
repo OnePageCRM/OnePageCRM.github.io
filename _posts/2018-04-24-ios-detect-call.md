@@ -6,7 +6,7 @@ category: blog
 author: elano
 date: 2018-05-24 09:00:00
 excerpt: "OnePageCRM is all about simplicity, smart defaults and getting away from excessive admin and data entry. The mobile apps are no exception to this. With this in mind, we automatically open a call result form, following the end of a phone call, so users can log it easily in the CRM."
-graphic: /img/codeninja/results-feature.jpg
+graphic: /img/codeninja/onepagecrm_contact.PNG
 ---
 
 OnePageCRM is all about simplicity, smart defaults and getting away from excessive admin and data entry. The mobile apps are no exception to this. With this in mind, we automatically open a call result form, following the end of a phone call, so users can log it easily in the CRM.
@@ -15,7 +15,7 @@ This way users never lose timely information and don't need to go through extra 
 
 It's very easy to initiate a phone call with Swift, you just need to do:
 
-```
+```swift
 UIApplication.shared.open(URL(string: "tel://999888777"), options: [:], completionHandler: nil)
 ```
 
@@ -34,7 +34,7 @@ But with this new kit (`CXCallObserver` is part of `CallKit`) we can do some coo
 
 To successfully observe the end of a call, we can do something like:
 
-```
+```swift
 class ViewController {
 
 import CallKit
@@ -70,7 +70,7 @@ It's important to notice that we are detecting EVERY phone call, not just those 
 
 A simple boolean can help us filter out unwanted calls:
 
-```
+```swift
 var isMakingCall = false
 
 func makeCall()
