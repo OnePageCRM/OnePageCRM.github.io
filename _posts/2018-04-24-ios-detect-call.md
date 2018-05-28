@@ -6,7 +6,7 @@ category: blog
 author: elano
 date: 2018-05-24 09:00:00
 excerpt: "OnePageCRM automatically opens a call result form, following the end of a phone call, so users can log it easily in the CRM."
-graphic: /img/ios/onepagecrm_contact.PNG
+graphic: /img/ios/onepagecrm_blog_detecting_CallKit.gif
 ---
 
 OnePageCRM is all about simplicity, smart defaults and getting away from excessive admin and data entry. The mobile apps are no exception to this. With this in mind, we automatically open a call result form, following the end of a phone call, so users can log it easily in the CRM.
