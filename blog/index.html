@@ -10,8 +10,8 @@ title: Blog
             <div class="slider-wrapper height-250">
                 <div id="particles-js" style="background-image:url(/assets/images/slider.jpg);">
                     <div class="slider-fixed-text">
-                         <h1>OnePageCRM - Developers Workspace</h1>
-                            <p class="flying-text">News, posts and ideas</p>
+                        <h1>OnePageCRM - Developers Workspace</h1>
+                        <p class="flying-text">News, posts and ideas</p>
                     </div>
                 </div>
             </div>
@@ -29,6 +29,13 @@ title: Blog
 		  <div class="tag-post-wrapper"> 
 		    <div class="category-post py-3">
 		      <div class="category-post-info">
+				<div class="blog-image">
+                  {% if post.post_image %}
+                      <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
+                      {% else %}
+                      <a href="{{ post.url }}"><img src="/assets/images/default.jpg" alt="{{ post.title }}"></a>
+                    {% endif %}
+                </div>
             <h3 class="blog-post-title">
               <a href="{{ post.url }}" target="_blank" title="{{ post.title }}"> {{ post.title }}</a>
             </h3> 

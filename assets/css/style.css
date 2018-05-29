@@ -667,6 +667,9 @@ h3.blog-post-title {
     -webkit-transition: -webkit-transform 400ms ease 0s;
     -moz-transition: transform 400ms ease;
 }
+.category-post-info .blog-image{
+	max-height: 430px;
+}
 .blog-item:hover .blog-image:after {
     opacity: 1;
     visibility: visible;
