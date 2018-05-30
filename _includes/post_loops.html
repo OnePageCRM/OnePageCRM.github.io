@@ -42,15 +42,21 @@
                     <div class="share-icon">
                         <span>share on</span>
                         <ul class="social-icon">
-                          <li>
-                             <a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                         </li>
                             <li>
+                                <a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <!--<li>
                                 <a href="https://facebook.com/sharer.php?u={{ post.url }}{{ page.url }}" class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>-->
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}&t={{ post.title }}" class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="https://plus.google.com/share?url={{ post.url }}{{ page.url }}"  class="sharebutton google" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ post.url }}&title={{ post.title }}&summary=&source="  class="sharebutton linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
                             </li>
+                            <!--<li>
+                                <a href="https://plus.google.com/share?url={{ post.url }}{{ page.url }}"  class="sharebutton google" target="_blank"><i class="fa fa-google-plus"></i></a>
+                            </li>-->
                         </ul>
                     </div>
                 </div>
