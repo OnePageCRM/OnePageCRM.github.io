@@ -4,7 +4,7 @@ title: "Sage Integration"
 slug: "sage-integration"
 category: blog
 author: matt
-date: 2018-06-14 09:00:00
+date: 2018-06-15 09:00:00
 excerpt: "Here at OnePageCRM, we’ve started working on an integration with Sage, an online accounting application."
 graphic: /img/sage/pic-01.png
 ---
@@ -16,7 +16,7 @@ graphic: /img/sage/pic-01.png
 
 Here at OnePageCRM, we’ve started working on an integration with Sage, an online accounting application. Sage provides a variety of cloud based accounting software, allowing users to keep track of money and clients, create quotes, invoices and the ability to connect to your bank account. 
 
-As part of my internship in OnePageCRM, I was given the Sage integration as part of my first project. Over the course of a few months I gained insight into web development, integrating with other software, and user interactions. Let me share my experience. OnePageCRM is currently integrated with two other financial apps, Xero and Quote Roller, therefore as the basic functionality was in place for these integrations I was able to use it as a model. The Sage integration is quite simple: when a user clicks on a deal in OnePageCRM, a pop up window appears with the various invoice or estimate fields.  Once the user is satisfied with the information they click ‘send’, and voila!  The invoice or estimate is sent to Sage. 
+As part of my internship in OnePageCRM, I was given the Sage integration as my main project. Over the course of a few months I gained insight into web development, integrating with other software, and user interactions. Let me share my experience. OnePageCRM is currently integrated with two other financial apps, Xero and Quote Roller, therefore as the basic functionality was in place for these integrations I was able to use it as a model. The Sage integration is quite simple: when a user clicks on a deal in OnePageCRM, a pop up window appears with the various invoice or estimate fields.  Once the user is satisfied with the information they click ‘send’, and voila!  The invoice or estimate is sent to Sage. 
 
 <div class="text-align: center">
     <img src="/img/sage/pic-02.png" alt="" class="img-responsive"
@@ -38,7 +38,7 @@ Once I was able to successfully authenticate with Sage, I moved on to the main f
 
 When I began work on this project I asked myself was there really a need for more than one integration fulfilling similar roles. However, as I gained familiarity with the various software, I began to realise just how many seemingly minor differences there were between the three applications that could change each one’s appeal.  For example, the estimate functionality of Sage could be a crucial requirement for someone’s business, and access to that may make their daily tasks that bit easier.  
 
-As a developer, I’ve learned that it’s important to recognise the broad range of necessities different users may have, and to always be open-minded to new applications that could lead to a better user experience.  In OnePageCRM they are continuously seeking new ways to improve their app and this way of working has taught me to do the same! 
+As a developer, I’ve learned that it’s important to recognise the broad range of necessities different users may have, and to always be open-minded to new applications that could lead to a better user experience.  The OnePageCRM team are continuously seeking new ways to improve the app and this way of working has taught me to do the same! 
 
 Developing this integration for OnePageCRM has been a valuable and interesting experience for me, particularly as a software developer in training.
 
