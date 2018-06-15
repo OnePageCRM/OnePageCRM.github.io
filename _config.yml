@@ -93,3 +93,10 @@ authors:
     github: leonardreidy
     description: "Leonard is a software engineer at OnePageCRM"
     image: '/img/leonard.jpg'
+  matt:
+    name: Matt Moran
+    display_name: Matt
+    email: matt@onepagecrm.com
+    github: ehmatt
+    description: "Matt is a software engineer at OnePageCRM"
+    image: '/img/matt.jpg'
