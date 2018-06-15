@@ -42,5 +42,5 @@ As a developer, I’ve learned that it’s important to recognise the broad rang
 
 Developing this integration for OnePageCRM has been a valuable and interesting experience for me, particularly as a software developer in training.
 
-Have you any experience with the Sage integration? I would love to hear more; leave us your comments below. 
+Have you any experience with Sage software? I would love to hear more; leave us your comments below. 
 
