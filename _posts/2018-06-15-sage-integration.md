@@ -6,7 +6,7 @@ category: blog
 author: matt
 date: 2018-06-15 09:00:00
 excerpt: "Here at OnePageCRM, we’ve started working on an integration with Sage, an online accounting application."
-graphic: /img/sage/pic-01.png
+graphic: /img/sage/sagelogo.jpg
 ---
 
 <div class="text-align: center">
