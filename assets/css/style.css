@@ -1154,7 +1154,7 @@ ul.tagcloud li.widget-active a {
     position: relative;
 }
 .author-box {
-    background: #34495e;
+    /*background: #34495e;*/
     display: inline-block;
     min-height: 50px;
     width: 100%;
@@ -1188,13 +1188,11 @@ ul.author-link li {
     margin-right: 10px;
 }
 ul.author-link li a {
-    color: #FFFFFF;
     font-size: 15px;
 }
 .author-details p {
     margin-top: 4px;
     margin-bottom: 3px;
-    color: #fff;
 }
 /* ==========================================
            16. Contact us
