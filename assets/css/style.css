@@ -1534,6 +1534,12 @@ textarea:-moz-placeholder {
     display:inline-block;
     overflow:hidden;
 }
+.category-post-info p:last-child{
+	margin-bottom: 0;
+}
+.category-post-info .read-more{
+	margin-top: 1rem;
+}
 .colblock:first-child {
     display:none;
 }
