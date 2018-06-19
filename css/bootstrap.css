@@ -945,10 +945,10 @@ pre {
   line-height: 1.42857;
   word-break: break-all;
   word-wrap: break-word;
-  color: #333333;
-  background-color: whitesmoke;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
+  /*color: #333333;*/
+  /*background-color: whitesmoke;*/
+  /*border: 1px solid #cccccc;*/
+  /*border-radius: 4px;*/
 }
 /* line 49, ../_sass/bootstrap/_code.scss */
 pre code {
