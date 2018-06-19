@@ -1,0 +1,140 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Appix jekyll Template is a minimal blog template specially for the jekyll cms">
+    <meta name="keywords" content="jekyll, minimal jekyll, jekyll theme, responsive jekyll, seo friendly blog, super fast blog, responsive">
+    <meta name="author" content="Themeix">
+    <!-- Site Title -->
+    <title>{% if page.title %} {{page.title}} {% else %} {{site.title}} {% endif %}</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/images/favicon-2.png">
+    <link rel="prefetch" href="{{ site.baseurl }}"> 
+    <link rel="canonical" href="{{ page.baseurl | replace:'index.html','' | prepend: site.baseurl | prepend: site.baseurl }}">
+    <!-- Bootstrap CSS -->
+    <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font-Awesome CSS -->
+    <link href="{{ site.baseurl }}/assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+    <!--Animate CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animate.min.css">
+    <!-- Main Stylesheet -->
+    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="{{ site.baseurl }}/assets/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+    {% include header.html %}
+
+    <!-- Start Content -->
+
+    {{ content }}
+
+    <!-- End Content -->
+    
+     {% include footer_top.html %}
+
+     {% include footer_bottom.html %}
+
+    <script src="{{ site.baseurl }}/assets/js/popper.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Bootstrap 3 from SASS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Info -->
+    <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
+    <meta name="author" content="{% if page.author %}{{ site.authors[page.author].name }}{% endif %}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}"/>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% endif %}">
+    <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
+    <meta itemprop="image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@OnePageCRM">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}">
+    <meta name="twitter:creator" content="@OnePageCRM">
+    <meta name="twitter:image:src" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% endif %}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta property="og:image" content="{% if page.graphic %}{{ site.url }}{{ page.graphic }}{% endif %}"/>
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% endif %}"/>
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="article:published_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
+    <meta property="article:modified_time" content="{% if page.date %}{{ page.date }}{% endif %}"/>
+    <meta property="article:section" content="Technology"/>
+    <meta property="article:tag" content="Software"/>
+    <meta property="article:tag" content="Technology"/>
+    <meta property="article:tag" content="Development"/>
+    <meta property="article:tag" content="CRM"/>
+    <meta property="article:tag" content="API"/>
+    <meta property="article:tag" content="Forum"/>
+    <meta property="article:tag" content="Engineering"/>
+    <meta property="article:tag" content="Blog"/>
+
+</head>
+<body>
+<div class="wrapper">
+
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+
+</div>
+
+</body>
+>>>>>>> master
+</html>

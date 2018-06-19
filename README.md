@@ -15,6 +15,8 @@ The first bit of a post should be like this:
     category: blog
     author: peter
     date: 2015-07-21 13:24:22
+    excerpt: "Short text about post. Used as summary in blog list & meta tags for social sharing / SEO"
+    graphic: /img/feature-graphic.png (used in meta tags for social sharing)
     ---
 
 You can also add an optional `extract:` if you want to customize the extract shown on the `/blog` page. If you don't specify this it will use the first paragraph.
