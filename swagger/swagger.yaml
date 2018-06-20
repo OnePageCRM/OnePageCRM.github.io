@@ -5,7 +5,7 @@ info:
     <i>- OnePageCRM Converts the complexity of a CRM system to a simple to-do list.<br>
     - For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com).<br>
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
-    [developer forum](https://www.onepagecrm.com).</i>
+    [developer forum](http://forum.developer.onepagecrm.com/).</i>
 
     <br>
     <h3>Formats</h3>
@@ -79,8 +79,35 @@ info:
     </div>
 
     <br>
-    <h3>Paging</h3>
-    TODO...<br>
+    <h3>Pagination</h3>
+      <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <td>Type</td>
+            <td>Name</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap"><code class="redtext">integer</code></td>
+            <td class="nowrap"><code class="bluetext">page</code></td>
+            <td>Page number. Starts from 1. Default is 1.</td>
+          </tr>
+          <tr>
+            <td><code class="redtext">integer</code></td>
+            <td><code class="bluetext">per_page</code></td>
+            <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>So, for example, to fetch first batch of 20 contacts:</p>
+      <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=1</code></p>
+      <p>To fetch second batch of 20 contacts, you would use:</p>
+      <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
+
+    <br>
 
     <br>
     <h3>Specify Fields</h3>
