@@ -44,3 +44,4 @@ Developing this integration for OnePageCRM has been a valuable and interesting e
 
 Have you any experience with Sage software? I would love to hear more; leave us your comments below. 
 
+*This integration is not live however will be released in beta soon.*
