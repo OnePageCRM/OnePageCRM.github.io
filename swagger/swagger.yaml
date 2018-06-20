@@ -8,7 +8,7 @@ info:
     [developer forum](https://www.onepagecrm.com).</i>
 
     <br>
-    <h3>Sending/Receiving Data</h3>
+    <h3>Formats</h3>
     The API can send <u>and</u> receive data in <code>XML</code> and <code>JSON</code>, as well as receive data as
     URL encoded query strings.
 
@@ -40,14 +40,17 @@ info:
     </table>
 
     <br>
-    <h3>Authorization</h3>
-    In order to use this API, you need a <code>user_id</code> and an <code>auth_key</code>. When using this API, your
-    username is your <code>user_id</code> and your password is your <code>auth_key</code>.<br>
+    <h3>Authentication</h3>
+    The OnePageCRM API makes use of
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.
+    To authenticate using HTTP Basic Auth, you need the <code>user_id</code> and <code>auth_key</code> associated
+    with your OnePageCRM account. Your username is your <code>user_id</code> and your password is your
+    <code>auth_key</code>.<br>
 
     <br>
-    This information can be found by logging into your OnePageCRM account and navigating to
+    <i>This information can be found by logging into your OnePageCRM account and navigating to
     <a target="_blank" href="https://app.onepagecrm.com/app/api">https://app.onepagecrm.com/app/api</a>
-    and selecting the configuration tab.<br>
+    and selecting the configuration tab.</i><br>
 
     <br>
     <h3>Partial Updates</h3>
@@ -63,9 +66,35 @@ info:
 
     <br>
     When updating a resource ‘partially’ using a <code>PUT</code> request any fields you don’t include will stay the
-    same as before. <u>Warning:</u> You need to exercise caution when partially updating sub resources. If you tried
+    same as before. <i><u>Warning:</u> You need to exercise caution when partially updating sub resources. If you tried
     only updating a contact’s phone numbers you need to include all phone numbers that you don’t want to be deleted,
-    as we don’t extend the partial update feature to sub resources.<br><br>
+    as we don’t extend the partial update feature to sub resources.</i><br>
+
+    <br>
+    <h3>Paging</h3>
+    TODO...<br>
+
+    <br>
+    <h3>Specify Fields</h3>
+    Don't think this is working anymore so maybe shouldn't document?? But we do need it in future for API v4...??<br>
+
+    <br>
+    <h3>Undo Deletion</h3>
+    TODO...<br>
+
+    <br>
+    <h3>Switch Active User</h3>
+    TODO... if working??<br>
+
+    <br>
+    <h3>Limit Listings by Time</h3>
+    TODO... if working??<br>
+
+    <br>
+    <h3>Sort Listings by Field</h3>
+    TODO... note that has to be field which is indexed in db e.g. <code>contact.last_name</code><br>
+
+    <br>
 
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
