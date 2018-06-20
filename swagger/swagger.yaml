@@ -2,8 +2,8 @@ openapi: 3.0.0
 info:
   title: OnePageCRM API
   description: >-
-    <i>- OnePageCRM Converts the complexity of a CRM system to a simple to-do list. <br>
-    - For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com). <br>
+    <i>- OnePageCRM Converts the complexity of a CRM system to a simple to-do list.<br>
+    - For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com).<br>
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
     [developer forum](https://www.onepagecrm.com).</i>
 
@@ -46,7 +46,8 @@ info:
 
     <br>
     This information can be found by logging into your OnePageCRM account and navigating to
-    [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.<br>
+    <a target="_blank" href="https://app.onepagecrm.com/app/api">https://app.onepagecrm.com/app/api</a>
+    and selecting the configuration tab.<br>
 
     <br>
     <h3>Partial Updates</h3>
