@@ -54,7 +54,33 @@ info:
 
     <br>
     <h3>Headers</h3>
-    TODO...<br>
+      <p>These parameters need to be included with every request made to the API other than the initial call to <code class="bluetext">login.format</code>.</p>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <td>Parameters</td>
+          <td>Description</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong nowrap">X-OnePageCRM-UID</td>
+            <td>The user’s unique identification number(<code class="bluetext">user_id</code>) retrieved by following the authentication step above</td>
+          </tr>
+          <tr>
+            <td class="strong nowrap">X-OnePageCRM-TS</td>
+            <td>The current timestamp in unix time (in seconds)</td>
+          </tr>
+          <tr>
+            <td class="strong nowrap">X-OnePageCRM-Auth</td>
+            <td>The user’s unique auth key (<code class="bluetext">auth_key</code>) retrieved by following the authentication step above</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-danger">
+      <strong>Warning:</strong> These headers are case sensitive! If you do not send these headers exactly as they appear here you will obtain a <strong>"401 Unauthorized"</strong> error when making signed requests.
+      </div>
+
+    <br>
 
     <br>
     <h3>Partial Updates</h3>
@@ -108,22 +134,49 @@ info:
       <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
 
     <br>
-
-    <br>
-    <h3>Specify Fields</h3>
-    Don't think this is working anymore so maybe shouldn't document?? But we do need it in future for API v4...??<br>
-
-    <br>
     <h3>Undo Deletion</h3>
     TODO...<br>
 
     <br>
-    <h3>Switch Active User</h3>
-    TODO... if working??<br>
-
-    <br>
     <h3>Limit Listings by Time</h3>
-    TODO... if working??<br>
+      <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <td>Type</td>
+            <td>Name</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="redtext">time</code></td>
+            <td><code class="bluetext">date_filter</code></td>
+            <td>Filter returned data by a particular field when combined with since and until.</td>
+          </tr>
+          <tr>
+            <td><code class="redtext">time</code></td>
+            <td><code class="bluetext">since</code></td>
+            <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
+          </tr>
+          <tr>
+            <td><code class="redtext">time</code></td>
+            <td><code class="bluetext">until</code></td>
+            <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
+          </tr>
+          <tr>
+            <td class="nowrap"><code class="redtext">time</code></td>
+            <td class="nowrap"><code class="bluetext">unmodified_since</code></td>
+            <td>Return only records that were unmodified since specified time.</td>
+          </tr>
+          <tr>
+            <td><code class="redtext">time</code></td>
+            <td><code class="bluetext">modified_since&lt;/td&gt;
+            <td>Return only records that were modified since specified time.</td>
+          </tr>
+        <tbody>
+      </table>
+
 
     <br>
     <h3>Sort Listings by Field</h3>
