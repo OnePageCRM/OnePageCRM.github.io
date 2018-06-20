@@ -2,30 +2,33 @@ openapi: 3.0.0
 info:
   title: OnePageCRM API
   description: >-
-    OnePageCRM Converts the complexity of a CRM system to a simple to-do list. <br>
-    For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com) <br>
-    If you have trouble using this api or notice any issue with this documentation please contact us on our [developer forum](https://www.onepagecrm.com)
+    <div>
+      <h3>Introduction </h3>
+      <p>OnePageCRM Converts the complexity of a CRM system to a simple to-do list.<br>
+      For more information on OnePageCRM please visit our <a href='https://www.onepagecrm.com'>website</a>. <br>
+      If you have trouble using this api or notice any issue with this documentation please contact us on our <a href='https://www.onepagecrm.com'>developer forum</a></p>
+      <h3>Authorization</h3>
+      <p>In order to use this api, you need a user_id and an auth key. When using this api, your username is your user_id and your password is your auth key.
+      This information can be found by logging into your OnePageCRM account and navigating to <a href='https://www.onepagecrm.com/app/api'>https://www.onepagecrm.com/app/api</a> and selecting the configuration tab.</p>
+      <h3>Partial Updates</h3>
+      <p>You can partially update or create resources through our API by including the value partial=1 in the <span class="post-text">POST</span>/<span class="put-text">PUT</span> request’s body or url query string. This is the equivalent of using the emerging RESTful API standard’s PATCH method.</p>
+      <p>When creating a resource ‘partially’ using a <span class="post-text">POST</span> request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the <span class="post-text">POST</span> could still fail when partially creating a resource but not including the minimum required fields.</p>
+      <p>When updating a resource ‘partially’ using a <span class="put-text">PUT</span> request any fields you don’t include will stay the same as before.</p>
 
-    <br><br>
-    <b>Authorization</b> <br>
-    In order to use this api, you need a user_id and an auth key. When using this api, your username is your user_id and your password is your auth key. <br>
-    This information can be found by logging into your OnePageCRM account and navigating to [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.
-    <br><br>
-    <b>Partial Updates</b>
-    <br>
-    You can partially update or create resources through our API by including the value partial=1 in the POST/PUT request’s body or url query string. This is the equivalent of using the emerging RESTful API standard’s PATCH method.<br>
+      <div class="alert alert-danger">
+      <strong>Warning:</strong> You need to exercise caution when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.
+      </div>
+      <h3>Using these Docs</h3>
+      <p>Full details of OnePageCRM's api can be found below. Using these docs
 
-    When creating a resource ‘partially’ using a POST request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the POST could still fail when partially creating a resource but not including the minimum required fields.<br>
-
-    When updating a resource ‘partially’ using a PUT request any fields you don’t include will stay the same as before.
-    Warning: You need to exercise caution when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.
-
+      </p>
+    </div>
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
 servers:
   - url: 'http://staging.onepagecrm.com/api/v3'
     description: Staging server
-  - url: 'https://app.onepagecrm.com'
+  - url: 'https://app.onepagecrm.com/api/v3'
     description: OnepageCRM main application
 security:
   - BasicAuth: []
@@ -1025,6 +1028,23 @@ paths:
                           properties:
                             deal_field:
                               $ref: '#/components/schemas/Deal_field'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1393,6 +1413,22 @@ paths:
                           properties:
                             custom_field:
                               $ref: '#/components/schemas/Custom_field'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1615,6 +1651,22 @@ paths:
                           properties:
                             company_field:
                               $ref: '#/components/schemas/Company_field'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1805,9 +1857,7 @@ paths:
       description: ''
       tags:
         - Predefined Actions
-      parameters:
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      parameters: []
       responses:
         '200':
           description: Operation Successful
@@ -2060,6 +2110,22 @@ paths:
                           properties:
                             note:
                               $ref: '#/components/schemas/Note'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -2413,6 +2479,22 @@ paths:
                           properties:
                             call:
                               $ref: '#/components/schemas/Call'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -2862,6 +2944,22 @@ paths:
                           properties:
                             deal:
                               $ref: '#/components/schemas/Deal'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -3491,6 +3589,22 @@ paths:
                           properties:
                             action:
                               $ref: '#/components/schemas/Action'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4005,6 +4119,22 @@ paths:
                           properties:
                             filter:
                               $ref: '#/components/schemas/Filter'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4054,12 +4184,14 @@ paths:
                     example: 1528373119
                   data:
                     properties:
-                      filters:
+                      filter:
+                        $ref: '#/components/schemas/Filter'
+                      contacts:
                         type: array
                         items:
                           properties:
-                            filter:
-                              $ref: '#/components/schemas/Filter'
+                            contact:
+                              $ref: '#/components/schemas/Contact'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4121,6 +4253,22 @@ paths:
                           properties:
                             company:
                               $ref: '#/components/schemas/Company'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4295,6 +4443,25 @@ paths:
                           properties:
                             deal:
                               $ref: '#/components/schemas/Deal'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+
+
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4351,6 +4518,25 @@ paths:
                           properties:
                             call:
                               $ref: '#/components/schemas/Call'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+
+
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4407,6 +4593,25 @@ paths:
                           properties:
                             note:
                               $ref: '#/components/schemas/Note'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+
+
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4474,6 +4679,25 @@ paths:
                           properties:
                             action:
                               $ref: '#/components/schemas/Action'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+
+
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4559,6 +4783,22 @@ paths:
                                   type: array
                                   items:
                                     example: 5aba31e99007ba0f570c92ab
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4850,6 +5090,22 @@ paths:
                                 $ref: '#/components/schemas/Action'
                             company:
                               $ref: '#/components/schemas/Company'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
                       lead_sources:
                         type: array
                         items:
@@ -4882,6 +5138,8 @@ paths:
                         $ref: '#/components/schemas/Contacts_count'
                       team_stream:
                         $ref: '#/components/schemas/Team_stream'
+
+
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5353,6 +5611,22 @@ paths:
                           properties:
                             deal:
                               $ref: '#/components/schemas/Deal'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5493,6 +5767,22 @@ paths:
                           properties:
                             note:
                               $ref: '#/components/schemas/Note'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5609,6 +5899,22 @@ paths:
                           properties:
                             call:
                               $ref: '#/components/schemas/Call'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5738,6 +6044,22 @@ paths:
                           properties:
                             action:
                               $ref: '#/components/schemas/Action'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5848,6 +6170,22 @@ paths:
                           properties:
                             email_message:
                               $ref: "#/components/schemas/Email_message"
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6692,6 +7030,22 @@ paths:
                           properties:
                             contact:
                               $ref: "#/components/schemas/Contact"
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6767,6 +7121,22 @@ paths:
                           properties:
                             contact:
                               $ref: "#/components/schemas/Contact"
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6811,6 +7181,22 @@ paths:
                         type: "array"
                         items:
                           $ref: "#/components/schemas/Webhook"
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
         400:
           $ref: "#/components/responses/400"
         401:
