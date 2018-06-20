@@ -2,23 +2,37 @@ openapi: 3.0.0
 info:
   title: OnePageCRM API
   description: >-
-    OnePageCRM Converts the complexity of a CRM system to a simple to-do list. <br>
-    For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com) <br>
-    If you have trouble using this api or notice any issue with this documentation please contact us on our [developer forum](https://www.onepagecrm.com)
+    <i>- OnePageCRM Converts the complexity of a CRM system to a simple to-do list. <br>
+    - For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com). <br>
+    - If you have trouble using this API or notice any issue with this documentation please contact us on our
+    [developer forum](https://www.onepagecrm.com).</i>
 
     <br><br>
     <b>Authorization</b> <br>
-    In order to use this api, you need a user_id and an auth key. When using this api, your username is your user_id and your password is your auth key. <br>
-    This information can be found by logging into your OnePageCRM account and navigating to [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.
+    In order to use this API, you need a `user_id` and an `auth_key`. When using this API, your username is your
+    `user_id` and your password is your `auth_key`. <br>
+
+    <br>
+    This information can be found by logging into your OnePageCRM account and navigating to
+    [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.
+
     <br><br>
     <b>Partial Updates</b>
     <br>
-    You can partially update or create resources through our API by including the value partial=1 in the POST/PUT request’s body or url query string. This is the equivalent of using the emerging RESTful API standard’s PATCH method.<br>
+    You can partially update or create resources through our API by including the value `partial=1` in the `POST`/`PUT`
+    request body or in the request params. This is the equivalent of using the emerging RESTful API standard’s `PATCH`
+    method.<br>
 
-    When creating a resource ‘partially’ using a POST request you don’t need to include all of the resource’s fields. All fields will be automatically set to null if they aren’t included. Note that the POST could still fail when partially creating a resource but not including the minimum required fields.<br>
+    <br>
+    When creating a resource ‘partially’ using a `POST` request you don’t need to include all of the resource’s
+    fields. All fields will be automatically set to `null` if they are not included. Note that the `POST` could still
+    fail when partially creating a resource but not including the minimum required fields.<br>
 
-    When updating a resource ‘partially’ using a PUT request any fields you don’t include will stay the same as before.
-    Warning: You need to exercise caution when updating sub resources of resources partially. If you tried only updating a contact’s phone numbers you need to include all phone numbers in the hash that you don’t want to be deleted, as we don’t extend the partial update feature to sub resources.
+    <br>
+    When updating a resource ‘partially’ using a `PUT` request any fields you don’t include will stay the same as
+    before. <u>Warning:</u> You need to exercise caution when partially updating sub resources. If you tried
+    only updating a contact’s phone numbers you need to include all phone numbers that you don’t want to be deleted,
+    as we don’t extend the partial update feature to sub resources.
 
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
@@ -304,7 +318,7 @@ paths:
       description: >-
         You can update your own account information. If you are an administrator
         you can edit your team members details. You can you can only update the
-        following through the api: <br> <b>first_name</b><br>
+        following through the API: <br> <b>first_name</b><br>
         <b>last_name</b><br> <b>company</b> <br><b> bcc_email</b>: You can only
         update this param for yourself. Setting this param to true will generate
         a new BCC email address.
@@ -2789,7 +2803,7 @@ paths:
                               items:
                                 properties:
                                   user_id:
-                                    description: ID of one ot the api user’s team members
+                                    description: ID of one ot the API user’s team members
                                     type: string
                                     example: 5aba31e99007ba0f570c12f7
                                   counts:
@@ -3702,7 +3716,7 @@ paths:
     put:
       summary: >-
         Unassign action from the currently assigned user and assign it to the
-        api user
+        API user
       description: ''
       tags:
         - Actions
@@ -6900,7 +6914,7 @@ components:
           example: 5aba31e99007ba0f570c12f7
         auth_key:
           type: string
-          description: Encoded string used to sign api requests.
+          description: Encoded string used to sign API requests.
           example: c+g0Y3VGHdIztKbHcjVcOuwf34EmFlXI9Qot5hTvb2F=
         user:
           $ref: '#/components/schemas/User'
