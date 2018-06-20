@@ -7,13 +7,14 @@ info:
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
     [developer forum](https://www.onepagecrm.com).</i>
 
-    <br><br>
-    <b>Sending/Receiving Data</b> <br>
-    The API can send <u>and</u> receive data in `XML` and `JSON`, as well as receive data as URL encoded query strings.
+    <br>
+    <h3>Sending/Receiving Data</h3>
+    The API can send <u>and</u> receive data in <code>XML</code> and <code>JSON</code>, as well as receive data as
+    URL encoded query strings.
 
     <br>
-    To send and receive `XML` or `JSON` you need to include the correct `content-type` header and replace the `.format`
-    in the url.
+    To send and receive <code>XML</code> or <code>JSON</code> you need to include the correct
+    <code>content-type</code> header and replace the <code>.format</code> in the url.
 
     <br>
     <table class="table table-striped table-bordered">
@@ -39,31 +40,31 @@ info:
     </table>
 
     <br>
-    <b>Authorization</b> <br>
-    In order to use this API, you need a `user_id` and an `auth_key`. When using this API, your username is your
-    `user_id` and your password is your `auth_key`. <br>
+    <h3>Authorization</h3>
+    In order to use this API, you need a <code>user_id</code> and an <code>auth_key</code>. When using this API, your
+    username is your <code>user_id</code> and your password is your <code>auth_key</code>.<br>
 
     <br>
     This information can be found by logging into your OnePageCRM account and navigating to
-    [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.
-
-    <br><br>
-    <b>Partial Updates</b>
-    <br>
-    You can partially update or create resources through our API by including the value `partial=1` in the `POST`/`PUT`
-    request body or in the request params. This is the equivalent of using the emerging RESTful API standard’s `PATCH`
-    method.<br>
+    [https://www.onepagecrm.com/app/api](https://www.onepagecrm.com/app/api) and selecting the configuration tab.<br>
 
     <br>
-    When creating a resource ‘partially’ using a `POST` request you don’t need to include all of the resource’s
-    fields. All fields will be automatically set to `null` if they are not included. Note that the `POST` could still
-    fail when partially creating a resource but not including the minimum required fields.<br>
+    <h3>Partial Updates</h3>
+    You can partially update or create resources through our API by including the value <code>partial=1</code> in
+    the <code>POST</code>/<code>PUT</code> request body or in the request params. This is the equivalent of using
+    the emerging RESTful API standard’s <code>PATCH</code> method.<br>
 
     <br>
-    When updating a resource ‘partially’ using a `PUT` request any fields you don’t include will stay the same as
-    before. <u>Warning:</u> You need to exercise caution when partially updating sub resources. If you tried
+    When creating a resource ‘partially’ using a <code>POST</code> request you don’t need to include all of the
+    resource’s fields. All fields will be automatically set to <code>null</code> if they are not included. Note
+    that the <code>POST</code> could still fail when partially creating a resource but not including the minimum
+    required fields.<br>
+
+    <br>
+    When updating a resource ‘partially’ using a <code>PUT</code> request any fields you don’t include will stay the
+    same as before. <u>Warning:</u> You need to exercise caution when partially updating sub resources. If you tried
     only updating a contact’s phone numbers you need to include all phone numbers that you don’t want to be deleted,
-    as we don’t extend the partial update feature to sub resources.
+    as we don’t extend the partial update feature to sub resources.<br><br>
 
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
