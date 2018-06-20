@@ -53,6 +53,10 @@ info:
     and selecting the configuration tab.</i><br>
 
     <br>
+    <h3>Headers</h3>
+    TODO...<br>
+
+    <br>
     <h3>Partial Updates</h3>
     You can partially update or create resources through our API by including the value <code>partial=1</code> in
     the <code>POST</code>/<code>PUT</code> request body or in the request params. This is the equivalent of using
