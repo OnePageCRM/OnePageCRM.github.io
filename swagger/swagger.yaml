@@ -2150,7 +2150,7 @@ paths:
       parameters: []
       requestBody:
         description: >-
-          'contact_id' and 'text' are required when create a note. If a date
+          'contact_id' and 'text' are required when creating a note. If a date
           isn't provided, it will default to today's date. linked_deal_id is an
           optional param
         required: true
@@ -2165,7 +2165,7 @@ paths:
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
                 user_ids_to_notify:
-                  description: "an array of user ids to notify."
+                  description: "An array of user ids to notify."
                   type: "array"
                   items:
                     example: "5aba31e99007ba0f570c12f7"
@@ -2271,7 +2271,7 @@ paths:
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
                 user_ids_to_notify:
-                  description: "an array of user ids to notify."
+                  description: "An array of user ids to notify."
                   type: "array"
                   items:
                     example: "5aba31e99007ba0f570c12f7"
@@ -2346,12 +2346,19 @@ paths:
           application/json:
             schema:
               properties:
+                reference_id:
+                  type: string
+                  description: >-
+                    The ID of the note, call or deal associated with this
+                    attachment. To associate to a new empty note: leave blank
+                    and use `reference_type=note`. Similarly for calls/deals
+                  example: 5afc1b69d556730b580596cb
                 reference_type:
                   type: string
                   description: >-
                     What type of resource is associated with this attachment.
-                    One of `note deal call`.
-                  example: note
+                  enum: [note, call, deal]
+                  example: deal
                 contact_id:
                   format: bson_id
                   type: string
@@ -2363,32 +2370,22 @@ paths:
                   example: mario.jpg
                 key:
                   type: string
-                  description: |-
+                  description: >-
                     File path
-                    **S3 file**: required
-                    **External file**: null
                 external_url:
                   type: string
-                  description: |-
+                  description: >-
                     External URL for the file
-                    **S3 file**: null
-                    **External file**: required
                 link_type:
                   type: string
                   description: >-
                     Type of external link
-
-                    **S3 file**: null
-
-                    **External file**: required, one of `Dropbox Google_drive
-                    Evernote`
+                  enum: ['Dropbox', 'Google_drive', 'Evernote']
                   example: google_drive
                 size:
                   type: integer
-                  description: |-
+                  description: >-
                     Size of file
-                    **S3 file**: required
-                    **External file**: `0`
       responses:
         '201':
           description: Operation Successful
@@ -2538,7 +2535,7 @@ paths:
                 recording_link:
                   $ref: '#/components/schemas/Call/properties/recording_link'
                 user_ids_to_notify:
-                  description: "an array of user ids to notify."
+                  description: "An array of user ids to notify."
                   type: "array"
                   items:
                     example: "5aba31e99007ba0f570c12f7"
@@ -2648,7 +2645,7 @@ paths:
                 recording_link:
                   $ref: '#/components/schemas/Call/properties/recording_link'
                 user_ids_to_notify:
-                  description: "an array of user ids to notify."
+                  description: "An array of user ids to notify."
                   type: "array"
                   items:
                     example: "5aba31e99007ba0f570c12f7"
@@ -2723,12 +2720,19 @@ paths:
           application/json:
             schema:
               properties:
+                reference_id:
+                  type: string
+                  description: >-
+                    The ID of the note, call or deal associated with this
+                    attachment. To associate to a new empty note: leave blank
+                    and use `reference_type=note`. Similarly for calls/deals
+                  example: 5afc1b69d556730b580596cb
                 reference_type:
                   type: string
                   description: >-
                     What type of resource is associated with this attachment.
-                    One of `note deal call`.
-                  example: call
+                  enum: [note, call, deal]
+                  example: deal
                 contact_id:
                   format: bson_id
                   type: string
@@ -2740,32 +2744,22 @@ paths:
                   example: mario.jpg
                 key:
                   type: string
-                  description: |-
+                  description: >-
                     File path
-                    **S3 file**: required
-                    **External file**: null
                 external_url:
                   type: string
-                  description: |-
+                  description: >-
                     External URL for the file
-                    **S3 file**: null
-                    **External file**: required
                 link_type:
                   type: string
                   description: >-
                     Type of external link
-
-                    **S3 file**: null
-
-                    **External file**: required, one of `Dropbox Google_drive
-                    Evernote`
+                  enum: ['Dropbox', 'Google_drive', 'Evernote']
                   example: google_drive
                 size:
                   type: integer
-                  description: |-
+                  description: >-
                     Size of file
-                    **S3 file**: required
-                    **External file**: `0`
       responses:
         '201':
           description: Operation Successful
@@ -3222,7 +3216,7 @@ paths:
                   type: string
                   description: >-
                     What type of resource is associated with this attachment.
-                    One of `note deal call`.
+                  enum: [note, call, deal]
                   example: deal
                 contact_id:
                   format: bson_id
@@ -3235,32 +3229,22 @@ paths:
                   example: mario.jpg
                 key:
                   type: string
-                  description: |-
+                  description: >-
                     File path
-                    **S3 file**: required
-                    **External file**: null
                 external_url:
                   type: string
-                  description: |-
+                  description: >-
                     External URL for the file
-                    **S3 file**: null
-                    **External file**: required
                 link_type:
                   type: string
                   description: >-
                     Type of external link
-
-                    **S3 file**: null
-
-                    **External file**: required, one of `Dropbox Google_drive
-                    Evernote`
+                  enum: ['Dropbox', 'Google_drive', 'Evernote']
                   example: google_drive
                 size:
                   type: integer
-                  description: |-
+                  description: >-
                     Size of file
-                    **S3 file**: required
-                    **External file**: `0`
       responses:
         '201':
           description: Operation Successful
@@ -3334,7 +3318,7 @@ paths:
                   type: string
                   description: >-
                     What type of resource is associated with this attachment.
-                    One of `note deal call`.
+                  enum: [note, call, deal]
                   example: deal
                 contact_id:
                   format: bson_id
@@ -3347,33 +3331,22 @@ paths:
                   example: mario.jpg
                 key:
                   type: string
-                  description: |-
+                  description: >-
                     File path
-                    **S3 file**: required
-                    **External file**: null
                 external_url:
                   type: string
-                  description: |-
+                  description: >-
                     External URL for the file
-                    **S3 file**: null
-                    **External file**: required
                 link_type:
                   type: string
                   description: >-
                     Type of external link
-
-                    **S3 file**: null
-
-                    **External file**: required, one of `Dropbox Google_drive
-                    Evernote`
+                  enum: ['Dropbox', 'Google_drive', 'Evernote']
                   example: google_drive
                 size:
                   type: integer
-                  description: |-
+                  description: >-
                     Size of file
-                    **S3 file**: required
-                    **External file**: `0`
-      responses:
         '201':
           description: Operation Successful
           content:
@@ -4153,8 +4126,7 @@ paths:
     get:
       summary: Get a single custom filter
       description: >-
-        This endpoint also returns all contacts that meet the conditions of this
-        filter
+        This endpoint returns all contacts that meet the conditions of this filter
       tags:
         - Filters
       parameters:
@@ -6972,7 +6944,7 @@ paths:
   /action_stream:
     get:
       summary: "Get the contacts on the Action Stream. The Action Stream is the default view in the OnePageCRM web application"
-      description: "If tidy stream is enabled, Contacts without actions will not appear in your action stream"
+      description: "If tidy stream is enabled, contacts without actions will not appear in your action stream"
       tags:
         - "Action Stream"
       parameters:
@@ -6995,9 +6967,9 @@ paths:
         - $ref: "#/components/parameters/query_team"
         - $ref: "#/components/parameters/query_url"
         - $ref: "#/components/parameters/query_waiting"
-        - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_custom_field_id'
         - $ref: '#/components/parameters/query_custom_field_value'
+        - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
@@ -7062,7 +7034,7 @@ paths:
   /team_stream:
     get:
       summary: "Returns all contacts on the team stream, sorted the OnePageCRM action stream way"
-      description: "If tidy stream is enabled, Contacts without actions will not appear in your action stream"
+      description: "If tidy stream is enabled, Contacts without actions will not appear in the team stream"
       tags:
         - "Team Stream"
       parameters:
@@ -7212,7 +7184,7 @@ paths:
           $ref: "#/components/responses/500"
   /webhooks/{id}:
     get:
-      summary: "Get a info on a webhook"
+      summary: "Get info about a particular webhook"
       description: ""
       tags:
         - "Web Hooks"
@@ -8003,9 +7975,7 @@ components:
           description: >-
             The text in the body of the deal - truncated to 7168 characters. You
             may use BBCode: bold (`[b]text[/b]`), italics (`[i]text[/i]`) and
-            new line (`
-
-            `).
+            new line ('\n').
           type: string
           example: Figers crossed!
         date:
@@ -8437,7 +8407,7 @@ components:
     Webhook:
       description: >-
         Webhooks are a simple, efficient way of integrating with web applications.
-        For more information please see: http://developer.onepagecrm.com/webhooksmore/
+        For more information please see: <a href="http://developer.onepagecrm.com/webhooksmore/">http://developer.onepagecrm.com/webhooksmore/"</a>
       properties:
         id:
           type: "string"
