@@ -7,6 +7,19 @@ info:
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
     [developer forum](http://forum.developer.onepagecrm.com/).</i>
 
+    <h3>Authentication</h3>
+    The OnePageCRM API makes use of
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.
+    To authenticate using HTTP Basic Auth, you need the <code>user_id</code> and <code>auth_key</code> associated
+    with your OnePageCRM account. Your username is your <code>user_id</code> and your password is your
+    <code>auth_key</code>.<br>
+
+    <br>
+    <i>This information can be found by logging into your OnePageCRM account and navigating to
+    <a target="_blank" href="https://app.onepagecrm.com/app/api">https://app.onepagecrm.com/app/api</a>
+    and selecting the configuration tab.</i><br>
+
+    <br>
     <h3>Formats</h3>
     The API can send <u>and</u> receive data in <code>XML</code> and <code>JSON</code>, as well as receive data as
     URL encoded query strings.
@@ -38,19 +51,6 @@ info:
       </tbody>
     </table>
 
-    <h3>Authentication</h3>
-    The OnePageCRM API makes use of
-    <a target="_blank" href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.
-    To authenticate using HTTP Basic Auth, you need the <code>user_id</code> and <code>auth_key</code> associated
-    with your OnePageCRM account. Your username is your <code>user_id</code> and your password is your
-    <code>auth_key</code>.<br>
-
-    <br>
-    <i>This information can be found by logging into your OnePageCRM account and navigating to
-    <a target="_blank" href="https://app.onepagecrm.com/app/api">https://app.onepagecrm.com/app/api</a>
-    and selecting the configuration tab.</i><br>
-
-    <br>
     <h3>Headers</h3>
       <p>These parameters need to be included with every request made to the API</code>.</p>
       <table class="table table-bordered table-striped">
@@ -61,7 +61,7 @@ info:
         <tbody>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-UID</td>
-            <td>The user’s unique identification number(<code class="bluetext">user_id</code>) retrieved by following the authentication step above</td>
+            <td>The user’s unique identification number (<code class="bluetext">user_id</code>) retrieved by following the authentication step above</td>
           </tr>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-TS</td>
@@ -182,7 +182,7 @@ info:
           </tr>
           <tr>
             <td>time</td>
-            <td>modified_since</td>;
+            <td>modified_since</td>
             <td>Return only records that were modified since specified time.</td>
           </tr>
         <tbody>
@@ -235,7 +235,7 @@ info:
       After making the approapate changes, clicking Execute will execute your request.
 
 
-      Sample responses are shown for all request
+      Sample responses are shown for all requests
       </p>
       <div class="alert alert-danger">
         <strong>Warning:</strong> Any changes made in this way will effect your live OnePageCRM account.
@@ -315,9 +315,6 @@ tags:
   - name: Deal Fields
     description: >-
       Extra user-configurable data fields for deals. Only editable for account owner.
-  - name: FCM Devices
-    description: >-
-      This endpoint allows adding user devices into the onepageCRM system so that they can receive push notifications.
   - name: Countries
     description: >-
       A list of all compatible countries and their ISO-3166 codes
@@ -327,7 +324,7 @@ tags:
 paths:
   /bootstrap:
     get:
-      summary: Get all the data that is returned with a login request
+      summary: Get useful information on about the user
       description: >-
         This includes the user settings, properties, privileges as well as generic account details.
       parameters: []
@@ -987,215 +984,6 @@ paths:
       responses:
         '200':
           description: OK - Operation successful
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-  /firebase:
-    get:
-      summary: Get a list of FCM devices
-      tags:
-        - FCM Devices
-      parameters: []
-      responses:
-        '200':
-          description: OK - Operation successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      fcm_devices:
-                        type: array
-                        items:
-                          properties:
-                            fcm_device:
-                              $ref: '#/components/schemas/FCM_device'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-    post:
-      summary: Create an FCM devices
-      tags:
-        - FCM Devices
-      parameters: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              properties:
-                device_id:
-                  $ref: '#/components/schemas/FCM_device/properties/device_id'
-                device_type:
-                  $ref: '#/components/schemas/FCM_device/properties/device_type'
-      responses:
-        '200':
-          description: OK - Operation successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      fcm_device:
-                        $ref: '#/components/schemas/FCM_device'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-  '/firebase/{id}':
-    get:
-      summary: Get an FCM device
-      tags:
-        - FCM Devices
-      parameters:
-        - $ref: '#/components/parameters/Firebase_id'
-      responses:
-        '200':
-          description: OK - Operation successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      fcm_device:
-                        $ref: '#/components/schemas/FCM_device'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-    put:
-      summary: Update an FCM device
-      tags:
-        - FCM Devices
-      parameters:
-        - $ref: '#/components/parameters/Firebase_id'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              properties:
-                device_id:
-                  $ref: '#/components/schemas/FCM_device/properties/device_id'
-                device_type:
-                  $ref: '#/components/schemas/FCM_device/properties/device_type'
-      responses:
-        '200':
-          description: OK - Operation successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      fcm_device:
-                        $ref: '#/components/schemas/FCM_device'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-    delete:
-      summary: Delete an FCM device
-      tags:
-        - FCM Devices
-      parameters:
-        - $ref: '#/components/parameters/Firebase_id'
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -8637,34 +8425,6 @@ components:
             - big
             - medium
             - small
-    FCM_device:
-      description: A Firebase Cloud Messaging device
-      properties:
-        id:
-          type: string
-          description: id
-          example: 5fec74ad0001ba365e4epl23
-        device_id:
-          type: string
-          description: FCM Device Id
-          example: >-
-            nFei15luXkw:APs91bGlm_7sjwdEh0l4TV7VPr8RyZ5HdC73-U0_UwRe1L3eXrGJmEl5rYvxeqjXVbv456QB3u-WR_MI45U5zUxHfJOV4ioNS9cBoUID6DdAFW_ua_If8j4PYmf0g0sOw7S9kbHYefg
-        device_type:
-          type: string
-          description: Device type
-          example: general
-          enum:
-            - general
-            - android_app
-            - ios_app
-        action_with_time:
-          type: boolean
-          description: TODO - what is this? hardcoded to true
-          example: true
-        subscribed_at:
-          type: string
-          description: Date and Time that this FCM device subscribed
-          example: true
     Webhook:
       description: >-
         Webhooks are a simple, efficient way of integrating with web applications.
@@ -9144,14 +8904,6 @@ components:
       in: path
       required: true
       description: Lead source ID
-      schema:
-        type: string
-        minimum: 1
-    Firebase_id:
-      name: id
-      in: path
-      required: true
-      description: Firebase ID
       schema:
         type: string
         minimum: 1
