@@ -352,11 +352,9 @@ paths:
                   data:
                     $ref: '#/components/schemas/Bootstrap'
                   lead_sources:
-                    items:
-                      $ref: '#/components/schemas/Lead_source'
+                    $ref: '#/components/schemas/Lead_source'
                   statuses:
-                    items:
-                      $ref: '#/components/schemas/Status'
+                    $ref: '#/components/schemas/Status'
                   tags:
                     description: >-
                       Tags provide a means to classify contacts by however many
@@ -520,7 +518,7 @@ paths:
     put:
       summary: Update a user
       description: >-
-        You can update your own account information. If you are an administrator
+        You can update your own information. If you are an administrator
         you can edit your team members details. You can you can only update the
         following through the API: <br> <b>first_name</b><br>
         <b>last_name</b><br> <b>company</b> <br><b> bcc_email</b>: You can only
@@ -3820,10 +3818,8 @@ paths:
           $ref: '#/components/responses/500'
   '/actions/{id}/unassign':
     put:
-      summary: >-
-        Unassign action from the currently assigned user and assign it to the
-        API user
-      description: ''
+      summary: Unassign action from the currently assigned user.
+      description: Leaving assignee_id black will assign this action to the API user
       tags:
         - Actions
       parameters:
@@ -3952,7 +3948,7 @@ paths:
   '/actions/{id}/promote':
     put:
       summary: >-
-        This is used when Action is created or updated to ensure most urgent
+        This is used when an action is created or updated to ensure most urgent
         action is marked as next action
       description: >-
         You can only promote actions which are queued for current user and there
@@ -4044,11 +4040,11 @@ paths:
   '/actions/{id}/swap':
     put:
       summary: >-
-        This is used when Action is created or updated to ensure most urgent
+        This is used when an action is created or updated to ensure most urgent
         action is marked as next action
       description: >-
         You can only swap actions which are queued with date for current user.
-        NA action status should be waiting, date or date_time. NA date should be
+        Next action status should be waiting, date or date_time. Next action date should be
         less urgent than actions date.
       tags:
         - Actions
@@ -4333,8 +4329,7 @@ paths:
     put:
       summary: Update a company
       description: >-
-        When updating Company_field either the id or the name of the company and
-        the value must be present
+        When updating a company_field either the id or name and the value must be present
       tags:
         - Companies
       parameters:
@@ -6834,7 +6829,7 @@ paths:
       summary: Save a contact to google contacts
       description: >-
         OnePageCRM must be authorised to connect to Google Contacts
-        in order to do this action. Please visit https://www.onepagecrm.com/zz/app/google_contacts for more information
+        in order to do this action. Please visit https://www.onepagecrm.com/app/google_contacts for more information
       tags:
         - Contacts
       parameters:
@@ -7316,17 +7311,17 @@ components:
         cost_setup:
           $ref: '#/components/schemas/Cost_setup'
         custom_fields:
-          description: A list of custom field objects
+          description: A list of custom field objects that are avaliable for the account
           type: array
           items:
             $ref: '#/components/schemas/Custom_field'
         company_fields:
-          description: A list of company fields objects
+          description: A list of company fields objects that are avaliable for the account
           type: array
           items:
             $ref: '#/components/schemas/Company_field'
         deal_fields:
-          description: A list of deal fields objects
+          description: A list of deal field objects that are avaliable for the account
           type: array
           items:
             $ref: '#/components/schemas/Deal_field'
@@ -7338,6 +7333,8 @@ components:
         call_results:
           description: A list of call result types
           type: array
+          items:
+            type: string
           example:
             interested: Interested
             not_interested: Not interested
@@ -7347,6 +7344,8 @@ components:
         call_results_order:
           description: An ordered list of call result types
           type: array
+          items:
+            type: string
           example:
             - interested
             - not_interested
@@ -7378,6 +7377,8 @@ components:
             List of titles which can be chosen from. Only returned if the
             account owner has title_enabled set.
           type: array
+          items:
+            type: string
           example:
             - Mr
             - Mrs
@@ -7411,6 +7412,8 @@ components:
         account_rights:
           description: List of permissions this user has
           type: array
+          items:
+            type: ""
           enum:
             - account_owner
             - admin
@@ -7546,7 +7549,7 @@ components:
             saved_at:
               type: integer
               description: timestamp that this google_contact was saved
-              example: 342c5b5c08d4b0b2
+              example: 1522840153
         letter:
           type: string
           description: The first letter of the contacts last name
@@ -7766,7 +7769,7 @@ components:
           example: 5aaa9b009007ba08c9ebaef7
         contact_id:
           type: string
-          description: The id of the user that this action is assigned to
+          description: Contact id that this action is for
           example: 5aaa9b009007ba08c9ebaef7
         text:
           type: string
@@ -7920,7 +7923,7 @@ components:
           example: 5ae06ef9d55673108fe8877f
         via:
           type: string
-          description: id of the contact this call belongs to. (read only)
+          description: Through what application did this call take place?
           enum:
             - unknown
             - skype
@@ -7943,11 +7946,11 @@ components:
             $ref: '#/components/schemas/Attachment'
         created_at:
           type: string
-          description: The note's creation date.
+          description: The call's creation date.
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
-          description: The note's last modification date.
+          description: The call's last modification date.
           example: '2018-05-16T11:52:09Z'
         index:
           type: integer
@@ -7956,7 +7959,7 @@ components:
     Deal:
       description: >-
         Deals store information about a deal that is taking place or has closed.
-        They contain data on the name of the deal, the amount of money the deal
+        They contain data such as the name of the deal, the amount of money the deal
         is worth, the number of months the deal will last for, when a deal is
         expected to close or when it was closed and notes about the deal.
       properties:
@@ -7981,13 +7984,17 @@ components:
             only)
           properties:
             id:
-              $ref: '#/components/schemas/User/properties/id'
+              type: string
+              description: Id of the deal owner
+              example: 5aba31e99007ba0f570c12f7
             name:
               type: string
               description: Name of owner
               example: Joe Bloggs
             email:
-              $ref: '#/components/schemas/User/properties/email'
+              type: string
+              description: Email address of the deal owner
+              example: joe.bloggs@example.com
         name:
           description: Name of the deal - truncated to 60 characters. (required)
           type: string
@@ -8081,7 +8088,7 @@ components:
             - margin
           example: none
         status:
-          description: 'Status of the deal this is one of won, lost or pending'
+          description: 'Status of the deal'
           type: string
           enum:
             - won
@@ -8181,6 +8188,8 @@ components:
         conditions:
           description: Conditions of the filter
           type: array
+          items:
+            type: string
           example:
             - - star
               - selected
@@ -8352,7 +8361,7 @@ components:
             - Autumn
             - Winter
     Company_field:
-      description: A list of company field objects that the user has
+      description: A company field object
       properties:
         id:
           description: Id of the company field
@@ -8390,7 +8399,7 @@ components:
             - medium
             - small
     Deal_field:
-      description: A list of deal field objects that the user has
+      description: A deal field object
       properties:
         id:
           description: Id of the deal field
@@ -8730,6 +8739,8 @@ components:
         popular_countries:
           description: The last 5 countries that were selected when adding contacts or companies.
           type: array
+          items:
+            type: string
           example:
             - US
         deal_stages:
@@ -9063,7 +9074,7 @@ components:
       name: letter
       in: query
       required: false
-      description: Query by first letter in companies name
+      description: Query by first letter in contact/companies name
       schema:
         type: string
         example: March deal
