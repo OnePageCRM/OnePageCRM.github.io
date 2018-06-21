@@ -7,7 +7,6 @@ info:
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
     [developer forum](http://forum.developer.onepagecrm.com/).</i>
 
-    <br>
     <h3>Formats</h3>
     The API can send <u>and</u> receive data in <code>XML</code> and <code>JSON</code>, as well as receive data as
     URL encoded query strings.
@@ -39,7 +38,6 @@ info:
       </tbody>
     </table>
 
-    <br>
     <h3>Authentication</h3>
     The OnePageCRM API makes use of
     <a target="_blank" href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.
@@ -54,7 +52,7 @@ info:
 
     <br>
     <h3>Headers</h3>
-      <p>These parameters need to be included with every request made to the API other than the initial call to <code class="bluetext">login.format</code>.</p>
+      <p>These parameters need to be included with every request made to the API</code>.</p>
       <table class="table table-bordered table-striped">
         <thead>
           <td>Parameters</td>
@@ -80,11 +78,8 @@ info:
       <strong>Warning:</strong> These headers are case sensitive! If you do not send these headers exactly as they appear here you will obtain a <strong>"401 Unauthorized"</strong> error when making signed requests.
       </div>
 
-    <br>
-
-    <br>
     <h3>Partial Updates</h3>
-    You can partially update or create resources through our API by including the value <code>partial=1</code> in
+    You can partially update or create resources through our API by including the value <code>partial=true</code> in
     the <code>POST</code>/<code>PUT</code> request body or in the request params. This is the equivalent of using
     the emerging RESTful API standard’s <code>PATCH</code> method.<br>
 
@@ -104,7 +99,6 @@ info:
       as we don’t extend the partial update feature to sub resources
     </div>
 
-    <br>
     <h3>Pagination</h3>
       <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
       <table class="table table-striped table-bordered">
@@ -117,13 +111,13 @@ info:
         </thead>
         <tbody>
           <tr>
-            <td class="nowrap"><code class="redtext">integer</code></td>
-            <td class="nowrap"><code class="bluetext">page</code></td>
+            <td class="nowrap">integer</td>
+            <td class="nowrap">page</td>
             <td>Page number. Starts from 1. Default is 1.</td>
           </tr>
           <tr>
-            <td><code class="redtext">integer</code></td>
-            <td><code class="bluetext">per_page</code></td>
+            <td>integer</td>
+            <td>per_page</td>
             <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
           </tr>
         </tbody>
@@ -133,11 +127,28 @@ info:
       <p>To fetch second batch of 20 contacts, you would use:</p>
       <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
 
-    <br>
     <h3>Undo Deletion</h3>
-    TODO...<br>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <td>Type</td>
+            <td>Name</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">boolean</td>
+            <td class="nowrap">undo</td>
+            <td>Revert the deleting operation.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>If you delete a contact with a <span class="delete-text">DELETE</span> request like this:</p>
+      <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json</code></p>
+      <p>You can undo it by specifying an undo flag:</p>
+      <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json?undo=true</code></p>
 
-    <br>
     <h3>Limit Listings by Time</h3>
       <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
       <table class="table table-striped table-bordered">
@@ -150,40 +161,85 @@ info:
         </thead>
         <tbody>
           <tr>
-            <td><code class="redtext">time</code></td>
-            <td><code class="bluetext">date_filter</code></td>
+            <td>time</td>
+            <td>date_filter</td>
             <td>Filter returned data by a particular field when combined with since and until.</td>
           </tr>
           <tr>
-            <td><code class="redtext">time</code></td>
-            <td><code class="bluetext">since</code></td>
+            <td>time</td>
+            <td>since</td>
             <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
           </tr>
           <tr>
-            <td><code class="redtext">time</code></td>
-            <td><code class="bluetext">until</code></td>
+            <td>time</td>
+            <td>until</td>
             <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
           </tr>
           <tr>
-            <td class="nowrap"><code class="redtext">time</code></td>
-            <td class="nowrap"><code class="bluetext">unmodified_since</code></td>
+            <td class="nowrap">time</td>
+            <td class="nowrap">unmodified_since</td>
             <td>Return only records that were unmodified since specified time.</td>
           </tr>
           <tr>
-            <td><code class="redtext">time</code></td>
-            <td><code class="bluetext">modified_since&lt;/td&gt;
+            <td>time</td>
+            <td>modified_since</td>;
             <td>Return only records that were modified since specified time.</td>
           </tr>
         <tbody>
       </table>
 
-
-    <br>
     <h3>Sort Listings by Field</h3>
-    TODO... note that has to be field which is indexed in db e.g. <code>contact.last_name</code><br>
-
-    <br>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <td>Type</td>
+            <td>Name</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>string</td>
+            <td>sort_by</td>
+            <td>Name of field to sort results by (eg. 'email' or 'date').</td>
+          </tr>
+          <tr>
+            <td>string</td>
+            <td>order</td>
+            <td><code> asc || desc </code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Using these two fields you can sort the response by a specific field in either ascending or descending order. Ascending is the default order. Here is an example for sorting contacts by firstname in reverse alphabetical order:
       </p>
+      <p class="url">
+        <code class="bluetext">
+          <span class="get-text">GET</span>
+          contacts.json?sort_by=first_name&amp;order=desc
+        </code>
+      </p>
+
+    <h3>Using this Documentation</h3>
+      <p>
+      You can use these docs to interact directly with the api.
+      Simply use the green Authorise button below to supply your username (<code class="bluetext">user_id</code>)
+      and password (<code class="bluetext">auth_key</code>).
+      You can then interact with the api directly.
+
+      Find the appropriate endpoint you wish to interact with, then the method type you wish to use and click "Try it out".
+
+      For <code class="redtext">get</code> reuquests, you can change query params and for <code class="redtext">post/put</code> requests, you can edit the request body.
+
+
+      After making the approapate changes, clicking Execute will execute your request.
+
+
+      Sample responses are shown for all request
+      </p>
+      <div class="alert alert-danger">
+        <strong>Warning:</strong> Any changes made in this way will effect your live OnePageCRM account.
+      </div>
     </div>
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
