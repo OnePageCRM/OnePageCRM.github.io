@@ -2335,9 +2335,12 @@ paths:
   '/notes/{id}/attachments':
     post:
       summary: Create attachment and assign it to an existing note.
-      description: ''
       tags:
         - Notes
+      description: >-
+        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3. <br>
+        See attachments/s3_form for details. <br>
+        After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
       parameters:
         - $ref: '#/components/parameters/Note_id'
       requestBody:
@@ -2371,8 +2374,10 @@ paths:
                 key:
                   type: string
                   description: >-
-                    File path
+                    This is the same key used in the attachments/s3_form. It is of the following form{contact_id}/{timestamp}/{filename}
+                  example: 5b32511fbc906a40758ae1ee/1530520812224/mario.png
                 external_url:
+                  required: false
                   type: string
                   description: >-
                     External URL for the file
@@ -2380,8 +2385,9 @@ paths:
                   type: string
                   description: >-
                     Type of external link
-                  enum: ['Dropbox', 'Google_drive', 'Evernote']
-                  example: google_drive
+                  enum: ['Dropbox', 'Google_drive', 'Evernote', '']
+                  required: false
+                  example: ''
                 size:
                   type: integer
                   description: >-
@@ -2709,7 +2715,11 @@ paths:
   '/calls/{id}/attachments':
     post:
       summary: 'Create attachment and assign it to an existing call '
-      description: ''
+      description: >-
+       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
+       See attachments/s3_form for details. <br>
+       After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
+
       tags:
         - Calls
       parameters:
@@ -2745,8 +2755,10 @@ paths:
                 key:
                   type: string
                   description: >-
-                    File path
+                    This is the same key used in the attachments/s3_form. It is of the following form{contact_id}/{timestamp}/{filename}
+                  example: 5b32511fbc906a40758ae1ee/1530520812224/mario.png
                 external_url:
+                  required: false
                   type: string
                   description: >-
                     External URL for the file
@@ -2754,8 +2766,9 @@ paths:
                   type: string
                   description: >-
                     Type of external link
-                  enum: ['Dropbox', 'Google_drive', 'Evernote']
-                  example: google_drive
+                  enum: ['Dropbox', 'Google_drive', 'Evernote', '']
+                  required: false
+                  example: ''
                 size:
                   type: integer
                   description: >-
@@ -3201,7 +3214,11 @@ paths:
   '/deals/{id}/attachments':
     post:
       summary: Create attachment and assign it to an existing deal.
-      description: ''
+      description: >-
+       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
+       See attachments/s3_form for details. <br>
+       After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
+
       tags:
         - Deals
       parameters:
@@ -3212,6 +3229,13 @@ paths:
           application/json:
             schema:
               properties:
+                reference_id:
+                  type: string
+                  description: >-
+                    The ID of the note, call or deal associated with this
+                    attachment. To associate to a new empty note: leave blank
+                    and use `reference_type=note`. Similarly for calls/deals
+                  example: 5afc1b69d556730b580596cb
                 reference_type:
                   type: string
                   description: >-
@@ -3230,8 +3254,10 @@ paths:
                 key:
                   type: string
                   description: >-
-                    File path
+                    This is the same key used in the attachments/s3_form. It is of the following form{contact_id}/{timestamp}/{filename}
+                  example: 5b32511fbc906a40758ae1ee/1530520812224/mario.png
                 external_url:
+                  required: false
                   type: string
                   description: >-
                     External URL for the file
@@ -3239,8 +3265,9 @@ paths:
                   type: string
                   description: >-
                     Type of external link
-                  enum: ['Dropbox', 'Google_drive', 'Evernote']
-                  example: google_drive
+                  enum: ['Dropbox', 'Google_drive', 'Evernote', '']
+                  required: false
+                  example: ''
                 size:
                   type: integer
                   description: >-
@@ -3297,7 +3324,11 @@ paths:
   /attachments:
     post:
       summary: Create an attachment
-      description: Create Attachment document in database after client-side upload
+      description: >-
+        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
+        See attachments/s3_form for details. <br>
+        After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
+
       tags:
         - Attachments
       parameters: []
@@ -3312,7 +3343,7 @@ paths:
                   description: >-
                     The ID of the note, call or deal associated with this
                     attachment. To associate to a new empty note: leave blank
-                    and use `reference_type=note`. Similarly for calls/deals
+                    and use 'reference_type=note'. Similarly for calls/deals
                   example: 5afc1b69d556730b580596cb
                 reference_type:
                   type: string
@@ -3332,8 +3363,10 @@ paths:
                 key:
                   type: string
                   description: >-
-                    File path
+                    This is the same key used in the attachments/s3_form. It is of the following form{contact_id}/{timestamp}/{filename}
+                  example: 5b32511fbc906a40758ae1ee/1530520812224/mario.png
                 external_url:
+                  required: false
                   type: string
                   description: >-
                     External URL for the file
@@ -3341,12 +3374,14 @@ paths:
                   type: string
                   description: >-
                     Type of external link
-                  enum: ['Dropbox', 'Google_drive', 'Evernote']
-                  example: google_drive
+                  enum: ['Dropbox', 'Google_drive', 'Evernote', '']
+                  required: false
+                  example: ''
                 size:
                   type: integer
                   description: >-
                     Size of file
+
         '201':
           description: Operation Successful
           content:
@@ -3410,9 +3445,15 @@ paths:
         Get a pre-authorized S3 upload form. Use it to upload a file on the
         client side.
       description: >-
-        See examples of uploading files to S3 on client side using a
-        pre-authorized form:
-        http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTExamples.html
+        To use the form in the response to upload an attachment to s3 you must make a post request to url specified in the response. <br>
+        In addition the following steps must be taken. <br>
+        Include all the params under 'fields' in the post request to s3. <br>
+        The 'key' field must be constructed and be of the following form: {contact_id}/{timestamp}/{filename} <br>
+        'filename' field must be present and the same as the filename specified at the end of the key field<br>
+        'file' is the file to upload<br>
+        <br>
+        After uploading the attachment to s3, you can then link this attachment to notes/calls/deals via the post /attachments method using the key param
+
       tags:
         - Attachments
       parameters:
