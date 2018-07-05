@@ -108,20 +108,20 @@ info:
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <td>Type</td>
             <td>Name</td>
+            <td>Type</td>
             <td>Description</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="nowrap">integer</td>
             <td class="nowrap">page</td>
+            <td class="nowrap">integer</td>
             <td>Page number. Starts from 1. Default is 1.</td>
           </tr>
           <tr>
-            <td>integer</td>
             <td>per_page</td>
+            <td>integer</td>
             <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
           </tr>
         </tbody>
@@ -136,15 +136,15 @@ info:
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <td>Type</td>
             <td>Name</td>
+            <td>Type</td>
             <td>Description</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="nowrap">boolean</td>
             <td class="nowrap">undo</td>
+            <td class="nowrap">boolean</td>
             <td>Revert the deleting operation.</td>
           </tr>
         </tbody>
@@ -160,35 +160,35 @@ info:
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <td>Type</td>
             <td>Name</td>
+            <td>Type</td>
             <td>Description</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>time</td>
             <td>date_filter</td>
+            <td>time</td>
             <td>Filter returned data by a particular field when combined with since and until.</td>
           </tr>
           <tr>
-            <td>time</td>
             <td>since</td>
+            <td>time</td>
             <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
           </tr>
           <tr>
-            <td>time</td>
             <td>until</td>
+            <td>time</td>
             <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
           </tr>
           <tr>
-            <td class="nowrap">time</td>
             <td class="nowrap">unmodified_since</td>
+            <td class="nowrap">time</td>
             <td>Return only records that were unmodified since specified time.</td>
           </tr>
           <tr>
-            <td>time</td>
             <td>modified_since</td>
+            <td>time</td>
             <td>Return only records that were modified since specified time.</td>
           </tr>
         <tbody>
@@ -199,20 +199,20 @@ info:
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <td>Type</td>
             <td>Name</td>
+            <td>Type</td>
             <td>Description</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>string</td>
             <td>sort_by</td>
+            <td>string</td>
             <td>Name of field to sort results by (eg. 'email' or 'date').</td>
           </tr>
           <tr>
-            <td>string</td>
             <td>order</td>
+            <td>string</td>
             <td><code> asc || desc </code></td>
           </tr>
         </tbody>
@@ -249,6 +249,8 @@ info:
         <strong>Warning:</strong> Any changes made in this way will effect your live OnePageCRM account.
       </div>
     </div>
+    <br><br>
+
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
 servers:
