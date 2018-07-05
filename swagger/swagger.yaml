@@ -230,23 +230,36 @@ info:
     <br><br>
     <h3>Using this Documentation</h3>
       <p>
-      You can use these docs to interact directly with the api.
-      Simply use the green Authorise button below to supply your username (<code class="bluetext">user_id</code>)
-      and password (<code class="bluetext">auth_key</code>).
-      You can then interact with the api directly.
-
-      Find the appropriate endpoint you wish to interact with, then the method type you wish to use and click "Try it out".
-
-      For <code class="redtext">get</code> reuquests, you can change query params and for <code class="redtext">post/put</code> requests, you can edit the request body.
-
-
-      After making the approapate changes, clicking Execute will execute your request.
-
+      You can use these docs to interact directly with the API. Simply:
+      <ol>
+        <li>
+          Click the green "Authorise" button below
+        </li>
+        <li>
+          Supply your username (<code>user_id</code>) and password (<code>auth_key</code>)
+        </li>
+        <li>
+          Find the endpoint you wish to interact with, and method you wish to use
+        </li>
+        <li>
+          Clicking "Try it out" lets you edit the query params, request body and run requests
+        </li>
+        <li>
+          For <code>GET</code> requests - you can change the query params
+        </li>
+        <li>
+          For <code>POST</code>/<code>PUT</code> requests - you can edit the request body
+        </li>
+        <li>
+          When you're happy to do so - click "Execute"
+        </li>
+      </ol>
 
       Sample responses are shown for all requests
       </p>
       <div class="alert alert-danger">
-        <strong>Warning:</strong> Any changes made in this way will effect your live OnePageCRM account.
+        <strong>Warning:</strong> Any changes made in this way will effect your OnePageCRM data. If this is your
+        main account, please exercise caution when making any changes.
       </div>
     </div>
     <br><br>
