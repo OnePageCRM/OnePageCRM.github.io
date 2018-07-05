@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: OnePageCRM API
   description: >-
-    <i>- OnePageCRM Converts the complexity of a CRM system to a simple to-do list.<br>
+    <i>- OnePageCRM converts the complexity of a CRM system to a simple to-do list.<br>
     - For more information on OnePageCRM please visit our [website](https://www.onepagecrm.com).<br>
     - If you have trouble using this API or notice any issue with this documentation please contact us on our
     [developer forum](http://forum.developer.onepagecrm.com/).</i>
@@ -54,30 +54,31 @@ info:
 
     <br><br>
     <h3>Headers</h3>
-      <p>These parameters need to be included with every request made to the API</code>.</p>
+      <p>These headers need to be included with every request made to the API</code>.</p>
       <table class="table table-bordered table-striped">
         <thead>
-          <td>Parameters</td>
+          <td>Name</td>
           <td>Description</td>
         </thead>
         <tbody>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-UID</td>
-            <td>The user’s unique identification number (<code class="bluetext">user_id</code>) retrieved by following the authentication step above</td>
+            <td>The user’s unique identification number (<code>user_id</code>)</td>
           </tr>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-TS</td>
-            <td>The current timestamp in unix time (in seconds)</td>
+            <td>The current timestamp in Unix time (seconds elapsed since Epoch)</td>
           </tr>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-Auth</td>
-            <td>The user’s unique auth key (<code class="bluetext">auth_key</code>) retrieved by following the authentication step above</td>
+            <td>The user's HTTP Basic Auth data. Generated using <code>user_id</code> and <code>api_key</code></td>
           </tr>
         </tbody>
       </table>
 
       <div class="alert alert-danger">
-      <strong>Warning:</strong> These headers are case sensitive! If you do not send these headers exactly as they appear here you will obtain a <strong>"401 Unauthorized"</strong> error when making signed requests.
+      <strong>Warning:</strong> These headers are case sensitive! If you do not send these headers exactly as they
+      appear here you will obtain a <strong>"401 Unauthorized"</strong> error when making signed requests.
       </div>
 
     <br>
@@ -93,70 +94,72 @@ info:
     required fields.<br>
 
     <br>
-    When updating a resource ‘partially’ using a <code>PUT</code> request any fields you don’t include will stay the
+    When updating a resource ‘partially’ using a <code>PUT</code> request, any fields you don’t include will stay the
     same as before.
     <br><br>
     <div class="alert alert-danger">
       <strong>Warning:</strong> You need to exercise caution when partially updating sub resources. If you tried
       only updating a contact’s phone numbers you need to include all phone numbers that you don’t want to be deleted,
-      as we don’t extend the partial update feature to sub resources
+      as we don’t extend the partial update feature to sub resources.
     </div>
 
     <br><br>
     <h3>Pagination</h3>
-      <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Type</td>
-            <td>Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="nowrap">page</td>
-            <td class="nowrap">integer</td>
-            <td>Page number. Starts from 1. Default is 1.</td>
-          </tr>
-          <tr>
-            <td>per_page</td>
-            <td>integer</td>
-            <td>Number of records to return. Maximum 100 allowed. Default is 10.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>So, for example, to fetch first batch of 20 contacts:</p>
-      <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=1</code></p>
-      <p>To fetch second batch of 20 contacts, you would use:</p>
-      <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
+    <p>Whenever you are fetching a list of records, you can paginate the response with these standard parameters:</p>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nowrap">page</td>
+          <td class="nowrap">integer</td>
+          <td>Page number. Starts from 1. Default is 1</td>
+        </tr>
+        <tr>
+          <td>per_page</td>
+          <td>integer</td>
+          <td>Number of records to return. Maximum 100 allowed. Default is 10</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>So, for example, to fetch the first batch of 20 contacts:</p>
+    <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=1</code></p>
+    <p>And to fetch the second batch of 20 contacts:</p>
+    <p class="url"><code class="bluetext"><span class="get-text">GET</span> contacts.json?per_page=20&page=2</code></p>
 
     <br><br>
     <h3>Undo Deletion</h3>
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Type</td>
-            <td>Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="nowrap">undo</td>
-            <td class="nowrap">boolean</td>
-            <td>Revert the deleting operation.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>If you delete a contact with a <span class="delete-text">DELETE</span> request like this:</p>
-      <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json</code></p>
-      <p>You can undo it by specifying an undo flag:</p>
-      <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json?undo=true</code></p>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nowrap">undo</td>
+          <td class="nowrap">boolean</td>
+          <td>Revert the deleting operation.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>If you delete a contact with a <span class="delete-text">DELETE</span> request like this:</p>
+    <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json</code></p>
+    <p>You can undo it by specifying an undo flag:</p>
+    <p class="url"><code class="bluetext"><span class="delete-text">DELETE</span> contacts/51f251d5eb899749f7000006.json?undo=true</code></p>
 
     <br><br>
     <h3>Limit Listings by Time</h3>
-      <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
+      <p>
+        When fetching collections, you can request the API only returns records that were modified in a given time range.
+      </p>
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
@@ -255,7 +258,7 @@ info:
         </li>
       </ol>
 
-      Sample responses are shown for all requests
+      Sample responses are shown for all requests below.
       </p>
       <div class="alert alert-danger">
         <strong>Warning:</strong> Any changes made in this way will effect your OnePageCRM data. If this is your
