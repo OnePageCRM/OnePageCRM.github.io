@@ -165,8 +165,20 @@
 /* Wide Mobile Layout: 480px. */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+	.themeix-footer-bottom h6 {
+		line-height:36px;
+	}
+	.dev-nav{
+		padding-top: 10px;
+		height: 200px;
+		max-width: 100%;
+	}
+}
 
- .themeix-footer-bottom h6 {
-    line-height:36px;
- }
+@media only screen and (max-width: 375px) {
+	.dev-nav{
+		padding-top: 10px;
+		height: 200px;
+		max-width: 100%;
+	}
 }

@@ -3,6 +3,7 @@ layout: post
 title: "From Features to Microservices - Intro"
 slug: "from-features-to-microservices--intro"
 category: blog
+post_image: "/assets/images/Dev Blog_Black.jpg"
 author: leonard
 date: 2017-10-13 09:00:00
 excerpt: "The conversation about microservices has been heating up"
