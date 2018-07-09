@@ -308,7 +308,7 @@ tags:
   - name: Notes
     description: >-
       Allow you to keep track of additional information related to your contacts. Notes can include any
-      information you feel is relavant e.g. interactions with that contact. Notes support file attachments.
+      information you feel is relevant e.g. interactions with that contact. Notes support file attachments.
   - name: Calls
     description: >-
       Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
