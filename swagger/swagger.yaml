@@ -547,10 +547,17 @@ paths:
       description: >-
         You can update your own information. If you are an administrator
         you can edit your team members details. You can you can only update the
-        following through the API: <br> <b>first_name</b><br>
-        <b>last_name</b><br> <b>company</b> <br><b> bcc_email</b>: You can only
-        update this param for yourself. Setting this param to true will generate
-        a new BCC email address.
+        following through the API:
+        <br>
+        <b>first_name</b>
+        <br>
+        <b>last_name</b>
+        <br>
+        <b>company</b>
+        <br>
+        <b>bcc_email</b>:
+        Set this field to `true` to generate a new BCC email address, otherwise omit the field entirely.
+        You can only update this field for yourself.
       tags:
         - Users
       parameters:
