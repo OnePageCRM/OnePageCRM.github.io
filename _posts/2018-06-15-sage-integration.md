@@ -25,7 +25,7 @@ After registering for a Sage developer account, the first step was the authentic
 However, Sage provides a variety of resources to developers, and these proved to be very insightful in this situation. What I found most useful was their <a href="https://github.com/Sage/sageone_api_ruby_sample/tree/v3" target="_blank">sample app</a>.  A simple, bare bones application is available on their GitHub that gave an overview of their API functionality.  It brings the developer through each step in the authentication process, and allows them to make basic calls to the Sage API - creating, updating and deleting contacts.
 
 <div class="text-align: center">
-    <img src="/img/sage/pic-03.png" alt="" class="img-responsive"
+    <img src="/assets/images/sage/pic-03.png" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
