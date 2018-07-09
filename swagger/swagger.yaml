@@ -356,7 +356,7 @@ tags:
 paths:
   /bootstrap:
     get:
-      summary: Get useful information on about the user
+      summary: Get useful information about the logged user's account
       description: >-
         This includes the user settings, properties, privileges as well as generic account details.
       parameters: []
@@ -416,10 +416,8 @@ paths:
     post:
       summary: Log the user out of all applications (including mobile)
       description: >-
-        **Warning:** This will log the user out of all applications the user has
-        logged into using this auth key and will change the users auth key. If
-        you wish to log a user out just forget their auth key. Note: this
-        includes the mobile application.
+        **Warning:** This will log the user out of all applications, by changing their authentication key. If you
+        wish to log a user out, just forget their auth key. Note: this includes the mobile applications.
       parameters: []
       tags:
         - Authentication
@@ -432,11 +430,8 @@ paths:
     post:
       summary: Invalidate auth key and return a new auth key
       description: >-
-        **Warning:** This will log the user out of all applications the user has
-        logged into using this auth key and will change the users auth key. If
-        you wish to log a user out just forget their auth key. Note: this
-        includes the mobile application.
-      parameters: []
+        **Warning:** This will change the user's authentication key, and therefore log them out of all applications.
+        Note: this includes the mobile applications.
       tags:
         - Authentication
       responses:
