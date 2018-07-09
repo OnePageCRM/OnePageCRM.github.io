@@ -1639,3 +1639,14 @@ textarea:-moz-placeholder {
 	z-index: 10;
 	position:relative;
 }
+
+.dev-table .mobile-th{
+	display:none;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-style: italic;
+}
+.dev-table pre code{
+	white-space: pre-wrap;
+}

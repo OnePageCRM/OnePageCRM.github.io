@@ -180,5 +180,34 @@
 		padding-top: 10px;
 		height: 200px;
 		max-width: 100%;
+		display: none;
+	}
+	.dev-table{
+		width: 100% !important;
+	}
+	.dev-table,
+	.dev-table tr,
+	.dev-table td{
+		display:block;
+		margin:0;
+		box-sizing: border-box;
+	}
+	.dev-table thead td,
+	.dev-table th{
+		width: 100% !important;
+		font-style: italic;
+	}
+	.dev-table td{
+		border-width: 1px 0 0 0 !important;
+	}
+	.dev-table .mobile-th{
+		display: block;
+	}
+	.dev-table caption{
+		padding-left: 15px;
+		caption-side: top;
+	}
+	code{
+		word-wrap: break-word;
 	}
 }

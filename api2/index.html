@@ -39,7 +39,7 @@ title: APIv2.3
     <li>Successful update operations require every element describing the given resource to be provided. Update operations will fail if all required elements are not provided, resulting in corresponding resource property being lost.</li>
     <li>There are some restrictions regarding specific data types, these are outlined in the table below. (more specific information will follow in later sections).</li>
   </ul>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
         <td width="100">Data type</td>
@@ -73,7 +73,7 @@ title: APIv2.3
   
   <h3  class="top-padding" id="request-authorization">Request authorization</h3>
   <p class="overview-content">In order to authorize request, client should send following HTTP headers (except login method).</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td>Header name</td>
@@ -157,7 +157,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h2 class="top-padding" id="response-message-format">Response message format</h2>
   <p class="overview-content">Response data can be sent in 3 different formats: XML, JSON and YAML<a id="note1" href="#note1-content" class="footnote">1</a> (all of these are returning the same set of data, but one of them has to be explicitly chosen during request, e.g. contacts list can be retrieved through URL /api/contacts.xyz, where xyz can be xml, json or yaml). Date, time and country codes are returned in the same way as they are required in request message format.<br /><br />
   Every response document is a map/hash/associated table (name depends on the terminology of programming language used<a id="note2" href="#note2-content" class="footnote">2</a>) with the following elements:</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td width="100">Element name</td>
@@ -227,7 +227,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   
   <h3  class="top-padding2" id="additional-sales-element">Additional <em>sales</em> element</h3>
   <p class="overview-content">This element provides short sales summary. It contains information which can be found in the footer in the web version of the application. It contains following data:</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td>Name</td>
@@ -262,7 +262,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   
   <h3  class="top-padding" id="additional-statuses-element">Additional <em>statuses</em> element</h3>
   <p class="overview-content">This element provides information about current contacts count divided into contact types. It is an array of two-element hashes (instead of element with name=team, which contains data for whole team) (one per contact type), which have following format:</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td>Name</td>
@@ -287,7 +287,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   
   <h3  class="top-padding" id="additional-tags-element">Additional <em>tags</em> element</h3>
   <p class="overview-content">This element provides information about current user tags. It consists of three elements:</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td>Name</td>
@@ -322,7 +322,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
       </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Every element of such array consists 2 elements:</caption>
     <thead>
       <tr>
@@ -355,7 +355,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/auth/login.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">This method is used to login (i.e. fetch key to sign further requests) and fetch some basic information about users.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Input parameters</caption>
     <thead>
       <tr>
@@ -377,7 +377,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data</caption>
     <thead>
       <tr>
@@ -493,7 +493,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="overview-content">Calling this method will result in API key change (can be used for logging out of other connected applications)</p>
   <p class="strong">Input parameters:</p>
 <p class="no-parameters">This method doesn't require any inputs parameters.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Output data:</caption>
     <thead>
       <tr>
@@ -527,7 +527,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/contacts.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">This resource contains all summarized information about contacts.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input (optional) parameters:</caption>
     <thead>
       <tr>
@@ -579,7 +579,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data:</caption>
     <thead>
       <tr>
@@ -611,7 +611,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Single contact element data:</caption>
     <thead>
       <tr>
@@ -699,7 +699,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="overview-content">Returned information is almost the same as that which is visible in the expanded view/edit form and this data can be used to prefill edit form (if exists)</p>
   <p class="strong">Input parameters:</p>
   <p class="no-parameters">This method doesn't require any inputs parameters.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data:</caption>
     <thead>
       <tr>
@@ -854,7 +854,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/contacts.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new contact, company or lastname need to be provided.<br/>The following character limits apply:</br>firstname = max 25 characters<br/>lastname = max 25 characters<br/>company name = max 55 characters</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1026,7 +1026,7 @@ Operations on the resources must be made with the following HTTP requests (accor
     </ul>
     <p>Linked companies are created automatically using company name, i.e. when you’ll create contact with company name which already exists in database, such contacts will be linked</p>
   </div>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1053,7 +1053,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data: <br/>array of elements describing single company, where single element has following format:</caption>
     <thead>
       <tr>
@@ -1150,24 +1150,25 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/notes.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Resource which contains all notes for specific contact.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
-	<td>Name</td>
-	<td>Type</td>
-	<td>Description</td>
+				<td>Name</td>
+				<td>Type</td>
+				<td>Description</td>
       </tr>
     </thead>
     <tbody>
       <tr>
-	<td><code>cid</code></td>
-	<td><code>string</code></td>
-	<td>Contact ID</td>
+				<td><code>cid</code></td>
+				<td><code>string</code></td>
+				<td>Contact ID</td>
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+	<br/>
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data: <br/>Full list of contact notes. Every list item has following format:</caption>
     <thead>
       <tr>
@@ -1204,7 +1205,8 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+	<br/>
+  <table class="table table-striped dev-table table-bordered">
   <caption>Element contact has following format:</caption>
     <thead>
       <tr>
@@ -1231,6 +1233,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
+	<br/>
   <!-- Sample from GitHub -->
   <div class="sample-code-title">Sample JSON server response for getting list of contact notes</div>
   <div class="sample-code">
@@ -1258,7 +1261,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/notes.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new note, the body, cid and date fields need to be provided.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input data:</caption>
     <thead>
       <tr>
@@ -1335,7 +1338,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/deals.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Resource which contains all deals related to specific contact.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1352,7 +1355,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Output data: <br/>List of contact deals. Every item has following format:</caption>
     <thead>
       <tr>
@@ -1419,7 +1422,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Element <em>contact</em> has following format:</caption>
     <thead>
       <tr>
@@ -1474,7 +1477,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/deal.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new deal, the name, cid, amount and date fields need to be provided.<br/>The following character limits apply:</br>name = max 30 characters</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1574,7 +1577,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/actions.format</p>
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="overview-content">Methods relating to Contact Actions are divided into two parts: typical RESTful methods and some additional methods available through standard HTTP calls which are making action management easier.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1591,7 +1594,7 @@ Operations on the resources must be made with the following HTTP requests (accor
       </tr>
     </tbody>
   </table>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data: List of all contact actions</caption>
     <thead>
       <tr>
@@ -1675,7 +1678,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/actions.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>The following character limits apply:</br>name = max 140 characters</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1751,7 +1754,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/actions/1234567890abcdef.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
   <p class="overview-content">In order to create a new action, the name, cid and date fields need to be provided. If assignee_id is left blank it defaults to the authorised user's id.<br/>Note that any fields not included in the update call will be overwritten as null.<br/>The following character limits apply:</br>name = max 140 characters</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1843,7 +1846,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/misc/mark_action_as_done.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">Mark an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1875,7 +1878,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="url"><strong>URL:</strong> /api/misc/undo_action_completion.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
   <p class="overview-content">Undo marking an action as completed.<br/>Note: You can only mark your own action as completed, to edit other user's actions use the <a href="#updating-action-data">/actions/{id}.format</a> update endpoint</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1909,7 +1912,7 @@ Operations on the resources must be made with the following HTTP requests (accor
 <div class="api-element">
   <h2 class="top-padding" id="user-custom-tags">User custom tags</h2>
   <p class="overview-content">This section describes methods which allow custom tags to be modified (i.e. those which can be added/edited/deleted by user).<br /><br />When speaking about 'tag element' further in this document, we mean that it is consisted of two elements:</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <thead>
       <tr>
 	<td>Name</td>
@@ -1966,7 +1969,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3  class="top-padding" id="create-new-tag">Create new tag</h3>
   <p class="url"><strong>URL:</strong> /api/tags.format</p>
   <p class="method"><strong>Method:</strong> POST</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -1996,7 +1999,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3  class="top-padding" id="change-existing-tag-name">Change existing tag name</h3>
   <p class="url"><strong>URL:</strong> /api/tags/tag_name.format</p>
   <p class="method"><strong>Method:</strong> PUT</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -2041,7 +2044,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3  class="top-padding" id="assign-single-tag-to-contact">Assign single tag to a contact</h3>
   <p class="url"><strong>URL:</strong> /api/misc/assign_tag.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -2076,7 +2079,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <h3  class="top-padding" id="unassign-tag-from-contact">Unassign tag from contact</h3>
   <p class="url"><strong>URL:</strong> /api/misc/unassign_tag.format</p>
   <p class="method"><strong>Method:</strong> GET/POST</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters:</caption>
     <thead>
       <tr>
@@ -2134,7 +2137,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="overview-content">Custom filters allow to store predefined contact shortlists (e.g. showing only Prospects with pending deals)</p>
   <p class="strong">Input parameters:</p>
   <p class="no-parameters">This method doesn't require any inputs parameters.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Output data: <br/>Full list of custom filters. Every list item has following format:</caption>
     <thead>
       <tr>
@@ -2226,7 +2229,7 @@ Operations on the resources must be made with the following HTTP requests (accor
     - POST method updates settings data<br />  <br />
     Note: The company field can only be edited by the account owner
   </p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>Input parameters/output data:</caption>	
     <thead>
       <tr>
@@ -2288,7 +2291,7 @@ Operations on the resources must be made with the following HTTP requests (accor
     - GET method reads settings data<br />
     - POST method updates settings data<br />  <br />
     Note: All variables need to be present for a POST to succeed. For valid currencies and timezones, see <a href="#other-methods">other methods</a>.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Input parameters/output data:</caption>	
     <thead>
       <tr>
@@ -2343,7 +2346,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
   <p class="no-parameters">This method doesn't require any inputs parameters.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data:</caption>	
     <thead>
       <tr>
@@ -2408,7 +2411,7 @@ Operations on the resources must be made with the following HTTP requests (accor
   <p class="method"><strong>Method:</strong> GET</p>
   <p class="strong">Input parameters:</p>
   <p class="no-parameters">This method doesn't require any inputs parameters.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>Output data:</caption>	
     <thead>
       <tr>
@@ -2534,7 +2537,7 @@ Operations on the resources must be made with the following HTTP requests (accor
 
 <div class="api-element">
   <h2 class="top-padding" id="response-codes">API Response Codes</h2>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
     <caption>API Error Status Codes</caption>
     <thead>
       <tr>
@@ -2603,7 +2606,7 @@ Operations on the resources must be made with the following HTTP requests (accor
 <div class="api-element"> 
   <h2 class="top-padding" id="version-history">Version History</h2>
   <p>See the version history of the OnePage API below.</p>
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped dev-table table-bordered">
   <caption>History of changes</caption>
     <thead>
       <tr>
