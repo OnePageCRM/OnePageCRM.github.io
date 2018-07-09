@@ -270,10 +270,10 @@ info:
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
 servers:
-  - url: 'http://staging.onepagecrm.com/api/v3'
-    description: Staging server
   - url: 'https://app.onepagecrm.com/api/v3'
-    description: OnepageCRM main application
+    description: Production Application Server
+  - url: 'http://staging.onepagecrm.com/api/v3'
+    description: Staging Application Server
 security:
   - BasicAuth: []
 tags:
