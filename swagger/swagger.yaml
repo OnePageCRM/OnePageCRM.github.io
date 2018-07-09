@@ -278,75 +278,81 @@ security:
   - BasicAuth: []
 tags:
   - name: Authentication
-    description: Get account information, log out or change your authentication key
+    description: >-
+      Get account information like settings and lead sources, log yourself out or change your authentication key.
   - name: Users
     description: >-
-      Useful information on you and your team members. Each can update their
-      own, admins can update all.
+      Useful information about the logged user and other members of the team. Each can update their own info. Admins
+      can update all.
   - name: Contacts
     description: >-
-      Contacts are the main resource within OnePageCRM. This endpoint allows: <br>
-      1) CRUD operations on contacts.<br>
-      2) Getting and creating resources for contacts including notes, calls, deals and actions. <br>
-      3) Changing status, (un)assigning tags, changing owner, retrieving emails and many more contact specific operations
+      Information about the people you are actively trying to sell to, and related sub-resources like Actions,
+      Deals, Notes, and Calls.
   - name: Companies
     description: >-
-      Companies are a logical collection of contacts. <br>
-      The companies endpoint mimics the company view of contacts in the web app. <br>
-      It allows getting contacts and other resources grouped by company as well as company specific operations
+      Referred to as 'organizations' in the web application. Companies are logical collections of Contacts and
+      related sub-resources e.g. Deals, Actions and some basic info on the org. e.g. postal address, website. A
+      Company may not be created directly or exist without a Contact.
   - name: Actions
     description: >-
-      Actions are completable task items for you to convert your leads into
-      customers. They are sorted as follows: (1) Next actions sorted by action
-      status and/or date and modification time. (2) Queued actions by the same.
-      (3) Completed actions sorted by completion time.
+      Completable tasks related to Contacts. ASAP first, then dated actions ordered by due date (overdue first),
+      followed by waiting for (blocked) and finally queued actions (without any date).
   - name: Action Stream
     description: >-
-      The Action Stream is the default view in the OnePageCRM web application. It is a listing of contacts prioritized by when the next action is due.
+      A listing of contacts prioritized by when their next action is due. The Action Stream is the default view in
+      the OnePageCRM web application.
   - name: Team Stream
     description: >-
-      This endpoint corresponds to the Team Stream view in the OnePageCRM web application. It is similar to the Action Stream but shows the whole team's stream.
+      The Action Stream for all users on the account in a single list, or for any individual user on the account
+      (not just the logged user). The same Action Stream sorting is applied.
   - name: Notes
     description: >-
-      Notes allow you to keep track of your interactions with a customer.
-      They should include important information that will help you with that contact or
-      store any other information you see fit.
+      Allow you to keep track of additional information related to your contacts. Notes can include any
+      information you feel is relavant e.g. interactions with that contact. Notes support file attachments.
   - name: Calls
-    description: Calls allow you to keep track of calls you make to your contacts.
+    description: >-
+      Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
+      number dialled and the call result. Calls support file attachments.
   - name: Deals
     description: >-
-      Deals represent a financial transactions between you and your contacts.
-      Deals include information like amount, deal stage, closed date or expected close date.
+      Represent (potential) financial transactions with your contacts. Deals include information like
+      amount, deal stage, closed date or expected close date. Deals support file attachments.
   - name: Attachments
-    description: Attachments are additional files associated with deals, notes or calls. They can be uploaded and stored in S3, or stored in external providers i.e. Google Drive, Dropbox, Evernote.
+    description: >-
+      Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3, or stored in
+      external providers i.e. Google Drive, Dropbox, Evernote.
   - name: Filters
     description: >-
-      Custom filters allow you to query contacts in your own custom way. These
-      filters can only be created on the website but they can be used through
-      the API.
+      Allow you to query contacts in your own custom way. These filters can only be created on the website but they
+      can be used through the API.
   - name: Lead Sources
     description: >-
-      Lead sources are a way for you to classify the source of any contact that you add to OnePageCRM.
+      A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
+      already populated but it may be updated if needed, to better fit your organization.
   - name: Statuses
     description: >-
-      Statuses are a way of qualifying where your contacts are in your sales pipeline
+      Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
+      pre-populated, and can be later edited to fit individual needs.
   - name: Predefined Actions
-    description: Template actions users may use frequently in their sales process.
+    description: >-
+      Template actions users may use frequently in their sales process. Referred to as 'Saved Actions' in the web
+      application.
   - name: Custom Fields
     description: >-
-      Extra user-configurable data fields for contacts. Only editable for account owner.
+      Extra user-configurable data fields for Contacts. Only editable by admins.
   - name: Company Fields
     description: >-
-      Extra user-configurable data fields for companies. Only editable for account owner.
+      Extra user-configurable data fields for Companies. Only editable by admins.
   - name: Deal Fields
     description: >-
-      Extra user-configurable data fields for deals. Only editable for account owner.
+      Extra user-configurable data fields for Deals. Only editable by admins.
   - name: Countries
     description: >-
-      A list of all compatible countries and their ISO-3166 codes
+      A list of all compatible countries and their ISO-3166 codes.
   - name: Web Hooks
     description: >-
-      Webhooks are a simple, efficient way of integrating with web applications. For more information please see: http://developer.onepagecrm.com/webhooksmore/
+      A simple, effective way to be notified when things happen in OnePageCRM. For more information, go to the
+      'WebHooks & More' tab at the top of the page.
 paths:
   /bootstrap:
     get:
