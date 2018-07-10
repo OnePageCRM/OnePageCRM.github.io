@@ -2944,12 +2944,12 @@ paths:
       tags:
         - Deals
       parameters:
-        - $ref: '#/components/parameters/query_name'
+        - $ref: '#/components/parameters/query_deals_name'
         - $ref: '#/components/parameters/query_status'
         - $ref: '#/components/parameters/query_stage'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_search'
+        - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
         - $ref: '#/components/parameters/query_tag'
         - $ref: '#/components/parameters/query_filter_id'
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/query_name'
+        - $ref: '#/components/parameters/query_companies_name'
         - $ref: '#/components/parameters/query_phone'
         - $ref: '#/components/parameters/query_letter'
         - in: query
@@ -4450,10 +4450,10 @@ paths:
         - Companies
       parameters:
         - $ref: '#/components/parameters/Path_company_id'
-        - $ref: '#/components/parameters/query_name'
+        - $ref: '#/components/parameters/query_deals_name'
         - $ref: '#/components/parameters/query_status'
         - $ref: '#/components/parameters/query_stage'
-        - $ref: '#/components/parameters/query_search'
+        - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -5082,7 +5082,7 @@ paths:
         - $ref: '#/components/parameters/query_pending_deal'
         - $ref: '#/components/parameters/query_phone'
         - $ref: '#/components/parameters/query_starred'
-        - $ref: '#/components/parameters/query_search'
+        - $ref: '#/components/parameters/query_contacts_search'
         - $ref: '#/components/parameters/query_status_id'
         - $ref: '#/components/parameters/query_tag'
         - $ref: '#/components/parameters/query_team'
@@ -5614,12 +5614,12 @@ paths:
         - Contacts
       parameters:
         - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_name'
+        - $ref: '#/components/parameters/query_deals_name'
         - $ref: '#/components/parameters/query_status'
         - $ref: '#/components/parameters/query_stage'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_search'
+        - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
         - $ref: '#/components/parameters/query_tag'
         - $ref: '#/components/parameters/query_filter_id'
@@ -7036,7 +7036,7 @@ paths:
         - $ref: "#/components/parameters/query_pending_deal"
         - $ref: "#/components/parameters/query_phone"
         - $ref: "#/components/parameters/query_starred"
-        - $ref: "#/components/parameters/query_search"
+        - $ref: "#/components/parameters/query_contacts_search"
         - $ref: "#/components/parameters/query_status_id"
         - $ref: "#/components/parameters/query_tag"
         - $ref: "#/components/parameters/query_team"
@@ -7126,7 +7126,7 @@ paths:
         - $ref: "#/components/parameters/query_pending_deal"
         - $ref: "#/components/parameters/query_phone"
         - $ref: "#/components/parameters/query_starred"
-        - $ref: "#/components/parameters/query_search"
+        - $ref: "#/components/parameters/query_contacts_search"
         - $ref: "#/components/parameters/query_status_id"
         - $ref: "#/components/parameters/query_tag"
         - $ref: "#/components/parameters/query_team"
@@ -9099,14 +9099,22 @@ components:
       schema:
         type: string
         minimum: 1
-    query_name:
+    query_companies_name:
       name: name
       in: query
       required: false
-      description: Query by name
+      description: Search companies by name
       schema:
         type: string
-        example: March deal
+        example: Big Company Inc
+    query_deals_name:
+      name: name
+      in: query
+      required: false
+      description: Search deals by name
+      schema:
+        type: string
+        example: Solar panels
     query_phone:
       name: phone
       in: query
@@ -9120,7 +9128,7 @@ components:
       in: query
       required: false
       description: >-
-        Query by first letter in contact's `last_name` (or `company_name` if last name not present)
+        Query by first letter in contact's last name (or company name if last name not present)
       schema:
         type: string
         example: March deal
@@ -9164,14 +9172,30 @@ components:
       schema:
         type: string
         example: '5aaa9b009007ba08c9ebaef7'
-    query_search:
+    query_contacts_search:
       name: search
       in: query
       required: false
-      description: Query by contact/company name
+      description: Search contacts by contact name, company name or phone number
+      schema:
+        type: string
+        example: Jane Doe
+    query_companies_search:
+      name: search
+      in: query
+      required: false
+      description: Search companies by name
       schema:
         type: string
         example: Big Company Inc
+    query_deals_search:
+      name: search
+      in: query
+      required: false
+      description: Search deals by deal name, contact name or company name
+      schema:
+        type: string
+        example: Solar panels
     query_owner_id:
       name: owner_id
       in: query
