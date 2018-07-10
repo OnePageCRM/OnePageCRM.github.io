@@ -25,7 +25,8 @@
                 <div class="blog-details">
                     <h3 class="blog-post-title"><a href="{{ post.url}} ">{{ post.title }}</a></h3>
                     <ul class="blog-author-name">
-                        <li><i class="fa fa-user" aria-hidden="true"></i><a href="{{post.author_web}}">{{ post.author }}</a></li>
+                        {% assign author = site.data.authors[post.author] %}
+                        <li><i class="fa fa-user" aria-hidden="true"></i><a href="{{post.author_web}}">{{ author.name }}</a></li>
                         <!--<li><i class="fa fa-folder-open"></i><a href="/pages/tagpage/">{{ post.category | limit: 1 }}</a></li>-->
                     </ul>
                     <div class="blog-excerpt">
