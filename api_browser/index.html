@@ -40,17 +40,17 @@ title: API Browser
   <div ng-controller="AuthController" >
     <div ng-show="user.apiKey == null">
       <div class="row">
-        <form>
+        <form style="width:100%;display:flex;">
           <div class="col-lg-5">
             <div class="input-group">
               <span class="input-group-addon"></span>
-              <input type="text" ng-model='username' class="form-control" placeholder="Username">
+              <input style="border:1px solid rgba(0,0,0,.15)" type="text" ng-model='username' class="form-control" placeholder="Username">
             </div>
           </div>
           <div class="col-lg-5">
             <div class="input-group">
               <span class="input-group-addon"></span>
-              <input type="password" ng-model='password' class="form-control" placeholder="Password">
+              <input style="border:1px solid rgba(0,0,0,.15)" type="password" ng-model='password' class="form-control" placeholder="Password">
             </div>
           </div>
           <div class="col-lg-2">
@@ -60,6 +60,7 @@ title: API Browser
       </div>
     </div>
     <div ng-show="user.apiKey != null">
+      <br/><br/>
       <div class="row">
         <div class="col-lg-10">
           <span class="lead text-primary">
@@ -75,11 +76,11 @@ title: API Browser
   </div>
   <div ng-controller="APIRequestController">
     <div class="row">
-      <form>
+      <form style="width:100%;display:flex;">
         <div class="col-lg-10">
           <div class="input-group">
             <span class="input-group-addon">{(baseURL)}</span>
-            <input type="text" ng-model='requestPath' class="form-control" placeholder="Enter resource path" />
+            <input style="border:1px solid rgba(0,0,0,.15)" type="text" ng-model='requestPath' class="form-control" placeholder="Enter resource path" />
           </div>
         </div>
         <div class="col-lg-2">
