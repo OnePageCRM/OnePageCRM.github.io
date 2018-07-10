@@ -1,0 +1,34 @@
+---
+layout: api
+title: API
+---
+
+
+{% for section in site.api_sections %}
+  {% assign attr = section[0] %}
+  {% assign label = section[1] %}
+
+  {% for page in site.categories[attr] reversed %}
+
+  <div class="api-element">
+    <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}
+      {% if page.tags contains 'beta' %}
+        <span class="pull-right label label-warning">Beta</span>
+      {% endif %}
+    </h2> 
+    {{ page.content }}
+
+    <span class="row"><a class="pull-right btn btn-default" href="#top">Back To Top</a></span>
+  </div>
+  {% endfor %}
+{% endfor %}
+
+
+
+<script>
+$('body').scrollspy({ 
+    target: '#api-nav',
+    offset: 40
+})
+
+</script>
