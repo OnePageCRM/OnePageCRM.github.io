@@ -9111,7 +9111,7 @@ components:
       name: phone
       in: query
       required: false
-      description: Query by companies phone number
+      description: Query by phone number
       schema:
         type: string
         example: March deal
@@ -9119,7 +9119,8 @@ components:
       name: letter
       in: query
       required: false
-      description: Query by first letter in contact/companies name
+      description: >-
+        Query by first letter in contact's `last_name` (or `company_name` if last name not present)
       schema:
         type: string
         example: March deal
@@ -9175,7 +9176,8 @@ components:
       name: owner_id
       in: query
       required: false
-      description: Query owner id
+      description: >-
+        Only return resources which are owned by a specific user
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
@@ -9184,8 +9186,7 @@ components:
       in: query
       required: false
       description: >-
-        Query by tag. Can only query one of company_id, contact_id, tag or
-        filter_id at a time
+        Query by `tag` (can only query one of `company_id`, `contact_id`, `tag` or `filter_id` at a time)
       schema:
         type: string
         example: VIP
@@ -9194,8 +9195,7 @@ components:
       in: query
       required: false
       description: >-
-        Query by filter id. Can only query one of company_id, contact_id, tag or
-        filter_id at a time
+        Query by `filter_id` (can only query one of `company_id`, `contact_id`, `tag` or `filter_id` at a time)
       schema:
         type: string
         example: 5ae9cc2a9007ba5b856c7bb8
@@ -9250,8 +9250,7 @@ components:
       name: contact_id
       in: query
       description: >-
-        Query based on contact_id. Can only query one of company_id, contact_id,
-        tag or filter_id at a time
+        Query by `contact_id` (can only query one of `company_id`, `contact_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
@@ -9260,8 +9259,7 @@ components:
       name: company_id
       in: query
       description: >-
-        Query based on company_id. Can only query one of company_id, contact_id,
-        tag or filter_id at a time
+        Query by `company_id` (can only query one of `company_id`, `contact_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
@@ -9277,7 +9275,8 @@ components:
     query_email:
       name: email
       in: query
-      description: Query based on contact's email
+      description: >-
+        Query based on contact's email address
       required: false
       schema:
         type: string
@@ -9286,8 +9285,9 @@ components:
       name: has_actions
       in: query
       description: >-
-        Query contacts owned by the user that the user has actions with.
-        Can not query by has_action and has_actions_for_me at the same time
+        Only return contacts who are owned by the logged user, and have actions for any user
+        <br>
+        (can not query by `has_actions` and `has_actions_for_me` at the same time)
       required: false
       schema:
         type: boolean
@@ -9296,8 +9296,9 @@ components:
       name: has_actions_for_me
       in: query
       description: >-
-        Query all contacts that the api user has actions with. Can not query by
-        has_action and has_actions_for_me at the same time
+        Only return contacts who are owned by, and have actions for, the logged user
+        <br>
+        (can not query by `has_actions` and `has_actions_for_me` at the same time)
       required: false
       schema:
         type: boolean
@@ -9306,7 +9307,7 @@ components:
       name: has_actions_today
       in: query
       description: >-
-        Query contacts that the api user has actions with that are due today.
+        Only return contacts who are owned by, and have actions today for, the logged user
       required: false
       schema:
         type: boolean
@@ -9315,8 +9316,7 @@ components:
       name: lead_source
       in: query
       description: >-
-        Query based on lead source. Can not query lead_source and lead_source_id
-        at the same time
+        Query based on `lead_source` (can not query `lead_source` and `lead_source_id` at the same time)
       required: false
       schema:
         type: string
@@ -9325,8 +9325,7 @@ components:
       name: lead_source_id
       in: query
       description: >-
-        Query based on lead source id. Can not query lead_source and
-        lead_source_id at the same time
+        Query based on `lead_source_id` (can not query `lead_source` and `lead_source_id` at the same time)
       required: false
       schema:
         type: string
@@ -9334,7 +9333,8 @@ components:
     query_pending_deal:
       name: pending_deal
       in: query
-      description: Query based on pending deals
+      description: >-
+        Only return contacts who have a pending deal
       required: false
       schema:
         type: boolean
@@ -9342,7 +9342,8 @@ components:
     query_starred:
       name: starred
       in: query
-      description: Query only with starred status
+      description: >-
+        Only return contact's who are starred
       required: false
       schema:
         type: boolean
