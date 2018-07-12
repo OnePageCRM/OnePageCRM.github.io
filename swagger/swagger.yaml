@@ -9367,7 +9367,7 @@ components:
       name: starred
       in: query
       description: >-
-        Only return contact's who are starred
+        Only return contacts who are starred
       required: false
       schema:
         type: boolean
@@ -9391,7 +9391,7 @@ components:
     query_url:
       name: url
       in: query
-      description: Query based on url
+      description: Query contacts based on web address
       required: false
       schema:
         type: string
@@ -9399,7 +9399,8 @@ components:
     query_waiting:
       name: waiting
       in: query
-      description: Query based on is_wating status
+      description: >-
+        Only return contacts, for whom I have a next action, of status 'Waiting for'
       required: false
       schema:
         type: boolean
@@ -9408,8 +9409,8 @@ components:
       name: not_linked_with
       in: query
       description: >-
-        Query for contact/company that is not linked with this contact/company.
-        Can not have both company_id and not_linked_with in query
+        Only return contacts who are not linked to a particular company (company's id expected here - cannot
+        be used in conjunction with `company_id` param)
       required: false
       schema:
         type: string
