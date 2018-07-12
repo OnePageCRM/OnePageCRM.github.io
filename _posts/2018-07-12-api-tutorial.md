@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OnePageCRM API Challenge"
-slug: "api-tutorial"
+slug: "api-challenge"
 category: blog
 author: kevin
 date: 2018-07-12 09:00:00
