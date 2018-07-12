@@ -9310,7 +9310,6 @@ components:
       in: query
       description: >-
         Only return contacts who are owned by the logged user, and have actions for any user
-        <br>
         (can not query by `has_actions` and `has_actions_for_me` at the same time)
       required: false
       schema:
@@ -9321,7 +9320,6 @@ components:
       in: query
       description: >-
         Only return contacts who are owned by, and have actions for, the logged user
-        <br>
         (can not query by `has_actions` and `has_actions_for_me` at the same time)
       required: false
       schema:
@@ -9418,7 +9416,7 @@ components:
     query_custom_field_id:
       name: custom_field_id
       in: query
-      description: ID of custom field the custom_field_value is filtering by.
+      description: Filter contacts by custom field value (combine with `custom_field_value`)
       required: false
       schema:
         type: string
@@ -9426,9 +9424,7 @@ components:
     query_custom_field_value:
       name: custom_field_value
       in: query
-      description: >-
-        Value for a custom field to filter the contacts list by. The
-        custom_field_id needs to be also be included with the request if using this parameter.
+      description: Filter contacts by custom field value (combine with `custom_field_id`)
       required: false
       schema:
         type: string
@@ -9436,8 +9432,7 @@ components:
       in: query
       name: order
       description: >-
-        Order sort results either ascending or descending. **Use in conjunction
-        with 'sort_by'.**
+        Specify the order (ascending or descending) of the sort of the results (use in conjunction with `sort_by`)
       schema:
         type: string
         enum:
@@ -9446,7 +9441,8 @@ components:
     query_sort_by:
       name: sort_by
       in: query
-      description: Sort results. **Use in conjunction with 'order'.**
+      description: >-
+        Specify field by which to order the results (use in conjunction with `order`)
       schema:
         type: string
         enum:
