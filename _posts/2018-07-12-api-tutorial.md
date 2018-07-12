@@ -14,26 +14,25 @@ graphic: /img/api-tutorial/wordcloud.png
      style="width: 100%; position: relative" /><br />
 </div>
 
-I’m a typical developer (I think).. I love writing and designing code. But writing about writing code, well not so much. So to motivate myself to write this post I decided to set myself a coding challenge. More on that later. First let me write a quick intro.
+I’m a typical developer (I think)... I love writing and designing code. But writing about writing code, well not so much. So to motivate myself to write this post I decided to set myself a coding challenge. More on that later. First let me write a quick intro.
 
-I started in OnepageCRM about 4 months ago. In that time I have mostly being working on our API, adding cool new features and getting a shiny new version of our documentation ready for release. I’ve come to realize that APIs are entire products in themselves. Recently I’ve been updating our API documentation to the OpenAPI 3.0 spec. This specification defines a language agnostic interface description for REST APIs and has a whole host of benefits both internally and externally. Internally, it will allow us to generate entire server stubs and client libraries in basically every programming language with a few keystrokes and makes it easier to maintain our documentation going forward. And externally, developers who chose to work with our API will reap the benefits from using an API that works seamlessly with the most popular API tools, interactive documentation along with client libraries in many languages. Stay tuned for it’s release!
+I started in OnePageCRM about four months ago. In that time I have mostly being working on our API, adding cool new features and getting a shiny new version of our documentation ready for release. I’ve come to realize that APIs are entire products in themselves. Recently I’ve been updating our API documentation to the OpenAPI 3.0 spec. This specification defines a language agnostic interface description for REST APIs and has a whole host of benefits both internally and externally. Internally, it will allow us to generate entire server stubs and client libraries in basically every programming language with a few keystrokes and makes it easier to maintain our documentation going forward. And externally, developers who chose to work with our API will reap the benefits from using an API that works seamlessly with the most popular API tools, interactive documentation along with client libraries in many languages. Stay tuned for it’s release!
 
 So back to my mini coding challenge; I’m going to explain how I used the OnePageCRM API to do something cool via the command line. Developers are supposed to be a creative bunch, right? So I started thinking what is the craziest, most "<i>off the wall</i>" thing I could do with the OnePageCRM API? 
 
 My initial, far too crazy idea is a <b>space age</b> headset for hands free CRM on the go! We can use our CRM while sitting at our computers or tapping at our phones but what about all those valuable face to face meetings? I know this is a crazy idea but lets run with it for the purposes of my mini coding challenge.
 
-
 My crazy hypothetical system is complete with cameras that use facial recognition services to determine who we are talking to and microphones using speech to text services to record our interactions. Perhaps fancy semantic analysis services are used to summarize and extract concise meaningful information from our conversations. All of this data would be fed into OnepageCRM using, you guessed it, our API. If you’re talking with your mother and she reminds you that “Dads birthday is next Friday” then an intelligent system could theoretical add a "Next Action" in OnePageCRM to call Dad on Friday. 
 
 Back to reality for a second. All of the above is actually starting to become possible for a number of reasons.
 
-<br>1) Literally everything has an API. If a web company is building an application but not building an API then they are falling behind. Not having an API severely limits how people (and machines!) can interact with your service. To go back to my space age CRM example for a second. If someone really wanted to create a contact in OnePageCRM to be triggered by a camera’s facial recognition software then they can. Why limit people to clicking buttons?
+1) Literally everything has an API. If a web company is building an application but not building an API then they are falling behind. Not having an API severely limits how people (and machines!) can interact with your service. To go back to my space age CRM example for a second. If someone really wanted to create a contact in OnePageCRM to be triggered by a camera’s facial recognition software then they can. Why limit people to clicking buttons?
 
-<br>2) When I say that everything will have an API, I am not exaggerating that much. The Amazons and Googles of the world are building machine learning, big data and artificial intelligence systems that developers can programmatically interface with. We don't need to spend months of time and millions of dollars (or an afternoon on reddit) collecting cats pictures in order to train a computer to recognize a cat. Nor do we need to spend months building deep neural networks in order to do fancy speech recognition. In fact we don't even need to know how any of that works. Google has done the heavy lifting for us!
+2) When I say that everything will have an API, I am not exaggerating that much. The Amazons and Googles of the world are building machine learning, big data and artificial intelligence systems that developers can programmatically interface with. We don't need to spend months of time and millions of dollars (or an afternoon on reddit) collecting cats pictures in order to train a computer to recognize a cat. Nor do we need to spend months building deep neural networks in order to do fancy speech recognition. In fact we don't even need to know how any of that works. Google has done the heavy lifting for us!
     
-Let me set the scene for my mini code challenge. I will give myself one evening to build as much of my crazy spaceage CRM system as I can with the constraint that I must write as little code as possible and rely almost totally on web services. Because I have such a short time-frame, I am not going to worry about making GUIs or writing ‘correct’ code. Once I get some proof of concept feature working via the command line and can get a result back into my OnePageCRM account, I will be very happy.
+Let me set the scene for my mini code challenge. I will give myself one evening to build as much of my crazy space age CRM system as I can with the constraint that I must write as little code as possible and rely almost totally on web services. Because I have such a short time-frame, I am not going to worry about making GUIs or writing ‘correct’ code. Once I get some proof of concept feature working via the command line and can get a result back into my OnePageCRM account, I will be very happy.
 
-Ok. Enough talk. See you in few hours....
+Ok. Enough talk. See you in few hours...
 
 ### Mini Hackathon - the results!
 
@@ -41,7 +40,7 @@ So the bad news is I only managed to write six lines of code in the last 5 ish h
 
 <b>Feature 1:</b> Adding a note in OnePageCRM via Speech Recognition
 
-After trying out a few Speech Recognition tools I signed up to <a href="https://cloud.google.com/" target="_blank">Google Cloud Platform</a> which gives me €300 free credit. Perfect! Google’s Cloud platform is a suite of AI, big data, analytics and infrastructure tools for basically everything. For my sample data I grabbed one of OnePageCRM’s YouTube videos and extracted out a .flac file from it. After following <a href="https://cloud.google.com/speech-to-text/docs/quickstart-gcloud" target="_blank">this </a> quickstart guide.
+After trying out a few Speech Recognition tools I signed up to <a href="https://cloud.google.com/" target="_blank">Google Cloud Platform</a> which gives me €300 free credit. Perfect! Google’s Cloud platform is a suite of AI, big data, analytics and infrastructure tools for basically everything. For my sample data I grabbed one of OnePageCRM’s YouTube videos and extracted out a .flac file from it. After following <a href="https://cloud.google.com/speech-to-text/docs/quickstart-gcloud" target="_blank">this</a> quickstart guide.
 I could then convert an audio file to text using just one line of code (a single request to Google)! <a href="https://www.youtube.com/watch?v=VIQAHfY4VwY" target="_blank">Here</a> is the video I sampled from (it’s our GDPR webinar, you should watch it!) and this was the output
 
 <div class="text-align: center">
@@ -58,7 +57,7 @@ We can do this by interacting with the notes sub-endpoint.
 <a href="https://app.onepagecrm.com/api/v3/contacts/5b322ca19007ba2289b3c931/notes.json" target="_blank">https://app.onepagecrm.com/api/v3/contacts/5b322ca19007ba2289b3c931/notes.json</a>. 
 In typical RESTful fashion, a `GET` request will display all our notes for this contact while a `POST` request will create a new note. Notice that in this request I have hard coded in the contact id. You can find Jane Doe’s id by making a `GET` request to the contacts endpoint.
 
-Here is the contents of a shell file that automates this entire process from audio file to Note in OnePageCRM which I have saved as `speech_to_onepagecrm.sh`. Note that I am using CURL here but you could use your prefered way of interacting with web services or even one of our client libraries.
+Here is the contents of a shell file that automates this entire process from audio file to Note in OnePageCRM which I have saved as `speech_to_onepagecrm.sh`. Note that I am using CURL here but you could use your preferred way of interacting with web services or even one of our client libraries.
 
 <div class="text-align: center">
     <img src="/img/api-tutorial/speech_sh.png" alt="" class="img-responsive"
