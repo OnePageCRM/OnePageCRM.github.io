@@ -1,0 +1,17 @@
+<div class="pagination-wrapper">
+    <nav class="pagination w-100" role="navigation">
+        <div class="w-25 text-left">
+            {% if paginator.previous_page %}
+            <a class="older-posts" href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newest Posts </a>
+            {% endif %}
+        </div>
+        <div class="w-50 float-left">
+            <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        </div>
+        <div class="w-25 float-right text-right">
+            {% if paginator.next_page %}
+            <a class="older-posts" href="{{ paginator.next_page_path }}">Older Posts <span aria-hidden="true">&rarr;</span></a>
+            {% endif %}
+        </div>
+    </nav>
+</div>

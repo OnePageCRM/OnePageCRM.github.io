@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Blog
+paginate:
+  category: blog
+  per_page: 6
+  limit: false
 ---
 
 <!-- Start Slider Area -->
@@ -24,9 +28,9 @@ title: Blog
   <div class="container">
 	  <div class="row">
 	    <div class="col-md-8">
-      {% for post in site.categories["blog"] %}
+      {% for post in paginator.posts %}
       {% assign author = site.authors[post.author] %}
-		  <div class="tag-post-wrapper"> 
+		  <div class="tag-post-wrapper">
 		    <div class="category-post py-3">
 		      <div class="category-post-info">
 				<div class="blog-image">
@@ -39,7 +43,7 @@ title: Blog
             </h3>
             {% assign author = site.data.authors[post.author] %}
             <p><span class="author">{{ author.name }}</span>, <span class="date">{{ post.date | date_to_string }}</span></p>
-            
+
             <div class="text-justify">
               {{ post.excerpt }}
             </div>
@@ -52,6 +56,7 @@ title: Blog
 		    </div>
 		  </div>
 	    {% endfor %}
+        {% include pagination.html %}
       </div>
       <div class="col-md-4">
         <div class="sidebar-contents">
