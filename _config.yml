@@ -100,3 +100,11 @@ authors:
     github: ehmatt
     description: "Matt is a software engineer at OnePageCRM"
     image: '/img/matt.jpg'
+  kevin:
+    name: Kevin Farrell
+    display_name: Kevin
+    email: kevinf@onepagecrm.com
+    github: kevGalway
+    description: "Kevin is a software engineer at OnePageCRM"
+    image: '/img/kevin.jpg'
+
