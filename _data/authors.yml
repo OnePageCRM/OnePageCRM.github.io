@@ -94,5 +94,12 @@ matt:
     bio: |
         Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
     image: '/assets/images/authors/matt.jpg'
+kevin:
+    name: Kevin Farrell
+    display_name: Kevin
+    email: kevinf@onepagecrm.com
+    github: kevGalway
+    bio: "Kevin is a software engineer at OnePageCRM"
+    image: '/assets/images/authors/kevin.jpg'
 
   

@@ -104,6 +104,13 @@ permalink:              pretty
 #    github: leonardreidy
 #    description: "Leonard is a software engineer at OnePageCRM"
 #    image: '/assets/images/authors/leonard.jpg'
+#  matt:
+#    name: Matt Moran
+#    display_name: Matt
+#    email: matt@onepagecrm.com
+#    github: ehmatt
+#    description: "Matt is a software engineer at OnePageCRM"
+#    image: '/img/matt.jpg'
 =======
 authors:
   peter:
@@ -181,4 +188,12 @@ authors:
     github: ehmatt
     description: "Matt is a software engineer at OnePageCRM"
     image: '/img/matt.jpg'
+  kevin:
+    name: Kevin Farrell
+    display_name: Kevin
+    email: kevinf@onepagecrm.com
+    github: kevGalway
+    description: "Kevin is a software engineer at OnePageCRM"
+    image: '/img/kevin.jpg'
+
 >>>>>>> master
