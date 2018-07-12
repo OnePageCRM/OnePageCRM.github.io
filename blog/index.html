@@ -36,8 +36,9 @@ title: Blog
                 </div>
             <h3 class="blog-post-title">
               <a href="{{ post.url }}" target="_blank" title="{{ post.title }}"> {{ post.title }}</a>
-            </h3> 
-            <p><span class="author">{{ author.name }}</span> <span class="date">{{ post.date | date_to_string }}</span></p>
+            </h3>
+            {% assign author = site.data.authors[post.author] %}
+            <p><span class="author">{{ author.name }}</span>, <span class="date">{{ post.date | date_to_string }}</span></p>
             
             <div class="text-justify">
               {{ post.excerpt }}
