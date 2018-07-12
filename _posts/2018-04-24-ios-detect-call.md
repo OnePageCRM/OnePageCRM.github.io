@@ -3,7 +3,7 @@ layout: post
 title: "Detecting a call with CallKit"
 slug: "ios-detect-call"
 category: blog
-post_image: "/assets/images/articles/onepagecrm_blog_detecting_CallKit.png"
+post_image: "/assets/images/articles/onepagecrm_blog_detecting_CallKit.gif"
 author: elano
 date: 2018-05-24 09:00:00
 excerpt: "OnePageCRM automatically opens a call result form, following the end of a phone call, so users can log it easily in the CRM."

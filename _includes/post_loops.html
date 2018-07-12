@@ -1,16 +1,14 @@
    
    {% for post in paginator.posts %}
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="blog-item post tag-video">
             <div class="video-post-format post tag-image ">
                 
                 <div class="blog-image">
                   {% if post.post_image %}
                       <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
-                      {% else %}
-                      <a href="{{ post.url }}"><img src="/assets/images/default.jpg" alt="{{ post.title }}"></a>
-                    {% endif %}
+                  {% endif %}
                 </div>
                 
                 {% if post.video_url %}

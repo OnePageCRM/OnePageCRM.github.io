@@ -659,7 +659,7 @@ canvas {
     text-align: center;
 }
 .blog-excerpt {
-    min-height: 140px;
+    /*min-height: 140px;*/
     color: #444;
     font-size: 16px;
     line-height: 28px;
@@ -685,7 +685,7 @@ h3.blog-post-title {
 	    margin-bottom: 30px;
 }
 .blog-image {
-    max-height: 300px;
+    /*max-height: 300px;*/
 }
 .blog-image:after {
     width: 30px;
@@ -727,6 +727,10 @@ h3.blog-post-title {
 .blog-image a {
     position: relative;
     display: inline-block;
+	width: 100%;
+}
+.blog-image a img{
+	width: 100%;
 }
 
 .blog-image a:before {

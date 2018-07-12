@@ -32,8 +32,6 @@ title: Blog
 				<div class="blog-image">
                   {% if post.post_image %}
                       <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
-                      {% else %}
-                      <a href="{{ post.url }}"><img src="/assets/images/default.jpg" alt="{{ post.title }}"></a>
                     {% endif %}
                 </div>
             <h3 class="blog-post-title">

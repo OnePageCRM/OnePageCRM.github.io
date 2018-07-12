@@ -3,7 +3,6 @@ layout: post
 title: "Organizations for Mobile"
 slug: "organizations-for-mobile"
 category: blog
-post_image: "/assets/images/Dev Blog_White.jpg"
 author: elano
 date: 2017-05-05 15:00:00
 ---
