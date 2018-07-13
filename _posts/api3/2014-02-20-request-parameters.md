@@ -150,38 +150,14 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
 <br/>
 <table class="table table-striped table-bordered">
   <thead>
-    <tr>
-      <td>Type</td>
-      <td>Name</td>
-      <td>Description</td>
-    </tr>
+    <tr><th>Type</th><th>Name</th><th>Description</th></tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">date_filter</code></td>
-      <td>Filter returned data by a particular field when combined with since and until.</td>
-    </tr>
-    <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">since</code></td>
-      <td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td>
-    </tr>
-    <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">until</code></td>
-      <td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td>
-    </tr>
-    <tr>
-      <td class="nowrap"><code class="redtext">time</code></td>
-      <td class="nowrap"><code class="bluetext">unmodified_since</code></td>
-      <td>Return only records that were unmodified since specified time.</td>
-    </tr>
-    <tr>
-      <td><code class="redtext">time</code></td>
-      <td><code class="bluetext">modified_since</td>
-      <td>Return only records that were modified since specified time.</td>
-    </tr>
+    <tr><td><code class="redtext">time</code></td><td><code class="bluetext">date_filter</code></td><td>Filter returned data by a particular field when combined with since and until.</td></tr>
+    <tr><td><code class="redtext">time</code></td><td><code class="bluetext">since</code></td><td>Return resources with dates in the provided date_filter parameter since this time. Otherwise it will return resources that were modified since this time.</td></tr>
+    <tr><td><code class="redtext">time</code></td><td><code class="bluetext">until</code></td><td>Return resources with dates in the provided date_filter parameter until this time. Otherwise it will return resources that were modified until this time.</td></tr>
+    <tr><td class="nowrap"><code class="redtext">time</code></td><td class="nowrap"><code class="bluetext">unmodified_since</code></td><td>Return only records that were unmodified since specified time.</td></tr>
+    <tr><td><code class="redtext">time</code></td><td><code class="bluetext">modified_since</td><td>Return only records that were modified since specified time.</td></tr>
   </tbody>
 </table>
 
