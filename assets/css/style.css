@@ -685,7 +685,7 @@ h3.blog-post-title {
 	    margin-bottom: 30px;
 }
 .blog-image {
-    /*max-height: 300px;*/
+    max-height: 555px;
 }
 .blog-image:after {
     width: 30px;
