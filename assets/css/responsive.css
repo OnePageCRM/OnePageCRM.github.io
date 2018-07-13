@@ -210,4 +210,8 @@
 	code{
 		word-wrap: break-word;
 	}
+	.slider-wrapper.height-400,
+	.slider-wrapper.height-350{
+		height: 200px;
+	}
 }
