@@ -93,7 +93,7 @@ The API key as received from the API is Base-64 encoded, so it has to be decoded
 
 <!-- Tab panes -->
 <div class="tab-content">
-<div class="tab-pane fade in active" id="ruby">
+<div class="tab-pane fade in active show" id="ruby">
     <script src="https://gist.github.com/JohnMaguir/d6551ebe68317da1f1ff41a1abf0018c.js"></script>
   </div>
   <div class="tab-pane fade" id="objectivec">

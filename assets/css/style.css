@@ -1652,5 +1652,51 @@ textarea:-moz-placeholder {
     font-style: italic;
 }
 .dev-table pre code{
-	white-space: pre-wrap;
+	/*white-space: pre-wrap;*/
+}
+code {
+  white-space: normal;
+}
+code.inline{
+-ms-word-break: break-all;
+    word-break: break-all;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+word-wrap: break-word;
+max-width:100%;
+display: block;
+white-space: normal;
+}
+
+/* quick fixes */
+/* line 78, ../_sass/bootstrap/_navs.scss */
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+/* line 84, ../_sass/bootstrap/_navs.scss */
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  padding: 4px 10px;
+}
+/* line 89, ../_sass/bootstrap/_navs.scss */
+.nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+/* line 98, ../_sass/bootstrap/_navs.scss */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li > a.active,
+.nav-tabs > li > a.active:hover,
+.nav-tabs > li > a.active:focus{
+  color: #555555;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
 }

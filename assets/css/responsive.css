@@ -185,7 +185,7 @@
 	.dev-table{
 		width: 100% !important;
 	}
-	.dev-table,
+	/*.dev-table,
 	.dev-table tr,
 	.dev-table td{
 		display:block;
@@ -202,7 +202,7 @@
 	}
 	.dev-table .mobile-th{
 		display: block;
-	}
+	}*/
 	.dev-table caption{
 		padding-left: 15px;
 		caption-side: top;
