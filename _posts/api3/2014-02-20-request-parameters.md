@@ -147,6 +147,7 @@ With <code class="bluetext">partial</code> flag set, If you don't provide a fiel
 
 <h3 id="limiting-listings-by-time"><span class="label label-default">GET</span> Limiting Listings By Time </h3>
 <p>When fetching collections, you can make them only return records that were modified in a given time range.</p>
+<br/>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
