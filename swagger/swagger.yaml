@@ -5091,7 +5091,7 @@ paths:
         - $ref: '#/components/parameters/query_not_linked_with'
         - $ref: '#/components/parameters/query_custom_field_id'
         - $ref: '#/components/parameters/query_custom_field_value'
-        - $ref: '#/components/parameters/query_sort_by'
+        - $ref: '#/components/parameters/query_contacts_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
@@ -9448,7 +9448,21 @@ components:
         enum:
           - created_at
           - modified_at
-          - position
+    query_contacts_sort_by:
+      name: sort_by
+      in: query
+      description: >-
+        Specify field by which to order the results (use in conjunction with `order`)
+      schema:
+        type: string
+        enum:
+          - created_at
+          - modified_at
+          - first_name
+          - last_name
+          - company_name
+          - name
+          - search_meta
     query_per_page:
       name: per_page
       in: query
