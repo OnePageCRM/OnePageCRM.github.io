@@ -4507,9 +4507,6 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-
-
-
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4582,9 +4579,6 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-
-
-
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4657,9 +4651,6 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-
-
-
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4743,9 +4734,6 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-
-
-
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4766,19 +4754,7 @@ paths:
         - Companies
       parameters:
         - $ref: '#/components/parameters/Path_company_id'
-        - name: sort_by
-          in: query
-          description: Sort results. **Use in conjunction with 'order'.**
-          schema:
-            type: string
-            enum:
-              - created_at
-              - modified_at
-              - first_name
-              - last_name
-              - company_name
-              - name
-              - search_meta
+        - $ref: '#/components/parameters/query_contacts_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
