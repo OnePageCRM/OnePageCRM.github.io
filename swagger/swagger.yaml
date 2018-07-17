@@ -3017,7 +3017,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a deal
+      summary: Create a new deal
       description: ''
       tags:
         - Deals
@@ -3099,7 +3099,7 @@ paths:
           $ref: '#/components/responses/500'
   '/deals/{id}':
     get:
-      summary: Get a deal
+      summary: Get a specific deal
       description: ''
       tags:
         - Deals
@@ -3141,7 +3141,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a deal
+      summary: Update a specific deal
       description: ''
       tags:
         - Deals
@@ -3223,8 +3223,8 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a deal
-      description: 'Only users with the delete_deals permission can delete deals'
+      summary: Delete a specific deal
+      description: Only users with the delete_deals permission can delete deals
       tags:
         - Deals
       parameters:
