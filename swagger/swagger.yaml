@@ -356,7 +356,7 @@ tags:
 paths:
   /bootstrap:
     get:
-      summary: Get useful information about the logged user's account
+      summary: Get useful information about the logged API user's account
       description: >-
         This includes the user settings, properties, privileges as well as generic account details.
       parameters: []
@@ -461,7 +461,7 @@ paths:
                         example: wbJBo+odEikiDOjdnL+P+0fl+Dbgk84747jFtyOZghs=
   /users:
     get:
-      summary: Get list of users on the logged user's account
+      summary: Get the list of users (for the logged API user's account)
       tags:
         - Users
       parameters: []
@@ -2857,7 +2857,7 @@ paths:
           $ref: '#/components/responses/500'
   /call_results:
     get:
-      summary: Get a list of call results
+      summary: Get the list of call results (for the logged API user's account)
       description: >-
         Get a list of call results with counts of how many calls resulted in
         each type of result for you, total and for your team
@@ -3988,7 +3988,7 @@ paths:
   '/actions/{id}/promote':
     put:
       summary: >-
-        Specify exactly which action is to be promoted as the logged user's next action
+        Specify exactly which action is to be promoted as the logged API user's next action
       description: >-
         To be used when an action is created or updated to ensure most urgent action is marked as next action.
         <br>
@@ -4128,7 +4128,7 @@ paths:
           $ref: '#/components/responses/500'
   /filters:
     get:
-      summary: Get a list of custom filters for this account
+      summary: Get the list of custom filters (for the logged API user's account)
       description: ''
       tags:
         - Filters
