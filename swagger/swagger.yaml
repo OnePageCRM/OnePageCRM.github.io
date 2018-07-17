@@ -1936,7 +1936,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a predifined action
+      summary: Create a new predifined action
       description: ''
       tags:
         - Predefined Actions
@@ -1986,9 +1986,9 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/predefined_actions/{action_id}':
+  '/predefined_actions/{id}':
     get:
-      summary: Get a predefined action
+      summary: Get a specific predefined action
       description: ''
       tags:
         - Predefined Actions
@@ -2030,7 +2030,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a Predefined Action
+      summary: Update a specific predefined action
       description: ''
       tags:
         - Predefined Actions
@@ -2082,11 +2082,12 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a predefined action
+      summary: Delete a specific predefined action
       description: ''
       tags:
         - Predefined Actions
       parameters:
+        # TODO: change param to be '#/components/parameters/path_predefined_actions_id'
         - $ref: '#/components/parameters/Predefined_action_id'
       responses:
         '200':
@@ -8953,7 +8954,7 @@ components:
         type: string
         minimum: 1
     Predefined_action_id:
-      name: action_id
+      name: id
       in: path
       required: true
       description: Predefined Action ID
