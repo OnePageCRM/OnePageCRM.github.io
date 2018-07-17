@@ -613,7 +613,7 @@ paths:
           $ref: '#/components/responses/500'
   /lead_sources:
     get:
-      summary: Get of a list of lead sources
+      summary: Get the list of lead sources (for the logged API user's account)
       tags:
         - Lead Sources
       parameters: []
@@ -653,7 +653,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a lead source
+      summary: Create a new lead source
       tags:
         - Lead Sources
       parameters: []
@@ -700,7 +700,7 @@ paths:
           $ref: '#/components/responses/500'
   '/lead_sources/{id}':
     get:
-      summary: Get a lead source
+      summary: Get a specific lead source
       tags:
         - Lead Sources
       parameters:
@@ -739,7 +739,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a lead source
+      summary: Update a specific lead source
       tags:
         - Lead Sources
       parameters:
@@ -786,7 +786,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a lead source
+      summary: Delete a specific lead source
       tags:
         - Lead Sources
       parameters:
