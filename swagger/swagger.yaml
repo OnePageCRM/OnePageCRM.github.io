@@ -3590,7 +3590,9 @@ paths:
   /actions:
     get:
       summary: Get a list of actions
-      description: ''
+      description: >-
+        ASAP first, then dated actions ordered by due date (overdue first),
+        followed by waiting for (blocked) and finally queued actions (without any date).
       tags:
         - Actions
       parameters:
@@ -3603,14 +3605,7 @@ paths:
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
         - $ref: '#/components/parameters/query_modified_since'
-        - name: sort_by
-          in: query
-          description: Sort results. **Use in conjunction with 'order'.**
-          schema:
-            type: string
-            enum:
-              - created_at
-              - modified_at
+        - $ref: '#/components/parameters/query_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
@@ -3670,7 +3665,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a new Action for a contact
+      summary: Create a new action
       description: ''
       tags:
         - Actions
@@ -3732,7 +3727,7 @@ paths:
           $ref: '#/components/responses/500'
   '/actions/{id}':
     get:
-      summary: Get a single action
+      summary: Get a specific action
       description: ''
       tags:
         - Actions
@@ -3774,7 +3769,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update an action
+      summary: Update a specific action
       description: ''
       tags:
         - Actions
@@ -3843,7 +3838,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete an action
+      summary: Delete a specific action
       description: You can only delete actions which are queued or have been marked as done
       tags:
         - Actions
@@ -4681,15 +4676,7 @@ paths:
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
         - $ref: '#/components/parameters/query_modified_since'
-        # TODO: change to: $ref: '#/components/parameters/query_sort_by'
-        - name: sort_by
-          in: query
-          description: Sort results. **Use in conjunction with 'order'.**
-          schema:
-            type: string
-            enum:
-              - created_at
-              - modified_at
+        - $ref: '#/components/parameters/query_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
@@ -6032,15 +6019,7 @@ paths:
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
         - $ref: '#/components/parameters/query_modified_since'
-        # TODO change to 'query_actions_sort_by'
-        - name: sort_by
-          in: query
-          description: Sort results. **Use in conjunction with 'order'.**
-          schema:
-            type: string
-            enum:
-              - created_at
-              - modified_at
+        - $ref: '#/components/parameters/query_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
