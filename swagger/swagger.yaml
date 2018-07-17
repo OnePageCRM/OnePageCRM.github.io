@@ -5313,7 +5313,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}':
     get:
-      summary: Get a Contact
+      summary: Get a specific contact
       description: ''
       tags:
         - Contacts
@@ -5371,7 +5371,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a contact
+      summary: Update a specific contact
       description: ''
       tags:
         - Contacts
@@ -5507,7 +5507,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a contact
+      summary: Delete a specific contact
       description: You can only delete contacts if you have the delete_contacts permission
       tags:
         - Contacts
@@ -5584,7 +5584,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/deals':
     get:
-      summary: Get all deals for a contact
+      summary: Get all deals for a specific contact
       description: ''
       tags:
         - Contacts
@@ -5664,7 +5664,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a deal for a contact
+      summary: Create a deal for a specific contact
       description: ''
       tags:
         - Contacts
@@ -5747,7 +5747,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/notes':
     get:
-      summary: 'Get all notes for a contact '
+      summary: Get all notes for a specific contact
       description: ''
       tags:
         - Contacts
@@ -5820,7 +5820,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a note for a contact
+      summary: Create a note for a specific contact
       description: ''
       tags:
         - Contacts
@@ -5879,7 +5879,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/calls':
     get:
-      summary: 'Get all calls with a contact '
+      summary: Get all calls for a specific contact
       description: ''
       tags:
         - Contacts
@@ -5952,7 +5952,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a call with a contact
+      summary: Create a call for a specific contact
       description: ''
       tags:
         - Contacts
@@ -6015,7 +6015,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/actions':
     get:
-      summary: Get a list of actions for a contact
+      summary: Get all actions for a specific contact
       description: ''
       tags:
         - Contacts
@@ -6030,6 +6030,7 @@ paths:
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
         - $ref: '#/components/parameters/query_modified_since'
+        # TODO change to 'query_actions_sort_by'
         - name: sort_by
           in: query
           description: Sort results. **Use in conjunction with 'order'.**
@@ -6097,7 +6098,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create an action with a contact.
+      summary: Create an action for a specific contact
       description: ''
       tags:
         - Contacts
@@ -6158,8 +6159,8 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/email_messages':
     get:
-      summary: "Get all email messages with a contact"
-      description: ""
+      summary: Get all email messages for a specific contact
+      description: ''
       tags:
         - "Contacts"
       parameters:
@@ -6222,10 +6223,9 @@ paths:
           $ref: "#/components/responses/409"
         500:
           $ref: "#/components/responses/500"
-
   '/contacts/{id}/contact_photo':
     post:
-      summary: 'Add a new contact photo '
+      summary: Add a new contact photo
       description: >
         Contact photos can be uploaded using the API. It takes a parameter
         ‘image’, which must be a Base64 encoded string. <br>
@@ -6279,7 +6279,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: 'Update a contacts photo '
+      summary: Update a contact's photo
       description: >
         Contact photos can be uploaded using the API. It takes a parameter
         ‘image’, which must be a Base64 encoded string. <br>
@@ -6378,7 +6378,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/assign_tag/{tag_name}':
     put:
-      summary: Assign a tag to a contact
+      summary: Assign a tag to a specific contact
       description: ''
       tags:
         - Contacts
@@ -6450,7 +6450,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/unassign_tag/{tag_name}':
     put:
-      summary: Remove a tag from a contact
+      summary: Remove a tag from a specific contact
       description: ''
       tags:
         - Contacts
@@ -6522,7 +6522,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/change_status/{status_id}':
     put:
-      summary: Change the status of a contact
+      summary: Change the status of a specific contact
       description: ''
       tags:
         - Contacts
@@ -6566,7 +6566,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/change_owner/{owner_id}':
     put:
-      summary: Change the owner of a contact
+      summary: Change the owner of a specific contact
       description: ''
       tags:
         - Contacts
@@ -6610,7 +6610,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/star':
     put:
-      summary: Star this contact
+      summary: Apply a star to a specific contact
       description: ''
       tags:
         - Contacts
@@ -6653,7 +6653,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/unstar':
     put:
-      summary: Remove star from this contact
+      summary: Remove star from a specific contact
       description: ''
       tags:
         - Contacts
@@ -6696,7 +6696,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/close_sales_cycle':
     put:
-      summary: Close the sales cycle for this contact
+      summary: Close the sales cycle for a specific contact
       description: >-
         Add an optional closing comment
         with the comment field in the request body. Can not close sales cycle if
@@ -6750,7 +6750,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/reopen_sales_cycle':
     put:
-      summary: Reopen the sales cycle for this contact
+      summary: Reopen the sales cycle for a specific contact
       description: ''
       tags:
         - Contacts
@@ -6793,7 +6793,7 @@ paths:
           $ref: '#/components/responses/500'
   '/contacts/{id}/split':
     put:
-      summary: Split this contact from their company
+      summary: Split a contact from their current company (and potentially to a new company)
       description: >-
         Send the field company_name in the
         body with the new company name or leave blank to not associated the
@@ -6849,7 +6849,7 @@ paths:
 
   '/contacts/{id}/google_contacts':
     post:
-      summary: Save a contact to google contacts
+      summary: Save a specific OnePageCRM contact to Google Contacts
       description: >-
         OnePageCRM must be authorised to connect to Google Contacts
         in order to do this action. Please visit https://www.onepagecrm.com/app/google_contacts for more information
