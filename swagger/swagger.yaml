@@ -1415,7 +1415,7 @@ paths:
           $ref: '#/components/responses/500'
   /custom_fields:
     get:
-      summary: Get a list of custom fields
+      summary: Get the list of custom fields (for the logged API user's account)
       description: ''
       tags:
         - Custom Fields
@@ -1480,7 +1480,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a custom field
+      summary: Create a new custom field
       description: Only admins can create custom fields
       tags:
         - Custom Fields
@@ -1534,7 +1534,7 @@ paths:
           $ref: '#/components/responses/500'
   '/custom_fields/{id}':
     get:
-      summary: Get a custom field
+      summary: Get a specific custom field
       description: ''
       tags:
         - Custom Fields
@@ -1576,7 +1576,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a custom field
+      summary: Update a specific custom field
       description: Only admins can update custom fields
       tags:
         - Custom Fields
@@ -1630,7 +1630,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: delete a custom field
+      summary: Delete a specific custom field
       description: Only admins can delete custom fields
       tags:
         - Custom Fields
@@ -1891,7 +1891,7 @@ paths:
           $ref: '#/components/responses/500'
   /predefined_actions:
     get:
-      summary: Get a list of predefined actions
+      summary: Get the list of predefined actions (for the logged API user's account)
       description: ''
       tags:
         - Predefined Actions
