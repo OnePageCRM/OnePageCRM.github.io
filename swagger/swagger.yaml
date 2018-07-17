@@ -6976,8 +6976,9 @@ paths:
           $ref: '#/components/responses/500'
   /action_stream:
     get:
-      summary: "Get the contacts on the Action Stream. The Action Stream is the default view in the OnePageCRM web application"
-      description: "If tidy stream is enabled, contacts without actions will not appear in your action stream"
+      summary: Get a list of contacts prioritized by their next action
+      description: >-
+        Returns action stream for logged API user by default
       tags:
         - "Action Stream"
       parameters:
@@ -7066,8 +7067,9 @@ paths:
           $ref: "#/components/responses/500"
   /team_stream:
     get:
-      summary: "Returns all contacts on the team stream, sorted the OnePageCRM action stream way"
-      description: "If tidy stream is enabled, Contacts without actions will not appear in the team stream"
+      summary: Get a list of contacts prioritized by their next action
+      description: >-
+        Returns action stream for entire account in a single list by default
       tags:
         - "Team Stream"
       parameters:
