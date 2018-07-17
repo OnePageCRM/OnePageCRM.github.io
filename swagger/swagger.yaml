@@ -2368,7 +2368,7 @@ paths:
           $ref: '#/components/responses/500'
   '/notes/{id}/attachments':
     post:
-      summary: Create attachment and assign it to an existing note.
+      summary: Create attachment and assign it to an existing note
       tags:
         - Notes
       description: >-
@@ -2748,7 +2748,7 @@ paths:
           $ref: '#/components/responses/500'
   '/calls/{id}/attachments':
     post:
-      summary: 'Create attachment and assign it to an existing call '
+      summary: Create attachment and assign it to an existing call
       description: >-
        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3. <br>
        See attachments/s3_form for details. <br>
@@ -3246,7 +3246,7 @@ paths:
           $ref: '#/components/responses/500'
   '/deals/{id}/attachments':
     post:
-      summary: Create attachment and assign it to an existing deal.
+      summary: Create attachment and assign it to an existing deal
       description: >-
        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
        See attachments/s3_form for details. <br>
@@ -3356,12 +3356,12 @@ paths:
           $ref: '#/components/responses/500'
   /attachments:
     post:
-      summary: Create an attachment
+      summary: Create a new attachment
       description: >-
-        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
-        See attachments/s3_form for details. <br>
-        After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
-
+        Before creating an attachment, the file should be uploaded to S3. <br>
+        Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
+        Following successful upload to S3, files can be attached to Deals, Notes, Calls via this endpoint. <br>
+        File attachments are supported by Deals, Notes and Calls. <br>
       tags:
         - Attachments
       parameters: []
@@ -3451,7 +3451,7 @@ paths:
           $ref: '#/components/responses/500'
   '/attachments/{id}':
     delete:
-      summary: Delete an attachment
+      summary: Delete a specific attachment
       description: ''
       tags:
         - Attachments
@@ -3475,16 +3475,14 @@ paths:
   /attachments/s3_form:
     get:
       summary: >-
-        Get a pre-authorized S3 upload form. Use it to upload a file on the
-        client side.
+        Get a pre-authorized S3 upload form (use to upload a file on the client side)
       description: >-
         To use the form in the response to upload an attachment to s3 you must make a post request to url specified in the response. <br>
         In addition the following steps must be taken. <br>
         Include all the params under 'fields' in the post request to s3. <br>
         The 'key' field must be constructed and be of the following form: {contact_id}/{timestamp}/{filename} <br>
-        'filename' field must be present and the same as the filename specified at the end of the key field<br>
-        'file' is the file to upload<br>
-        <br>
+        'filename' field must be present and the same as the filename specified at the end of the key field <br>
+        'file' is the file to upload <br><br>
         After uploading the attachment to s3, you can then link this attachment to notes/calls/deals via the post /attachments method using the key param
 
       tags:
