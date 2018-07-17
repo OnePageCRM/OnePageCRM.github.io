@@ -1030,7 +1030,7 @@ paths:
           $ref: '#/components/responses/500'
   /deal_fields:
     get:
-      summary: Get a list of deal fields
+      summary: Get the list of deal fields (for the logged API user's account)
       description: ''
       tags:
         - Deal Fields
@@ -1096,7 +1096,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a deal field
+      summary: Create a new deal field
       description: Only admins can create deal fields
       tags:
         - Deal Fields
@@ -1150,7 +1150,7 @@ paths:
           $ref: '#/components/responses/500'
   '/deal_fields/{id}':
     get:
-      summary: Get a deal field
+      summary: Get a specific deal field
       description: ''
       tags:
         - Deal Fields
@@ -1192,7 +1192,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a deal field
+      summary: Update a specific deal field
       description: Only admins can update deal fields
       tags:
         - Deal Fields
@@ -1245,7 +1245,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a deal field
+      summary: Delete a specific deal field
       description: Only admins can delete deal fields
       tags:
         - Deal Fields
