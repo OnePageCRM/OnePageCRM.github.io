@@ -1653,7 +1653,7 @@ paths:
           $ref: '#/components/responses/500'
   /company_fields:
     get:
-      summary: Get a list of company fields
+      summary: Get the list of company fields (for the logged API user's account)
       description: ''
       tags:
         - Company Fields
@@ -1718,7 +1718,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a company field
+      summary: Create a new company field
       description: Only admins can create company fields
       tags:
         - Company Fields
@@ -1772,7 +1772,7 @@ paths:
           $ref: '#/components/responses/500'
   '/company_fields/{id}':
     get:
-      summary: Get a company field
+      summary: Get a specific company field
       description: ''
       tags:
         - Company Fields
@@ -1814,7 +1814,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a company field
+      summary: Update a specific company field
       description: Only admins can update company fields
       tags:
         - Company Fields
@@ -1868,7 +1868,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a company field
+      summary: Delete a specific company field
       description: Only admins can delete company fields
       tags:
         - Company Fields
