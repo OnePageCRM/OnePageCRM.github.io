@@ -461,7 +461,7 @@ paths:
                         example: wbJBo+odEikiDOjdnL+P+0fl+Dbgk84747jFtyOZghs=
   /users:
     get:
-      summary: Get a list of users on your team
+      summary: Get list of users on the logged user's account
       tags:
         - Users
       parameters: []
@@ -502,7 +502,7 @@ paths:
           $ref: '#/components/responses/500'
   '/users/{id}':
     get:
-      summary: Get information on a single user
+      summary: Get information on a specific user
       tags:
         - Users
       parameters:
@@ -543,7 +543,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a user
+      summary: Update a specific user
       description: >-
         You can update your own information. If you are an administrator
         you can edit your team members details. You can you can only update the
