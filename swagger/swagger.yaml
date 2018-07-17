@@ -2177,7 +2177,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Create a note
+      summary: Create a new note
       description: ''
       tags:
         - Notes
@@ -2240,7 +2240,7 @@ paths:
           $ref: '#/components/responses/500'
   '/notes/{id}':
     get:
-      summary: Get a note
+      summary: Get a specific note
       description: ''
       tags:
         - Notes
@@ -2282,7 +2282,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a note
+      summary: Update a specific note
       description: ''
       tags:
         - Notes
@@ -2345,7 +2345,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a note
+      summary: Delete a specific note
       description: ''
       tags:
         - Notes
@@ -2616,7 +2616,7 @@ paths:
           $ref: '#/components/responses/500'
   '/calls/{id}':
     get:
-      summary: Get a Call
+      summary: Get a specific call
       description: ''
       tags:
         - Calls
@@ -2658,7 +2658,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a Call
+      summary: Update a specific call
       description: ''
       tags:
         - Calls
@@ -2725,7 +2725,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a call
+      summary: Delete a specific call
       description: ''
       tags:
         - Calls
@@ -2750,10 +2750,9 @@ paths:
     post:
       summary: 'Create attachment and assign it to an existing call '
       description: >-
-       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
+       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3. <br>
        See attachments/s3_form for details. <br>
        After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
-
       tags:
         - Calls
       parameters:
