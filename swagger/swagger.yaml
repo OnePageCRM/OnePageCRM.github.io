@@ -7157,7 +7157,7 @@ paths:
           $ref: "#/components/responses/500"
   /webhooks:
     get:
-      summary: "Get a list of webhooks"
+      summary: Get all webhooks (associated with the logged API user's account)
       description:
       tags:
         - "Web Hooks"
@@ -7217,7 +7217,7 @@ paths:
           $ref: "#/components/responses/500"
   /webhooks/{id}:
     get:
-      summary: "Get info about a particular webhook"
+      summary: Get information about a specific webhook
       description: ""
       tags:
         - "Web Hooks"
@@ -7259,7 +7259,7 @@ paths:
         500: 
           $ref: "#/components/responses/500"
     delete:
-      summary: "Delete a webhook"
+      summary: Delete a specific webhook
       description: ""
       tags: 
         - "Web Hooks"
