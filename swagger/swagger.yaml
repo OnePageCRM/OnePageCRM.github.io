@@ -4256,13 +4256,14 @@ paths:
   /companies:
     get:
       summary: Get a list of companies
-      description: ''
+      description: Defaults sorting is company name alpha.
       tags:
         - Companies
       parameters:
         - $ref: '#/components/parameters/query_companies_name'
         - $ref: '#/components/parameters/query_phone'
         - $ref: '#/components/parameters/query_letter'
+        # TODO: change to: $ref: '#/components/parameters/query_companies_sort_by'
         - in: query
           name: sort_by
           description: Sort results. **Use in conjunction with 'order'.**
@@ -4332,7 +4333,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}':
     get:
-      summary: Get a company
+      summary: Get a specific company
       description: Get detailed info about a specific company
       tags:
         - Companies
@@ -4374,7 +4375,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a company
+      summary: Update a specific company
       description: >-
         When updating a company_field either the id or name and the value must be present
       tags:
@@ -4444,7 +4445,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/deals':
     get:
-      summary: Get a list of deals associated with a company
+      summary: Get deals associated with a specific company
       description: ''
       tags:
         - Companies
@@ -4521,7 +4522,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/calls':
     get:
-      summary: Get a list of calls associated with a company
+      summary: Get calls associated with a specific company
       description: ''
       tags:
         - Companies
@@ -4593,7 +4594,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/notes':
     get:
-      summary: Get a list of notes associated with a company
+      summary: Get notes associated with a specific company
       description: ''
       tags:
         - Companies
@@ -4665,7 +4666,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/actions':
     get:
-      summary: Get a list of actions associated with a company
+      summary: Get actions associated with a specific company
       description: ''
       tags:
         - Companies
@@ -4680,6 +4681,7 @@ paths:
         - $ref: '#/components/parameters/query_until'
         - $ref: '#/components/parameters/query_unmodified_since'
         - $ref: '#/components/parameters/query_modified_since'
+        # TODO: change to: $ref: '#/components/parameters/query_sort_by'
         - name: sort_by
           in: query
           description: Sort results. **Use in conjunction with 'order'.**
@@ -4748,7 +4750,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/linked_contacts':
     get:
-      summary: Get all contacts linked with a company
+      summary: Get contacts linked with a specific company
       description: ''
       tags:
         - Companies
@@ -4836,7 +4838,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
-      summary: Link a contact to a company
+      summary: Link a contact to a specific company
       description: >-
         A company is not allowed to have more than
         100 linked contacts. Can not link a contact within the same company
@@ -4913,7 +4915,7 @@ paths:
           $ref: '#/components/responses/500'
   '/companies/{id}/linked_contacts/{contact_id}':
     delete:
-      summary: Unlink a contact from a company
+      summary: Unlink a contact from a specific company
       description: ''
       tags:
         - Companies
@@ -5039,8 +5041,8 @@ paths:
           $ref: '#/components/responses/500'
   /contacts:
     get:
-      summary: Get a list of your contacts
-      description: ''
+      summary: Get a list of contacts
+      description: Defaults to contacts owned by the logged user, alpha sorted.
       tags:
         - Contacts
       parameters:
@@ -6910,7 +6912,7 @@ paths:
           $ref: '#/components/responses/500'
   /contacts/filters/{id}:
     get:
-      summary: "Show contacts that meet the criteria of a filter"
+      summary: Show contacts that meet the criteria of a filter
       description: ""
       tags:
         - "Contacts"
@@ -6965,7 +6967,7 @@ paths:
           $ref: '#/components/responses/500'
   /contacts/delete:
     delete:
-      summary: "Delete multiple contacts"
+      summary: Delete multiple contacts
       description: ""
       tags:
         - "Contacts"
