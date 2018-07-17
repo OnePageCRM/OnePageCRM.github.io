@@ -808,7 +808,7 @@ paths:
           $ref: '#/components/responses/500'
   /statuses:
     get:
-      summary: Get a list of statuses
+      summary: Get the list of statuses (for the logged API user's account)
       description: ''
       tags:
         - Statuses
@@ -911,7 +911,7 @@ paths:
           $ref: '#/components/responses/500'
   '/statuses/{status_id}':
     get:
-      summary: Get a status
+      summary: Get a specific status
       description: ''
       tags:
         - Statuses
@@ -953,7 +953,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update a status
+      summary: Update a specific status
       description: ''
       tags:
         - Statuses
@@ -1007,7 +1007,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Delete a status
+      summary: Delete a specific status
       description: ''
       tags:
         - Statuses
