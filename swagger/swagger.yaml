@@ -1268,11 +1268,11 @@ paths:
           $ref: '#/components/responses/500'
   /deal_fields/cost_setup:
     post:
-      summary: Enable the cost Field
-      description: |-
-        The cost field can be used for Margin-based deals.
-        We subtract the deal cost from the deal amount to display the margin.
-        You can also calculate commission based on margin instead of amount.
+      summary: Enable the cost field for deals
+      description: >-
+        The cost field can be used for margin-based deals. <br>
+        We subtract the deal cost from the deal amount to display the margin. <br>
+        You can also calculate commission based on margin instead of amount. <br>
       tags:
         - Deal Fields
       parameters: []
@@ -1312,7 +1312,7 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     put:
-      summary: Update the cost Field
+      summary: Update the cost field for deals
       description: ''
       tags:
         - Deal Fields
@@ -1371,8 +1371,8 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     delete:
-      summary: Disable the cost Field
-      description: |-
+      summary: Disable the cost field for deals
+      description: >-
         The cost field can be used for Margin-based deals.
         This request Disables the cost field
       tags:
@@ -3557,7 +3557,7 @@ paths:
           $ref: '#/components/responses/500'
   /countries:
     get:
-      summary: Get a list of compatible countries
+      summary: Get the list of all compatible countries
       description: >-
         It is possible to get a list of compatible countries using the API. The
         Countries endpoint provides this read-only list. Countries and their
