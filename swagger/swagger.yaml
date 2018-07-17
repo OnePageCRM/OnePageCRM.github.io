@@ -3991,7 +3991,7 @@ paths:
   '/actions/{id}/promote':
     put:
       summary: >-
-        Specify exactly which action is to be promoted to the user's next action
+        Specify exactly which action is to be promoted as the logged user's next action
       description: >-
         To be used when an action is created or updated to ensure most urgent action is marked as next action.
         <br>
@@ -4195,7 +4195,7 @@ paths:
           $ref: '#/components/responses/500'
   '/filters/{id}':
     get:
-      summary: Get a single custom filter
+      summary: Get a specific custom filter
       description: >-
         This endpoint returns all contacts that meet the conditions of this filter
       tags:
