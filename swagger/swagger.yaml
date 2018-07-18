@@ -305,6 +305,10 @@ tags:
     description: >-
       The Action Stream for all users on the account in a single list, or for any individual user on the account
       (not just the logged user). The same Action Stream sorting is applied.
+  - name: Deals
+    description: >-
+      Represent (potential) financial transactions with your contacts. Deals include information like
+      amount, deal stage, closed date or expected close date. Deals support file attachments.
   - name: Notes
     description: >-
       Allow you to keep track of additional information related to your contacts. Notes can include any
@@ -313,10 +317,6 @@ tags:
     description: >-
       Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
       number dialled and the call result. Calls support file attachments.
-  - name: Deals
-    description: >-
-      Represent (potential) financial transactions with your contacts. Deals include information like
-      amount, deal stage, closed date or expected close date. Deals support file attachments.
   - name: Attachments
     description: >-
       Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3, or stored in
