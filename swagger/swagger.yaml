@@ -500,13 +500,13 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/users/{id}':
+  '/users/{user_id}':
     get:
       summary: Get information on a specific user
       tags:
         - Users
       parameters:
-        - $ref: '#/components/parameters/User_id'
+        - $ref: '#/components/parameters/path_user_id'
       responses:
         '200':
           description: Ok - Operation successful.
@@ -561,7 +561,7 @@ paths:
       tags:
         - Users
       parameters:
-        - $ref: '#/components/parameters/User_id'
+        - $ref: '#/components/parameters/path_user_id'
       requestBody:
         required: true
         content:
@@ -8905,8 +8905,8 @@ components:
                 type: string
                 description: Reason why this parameter is invalid
   parameters:
-    User_id:
-      name: id
+    path_user_id:
+      name: user_id
       in: path
       required: true
       description: User ID
