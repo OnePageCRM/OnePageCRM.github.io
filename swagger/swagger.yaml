@@ -4305,7 +4305,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{company_id}':
+  /companies/{company_id}:
     get:
       summary: Get a specific company
       description: Get detailed info about a specific company
@@ -4417,7 +4417,83 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/deals':
+  /companies/{company_id}/actions:
+    get:
+      summary: Get actions associated with a specific company
+      description: ''
+      tags:
+        - Companies
+      parameters:
+        - $ref: '#/components/parameters/path_company_id'
+        - $ref: '#/components/parameters/query_contact_id'
+        - $ref: '#/components/parameters/query_assignee_id'
+        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_done'
+        - $ref: '#/components/parameters/query_date_filter'
+        - $ref: '#/components/parameters/query_since'
+        - $ref: '#/components/parameters/query_until'
+        - $ref: '#/components/parameters/query_unmodified_since'
+        - $ref: '#/components/parameters/query_modified_since'
+        - $ref: '#/components/parameters/query_sort_by'
+        - $ref: '#/components/parameters/query_order'
+        - $ref: '#/components/parameters/query_page'
+        - $ref: '#/components/parameters/query_per_page'
+      responses:
+        '200':
+          description: Operation Successful
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: integer
+                    description: Response code
+                    example: 0
+                  message:
+                    type: string
+                    description: Response message
+                    example: OK
+                  timestamp:
+                    type: integer
+                    description: The response time
+                    example: 1528373119
+                  data:
+                    properties:
+                      actions:
+                        type: array
+                        items:
+                          properties:
+                            action:
+                              $ref: '#/components/schemas/Action'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+  /companies/{company_id}/deals:
     get:
       summary: Get deals associated with a specific company
       description: ''
@@ -4494,79 +4570,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/calls':
-    get:
-      summary: Get calls associated with a specific company
-      description: ''
-      tags:
-        - Companies
-      parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
-      responses:
-        '200':
-          description: Operation Successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      calls:
-                        type: array
-                        items:
-                          properties:
-                            call:
-                              $ref: '#/components/schemas/Call'
-                      total_count:
-                        description: "Total number of items"
-                        type: integer
-                        example: 1
-                      page:
-                        description: "Page number"
-                        type: integer
-                        example: 1
-                      per_page:
-                        description: "Maximum number of items shown on per page"
-                        type: integer
-                        example: 1
-                      max_page:
-                        description: "The page number of the last page of items"
-                        type: integer
-                        example: 1
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-  '/companies/{company_id}/notes':
+  /companies/{company_id}/notes:
     get:
       summary: Get notes associated with a specific company
       description: ''
@@ -4638,18 +4642,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/actions':
+  /companies/{company_id}/calls:
     get:
-      summary: Get actions associated with a specific company
+      summary: Get calls associated with a specific company
       description: ''
       tags:
         - Companies
       parameters:
         - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_status'
-        - $ref: '#/components/parameters/query_done'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
         - $ref: '#/components/parameters/query_until'
@@ -4680,12 +4680,12 @@ paths:
                     example: 1528373119
                   data:
                     properties:
-                      actions:
+                      calls:
                         type: array
                         items:
                           properties:
-                            action:
-                              $ref: '#/components/schemas/Action'
+                            call:
+                              $ref: '#/components/schemas/Call'
                       total_count:
                         description: "Total number of items"
                         type: integer
