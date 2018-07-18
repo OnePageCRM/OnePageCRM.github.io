@@ -4319,14 +4319,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}':
+  '/companies/{company_id}':
     get:
       summary: Get a specific company
       description: Get detailed info about a specific company
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
           description: Operation Successful
@@ -4369,7 +4369,7 @@ paths:
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4431,14 +4431,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/deals':
+  '/companies/{company_id}/deals':
     get:
       summary: Get deals associated with a specific company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_deals_name'
         - $ref: '#/components/parameters/query_status'
         - $ref: '#/components/parameters/query_stage'
@@ -4508,14 +4508,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/calls':
+  '/companies/{company_id}/calls':
     get:
       summary: Get calls associated with a specific company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
         - $ref: '#/components/parameters/query_until'
@@ -4580,14 +4580,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/notes':
+  '/companies/{company_id}/notes':
     get:
       summary: Get notes associated with a specific company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
         - $ref: '#/components/parameters/query_until'
@@ -4652,14 +4652,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/actions':
+  '/companies/{company_id}/actions':
     get:
       summary: Get actions associated with a specific company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
         - $ref: '#/components/parameters/query_status'
@@ -4728,14 +4728,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/linked_contacts':
+  '/companies/{company_id}/linked_contacts':
     get:
       summary: Get contacts linked with a specific company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_contacts_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
@@ -4825,7 +4825,7 @@ paths:
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4893,14 +4893,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/linked_contacts/{contact_id}':
+  '/companies/{company_id}/linked_contacts/{contact_id}':
     delete:
-      summary: Unlink a contact from a specific company
+      summary: Unlink a contact from a company
       description: ''
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
         - name: contact_id
           in: path
           required: true
@@ -4923,7 +4923,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/companies/{id}/synced_status':
+  '/companies/{company_id}/synced_status':
     post:
       summary: Enable company status sync
       description: >-
@@ -4933,7 +4933,7 @@ paths:
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4983,7 +4983,7 @@ paths:
       tags:
         - Companies
       parameters:
-        - $ref: '#/components/parameters/Path_company_id'
+        - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
           description: Operation Successful
@@ -8996,8 +8996,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Path_company_id:
-      name: id
+    path_company_id:
+      name: company_id
       in: path
       required: true
       description: Company ID
