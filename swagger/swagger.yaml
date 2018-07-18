@@ -7197,7 +7197,7 @@ paths:
           $ref: "#/components/responses/409"
         500:
           $ref: "#/components/responses/500"
-  /webhooks/{id}:
+  /webhooks/{webhook_id}:
     get:
       summary: Get information about a specific webhook
       description: ""
@@ -9024,7 +9024,7 @@ components:
         type: string
         minimum: 1
     path_webhook_id:
-      name: id
+      name: webhook_id
       in: path
       required: true
       description: Webhook id
