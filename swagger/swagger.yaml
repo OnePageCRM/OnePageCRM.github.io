@@ -6358,7 +6358,7 @@ paths:
         - Contacts
       parameters:
         - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_tag_id'
+        - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
           description: Operation Successful
@@ -6430,7 +6430,7 @@ paths:
         - Contacts
       parameters:
         - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_tag_id'
+        - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
           description: Operation Successful
@@ -9012,11 +9012,11 @@ components:
       schema:
         type: string
         minimum: 1
-    path_tag_id:
+    path_tag_name:
       name: tag_name
       in: path
       required: true
-      description: Tag name or tag id
+      description: Tag name
       schema:
         type: string
         minimum: 1
