@@ -3450,14 +3450,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/attachments/{id}':
+  '/attachments/{attachment_id}':
     delete:
       summary: Delete a specific attachment
       description: ''
       tags:
         - Attachments
       parameters:
-        - $ref: '#/components/parameters/Attachment_id'
+        - $ref: '#/components/parameters/path_attachment_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -8977,8 +8977,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Attachment_id:
-      name: id
+    path_attachment_id:
+      name: attachment_id
       in: path
       required: true
       description: Attachment ID
