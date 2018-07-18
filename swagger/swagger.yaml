@@ -1986,14 +1986,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/predefined_actions/{id}':
+  '/predefined_actions/{predefined_action_id}':
     get:
       summary: Get a specific predefined action
       description: ''
       tags:
         - Predefined Actions
       parameters:
-        - $ref: '#/components/parameters/Predefined_action_id'
+        - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -2035,7 +2035,7 @@ paths:
       tags:
         - Predefined Actions
       parameters:
-        - $ref: '#/components/parameters/Predefined_action_id'
+        - $ref: '#/components/parameters/path_predefined_action_id'
       requestBody:
         required: true
         content:
@@ -2087,8 +2087,7 @@ paths:
       tags:
         - Predefined Actions
       parameters:
-        # TODO: change param to be '#/components/parameters/path_predefined_actions_id'
-        - $ref: '#/components/parameters/Predefined_action_id'
+        - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -8936,8 +8935,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Predefined_action_id:
-      name: id
+    path_predefined_action_id:
+      name: predefined_action_id
       in: path
       required: true
       description: Predefined Action ID
@@ -9013,14 +9012,6 @@ components:
       in: path
       required: true
       description: Tag name
-      schema:
-        type: string
-        minimum: 1
-    path_predefined_action_id:
-      name: action_id
-      in: path
-      required: true
-      description: Predefined action id
       schema:
         type: string
         minimum: 1
