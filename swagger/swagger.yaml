@@ -3723,14 +3723,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}':
+  '/actions/{action_id}':
     get:
       summary: Get a specific action
       description: ''
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3772,7 +3772,7 @@ paths:
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
         - name: done
           in: query
           required: false
@@ -3841,7 +3841,7 @@ paths:
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -3857,14 +3857,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/unassign':
+  '/actions/{action_id}/unassign':
     put:
-      summary: Unassign a specific action from the currently assigned user
+      summary: Unassign a specific action (from the currently assigned user)
       description: Leaving `assignee_id` blank will assign this action to the logged API user
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3900,14 +3900,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/mark_as_done':
+  '/actions/{action_id}/mark_as_done':
     put:
       summary: Mark a specific action as complete
       description: ''
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3943,14 +3943,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/undo_completion':
+  '/actions/{action_id}/undo_completion':
     put:
       summary: Undo action completion
       description: ''
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3986,18 +3986,17 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/promote':
+  '/actions/{action_id}/promote':
     put:
       summary: >-
-        Specify exactly which action is to be promoted as the logged API user's next action
+        Specify action to be promoted as the logged API user's next action
       description: >-
-        To be used when an action is created or updated to ensure most urgent action is marked as next action.
-        <br>
-        You can only promote actions which are queued for current user and there is no next action assigned.
+        To be used when an action is created or updated to ensure most urgent action is marked as next action. <br>
+        You can only promote actions which are queued for current user and there is no next action assigned. <br>
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4033,16 +4032,15 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/revert_promotion':
+  '/actions/{action_id}/revert_promotion':
     put:
       summary: Undo action promotion
       description: >-
-        You can only promote actions which are queued for current user and there
-        is no next action assigned.
+        You can only promote actions which are queued for current user and there is no next action assigned. <br>
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4078,20 +4076,19 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{id}/swap':
+  '/actions/{action_id}/swap':
     put:
       summary: >-
-        Resolve date conflicts between next action and dated queued action by swapping them
+        Specify action to be swapped in as the logged API user's next action
       description: >-
-        You can only swap actions which are `queued_with_date` for current user.
-        <br>
-        Next action status should be `waiting`, `date` or `date_time`.
-        <br>
-        Next action date should be less urgent than the queued action date being swapped.
+        Resolve date conflicts between next action and dated queued action by swapping them. <br>
+        You can only swap actions which are `queued_with_date` for current user. <br>
+        Next action status should be `waiting`, `date` or `date_time`. <br>
+        Next action date should be less urgent than the queued action date being swapped. <br>
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/Action_id'
+        - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -8988,8 +8985,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Action_id:
-      name: id
+    path_action_id:
+      name: action_id
       in: path
       required: true
       description: Action ID
