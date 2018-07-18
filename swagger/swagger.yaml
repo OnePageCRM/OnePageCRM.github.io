@@ -5550,6 +5550,142 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
+  '/contacts/{contact_id}/actions':
+    get:
+      summary: Get all actions for a specific contact
+      description: ''
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/path_contact_id'
+        - $ref: '#/components/parameters/query_contact_id'
+        - $ref: '#/components/parameters/query_assignee_id'
+        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_done'
+        - $ref: '#/components/parameters/query_date_filter'
+        - $ref: '#/components/parameters/query_since'
+        - $ref: '#/components/parameters/query_until'
+        - $ref: '#/components/parameters/query_unmodified_since'
+        - $ref: '#/components/parameters/query_modified_since'
+        - $ref: '#/components/parameters/query_sort_by'
+        - $ref: '#/components/parameters/query_order'
+        - $ref: '#/components/parameters/query_page'
+        - $ref: '#/components/parameters/query_per_page'
+      responses:
+        '200':
+          description: Operation Successful
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: integer
+                    description: Response code
+                    example: 0
+                  message:
+                    type: string
+                    description: Response message
+                    example: OK
+                  timestamp:
+                    type: integer
+                    description: The response time
+                    example: 1528373119
+                  data:
+                    properties:
+                      actions:
+                        type: array
+                        items:
+                          properties:
+                            action:
+                              $ref: '#/components/schemas/Action'
+                      total_count:
+                        description: "Total number of items"
+                        type: integer
+                        example: 1
+                      page:
+                        description: "Page number"
+                        type: integer
+                        example: 1
+                      per_page:
+                        description: "Maximum number of items shown on per page"
+                        type: integer
+                        example: 1
+                      max_page:
+                        description: "The page number of the last page of items"
+                        type: integer
+                        example: 1
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
+    post:
+      summary: Create an action for a specific contact
+      description: ''
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/path_contact_id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                assignee_id:
+                  $ref: '#/components/schemas/Action/properties/assignee_id'
+                status:
+                  $ref: '#/components/schemas/Action/properties/status'
+                text:
+                  $ref: '#/components/schemas/Action/properties/text'
+                date:
+                  $ref: '#/components/schemas/Action/properties/date'
+                exact_time:
+                  $ref: '#/components/schemas/Action/properties/exact_time'
+                position:
+                  $ref: '#/components/schemas/Action/properties/position'
+      responses:
+        '201':
+          description: Operation Successful
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: integer
+                    description: Response code
+                    example: 0
+                  message:
+                    type: string
+                    description: Response message
+                    example: OK
+                  timestamp:
+                    type: integer
+                    description: The response time
+                    example: 1528373119
+                  data:
+                    properties:
+                      action:
+                        $ref: '#/components/schemas/Action'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
   '/contacts/{contact_id}/deals':
     get:
       summary: Get all deals for a specific contact
@@ -5969,142 +6105,6 @@ paths:
                     properties:
                       call:
                         $ref: '#/components/schemas/Call'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/actions':
-    get:
-      summary: Get all actions for a specific contact
-      description: ''
-      tags:
-        - Contacts
-      parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_status'
-        - $ref: '#/components/parameters/query_done'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
-      responses:
-        '200':
-          description: Operation Successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      actions:
-                        type: array
-                        items:
-                          properties:
-                            action:
-                              $ref: '#/components/schemas/Action'
-                      total_count:
-                        description: "Total number of items"
-                        type: integer
-                        example: 1
-                      page:
-                        description: "Page number"
-                        type: integer
-                        example: 1
-                      per_page:
-                        description: "Maximum number of items shown on per page"
-                        type: integer
-                        example: 1
-                      max_page:
-                        description: "The page number of the last page of items"
-                        type: integer
-                        example: 1
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-    post:
-      summary: Create an action for a specific contact
-      description: ''
-      tags:
-        - Contacts
-      parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              properties:
-                assignee_id:
-                  $ref: '#/components/schemas/Action/properties/assignee_id'
-                status:
-                  $ref: '#/components/schemas/Action/properties/status'
-                text:
-                  $ref: '#/components/schemas/Action/properties/text'
-                date:
-                  $ref: '#/components/schemas/Action/properties/date'
-                exact_time:
-                  $ref: '#/components/schemas/Action/properties/exact_time'
-                position:
-                  $ref: '#/components/schemas/Action/properties/position'
-      responses:
-        '201':
-          description: Operation Successful
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      action:
-                        $ref: '#/components/schemas/Action'
         '400':
           $ref: '#/components/responses/400'
         '401':
