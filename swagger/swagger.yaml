@@ -4191,7 +4191,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/filters/{id}':
+  '/filters/{filter_id}':
     get:
       summary: Get a specific custom filter
       description: >-
@@ -4199,13 +4199,7 @@ paths:
       tags:
         - Filters
       parameters:
-        - name: id
-          in: path
-          required: true
-          description: Filter ID
-          schema:
-            type: string
-            minimum: 1
+        - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
           description: Operation Successful
@@ -6887,20 +6881,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  /contacts/filters/{id}:
+  /contacts/filters/{filter_id}:
     get:
       summary: Show contacts that meet the criteria of a filter
       description: ""
       tags:
         - "Contacts"
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          description: "Filter"
-          schema:
-            type: "string"
-            minimum: 1
+        - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
           description: Operation Successful
@@ -9053,6 +9041,14 @@ components:
       in: path
       required: true
       description: Webhook id
+      schema:
+        type: string
+        minimum: 1
+    path_filter_id:
+      name: filter_id
+      in: path
+      required: true
+      description: Filter ID
       schema:
         type: string
         minimum: 1
