@@ -3355,6 +3355,87 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
+  /attachments/s3_form:
+    get:
+      summary: >-
+        Get a pre-authorized S3 upload form (use to upload a file on the client side)
+      description: >-
+        To use the form in the response to upload an attachment to s3 you must make a post request to url specified in the response. <br>
+        In addition the following steps must be taken. <br>
+        Include all the params under 'fields' in the post request to s3. <br>
+        The 'key' field must be constructed and be of the following form: {contact_id}/{timestamp}/{filename} <br>
+        'filename' field must be present and the same as the filename specified at the end of the key field <br>
+        'file' is the file to upload <br><br>
+        After uploading the attachment to s3, you can then link this attachment to notes/calls/deals via the post /attachments method using the key param
+      tags:
+        - Attachments
+      parameters:
+        - in: query
+          name: contact_id
+          required: true
+          schema:
+            type: string
+          description: Contact to be associated with the attachment
+      responses:
+        '200':
+          description: OK - Operation successful.
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: integer
+                    description: Response code
+                    example: 0
+                  message:
+                    type: string
+                    description: Response message
+                    example: OK
+                  timestamp:
+                    type: integer
+                    description: The response time
+                    example: 1528373119
+                  data:
+                    properties:
+                      quota:
+                        example: 1073741824
+                      display_quota:
+                        example: 1024MB
+                      url:
+                        example: >-
+                          https://s3-us-west-1.amazonaws.com/onepagecrm-ud2-us-west-1/
+                      fields:
+                        properties:
+                          key:
+                            example: ''
+                          x-ignore-pattern:
+                            example: '59bacde236aebd7842f8be7x/__timestamp__/${filename}'
+                          acl:
+                            example: private
+                          success_action_status:
+                            example: 201
+                          policy:
+                            example: aBcDe...aBcDe=
+                          x-amz-algorithm:
+                            example: AWS4-HMAC-SHA256
+                          x-amz-credential:
+                            example: ABCDE...ABCDE/20170914/us-west-1/s3/aws4_request
+                          x-amz-date:
+                            example: 20170914T184346Z
+                          x-amz-signature:
+                            example: aBcDe...aBcDe
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '409':
+          $ref: '#/components/responses/409'
+        '500':
+          $ref: '#/components/responses/500'
   /attachments:
     post:
       summary: Create a new attachment
@@ -3461,88 +3542,6 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/200'
-        '400':
-          $ref: '#/components/responses/400'
-        '401':
-          $ref: '#/components/responses/401'
-        '403':
-          $ref: '#/components/responses/403'
-        '404':
-          $ref: '#/components/responses/404'
-        '409':
-          $ref: '#/components/responses/409'
-        '500':
-          $ref: '#/components/responses/500'
-  /attachments/s3_form:
-    get:
-      summary: >-
-        Get a pre-authorized S3 upload form (use to upload a file on the client side)
-      description: >-
-        To use the form in the response to upload an attachment to s3 you must make a post request to url specified in the response. <br>
-        In addition the following steps must be taken. <br>
-        Include all the params under 'fields' in the post request to s3. <br>
-        The 'key' field must be constructed and be of the following form: {contact_id}/{timestamp}/{filename} <br>
-        'filename' field must be present and the same as the filename specified at the end of the key field <br>
-        'file' is the file to upload <br><br>
-        After uploading the attachment to s3, you can then link this attachment to notes/calls/deals via the post /attachments method using the key param
-
-      tags:
-        - Attachments
-      parameters:
-        - in: query
-          name: contact_id
-          required: true
-          schema:
-            type: string
-          description: Contact to be associated with the attachment
-      responses:
-        '200':
-          description: OK - Operation successful.
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    type: integer
-                    description: Response code
-                    example: 0
-                  message:
-                    type: string
-                    description: Response message
-                    example: OK
-                  timestamp:
-                    type: integer
-                    description: The response time
-                    example: 1528373119
-                  data:
-                    properties:
-                      quota:
-                        example: 1073741824
-                      display_quota:
-                        example: 1024MB
-                      url:
-                        example: >-
-                          https://s3-us-west-1.amazonaws.com/onepagecrm-ud2-us-west-1/
-                      fields:
-                        properties:
-                          key:
-                            example: ''
-                          x-ignore-pattern:
-                            example: '59bacde236aebd7842f8be7x/__timestamp__/${filename}'
-                          acl:
-                            example: private
-                          success_action_status:
-                            example: 201
-                          policy:
-                            example: aBcDe...aBcDe=
-                          x-amz-algorithm:
-                            example: AWS4-HMAC-SHA256
-                          x-amz-credential:
-                            example: ABCDE...ABCDE/20170914/us-west-1/s3/aws4_request
-                          x-amz-date:
-                            example: 20170914T184346Z
-                          x-amz-signature:
-                            example: aBcDe...aBcDe
         '400':
           $ref: '#/components/responses/400'
         '401':
