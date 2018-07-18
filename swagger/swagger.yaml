@@ -3098,14 +3098,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/deals/{id}':
+  '/deals/{deal_id}':
     get:
       summary: Get a specific deal
       description: ''
       tags:
         - Deals
       parameters:
-        - $ref: '#/components/parameters/Deal_id'
+        - $ref: '#/components/parameters/path_deal_id'
       responses:
         '200':
           description: Operation Successful
@@ -3147,7 +3147,7 @@ paths:
       tags:
         - Deals
       parameters:
-        - $ref: '#/components/parameters/Deal_id'
+        - $ref: '#/components/parameters/path_deal_id'
       requestBody:
         required: true
         content:
@@ -3229,7 +3229,7 @@ paths:
       tags:
         - Deals
       parameters:
-        - $ref: '#/components/parameters/Deal_id'
+        - $ref: '#/components/parameters/path_deal_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -3245,7 +3245,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/deals/{id}/attachments':
+  '/deals/{deal_id}/attachments':
     post:
       summary: Create attachment and assign it to an existing deal
       description: >-
@@ -3256,7 +3256,7 @@ paths:
       tags:
         - Deals
       parameters:
-        - $ref: '#/components/parameters/Deal_id'
+        - $ref: '#/components/parameters/path_deal_id'
       requestBody:
         required: true
         content:
@@ -8961,8 +8961,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Deal_id:
-      name: id
+    path_deal_id:
+      name: deal_id
       in: path
       required: true
       description: Deal ID
