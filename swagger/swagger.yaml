@@ -5299,7 +5299,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}':
+  '/contacts/{contact_id}':
     get:
       summary: Get a specific contact
       description: ''
@@ -5570,7 +5570,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/deals':
+  '/contacts/{contact_id}/deals':
     get:
       summary: Get all deals for a specific contact
       description: ''
@@ -5733,7 +5733,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/notes':
+  '/contacts/{contact_id}/notes':
     get:
       summary: Get all notes for a specific contact
       description: ''
@@ -5865,7 +5865,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/calls':
+  '/contacts/{contact_id}/calls':
     get:
       summary: Get all calls for a specific contact
       description: ''
@@ -6001,7 +6001,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/actions':
+  '/contacts/{contact_id}/actions':
     get:
       summary: Get all actions for a specific contact
       description: ''
@@ -6137,7 +6137,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/email_messages':
+  '/contacts/{contact_id}/email_messages':
     get:
       summary: Get all email messages for a specific contact
       description: ''
@@ -6203,10 +6203,10 @@ paths:
           $ref: "#/components/responses/409"
         500:
           $ref: "#/components/responses/500"
-  '/contacts/{id}/contact_photo':
+  '/contacts/{contact_id}/contact_photo':
     post:
       summary: Add a new contact photo
-      description: >
+      description: >-
         Contact photos can be uploaded using the API. It takes a parameter
         ‘image’, which must be a Base64 encoded string. <br>
 
@@ -6356,7 +6356,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/assign_tag/{tag_name}':
+  '/contacts/{contact_id}/assign_tag/{tag_name}':
     put:
       summary: Assign a tag to a specific contact
       description: ''
@@ -6428,7 +6428,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/unassign_tag/{tag_name}':
+  '/contacts/{contact_id}/unassign_tag/{tag_name}':
     put:
       summary: Remove a tag from a specific contact
       description: ''
@@ -6500,7 +6500,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/change_status/{status_id}':
+  '/contacts/{contact_id}/change_status/{status_id}':
     put:
       summary: Change the status of a specific contact
       description: ''
@@ -6544,7 +6544,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/change_owner/{owner_id}':
+  '/contacts/{contact_id}/change_owner/{owner_id}':
     put:
       summary: Change the owner of a specific contact
       description: ''
@@ -6588,7 +6588,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/star':
+  '/contacts/{contact_id}/star':
     put:
       summary: Apply a star to a specific contact
       description: ''
@@ -6631,7 +6631,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/unstar':
+  '/contacts/{contact_id}/unstar':
     put:
       summary: Remove star from a specific contact
       description: ''
@@ -6674,7 +6674,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/close_sales_cycle':
+  '/contacts/{contact_id}/close_sales_cycle':
     put:
       summary: Close the sales cycle for a specific contact
       description: >-
@@ -6728,7 +6728,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/reopen_sales_cycle':
+  '/contacts/{contact_id}/reopen_sales_cycle':
     put:
       summary: Reopen the sales cycle for a specific contact
       description: ''
@@ -6771,7 +6771,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{id}/split':
+  '/contacts/{contact_id}/split':
     put:
       summary: Split a contact from their current company (and potentially to a new company)
       description: >-
@@ -6826,8 +6826,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-
-  '/contacts/{id}/google_contacts':
+  '/contacts/{contact_id}/google_contacts':
     post:
       summary: Save a specific OnePageCRM contact to Google Contacts
       description: >-
@@ -9018,7 +9017,7 @@ components:
         type: string
         minimum: 1
     path_contact_id:
-      name: id
+      name: contact_id
       in: path
       required: true
       description: Contact ID
