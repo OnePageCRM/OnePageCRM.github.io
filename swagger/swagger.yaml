@@ -1148,14 +1148,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/deal_fields/{id}':
+  '/deal_fields/{deal_field_id}':
     get:
       summary: Get a specific deal field
       description: ''
       tags:
         - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/Deal_field_id'
+        - $ref: '#/components/parameters/path_deal_field_id'
       responses:
         '200':
           description: Operation Successful
@@ -1197,7 +1197,7 @@ paths:
       tags:
         - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/Deal_field_id'
+        - $ref: '#/components/parameters/path_deal_field_id'
       requestBody:
         required: true
         content:
@@ -1250,7 +1250,7 @@ paths:
       tags:
         - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/Deal_field_id'
+        - $ref: '#/components/parameters/path_deal_field_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -8911,8 +8911,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Deal_field_id:
-      name: id
+    path_deal_field_id:
+      name: deal_field_id
       in: path
       required: true
       description: Deal Field ID
