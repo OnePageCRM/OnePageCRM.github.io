@@ -9011,7 +9011,7 @@ components:
       name: owner_id
       in: path
       required: true
-      description: Owner id
+      description: Owner ID
       schema:
         type: string
         minimum: 1
@@ -9019,7 +9019,7 @@ components:
       name: webhook_id
       in: path
       required: true
-      description: Webhook id
+      description: Webhook ID
       schema:
         type: string
         minimum: 1
