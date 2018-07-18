@@ -2615,14 +2615,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/calls/{id}':
+  '/calls/{call_id}':
     get:
       summary: Get a specific call
       description: ''
       tags:
         - Calls
       parameters:
-        - $ref: '#/components/parameters/Call_id'
+        - $ref: '#/components/parameters/path_call_id'
       responses:
         '200':
           description: Operation Successful
@@ -2664,7 +2664,7 @@ paths:
       tags:
         - Calls
       parameters:
-        - $ref: '#/components/parameters/Call_id'
+        - $ref: '#/components/parameters/path_call_id'
       requestBody:
         required: true
         content:
@@ -2731,7 +2731,7 @@ paths:
       tags:
         - Calls
       parameters:
-        - $ref: '#/components/parameters/Call_id'
+        - $ref: '#/components/parameters/path_call_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -2747,7 +2747,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/calls/{id}/attachments':
+  '/calls/{call_id}/attachments':
     post:
       summary: Create attachment and assign it to an existing call
       description: >-
@@ -2757,7 +2757,7 @@ paths:
       tags:
         - Calls
       parameters:
-        - $ref: '#/components/parameters/Call_id'
+        - $ref: '#/components/parameters/path_call_id'
       requestBody:
         required: true
         content:
@@ -8901,7 +8901,7 @@ components:
       name: id
       in: path
       required: true
-      description: Lead source ID
+      description: Lead Source ID
       schema:
         type: string
         minimum: 1
@@ -8969,8 +8969,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Call_id:
-      name: id
+    path_call_id:
+      name: call_id
       in: path
       required: true
       description: Call ID
