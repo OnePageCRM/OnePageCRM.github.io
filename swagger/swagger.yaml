@@ -1532,14 +1532,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/custom_fields/{id}':
+  '/custom_fields/{custom_field_id}':
     get:
       summary: Get a specific custom field
       description: ''
       tags:
         - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/Custom_field_id'
+        - $ref: '#/components/parameters/path_custom_field_id'
       responses:
         '200':
           description: Operation Successful
@@ -1581,7 +1581,7 @@ paths:
       tags:
         - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/Custom_field_id'
+        - $ref: '#/components/parameters/path_custom_field_id'
       requestBody:
         required: true
         content:
@@ -1635,7 +1635,7 @@ paths:
       tags:
         - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/Custom_field_id'
+        - $ref: '#/components/parameters/path_custom_field_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -8919,8 +8919,8 @@ components:
       schema:
         type: string
         minimum: 1
-    Custom_field_id:
-      name: id
+    path_custom_field_id:
+      name: custom_field_id
       in: path
       required: true
       description: Custom Field ID
