@@ -4246,16 +4246,7 @@ paths:
         - $ref: '#/components/parameters/query_companies_name'
         - $ref: '#/components/parameters/query_phone'
         - $ref: '#/components/parameters/query_letter'
-        # TODO: change to: $ref: '#/components/parameters/query_companies_sort_by'
-        - in: query
-          name: sort_by
-          description: Sort results. **Use in conjunction with 'order'.**
-          schema:
-            type: string
-            enum:
-              - created_at
-              - modified_at
-              - name
+        - $ref: '#/components/parameters/query_companies_sort_by'
         - $ref: '#/components/parameters/query_order'
         - $ref: '#/components/parameters/query_page'
         - $ref: '#/components/parameters/query_per_page'
@@ -9393,6 +9384,17 @@ components:
           - first_name
           - last_name
           - company_name
+          - name
+    query_companies_sort_by:
+      name: sort_by
+      in: query
+      description: >-
+        Specify field by which to order the results (use in conjunction with `order`)
+      schema:
+        type: string
+        enum:
+          - created_at
+          - modified_at
           - name
     query_per_page:
       name: per_page
