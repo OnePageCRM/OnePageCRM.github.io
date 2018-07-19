@@ -2368,9 +2368,9 @@ paths:
       tags:
         - Notes
       description: >-
-        To create an attachment for a note/call/deal, the attachment must first be uploaded to s3. <br>
-        See attachments/s3_form for details. <br>
-        After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
+        Before creating an attachment, the file should be uploaded to S3. <br>
+        Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
+        Following successful upload to S3, files can be attached via this endpoint. <br>
       parameters:
         - $ref: '#/components/parameters/path_note_id'
       requestBody:
@@ -2746,9 +2746,9 @@ paths:
     post:
       summary: Create attachment and assign it to an existing call
       description: >-
-       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3. <br>
-       See attachments/s3_form for details. <br>
-       After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
+        Before creating an attachment, the file should be uploaded to S3. <br>
+        Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
+        Following successful upload to S3, files can be attached via this endpoint. <br>
       tags:
         - Calls
       parameters:
@@ -3245,10 +3245,9 @@ paths:
     post:
       summary: Create attachment and assign it to an existing deal
       description: >-
-       To create an attachment for a note/call/deal, the attachment must first be uploaded to s3.
-       See attachments/s3_form for details. <br>
-       After creating the attachment in s3, the attachment can be linked to notes/calls/deals via this method
-
+        Before creating an attachment, the file should be uploaded to S3. <br>
+        Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
+        Following successful upload to S3, files can be attached via this endpoint. <br>
       tags:
         - Deals
       parameters:
