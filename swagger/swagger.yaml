@@ -4187,7 +4187,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/filters/{filter_id}':
+  /filters/{filter_id}:
     get:
       summary: Get a specific custom filter
       description: >-
@@ -6952,7 +6952,7 @@ paths:
     get:
       summary: Get a list of contacts prioritized by their next action
       description: >-
-        Returns action stream for logged API user by default
+        Defaults to the logged API user's action stream. <br>
       tags:
         - "Action Stream"
       parameters:
@@ -7043,7 +7043,8 @@ paths:
     get:
       summary: Get a list of contacts prioritized by their next action
       description: >-
-        Returns action stream for entire account in a single list by default
+        Defaults to the action stream for entire account in a single list. <br>
+        See the action stream of other users on the account by providing the `user_id` param. <br>
       tags:
         - "Team Stream"
       parameters:
