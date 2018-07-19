@@ -547,19 +547,13 @@ paths:
     put:
       summary: Update a specific user
       description: >-
-        You can update your own information. If you are an administrator
-        you can edit your team members details. You can you can only update the
-        following through the API:
-        <br>
-        <b>first_name</b>
-        <br>
-        <b>last_name</b>
-        <br>
-        <b>company</b>
-        <br>
-        <b>bcc_email</b>:
-        Set this field to `true` to generate a new BCC email address, otherwise omit the field entirely.
-        You can only update this field for yourself.
+        Each team member can edit their own details, admins can update all. <br>
+        Only the following fields may be edited through the API: <br>
+        -> <b>first_name</b> <br>
+        -> <b>last_name</b> <br>
+        -> <b>company</b> <br>
+        -> <b>bcc_email</b> <i>(Set this field to `true` to generate a new BCC email address,
+        otherwise omit the field entirely. You can only update this field for yourself.)</i> <br>
       tags:
         - Users
       parameters:
@@ -577,7 +571,7 @@ paths:
                 company_name:
                   $ref: '#/components/schemas/User/properties/company_name'
                 bcc_email:
-                  example: 'true'
+                  example: "true"
       responses:
         '200':
           description: Ok - Operation successful.
