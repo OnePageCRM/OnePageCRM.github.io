@@ -500,9 +500,9 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/users/{user_id}':
+  /users/{user_id}:
     get:
-      summary: Get information on a specific user
+      summary: Get a specific user
       tags:
         - Users
       parameters:
