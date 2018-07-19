@@ -358,7 +358,9 @@ paths:
     get:
       summary: Get useful information about the logged API user's account
       description: >-
-        This includes the user settings, properties, privileges as well as generic account details.
+        Includes things like: <br>
+        -> Global account config e.g. lead sources and deal stages. <br>
+        -> User specific config e.g. date format, time zone info. <br>
       parameters: []
       tags:
         - Authentication
@@ -416,8 +418,8 @@ paths:
     post:
       summary: Log the user out of all applications (including mobile)
       description: >-
-        **Warning:** This will log the user out of all applications, by changing their authentication key. If you
-        wish to log a user out, just forget their auth key. Note: this includes the mobile applications.
+        **Warning:** This will log the user out of all applications, by changing their authentication key. <br>
+        If you wish to log a user out - instead just forget their auth key. Note: this includes the mobile applications. <br>
       parameters: []
       tags:
         - Authentication
@@ -430,8 +432,8 @@ paths:
     post:
       summary: Invalidate auth key and return a new auth key
       description: >-
-        **Warning:** This will change the user's authentication key, and therefore log them out of all applications.
-        Note: this includes the mobile applications.
+        **Warning:** This will change the user's authentication key, and therefore log them out of all applications. <br>
+        Note: this includes the mobile applications. <br>
       tags:
         - Authentication
       responses:
