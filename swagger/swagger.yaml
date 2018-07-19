@@ -2855,8 +2855,9 @@ paths:
     get:
       summary: Get the list of call results (for the logged API user's account)
       description: >-
-        Get a list of call results with counts of how many calls resulted in
-        each type of result for you, total and for your team
+        Includes: <br>
+        -> The call results for the account. <br>
+        -> The counts of their usages for the logged API user, and their team. <br>
       tags:
         - Calls
       parameters: []
