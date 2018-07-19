@@ -5472,7 +5472,7 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific contact
-      description: You can only delete contacts if you have the delete_contacts permission
+      description: You can only delete contacts if you have the `delete_contacts` permission.
       tags:
         - Contacts
       parameters:
@@ -5550,10 +5550,9 @@ paths:
     post:
       summary: Add a new contact photo
       description: >-
-        Contact photos can be uploaded using the API. It takes a parameter
-        ‘image’, which must be a Base64 encoded string. <br>
-
-        Images will be cropped to a centered square and resized to 200px.
+        Use this endpoint to add a new photo to an existing contact. <br> <br>
+        It takes a parameter `image`, which must be a Base64 encoded string of the image data. <br>
+        Images will be cropped to a centered square and resized to 200x200 pixels. <br>
       tags:
         - Contacts
       parameters:
@@ -5604,12 +5603,10 @@ paths:
     put:
       summary: Update a contact's photo
       description: >
-        Contact photos can be uploaded using the API. It takes a parameter
-        ‘image’, which must be a Base64 encoded string. <br>
-
-        Images will be cropped to a centered square and resized to 200px. <br>
-
-        Updating a contact photo will remove the existing photo.
+        Use this endpoint to add a new photo to an existing contact. <br> <br>
+        It takes a parameter `image`, which must be a Base64 encoded string of the image data. <br>
+        Images will be cropped to a centered square and resized to 200x200 pixels. <br> <br>
+        Note: updating a contact photo will remove the existing photo! <br>
       tags:
         - Contacts
       parameters:
@@ -5781,8 +5778,12 @@ paths:
     post:
       summary: Save a specific OnePageCRM contact to Google Contacts
       description: >-
-        OnePageCRM must be authorised to connect to Google Contacts
-        in order to do this action. Please visit https://www.onepagecrm.com/app/google_contacts for more information
+        OnePageCRM must be authorized to save contacts to Google Contacts on your behalf, in order to complete this request. <br>
+        Please visit
+        <a target="_blank" href="https://app.onepagecrm.com/app/google_contacts">our integration page</a>
+        to authorize, or
+        <a target="_blank" href="https://help.onepagecrm.com/article/370-how-to-save-contacts-to-google-contacts-from-onepagecrm">our help article</a>
+        for more information. <br>
       tags:
         - Contacts
       parameters:
@@ -5838,7 +5839,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/actions':
+  /contacts/{contact_id}/actions:
     get:
       summary: Get all actions for a specific contact
       description: ''
@@ -5974,7 +5975,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/deals':
+  /contacts/{contact_id}/deals:
     get:
       summary: Get all deals for a specific contact
       description: ''
@@ -6405,7 +6406,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/email_messages':
+  /contacts/{contact_id}/email_messages:
     get:
       summary: Get all email messages for a specific contact
       description: ''
@@ -6542,7 +6543,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/unassign_tag/{tag_name}':
+  /contacts/{contact_id}/unassign_tag/{tag_name}:
     put:
       summary: Remove a tag from a specific contact
       description: ''
@@ -6614,7 +6615,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/change_status/{status_id}':
+  /contacts/{contact_id}/change_status/{status_id}:
     put:
       summary: Change the status of a specific contact
       description: ''
@@ -6658,7 +6659,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/change_owner/{owner_id}':
+  /contacts/{contact_id}/change_owner/{owner_id}:
     put:
       summary: Change the owner of a specific contact
       description: ''
@@ -6702,7 +6703,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/star':
+  /contacts/{contact_id}/star:
     put:
       summary: Apply a star to a specific contact
       description: ''
@@ -6745,7 +6746,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/unstar':
+  /contacts/{contact_id}/unstar:
     put:
       summary: Remove star from a specific contact
       description: ''
@@ -6788,13 +6789,13 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/close_sales_cycle':
+  /contacts/{contact_id}/close_sales_cycle:
     put:
       summary: Close the sales cycle for a specific contact
       description: >-
-        Add an optional closing comment
-        with the comment field in the request body. Can not close sales cycle if
-        the user has a next action or queued actions with the contact.
+        Only do this when you are no longer actively trying to sell to this contact. <br>
+        Add an optional closing comment with the `comment` field in the request body. <br> <br>
+        Note: cannot close sales cycle if the user has any active (not complete) actions with the contact. <br>
       tags:
         - Contacts
       parameters:
@@ -6842,7 +6843,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/reopen_sales_cycle':
+  /contacts/{contact_id}/reopen_sales_cycle:
     put:
       summary: Reopen the sales cycle for a specific contact
       description: ''
@@ -6885,14 +6886,14 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/contacts/{contact_id}/split':
+  /contacts/{contact_id}/split:
     put:
       summary: Split a contact from their current company (and potentially to a new company)
       description: >-
-        Send the field company_name in the
-        body with the new company name or leave blank to not associated the
-        contact with a company. <br>Splitting the last contact in a company from
-        the company will cause the company to be deleted.
+        Contact is removed (split) from it's current company, and optionally joins another. <br>
+        Send the field `company_name` in the body with the new company's name, or leave blank. <br> <br>
+        **Warning**: splitting the last contact from a company, will cause that company to be deleted,
+        and loss of company data may occur e.g. company phone number or postal address. <br>
       tags:
         - Contacts
       parameters:
@@ -6904,7 +6905,7 @@ paths:
             schema:
               properties:
                 company_name:
-                  example: ''
+                  example: 'Fancy New Company Inc.'
       responses:
         '200':
           description: Operation Successful
