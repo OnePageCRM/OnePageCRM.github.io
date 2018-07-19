@@ -3990,8 +3990,7 @@ paths:
     put:
       summary: Specify action to be promoted as the logged API user's next action
       description: >-
-        Only use this method if there is no next action already assigned. <br>
-        Otherwise see the similar `swap` request. <br>
+        Only use this method if there is no next action already assigned, otherwise see similar `swap` request. <br>
       tags:
         - Actions
       parameters:
