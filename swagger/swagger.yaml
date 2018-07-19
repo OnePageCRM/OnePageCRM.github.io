@@ -7044,7 +7044,7 @@ paths:
       summary: Get a list of contacts prioritized by their next action
       description: >-
         Defaults to the action stream for entire account in a single list. <br>
-        See the action stream of other users on the account by providing the `user_id` param. <br>
+        See the action stream of account users, by providing the `user_id` param. <br>
       tags:
         - "Team Stream"
       parameters:
