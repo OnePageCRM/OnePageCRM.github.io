@@ -698,7 +698,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/lead_sources/{lead_source_id}':
+  /lead_sources/{lead_source_id}:
     get:
       summary: Get a specific lead source
       tags:
@@ -7189,7 +7189,7 @@ paths:
           $ref: "#/components/responses/500"
   /webhooks/{webhook_id}:
     get:
-      summary: Get information about a specific webhook
+      summary: Get a specific webhook
       description: ""
       tags:
         - "Web Hooks"
