@@ -2368,7 +2368,7 @@ paths:
       tags:
         - Notes
       description: >-
-        Before creating an attachment, the file should be uploaded to S3. <br>
+        Before creating an attachment, the file should be uploaded to S3. <br> <br>
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
         Following successful upload to S3, files can be attached via this endpoint. <br>
       parameters:
@@ -2746,7 +2746,7 @@ paths:
     post:
       summary: Create attachment and assign it to an existing call
       description: >-
-        Before creating an attachment, the file should be uploaded to S3. <br>
+        Before creating an attachment, the file should be uploaded to S3. <br> <br>
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
         Following successful upload to S3, files can be attached via this endpoint. <br>
       tags:
@@ -3356,13 +3356,26 @@ paths:
       summary: >-
         Get a pre-authorized S3 upload form (use to upload a file on the client side)
       description: >-
-        To use the form in the response to upload an attachment to s3 you must make a post request to url specified in the response. <br>
-        In addition the following steps must be taken. <br>
-        Include all the params under 'fields' in the post request to s3. <br>
-        The 'key' field must be constructed and be of the following form: {contact_id}/{timestamp}/{filename} <br>
-        'filename' field must be present and the same as the filename specified at the end of the key field <br>
-        'file' is the file to upload <br><br>
-        After uploading the attachment to s3, you can then link this attachment to notes/calls/deals via the post /attachments method using the key param
+        Files must be uploaded to S3 before they can be attached to Deals, Notes or Calls. <br>
+        This request will return all the information needed to upload a file to S3. <br> <br>
+
+        Steps to upload a file to S3: <br>
+        -> Make a `POST` request to the `url` in the response (to this request). <br>
+        -> Include all the params returned as part of the `fields` construct in the response. <br>
+        -> These should be sent as headers of the upload request to S3. <br>
+        -> Most can be sent as they are, but the `key` field must be constructed. <br>
+        -> `"key":"{contact_id}/{timestamp}/{filename}"` <br>
+        -> `filename` field must be present (and the same as the `filename` specified at the end of the `key` field). <br>
+        -> `file` is the file to upload. <br> <br>
+
+        Following successful upload to S3, files may now be attached to Deals, Notes or Calls. <br> <br>
+
+        Notes: <br>
+        -> Maximum file size is 10 MB / 10485760 bytes. <br>
+        -> Each account has 1 GB of storage per user. <br>
+        -> Here's some additional information on the
+        <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-post-example.html">
+        upload process</a>. <br>
       tags:
         - Attachments
       parameters:
@@ -3436,10 +3449,10 @@ paths:
     post:
       summary: Create a new attachment
       description: >-
-        Before creating an attachment, the file should be uploaded to S3. <br>
+        Before creating an attachment, the file should be uploaded to S3. <br> <br>
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
-        Following successful upload to S3, files can be attached to Deals, Notes, Calls via this endpoint. <br>
-        File attachments are supported by Deals, Notes and Calls. <br>
+        Following successful upload to S3, files can be attached via this endpoint. <br> <br>
+        Note: file attachments are supported by Deals, Notes and Calls. <br>
       tags:
         - Attachments
       parameters: []
