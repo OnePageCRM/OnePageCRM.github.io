@@ -3583,8 +3583,12 @@ paths:
     get:
       summary: Get a list of actions
       description: >-
-        ASAP first, then dated actions ordered by due date (overdue first),
-        followed by waiting for (blocked) and finally queued actions (without any date).
+        Default sort order: <br>
+        -> ASAP <br>
+        -> Dated actions (ordered by due date, overdue first) <br>
+        -> Waiting for (blocked) <br>
+        -> Queued actions (without any date) <br>
+        -> Completed actions <br>
       tags:
         - Actions
       parameters:
@@ -3717,7 +3721,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}':
+  /actions/{action_id}:
     get:
       summary: Get a specific action
       description: ''
@@ -3831,7 +3835,8 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific action
-      description: You can only delete actions which are queued or have been marked as done
+      description: >-
+        Note: you can only delete actions which are queued, or have been marked as done.
       tags:
         - Actions
       parameters:
@@ -3851,10 +3856,11 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/unassign':
+  /actions/{action_id}/unassign:
     put:
       summary: Unassign a specific action (from the currently assigned user)
-      description: Leaving `assignee_id` blank will assign this action to the logged API user
+      description: >-
+        Note: leaving `assignee_id` blank will assign this action to the logged API user.
       tags:
         - Actions
       parameters:
@@ -3894,7 +3900,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/mark_as_done':
+  /actions/{action_id}/mark_as_done:
     put:
       summary: Mark a specific action as complete
       description: ''
@@ -3937,7 +3943,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/undo_completion':
+  /actions/{action_id}/undo_completion:
     put:
       summary: Undo action completion
       description: ''
@@ -3980,13 +3986,12 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/promote':
+  /actions/{action_id}/promote:
     put:
-      summary: >-
-        Specify action to be promoted as the logged API user's next action
+      summary: Specify action to be promoted as the logged API user's next action
       description: >-
-        To be used when an action is created or updated to ensure most urgent action is marked as next action. <br>
-        You can only promote actions which are queued for current user and there is no next action assigned. <br>
+        Only use this method if there is no next action already assigned. <br>
+        Otherwise see the similar `swap` request. <br>
       tags:
         - Actions
       parameters:
@@ -4026,11 +4031,10 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/revert_promotion':
+  /actions/{action_id}/revert_promotion:
     put:
       summary: Undo action promotion
-      description: >-
-        You can only promote actions which are queued for current user and there is no next action assigned. <br>
+      description:
       tags:
         - Actions
       parameters:
@@ -4070,15 +4074,17 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/actions/{action_id}/swap':
+  /actions/{action_id}/swap:
     put:
       summary: >-
         Specify action to be swapped in as the logged API user's next action
       description: >-
-        Resolve date conflicts between next action and dated queued action by swapping them. <br>
-        You can only swap actions which are `queued_with_date` for current user. <br>
-        Next action status should be `waiting`, `date` or `date_time`. <br>
-        Next action date should be less urgent than the queued action date being swapped. <br>
+        Resolve date conflicts between next action and dated queued action by swapping them. <br> <br>
+        The swap should consist of: <br>
+        -> A next action of status `date`, `date_time` or `waiting` <br>
+        -> A queued action of status `queued_with_date` <br> <br>
+        Both actions should be for the current user,
+        and the date for the queued action should be before the date of the next action. <br>
       tags:
         - Actions
       parameters:
