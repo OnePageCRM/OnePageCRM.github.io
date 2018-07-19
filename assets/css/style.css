@@ -1600,9 +1600,9 @@ textarea:-moz-placeholder {
 }
 
 .block{
-	margin: 3em 0;
 	font-size: 0.8em;
-	border-top: 1px solid #f0f0f0;
+	/*margin: 3em 0;
+	border-top: 1px solid #f0f0f0;*/
 	padding-top: 20px;
 }
 
@@ -1620,6 +1620,8 @@ textarea:-moz-placeholder {
   top: 100px;
   bottom: 0;
   z-index: 9;
+  min-width:220px;
+  width: 15%;
 }
 .dev-nav li.disabled{
   color: #333333;
@@ -1655,9 +1657,10 @@ textarea:-moz-placeholder {
 	/*white-space: pre-wrap;*/
 }
 code {
-  white-space: normal;
+  
 }
 code.inline{
+	white-space: normal;
 -ms-word-break: break-all;
     word-break: break-all;
 -webkit-hyphens: auto;

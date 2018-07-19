@@ -10,7 +10,14 @@ slider_image: "/assets/images/LargeGroup_devs.jpg"
     <div class="appix-blog-content section-ptb">
         <div class="container">
             <div class="row">
-              {% include post_loops.html %}
+                <div class="col-md-8">
+                    {% include post_loops.html %}
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar-contents">
+                      {% include sidebar.html %}
+                    </div>
+                </div>
             </div>
             <!-- pagination -->
             <div class="row">

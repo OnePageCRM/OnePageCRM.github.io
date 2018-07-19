@@ -1,7 +1,7 @@
    
    {% for post in paginator.posts %}
 
-    <div class="col-md-12">
+    
         <div class="blog-item post tag-video">
             <div class="video-post-format post tag-image ">
                 
@@ -22,11 +22,13 @@
 
                 <div class="blog-details">
                     <h3 class="blog-post-title"><a href="{{ post.url}} ">{{ post.title }}</a></h3>
-                    <ul class="blog-author-name">
+                    {% assign author = site.data.authors[post.author] %}
+                    <p><span class="author">{{ author.name }}</span>, <span class="date">{{ post.date | date_to_string }}</span></p>
+                    <!--<ul class="blog-author-name">
                         {% assign author = site.data.authors[post.author] %}
                         <li><i class="fa fa-user" aria-hidden="true"></i><a href="{{post.author_web}}">{{ author.name }}</a></li>
                         <!--<li><i class="fa fa-folder-open"></i><a href="/pages/tagpage/">{{ post.category | limit: 1 }}</a></li>-->
-                    </ul>
+                   <!-- </ul>-->
                     <div class="blog-excerpt">
                         <div class="kg-card-markdown">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/sze17ICWvSk" frameborder="0" allowfullscreen></iframe>
@@ -64,7 +66,6 @@
                 </div>
             </div>
         </div>
-    </div>
     {% endfor %}
 
 
