@@ -3093,7 +3093,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/deals/{deal_id}':
+  /deals/{deal_id}:
     get:
       summary: Get a specific deal
       description: ''
@@ -3220,7 +3220,8 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific deal
-      description: Only users with the delete_deals permission can delete deals
+      description: >-
+        Note: only users with the `delete_deals` permission can delete deals.
       tags:
         - Deals
       parameters:
@@ -5479,7 +5480,8 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific contact
-      description: You can only delete contacts if you have the `delete_contacts` permission.
+      description: >-
+        Note: only users with the `delete_contacts` permission can delete contacts.
       tags:
         - Contacts
       parameters:
