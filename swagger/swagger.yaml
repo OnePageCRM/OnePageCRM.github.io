@@ -4304,7 +4304,7 @@ paths:
   /companies/{company_id}:
     get:
       summary: Get a specific company
-      description: Get detailed info about a specific company
+      description:
       tags:
         - Companies
       parameters:
@@ -4347,7 +4347,7 @@ paths:
     put:
       summary: Update a specific company
       description: >-
-        When updating a company_field either the id or name and the value must be present
+        Note: when updating a company field, either the `id` or `name` and the `value` must be present.
       tags:
         - Companies
       parameters:
@@ -4372,12 +4372,12 @@ paths:
                   type: array
                   items:
                     properties:
-                      name:
-                        $ref: '#/components/schemas/Company_field/properties/name'
                       id:
                         $ref: '#/components/schemas/Company_field/properties/id'
+                      name:
+                        $ref: '#/components/schemas/Company_field/properties/name'
                       value:
-                        example: big
+                        example: "big"
       responses:
         '200':
           description: Operation Successful
@@ -4802,8 +4802,9 @@ paths:
     post:
       summary: Link a contact to a specific company
       description: >-
-        A company is not allowed to have more than
-        100 linked contacts. Can not link a contact within the same company
+        Notes: <br>
+        -> Cannot link a contact to the company they already work at. <br>
+        -> A company is not allowed to have more than 100 linked contacts. <br>
       tags:
         - Companies
       parameters:
@@ -4909,9 +4910,9 @@ paths:
     post:
       summary: Enable company status sync
       description: >-
-        This will sync the status of all contacts within this company. An initial
-        status_id must be provided. All contacts in this company will have their
-        status updated to match the company status
+        Turns on sync so that all contacts in the specified company will have the same status. <br>
+        An initial `status_id` must be provided in the request body. <br> <br>
+        Note: the statuses of this company's contacts will remain in sync, until sync is disabled for this company. <br>
       tags:
         - Companies
       parameters:
@@ -4961,7 +4962,7 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Disable company status sync
-      description: Disable the syncing of the status of all contacts within this company
+      description:
       tags:
         - Companies
       parameters:
@@ -5336,7 +5337,8 @@ paths:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific contact
-      description: ''
+      description: >-
+        Note: when updating a custom field, either the `id` or `name` and the `value` must be present.
       tags:
         - Contacts
       parameters:
@@ -5381,10 +5383,10 @@ paths:
                   type: array
                   items:
                     properties:
+                      id:
+                        $ref: '#/components/schemas/Custom_field/properties/id'
                       name:
                         $ref: '#/components/schemas/Custom_field/properties/name'
-                      type:
-                        $ref: '#/components/schemas/Custom_field/properties/type'
                       value:
                         example: Winter
                 starred:
@@ -8305,7 +8307,7 @@ components:
         name:
           description: Name of the custom field. Used for identification of custom fields.
           type: string
-          example: Favorite session
+          example: Favorite season
         type:
           description: Type of custom field.
           type: string
