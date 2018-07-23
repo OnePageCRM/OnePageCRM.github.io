@@ -7,7 +7,7 @@ author: elano
 date: 2017-05-05 15:00:00
 ---
 
-The mobile version `3.4.0` of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally called companies). 
+The mobile version <b>3.4.0</b> of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally called companies).
 
 To work with organizations, the API was updated, and I'm going to show some of the new features of the mobile update.
 
@@ -27,10 +27,10 @@ After clicking the organization info, you will be brought to a a seperate screen
 
 With the new API updates:
 
-To request an organization's information and resources we now use the following: 
+To request an organization's information and resources we now use the following:
 `companies/{company_id}.format`
 
-Using the following sub-endpoint: 
+Using the following sub-endpoint:
 `companies/{company_id}/linked_contacts.json`
 We can do the following:
 - (GET) list the linked contacts of a company
