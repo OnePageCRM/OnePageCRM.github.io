@@ -962,6 +962,7 @@ a.newer-posts, a.older-posts {
     border-radius: 4px;
     background: #f9f9f9;
     font-size: 15px;
+	white-space: nowrap;
 }
 a.newer-posts:hover, a.older-posts:hover {
     color: #fff;

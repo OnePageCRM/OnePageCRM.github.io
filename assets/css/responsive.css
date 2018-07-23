@@ -176,6 +176,20 @@
 	}
 }
 
+@media only screen and (max-width: 480px) {
+	.pagination.w-100 .w-50{
+		position: absolute;
+		width: 100% !important;
+		bottom: 0;
+		left:0;
+		right: 0;
+	}
+	.pagination.w-100 .w-25.float-right.text-right{
+		position: absolute;
+		right: 10px;
+	}
+}
+
 @media only screen and (max-width: 375px) {
 	.dev-nav{
 		padding-top: 10px;
@@ -215,4 +229,5 @@
 	.slider-wrapper.height-350{
 		height: 200px;
 	}
+	
 }

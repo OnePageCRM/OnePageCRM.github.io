@@ -7,7 +7,7 @@ author: elano
 date: 2017-05-05 15:00:00
 ---
 
-The mobile version `3.4.0` of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally called companies). 
+The mobile version <strong>3.4.0</strong> of OnePageCRM is out for iOS and Android and one of the big changes in this version is the way it handles organizations (originally called companies). 
 
 To work with organizations, the API was updated, and I'm going to show some of the new features of the mobile update.
 
