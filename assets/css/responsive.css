@@ -184,6 +184,9 @@
 		left:0;
 		right: 0;
 	}
+	.pagination.w-100 .w-25{
+		min-height: 25px;
+	}
 	.pagination.w-100 .w-25.float-right.text-right{
 		position: absolute;
 		right: 10px;

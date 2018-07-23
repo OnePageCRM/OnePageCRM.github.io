@@ -85,6 +85,8 @@ leonard:
 kevin:
     name: Kevin Farrell
     display_name: Kevin
+    email: kevinf@onepagecrm.com
+    github: kevGalway
     bio: |
         Climbing the never ending learning curve of web development. Currently interested in API design, best practises and in general getting things talking nicely to each other! When not pretending that I can code, I can be found playing the Chinese board game called 'Go' or failing badly at Yoga.
     image: '/assets/images/authors/kevin.jpg'
@@ -94,12 +96,5 @@ matt:
     bio: |
         Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
     image: '/assets/images/authors/matt.jpg'
-kevin:
-    name: Kevin Farrell
-    display_name: Kevin
-    email: kevinf@onepagecrm.com
-    github: kevGalway
-    bio: "Kevin is a software engineer at OnePageCRM"
-    image: '/assets/images/authors/kevin.jpg'
 
   
