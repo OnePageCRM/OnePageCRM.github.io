@@ -2941,7 +2941,7 @@ paths:
         - Deals
       parameters:
         - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_deals_status'
         - $ref: '#/components/parameters/query_stage'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_company_id'
@@ -3595,7 +3595,7 @@ paths:
       summary: Get a list of actions
       description: >-
         Default sort order: <br>
-        -> ASAP <br>
+        -> ASAP first <br>
         -> Dated actions (ordered by due date, overdue first) <br>
         -> Waiting for (blocked) <br>
         -> Queued actions (without any date) <br>
@@ -3605,7 +3605,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -4439,7 +4439,7 @@ paths:
         - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -4514,7 +4514,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/path_company_id'
         - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_deals_status'
         - $ref: '#/components/parameters/query_stage'
         - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
@@ -5868,7 +5868,7 @@ paths:
         - $ref: '#/components/parameters/path_contact_id'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -6003,7 +6003,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/path_contact_id'
         - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_status'
+        - $ref: '#/components/parameters/query_deals_status'
         - $ref: '#/components/parameters/query_stage'
         - $ref: '#/components/parameters/query_contact_id'
         - $ref: '#/components/parameters/query_company_id'
@@ -9087,14 +9087,24 @@ components:
       schema:
         type: boolean
         example: false
-    query_status:
+    query_actions_status:
       name: status
       in: query
       required: false
-      description: Query by status
+      description: >-
+        Return actions of a particular status (i.e. `asap`, `date`, `date_time`, `waiting`, `queued`, `queued_with_date`, or `done`)
       schema:
         type: string
-        example: closed
+        example: date_time
+    query_deals_status:
+      name: status
+      in: query
+      required: false
+      description: >-
+        Return deals of a particular status (i.e. `pending`, `won`, `lost`, or `closed`)
+      schema:
+        type: string
+        example: pending
     query_stage:
       name: stage
       in: query
