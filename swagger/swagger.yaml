@@ -3567,10 +3567,7 @@ paths:
     get:
       summary: Get the list of all compatible countries
       description: >-
-        It is possible to get a list of compatible countries using the API. The
-        Countries endpoint provides this read-only list. Countries and their
-        codes conform to the ISO-3166 international standard. They are returned
-        in alphabetic order based on their ISO-code.
+        A read-only list of all compatible countries, alpha sorted based on their ISO-3166 country codes. <br>
       tags:
         - Countries
       parameters: []
