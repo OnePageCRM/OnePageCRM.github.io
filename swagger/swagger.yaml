@@ -2947,7 +2947,7 @@ paths:
         - $ref: '#/components/parameters/query_company_id'
         - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_tag'
+        - $ref: '#/components/parameters/query_deals_tag'
         - $ref: '#/components/parameters/query_deals_filter_id'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -5041,7 +5041,7 @@ paths:
         - $ref: '#/components/parameters/query_starred'
         - $ref: '#/components/parameters/query_contacts_search'
         - $ref: '#/components/parameters/query_status_id'
-        - $ref: '#/components/parameters/query_tag'
+        - $ref: '#/components/parameters/query_contacts_tag'
         - $ref: '#/components/parameters/query_team'
         - $ref: '#/components/parameters/query_url'
         - $ref: '#/components/parameters/query_waiting'
@@ -6009,7 +6009,7 @@ paths:
         - $ref: '#/components/parameters/query_company_id'
         - $ref: '#/components/parameters/query_deals_search'
         - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_tag'
+        - $ref: '#/components/parameters/query_deals_tag'
         - $ref: '#/components/parameters/query_deals_filter_id'
         - $ref: '#/components/parameters/query_date_filter'
         - $ref: '#/components/parameters/query_since'
@@ -6983,7 +6983,7 @@ paths:
         - $ref: "#/components/parameters/query_starred"
         - $ref: "#/components/parameters/query_contacts_search"
         - $ref: "#/components/parameters/query_status_id"
-        - $ref: "#/components/parameters/query_tag"
+        - $ref: "#/components/parameters/query_contacts_tag"
         - $ref: "#/components/parameters/query_team"
         - $ref: "#/components/parameters/query_url"
         - $ref: "#/components/parameters/query_waiting"
@@ -7075,7 +7075,7 @@ paths:
         - $ref: "#/components/parameters/query_starred"
         - $ref: "#/components/parameters/query_contacts_search"
         - $ref: "#/components/parameters/query_status_id"
-        - $ref: "#/components/parameters/query_tag"
+        - $ref: "#/components/parameters/query_contacts_tag"
         - $ref: "#/components/parameters/query_team"
         - $ref: '#/components/parameters/query_user_id'
         - $ref: "#/components/parameters/query_url"
@@ -9154,12 +9154,21 @@ components:
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
-    query_tag:
+    query_contacts_tag:
       name: tag
       in: query
       required: false
       description: >-
-        Query by `tag` (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Filter contacts by tag (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      schema:
+        type: string
+        example: VIP
+    query_deals_tag:
+      name: tag
+      in: query
+      required: false
+      description: >-
+        Filter deals by tag (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
       schema:
         type: string
         example: VIP
