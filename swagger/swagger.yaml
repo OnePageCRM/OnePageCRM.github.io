@@ -2478,7 +2478,7 @@ paths:
       tags:
       - Calls
       parameters:
-      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_calls_contact_id'
       - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
@@ -6165,7 +6165,7 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_notes_contact_id'
       - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
@@ -6297,7 +6297,7 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_calls_contact_id'
       - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
@@ -9264,11 +9264,11 @@ components:
       schema:
         type: string
         example: 5ae06ef9d55673108fe8877b
-    query_contact_id:
+    query_calls_contact_id:
       name: contact_id
       in: query
       description: >-
-        Query by `contact_id` (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return calls for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
