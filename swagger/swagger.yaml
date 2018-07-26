@@ -2944,7 +2944,7 @@ paths:
       - $ref: '#/components/parameters/query_deals_status'
       - $ref: '#/components/parameters/query_stage'
       - $ref: '#/components/parameters/query_deals_contact_id'
-      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_deals_company_id'
       - $ref: '#/components/parameters/query_deals_search'
       - $ref: '#/components/parameters/query_owner_id'
       - $ref: '#/components/parameters/query_deals_tag'
@@ -4437,7 +4437,6 @@ paths:
       - Companies
       parameters:
       - $ref: '#/components/parameters/path_company_id'
-      - $ref: '#/components/parameters/query_actions_contact_id'
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
@@ -5866,7 +5865,6 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_actions_contact_id'
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
@@ -6005,12 +6003,8 @@ paths:
       - $ref: '#/components/parameters/query_deals_name'
       - $ref: '#/components/parameters/query_deals_status'
       - $ref: '#/components/parameters/query_stage'
-      - $ref: '#/components/parameters/query_deals_contact_id'
-      - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_deals_search'
       - $ref: '#/components/parameters/query_owner_id'
-      - $ref: '#/components/parameters/query_deals_tag'
-      - $ref: '#/components/parameters/query_deals_filter_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -6165,8 +6159,6 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_notes_contact_id'
-      - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -6297,8 +6289,6 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_calls_contact_id'
-      - $ref: '#/components/parameters/query_company_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -9278,6 +9268,15 @@ components:
       in: query
       description: >-
         Return contacts from a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      required: false
+      schema:
+        type: string
+        example: 6se06df9d55673108re84745
+    query_deals_company_id:
+      name: company_id
+      in: query
+      description: >-
+        Return deals for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
