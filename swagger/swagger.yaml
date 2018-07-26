@@ -3604,6 +3604,7 @@ paths:
       - Actions
       parameters:
       - $ref: '#/components/parameters/query_actions_contact_id'
+      - $ref: '#/components/parameters/query_actions_company_id'
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
@@ -9277,6 +9278,15 @@ components:
       in: query
       description: >-
         Return deals for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      required: false
+      schema:
+        type: string
+        example: 6se06df9d55673108re84745
+    query_actions_company_id:
+      name: company_id
+      in: query
+      description: >-
+        Return actions for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
