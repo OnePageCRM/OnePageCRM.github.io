@@ -270,89 +270,89 @@ info:
   termsOfService: 'https://www.onepagecrm.com/api-use'
   version: '3.0'
 servers:
-  - url: 'https://app.onepagecrm.com/api/v3'
-    description: Production Application Server
-  - url: 'http://staging.onepagecrm.com/api/v3'
-    description: Staging Application Server
+- url: 'https://app.onepagecrm.com/api/v3'
+  description: Production Application Server
+- url: 'http://staging.onepagecrm.com/api/v3'
+  description: Staging Application Server
 security:
-  - BasicAuth: []
+- BasicAuth: []
 tags:
-  - name: Authentication
-    description: >-
-      Get account information like settings and lead sources, log yourself out or change your authentication key.
-  - name: Users
-    description: >-
-      Useful information about the logged user and other members of the team. Each can update their own info. Admins
-      can update all.
-  - name: Contacts
-    description: >-
-      Information about the people you are actively trying to sell to, and related sub-resources like Actions,
-      Deals, Notes, and Calls.
-  - name: Companies
-    description: >-
-      Referred to as 'organizations' in the web application. Companies are logical collections of Contacts and
-      related sub-resources e.g. Deals, Actions and some basic info on the org. e.g. postal address, website. A
-      Company may not be created directly or exist without a Contact.
-  - name: Actions
-    description: >-
-      Completable tasks related to Contacts. ASAP first, then dated actions ordered by due date (overdue first),
-      followed by waiting for (blocked) and finally queued actions (without any date).
-  - name: Action Stream
-    description: >-
-      A listing of contacts prioritized by when their next action is due. The Action Stream is the default view in
-      the OnePageCRM web application.
-  - name: Team Stream
-    description: >-
-      The Action Stream for all users on the account in a single list, or for any individual user on the account
-      (not just the logged user). The same Action Stream sorting is applied.
-  - name: Deals
-    description: >-
-      Represent (potential) financial transactions with your contacts. Deals include information like
-      amount, deal stage, closed date or expected close date. Deals support file attachments.
-  - name: Notes
-    description: >-
-      Allow you to keep track of additional information related to your contacts. Notes can include any
-      information you feel is relevant e.g. interactions with that contact. Notes support file attachments.
-  - name: Calls
-    description: >-
-      Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
-      number dialled and the call result. Calls support file attachments.
-  - name: Attachments
-    description: >-
-      Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3, or stored in
-      external providers i.e. Google Drive, Dropbox, Evernote.
-  - name: Filters
-    description: >-
-      Allow you to query contacts in your own custom way. These filters can only be created on the website but they
-      can be used through the API.
-  - name: Lead Sources
-    description: >-
-      A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
-      already populated but it may be updated if needed, to better fit your organization.
-  - name: Statuses
-    description: >-
-      Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
-      pre-populated, and can be later edited to fit individual needs.
-  - name: Predefined Actions
-    description: >-
-      Template actions users may use frequently in their sales process. Referred to as 'Saved Actions' in the web
-      application.
-  - name: Custom Fields
-    description: >-
-      Extra user-configurable data fields for Contacts. Only editable by admins.
-  - name: Company Fields
-    description: >-
-      Extra user-configurable data fields for Companies. Only editable by admins.
-  - name: Deal Fields
-    description: >-
-      Extra user-configurable data fields for Deals. Only editable by admins.
-  - name: Countries
-    description: >-
-      A list of all compatible countries and their ISO-3166 codes.
-  - name: Web Hooks
-    description: >-
-      A simple, effective way to be notified when things happen in OnePageCRM. For more information, go to the
-      'WebHooks & More' tab at the top of the page.
+- name: Authentication
+  description: >-
+    Get account information like settings and lead sources, log yourself out or change your authentication key.
+- name: Users
+  description: >-
+    Useful information about the logged user and other members of the team. Each can update their own info. Admins
+    can update all.
+- name: Contacts
+  description: >-
+    Information about the people you are actively trying to sell to, and related sub-resources like Actions,
+    Deals, Notes, and Calls.
+- name: Companies
+  description: >-
+    Referred to as 'organizations' in the web application. Companies are logical collections of Contacts and
+    related sub-resources e.g. Deals, Actions and some basic info on the org. e.g. postal address, website. A
+    Company may not be created directly or exist without a Contact.
+- name: Actions
+  description: >-
+    Completable tasks related to Contacts. ASAP first, then dated actions ordered by due date (overdue first),
+    followed by waiting for (blocked) and finally queued actions (without any date).
+- name: Action Stream
+  description: >-
+    A listing of contacts prioritized by when their next action is due. The Action Stream is the default view in
+    the OnePageCRM web application.
+- name: Team Stream
+  description: >-
+    The Action Stream for all users on the account in a single list, or for any individual user on the account
+    (not just the logged user). The same Action Stream sorting is applied.
+- name: Deals
+  description: >-
+    Represent (potential) financial transactions with your contacts. Deals include information like
+    amount, deal stage, closed date or expected close date. Deals support file attachments.
+- name: Notes
+  description: >-
+    Allow you to keep track of additional information related to your contacts. Notes can include any
+    information you feel is relevant e.g. interactions with that contact. Notes support file attachments.
+- name: Calls
+  description: >-
+    Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
+    number dialled and the call result. Calls support file attachments.
+- name: Attachments
+  description: >-
+    Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3, or stored in
+    external providers i.e. Google Drive, Dropbox, Evernote.
+- name: Filters
+  description: >-
+    Allow you to query contacts in your own custom way. These filters can only be created on the website but they
+    can be used through the API.
+- name: Lead Sources
+  description: >-
+    A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
+    already populated but it may be updated if needed, to better fit your organization.
+- name: Statuses
+  description: >-
+    Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
+    pre-populated, and can be later edited to fit individual needs.
+- name: Predefined Actions
+  description: >-
+    Template actions users may use frequently in their sales process. Referred to as 'Saved Actions' in the web
+    application.
+- name: Custom Fields
+  description: >-
+    Extra user-configurable data fields for Contacts. Only editable by admins.
+- name: Company Fields
+  description: >-
+    Extra user-configurable data fields for Companies. Only editable by admins.
+- name: Deal Fields
+  description: >-
+    Extra user-configurable data fields for Deals. Only editable by admins.
+- name: Countries
+  description: >-
+    A list of all compatible countries and their ISO-3166 codes.
+- name: Web Hooks
+  description: >-
+    A simple, effective way to be notified when things happen in OnePageCRM. For more information, go to the
+    'WebHooks & More' tab at the top of the page.
 paths:
   /bootstrap:
     get:
@@ -363,7 +363,7 @@ paths:
         -> User specific config e.g. date format, time zone info. <br>
       parameters: []
       tags:
-        - Authentication
+      - Authentication
       responses:
         '200':
           description: OK - Operation successful.
@@ -422,7 +422,7 @@ paths:
         If you wish to log a user out - instead just forget their auth key. Note: this includes the mobile applications. <br>
       parameters: []
       tags:
-        - Authentication
+      - Authentication
       responses:
         '201':
           $ref: '#/components/responses/201'
@@ -435,7 +435,7 @@ paths:
         **Warning:** This will change the user's authentication key, and therefore log them out of all applications. <br>
         Note: this includes the mobile applications. <br>
       tags:
-        - Authentication
+      - Authentication
       responses:
         '201':
           description: OK - Operation successful.
@@ -465,7 +465,7 @@ paths:
     get:
       summary: Get the list of users (for the logged API user's account)
       tags:
-        - Users
+      - Users
       parameters: []
       responses:
         '200':
@@ -506,9 +506,9 @@ paths:
     get:
       summary: Get a specific user
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/path_user_id'
+      - $ref: '#/components/parameters/path_user_id'
       responses:
         '200':
           description: Ok - Operation successful.
@@ -555,9 +555,9 @@ paths:
         -> <b>bcc_email</b> <i>(Set this field to `true` to generate a new BCC email address,
         otherwise omit the field entirely. You can only update this field for yourself.)</i> <br>
       tags:
-        - Users
+      - Users
       parameters:
-        - $ref: '#/components/parameters/path_user_id'
+      - $ref: '#/components/parameters/path_user_id'
       requestBody:
         required: true
         content:
@@ -611,7 +611,7 @@ paths:
     get:
       summary: Get the list of lead sources (for the logged API user's account)
       tags:
-        - Lead Sources
+      - Lead Sources
       parameters: []
       responses:
         '200':
@@ -651,7 +651,7 @@ paths:
     post:
       summary: Create a new lead source
       tags:
-        - Lead Sources
+      - Lead Sources
       parameters: []
       requestBody:
         required: true
@@ -698,9 +698,9 @@ paths:
     get:
       summary: Get a specific lead source
       tags:
-        - Lead Sources
+      - Lead Sources
       parameters:
-        - $ref: '#/components/parameters/path_lead_source_id'
+      - $ref: '#/components/parameters/path_lead_source_id'
       responses:
         '200':
           description: Ok - Operation successful.
@@ -737,9 +737,9 @@ paths:
     put:
       summary: Update a specific lead source
       tags:
-        - Lead Sources
+      - Lead Sources
       parameters:
-        - $ref: '#/components/parameters/path_lead_source_id'
+      - $ref: '#/components/parameters/path_lead_source_id'
       requestBody:
         required: true
         content:
@@ -784,9 +784,9 @@ paths:
     delete:
       summary: Delete a specific lead source
       tags:
-        - Lead Sources
+      - Lead Sources
       parameters:
-        - $ref: '#/components/parameters/path_lead_source_id'
+      - $ref: '#/components/parameters/path_lead_source_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -807,7 +807,7 @@ paths:
       summary: Get the list of statuses (for the logged API user's account)
       description: ''
       tags:
-        - Statuses
+      - Statuses
       parameters: []
       responses:
         '200':
@@ -852,7 +852,7 @@ paths:
       summary: Create a new status
       description: ''
       tags:
-        - Statuses
+      - Statuses
       parameters: []
       requestBody:
         required: true
@@ -910,9 +910,9 @@ paths:
       summary: Get a specific status
       description: ''
       tags:
-        - Statuses
+      - Statuses
       parameters:
-        - $ref: '#/components/parameters/path_status_id'
+      - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
           description: OK - Operation successful
@@ -952,9 +952,9 @@ paths:
       summary: Update a specific status
       description: ''
       tags:
-        - Statuses
+      - Statuses
       parameters:
-        - $ref: '#/components/parameters/path_status_id'
+      - $ref: '#/components/parameters/path_status_id'
       requestBody:
         required: true
         content:
@@ -1006,9 +1006,9 @@ paths:
       summary: Delete a specific status
       description: ''
       tags:
-        - Statuses
+      - Statuses
       parameters:
-        - $ref: '#/components/parameters/path_status_id'
+      - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
           description: OK - Operation successful
@@ -1029,12 +1029,12 @@ paths:
       summary: Get the list of deal fields (for the logged API user's account)
       description: ''
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/query_custom_fields_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_custom_fields_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -1095,7 +1095,7 @@ paths:
       summary: Create a new deal field
       description: Only admins can create deal fields
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters: []
       requestBody:
         required: true
@@ -1149,9 +1149,9 @@ paths:
       summary: Get a specific deal field
       description: ''
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/path_deal_field_id'
+      - $ref: '#/components/parameters/path_deal_field_id'
       responses:
         '200':
           description: Operation Successful
@@ -1191,9 +1191,9 @@ paths:
       summary: Update a specific deal field
       description: Only admins can update deal fields
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/path_deal_field_id'
+      - $ref: '#/components/parameters/path_deal_field_id'
       requestBody:
         required: true
         content:
@@ -1244,9 +1244,9 @@ paths:
       summary: Delete a specific deal field
       description: Only admins can delete deal fields
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters:
-        - $ref: '#/components/parameters/path_deal_field_id'
+      - $ref: '#/components/parameters/path_deal_field_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -1270,7 +1270,7 @@ paths:
         We subtract the deal cost from the deal amount to display the margin. <br>
         You can also calculate commission based on margin instead of amount. <br>
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters: []
       responses:
         '201':
@@ -1311,7 +1311,7 @@ paths:
       summary: Update the cost field for deals
       description: ''
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters: []
       requestBody:
         required: true
@@ -1372,7 +1372,7 @@ paths:
         The cost field can be used for Margin-based deals.
         This request Disables the cost field
       tags:
-        - Deal Fields
+      - Deal Fields
       parameters: []
       responses:
         '200':
@@ -1414,12 +1414,12 @@ paths:
       summary: Get the list of custom fields (for the logged API user's account)
       description: ''
       tags:
-        - Custom Fields
+      - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/query_custom_fields_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_custom_fields_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -1479,7 +1479,7 @@ paths:
       summary: Create a new custom field
       description: Only admins can create custom fields
       tags:
-        - Custom Fields
+      - Custom Fields
       parameters: []
       requestBody:
         required: true
@@ -1533,9 +1533,9 @@ paths:
       summary: Get a specific custom field
       description: ''
       tags:
-        - Custom Fields
+      - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/path_custom_field_id'
+      - $ref: '#/components/parameters/path_custom_field_id'
       responses:
         '200':
           description: Operation Successful
@@ -1575,9 +1575,9 @@ paths:
       summary: Update a specific custom field
       description: Only admins can update custom fields
       tags:
-        - Custom Fields
+      - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/path_custom_field_id'
+      - $ref: '#/components/parameters/path_custom_field_id'
       requestBody:
         required: true
         content:
@@ -1629,9 +1629,9 @@ paths:
       summary: Delete a specific custom field
       description: Only admins can delete custom fields
       tags:
-        - Custom Fields
+      - Custom Fields
       parameters:
-        - $ref: '#/components/parameters/path_custom_field_id'
+      - $ref: '#/components/parameters/path_custom_field_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -1652,12 +1652,12 @@ paths:
       summary: Get the list of company fields (for the logged API user's account)
       description: ''
       tags:
-        - Company Fields
+      - Company Fields
       parameters:
-        - $ref: '#/components/parameters/query_custom_fields_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_custom_fields_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -1717,7 +1717,7 @@ paths:
       summary: Create a new company field
       description: Only admins can create company fields
       tags:
-        - Company Fields
+      - Company Fields
       parameters: []
       requestBody:
         required: true
@@ -1771,9 +1771,9 @@ paths:
       summary: Get a specific company field
       description: ''
       tags:
-        - Company Fields
+      - Company Fields
       parameters:
-        - $ref: '#/components/parameters/path_company_field_id'
+      - $ref: '#/components/parameters/path_company_field_id'
       responses:
         '200':
           description: Operation Successful
@@ -1813,9 +1813,9 @@ paths:
       summary: Update a specific company field
       description: Only admins can update company fields
       tags:
-        - Company Fields
+      - Company Fields
       parameters:
-        - $ref: '#/components/parameters/path_company_field_id'
+      - $ref: '#/components/parameters/path_company_field_id'
       requestBody:
         required: true
         content:
@@ -1867,9 +1867,9 @@ paths:
       summary: Delete a specific company field
       description: Only admins can delete company fields
       tags:
-        - Company Fields
+      - Company Fields
       parameters:
-        - $ref: '#/components/parameters/path_company_field_id'
+      - $ref: '#/components/parameters/path_company_field_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -1890,7 +1890,7 @@ paths:
       summary: Get the list of predefined actions (for the logged API user's account)
       description: ''
       tags:
-        - Predefined Actions
+      - Predefined Actions
       parameters: []
       responses:
         '200':
@@ -1935,7 +1935,7 @@ paths:
       summary: Create a new predifined action
       description: ''
       tags:
-        - Predefined Actions
+      - Predefined Actions
       parameters: []
       requestBody:
         required: true
@@ -1987,9 +1987,9 @@ paths:
       summary: Get a specific predefined action
       description: ''
       tags:
-        - Predefined Actions
+      - Predefined Actions
       parameters:
-        - $ref: '#/components/parameters/path_predefined_action_id'
+      - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -2029,9 +2029,9 @@ paths:
       summary: Update a specific predefined action
       description: ''
       tags:
-        - Predefined Actions
+      - Predefined Actions
       parameters:
-        - $ref: '#/components/parameters/path_predefined_action_id'
+      - $ref: '#/components/parameters/path_predefined_action_id'
       requestBody:
         required: true
         content:
@@ -2081,9 +2081,9 @@ paths:
       summary: Delete a specific predefined action
       description: ''
       tags:
-        - Predefined Actions
+      - Predefined Actions
       parameters:
-        - $ref: '#/components/parameters/path_predefined_action_id'
+      - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -2104,19 +2104,19 @@ paths:
       summary: Get a list of notes
       description: ''
       tags:
-        - Notes
+      - Notes
       parameters:
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_notes_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_notes_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_notes_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -2176,7 +2176,7 @@ paths:
       summary: Create a new note
       description: ''
       tags:
-        - Notes
+      - Notes
       parameters: []
       requestBody:
         description: >-
@@ -2239,9 +2239,9 @@ paths:
       summary: Get a specific note
       description: ''
       tags:
-        - Notes
+      - Notes
       parameters:
-        - $ref: '#/components/parameters/path_note_id'
+      - $ref: '#/components/parameters/path_note_id'
       responses:
         '200':
           description: Operation Successful
@@ -2281,9 +2281,9 @@ paths:
       summary: Update a specific note
       description: ''
       tags:
-        - Notes
+      - Notes
       parameters:
-        - $ref: '#/components/parameters/path_note_id'
+      - $ref: '#/components/parameters/path_note_id'
       requestBody:
         description: >-
           'contact_id' and 'text' are required when create a note. If a date
@@ -2344,9 +2344,9 @@ paths:
       summary: Delete a specific note
       description: ''
       tags:
-        - Notes
+      - Notes
       parameters:
-        - $ref: '#/components/parameters/path_note_id'
+      - $ref: '#/components/parameters/path_note_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -2366,13 +2366,13 @@ paths:
     post:
       summary: Create attachment and assign it to an existing note
       tags:
-        - Notes
+      - Notes
       description: >-
         Before creating an attachment, the file should be uploaded to S3. <br> <br>
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
         Following successful upload to S3, files can be attached via this endpoint. <br>
       parameters:
-        - $ref: '#/components/parameters/path_note_id'
+      - $ref: '#/components/parameters/path_note_id'
       requestBody:
         required: true
         content:
@@ -2476,19 +2476,19 @@ paths:
       summary: Get a list of calls
       description: ''
       tags:
-        - Calls
+      - Calls
       parameters:
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_calls_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_calls_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -2548,7 +2548,7 @@ paths:
       summary: Create a call
       description: ''
       tags:
-        - Calls
+      - Calls
       parameters: []
       requestBody:
         required: true
@@ -2615,9 +2615,9 @@ paths:
       summary: Get a specific call
       description: ''
       tags:
-        - Calls
+      - Calls
       parameters:
-        - $ref: '#/components/parameters/path_call_id'
+      - $ref: '#/components/parameters/path_call_id'
       responses:
         '200':
           description: Operation Successful
@@ -2657,9 +2657,9 @@ paths:
       summary: Update a specific call
       description: ''
       tags:
-        - Calls
+      - Calls
       parameters:
-        - $ref: '#/components/parameters/path_call_id'
+      - $ref: '#/components/parameters/path_call_id'
       requestBody:
         required: true
         content:
@@ -2724,9 +2724,9 @@ paths:
       summary: Delete a specific call
       description: ''
       tags:
-        - Calls
+      - Calls
       parameters:
-        - $ref: '#/components/parameters/path_call_id'
+      - $ref: '#/components/parameters/path_call_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -2750,9 +2750,9 @@ paths:
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
         Following successful upload to S3, files can be attached via this endpoint. <br>
       tags:
-        - Calls
+      - Calls
       parameters:
-        - $ref: '#/components/parameters/path_call_id'
+      - $ref: '#/components/parameters/path_call_id'
       requestBody:
         required: true
         content:
@@ -2859,7 +2859,7 @@ paths:
         -> The call results for the account. <br>
         -> The counts of their usages for the logged API user, and their team. <br>
       tags:
-        - Calls
+      - Calls
       parameters: []
       responses:
         '200':
@@ -2938,26 +2938,26 @@ paths:
       summary: Get a list of deals
       description: ''
       tags:
-        - Deals
+      - Deals
       parameters:
-        - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_deals_status'
-        - $ref: '#/components/parameters/query_stage'
-        - $ref: '#/components/parameters/query_deals_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_deals_search'
-        - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_deals_tag'
-        - $ref: '#/components/parameters/query_deals_filter_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_deals_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_deals_name'
+      - $ref: '#/components/parameters/query_deals_status'
+      - $ref: '#/components/parameters/query_stage'
+      - $ref: '#/components/parameters/query_deals_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_deals_search'
+      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_deals_tag'
+      - $ref: '#/components/parameters/query_deals_filter_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_deals_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -3017,7 +3017,7 @@ paths:
       summary: Create a new deal
       description: ''
       tags:
-        - Deals
+      - Deals
       parameters: []
       requestBody:
         required: true
@@ -3099,9 +3099,9 @@ paths:
       summary: Get a specific deal
       description: ''
       tags:
-        - Deals
+      - Deals
       parameters:
-        - $ref: '#/components/parameters/path_deal_id'
+      - $ref: '#/components/parameters/path_deal_id'
       responses:
         '200':
           description: Operation Successful
@@ -3141,9 +3141,9 @@ paths:
       summary: Update a specific deal
       description: ''
       tags:
-        - Deals
+      - Deals
       parameters:
-        - $ref: '#/components/parameters/path_deal_id'
+      - $ref: '#/components/parameters/path_deal_id'
       requestBody:
         required: true
         content:
@@ -3224,9 +3224,9 @@ paths:
       description: >-
         Note: only users with the `delete_deals` permission can delete deals.
       tags:
-        - Deals
+      - Deals
       parameters:
-        - $ref: '#/components/parameters/path_deal_id'
+      - $ref: '#/components/parameters/path_deal_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -3250,9 +3250,9 @@ paths:
         Make a request to `attachments/s3_form` for a pre-authorized upload form. <br>
         Following successful upload to S3, files can be attached via this endpoint. <br>
       tags:
-        - Deals
+      - Deals
       parameters:
-        - $ref: '#/components/parameters/path_deal_id'
+      - $ref: '#/components/parameters/path_deal_id'
       requestBody:
         required: true
         content:
@@ -3377,14 +3377,14 @@ paths:
         <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-post-example.html">
         upload process</a>. <br>
       tags:
-        - Attachments
+      - Attachments
       parameters:
-        - in: query
-          name: contact_id
-          required: true
-          schema:
-            type: string
-          description: Contact to be associated with the attachment
+      - in: query
+        name: contact_id
+        required: true
+        schema:
+          type: string
+        description: Contact to be associated with the attachment
       responses:
         '200':
           description: OK - Operation successful.
@@ -3454,7 +3454,7 @@ paths:
         Following successful upload to S3, files can be attached via this endpoint. <br> <br>
         Note: file attachments are supported by Deals, Notes and Calls. <br>
       tags:
-        - Attachments
+      - Attachments
       parameters: []
       requestBody:
         required: true
@@ -3545,9 +3545,9 @@ paths:
       summary: Delete a specific attachment
       description: ''
       tags:
-        - Attachments
+      - Attachments
       parameters:
-        - $ref: '#/components/parameters/path_attachment_id'
+      - $ref: '#/components/parameters/path_attachment_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -3569,7 +3569,7 @@ paths:
       description: >-
         A read-only list of all compatible countries, alpha sorted based on their ISO-3166 country codes. <br>
       tags:
-        - Countries
+      - Countries
       parameters: []
       responses:
         '200':
@@ -3601,21 +3601,21 @@ paths:
         -> Queued actions (without any date) <br>
         -> Completed actions <br>
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/query_actions_contact_id'
-        - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_actions_status'
-        - $ref: '#/components/parameters/query_done'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_actions_contact_id'
+      - $ref: '#/components/parameters/query_assignee_id'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -3675,7 +3675,7 @@ paths:
       summary: Create a new action
       description: ''
       tags:
-        - Actions
+      - Actions
       parameters: []
       requestBody:
         required: true
@@ -3737,9 +3737,9 @@ paths:
       summary: Get a specific action
       description: ''
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3779,16 +3779,16 @@ paths:
       summary: Update a specific action
       description: ''
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
-        - name: done
-          in: query
-          required: false
-          description: Set the action as completed
-          schema:
-            type: boolean
-            example: true
+      - $ref: '#/components/parameters/path_action_id'
+      - name: done
+        in: query
+        required: false
+        description: Set the action as completed
+        schema:
+          type: boolean
+          example: true
       requestBody:
         required: true
         content:
@@ -3849,9 +3849,9 @@ paths:
       description: >-
         Note: you can only delete actions which are queued, or have been marked as done.
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -3873,9 +3873,9 @@ paths:
       description: >-
         Note: leaving `assignee_id` blank will assign this action to the logged API user.
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3916,9 +3916,9 @@ paths:
       summary: Mark a specific action as complete
       description: ''
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -3959,9 +3959,9 @@ paths:
       summary: Undo action completion
       description: ''
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4003,9 +4003,9 @@ paths:
       description: >-
         Only use this method if there is no next action already assigned, otherwise see similar `swap` request. <br>
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4046,9 +4046,9 @@ paths:
       summary: Undo action promotion
       description:
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4096,9 +4096,9 @@ paths:
         Both actions should be for the current user,
         and the date for the queued action should be before the date of the next action. <br>
       tags:
-        - Actions
+      - Actions
       parameters:
-        - $ref: '#/components/parameters/path_action_id'
+      - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
           description: Operation Successful
@@ -4139,10 +4139,10 @@ paths:
       summary: Get the list of custom filters (for the logged API user's account)
       description: ''
       tags:
-        - Filters
+      - Filters
       parameters:
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4204,9 +4204,9 @@ paths:
       description: >-
         This endpoint returns all contacts that meet the conditions of the specific filter.
       tags:
-        - Filters
+      - Filters
       parameters:
-        - $ref: '#/components/parameters/path_filter_id'
+      - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
           description: Operation Successful
@@ -4253,15 +4253,15 @@ paths:
       summary: Get a list of companies
       description: Defaults sorting is company name alpha.
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/query_companies_name'
-        - $ref: '#/components/parameters/query_phone'
-        - $ref: '#/components/parameters/query_letter'
-        - $ref: '#/components/parameters/query_companies_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_companies_name'
+      - $ref: '#/components/parameters/query_phone'
+      - $ref: '#/components/parameters/query_letter'
+      - $ref: '#/components/parameters/query_companies_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4322,9 +4322,9 @@ paths:
       summary: Get a specific company
       description:
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
           description: Operation Successful
@@ -4365,9 +4365,9 @@ paths:
       description: >-
         Note: when updating a company field, either the `id` or `name` and the `value` must be present.
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4434,22 +4434,22 @@ paths:
       summary: Get actions associated with a specific company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_actions_contact_id'
-        - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_actions_status'
-        - $ref: '#/components/parameters/query_done'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/query_actions_contact_id'
+      - $ref: '#/components/parameters/query_assignee_id'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4510,23 +4510,23 @@ paths:
       summary: Get deals associated with a specific company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_deals_status'
-        - $ref: '#/components/parameters/query_stage'
-        - $ref: '#/components/parameters/query_deals_search'
-        - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_deals_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/query_deals_name'
+      - $ref: '#/components/parameters/query_deals_status'
+      - $ref: '#/components/parameters/query_stage'
+      - $ref: '#/components/parameters/query_deals_search'
+      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_deals_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4587,18 +4587,18 @@ paths:
       summary: Get notes associated with a specific company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_notes_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_notes_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4659,18 +4659,18 @@ paths:
       summary: Get calls associated with a specific company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_calls_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_calls_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4731,13 +4731,13 @@ paths:
       summary: Get contacts linked with a specific company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_contacts_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/query_contacts_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -4822,9 +4822,9 @@ paths:
         -> Cannot link a contact to the company they already work at. <br>
         -> A company is not allowed to have more than 100 linked contacts. <br>
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4897,16 +4897,16 @@ paths:
       summary: Unlink a contact from a company
       description: ''
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
-        - name: contact_id
-          in: path
-          required: true
-          description: Contact to unlink from company
-          schema:
-            type: string
-            minimum: 1
+      - $ref: '#/components/parameters/path_company_id'
+      - name: contact_id
+        in: path
+        required: true
+        description: Contact to unlink from company
+        schema:
+          type: string
+          minimum: 1
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -4930,9 +4930,9 @@ paths:
         An initial `status_id` must be provided in the request body. <br> <br>
         Note: the statuses of this company's contacts will remain in sync, until sync is disabled for this company. <br>
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/path_company_id'
       requestBody:
         required: true
         content:
@@ -4980,9 +4980,9 @@ paths:
       summary: Disable company status sync
       description:
       tags:
-        - Companies
+      - Companies
       parameters:
-        - $ref: '#/components/parameters/path_company_id'
+      - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
           description: Operation Successful
@@ -5023,35 +5023,35 @@ paths:
       summary: Get a list of contacts
       description: Defaults to contacts owned by the logged user, alpha sorted.
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/query_action_stream'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_email'
-        - $ref: '#/components/parameters/query_contacts_filter_id'
-        - $ref: '#/components/parameters/query_has_actions'
-        - $ref: '#/components/parameters/query_has_actions_for_me'
-        - $ref: '#/components/parameters/query_has_actions_today'
-        - $ref: '#/components/parameters/query_lead_source'
-        - $ref: '#/components/parameters/query_lead_source_id'
-        - $ref: '#/components/parameters/query_letter'
-        - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_pending_deal'
-        - $ref: '#/components/parameters/query_phone'
-        - $ref: '#/components/parameters/query_starred'
-        - $ref: '#/components/parameters/query_contacts_search'
-        - $ref: '#/components/parameters/query_status_id'
-        - $ref: '#/components/parameters/query_contacts_tag'
-        - $ref: '#/components/parameters/query_team'
-        - $ref: '#/components/parameters/query_url'
-        - $ref: '#/components/parameters/query_waiting'
-        - $ref: '#/components/parameters/query_not_linked_with'
-        - $ref: '#/components/parameters/query_custom_field_id'
-        - $ref: '#/components/parameters/query_custom_field_value'
-        - $ref: '#/components/parameters/query_contacts_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/query_action_stream'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_email'
+      - $ref: '#/components/parameters/query_contacts_filter_id'
+      - $ref: '#/components/parameters/query_has_actions'
+      - $ref: '#/components/parameters/query_has_actions_for_me'
+      - $ref: '#/components/parameters/query_has_actions_today'
+      - $ref: '#/components/parameters/query_lead_source'
+      - $ref: '#/components/parameters/query_lead_source_id'
+      - $ref: '#/components/parameters/query_letter'
+      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_pending_deal'
+      - $ref: '#/components/parameters/query_phone'
+      - $ref: '#/components/parameters/query_starred'
+      - $ref: '#/components/parameters/query_contacts_search'
+      - $ref: '#/components/parameters/query_status_id'
+      - $ref: '#/components/parameters/query_contacts_tag'
+      - $ref: '#/components/parameters/query_team'
+      - $ref: '#/components/parameters/query_url'
+      - $ref: '#/components/parameters/query_waiting'
+      - $ref: '#/components/parameters/query_not_linked_with'
+      - $ref: '#/components/parameters/query_custom_field_id'
+      - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_contacts_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -5161,7 +5161,7 @@ paths:
       summary: Create a contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters: []
       requestBody:
         required: true
@@ -5297,9 +5297,9 @@ paths:
       summary: Get a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
           description: Operation Successful
@@ -5356,9 +5356,9 @@ paths:
       description: >-
         Note: when updating a custom field, either the `id` or `name` and the `value` must be present.
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -5493,16 +5493,16 @@ paths:
       description: >-
         Note: only users with the `delete_contacts` permission can delete contacts.
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - in: query
-          name: undo
-          description: Undo Contact deletion
-          schema:
-            type: boolean
-            format: boolean
-            example: true
+      - $ref: '#/components/parameters/path_contact_id'
+      - in: query
+        name: undo
+        description: Undo Contact deletion
+        schema:
+          type: boolean
+          format: boolean
+          example: true
       responses:
         '200':
           description: Operation Successful
@@ -5573,9 +5573,9 @@ paths:
         It takes a parameter `image`, which must be a Base64 encoded string of the image data. <br>
         Images will be cropped to a centered square and resized to 200x200 pixels. <br>
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -5627,9 +5627,9 @@ paths:
         Images will be cropped to a centered square and resized to 200x200 pixels. <br> <br>
         Note: updating a contact photo will remove the existing photo! <br>
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -5677,9 +5677,9 @@ paths:
       summary: Remove a contact's photo
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '201':
           description: Operation Successful
@@ -5720,9 +5720,9 @@ paths:
       summary: Show contacts that meet the criteria of a filter
       description: ""
       tags:
-        - "Contacts"
+      - "Contacts"
       parameters:
-        - $ref: '#/components/parameters/path_filter_id'
+      - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
           description: Operation Successful
@@ -5769,15 +5769,15 @@ paths:
       summary: Delete multiple contacts
       description: ""
       tags:
-        - "Contacts"
+      - "Contacts"
       parameters:
-        - name: "ids"
-          in: "query"
-          required: true
-          description: Comma seperated list of contact ids to delete
-          schema:
-            type: string
-            minimum: 1
+      - name: "ids"
+        in: "query"
+        required: true
+        description: Comma seperated list of contact ids to delete
+        schema:
+          type: string
+          minimum: 1
       responses:
         '200':
           description: "Operation Successful"
@@ -5804,9 +5804,9 @@ paths:
         <a target="_blank" href="https://help.onepagecrm.com/article/370-how-to-save-contacts-to-google-contacts-from-onepagecrm">our help article</a>
         for more information. <br>
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
           description: Operation Successful
@@ -5863,22 +5863,22 @@ paths:
       summary: Get all actions for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_actions_contact_id'
-        - $ref: '#/components/parameters/query_assignee_id'
-        - $ref: '#/components/parameters/query_actions_status'
-        - $ref: '#/components/parameters/query_done'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/query_actions_contact_id'
+      - $ref: '#/components/parameters/query_assignee_id'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -5938,9 +5938,9 @@ paths:
       summary: Create an action for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -5999,27 +5999,27 @@ paths:
       summary: Get all deals for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_deals_name'
-        - $ref: '#/components/parameters/query_deals_status'
-        - $ref: '#/components/parameters/query_stage'
-        - $ref: '#/components/parameters/query_deals_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_deals_search'
-        - $ref: '#/components/parameters/query_owner_id'
-        - $ref: '#/components/parameters/query_deals_tag'
-        - $ref: '#/components/parameters/query_deals_filter_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_deals_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/query_deals_name'
+      - $ref: '#/components/parameters/query_deals_status'
+      - $ref: '#/components/parameters/query_stage'
+      - $ref: '#/components/parameters/query_deals_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_deals_search'
+      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_deals_tag'
+      - $ref: '#/components/parameters/query_deals_filter_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_deals_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -6079,9 +6079,9 @@ paths:
       summary: Create a deal for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -6162,20 +6162,20 @@ paths:
       summary: Get all notes for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_notes_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_notes_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -6235,9 +6235,9 @@ paths:
       summary: Create a note for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         description: >-
           'contact_id' and 'text' are required when create a note. If a date
@@ -6294,20 +6294,20 @@ paths:
       summary: Get all calls for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_contact_id'
-        - $ref: '#/components/parameters/query_company_id'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_calls_sort_by'
-        - $ref: '#/components/parameters/query_order'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/query_contact_id'
+      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_calls_sort_by'
+      - $ref: '#/components/parameters/query_order'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
           description: Operation Successful
@@ -6367,9 +6367,9 @@ paths:
       summary: Create a call for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -6430,11 +6430,11 @@ paths:
       summary: Get all email messages for a specific contact
       description: ''
       tags:
-        - "Contacts"
+      - "Contacts"
       parameters:
-        - $ref: "#/components/parameters/path_contact_id"
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: "#/components/parameters/path_contact_id"
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
           description: "Operation Successful"
@@ -6495,10 +6495,10 @@ paths:
       summary: Assign a tag to a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_tag_name'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
           description: Operation Successful
@@ -6567,10 +6567,10 @@ paths:
       summary: Remove a tag from a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_tag_name'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
           description: Operation Successful
@@ -6639,10 +6639,10 @@ paths:
       summary: Change the status of a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_status_id'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
           description: Operation Successful
@@ -6683,10 +6683,10 @@ paths:
       summary: Change the owner of a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/path_owner_id'
+      - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_owner_id'
       responses:
         '200':
           description: Operation Successful
@@ -6727,9 +6727,9 @@ paths:
       summary: Apply a star to a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
           description: Operation Successful
@@ -6770,9 +6770,9 @@ paths:
       summary: Remove star from a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
           description: Operation Successful
@@ -6816,9 +6816,9 @@ paths:
         Add an optional closing comment with the `comment` field in the request body. <br> <br>
         Note: cannot close sales cycle if the user has any active (not complete) actions with the contact. <br>
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -6867,9 +6867,9 @@ paths:
       summary: Reopen the sales cycle for a specific contact
       description: ''
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
           description: Operation Successful
@@ -6914,9 +6914,9 @@ paths:
         **Warning**: splitting the last contact from a company, will cause that company to be deleted,
         and loss of company data may occur e.g. company phone number or postal address. <br>
       tags:
-        - Contacts
+      - Contacts
       parameters:
-        - $ref: '#/components/parameters/path_contact_id'
+      - $ref: '#/components/parameters/path_contact_id'
       requestBody:
         required: true
         content:
@@ -6966,36 +6966,36 @@ paths:
       description: >-
         Defaults to the logged API user's action stream. <br>
       tags:
-        - "Action Stream"
+      - "Action Stream"
       parameters:
-        - $ref: "#/components/parameters/query_action_stream"
-        - $ref: "#/components/parameters/query_company_id"
-        - $ref: "#/components/parameters/query_email"
-        - $ref: "#/components/parameters/query_contacts_filter_id"
-        - $ref: "#/components/parameters/query_has_actions"
-        - $ref: "#/components/parameters/query_has_actions_for_me"
-        - $ref: "#/components/parameters/query_lead_source"
-        - $ref: "#/components/parameters/query_lead_source_id"
-        - $ref: "#/components/parameters/query_letter"
-        - $ref: "#/components/parameters/query_owner_id"
-        - $ref: "#/components/parameters/query_pending_deal"
-        - $ref: "#/components/parameters/query_phone"
-        - $ref: "#/components/parameters/query_starred"
-        - $ref: "#/components/parameters/query_contacts_search"
-        - $ref: "#/components/parameters/query_status_id"
-        - $ref: "#/components/parameters/query_contacts_tag"
-        - $ref: "#/components/parameters/query_team"
-        - $ref: "#/components/parameters/query_url"
-        - $ref: "#/components/parameters/query_waiting"
-        - $ref: '#/components/parameters/query_custom_field_id'
-        - $ref: '#/components/parameters/query_custom_field_value'
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: "#/components/parameters/query_action_stream"
+      - $ref: "#/components/parameters/query_company_id"
+      - $ref: "#/components/parameters/query_email"
+      - $ref: "#/components/parameters/query_contacts_filter_id"
+      - $ref: "#/components/parameters/query_has_actions"
+      - $ref: "#/components/parameters/query_has_actions_for_me"
+      - $ref: "#/components/parameters/query_lead_source"
+      - $ref: "#/components/parameters/query_lead_source_id"
+      - $ref: "#/components/parameters/query_letter"
+      - $ref: "#/components/parameters/query_owner_id"
+      - $ref: "#/components/parameters/query_pending_deal"
+      - $ref: "#/components/parameters/query_phone"
+      - $ref: "#/components/parameters/query_starred"
+      - $ref: "#/components/parameters/query_contacts_search"
+      - $ref: "#/components/parameters/query_status_id"
+      - $ref: "#/components/parameters/query_contacts_tag"
+      - $ref: "#/components/parameters/query_team"
+      - $ref: "#/components/parameters/query_url"
+      - $ref: "#/components/parameters/query_waiting"
+      - $ref: '#/components/parameters/query_custom_field_id'
+      - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
           description: "Operation Successful"
@@ -7058,37 +7058,37 @@ paths:
         Defaults to the action stream for entire account in a single list. <br>
         See the action stream of account users, by providing the `user_id` param. <br>
       tags:
-        - "Team Stream"
+      - "Team Stream"
       parameters:
-        - $ref: "#/components/parameters/query_action_stream"
-        - $ref: "#/components/parameters/query_company_id"
-        - $ref: "#/components/parameters/query_email"
-        - $ref: "#/components/parameters/query_contacts_filter_id"
-        - $ref: "#/components/parameters/query_has_actions"
-        - $ref: "#/components/parameters/query_has_actions_for_me"
-        - $ref: "#/components/parameters/query_lead_source"
-        - $ref: "#/components/parameters/query_lead_source_id"
-        - $ref: "#/components/parameters/query_letter"
-        - $ref: "#/components/parameters/query_owner_id"
-        - $ref: "#/components/parameters/query_pending_deal"
-        - $ref: "#/components/parameters/query_phone"
-        - $ref: "#/components/parameters/query_starred"
-        - $ref: "#/components/parameters/query_contacts_search"
-        - $ref: "#/components/parameters/query_status_id"
-        - $ref: "#/components/parameters/query_contacts_tag"
-        - $ref: "#/components/parameters/query_team"
-        - $ref: '#/components/parameters/query_user_id'
-        - $ref: "#/components/parameters/query_url"
-        - $ref: "#/components/parameters/query_waiting"
-        - $ref: '#/components/parameters/query_date_filter'
-        - $ref: '#/components/parameters/query_custom_field_id'
-        - $ref: '#/components/parameters/query_custom_field_value'
-        - $ref: '#/components/parameters/query_since'
-        - $ref: '#/components/parameters/query_until'
-        - $ref: '#/components/parameters/query_unmodified_since'
-        - $ref: '#/components/parameters/query_modified_since'
-        - $ref: '#/components/parameters/query_page'
-        - $ref: '#/components/parameters/query_per_page'
+      - $ref: "#/components/parameters/query_action_stream"
+      - $ref: "#/components/parameters/query_company_id"
+      - $ref: "#/components/parameters/query_email"
+      - $ref: "#/components/parameters/query_contacts_filter_id"
+      - $ref: "#/components/parameters/query_has_actions"
+      - $ref: "#/components/parameters/query_has_actions_for_me"
+      - $ref: "#/components/parameters/query_lead_source"
+      - $ref: "#/components/parameters/query_lead_source_id"
+      - $ref: "#/components/parameters/query_letter"
+      - $ref: "#/components/parameters/query_owner_id"
+      - $ref: "#/components/parameters/query_pending_deal"
+      - $ref: "#/components/parameters/query_phone"
+      - $ref: "#/components/parameters/query_starred"
+      - $ref: "#/components/parameters/query_contacts_search"
+      - $ref: "#/components/parameters/query_status_id"
+      - $ref: "#/components/parameters/query_contacts_tag"
+      - $ref: "#/components/parameters/query_team"
+      - $ref: '#/components/parameters/query_user_id'
+      - $ref: "#/components/parameters/query_url"
+      - $ref: "#/components/parameters/query_waiting"
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_custom_field_id'
+      - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_page'
+      - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
           description: "Operation Successful"
@@ -7149,7 +7149,7 @@ paths:
       summary: Get all webhooks (associated with the logged API user's account)
       description:
       tags:
-        - "Web Hooks"
+      - "Web Hooks"
       parameters: []
       responses:
         200:
@@ -7209,9 +7209,9 @@ paths:
       summary: Get a specific webhook
       description: ""
       tags:
-        - "Web Hooks"
+      - "Web Hooks"
       parameters:
-        - $ref: "#/components/parameters/path_webhook_id"
+      - $ref: "#/components/parameters/path_webhook_id"
       responses:
         200:
           description: "Operation Successful"
@@ -7235,39 +7235,39 @@ paths:
                     properties:
                       webhook:
                         $ref: "#/components/schemas/Webhook"
-        400: 
+        400:
           $ref: "#/components/responses/400"
-        401: 
+        401:
           $ref: "#/components/responses/401"
-        403: 
+        403:
           $ref: "#/components/responses/403"
-        404: 
+        404:
           $ref: "#/components/responses/404"
-        409: 
+        409:
           $ref: "#/components/responses/409"
-        500: 
+        500:
           $ref: "#/components/responses/500"
     delete:
       summary: Delete a specific webhook
       description: ""
-      tags: 
-        - "Web Hooks"
-      parameters: 
-        - $ref: "#/components/parameters/path_webhook_id"
+      tags:
+      - "Web Hooks"
+      parameters:
+      - $ref: "#/components/parameters/path_webhook_id"
       responses:
         200:
           $ref: "#/components/responses/200"
-        400: 
+        400:
           $ref: "#/components/responses/400"
-        401: 
+        401:
           $ref: "#/components/responses/401"
-        403: 
+        403:
           $ref: "#/components/responses/403"
-        404: 
+        404:
           $ref: "#/components/responses/404"
-        409: 
+        409:
           $ref: "#/components/responses/409"
-        500: 
+        500:
           $ref: "#/components/responses/500"
 components:
   schemas:
@@ -7296,9 +7296,9 @@ components:
             Which type of account the user has. This will be one of: free, pro
             or trial.
           enum:
-            - pro
-            - trial
-            - free
+          - pro
+          - trial
+          - free
           example: pro
         settings:
           $ref: '#/components/schemas/Settings'
@@ -7341,11 +7341,11 @@ components:
           items:
             type: string
           example:
-            - interested
-            - not_interested
-            - left_message
-            - no_answer
-            - other
+          - interested
+          - not_interested
+          - left_message
+          - no_answer
+          - other
         next_action_dates:
           description: Users quick select options for next action dates
           properties:
@@ -7357,9 +7357,9 @@ components:
               description: Period type
               type: string
               enum:
-                - days
-                - weeks
-                - months
+              - days
+              - weeks
+              - months
               example: days
         predefined_actions:
           description: an array of predefined actions
@@ -7374,9 +7374,9 @@ components:
           items:
             type: string
           example:
-            - Mr
-            - Mrs
-            - Ms
+          - Mr
+          - Mrs
+          - Ms
     User:
       description: >-
         You can get useful information about other people on your team or you
@@ -7409,21 +7409,21 @@ components:
           items:
             type: ""
           enum:
-            - account_owner
-            - admin
-            - activity
-            - edit_target
-            - delete_contacts
-            - delete_deals
-            - pipeline
-            - export
-            - private_contacts
+          - account_owner
+          - admin
+          - activity
+          - edit_target
+          - delete_contacts
+          - delete_deals
+          - pipeline
+          - export
+          - private_contacts
           example:
-            - activity
-            - edit_target
-            - pipeline
-            - export
-            - private_contacts
+          - activity
+          - edit_target
+          - pipeline
+          - export
+          - private_contacts
         photo_url:
           description: Url of user’s profile picture
           type: string
@@ -7919,11 +7919,11 @@ components:
           type: string
           description: Through what application did this call take place?
           enum:
-            - unknown
-            - skype
-            - jabber
-            - talkdesk
-            - phone
+          - unknown
+          - skype
+          - jabber
+          - talkdesk
+          - phone
           example: phone
           default: unknown
         phone_number:
@@ -8068,24 +8068,24 @@ components:
           description: Type of commission calculation in deal
           type: string
           enum:
-            - none
-            - percentage
-            - absolute
+          - none
+          - percentage
+          - absolute
           example: none
         commission_base:
           description: Base used in deal commission calculation
           type: string
           enum:
-            - amount
-            - margin
+          - amount
+          - margin
           example: none
         status:
           description: 'Status of the deal'
           type: string
           enum:
-            - won
-            - lost
-            - pending
+          - won
+          - lost
+          - pending
           example: pending
         has_related_notes:
           description: True if the deal has related notes. (read only)
@@ -8183,12 +8183,12 @@ components:
           items:
             type: string
           example:
-            - - star
-              - selected
-              - ''
-            - - tags
-              - is_not
-              - VIP
+          - - star
+            - selected
+            - ''
+          - - tags
+            - is_not
+            - VIP
     Lead_source:
       description: >-
         Lead sources are a way for you to classify the source of any contact
@@ -8243,14 +8243,14 @@ components:
           type: string
           example: lead
           enum:
-            - lead
-            - prospect
-            - customer
-            - inactive
-            - general
-            - custom1
-            - custom2
-            - customX
+          - lead
+          - prospect
+          - customer
+          - inactive
+          - general
+          - custom1
+          - custom2
+          - customX
         text:
           description: Status text to be displayed.
           type: string
@@ -8264,13 +8264,13 @@ components:
           type: string
           example: f96600
           enum:
-            - 666666
-            - 3399ff
-            - cc0000
-            - f96600
-            - 000000
-            - ff00ff
-            - 009900
+          - 666666
+          - 3399ff
+          - cc0000
+          - f96600
+          - 000000
+          - ff00ff
+          - 009900
         counts:
           description: Number of contacts the api user has with this status (read only).
           type: integer
@@ -8330,13 +8330,13 @@ components:
           description: Type of custom field.
           type: string
           enum:
-            - single_line_text
-            - multi_line_text
-            - multiple_choice
-            - select_box
-            - date
-            - number
-            - anniversary
+          - single_line_text
+          - multi_line_text
+          - multiple_choice
+          - select_box
+          - date
+          - number
+          - anniversary
           example: multiple_choice
         position:
           description: The position of this custom field in the list of custom fields
@@ -8348,10 +8348,10 @@ components:
             custom fields of type multiple_choice or select_box
           type: string
           example:
-            - Spring
-            - Summer
-            - Autumn
-            - Winter
+          - Spring
+          - Summer
+          - Autumn
+          - Winter
     Company_field:
       description: A company field object
       properties:
@@ -8369,13 +8369,13 @@ components:
           description: Type of custom field.
           type: string
           enum:
-            - single_line_text
-            - multi_line_text
-            - multiple_choice
-            - select_box
-            - date
-            - number
-            - anniversary
+          - single_line_text
+          - multi_line_text
+          - multiple_choice
+          - select_box
+          - date
+          - number
+          - anniversary
           example: multiple_choice
         position:
           description: The position of this company field in the list of company fields
@@ -8387,9 +8387,9 @@ components:
             company fields of type multiple_choice or select_box
           type: string
           example:
-            - big
-            - medium
-            - small
+          - big
+          - medium
+          - small
     Deal_field:
       description: A deal field object
       properties:
@@ -8405,13 +8405,13 @@ components:
           description: Type of deal field.
           type: string
           enum:
-            - single_line_text
-            - multi_line_text
-            - multiple_choice
-            - select_box
-            - date
-            - number
-            - anniversary
+          - single_line_text
+          - multi_line_text
+          - multiple_choice
+          - select_box
+          - date
+          - number
+          - anniversary
           example: multiple_choice
         position:
           description: The position of this deal field in the list of deal fields
@@ -8423,9 +8423,9 @@ components:
             fields of type multiple_choice or select_box
           type: string
           example:
-            - big
-            - medium
-            - small
+          - big
+          - medium
+          - small
     Webhook:
       description: >-
         Webhooks are a simple, efficient way of integrating with web applications.
@@ -8665,7 +8665,7 @@ components:
           description: Is the cost field enabled?
           type: boolean
           example: false
-# cost_required is deprecated
+        # cost_required is deprecated
         cost_required:
           description: Is a 'cost' value required when closing a deal
           type: boolean
@@ -8674,8 +8674,8 @@ components:
           description: How should commission be calculated?
           type: string
           enum:
-            - amount
-            - margin
+          - amount
+          - margin
           example: amount
         commission_percentage:
           description: What percent of the deal amount is commission?
@@ -8696,9 +8696,9 @@ components:
             suggested next action day for predefined actions.
           type: string
           enum:
-            - sunday
-            - weekend
-            - none
+          - sunday
+          - weekend
+          - none
           example: weekend
         date_format:
           description: The format of date strings
@@ -8734,15 +8734,15 @@ components:
           items:
             type: string
           example:
-            - US
+          - US
         deal_stages:
           $ref: '#/components/schemas/DealStages'
         default_contact_type:
           description: ''
           type: string
           enum:
-            - company
-            - individual
+          - company
+          - individual
           example: company
         show_tidy_stream:
           description: Should contacts with no actions be displayed in the action stream?
@@ -8796,9 +8796,9 @@ components:
           type: string
           description: The type of reminder
           enum:
-            - never
-            - every_day
-            - new_task
+          - never
+          - every_day
+          - new_task
           example: new_task
         hour:
           type: integer
@@ -9255,6 +9255,15 @@ components:
       schema:
         type: string
         example: 5ae06ef9d55673108fe8877b
+    query_notes_contact_id:
+      name: contact_id
+      in: query
+      description: >-
+        Return notes for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      required: false
+      schema:
+        type: string
+        example: 5ae06ef9d55673108fe8877b
     query_contact_id:
       name: contact_id
       in: query
@@ -9421,8 +9430,8 @@ components:
       schema:
         type: string
         enum:
-          - asc
-          - desc
+        - asc
+        - desc
     query_sort_by:
       name: sort_by
       in: query
@@ -9431,8 +9440,8 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
+        - created_at
+        - modified_at
     query_contacts_sort_by:
       name: sort_by
       in: query
@@ -9441,12 +9450,12 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - first_name
-          - last_name
-          - company_name
-          - name
+        - created_at
+        - modified_at
+        - first_name
+        - last_name
+        - company_name
+        - name
     query_companies_sort_by:
       name: sort_by
       in: query
@@ -9455,9 +9464,9 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - name
+        - created_at
+        - modified_at
+        - name
     query_deals_sort_by:
       name: sort_by
       in: query
@@ -9466,11 +9475,11 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - expected_close_date
-          - close_date
-          - date
+        - created_at
+        - modified_at
+        - expected_close_date
+        - close_date
+        - date
     query_notes_sort_by:
       name: sort_by
       in: query
@@ -9479,10 +9488,10 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - updated_at
-          - date
+        - created_at
+        - modified_at
+        - updated_at
+        - date
     query_calls_sort_by:
       name: sort_by
       in: query
@@ -9491,9 +9500,9 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - updated_at
+        - created_at
+        - modified_at
+        - updated_at
     query_custom_fields_sort_by:
       name: sort_by
       in: query
@@ -9502,10 +9511,10 @@ components:
       schema:
         type: string
         enum:
-          - created_at
-          - modified_at
-          - updated_at
-          - position
+        - created_at
+        - modified_at
+        - updated_at
+        - position
     query_per_page:
       name: per_page
       in: query
