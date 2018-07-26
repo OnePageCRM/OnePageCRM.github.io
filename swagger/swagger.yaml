@@ -3603,7 +3603,7 @@ paths:
       tags:
         - Actions
       parameters:
-        - $ref: '#/components/parameters/query_contact_id'
+        - $ref: '#/components/parameters/query_actions_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
         - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
@@ -4437,7 +4437,7 @@ paths:
         - Companies
       parameters:
         - $ref: '#/components/parameters/path_company_id'
-        - $ref: '#/components/parameters/query_contact_id'
+        - $ref: '#/components/parameters/query_actions_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
         - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
@@ -5866,7 +5866,7 @@ paths:
         - Contacts
       parameters:
         - $ref: '#/components/parameters/path_contact_id'
-        - $ref: '#/components/parameters/query_contact_id'
+        - $ref: '#/components/parameters/query_actions_contact_id'
         - $ref: '#/components/parameters/query_assignee_id'
         - $ref: '#/components/parameters/query_actions_status'
         - $ref: '#/components/parameters/query_done'
@@ -9237,6 +9237,15 @@ components:
         type: string
         format: date-time
       description: Return only records that were modified since specified time
+    query_actions_contact_id:
+      name: contact_id
+      in: query
+      description: >-
+        Return actions for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      required: false
+      schema:
+        type: string
+        example: 5ae06ef9d55673108fe8877b
     query_contact_id:
       name: contact_id
       in: query
