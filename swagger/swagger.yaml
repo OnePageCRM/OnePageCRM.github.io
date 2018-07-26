@@ -5026,7 +5026,7 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/query_action_stream'
-      - $ref: '#/components/parameters/query_company_id'
+      - $ref: '#/components/parameters/query_contacts_company_id'
       - $ref: '#/components/parameters/query_email'
       - $ref: '#/components/parameters/query_contacts_filter_id'
       - $ref: '#/components/parameters/query_has_actions'
@@ -6966,10 +6966,10 @@ paths:
       description: >-
         Defaults to the logged API user's action stream. <br>
       tags:
-      - "Action Stream"
+      - Action Stream
       parameters:
       - $ref: "#/components/parameters/query_action_stream"
-      - $ref: "#/components/parameters/query_company_id"
+      - $ref: "#/components/parameters/query_contacts_company_id"
       - $ref: "#/components/parameters/query_email"
       - $ref: "#/components/parameters/query_contacts_filter_id"
       - $ref: "#/components/parameters/query_has_actions"
@@ -7058,10 +7058,10 @@ paths:
         Defaults to the action stream for entire account in a single list. <br>
         See the action stream of account users, by providing the `user_id` param. <br>
       tags:
-      - "Team Stream"
+      - Team Stream
       parameters:
       - $ref: "#/components/parameters/query_action_stream"
-      - $ref: "#/components/parameters/query_company_id"
+      - $ref: "#/components/parameters/query_contacts_company_id"
       - $ref: "#/components/parameters/query_email"
       - $ref: "#/components/parameters/query_contacts_filter_id"
       - $ref: "#/components/parameters/query_has_actions"
@@ -7149,7 +7149,7 @@ paths:
       summary: Get all webhooks (associated with the logged API user's account)
       description:
       tags:
-      - "Web Hooks"
+      - Web Hooks
       parameters: []
       responses:
         200:
@@ -7209,7 +7209,7 @@ paths:
       summary: Get a specific webhook
       description: ""
       tags:
-      - "Web Hooks"
+      - Web Hooks
       parameters:
       - $ref: "#/components/parameters/path_webhook_id"
       responses:
@@ -7251,7 +7251,7 @@ paths:
       summary: Delete a specific webhook
       description: ""
       tags:
-      - "Web Hooks"
+      - Web Hooks
       parameters:
       - $ref: "#/components/parameters/path_webhook_id"
       responses:
@@ -9273,6 +9273,15 @@ components:
       schema:
         type: string
         example: 5ae06ef9d55673108fe8877b
+    query_contacts_company_id:
+      name: company_id
+      in: query
+      description: >-
+        Return contacts from a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+      required: false
+      schema:
+        type: string
+        example: 6se06df9d55673108re84745
     query_company_id:
       name: company_id
       in: query
