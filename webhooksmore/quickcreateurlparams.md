@@ -1,5 +1,5 @@
 ---
-layout: webhooks
+layout: webhooks_more
 title: "Create Contact via URL"
 ---
 
