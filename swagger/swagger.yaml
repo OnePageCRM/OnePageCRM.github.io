@@ -3786,7 +3786,7 @@ paths:
       - name: done
         in: query
         required: false
-        description: Set the action as completed
+        description: Mark the action as completed
         schema:
           type: boolean
           example: true
