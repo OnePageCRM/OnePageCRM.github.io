@@ -5048,6 +5048,11 @@ paths:
       - $ref: '#/components/parameters/query_not_linked_with'
       - $ref: '#/components/parameters/query_custom_field_id'
       - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_since'
+      - $ref: '#/components/parameters/query_until'
+      - $ref: '#/components/parameters/query_unmodified_since'
+      - $ref: '#/components/parameters/query_modified_since'
       - $ref: '#/components/parameters/query_contacts_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -7071,9 +7076,9 @@ paths:
       - $ref: '#/components/parameters/query_user_id'
       - $ref: "#/components/parameters/query_url"
       - $ref: "#/components/parameters/query_waiting"
-      - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_custom_field_id'
       - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_unmodified_since'
@@ -9195,48 +9200,55 @@ components:
       in: query
       required: false
       description: >-
-        Filter returned data by a particular field when combined with since and
-        until
+        Signals which date field to be used for only returning resources, added or edited, in a specified date range
+        (only to be used with `since` and/or `until`, not with `modified_since` or `unmodified_since`)
       schema:
-        format: date-time
         type: string
-        example: '2018-05-16'
+        enum:
+        - created_at
+        - modified_at
+        - updated_at
     query_since:
       name: since
       in: query
       required: false
+      description: >-
+        Specifies the start of the date range to filter resources, which have been added or edited
+        (use with `date_filter` - date must be in format `YYYY-MM-DD` or unix timestamp)
       schema:
         type: string
         format: date-time
-        example: '2018-05-16'
-      description: >-
-        Return resources with dates in the provided date_filter parameter since
-        this time. Otherwise it will return resources that were modified since
-        this time.
+        example: '2018-07-01'
     query_until:
       in: query
       name: until
-      schema:
-        type: string
-        format: date-time
       description: >-
-        Return resources with dates in the provided date_filter parameter until
-        this time. Otherwise it will return resources that were modified until
-        this time.
-    query_unmodified_since:
-      in: query
-      name: unmodified_since
+        Specifies the end of the date range to filter resources, which have been added or edited
+        (use with `date_filter` - date must be in format `YYYY-MM-DD` or unix timestamp)
       schema:
         type: string
         format: date-time
-      description: Return only records that were unmodified since specified time
+        example: '2018-07-31'
     query_modified_since:
       in: query
-      name: modified_since
+      name: unmodified_since
+      description: >-
+        Return only resources that were modified since specified time (cannot be used with `date_filter`
+        - date must be in format `YYYY-MM-DD` or unix timestamp)
       schema:
         type: string
         format: date-time
-      description: Return only records that were modified since specified time
+        example: '2018-07-01'
+    query_unmodified_since:
+      in: query
+      name: modified_since
+      description: >-
+        Return only resources that were unmodified since specified time (cannot be used with `date_filter`
+        - date must be in format `YYYY-MM-DD` or unix timestamp)
+      schema:
+        type: string
+        format: date-time
+        example: '2018-07-01'
     query_actions_contact_id:
       name: contact_id
       in: query
