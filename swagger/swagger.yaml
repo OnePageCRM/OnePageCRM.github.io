@@ -9312,7 +9312,7 @@ components:
       name: contact_id
       in: query
       description: >-
-        Return actions for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return actions for a specific contact (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
@@ -9330,7 +9330,7 @@ components:
       name: contact_id
       in: query
       description: >-
-        Return notes for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return notes for a specific contact (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
@@ -9339,7 +9339,7 @@ components:
       name: contact_id
       in: query
       description: >-
-        Return calls for a specific contact (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return calls for a specific contact (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
@@ -9366,7 +9366,7 @@ components:
       name: company_id
       in: query
       description: >-
-        Return actions for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return actions for a specific company (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
@@ -9375,7 +9375,7 @@ components:
       name: company_id
       in: query
       description: >-
-        Return notes for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return notes for a specific company (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
@@ -9384,7 +9384,7 @@ components:
       name: company_id
       in: query
       description: >-
-        Return calls for a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return calls for a specific company (only use one of `contact_id` or `company_id` at a time)
       required: false
       schema:
         type: string
