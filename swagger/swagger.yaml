@@ -2108,7 +2108,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/query_notes_contact_id'
       - $ref: '#/components/parameters/query_notes_company_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_notes_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -2480,7 +2480,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/query_calls_contact_id'
       - $ref: '#/components/parameters/query_calls_company_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_calls_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -4590,7 +4590,7 @@ paths:
       - Companies
       parameters:
       - $ref: '#/components/parameters/path_company_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_notes_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -4662,7 +4662,7 @@ paths:
       - Companies
       parameters:
       - $ref: '#/components/parameters/path_company_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_calls_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -6165,7 +6165,7 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_notes_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -6295,7 +6295,7 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_calls_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -9226,6 +9226,34 @@ components:
         - date
         - close_date
         - expected_close_date
+    query_notes_date_filter:
+      name: date_filter
+      in: query
+      required: false
+      description: >-
+        Signals which date field to be used for only returning resources, added or edited, in a specified date range
+        (only to be used with `since` and/or `until`, not with `modified_since` or `unmodified_since`)
+      schema:
+        type: string
+        enum:
+        - created_at
+        - modified_at
+        - updated_at
+        - date
+    query_calls_date_filter:
+      name: date_filter
+      in: query
+      required: false
+      description: >-
+        Signals which date field to be used for only returning resources, added or edited, in a specified date range
+        (only to be used with `since` and/or `until`, not with `modified_since` or `unmodified_since`)
+      schema:
+        type: string
+        enum:
+        - created_at
+        - modified_at
+        - updated_at
+        - call_time
     query_date_filter:
       name: date_filter
       in: query
