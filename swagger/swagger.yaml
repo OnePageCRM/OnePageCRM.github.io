@@ -2111,8 +2111,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_notes_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -2483,8 +2483,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_calls_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -2952,8 +2952,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_deals_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -3611,8 +3611,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -4444,8 +4444,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -4521,8 +4521,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_deals_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -4593,8 +4593,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_notes_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -4665,8 +4665,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_calls_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -5051,8 +5051,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_contacts_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -5877,8 +5877,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -6014,8 +6014,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_deals_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -6168,8 +6168,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_notes_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -6298,8 +6298,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_calls_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -6988,8 +6988,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
@@ -7081,8 +7081,8 @@ paths:
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
-      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_modified_since'
+      - $ref: '#/components/parameters/query_unmodified_since'
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
@@ -9231,7 +9231,7 @@ components:
         example: '2018-07-31'
     query_modified_since:
       in: query
-      name: unmodified_since
+      name: modified_since
       description: >-
         Return only resources that were modified since specified time (cannot be used with `date_filter`
         - date must be in format `YYYY-MM-DD` or unix timestamp)
@@ -9241,7 +9241,7 @@ components:
         example: '2018-07-01'
     query_unmodified_since:
       in: query
-      name: modified_since
+      name: unmodified_since
       description: >-
         Return only resources that were unmodified since specified time (cannot be used with `date_filter`
         - date must be in format `YYYY-MM-DD` or unix timestamp)
