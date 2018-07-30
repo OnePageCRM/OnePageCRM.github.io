@@ -3603,11 +3603,11 @@ paths:
       tags:
       - Actions
       parameters:
+      - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_contact_id'
       - $ref: '#/components/parameters/query_actions_company_id'
-      - $ref: '#/components/parameters/query_assignee_id'
-      - $ref: '#/components/parameters/query_actions_status'
-      - $ref: '#/components/parameters/query_done'
       - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -4438,9 +4438,9 @@ paths:
       - Companies
       parameters:
       - $ref: '#/components/parameters/path_company_id'
-      - $ref: '#/components/parameters/query_assignee_id'
-      - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -5871,9 +5871,9 @@ paths:
       - Contacts
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
-      - $ref: '#/components/parameters/query_assignee_id'
-      - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
+      - $ref: '#/components/parameters/query_actions_status'
+      - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -9071,7 +9071,7 @@ components:
       name: assignee_id
       in: query
       required: false
-      description: Only return actions assigned to a specific user
+      description: Return actions assigned to a specific user
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
@@ -9079,7 +9079,7 @@ components:
       name: done
       in: query
       required: false
-      description: Query by 'done' status
+      description: Should only return completed actions (i.e. have status `done`)?
       schema:
         type: boolean
         example: false
