@@ -3608,7 +3608,7 @@ paths:
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -4441,7 +4441,7 @@ paths:
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -5874,7 +5874,7 @@ paths:
       - $ref: '#/components/parameters/query_assignee_id'
       - $ref: '#/components/parameters/query_actions_status'
       - $ref: '#/components/parameters/query_done'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_actions_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -9195,6 +9195,21 @@ components:
       schema:
         type: string
         example: 5ae9cc2a9007ba5b856c7bb8
+    query_actions_date_filter:
+      name: date_filter
+      in: query
+      required: false
+      description: >-
+        Signals which date field to be used for only returning resources, added or edited, in a specified date range
+        (only to be used with `since` and/or `until`, not with `modified_since` or `unmodified_since`)
+      schema:
+        type: string
+        enum:
+        - created_at
+        - modified_at
+        - updated_at
+        - date
+        - close_date
     query_date_filter:
       name: date_filter
       in: query
