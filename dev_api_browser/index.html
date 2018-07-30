@@ -34,13 +34,16 @@ title: API Browser
   .key {
     color:red;
   }
+  input[type="text"]{
+    border:1px solid rgba(0,0,0,.15);
+  }
 </style>
 
 <div ng-app="OnePageCRM-API-interaction">
   <div ng-controller="AuthController" >
     <div ng-show="user.apiKey == null">
       <div class="row">
-        <form>
+        <form class="col-lg-12">
           <div class="col-lg-5">
             <div class="input-group">
               <span class="input-group-addon"></span>
@@ -75,7 +78,7 @@ title: API Browser
   </div>
   <div ng-controller="APIRequestController">
     <div class="row">
-      <form>
+      <form class="col-lg-12">
         <div class="col-lg-10">
           <div class="input-group">
             <span class="input-group-addon">{(baseURL)}</span>
