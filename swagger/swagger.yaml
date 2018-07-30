@@ -2949,7 +2949,7 @@ paths:
       - $ref: '#/components/parameters/query_deals_owner_id'
       - $ref: '#/components/parameters/query_deals_tag'
       - $ref: '#/components/parameters/query_deals_filter_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_deals_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -4518,7 +4518,7 @@ paths:
       - $ref: '#/components/parameters/query_stage'
       - $ref: '#/components/parameters/query_deals_search'
       - $ref: '#/components/parameters/query_deals_owner_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_deals_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -6011,7 +6011,7 @@ paths:
       - $ref: '#/components/parameters/query_stage'
       - $ref: '#/components/parameters/query_deals_search'
       - $ref: '#/components/parameters/query_deals_owner_id'
-      - $ref: '#/components/parameters/query_date_filter'
+      - $ref: '#/components/parameters/query_deals_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
@@ -9210,6 +9210,22 @@ components:
         - updated_at
         - date
         - close_date
+    query_deals_date_filter:
+      name: date_filter
+      in: query
+      required: false
+      description: >-
+        Signals which date field to be used for only returning resources, added or edited, in a specified date range
+        (only to be used with `since` and/or `until`, not with `modified_since` or `unmodified_since`)
+      schema:
+        type: string
+        enum:
+        - created_at
+        - modified_at
+        - updated_at
+        - date
+        - close_date
+        - expected_close_date
     query_date_filter:
       name: date_filter
       in: query
@@ -9540,9 +9556,9 @@ components:
         enum:
         - created_at
         - modified_at
-        - expected_close_date
-        - close_date
         - date
+        - close_date
+        - expected_close_date
     query_notes_sort_by:
       name: sort_by
       in: query
