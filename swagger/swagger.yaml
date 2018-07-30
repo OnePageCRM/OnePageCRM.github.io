@@ -2946,7 +2946,7 @@ paths:
       - $ref: '#/components/parameters/query_deals_contact_id'
       - $ref: '#/components/parameters/query_deals_company_id'
       - $ref: '#/components/parameters/query_deals_search'
-      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_deals_owner_id'
       - $ref: '#/components/parameters/query_deals_tag'
       - $ref: '#/components/parameters/query_deals_filter_id'
       - $ref: '#/components/parameters/query_date_filter'
@@ -4517,7 +4517,7 @@ paths:
       - $ref: '#/components/parameters/query_deals_status'
       - $ref: '#/components/parameters/query_stage'
       - $ref: '#/components/parameters/query_deals_search'
-      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_deals_owner_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -5035,7 +5035,7 @@ paths:
       - $ref: '#/components/parameters/query_lead_source'
       - $ref: '#/components/parameters/query_lead_source_id'
       - $ref: '#/components/parameters/query_letter'
-      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_contacts_owner_id'
       - $ref: '#/components/parameters/query_pending_deal'
       - $ref: '#/components/parameters/query_phone'
       - $ref: '#/components/parameters/query_starred'
@@ -6005,7 +6005,7 @@ paths:
       - $ref: '#/components/parameters/query_deals_status'
       - $ref: '#/components/parameters/query_stage'
       - $ref: '#/components/parameters/query_deals_search'
-      - $ref: '#/components/parameters/query_owner_id'
+      - $ref: '#/components/parameters/query_deals_owner_id'
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
@@ -6968,7 +6968,7 @@ paths:
       - $ref: "#/components/parameters/query_lead_source"
       - $ref: "#/components/parameters/query_lead_source_id"
       - $ref: "#/components/parameters/query_letter"
-      - $ref: "#/components/parameters/query_owner_id"
+      - $ref: "#/components/parameters/query_contacts_owner_id"
       - $ref: "#/components/parameters/query_pending_deal"
       - $ref: "#/components/parameters/query_phone"
       - $ref: "#/components/parameters/query_starred"
@@ -7060,7 +7060,7 @@ paths:
       - $ref: "#/components/parameters/query_lead_source"
       - $ref: "#/components/parameters/query_lead_source_id"
       - $ref: "#/components/parameters/query_letter"
-      - $ref: "#/components/parameters/query_owner_id"
+      - $ref: "#/components/parameters/query_contacts_owner_id"
       - $ref: "#/components/parameters/query_pending_deal"
       - $ref: "#/components/parameters/query_phone"
       - $ref: "#/components/parameters/query_starred"
@@ -9066,7 +9066,7 @@ components:
       name: assignee_id
       in: query
       required: false
-      description: Query by assignee_id
+      description: Only return actions assigned to a specific user
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
@@ -9136,12 +9136,21 @@ components:
       schema:
         type: string
         example: Solar panels
-    query_owner_id:
+    query_contacts_owner_id:
       name: owner_id
       in: query
       required: false
       description: >-
-        Only return resources which are owned by a specific user
+        Only return contacts owned by a specific user
+      schema:
+        type: string
+        example: 5aba36b19007ba0f570c9523
+    query_deals_owner_id:
+      name: owner_id
+      in: query
+      required: false
+      description: >-
+        Only return deals owned by a specific user
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
