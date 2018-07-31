@@ -4256,8 +4256,8 @@ paths:
       - Companies
       parameters:
       - $ref: '#/components/parameters/query_companies_name'
-      - $ref: '#/components/parameters/query_phone'
-      - $ref: '#/components/parameters/query_letter'
+      - $ref: '#/components/parameters/query_companies_phone'
+      - $ref: '#/components/parameters/query_companies_letter'
       - $ref: '#/components/parameters/query_companies_sort_by'
       - $ref: '#/components/parameters/query_order'
       - $ref: '#/components/parameters/query_page'
@@ -5033,10 +5033,10 @@ paths:
       - $ref: '#/components/parameters/query_has_actions_today'
       - $ref: '#/components/parameters/query_lead_source'
       - $ref: '#/components/parameters/query_lead_source_id'
-      - $ref: '#/components/parameters/query_letter'
+      - $ref: '#/components/parameters/query_contacts_letter'
       - $ref: '#/components/parameters/query_contacts_owner_id'
       - $ref: '#/components/parameters/query_pending_deal'
-      - $ref: '#/components/parameters/query_phone'
+      - $ref: '#/components/parameters/query_contacts_phone'
       - $ref: '#/components/parameters/query_starred'
       - $ref: '#/components/parameters/query_contacts_search'
       - $ref: '#/components/parameters/query_status_id'
@@ -6971,10 +6971,10 @@ paths:
       - $ref: "#/components/parameters/query_has_actions_for_me"
       - $ref: "#/components/parameters/query_lead_source"
       - $ref: "#/components/parameters/query_lead_source_id"
-      - $ref: "#/components/parameters/query_letter"
+      - $ref: "#/components/parameters/query_contacts_letter"
       - $ref: "#/components/parameters/query_contacts_owner_id"
       - $ref: "#/components/parameters/query_pending_deal"
-      - $ref: "#/components/parameters/query_phone"
+      - $ref: "#/components/parameters/query_contacts_phone"
       - $ref: "#/components/parameters/query_starred"
       - $ref: "#/components/parameters/query_contacts_search"
       - $ref: "#/components/parameters/query_status_id"
@@ -7063,10 +7063,10 @@ paths:
       - $ref: "#/components/parameters/query_has_actions_for_me"
       - $ref: "#/components/parameters/query_lead_source"
       - $ref: "#/components/parameters/query_lead_source_id"
-      - $ref: "#/components/parameters/query_letter"
+      - $ref: "#/components/parameters/query_contacts_letter"
       - $ref: "#/components/parameters/query_contacts_owner_id"
       - $ref: "#/components/parameters/query_pending_deal"
-      - $ref: "#/components/parameters/query_phone"
+      - $ref: "#/components/parameters/query_contacts_phone"
       - $ref: "#/components/parameters/query_starred"
       - $ref: "#/components/parameters/query_contacts_search"
       - $ref: "#/components/parameters/query_status_id"
@@ -9049,23 +9049,40 @@ components:
       schema:
         type: string
         example: Solar panels
-    query_phone:
+    query_contacts_phone:
       name: phone
       in: query
       required: false
-      description: Query by phone number
+      description: Search contacts by phone number
       schema:
         type: string
-        example: March deal
-    query_letter:
+        example: 3736344458
+    query_companies_phone:
+      name: phone
+      in: query
+      required: false
+      description: Search companies by phone number
+      schema:
+        type: string
+        example: 3736344458
+    query_contacts_letter:
       name: letter
       in: query
       required: false
       description: >-
-        Query by first letter in contact's last name (or company name if last name not present)
+        Return contacts who's last name begins with specified letter (or company name, if last name not present)
       schema:
         type: string
-        example: March deal
+        example: a
+    query_companies_letter:
+      name: letter
+      in: query
+      required: false
+      description: >-
+        Return company who's name begins with specified letter
+      schema:
+        type: string
+        example: a
     query_assignee_id:
       name: assignee_id
       in: query
