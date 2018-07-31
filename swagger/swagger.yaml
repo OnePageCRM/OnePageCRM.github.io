@@ -9092,7 +9092,7 @@ components:
       in: query
       required: false
       description: >-
-        Return contacts who's last name begins with specified letter (or company name, if last name not present)
+        Return contacts whose last name begins with specified letter (or company name, if last name not present)
       schema:
         type: string
         example: a
@@ -9101,7 +9101,7 @@ components:
       in: query
       required: false
       description: >-
-        Return company who's name begins with specified letter
+        Return company whose name begins with specified letter
       schema:
         type: string
         example: a
@@ -9151,7 +9151,8 @@ components:
       name: user_id
       in: query
       required: false
-      description: Query by user id
+      description: >-
+        Get the action stream of another user (leave blank for entire account in a single list)
       schema:
         type: string
         example: '5aaa9b009007ba08c9ebaef7'
@@ -9183,8 +9184,7 @@ components:
       name: owner_id
       in: query
       required: false
-      description: >-
-        Only return contacts owned by a specific user
+      description: Return contacts owned by a specific user
       schema:
         type: string
         example: 5aba36b19007ba0f570c9523
@@ -9439,7 +9439,7 @@ components:
       name: email
       in: query
       description: >-
-        Query based on contact's email address
+        Return contacts whose email matches that provided with this query param
       required: false
       schema:
         type: string
@@ -9477,7 +9477,7 @@ components:
       name: lead_source
       in: query
       description: >-
-        Query based on `lead_source` (can not query `lead_source` and `lead_source_id` at the same time)
+        Return contacts of a specific lead source (only use one of `lead_source` and `lead_source_id` at a time)
       required: false
       schema:
         type: string
@@ -9486,7 +9486,7 @@ components:
       name: lead_source_id
       in: query
       description: >-
-        Query based on `lead_source_id` (can not query `lead_source` and `lead_source_id` at the same time)
+        Return contacts of a specific lead source (only use one of `lead_source` and `lead_source_id` at a time)
       required: false
       schema:
         type: string
@@ -9512,7 +9512,7 @@ components:
     query_status_id:
       name: status_id
       in: query
-      description: Query based on status id
+      description: Return contacts of a particular status
       required: false
       schema:
         type: string
@@ -9520,7 +9520,7 @@ components:
     query_team:
       name: team
       in: query
-      description: Include contacts owned by other users in this query?
+      description: Include contacts owned by other users
       required: false
       schema:
         type: boolean
@@ -9536,8 +9536,7 @@ components:
     query_waiting:
       name: waiting
       in: query
-      description: >-
-        Only return contacts, for whom I have a next action, of status 'Waiting for'
+      description: Only return contacts, for whom I have a next action, of status `waiting`
       required: false
       schema:
         type: boolean
