@@ -1093,7 +1093,7 @@ paths:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new deal field
-      description: Only admins can create deal fields
+      description: Only admins can create deal fields.
       tags:
       - Deal Fields
       parameters: []
@@ -1189,7 +1189,7 @@ paths:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific deal field
-      description: Only admins can update deal fields
+      description: Only admins can update deal fields.
       tags:
       - Deal Fields
       parameters:
@@ -1242,7 +1242,7 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific deal field
-      description: Only admins can delete deal fields
+      description: Only admins can delete deal fields.
       tags:
       - Deal Fields
       parameters:
@@ -1369,8 +1369,7 @@ paths:
     delete:
       summary: Disable the cost field for deals
       description: >-
-        The cost field can be used for Margin-based deals.
-        This request Disables the cost field
+        The cost field can be used for margin-based deals. This request disables the cost field. <br>
       tags:
       - Deal Fields
       parameters: []
@@ -1477,7 +1476,7 @@ paths:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new custom field
-      description: Only admins can create custom fields
+      description: Only admins can create custom fields.
       tags:
       - Custom Fields
       parameters: []
@@ -1573,7 +1572,7 @@ paths:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific custom field
-      description: Only admins can update custom fields
+      description: Only admins can update custom fields.
       tags:
       - Custom Fields
       parameters:
@@ -1627,7 +1626,7 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific custom field
-      description: Only admins can delete custom fields
+      description: Only admins can delete custom fields.
       tags:
       - Custom Fields
       parameters:
@@ -1715,7 +1714,7 @@ paths:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new company field
-      description: Only admins can create company fields
+      description: Only admins can create company fields.
       tags:
       - Company Fields
       parameters: []
@@ -1766,7 +1765,7 @@ paths:
           $ref: '#/components/responses/409'
         '500':
           $ref: '#/components/responses/500'
-  '/company_fields/{company_field_id}':
+  /company_fields/{company_field_id}:
     get:
       summary: Get a specific company field
       description: ''
@@ -1811,7 +1810,7 @@ paths:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific company field
-      description: Only admins can update company fields
+      description: Only admins can update company fields.
       tags:
       - Company Fields
       parameters:
@@ -1865,7 +1864,7 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific company field
-      description: Only admins can delete company fields
+      description: Only admins can delete company fields.
       tags:
       - Company Fields
       parameters:
