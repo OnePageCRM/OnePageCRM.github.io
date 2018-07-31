@@ -5024,36 +5024,42 @@ paths:
       tags:
       - Contacts
       parameters:
+      - $ref: '#/components/parameters/query_team'
+      # Search field values
+      - $ref: '#/components/parameters/query_contacts_search'
+      - $ref: '#/components/parameters/query_contacts_phone'
+      - $ref: '#/components/parameters/query_url'
+      # Boolean flags/filters
       - $ref: '#/components/parameters/query_action_stream'
-      - $ref: '#/components/parameters/query_contacts_company_id'
-      - $ref: '#/components/parameters/query_email'
-      - $ref: '#/components/parameters/query_contacts_filter_id'
       - $ref: '#/components/parameters/query_has_actions'
       - $ref: '#/components/parameters/query_has_actions_for_me'
       - $ref: '#/components/parameters/query_has_actions_today'
-      - $ref: '#/components/parameters/query_lead_source'
-      - $ref: '#/components/parameters/query_lead_source_id'
-      - $ref: '#/components/parameters/query_contacts_letter'
-      - $ref: '#/components/parameters/query_contacts_owner_id'
       - $ref: '#/components/parameters/query_pending_deal'
-      - $ref: '#/components/parameters/query_contacts_phone'
       - $ref: '#/components/parameters/query_starred'
-      - $ref: '#/components/parameters/query_contacts_search'
-      - $ref: '#/components/parameters/query_status_id'
-      - $ref: '#/components/parameters/query_contacts_tag'
-      - $ref: '#/components/parameters/query_team'
-      - $ref: '#/components/parameters/query_url'
       - $ref: '#/components/parameters/query_waiting'
-      - $ref: '#/components/parameters/query_not_linked_with'
+      # Related value constraints
+      - $ref: '#/components/parameters/query_email'
+      - $ref: '#/components/parameters/query_contacts_letter'
       - $ref: '#/components/parameters/query_custom_field_id'
       - $ref: '#/components/parameters/query_custom_field_value'
+      - $ref: '#/components/parameters/query_lead_source'
+      - $ref: '#/components/parameters/query_lead_source_id'
+      - $ref: '#/components/parameters/query_status_id'
+      - $ref: '#/components/parameters/query_not_linked_with'
+      - $ref: '#/components/parameters/query_contacts_owner_id'
+      - $ref: '#/components/parameters/query_contacts_company_id'
+      - $ref: '#/components/parameters/query_contacts_tag'
+      - $ref: '#/components/parameters/query_contacts_filter_id'
+      # Date filters
       - $ref: '#/components/parameters/query_date_filter'
       - $ref: '#/components/parameters/query_since'
       - $ref: '#/components/parameters/query_until'
       - $ref: '#/components/parameters/query_modified_since'
       - $ref: '#/components/parameters/query_unmodified_since'
+      # Sort order
       - $ref: '#/components/parameters/query_contacts_sort_by'
       - $ref: '#/components/parameters/query_order'
+      # Pagination
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
@@ -9180,7 +9186,7 @@ components:
       in: query
       required: false
       description: >-
-        Filter contacts by tag (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Filter contacts by tag (only use one of `company_id`, `tag` or `filter_id` at a time)
       schema:
         type: string
         example: VIP
@@ -9198,7 +9204,7 @@ components:
       in: query
       required: false
       description: >-
-        Apply filter to contact listing (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Apply filter to contact listing (only use one of `company_id`, `tag` or `filter_id` at a time)
       schema:
         type: string
         example: 5ae9cc2a9007ba5b856c7bb8
@@ -9364,7 +9370,7 @@ components:
       name: company_id
       in: query
       description: >-
-        Return contacts from a specific company (only use one of `contact_id`, `company_id`, `tag` or `filter_id` at a time)
+        Return contacts from a specific company (only use one of `company_id`, `tag` or `filter_id` at a time)
       required: false
       schema:
         type: string
@@ -9506,11 +9512,11 @@ components:
     query_url:
       name: url
       in: query
-      description: Query contacts based on web address
+      description: Search contacts by web address
       required: false
       schema:
         type: string
-        example: 'https://{ .. }.com'
+        example: 'https://example.com'
     query_waiting:
       name: waiting
       in: query
