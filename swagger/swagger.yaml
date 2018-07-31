@@ -9146,7 +9146,7 @@ components:
       description: Return deals (of status `pending`) with specified deal stage
       schema:
         type: string
-        example: '60'
+        example: 60
     query_user_id:
       name: user_id
       in: query
@@ -9155,7 +9155,7 @@ components:
         Get the action stream of another user (leave blank for entire account in a single list)
       schema:
         type: string
-        example: '5aaa9b009007ba08c9ebaef7'
+        example: 5aaa9b009007ba08c9ebaef7
     query_contacts_search:
       name: search
       in: query
@@ -9315,7 +9315,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: '2018-07-01'
+        example: 2018-07-01
     query_until:
       in: query
       name: until
@@ -9325,7 +9325,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: '2018-07-31'
+        example: 2018-07-31
     query_modified_since:
       in: query
       name: modified_since
@@ -9335,7 +9335,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: '2018-07-01'
+        example: 2018-07-01
     query_unmodified_since:
       in: query
       name: unmodified_since
@@ -9345,7 +9345,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: '2018-07-01'
+        example: 2018-07-01
     query_actions_contact_id:
       name: contact_id
       in: query
@@ -9430,7 +9430,7 @@ components:
     query_action_stream:
       name: action_stream
       in: query
-      description: 'Only return results that are also in action stream '
+      description: Only return results that are also in action stream
       required: false
       schema:
         type: boolean
@@ -9443,7 +9443,7 @@ components:
       required: false
       schema:
         type: string
-        example: 'abc@{example}.com'
+        example: abc@example.com
     query_has_actions:
       name: has_actions
       in: query
@@ -9532,7 +9532,7 @@ components:
       required: false
       schema:
         type: string
-        example: 'https://example.com'
+        example: https://example.com
     query_waiting:
       name: waiting
       in: query
