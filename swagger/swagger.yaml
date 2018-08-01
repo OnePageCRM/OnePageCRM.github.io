@@ -487,9 +487,11 @@ paths:
                     description: The response time
                     example: 1528373119
                   data:
-                    properties:
-                      user:
-                        $ref: '#/components/schemas/User'
+                    type: array
+                    items:
+                      properties:
+                        user:
+                          $ref: '#/components/schemas/User'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -830,7 +832,7 @@ paths:
                     example: 1528373119
                   data:
                     properties:
-                      statises:
+                      statuses:
                         type: array
                         items:
                           properties:
@@ -5079,7 +5081,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5106,19 +5108,19 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Maximum number of items shown on per page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
                       lead_sources:
@@ -5153,8 +5155,6 @@ paths:
                         $ref: '#/components/schemas/Contacts_count'
                       team_stream:
                         $ref: '#/components/schemas/Team_stream'
-
-
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -7406,15 +7406,15 @@ components:
         first_name:
           type: string
           description: First name of the user
-          example: Joe
+          example: Jane
         last_name:
           type: string
           description: Last name of the user
-          example: Bloggs
+          example: Doe
         email:
           type: string
           description: Email address of the user
-          example: joe.bloggs@example.com
+          example: jane.doe@{foo.bar}.com
         company_name:
           type: string
           description: Name of the company that the user works for
@@ -7443,7 +7443,7 @@ components:
         photo_url:
           description: Url of the user’s profile picture
           type: string
-          example: http://{foo.bar}.com/joe-bloggs.jpg
+          example: https://{foo.bar}.com/jane-doe.jpg
         country_code:
           description: ISO country code of the user's address
           type: string
@@ -7457,7 +7457,7 @@ components:
           description: >-
             Google Contacts email address of the user (you can only see your own Google Contacts email address)
           type: string
-          example: joe.bloggs@gmail.com
+          example: jane.doe@{googles-mail-service}.com
     Contact:
       description: >-
         Information about the people you are actively trying to sell to, and related sub-resources like
