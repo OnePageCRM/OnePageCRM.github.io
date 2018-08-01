@@ -7401,26 +7401,26 @@ components:
       properties:
         id:
           type: string
-          description: Id of this user
+          description: ID of the user
           example: 5aba31e99007ba0f570c12f7
         first_name:
           type: string
-          description: First name of user
+          description: First name of the user
           example: Joe
         last_name:
           type: string
-          description: Last name of user
+          description: Last name of the user
           example: Bloggs
         email:
           type: string
-          description: Email address of user
+          description: Email address of the user
           example: joe.bloggs@example.com
         company_name:
           type: string
-          description: Name of the company that this user works for
+          description: Name of the company that the user works for
           example: Big Company Inc.
         account_rights:
-          description: List of permissions this user has
+          description: List of permissions which the user possesses
           type: array
           items:
             type:
@@ -7441,25 +7441,23 @@ components:
           - export
           - private_contacts
         photo_url:
-          description: Url of user’s profile picture
+          description: Url of the user’s profile picture
           type: string
-          example: http://foo.bar.com
+          example: http://{foo.bar}.com/joe-bloggs.jpg
         country_code:
-          description: Contact’s country as ISO country code
+          description: ISO country code of the user's address
           type: string
           example: IE
         bcc_email:
           description: >-
-            Email address of user’s dropbox (You cannot see other users BCC
-            email)
+            BCC email dropbox address of the user (you can only see your own BCC email address)
           type: string
           example: 5abg31e93007ba0f470c92q6@users.onepagecrm.com
         google_contacts_email:
           description: >-
-            Google Contacts email address of user (You cannot see other users
-            google contacts email)
+            Google Contacts email address of the user (you can only see your own Google Contacts email address)
           type: string
-          example:
+          example: joe.bloggs@gmail.com
     Contact:
       description: >-
         Information about the people you are actively trying to sell to, and related sub-resources like
