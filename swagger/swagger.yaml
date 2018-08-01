@@ -7642,9 +7642,9 @@ components:
           example: Mr
     Company:
       description: >-
-        The companies endpoint mimics the company view of contacts in the web
-        app. It allows changing the company name and getting contacts and other
-        resources grouped by company.
+        Referred to as 'organizations' in the web application. Companies are logical collections of Contacts and
+        related sub-resources e.g. Deals, Actions and some basic info on the org. e.g. postal address, website. A
+        Company may not be created directly or exist without a Contact.
       properties:
         id:
           type: string
@@ -7768,10 +7768,8 @@ components:
                 $ref: '#/components/schemas/Deal'
     Action:
       description: >-
-        Actions are completable task items for you to convert your leads into
-        customers. They are sorted as follows: (1) Next actions sorted by action
-        status and/or date and modification time. (2) Queued actions by the
-        same. (3) Completed actions sorted by completion time.
+        Completable tasks related to Contacts. ASAP first, then dated actions ordered by due date (overdue first),
+        followed by waiting for (blocked) and finally queued actions (without any date).
       properties:
         id:
           type: string
