@@ -366,7 +366,7 @@ paths:
       - Authentication
       responses:
         '200':
-          description: OK - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -438,7 +438,7 @@ paths:
       - Authentication
       responses:
         '201':
-          description: OK - Operation successful.
+          description: Created
           content:
             application/json:
               schema:
@@ -469,7 +469,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -513,7 +513,7 @@ paths:
       - $ref: '#/components/parameters/path_user_id'
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -576,7 +576,7 @@ paths:
                   example: "true"
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -617,7 +617,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: OK - Operation successful
+          description: OK
           content:
             application/json:
               schema:
@@ -665,7 +665,7 @@ paths:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -705,7 +705,7 @@ paths:
       - $ref: '#/components/parameters/path_lead_source_id'
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -752,7 +752,7 @@ paths:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
         '200':
-          description: Ok - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -813,7 +813,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: OK - Operation successful
+          description: OK
           content:
             application/json:
               schema:
@@ -870,7 +870,7 @@ paths:
                   $ref: '#/components/schemas/Status/properties/color'
       responses:
         '201':
-          description: OK - Operation successful
+          description: Created
           content:
             application/json:
               schema:
@@ -917,7 +917,7 @@ paths:
       - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
-          description: OK - Operation successful
+          description: OK
           content:
             application/json:
               schema:
@@ -971,7 +971,7 @@ paths:
                   $ref: '#/components/schemas/Status/properties/color'
       responses:
         '200':
-          description: OK - Operation successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1013,7 +1013,7 @@ paths:
       - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
-          description: OK - Operation successful
+          description: OK
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1039,7 +1039,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1113,7 +1113,7 @@ paths:
                   $ref: '#/components/schemas/Deal_field/properties/choices'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -1156,7 +1156,7 @@ paths:
       - $ref: '#/components/parameters/path_deal_field_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1210,7 +1210,7 @@ paths:
                   $ref: '#/components/schemas/Deal_field/properties/choices'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1423,7 +1423,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1496,7 +1496,7 @@ paths:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1539,7 +1539,7 @@ paths:
       - $ref: '#/components/parameters/path_custom_field_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1593,7 +1593,7 @@ paths:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1661,7 +1661,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1734,7 +1734,7 @@ paths:
                   $ref: '#/components/schemas/Company_field/properties/choices'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -1777,7 +1777,7 @@ paths:
       - $ref: '#/components/parameters/path_company_field_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1831,7 +1831,7 @@ paths:
                   $ref: '#/components/schemas/Company_field/properties/choices'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1895,7 +1895,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1950,7 +1950,7 @@ paths:
                   $ref: '#/components/schemas/Predefined_action/properties/days'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -1993,7 +1993,7 @@ paths:
       - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2045,7 +2045,7 @@ paths:
                   $ref: '#/components/schemas/Predefined_action/properties/days'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2120,7 +2120,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2202,7 +2202,7 @@ paths:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -2245,7 +2245,7 @@ paths:
       - $ref: '#/components/parameters/path_note_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2308,7 +2308,7 @@ paths:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2425,7 +2425,7 @@ paths:
                     Size of file
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -2492,7 +2492,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2578,7 +2578,7 @@ paths:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -2621,7 +2621,7 @@ paths:
       - $ref: '#/components/parameters/path_call_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2688,7 +2688,7 @@ paths:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2805,7 +2805,7 @@ paths:
                     Size of file
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -2864,7 +2864,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -2961,7 +2961,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3062,7 +3062,7 @@ paths:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -3105,7 +3105,7 @@ paths:
       - $ref: '#/components/parameters/path_deal_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3187,7 +3187,7 @@ paths:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3305,7 +3305,7 @@ paths:
                     Size of file
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -3388,7 +3388,7 @@ paths:
         description: Contact to be associated with the attachment
       responses:
         '200':
-          description: OK - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -3508,7 +3508,7 @@ paths:
                     Size of file
 
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -3574,7 +3574,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: OK - Operation successful.
+          description: OK
           content:
             application/json:
               schema:
@@ -3620,7 +3620,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3701,7 +3701,7 @@ paths:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -3744,7 +3744,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3813,7 +3813,7 @@ paths:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3880,7 +3880,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3923,7 +3923,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -3966,7 +3966,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4010,7 +4010,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4053,7 +4053,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4103,7 +4103,7 @@ paths:
       - $ref: '#/components/parameters/path_action_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4147,7 +4147,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4211,7 +4211,7 @@ paths:
       - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4266,7 +4266,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4329,7 +4329,7 @@ paths:
       - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4398,7 +4398,7 @@ paths:
                         example: "big"
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4453,7 +4453,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4530,7 +4530,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4602,7 +4602,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4674,7 +4674,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4741,7 +4741,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -4838,7 +4838,7 @@ paths:
                   example: 5ae06ef9d55673108fe8877b
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -4944,7 +4944,7 @@ paths:
                   $ref: '#/components/schemas/Status/properties/id'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -4986,7 +4986,7 @@ paths:
       - $ref: '#/components/parameters/path_company_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5066,7 +5066,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5223,7 +5223,7 @@ paths:
                   $ref: '#/components/schemas/Contact/properties/starred'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -5312,7 +5312,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5419,7 +5419,7 @@ paths:
                   $ref: '#/components/schemas/Contact/properties/starred'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5515,7 +5515,7 @@ paths:
           example: true
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5596,7 +5596,7 @@ paths:
                   example: '{A base64 encoded jpg or png image}'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -5650,7 +5650,7 @@ paths:
                   example: '{A base64 encoded jpg or png image}'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -5692,7 +5692,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -5735,7 +5735,7 @@ paths:
       - $ref: '#/components/parameters/path_filter_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5790,7 +5790,7 @@ paths:
           minimum: 1
       responses:
         '200':
-          description: "Operation Successful"
+          description: OK
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -5819,7 +5819,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5890,7 +5890,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -5970,7 +5970,7 @@ paths:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -6027,7 +6027,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6129,7 +6129,7 @@ paths:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -6181,7 +6181,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6259,7 +6259,7 @@ paths:
                   $ref: '#/components/schemas/Note/properties/date'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -6311,7 +6311,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6393,7 +6393,7 @@ paths:
                   $ref: '#/components/schemas/Call/properties/recording_link'
       responses:
         '201':
-          description: Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -6438,7 +6438,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
-          description: "Operation Successful"
+          description: OK
           content:
             application/json:
               schema:
@@ -6502,7 +6502,7 @@ paths:
       - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6574,7 +6574,7 @@ paths:
       - $ref: '#/components/parameters/path_tag_name'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6646,7 +6646,7 @@ paths:
       - $ref: '#/components/parameters/path_status_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6690,7 +6690,7 @@ paths:
       - $ref: '#/components/parameters/path_owner_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6733,7 +6733,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6776,7 +6776,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6830,7 +6830,7 @@ paths:
                   example: Joe in not interested in buying windmills at this time
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6873,7 +6873,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -6928,7 +6928,7 @@ paths:
                   example: 'Fancy New Company Inc.'
       responses:
         '200':
-          description: Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -7007,7 +7007,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
-          description: "Operation Successful"
+          description: OK
           content:
             application/json:
               schema:
@@ -7108,7 +7108,7 @@ paths:
       - $ref: '#/components/parameters/query_per_page'
       responses:
         200:
-          description: "Operation Successful"
+          description: OK
           content:
             application/json:
               schema:
@@ -7170,7 +7170,7 @@ paths:
       parameters: []
       responses:
         200:
-          description: "Operation Successful"
+          description: OK
           content:
             application/json:
               schema:
@@ -7231,7 +7231,7 @@ paths:
       - $ref: "#/components/parameters/path_webhook_id"
       responses:
         200:
-          description: "Operation Successful"
+          description: OK
           content:
             application/json:
               schema:
@@ -9678,9 +9678,9 @@ components:
         example: 1
   responses:
     '200':
-      description: OK - Operation successful.
+      description: OK
     '201':
-      description: OK - Operation successful.
+      description: Created
     '400':
       description: >-
         Bad Request. The request is not properly formatted, does not properly
