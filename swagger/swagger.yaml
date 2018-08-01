@@ -381,7 +381,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Bootstrap'
@@ -453,7 +453,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -484,7 +484,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     type: array
@@ -528,7 +528,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -591,7 +591,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -632,7 +632,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -680,7 +680,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
@@ -720,7 +720,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
@@ -767,7 +767,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
@@ -828,7 +828,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -885,7 +885,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -932,7 +932,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -986,7 +986,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1054,7 +1054,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1128,7 +1128,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1171,7 +1171,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1225,7 +1225,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                     properties:
                       deal_field:
@@ -1291,7 +1291,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1350,7 +1350,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1392,7 +1392,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1438,7 +1438,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1511,7 +1511,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1554,7 +1554,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1608,7 +1608,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1676,7 +1676,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1749,7 +1749,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1792,7 +1792,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1846,7 +1846,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1910,7 +1910,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -1965,7 +1965,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2008,7 +2008,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2060,7 +2060,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2135,7 +2135,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2217,7 +2217,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2260,7 +2260,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2323,7 +2323,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2440,7 +2440,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2507,7 +2507,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2593,7 +2593,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2636,7 +2636,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2703,7 +2703,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2820,7 +2820,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -2879,7 +2879,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     type: array
@@ -2976,7 +2976,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3077,7 +3077,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3120,7 +3120,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3202,7 +3202,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3320,7 +3320,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3403,7 +3403,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3523,7 +3523,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3635,7 +3635,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3716,7 +3716,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3759,7 +3759,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3828,7 +3828,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3895,7 +3895,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3938,7 +3938,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -3981,7 +3981,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4025,7 +4025,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4068,7 +4068,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4118,7 +4118,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4162,7 +4162,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4226,7 +4226,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4281,7 +4281,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4344,7 +4344,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4413,7 +4413,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4468,7 +4468,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4545,7 +4545,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4617,7 +4617,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4689,7 +4689,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4756,7 +4756,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4853,7 +4853,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -4959,7 +4959,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5001,7 +5001,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5238,7 +5238,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5327,7 +5327,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5434,7 +5434,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5530,7 +5530,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data: {}
                   lead_sources:
@@ -5611,7 +5611,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5665,7 +5665,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5707,7 +5707,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5750,7 +5750,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5834,7 +5834,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5905,7 +5905,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -5985,7 +5985,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6042,7 +6042,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6144,7 +6144,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6196,7 +6196,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6274,7 +6274,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6326,7 +6326,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6408,7 +6408,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6453,7 +6453,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6517,7 +6517,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6589,7 +6589,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6661,7 +6661,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6705,7 +6705,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6748,7 +6748,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6791,7 +6791,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6845,7 +6845,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6888,7 +6888,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -6943,7 +6943,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -7022,7 +7022,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -7123,7 +7123,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -7185,7 +7185,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
@@ -7246,7 +7246,7 @@ paths:
                     example: OK
                   timestamp:
                     type: integer
-                    description: The response time
+                    description: Response time
                     example: 1528373119
                   data:
                     properties:
