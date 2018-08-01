@@ -7827,10 +7827,8 @@ components:
           example: 2
     Deal:
       description: >-
-        Deals store information about a deal that is taking place or has closed.
-        They contain data such as the name of the deal, the amount of money the deal
-        is worth, the number of months the deal will last for, when a deal is
-        expected to close or when it was closed and notes about the deal.
+        Represent (potential) financial transactions with your contacts. Deals include information like amount,
+        deal stage, closed date or expected close date. Deals support file attachments.
       properties:
         id:
           description: Deal ID (read only)
@@ -8013,9 +8011,8 @@ components:
           format: date
     Note:
       description: >-
-        Notes allow you to keep track of your interactions with contacts,
-        include important information that will help you with that contact or
-        store any other information you see fit.
+        Allow you to keep track of additional information related to your contacts. Notes can include any
+        information you feel is relevant e.g. interactions with that contact. Notes support file attachments.
       properties:
         id:
           type: string
@@ -8058,7 +8055,9 @@ components:
           description: The note's last modification date.
           example: 2018-05-16T11:52:09Z
     Call:
-      description: Calls allow you to keep track of calls you make to your contacts.
+      description: >-
+        Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
+        number dialled and the call result. Calls support file attachments.
       properties:
         id:
           type: string
@@ -8129,7 +8128,9 @@ components:
           description: Result index
           example: 4
     Attachment:
-      description:
+      description: >-
+        Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3,
+        or stored in external providers i.e. Google Drive, Dropbox, Evernote.
       properties:
         id:
           type: string
@@ -8319,8 +8320,8 @@ components:
           example: false
     Status:
       description: >-
-        Statuses are a way of qualifying where your contacts are in your sales
-        pipeline.
+        Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
+        pre-populated, and can be later edited to fit individual needs.
       properties:
         id:
           description: Status ID. This matches the status field in contacts (read only).
@@ -8390,8 +8391,8 @@ components:
                 example: 4
     Lead_source:
       description: >-
-        Lead sources are a way for you to classify the source of any contact
-        that you add to OnePageCRM
+        A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
+        already populated but it may be updated if needed, to better fit your organization.
       properties:
         id:
           description: The type of lead source
@@ -8430,9 +8431,8 @@ components:
                 example: 4
     Filter:
       description: >-
-        Custom filters allow you to query contacts in your own custom way. These
-        filters can only be created on the website but they can be used through
-        the API
+        Allow you to query contacts in your own custom way. These filters can only be created on the website but
+        they can be used through the API.
       properties:
         id:
           description: Id of the custom filter
@@ -8475,7 +8475,9 @@ components:
           type: integer
           example: 1
     Predefined_action:
-      description: Template actions users may use frequently in their sales process
+      description: >-
+        Template actions users may use frequently in their sales process. Referred to as 'Saved Actions' in
+        the web application.
       properties:
         id:
           description: Id of the predefined action
@@ -8490,7 +8492,7 @@ components:
           type: integer
           example: 4
     Custom_field:
-      description: A custom field object
+      description: Extra user-configurable data fields for Contacts. Only editable by admins.
       properties:
         id:
           description: Id of the custom field
@@ -8527,7 +8529,7 @@ components:
           - Autumn
           - Winter
     Company_field:
-      description: A company field object
+      description: Extra user-configurable data fields for Companies. Only editable by admins.
       properties:
         id:
           description: Id of the company field
@@ -8565,7 +8567,7 @@ components:
           - medium
           - small
     Deal_field:
-      description: A deal field object
+      description: Extra user-configurable data fields for Deals. Only editable by admins.
       properties:
         id:
           description: Id of the deal field
@@ -8854,8 +8856,8 @@ components:
           example: 10
     Webhook:
       description: >-
-        Webhooks are a simple, efficient way of integrating with web applications.
-        For more information please see: <a href="http://developer.onepagecrm.com/webhooksmore/">http://developer.onepagecrm.com/webhooksmore/"</a>
+        A simple, effective way to be notified when things happen in OnePageCRM. For more information,
+        go to the 'WebHooks & More' tab at the top of the page.
       properties:
         id:
           type: string
