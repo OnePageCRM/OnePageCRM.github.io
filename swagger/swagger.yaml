@@ -7424,7 +7424,7 @@ components:
           description: List of permissions this user has
           type: array
           items:
-            type: ""
+            type:
           enum:
           - account_owner
           - admin
@@ -7444,7 +7444,7 @@ components:
         photo_url:
           description: Url of user’s profile picture
           type: string
-          example: 'http://foo.bar.com'
+          example: http://foo.bar.com
         country_code:
           description: Contact’s country as ISO country code
           type: string
@@ -7460,7 +7460,7 @@ components:
             Google Contacts email address of user (You cannot see other users
             google contacts email)
           type: string
-          example: 'null'
+          example:
     Contact:
       description: Contacts are the main resource within onepageCRM
       properties:
@@ -7515,9 +7515,11 @@ components:
         background:
           type: string
           description: Contact's background
-          example: "I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
-          solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon, Arizona and Utah for capital building projects.
-          Her current supplier is crazy expensive! I've asked to be able to tender for their next order."
+          example: >-
+            I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
+            solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon,
+            Arizona and Utah for capital building projects. Her current supplier is crazy expensive! I've asked
+            to be able to tender for their next order.
         lead_source_id:
           $ref: '#/components/schemas/Lead_source/properties/id'
         pending_deal:
@@ -7527,7 +7529,7 @@ components:
         total_pendings:
           type: number
           description: The value of pending deals with the contact
-          example: '1200.99'
+          example: 1200.99
         total_deals_count:
           type: string
           description: The number of pending deals with the contact
@@ -7535,7 +7537,7 @@ components:
         photo_url:
           type: string
           description: Url of the contact's photo
-          example: 'https://{ .. }.com'
+          example: https://example.com
         custom_fields:
           description: A list of custom field objects that the user has
           type: array
@@ -7577,7 +7579,7 @@ components:
               value:
                 type: string
                 description: The url associated with the contact
-                example: 'http://www.linkedin.com/{foo.bar}.com'
+                example: http://www.linkedin.com/{some.user}
         phones:
           type: array
           description: Phone numbers associated with the contact
@@ -7620,19 +7622,19 @@ components:
               closed_at:
                 description: timestamp that the sales cycle was closed
                 type: integer
-                example: '1524818902'
+                example: 1524818902
               comment:
                 description: Closing comment
                 type: string
-                example: ''
+                example:
         created_at:
           type: string
           description: The contact's creation date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         modified_at:
           type: string
           description: The contact's last modification date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         title:
           type: string
           description: The title of the contact
@@ -7662,7 +7664,7 @@ components:
         url:
           type: string
           description: Company Url
-          example: 'http://{...}.com'
+          example: http://example.com
         company_fields:
           type: array
           items:
@@ -7703,18 +7705,18 @@ components:
               example: Awesome State
             zip_code:
               type: string
-              example: '0123456'
+              example: 0123456
             country_code:
               type: string
               example: IE
         created_at:
           type: string
           description: The action's creation date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         modified_at:
           type: string
           description: The action's last modification date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         contacts_count:
           type: integer
           description: Number of contacts in this company
@@ -7796,30 +7798,30 @@ components:
           example: false
         created_at:
           type: string
-          description: The action's creation date.
-          example: '2018-05-16T11:52:09Z'
+          description: The action's creation date
+          example: 2018-05-16T11:52:09Z
         modified_at:
           type: string
-          description: The action's last modification date.
-          example: '2018-05-16T11:52:09Z'
+          description: The action's last modification date
+          example: 2018-05-16T11:52:09Z
         done_at:
           type: string
           description: >-
             The date the action was completed. This is only returned if the
             action has been completed
-          example: '2018-05-16'
+          example: 2018-05-16
         date:
           type: string
           description: >-
             The date the action is due. This is only returned if the action
             status is date or date_time
-          example: '2018-05-16'
+          example: 2018-05-16
         exact_time:
           type: string
           description: >-
             The exact time the action is due. This is only returned if the
             action status is date_time
-          example: '2018-05-16'
+          example: 2018-05-16
         position:
           type: integer
           description: >-
@@ -7845,7 +7847,7 @@ components:
               counts:
                 description: The number of actions that user_id has
                 type: integer
-                example: '5'
+                example: 5
         all:
           description: Total number of actions for the stream
           type: integer
@@ -7879,7 +7881,7 @@ components:
         date:
           type: string
           description: Date the note was created
-          example: '2018-05-16'
+          example: 2018-05-16
         attachments:
           type: array
           items:
@@ -7891,11 +7893,11 @@ components:
         created_at:
           type: string
           description: The note's creation date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         modified_at:
           type: string
           description: The note's last modification date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
     Call:
       description: Calls allow you to keep track of calls you make to your contacts.
       properties:
@@ -7945,7 +7947,7 @@ components:
           default: unknown
         phone_number:
           type: string
-          description: 'Phone number '
+          description: Phone number
           example: 123 456 7891 (mobile)
         recording_link:
           type: string
@@ -7958,15 +7960,15 @@ components:
         created_at:
           type: string
           description: The call's creation date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         modified_at:
           type: string
           description: The call's last modification date.
-          example: '2018-05-16T11:52:09Z'
+          example: 2018-05-16T11:52:09Z
         index:
           type: integer
           description: Result index
-          example: '4'
+          example: 4
     Deal:
       description: >-
         Deals store information about a deal that is taking place or has closed.
@@ -8021,7 +8023,7 @@ components:
           description: Date related to the deal’s creation
           type: string
           format: date
-          example: '2018-03-14'
+          example: 2018-03-14
         contact_info:
           description: >-
             JSON object containing contact_name and company relating to deal.
@@ -8050,7 +8052,7 @@ components:
           description: Number of months the above amount will be paid for
           type: integer
           format: int32
-          example: '1'
+          example: 1
         total_amount:
           description: Product of amount and months (read only)
           type: number
@@ -8097,7 +8099,7 @@ components:
           - margin
           example: none
         status:
-          description: 'Status of the deal'
+          description: Status of the deal
           type: string
           enum:
           - won
@@ -8127,12 +8129,12 @@ components:
           description: Date the deal was created at (read-only)
           type: string
           format: date-time
-          example: '2018-03-15T16:10:45Z'
+          example: 2018-03-15T16:10:45Z
         modified_at:
           description: Deal’s last modification time (read-only)
           type: string
           format: date-time
-          example: '2018-03-15T16:10:45Z'
+          example: 2018-03-15T16:10:45Z
         stage:
           description: >-
             What stage this deal is at. This can be converted to a label using
@@ -8146,7 +8148,7 @@ components:
             if the status of the deal is pending
           type: string
           format: date
-          example: '2018-04-15'
+          example: 2018-04-15
         close_date:
           description: >-
             Date that the deal was closed. This is set automatically when a deal
@@ -8154,7 +8156,7 @@ components:
           type: string
           format: date
     Attachment:
-      description: ''
+      description:
       properties:
         id:
           type: string
@@ -8171,15 +8173,15 @@ components:
         url:
           type: string
           description: External URL for the file
-          example: 'https://{...}/mario.jpeg'
+          example: https://{foo.bar}/mario.jpg
         size:
           type: string
           description: Size of the file
-          example: '3841'
+          example: 3841
         url_expires_at:
           type: string
           description: The date the attachment url experies
-          example: '2018-05-16T13:06:53Z'
+          example: 2018-05-16T13:06:53Z
     Filter:
       description: >-
         Custom filters allow you to query contacts in your own custom way. These
@@ -8243,7 +8245,7 @@ components:
                 type: string
                 example: 5aba31e99007ba0f570c12f7
               counts:
-                description: 'Number of contacts user_id owns with this lead source '
+                description: Number of contacts user_id owns with this lead source
                 type: integer
                 example: 4
     Status:
@@ -8327,11 +8329,11 @@ components:
         text:
           description: Text describing this predefined action
           type: string
-          example: 'Email [firstname] introducing our organization'
+          example: '#1 Email [firstname] introducing our organization'
         days:
           description: Suggested the number of days until the action becomes due.
           type: integer
-          example: '4'
+          example: 4
     Custom_field:
       description: A custom field object
       properties:
@@ -8449,20 +8451,20 @@ components:
         For more information please see: <a href="http://developer.onepagecrm.com/webhooksmore/">http://developer.onepagecrm.com/webhooksmore/"</a>
       properties:
         id:
-          type: "string"
-          description: "Id of the web hook"
-          example: "5417f8291da41712270G0042"
+          type: string
+          description: Id of the web hook
+          example: 5417f8291da41712270G0042
         name:
-          type: "string"
-          description: "The name of the web hook"
-          example: "Awesome integration "
+          type: string
+          description: The name of the web hook
+          example: Awesome integration
         hook_url:
-          type: "string"
-          description: "Url of the webhook"
-          example: "{example/api/foo/bar}"
+          type: string
+          description: Url of the webhook
+          example: https://{foo.bar}/api/v1/{endpoint}.format"
         secretkey:
-          type: "string"
-          description: "Secret key of the webhook"
+          type: string
+          description: Secret key of the webhook
     Contacts_count:
       description: >-
         This returns the total number of contacts for each user and
@@ -8474,7 +8476,7 @@ components:
           items:
             properties:
               1:
-                description: "Contacts which start with a non alphabetic character are included here"
+                description: Contacts which start with a non alphabetic character are included here
                 type: integer
                 example: 1
               a:
@@ -8563,7 +8565,7 @@ components:
           items:
             properties:
               1:
-                description: "Contacts which start with a non alphabetic character are included here"
+                description: Contacts which start with a non alphabetic character are included here
                 type: integer
                 example: 1
               a:
@@ -8722,11 +8724,11 @@ components:
           type: string
           example: '%d/%m/%Y'
         time_with_ampm:
-          description: 'Use AM/PM of 24 clock for time '
+          description: Use AM/PM of 24 clock for time
           type: boolean
           example: false
         listing_size:
-          description: 'When on the app, listing size is the number of actions to show at a time in the action stream'
+          description: When on the app, listing size is the number of actions to show at a time in the action stream
           type: integer
           example: 25
         currency:
@@ -8740,7 +8742,7 @@ components:
         separator:
           description: Decimal point seperator for currency
           type: string
-          example: .
+          example: '.'
         delimiter:
           description: thousands delimiter for currency
           type: string
@@ -8822,7 +8824,7 @@ components:
           description: The reminder time. This is ignored if reminder type is 'never'
           example: 6
     Email_message:
-      description: 'Email message'
+      description: Email message
       properties:
         id:
           type: string
@@ -8904,7 +8906,7 @@ components:
           description: Slightly longer description of the failure reason
         errors:
           type: array
-          description: 'Specific errors, commonly associated with invalid parameters'
+          description: Specific errors, commonly associated with invalid parameters
           items:
             properties:
               attribute_name:
