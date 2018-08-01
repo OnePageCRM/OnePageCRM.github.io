@@ -1065,19 +1065,19 @@ paths:
                             deal_field:
                               $ref: '#/components/schemas/Deal_field'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
 
@@ -1449,19 +1449,19 @@ paths:
                             custom_field:
                               $ref: '#/components/schemas/Custom_field'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -1687,19 +1687,19 @@ paths:
                             company_field:
                               $ref: '#/components/schemas/Company_field'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -2146,19 +2146,19 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -2518,19 +2518,19 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -2987,19 +2987,19 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -3646,19 +3646,19 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4173,19 +4173,19 @@ paths:
                             filter:
                               $ref: '#/components/schemas/Filter'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4292,19 +4292,19 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4479,19 +4479,19 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4556,19 +4556,19 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4628,19 +4628,19 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4700,19 +4700,19 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -4789,19 +4789,19 @@ paths:
                                   items:
                                     example: 5aba31e99007ba0f570c92ab
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -5112,7 +5112,7 @@ paths:
                         type: integer
                         example: 1
                       page:
-                        description: Page number
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
@@ -5916,19 +5916,19 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -6053,19 +6053,19 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -6207,19 +6207,19 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -6337,19 +6337,19 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -6464,19 +6464,19 @@ paths:
                             email_message:
                               $ref: "#/components/schemas/Email_message"
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -7033,19 +7033,19 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -7134,19 +7134,19 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
@@ -7194,19 +7194,19 @@ paths:
                         items:
                           $ref: "#/components/schemas/Webhook"
                       total_count:
-                        description: "Total number of items"
+                        description: Total number of items
                         type: integer
                         example: 1
                       page:
-                        description: "Page number"
+                        description: Current page number
                         type: integer
                         example: 1
                       per_page:
-                        description: "Maximum number of items shown on per page"
+                        description: Number of items returned in each page
                         type: integer
                         example: 1
                       max_page:
-                        description: "The page number of the last page of items"
+                        description: The page number of the last page of items
                         type: integer
                         example: 1
         400:
