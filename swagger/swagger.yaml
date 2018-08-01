@@ -424,7 +424,7 @@ paths:
       tags:
       - Authentication
       responses:
-        '201':
+        201:
           $ref: '#/components/responses/201'
         400:
           $ref: '#/components/responses/400'
@@ -437,7 +437,7 @@ paths:
       tags:
       - Authentication
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -494,15 +494,15 @@ paths:
                           $ref: '#/components/schemas/User'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /users/{user_id}:
     get:
@@ -536,15 +536,15 @@ paths:
                         $ref: '#/components/schemas/User'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific user
@@ -599,15 +599,15 @@ paths:
                         $ref: '#/components/schemas/User'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /lead_sources:
     get:
@@ -640,15 +640,15 @@ paths:
                         $ref: '#/components/schemas/Lead_source'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new lead source
@@ -686,15 +686,15 @@ paths:
                     $ref: '#/components/schemas/Lead_source'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /lead_sources/{lead_source_id}:
     get:
@@ -726,15 +726,15 @@ paths:
                     $ref: '#/components/schemas/Lead_source'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific lead source
@@ -773,15 +773,15 @@ paths:
                     $ref: '#/components/schemas/Lead_source'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific lead source
@@ -794,15 +794,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /statuses:
     get:
@@ -840,15 +840,15 @@ paths:
                               $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new status
@@ -869,7 +869,7 @@ paths:
                 color:
                   $ref: '#/components/schemas/Status/properties/color'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -897,15 +897,15 @@ paths:
                               $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/statuses/{status_id}':
     get:
@@ -940,15 +940,15 @@ paths:
                         $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific status
@@ -994,15 +994,15 @@ paths:
                         $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific status
@@ -1016,15 +1016,15 @@ paths:
           description: OK
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /deal_fields:
     get:
@@ -1083,15 +1083,15 @@ paths:
 
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new deal field
@@ -1112,7 +1112,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Deal_field/properties/choices'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -1136,15 +1136,15 @@ paths:
                         $ref: '#/components/schemas/Deal_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/deal_fields/{deal_field_id}':
     get:
@@ -1179,15 +1179,15 @@ paths:
                         $ref: '#/components/schemas/Deal_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific deal field
@@ -1232,15 +1232,15 @@ paths:
                         $ref: '#/components/schemas/Deal_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific deal field
@@ -1254,15 +1254,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /deal_fields/cost_setup:
     post:
@@ -1275,7 +1275,7 @@ paths:
       - Deal Fields
       parameters: []
       responses:
-        '201':
+        201:
           description: OK Operation Successful
           content:
             application/json:
@@ -1299,15 +1299,15 @@ paths:
                         $ref: '#/components/schemas/Cost_setup'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update the cost field for deals
@@ -1358,15 +1358,15 @@ paths:
                         $ref: '#/components/schemas/Cost_setup'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Disable the cost field for deals
@@ -1400,15 +1400,15 @@ paths:
                         $ref: '#/components/schemas/Cost_setup'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /custom_fields:
     get:
@@ -1466,15 +1466,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new custom field
@@ -1519,15 +1519,15 @@ paths:
                         $ref: '#/components/schemas/Custom_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/custom_fields/{custom_field_id}':
     get:
@@ -1562,15 +1562,15 @@ paths:
                         $ref: '#/components/schemas/Custom_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific custom field
@@ -1616,15 +1616,15 @@ paths:
                         $ref: '#/components/schemas/Custom_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific custom field
@@ -1638,15 +1638,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /company_fields:
     get:
@@ -1704,15 +1704,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new company field
@@ -1733,7 +1733,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Company_field/properties/choices'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -1757,15 +1757,15 @@ paths:
                         $ref: '#/components/schemas/Company_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /company_fields/{company_field_id}:
     get:
@@ -1800,15 +1800,15 @@ paths:
                         $ref: '#/components/schemas/Company_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific company field
@@ -1854,15 +1854,15 @@ paths:
                         $ref: '#/components/schemas/Company_field'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific company field
@@ -1876,15 +1876,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /predefined_actions:
     get:
@@ -1922,15 +1922,15 @@ paths:
                               $ref: '#/components/schemas/Predefined_action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new predifined action
@@ -1949,7 +1949,7 @@ paths:
                 days:
                   $ref: '#/components/schemas/Predefined_action/properties/days'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -1973,15 +1973,15 @@ paths:
                         $ref: '#/components/schemas/Predefined_action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/predefined_actions/{predefined_action_id}':
     get:
@@ -2016,15 +2016,15 @@ paths:
                         $ref: '#/components/schemas/Predefined_action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific predefined action
@@ -2068,15 +2068,15 @@ paths:
                         $ref: '#/components/schemas/Predefined_action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific predefined action
@@ -2090,15 +2090,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /notes:
     get:
@@ -2163,15 +2163,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new note
@@ -2201,7 +2201,7 @@ paths:
                   items:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -2225,15 +2225,15 @@ paths:
                         $ref: '#/components/schemas/Note'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /notes/{note_id}:
     get:
@@ -2268,15 +2268,15 @@ paths:
                         $ref: '#/components/schemas/Note'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific note
@@ -2331,15 +2331,15 @@ paths:
                         $ref: '#/components/schemas/Note'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific note
@@ -2353,15 +2353,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /notes/{note_id}/attachments:
     post:
@@ -2424,7 +2424,7 @@ paths:
                   description: >-
                     Size of file
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -2462,15 +2462,15 @@ paths:
                         example: 'https://{...}/mario.jpeg'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /calls:
     get:
@@ -2535,15 +2535,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a call
@@ -2577,7 +2577,7 @@ paths:
                   items:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -2601,15 +2601,15 @@ paths:
                         $ref: '#/components/schemas/Call'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /calls/{call_id}:
     get:
@@ -2644,15 +2644,15 @@ paths:
                         $ref: '#/components/schemas/Call'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific call
@@ -2711,15 +2711,15 @@ paths:
                         $ref: '#/components/schemas/Call'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific call
@@ -2733,15 +2733,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /calls/{call_id}/attachments:
     post:
@@ -2804,7 +2804,7 @@ paths:
                   description: >-
                     Size of file
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -2842,15 +2842,15 @@ paths:
                         example: 'https://{...}/mario.jpeg'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /call_results:
     get:
@@ -2924,15 +2924,15 @@ paths:
                                     example: 4
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /deals:
     get:
@@ -3004,15 +3004,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new deal
@@ -3061,7 +3061,7 @@ paths:
                 commission_base:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -3085,15 +3085,15 @@ paths:
                         $ref: '#/components/schemas/Deal'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /deals/{deal_id}:
     get:
@@ -3128,15 +3128,15 @@ paths:
                         $ref: '#/components/schemas/Deal'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific deal
@@ -3210,15 +3210,15 @@ paths:
                         $ref: '#/components/schemas/Deal'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific deal
@@ -3233,15 +3233,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /deals/{deal_id}/attachments:
     post:
@@ -3304,7 +3304,7 @@ paths:
                   description: >-
                     Size of file
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -3342,15 +3342,15 @@ paths:
                         example: 'https://{...}/mario.jpeg'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /attachments/s3_form:
     get:
@@ -3436,15 +3436,15 @@ paths:
                             example: aBcDe...aBcDe
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /attachments:
     post:
@@ -3507,7 +3507,7 @@ paths:
                   description: >-
                     Size of file
 
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -3531,15 +3531,15 @@ paths:
                         $ref: '#/components/schemas/Attachment'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/attachments/{attachment_id}':
     delete:
@@ -3554,15 +3554,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /countries:
     get:
@@ -3663,15 +3663,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a new action
@@ -3700,7 +3700,7 @@ paths:
                 position:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -3724,15 +3724,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}:
     get:
@@ -3767,15 +3767,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific action
@@ -3836,15 +3836,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific action
@@ -3859,15 +3859,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/unassign:
     put:
@@ -3903,15 +3903,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/mark_as_done:
     put:
@@ -3946,15 +3946,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/undo_completion:
     put:
@@ -3989,15 +3989,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/promote:
     put:
@@ -4033,15 +4033,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/revert_promotion:
     put:
@@ -4076,15 +4076,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /actions/{action_id}/swap:
     put:
@@ -4126,15 +4126,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /filters:
     get:
@@ -4190,15 +4190,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /filters/{filter_id}:
     get:
@@ -4240,15 +4240,15 @@ paths:
                               $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies:
     get:
@@ -4309,15 +4309,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies/{company_id}:
     get:
@@ -4352,15 +4352,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific company
@@ -4421,15 +4421,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies/{company_id}/actions:
     get:
@@ -4496,15 +4496,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies/{company_id}/deals:
     get:
@@ -4573,15 +4573,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies/{company_id}/notes:
     get:
@@ -4645,15 +4645,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /companies/{company_id}/calls:
     get:
@@ -4717,15 +4717,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/companies/{company_id}/linked_contacts':
     get:
@@ -4806,15 +4806,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Link a contact to a specific company
@@ -4837,7 +4837,7 @@ paths:
                   type: string
                   example: 5ae06ef9d55673108fe8877b
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -4883,15 +4883,15 @@ paths:
                               example: 5aba31e99007ba0f570c92ab
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/companies/{company_id}/linked_contacts/{contact_id}':
     delete:
@@ -4913,15 +4913,15 @@ paths:
           $ref: '#/components/responses/200'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   '/companies/{company_id}/synced_status':
     post:
@@ -4943,7 +4943,7 @@ paths:
                 status_id:
                   $ref: '#/components/schemas/Status/properties/id'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -4967,15 +4967,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Disable company status sync
@@ -5009,15 +5009,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts:
     get:
@@ -5157,15 +5157,15 @@ paths:
                         $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a contact
@@ -5222,7 +5222,7 @@ paths:
                 starred:
                   $ref: '#/components/schemas/Contact/properties/starred'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -5292,15 +5292,15 @@ paths:
                     $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}:
     get:
@@ -5351,15 +5351,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a specific contact
@@ -5488,15 +5488,15 @@ paths:
                     $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific contact
@@ -5565,15 +5565,15 @@ paths:
                     $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/contact_photo:
     post:
@@ -5595,7 +5595,7 @@ paths:
                 image:
                   example: '{A base64 encoded jpg or png image}'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -5619,15 +5619,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     put:
       summary: Update a contact's photo
@@ -5649,7 +5649,7 @@ paths:
                 image:
                   example: '{A base64 encoded jpg or png image}'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -5673,15 +5673,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     delete:
       summary: Remove a contact's photo
@@ -5691,7 +5691,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -5715,15 +5715,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/filters/{filter_id}:
     get:
@@ -5764,15 +5764,15 @@ paths:
                               $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/delete:
     delete:
@@ -5793,15 +5793,15 @@ paths:
           description: OK
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/google_contacts:
     post:
@@ -5858,15 +5858,15 @@ paths:
                         $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/actions:
     get:
@@ -5933,15 +5933,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create an action for a specific contact
@@ -5969,7 +5969,7 @@ paths:
                 position:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -5993,15 +5993,15 @@ paths:
                         $ref: '#/components/schemas/Action'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/deals:
     get:
@@ -6070,15 +6070,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a deal for a specific contact
@@ -6128,7 +6128,7 @@ paths:
                 commission_base:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -6152,15 +6152,15 @@ paths:
                         $ref: '#/components/schemas/Deal'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/notes:
     get:
@@ -6224,15 +6224,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a note for a specific contact
@@ -6258,7 +6258,7 @@ paths:
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -6282,15 +6282,15 @@ paths:
                         $ref: '#/components/schemas/Note'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/calls:
     get:
@@ -6354,15 +6354,15 @@ paths:
                         example: 1
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
     post:
       summary: Create a call for a specific contact
@@ -6392,7 +6392,7 @@ paths:
                 recording_link:
                   $ref: '#/components/schemas/Call/properties/recording_link'
       responses:
-        '201':
+        201:
           description: Created
           content:
             application/json:
@@ -6416,15 +6416,15 @@ paths:
                         $ref: '#/components/schemas/Call'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/email_messages:
     get:
@@ -6553,15 +6553,15 @@ paths:
                         $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/unassign_tag/{tag_name}:
     put:
@@ -6625,15 +6625,15 @@ paths:
                         $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/change_status/{status_id}:
     put:
@@ -6669,15 +6669,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/change_owner/{owner_id}:
     put:
@@ -6713,15 +6713,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/star:
     put:
@@ -6756,15 +6756,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/unstar:
     put:
@@ -6799,15 +6799,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/close_sales_cycle:
     put:
@@ -6853,15 +6853,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/reopen_sales_cycle:
     put:
@@ -6896,15 +6896,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /contacts/{contact_id}/split:
     put:
@@ -6951,15 +6951,15 @@ paths:
                         $ref: '#/components/schemas/Contact'
         400:
           $ref: '#/components/responses/400'
-        '401':
+        401:
           $ref: '#/components/responses/401'
-        '403':
+        403:
           $ref: '#/components/responses/403'
-        '404':
+        404:
           $ref: '#/components/responses/404'
-        '409':
+        409:
           $ref: '#/components/responses/409'
-        '500':
+        500:
           $ref: '#/components/responses/500'
   /action_stream:
     get:
@@ -9679,7 +9679,7 @@ components:
   responses:
     200:
       description: OK
-    '201':
+    201:
       description: Created
     400:
       description: >-
@@ -9691,30 +9691,30 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    '401':
+    401:
       description: >-
         Unauthorized. Authorization data is absent, invalid or expired.
         Generally this means that a login form should be displayed to a user.
         Code 401 means user just needs to login. Generally, fault is on no one.
-    '403':
+    403:
       description: >-
         Forbidden. Issued when user is logged in, but does not have permission
         for requested operation. This includes cases when user has reached
         limits like allowed number of contacts. Code 403 means operation is
         forbidden for a user. Fault is on user. Although in some cases, you
         could have prevented this by not sending the request in the first place.
-    '404':
+    404:
       description: >-
         Resource Not Found. When an id was provided for a request but no
         resource exists for that object.
-    '409':
+    409:
       description: >-
         Precondition Failed. Server state does not allow requested operation to
         be carried on. Issued in cases such as when trying to add an assigned
         next action to a contact which already has one assigned for a user. Code
         409 means the stars were not aligned for this to happen. Sometimes you
         could have foreseen it, sometimes not.
-    '500':
+    500:
       description: Internal Server Error. Code 500 means server messed up. Fault is on us.
   securitySchemes:
     BasicAuth:
