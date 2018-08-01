@@ -365,7 +365,7 @@ paths:
       tags:
       - Authentication
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -412,7 +412,7 @@ paths:
                     $ref: '#/components/schemas/Contacts_count'
                   team_stream:
                     $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
   /logout:
     post:
@@ -426,7 +426,7 @@ paths:
       responses:
         '201':
           $ref: '#/components/responses/201'
-        '400':
+        400:
           $ref: '#/components/responses/400'
   /change_auth_key:
     post:
@@ -468,7 +468,7 @@ paths:
       - Users
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -492,7 +492,7 @@ paths:
                       properties:
                         user:
                           $ref: '#/components/schemas/User'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -512,7 +512,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_user_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -534,7 +534,7 @@ paths:
                     properties:
                       user:
                         $ref: '#/components/schemas/User'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -575,7 +575,7 @@ paths:
                 bcc_email:
                   example: "true"
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -597,7 +597,7 @@ paths:
                     properties:
                       user:
                         $ref: '#/components/schemas/User'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -616,7 +616,7 @@ paths:
       - Lead Sources
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -638,7 +638,7 @@ paths:
                     properties:
                       items:
                         $ref: '#/components/schemas/Lead_source'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -664,7 +664,7 @@ paths:
                 text:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -684,7 +684,7 @@ paths:
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -704,7 +704,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_lead_source_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -724,7 +724,7 @@ paths:
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -751,7 +751,7 @@ paths:
                 text:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -771,7 +771,7 @@ paths:
                     example: 1528373119
                   data:
                     $ref: '#/components/schemas/Lead_source'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -790,9 +790,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_lead_source_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -812,7 +812,7 @@ paths:
       - Statuses
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -838,7 +838,7 @@ paths:
                           properties:
                             status:
                               $ref: '#/components/schemas/Status'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -895,7 +895,7 @@ paths:
                           properties:
                             status:
                               $ref: '#/components/schemas/Status'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -916,7 +916,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_status_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -938,7 +938,7 @@ paths:
                     properties:
                       status:
                         $ref: '#/components/schemas/Status'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -970,7 +970,7 @@ paths:
                 color:
                   $ref: '#/components/schemas/Status/properties/color'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -992,7 +992,7 @@ paths:
                     properties:
                       status:
                         $ref: '#/components/schemas/Status'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1012,9 +1012,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_status_id'
       responses:
-        '200':
+        200:
           description: OK
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1038,7 +1038,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1081,7 +1081,7 @@ paths:
                         type: integer
                         example: 1
 
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1134,7 +1134,7 @@ paths:
                     properties:
                       deal_field:
                         $ref: '#/components/schemas/Deal_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1155,7 +1155,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_deal_field_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1177,7 +1177,7 @@ paths:
                     properties:
                       deal_field:
                         $ref: '#/components/schemas/Deal_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1209,7 +1209,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Deal_field/properties/choices'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1230,7 +1230,7 @@ paths:
                     properties:
                       deal_field:
                         $ref: '#/components/schemas/Deal_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1250,9 +1250,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_deal_field_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1297,7 +1297,7 @@ paths:
                     properties:
                       cost_setup:
                         $ref: '#/components/schemas/Cost_setup'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1334,7 +1334,7 @@ paths:
                   type: number
                   example: 10.1
       responses:
-        '200':
+        200:
           description: OK Operation Successful
           content:
             application/json:
@@ -1356,7 +1356,7 @@ paths:
                     properties:
                       cost_setup:
                         $ref: '#/components/schemas/Cost_setup'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1376,7 +1376,7 @@ paths:
       - Deal Fields
       parameters: []
       responses:
-        '200':
+        200:
           description: OK Operation Successful
           content:
             application/json:
@@ -1398,7 +1398,7 @@ paths:
                     properties:
                       cost_setup:
                         $ref: '#/components/schemas/Cost_setup'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1422,7 +1422,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1464,7 +1464,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1495,7 +1495,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1517,7 +1517,7 @@ paths:
                     properties:
                       custom_field:
                         $ref: '#/components/schemas/Custom_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1538,7 +1538,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_custom_field_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1560,7 +1560,7 @@ paths:
                     properties:
                       custom_field:
                         $ref: '#/components/schemas/Custom_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1592,7 +1592,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1614,7 +1614,7 @@ paths:
                     properties:
                       custom_field:
                         $ref: '#/components/schemas/Custom_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1634,9 +1634,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_custom_field_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1660,7 +1660,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1702,7 +1702,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1755,7 +1755,7 @@ paths:
                     properties:
                       company_field:
                         $ref: '#/components/schemas/Company_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1776,7 +1776,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_company_field_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1798,7 +1798,7 @@ paths:
                     properties:
                       company_field:
                         $ref: '#/components/schemas/Company_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1830,7 +1830,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Company_field/properties/choices'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1852,7 +1852,7 @@ paths:
                     properties:
                       company_field:
                         $ref: '#/components/schemas/Company_field'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1872,9 +1872,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_company_field_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1894,7 +1894,7 @@ paths:
       - Predefined Actions
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -1920,7 +1920,7 @@ paths:
                           properties:
                             predefined_action:
                               $ref: '#/components/schemas/Predefined_action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1971,7 +1971,7 @@ paths:
                     properties:
                       predefined_action:
                         $ref: '#/components/schemas/Predefined_action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -1992,7 +1992,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2014,7 +2014,7 @@ paths:
                     properties:
                       predefined_action:
                         $ref: '#/components/schemas/Predefined_action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2044,7 +2044,7 @@ paths:
                 days:
                   $ref: '#/components/schemas/Predefined_action/properties/days'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2066,7 +2066,7 @@ paths:
                     properties:
                       predefined_action:
                         $ref: '#/components/schemas/Predefined_action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2086,9 +2086,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_predefined_action_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2119,7 +2119,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2161,7 +2161,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2223,7 +2223,7 @@ paths:
                     properties:
                       note:
                         $ref: '#/components/schemas/Note'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2244,7 +2244,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_note_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2266,7 +2266,7 @@ paths:
                     properties:
                       note:
                         $ref: '#/components/schemas/Note'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2307,7 +2307,7 @@ paths:
                   items:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2329,7 +2329,7 @@ paths:
                     properties:
                       note:
                         $ref: '#/components/schemas/Note'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2349,9 +2349,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_note_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2460,7 +2460,7 @@ paths:
                         type: string
                         description: External URL for the file
                         example: 'https://{...}/mario.jpeg'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2491,7 +2491,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2533,7 +2533,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2599,7 +2599,7 @@ paths:
                     properties:
                       call:
                         $ref: '#/components/schemas/Call'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2620,7 +2620,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_call_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2642,7 +2642,7 @@ paths:
                     properties:
                       call:
                         $ref: '#/components/schemas/Call'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2687,7 +2687,7 @@ paths:
                   items:
                     example: "5aba31e99007ba0f570c12f7"
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2709,7 +2709,7 @@ paths:
                     properties:
                       call:
                         $ref: '#/components/schemas/Call'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2729,9 +2729,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_call_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2840,7 +2840,7 @@ paths:
                         type: string
                         description: External URL for the file
                         example: 'https://{...}/mario.jpeg'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2863,7 +2863,7 @@ paths:
       - Calls
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -2922,7 +2922,7 @@ paths:
                                       has with this call result
                                     type: integer
                                     example: 4
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -2960,7 +2960,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3002,7 +3002,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3083,7 +3083,7 @@ paths:
                     properties:
                       deal:
                         $ref: '#/components/schemas/Deal'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3104,7 +3104,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_deal_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3126,7 +3126,7 @@ paths:
                     properties:
                       deal:
                         $ref: '#/components/schemas/Deal'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3186,7 +3186,7 @@ paths:
                 commission_base:
                   $ref: '#/components/schemas/Deal/properties/commission_base'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3208,7 +3208,7 @@ paths:
                     properties:
                       deal:
                         $ref: '#/components/schemas/Deal'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3229,9 +3229,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_deal_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3340,7 +3340,7 @@ paths:
                         type: string
                         description: External URL for the file
                         example: 'https://{...}/mario.jpeg'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3387,7 +3387,7 @@ paths:
           type: string
         description: Contact to be associated with the attachment
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3434,7 +3434,7 @@ paths:
                             example: 20170914T184346Z
                           x-amz-signature:
                             example: aBcDe...aBcDe
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3529,7 +3529,7 @@ paths:
                     properties:
                       attachment:
                         $ref: '#/components/schemas/Attachment'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3550,9 +3550,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_attachment_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3573,7 +3573,7 @@ paths:
       - Countries
       parameters: []
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3619,7 +3619,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3661,7 +3661,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3722,7 +3722,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3743,7 +3743,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3765,7 +3765,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3812,7 +3812,7 @@ paths:
                 position:
                   $ref: '#/components/schemas/Action/properties/position'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3834,7 +3834,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3855,9 +3855,9 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3879,7 +3879,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3901,7 +3901,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3922,7 +3922,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3944,7 +3944,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -3965,7 +3965,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -3987,7 +3987,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4009,7 +4009,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4031,7 +4031,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4052,7 +4052,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4074,7 +4074,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4102,7 +4102,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_action_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4124,7 +4124,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4146,7 +4146,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4188,7 +4188,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4210,7 +4210,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_filter_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4238,7 +4238,7 @@ paths:
                           properties:
                             contact:
                               $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4265,7 +4265,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4307,7 +4307,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4328,7 +4328,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_company_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4350,7 +4350,7 @@ paths:
                     properties:
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4397,7 +4397,7 @@ paths:
                       value:
                         example: "big"
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4419,7 +4419,7 @@ paths:
                     properties:
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4452,7 +4452,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4494,7 +4494,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4529,7 +4529,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4571,7 +4571,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4601,7 +4601,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4643,7 +4643,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4673,7 +4673,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4715,7 +4715,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4740,7 +4740,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -4804,7 +4804,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4881,7 +4881,7 @@ paths:
                             type: array
                             items:
                               example: 5aba31e99007ba0f570c92ab
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4909,9 +4909,9 @@ paths:
           type: string
           minimum: 1
       responses:
-        '200':
+        200:
           $ref: '#/components/responses/200'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4965,7 +4965,7 @@ paths:
                     properties:
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -4985,7 +4985,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_company_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5007,7 +5007,7 @@ paths:
                     properties:
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5065,7 +5065,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5155,7 +5155,7 @@ paths:
                         $ref: '#/components/schemas/Contacts_count'
                       team_stream:
                         $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5290,7 +5290,7 @@ paths:
                     $ref: '#/components/schemas/Contacts_count'
                   team_stream:
                     $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5311,7 +5311,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5349,7 +5349,7 @@ paths:
                           $ref: '#/components/schemas/Action'
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5418,7 +5418,7 @@ paths:
                 starred:
                   $ref: '#/components/schemas/Contact/properties/starred'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5486,7 +5486,7 @@ paths:
                     $ref: '#/components/schemas/Contacts_count'
                   team_stream:
                     $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5514,7 +5514,7 @@ paths:
           format: boolean
           example: true
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5563,7 +5563,7 @@ paths:
                     $ref: '#/components/schemas/Contacts_count'
                   team_stream:
                     $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5617,7 +5617,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5671,7 +5671,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5713,7 +5713,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5734,7 +5734,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_filter_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5762,7 +5762,7 @@ paths:
                           properties:
                             contact:
                               $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5789,9 +5789,9 @@ paths:
           type: string
           minimum: 1
       responses:
-        '200':
+        200:
           description: OK
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5818,7 +5818,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5856,7 +5856,7 @@ paths:
                           $ref: '#/components/schemas/Action'
                       company:
                         $ref: '#/components/schemas/Company'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5889,7 +5889,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -5931,7 +5931,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -5991,7 +5991,7 @@ paths:
                     properties:
                       action:
                         $ref: '#/components/schemas/Action'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6026,7 +6026,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6068,7 +6068,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6150,7 +6150,7 @@ paths:
                     properties:
                       deal:
                         $ref: '#/components/schemas/Deal'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6180,7 +6180,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6222,7 +6222,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6280,7 +6280,7 @@ paths:
                     properties:
                       note:
                         $ref: '#/components/schemas/Note'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6310,7 +6310,7 @@ paths:
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6352,7 +6352,7 @@ paths:
                         description: "The page number of the last page of items"
                         type: integer
                         example: 1
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6414,7 +6414,7 @@ paths:
                     properties:
                       call:
                         $ref: '#/components/schemas/Call'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6501,7 +6501,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       - $ref: '#/components/parameters/path_tag_name'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6551,7 +6551,7 @@ paths:
                         $ref: '#/components/schemas/Contacts_count'
                       team_stream:
                         $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6573,7 +6573,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       - $ref: '#/components/parameters/path_tag_name'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6623,7 +6623,7 @@ paths:
                         $ref: '#/components/schemas/Contacts_count'
                       team_stream:
                         $ref: '#/components/schemas/Team_stream'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6645,7 +6645,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       - $ref: '#/components/parameters/path_status_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6667,7 +6667,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6689,7 +6689,7 @@ paths:
       - $ref: '#/components/parameters/path_contact_id'
       - $ref: '#/components/parameters/path_owner_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6711,7 +6711,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6732,7 +6732,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6754,7 +6754,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6775,7 +6775,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6797,7 +6797,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6829,7 +6829,7 @@ paths:
                 comment:
                   example: Joe in not interested in buying windmills at this time
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6851,7 +6851,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6872,7 +6872,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6894,7 +6894,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -6927,7 +6927,7 @@ paths:
                 company_name:
                   example: 'Fancy New Company Inc.'
       responses:
-        '200':
+        200:
           description: OK
           content:
             application/json:
@@ -6949,7 +6949,7 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
-        '400':
+        400:
           $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
@@ -9677,11 +9677,11 @@ components:
         default: 1
         example: 1
   responses:
-    '200':
+    200:
       description: OK
     '201':
       description: Created
-    '400':
+    400:
       description: >-
         Bad Request. The request is not properly formatted, does not properly
         specify response format or contains improper parameters or data. Code
