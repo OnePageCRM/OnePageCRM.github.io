@@ -7396,9 +7396,8 @@ components:
           - Ms
     User:
       description: >-
-        You can get useful information about other people on your team or you
-        can update your own account information. If you are an administrator you
-        can edit all of your team members details.
+        Useful information about the logged user and other members of the team. Each can update their own info.
+        Admins can update all.
       properties:
         id:
           type: string
@@ -7462,7 +7461,9 @@ components:
           type: string
           example:
     Contact:
-      description: Contacts are the main resource within onepageCRM
+      description: >-
+        Information about the people you are actively trying to sell to, and related sub-resources like
+        Actions, Deals, Notes, and Calls.
       properties:
         id:
           type: string
@@ -7828,30 +7829,6 @@ components:
             The position of this action in the queued actions. This is only
             returned if the action status is queued
           example: 2
-    Team_stream:
-      description: >-
-        Team stream is similar to the action Action Stream but shows the whole
-        team's stream.
-      properties:
-        users:
-          description: >-
-            List of Hash's each containing a user's id and the number of actions
-            that user has
-          type: array
-          items:
-            properties:
-              user_id:
-                description: User id
-                type: string
-                example: 5aba31e99007ba0f570c92a5
-              counts:
-                description: The number of actions that user_id has
-                type: integer
-                example: 5
-        all:
-          description: Total number of actions for the stream
-          type: integer
-          example: 10
     Note:
       description: >-
         Notes allow you to keep track of your interactions with contacts,
@@ -8182,72 +8159,168 @@ components:
           type: string
           description: The date the attachment url experies
           example: 2018-05-16T13:06:53Z
-    Filter:
-      description: >-
-        Custom filters allow you to query contacts in your own custom way. These
-        filters can only be created on the website but they can be used through
-        the API
+    Email_message:
+      description: Email message
       properties:
         id:
-          description: Id of the custom filter
           type: string
-          example: 5ae9cc2a9007ba5b856c7bb8
-        name:
-          description: Name of the Filter.
+          description: Id of the email message
+          example: 5b07c04a9007ba0231f4dcf2
+        contact_id:
           type: string
-          example: Display only stared contacts
-        conditions:
-          description: Conditions of the filter
+          description: Contact id
+          example: 5aba338b9007ba0f570c9392
+        send_time:
+          type: string
+          description: Sent time in UTC (iso8601 format)
+          example: 2018-05-25T07:47:28Z
+        message_id:
+          type: string
+          description: Id of the email message
+          example: CBNlTUjddeY9vF8cArqStad7QVjpeU_dqp+oJNaWX-SPVd2+_Dg@mail.gmail.com
+        sender:
+          type: string
+          description: sender
+          example: foo bar <foobar@gmail.com>
+        recipients:
+          description: Email recipients
+          properties:
+            to:
+              type: array
+              items:
+                type: string
+                description: to
+                example: a_fake.email@something.com
+            cc:
+              type: array
+              items:
+                type: string
+                description: cc
+                example: b_fake.email@something.com
+            bcc:
+              type: array
+              items:
+                type: string
+                description: bcc
+                example: c_fake.email@something.com
+        url:
+          type: string
+          description: url where the email is stored. This may be an empty string depending if not relevent
+          example: 5aba31ea9007ba0f570c92d4
+        subject:
+          type: string
+          description: email subject
+          example: email subject
+        plain_content:
+          type: string
+          description: The body of the email
+        status:
+          type: string
+          description: email status
+          example: sent
+        incoming_email:
+          type: string
+          description: emails incoming for this email address
+          example: false
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+    Settings:
+      description: User settings
+      properties:
+        reminder:
+          $ref: '#/components/schemas/Reminder'
+        time_zone:
+          description: Name of the timezone
+          type: string
+          example: Europe/Dublin
+        not_working_days:
+          description: >-
+            Days that the user doesn't work. This is used when calculating
+            suggested next action day for predefined actions.
+          type: string
+          enum:
+          - sunday
+          - weekend
+          - none
+          example: weekend
+        date_format:
+          description: The format of date strings
+          type: string
+          example: '%d/%m/%Y'
+        time_with_ampm:
+          description: Use AM/PM of 24 clock for time
+          type: boolean
+          example: false
+        listing_size:
+          description: When on the app, listing size is the number of actions to show at a time in the action stream
+          type: integer
+          example: 25
+        currency:
+          description: Users Currency
+          type: string
+          example: EUR
+        currency_symbol:
+          description: Currency Symbol
+          type: string
+          example: €
+        separator:
+          description: Decimal point seperator for currency
+          type: string
+          example: '.'
+        delimiter:
+          description: thousands delimiter for currency
+          type: string
+          example: ','
+        popular_countries:
+          description: The last 5 countries that were selected when adding contacts or companies.
           type: array
           items:
             type: string
           example:
-          - - star
-            - selected
-            - ''
-          - - tags
-            - is_not
-            - VIP
-    Lead_source:
-      description: >-
-        Lead sources are a way for you to classify the source of any contact
-        that you add to OnePageCRM
-      properties:
-        id:
-          description: The type of lead source
+          - US
+        deal_stages:
+          $ref: '#/components/schemas/DealStages'
+        default_contact_type:
+          description: ''
           type: string
-          example: Advertisement
-        text:
-          description: Description of this type of lead source
-          type: string
-          example: Advertisement
-        counts:
-          description: Number of contacts the api user has with this status
-          type: integer
-          example: 4
-        total_count:
-          description: Number of contacts this user’s team has with this status
-          type: integer
-          example: 7
-        action_stream_count:
-          description: >-
-            The number of contacts that this api user has actions with and that
-            have this lead source
-          type: integer
-          example: 2
-        team_counts:
-          description: Number of contacts with this lead_source grouped by user
-          type: array
-          items:
-            properties:
-              user_id:
-                description: ID of one ot the api user’s team members
-                type: string
-                example: 5aba31e99007ba0f570c12f7
-              counts:
-                description: Number of contacts user_id owns with this lead source
-                type: integer
-                example: 4
+          enum:
+          - company
+          - individual
+          example: company
+        show_tidy_stream:
+          description: Should contacts with no actions be displayed in the action stream?
+          type: boolean
+          example: false
+        show_company_fields_with_contact:
+          description: Show Organization fields in contact view
+          type: boolean
+          example: true
+        company_phone_enabled:
+          description: Is the company phone enabled?
+          type: boolean
+          example: true
+        company_url_enabled:
+          description: Is the company URL enabled?
+          type: boolean
+          example: true
+        company_address_enabled:
+          description: Is the company address enabled?
+          type: boolean
+          example: true
+        company_description_enabled:
+          description: Is the company description enabled?
+          type: boolean
+          example: true
+        send_push_notifications:
+          description: Should this user recieve push notifications?
+          type: boolean
+          example: true
+        clipper_beta:
+          description: Has user enabled the clipper beta feature
+          type: boolean
+          example: false
     Status:
       description: >-
         Statuses are a way of qualifying where your contacts are in your sales
@@ -8319,6 +8392,92 @@ components:
                 description: Number of contacts user_id owns with this status
                 type: integer
                 example: 4
+    Lead_source:
+      description: >-
+        Lead sources are a way for you to classify the source of any contact
+        that you add to OnePageCRM
+      properties:
+        id:
+          description: The type of lead source
+          type: string
+          example: Advertisement
+        text:
+          description: Description of this type of lead source
+          type: string
+          example: Advertisement
+        counts:
+          description: Number of contacts the api user has with this status
+          type: integer
+          example: 4
+        total_count:
+          description: Number of contacts this user’s team has with this status
+          type: integer
+          example: 7
+        action_stream_count:
+          description: >-
+            The number of contacts that this api user has actions with and that
+            have this lead source
+          type: integer
+          example: 2
+        team_counts:
+          description: Number of contacts with this lead_source grouped by user
+          type: array
+          items:
+            properties:
+              user_id:
+                description: ID of one ot the api user’s team members
+                type: string
+                example: 5aba31e99007ba0f570c12f7
+              counts:
+                description: Number of contacts user_id owns with this lead source
+                type: integer
+                example: 4
+    Filter:
+      description: >-
+        Custom filters allow you to query contacts in your own custom way. These
+        filters can only be created on the website but they can be used through
+        the API
+      properties:
+        id:
+          description: Id of the custom filter
+          type: string
+          example: 5ae9cc2a9007ba5b856c7bb8
+        name:
+          description: Name of the Filter.
+          type: string
+          example: Display only stared contacts
+        conditions:
+          description: Conditions of the filter
+          type: array
+          items:
+            type: string
+          example:
+          - - star
+            - selected
+            - ''
+          - - tags
+            - is_not
+            - VIP
+    Tag:
+      properties:
+        name:
+          description: Tag name to be displayed
+          type: string
+          example: VIP
+        counts:
+          description: Number of contacts the api user has with this tag (read only)
+          type: integer
+          example: 2
+        total_count:
+          description: Number of contacts this user’s team has with this tag (read only)
+          type: integer
+          example: 4
+        action_stream_count:
+          description: >-
+            The number of contacts that this api user has actions with and that
+            have this Tag
+          type: integer
+          example: 1
     Predefined_action:
       description: Template actions users may use frequently in their sales process
       properties:
@@ -8445,26 +8604,46 @@ components:
           - big
           - medium
           - small
-    Webhook:
+    Cost_setup:
       description: >-
-        Webhooks are a simple, efficient way of integrating with web applications.
-        For more information please see: <a href="http://developer.onepagecrm.com/webhooksmore/">http://developer.onepagecrm.com/webhooksmore/"</a>
+        The cost field is special deal field used when deals have costs associated with them.
+        The cost field can be used for Margin-based deals. We subtract the deal cost from the deal amount to display the margin. <br>
+        You can also calculate commission based on margin instead of amount. <br>
+        The cost_field is disabled by default.
       properties:
-        id:
+        cost_enabled:
+          description: Is the cost field enabled?
+          type: boolean
+          example: false
+        # cost_required is deprecated
+        cost_required:
+          description: Is a 'cost' value required when closing a deal
+          type: boolean
+          example: false
+        commission_base:
+          description: How should commission be calculated?
           type: string
-          description: Id of the web hook
-          example: 5417f8291da41712270G0042
-        name:
+          enum:
+          - amount
+          - margin
+          example: amount
+        commission_percentage:
+          description: What percent of the deal amount is commission?
+          type: number
+          example: 10.1
+    DealStages:
+      description: The stages that deals go through
+      properties:
+        stage:
+          description: >-
+            Integer between 0 and 100 indicated how close a deal is to being
+            complete.
+          type: integer
+          example: 80
+        label:
+          description: A possible stage that a deal can in
           type: string
-          description: The name of the web hook
-          example: Awesome integration
-        hook_url:
-          type: string
-          description: Url of the webhook
-          example: https://{foo.bar}/api/v1/{endpoint}.format"
-        secretkey:
-          type: string
-          description: Secret key of the webhook
+          example: Negotiation
     Contacts_count:
       description: >-
         This returns the total number of contacts for each user and
@@ -8653,161 +8832,50 @@ components:
                 description: user id
                 type: string
                 example: 5aaa9b009007ba08c9ebaef7
-    Tag:
-      properties:
-        name:
-          description: Tag name to be displayed
-          type: string
-          example: VIP
-        counts:
-          description: Number of contacts the api user has with this tag (read only)
-          type: integer
-          example: 2
-        total_count:
-          description: Number of contacts this user’s team has with this tag (read only)
-          type: integer
-          example: 4
-        action_stream_count:
-          description: >-
-            The number of contacts that this api user has actions with and that
-            have this Tag
-          type: integer
-          example: 1
-    Cost_setup:
+    Team_stream:
       description: >-
-        The cost field is special deal field used when deals have costs associated with them.
-        The cost field can be used for Margin-based deals. We subtract the deal cost from the deal amount to display the margin. <br>
-        You can also calculate commission based on margin instead of amount. <br>
-        The cost_field is disabled by default.
+        Team stream is similar to the action Action Stream but shows the whole
+        team's stream.
       properties:
-        cost_enabled:
-          description: Is the cost field enabled?
-          type: boolean
-          example: false
-        # cost_required is deprecated
-        cost_required:
-          description: Is a 'cost' value required when closing a deal
-          type: boolean
-          example: false
-        commission_base:
-          description: How should commission be calculated?
-          type: string
-          enum:
-          - amount
-          - margin
-          example: amount
-        commission_percentage:
-          description: What percent of the deal amount is commission?
-          type: number
-          example: 10.1
-    Settings:
-      description: User settings
-      properties:
-        reminder:
-          $ref: '#/components/schemas/Reminder'
-        time_zone:
-          description: Name of the timezone
-          type: string
-          example: Europe/Dublin
-        not_working_days:
+        users:
           description: >-
-            Days that the user doesn't work. This is used when calculating
-            suggested next action day for predefined actions.
-          type: string
-          enum:
-          - sunday
-          - weekend
-          - none
-          example: weekend
-        date_format:
-          description: The format of date strings
-          type: string
-          example: '%d/%m/%Y'
-        time_with_ampm:
-          description: Use AM/PM of 24 clock for time
-          type: boolean
-          example: false
-        listing_size:
-          description: When on the app, listing size is the number of actions to show at a time in the action stream
-          type: integer
-          example: 25
-        currency:
-          description: Users Currency
-          type: string
-          example: EUR
-        currency_symbol:
-          description: Currency Symbol
-          type: string
-          example: €
-        separator:
-          description: Decimal point seperator for currency
-          type: string
-          example: '.'
-        delimiter:
-          description: thousands delimiter for currency
-          type: string
-          example: ','
-        popular_countries:
-          description: The last 5 countries that were selected when adding contacts or companies.
+            List of Hash's each containing a user's id and the number of actions
+            that user has
           type: array
           items:
-            type: string
-          example:
-          - US
-        deal_stages:
-          $ref: '#/components/schemas/DealStages'
-        default_contact_type:
-          description: ''
-          type: string
-          enum:
-          - company
-          - individual
-          example: company
-        show_tidy_stream:
-          description: Should contacts with no actions be displayed in the action stream?
-          type: boolean
-          example: false
-        show_company_fields_with_contact:
-          description: Show Organization fields in contact view
-          type: boolean
-          example: true
-        company_phone_enabled:
-          description: Is the company phone enabled?
-          type: boolean
-          example: true
-        company_url_enabled:
-          description: Is the company URL enabled?
-          type: boolean
-          example: true
-        company_address_enabled:
-          description: Is the company address enabled?
-          type: boolean
-          example: true
-        company_description_enabled:
-          description: Is the company description enabled?
-          type: boolean
-          example: true
-        send_push_notifications:
-          description: Should this user recieve push notifications?
-          type: boolean
-          example: true
-        clipper_beta:
-          description: Has user enabled the clipper beta feature
-          type: boolean
-          example: false
-    DealStages:
-      description: The stages that deals go through
-      properties:
-        stage:
-          description: >-
-            Integer between 0 and 100 indicated how close a deal is to being
-            complete.
+            properties:
+              user_id:
+                description: User id
+                type: string
+                example: 5aba31e99007ba0f570c92a5
+              counts:
+                description: The number of actions that user_id has
+                type: integer
+                example: 5
+        all:
+          description: Total number of actions for the stream
           type: integer
-          example: 80
-        label:
-          description: A possible stage that a deal can in
+          example: 10
+    Webhook:
+      description: >-
+        Webhooks are a simple, efficient way of integrating with web applications.
+        For more information please see: <a href="http://developer.onepagecrm.com/webhooksmore/">http://developer.onepagecrm.com/webhooksmore/"</a>
+      properties:
+        id:
           type: string
-          example: Negotiation
+          description: Id of the web hook
+          example: 5417f8291da41712270G0042
+        name:
+          type: string
+          description: The name of the web hook
+          example: Awesome integration
+        hook_url:
+          type: string
+          description: Url of the webhook
+          example: https://{foo.bar}/api/v1/{endpoint}.format"
+        secretkey:
+          type: string
+          description: Secret key of the webhook
     Reminder:
       description: Action reminder settings
       properties:
@@ -8823,73 +8891,6 @@ components:
           type: integer
           description: The reminder time. This is ignored if reminder type is 'never'
           example: 6
-    Email_message:
-      description: Email message
-      properties:
-        id:
-          type: string
-          description: Id of the email message
-          example: 5b07c04a9007ba0231f4dcf2
-        contact_id:
-          type: string
-          description: Contact id
-          example: 5aba338b9007ba0f570c9392
-        send_time:
-          type: string
-          description: Sent time in UTC (iso8601 format)
-          example: 2018-05-25T07:47:28Z
-        message_id:
-          type: string
-          description: Id of the email message
-          example: CBNlTUjddeY9vF8cArqStad7QVjpeU_dqp+oJNaWX-SPVd2+_Dg@mail.gmail.com
-        sender:
-          type: string
-          description: sender
-          example: foo bar <foobar@gmail.com>
-        recipients:
-          description: Email recipients
-          properties:
-            to:
-              type: array
-              items:
-                type: string
-                description: to
-                example: a_fake.email@something.com
-            cc:
-              type: array
-              items:
-                type: string
-                description: cc
-                example: b_fake.email@something.com
-            bcc:
-              type: array
-              items:
-                type: string
-                description: bcc
-                example: c_fake.email@something.com
-        url:
-          type: string
-          description: url where the email is stored. This may be an empty string depending if not relevent
-          example: 5aba31ea9007ba0f570c92d4
-        subject:
-          type: string
-          description: email subject
-          example: email subject
-        plain_content:
-          type: string
-          description: The body of the email
-        status:
-          type: string
-          description: email status
-          example: sent
-        incoming_email:
-          type: string
-          description: emails incoming for this email address
-          example: false
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
     Error:
       properties:
         status:
