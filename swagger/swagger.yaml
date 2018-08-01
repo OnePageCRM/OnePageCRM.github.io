@@ -321,18 +321,18 @@ tags:
   description: >-
     Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3, or stored in
     external providers i.e. Google Drive, Dropbox, Evernote.
-- name: Filters
-  description: >-
-    Allow you to query contacts in your own custom way. These filters can only be created on the website but they
-    can be used through the API.
-- name: Lead Sources
-  description: >-
-    A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
-    already populated but it may be updated if needed, to better fit your organization.
 - name: Statuses
   description: >-
     Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
     pre-populated, and can be later edited to fit individual needs.
+- name: Lead Sources
+  description: >-
+    A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
+    already populated but it may be updated if needed, to better fit your organization.
+- name: Filters
+  description: >-
+    Allow you to query contacts in your own custom way. These filters can only be created on the website but they
+    can be used through the API.
 - name: Predefined Actions
   description: >-
     Template actions users may use frequently in their sales process. Referred to as 'Saved Actions' in the web
@@ -7827,123 +7827,6 @@ components:
             The position of this action in the queued actions. This is only
             returned if the action status is queued
           example: 2
-    Note:
-      description: >-
-        Notes allow you to keep track of your interactions with contacts,
-        include important information that will help you with that contact or
-        store any other information you see fit.
-      properties:
-        id:
-          type: string
-          description: Id of the note
-          example: 5afc1b69d556730b580596cb
-        author:
-          type: string
-          description: Author of the note
-          example: Joe Bloggs
-        contact_id:
-          type: string
-          description: id of the contact this note belongs to. (read only)
-          example: 5ae06ef9d55673108fe8877f
-        text:
-          type: string
-          description: >-
-            The text in the body of the note (required). You may use BBCode:
-            `[b]bold[/b]`, `[i]italics[/i]` and new line (`\n`).
-          example: >-
-            I met Jane Doe at the ABC conference and she is interested in
-            hearing more about XYZ
-        date:
-          type: string
-          description: Date the note was created
-          example: 2018-05-16
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
-        linked_deal_id:
-          type: string
-          description: null if there is no linked deal
-          example: ''
-        created_at:
-          type: string
-          description: The note's creation date.
-          example: 2018-05-16T11:52:09Z
-        modified_at:
-          type: string
-          description: The note's last modification date.
-          example: 2018-05-16T11:52:09Z
-    Call:
-      description: Calls allow you to keep track of calls you make to your contacts.
-      properties:
-        id:
-          type: string
-          description: Id of the call
-          example: 5afc1b69d556730b580596cb
-        author:
-          type: string
-          description: Author's name. The last name is abbreviated. (read only)
-          example: Joe Bloggs
-        text:
-          type: string
-          description: >-
-            The text in the note of the call - truncated to 10000 characters.
-            You may use BBCode: `[b]bold[/b]`, `[i]italics[/i]` and new line
-            (`\n`).
-          example: Mary is interested in coming into the office on Tuesday
-        call_result:
-          type: string
-          description: >-
-            The result of the call. Default values: 'interested',
-            'not_interested', 'no_answer' or 'left_message'. You can add other
-            values in the main application. You can not add other values with
-            the API. If not specified, defaults to 'interested'.
-          example: interested
-        call_time_int:
-          description: >-
-            Time the call occurred at. Must be in unix epoch time format. If not
-            specified, defaults to current time.
-          type: integer
-          example: 1525273653
-        contact_id:
-          type: string
-          description: id of the contact this call belongs to. (read only)
-          example: 5ae06ef9d55673108fe8877f
-        via:
-          type: string
-          description: Through what application did this call take place?
-          enum:
-          - unknown
-          - skype
-          - jabber
-          - talkdesk
-          - phone
-          example: phone
-          default: unknown
-        phone_number:
-          type: string
-          description: Phone number
-          example: 123 456 7891 (mobile)
-        recording_link:
-          type: string
-          description: URL of a recording of the call conversation.
-          example: ''
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
-        created_at:
-          type: string
-          description: The call's creation date.
-          example: 2018-05-16T11:52:09Z
-        modified_at:
-          type: string
-          description: The call's last modification date.
-          example: 2018-05-16T11:52:09Z
-        index:
-          type: integer
-          description: Result index
-          example: 4
     Deal:
       description: >-
         Deals store information about a deal that is taking place or has closed.
@@ -8130,6 +8013,123 @@ components:
             is marked as won or lost (read only).
           type: string
           format: date
+    Note:
+      description: >-
+        Notes allow you to keep track of your interactions with contacts,
+        include important information that will help you with that contact or
+        store any other information you see fit.
+      properties:
+        id:
+          type: string
+          description: Id of the note
+          example: 5afc1b69d556730b580596cb
+        author:
+          type: string
+          description: Author of the note
+          example: Joe Bloggs
+        contact_id:
+          type: string
+          description: id of the contact this note belongs to. (read only)
+          example: 5ae06ef9d55673108fe8877f
+        text:
+          type: string
+          description: >-
+            The text in the body of the note (required). You may use BBCode:
+            `[b]bold[/b]`, `[i]italics[/i]` and new line (`\n`).
+          example: >-
+            I met Jane Doe at the ABC conference and she is interested in
+            hearing more about XYZ
+        date:
+          type: string
+          description: Date the note was created
+          example: 2018-05-16
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+        linked_deal_id:
+          type: string
+          description: null if there is no linked deal
+          example: ''
+        created_at:
+          type: string
+          description: The note's creation date.
+          example: 2018-05-16T11:52:09Z
+        modified_at:
+          type: string
+          description: The note's last modification date.
+          example: 2018-05-16T11:52:09Z
+    Call:
+      description: Calls allow you to keep track of calls you make to your contacts.
+      properties:
+        id:
+          type: string
+          description: Id of the call
+          example: 5afc1b69d556730b580596cb
+        author:
+          type: string
+          description: Author's name. The last name is abbreviated. (read only)
+          example: Joe Bloggs
+        text:
+          type: string
+          description: >-
+            The text in the note of the call - truncated to 10000 characters.
+            You may use BBCode: `[b]bold[/b]`, `[i]italics[/i]` and new line
+            (`\n`).
+          example: Mary is interested in coming into the office on Tuesday
+        call_result:
+          type: string
+          description: >-
+            The result of the call. Default values: 'interested',
+            'not_interested', 'no_answer' or 'left_message'. You can add other
+            values in the main application. You can not add other values with
+            the API. If not specified, defaults to 'interested'.
+          example: interested
+        call_time_int:
+          description: >-
+            Time the call occurred at. Must be in unix epoch time format. If not
+            specified, defaults to current time.
+          type: integer
+          example: 1525273653
+        contact_id:
+          type: string
+          description: id of the contact this call belongs to. (read only)
+          example: 5ae06ef9d55673108fe8877f
+        via:
+          type: string
+          description: Through what application did this call take place?
+          enum:
+          - unknown
+          - skype
+          - jabber
+          - talkdesk
+          - phone
+          example: phone
+          default: unknown
+        phone_number:
+          type: string
+          description: Phone number
+          example: 123 456 7891 (mobile)
+        recording_link:
+          type: string
+          description: URL of a recording of the call conversation.
+          example: ''
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+        created_at:
+          type: string
+          description: The call's creation date.
+          example: 2018-05-16T11:52:09Z
+        modified_at:
+          type: string
+          description: The call's last modification date.
+          example: 2018-05-16T11:52:09Z
+        index:
+          type: integer
+          description: Result index
+          example: 4
     Attachment:
       description:
       properties:
