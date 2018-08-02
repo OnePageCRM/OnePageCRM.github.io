@@ -323,12 +323,12 @@ tags:
     external providers i.e. Google Drive, Dropbox, Evernote.
 - name: Statuses
   description: >-
-    Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
-    pre-populated, and can be later edited to fit individual needs.
+    Values which help qualify where contacts are in the sales pipeline. The list of Statuses is
+    already populated but it may be updated if needed, to better fit your organization.
 - name: Lead Sources
   description: >-
-    A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
-    already populated but it may be updated if needed, to better fit your organization.
+    A way to classify the source of any contact that is added to OnePageCRM. Like Statuses, this list is
+    pre-populated, and can be later edited to fit individual needs.
 - name: Filters
   description: >-
     Allow you to query contacts in your own custom way. These filters can only be created on the website but they
@@ -8320,8 +8320,8 @@ components:
           example: false
     Status:
       description: >-
-        Values which help qualify where contacts are in the sales pipeline. Like Lead Sources, this list is
-        pre-populated, and can be later edited to fit individual needs.
+        Values which help qualify where contacts are in the sales pipeline. The list of Statuses is
+        already populated but it may be updated if needed, to better fit your organization.
       properties:
         id:
           description: Status ID. This matches the status field in contacts (read only).
@@ -8391,8 +8391,8 @@ components:
                 example: 4
     Lead_source:
       description: >-
-        A way to classify the source of any contact that is added to OnePageCRM. The list of Lead Sources is
-        already populated but it may be updated if needed, to better fit your organization.
+        A way to classify the source of any contact that is added to OnePageCRM. Like Statuses, this list is
+        pre-populated, and can be later edited to fit individual needs.
       properties:
         id:
           description: The type of lead source
