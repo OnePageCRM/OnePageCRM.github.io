@@ -11,7 +11,7 @@ or microservices oriented web application in the cloud for the cloud. On the one
 the proliferation of cloud infrastructure providers offering fully managed compute,
 networking, storage and other services has vastly reduced the amount of work
 required to create a production environment for enterprise software delivery. "
-graphic: /assets/images/sage/sagelogo.jpg
+graphic: "/assets/images/articles/developing-microservices-in-the-cloud-for-the-cloud.jpg"
 ---
 
 <style>
