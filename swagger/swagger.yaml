@@ -7627,11 +7627,11 @@ components:
         created_at:
           type: string
           description: The contact's creation date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           description: The contact's last modification date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         title:
           type: string
           description: The title of the contact
@@ -7709,11 +7709,11 @@ components:
         created_at:
           type: string
           description: The action's creation date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           description: The action's last modification date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         contacts_count:
           type: integer
           description: Number of contacts in this company
@@ -7769,60 +7769,56 @@ components:
       properties:
         id:
           type: string
-          description: Action id
+          description: ID of the action (read only)
           example: 5aeac8789007ba56ffca92b9
         assignee_id:
           type: string
-          description: The id of the user that this action is assigned to
+          description: ID of the user, to whom the action is assigned
           example: 5aaa9b009007ba08c9ebaef7
         contact_id:
           type: string
-          description: Contact id that this action is for
+          description: ID of the contact, for whom the action is for
           example: 5aaa9b009007ba08c9ebaef7
         text:
           type: string
-          description: The action text
+          description: The main text/description of the action
           example: '#1 Email Jane introducing our organization'
         status:
           type: string
-          description: The action status
-          example: date
-        done:
-          type: boolean
-          description: Has this action been completed?
-          example: false
-        created_at:
-          type: string
-          description: The action's creation date
-          example: 2018-05-16T11:52:09Z
-        modified_at:
-          type: string
-          description: The action's last modification date
-          example: 2018-05-16T11:52:09Z
-        done_at:
-          type: string
           description: >-
-            The date the action was completed. This is only returned if the
-            action has been completed
-          example: 2018-05-16
+            Status of the action (i.e. `asap`, `date`, `date_time`, `waiting`, `queued`, `queued_with_date`, or `done`)
+          example: date
         date:
           type: string
           description: >-
-            The date the action is due. This is only returned if the action
-            status is date or date_time
-          example: 2018-05-16
+            Due date for the action (status must be one of `date`, `date_time` or `queued_with_date`)
+          example: '2018-05-16'
         exact_time:
-          type: string
-          description: >-
-            The exact time the action is due. This is only returned if the
-            action status is date_time
-          example: 2018-05-16
+          type: integer
+          description: The exact time the action is due (status must be `date_time`)
+          example: 1526472000
         position:
           type: integer
           description: >-
-            The position of this action in the queued actions. This is only
-            returned if the action status is queued
+            The position of the action in the queued actions (read only)
           example: 2
+        done:
+          type: boolean
+          description: True if the action has been completed (read only)
+          example: false
+        done_at:
+          type: string
+          description: >-
+            The date the action was completed (read only - only returned if the action has been completed)
+          example: '2018-05-16'
+        created_at:
+          type: string
+          description: Date of creation of the action (read only)
+          example: '2018-05-16T11:52:09Z'
+        modified_at:
+          type: string
+          description: Last modification date of the action (read only)
+          example: '2018-05-16T12:52:09Z'
     Deal:
       description: >-
         Represent (potential) financial transactions with your contacts. Deals include information like amount,
@@ -7875,7 +7871,7 @@ components:
           description: Date related to the deal’s creation
           type: string
           format: date
-          example: 2018-03-14
+          example: '2018-03-14'
         contact_info:
           description: >-
             JSON object containing contact_name and company relating to deal.
@@ -7981,12 +7977,12 @@ components:
           description: Date the deal was created at (read-only)
           type: string
           format: date-time
-          example: 2018-03-15T16:10:45Z
+          example: '2018-03-15T16:10:45Z'
         modified_at:
           description: Deal’s last modification time (read-only)
           type: string
           format: date-time
-          example: 2018-03-15T16:10:45Z
+          example: '2018-03-15T16:10:45Z'
         stage:
           description: >-
             What stage this deal is at. This can be converted to a label using
@@ -8000,7 +7996,7 @@ components:
             if the status of the deal is pending
           type: string
           format: date
-          example: 2018-04-15
+          example: '2018-04-15'
         close_date:
           description: >-
             Date that the deal was closed. This is set automatically when a deal
@@ -8035,7 +8031,7 @@ components:
         date:
           type: string
           description: Date the note was created
-          example: 2018-05-16
+          example: '2018-05-16'
         attachments:
           type: array
           items:
@@ -8047,11 +8043,11 @@ components:
         created_at:
           type: string
           description: The note's creation date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           description: The note's last modification date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
     Call:
       description: >-
         Allow you to keep track of phone calls made to your contacts. Calls include information like the phone
@@ -8116,11 +8112,11 @@ components:
         created_at:
           type: string
           description: The call's creation date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           description: The call's last modification date.
-          example: 2018-05-16T11:52:09Z
+          example: '2018-05-16T11:52:09Z'
         index:
           type: integer
           description: Result index
@@ -8153,7 +8149,7 @@ components:
         url_expires_at:
           type: string
           description: The date the attachment url experies
-          example: 2018-05-16T13:06:53Z
+          example: '2018-05-16T13:06:53Z'
     Email_message:
       description: Email message
       properties:
@@ -8168,7 +8164,7 @@ components:
         send_time:
           type: string
           description: Sent time in UTC (iso8601 format)
-          example: 2018-05-25T07:47:28Z
+          example: '2018-05-25T07:47:28Z'
         message_id:
           type: string
           description: Id of the email message
@@ -9314,7 +9310,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: 2018-07-01
+        example: '2018-07-01'
     query_until:
       in: query
       name: until
@@ -9324,7 +9320,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: 2018-07-31
+        example: '2018-07-31'
     query_modified_since:
       in: query
       name: modified_since
@@ -9334,7 +9330,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: 2018-07-01
+        example: '2018-07-01'
     query_unmodified_since:
       in: query
       name: unmodified_since
@@ -9344,7 +9340,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: 2018-07-01
+        example: '2018-07-01'
     query_actions_contact_id:
       name: contact_id
       in: query
