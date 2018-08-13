@@ -8264,7 +8264,7 @@ components:
           example:
           - US
         deal_stages:
-          $ref: '#/components/schemas/DealStages'
+          $ref: '#/components/schemas/Deal_stage'
         default_contact_type:
           description: ''
           type: string
@@ -8615,7 +8615,7 @@ components:
           description: What percent of the deal amount is commission?
           type: number
           example: 10.1
-    DealStages:
+    Deal_stage:
       description: The stages that deals go through
       properties:
         stage:
