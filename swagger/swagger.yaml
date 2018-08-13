@@ -7401,7 +7401,7 @@ components:
       properties:
         id:
           type: string
-          description: ID of the user
+          description: ID of the user (read only)
           example: 5aba31e99007ba0f570c12f7
         first_name:
           type: string
@@ -7420,7 +7420,7 @@ components:
           description: Name of the company that the user works for
           example: Big Company Inc.
         account_rights:
-          description: List of permissions which the user possesses
+          description: List of permissions which the user possesses (read only)
           type: array
           items:
             type:
@@ -7465,55 +7465,53 @@ components:
       properties:
         id:
           type: string
-          description: Contact ID
+          description: ID of the contact (read only)
           example: 5aba31ea9007ba0f570c92d4
         first_name:
           type: string
-          description: Contact's first name
+          description: First name of the contact
           example: Joe
         last_name:
           type: string
-          description: Contact's last name
+          description: Last name of the contact
           example: Bloggs
         job_title:
           type: string
-          description: Contact's job title
+          description: Job title of the contact
           example: Engineer
         company_id:
           type: string
-          description: Contact's company id
+          description: ID of the company, to which the contact belongs
           example: 5aba31ea9007ba0f570c92d5
         company_name:
           type: string
-          description: Contact's company name
+          description: Name of the company, to whom the contact belongs
           example: Morgan's Forensic Lab
         company_size:
           type: integer
-          description: Contact's company size
+          description: Number of contacts within the contact's company (read only)
           example: 1
         owner_id:
           type: string
-          description: Contact's owner id
+          description: ID of the user who owns the contact
           example: 5aba31e99007ba0f570c92a5
         status:
           type: string
-          description: Contact's status
+          description: Status of the contact
           example: Prospect
         status_id:
-          type: string
-          description: Contact's status id
-          example: 5aaa9b039007ba08c9ebaf0b
+          $ref: '#/components/schemas/Status/properties/id'
         tags:
           type: array
           items:
             $ref: '#/components/schemas/Tag/properties/name'
         starred:
           type: boolean
-          description: Contact's starred status
+          description: Starred status of the contact
           example: false
         background:
           type: string
-          description: Contact's background
+          description: Background infomation about the contact
           example: >-
             I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
             solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon,
@@ -7523,22 +7521,22 @@ components:
           $ref: '#/components/schemas/Lead_source/properties/id'
         pending_deal:
           type: boolean
-          description: Does the contact have pending deals
+          description: True if contact has one or more pending deals (read only)
           example: true
         total_pendings:
           type: number
-          description: The value of pending deals with the contact
+          description: The total value of all pending deals for the contact (read only)
           example: 1200.99
         total_deals_count:
           type: string
-          description: The number of pending deals with the contact
-          example: ''
+          description: Number of deals for the contact (read only)
+          example: 3
         photo_url:
           type: string
-          description: Url of the contact's photo
-          example: https://example.com
+          description: Url of the contact's photo (read only)
+          example: https://{foo.bar}.com/joe-bloggs.jpg
         custom_fields:
-          description: A list of custom field objects that the user has
+          description: A list of extra data fields for the contact
           type: array
           items:
             $ref: '#/components/schemas/Custom_field'
@@ -8324,11 +8322,11 @@ components:
         already populated but it may be updated if needed, to better fit your organization.
       properties:
         id:
-          description: Status ID. This matches the status field in contacts (read only).
+          description: ID of the status (read only)
           type: string
           example: 5aead4809007ba56ffca942e
         status:
-          description: Status type
+          description: Type of the status
           type: string
           example: lead
           enum:
@@ -8395,7 +8393,7 @@ components:
         pre-populated, and can be later edited to fit individual needs.
       properties:
         id:
-          description: The type of lead source
+          description: ID of the lead source
           type: string
           example: Advertisement
         text:
@@ -8457,7 +8455,7 @@ components:
     Tag:
       properties:
         name:
-          description: Tag name to be displayed
+          description: Name of the tag
           type: string
           example: VIP
         counts:
