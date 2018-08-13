@@ -7825,92 +7825,82 @@ components:
         deal stage, closed date or expected close date. Deals support file attachments.
       properties:
         id:
-          description: Deal ID (read only)
+          description: ID of the deal (read only)
           type: string
           format: bson_id
           example: 5aaa9b059007ba08c9ebaf58
         contact_id:
-          description: ID of the Contact this deal belongs to (read only)
+          description: ID of the contact, to whom the deal belongs
           type: string
           format: bson_id
           example: 5aaa9b059007ba08c9ebaf58
         owner_id:
-          description: ID of the User this deal belongs to
+          description: ID of the user, to whom the deal belongs
           type: string
           format: bson_id
           example: 5aba31e99007ba0f570c12f7
-        owner:
-          description: >-
-            JSON object containing owner information: id, name, email. (read
-            only)
-          properties:
-            id:
-              type: string
-              description: Id of the deal owner
-              example: 5aba31e99007ba0f570c12f7
-            name:
-              type: string
-              description: Name of owner
-              example: Joe Bloggs
-            email:
-              type: string
-              description: Email address of the deal owner
-              example: joe.bloggs@example.com
         name:
-          description: Name of the deal - truncated to 60 characters. (required)
+          description: Name of the deal (max 60 chars)
           type: string
-          example: March deal
+          example: Solar panels
         text:
           description: >-
-            The text in the body of the deal - truncated to 7168 characters. You
-            may use BBCode: bold (`[b]text[/b]`), italics (`[i]text[/i]`) and
-            new line ('\n').
+            Extra notes related to the deal. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
           type: string
-          example: Figers crossed!
-        date:
-          description: Date related to the deal’s creation
+          example: Fingers crossed!
+        stage:
+          description: >-
+            A numerical representation of the progress of a pending deal (number ranging from 0 to 100 exclusive)
+          type: integer
+          format: int32
+          example: 50
+        status:
+          description: Status of the deal
+          type: string
+          enum:
+          - pending
+          - won
+          - lost
+          example: pending
+        expected_close_date:
+          description: >-
+            The date the deal is expected to close (status should be `pending`)
           type: string
           format: date
-          example: '2018-03-14'
-        contact_info:
+          example: '2018-04-15'
+        close_date:
           description: >-
-            JSON object containing contact_name and company relating to deal.
-            (read only)
-          properties:
-            contact_name:
-              type: string
-              description: Name of the contact associated with this deal
-              example: Joe Bloggs
-            company:
-              type: string
-              description: Name of the company associated with this deal
-              example: Big Company Inc
-        author:
-          description: >-
-            First name and first letter of last name of the author of the deal
-            (read only)
+            The date the deal actually closed (status should be `won` or `lost`)
           type: string
-          example: Joe Bloggs
+          format: date
+          readOnly: true
+          example: '2018-04-15'
+        date:
+          description: >-
+            Expected close date for pending deals, close date otherwise
+          type: string
+          format: date
+          readOnly: true
+          example: '2018-04-15'
         amount:
-          description: Total amount of money to be paid per month
+          description: The monitary value of the deal (per month if multi-month deal)
           type: number
           format: float
           example: 5130
         months:
           description: Number of months the above amount will be paid for
           type: integer
-          format: int32
           example: 1
-        total_amount:
-          description: Product of amount and months (read only)
-          type: number
-          format: float
-          example: 5130
         cost:
           description: The cost of the deal
           type: number
           format: float
           example: 0
+        total_amount:
+          description: Product of amount and months (read only)
+          type: number
+          format: float
+          example: 5130
         total_cost:
           description: The total cost of the deal
           type: number
@@ -7921,6 +7911,21 @@ components:
           type: number
           format: float
           example: 5130
+        commission_base:
+          description: Base used in deal commission calculation
+          type: string
+          enum:
+          - amount
+          - margin
+          example: none
+        commission_type:
+          description: Type of commission calculation in deal
+          type: string
+          enum:
+          - none
+          - percentage
+          - absolute
+          example: none
         commission:
           description: Commission on the deal
           type: number
@@ -7931,37 +7936,6 @@ components:
           type: number
           format: float
           example: 0
-        commission_type:
-          description: Type of commission calculation in deal
-          type: string
-          enum:
-          - none
-          - percentage
-          - absolute
-          example: none
-        commission_base:
-          description: Base used in deal commission calculation
-          type: string
-          enum:
-          - amount
-          - margin
-          example: none
-        status:
-          description: Status of the deal
-          type: string
-          enum:
-          - won
-          - lost
-          - pending
-          example: pending
-        has_related_notes:
-          description: True if the deal has related notes. (read only)
-          type: boolean
-          example: true
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
         deal_fields:
           type: array
           items:
@@ -7973,6 +7947,10 @@ components:
                 description: deal field value
                 example: >-
                   big
+        author:
+          description: The user who created the deal (read only)
+          type: string
+          example: Joe B.
         created_at:
           description: Date the deal was created at (read-only)
           type: string
@@ -7983,26 +7961,40 @@ components:
           type: string
           format: date-time
           example: '2018-03-15T16:10:45Z'
-        stage:
-          description: >-
-            What stage this deal is at. This can be converted to a label using
-            the deal stages list in the settings resource.
-          type: integer
-          format: int32
-          example: 60
-        expected_close_date:
-          description: >-
-            Date when the deal is expected to be closed. This is only returned
-            if the status of the deal is pending
-          type: string
-          format: date
-          example: '2018-04-15'
-        close_date:
-          description: >-
-            Date that the deal was closed. This is set automatically when a deal
-            is marked as won or lost (read only).
-          type: string
-          format: date
+        has_related_notes:
+          description: True if the deal has related notes. (read only)
+          type: boolean
+          example: true
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+        contact_info:
+          description: Information about the contact, to whom the deal belongs (read only)
+          properties:
+            contact_name:
+              type: string
+              description: Name of the contact associated with the deal (read only)
+              example: Joe Bloggs
+            company:
+              type: string
+              description: Name of the company associated with the deal (read only)
+              example: Big Company Inc.
+        owner:
+          description: Information about the deal owner (read only)
+          properties:
+            id:
+              type: string
+              description: ID of the deal owner (read only)
+              example: 5aba31e99007ba0f570c12f7
+            name:
+              type: string
+              description: Name of the deal owner (read only)
+              example: Joe Bloggs
+            email:
+              type: string
+              description: Email address of the deal owner (read only)
+              example: joe.bloggs@{foo.bar}.com
     Note:
       description: >-
         Allow you to keep track of additional information related to your contacts. Notes can include any
