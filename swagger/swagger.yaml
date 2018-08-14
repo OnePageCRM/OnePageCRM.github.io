@@ -7409,7 +7409,7 @@ components:
         email:
           type: string
           description: Email address of the user
-          example: jane.doe@{foo.bar}.com
+          example: jane.doe@{foo.bar}
         company_name:
           type: string
           description: Name of the company that the user works for
@@ -7438,7 +7438,7 @@ components:
         photo_url:
           description: Url of the user’s profile picture
           type: string
-          example: https://{foo.bar}.com/jane-doe.jpg
+          example: https://{foo.bar}/jane-doe.jpg
         country_code:
           description: ISO country code of the user's address
           type: string
@@ -7529,7 +7529,7 @@ components:
         photo_url:
           type: string
           description: Url of the contact's photo (read only)
-          example: https://{foo.bar}.com/joe-bloggs.jpg
+          example: https://{foo.bar}/joe-bloggs.jpg
         custom_fields:
           description: A list of extra data fields for the contact
           type: array
@@ -8007,7 +8007,7 @@ components:
               type: string
               description: Email address of the deal owner
               readOnly: true
-              example: joe.bloggs@{foo.bar}.com
+              example: joe.bloggs@{foo.bar}
     Note:
       description: >-
         Allow you to keep track of additional information related to your contacts. Notes can include any
