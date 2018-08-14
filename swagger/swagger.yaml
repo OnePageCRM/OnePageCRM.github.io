@@ -3473,7 +3473,7 @@ paths:
                 reference_type:
                   type: string
                   description: >-
-                    What type of resource is associated with this attachment.
+                    What type of resource is associated with this attachment
                   enum: [note, call, deal]
                   example: deal
                 contact_id:
@@ -3493,20 +3493,16 @@ paths:
                 external_url:
                   required: false
                   type: string
-                  description: >-
-                    External URL for the file
+                  description: External URL for the file
                 link_type:
                   type: string
-                  description: >-
-                    Type of external link
+                  description: Type of external link
                   enum: ['Dropbox', 'Google_drive', 'Evernote', '']
                   required: false
                   example: ''
                 size:
                   type: integer
-                  description: >-
-                    Size of file
-
+                  description: Size of file
         201:
           description: Created
           content:
