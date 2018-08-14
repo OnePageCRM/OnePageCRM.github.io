@@ -7626,10 +7626,12 @@ components:
                 example:
         created_at:
           type: string
+          format: date-time
           description: The contact's creation date.
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
+          format: date-time
           description: The contact's last modification date.
           example: '2018-05-16T11:52:09Z'
         title:
@@ -7708,10 +7710,12 @@ components:
               example: IE
         created_at:
           type: string
+          format: date-time
           description: The action's creation date.
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
+          format: date-time
           description: The action's last modification date.
           example: '2018-05-16T11:52:09Z'
         contacts_count:
@@ -7813,10 +7817,12 @@ components:
           example: '2018-05-16'
         created_at:
           type: string
+          format: date-time
           description: Date of creation of the action (read only)
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
+          format: date-time
           description: Last modification date of the action (read only)
           example: '2018-05-16T12:52:09Z'
     Deal:
@@ -8046,10 +8052,12 @@ components:
           example: ''
         created_at:
           type: string
+          format: date-time
           description: The note's creation date.
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
+          format: date-time
           description: The note's last modification date.
           example: '2018-05-16T11:52:09Z'
     Call:
@@ -8115,10 +8123,12 @@ components:
             $ref: '#/components/schemas/Attachment'
         created_at:
           type: string
+          format: date-time
           description: The call's creation date.
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
+          format: date-time
           description: The call's last modification date.
           example: '2018-05-16T11:52:09Z'
         index:
@@ -8132,27 +8142,39 @@ components:
       properties:
         id:
           type: string
-          description: Id of the attachment
+          format: bson_id
+          description: ID of the attachment
+          readOnly: true
           example: 5afc1ea9d556730b780096db
-        storage_provider:
-          type: string
-          description: Where the attachment is stored
-          example: amazon
         filename:
           type: string
-          description: The filename of the attachment
-          example: mario.jpeg
+          description: Name of the attachment file
+          example: mario.jpg
+        size:
+          type: integer
+          format: int32
+          description: Size of the attachment file (in bytes)
+          example: 3841
+        storage_provider:
+          type: string
+          description: Name of the storage provider (where the attachment file is stored)
+          readOnly: true
+          enum:
+            - amazon
+            - google_drive
+            - dropbox
+            - evernote
+          example: amazon
         url:
           type: string
-          description: External URL for the file
+          description: External URL of the attachment file
+          readOnly: true
           example: https://{foo.bar}/mario.jpg
-        size:
-          type: string
-          description: Size of the file
-          example: 3841
         url_expires_at:
           type: string
-          description: The date the attachment url experies
+          format: date-time
+          description: The time the attachment URL expires
+          readOnly: true
           example: '2018-05-16T13:06:53Z'
     Email_message:
       description: Email message
@@ -8167,6 +8189,7 @@ components:
           example: 5aba338b9007ba0f570c9392
         send_time:
           type: string
+          format: date-time
           description: Sent time in UTC (iso8601 format)
           example: '2018-05-25T07:47:28Z'
         message_id:
