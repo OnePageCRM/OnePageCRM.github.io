@@ -3412,8 +3412,7 @@ paths:
                       display_quota:
                         example: 1024MB
                       url:
-                        example: >-
-                          https://s3-us-west-1.amazonaws.com/onepagecrm-ud2-us-west-1/
+                        example: https://s3-us-west-1.amazonaws.com/onepagecrm-ud2-us-west-1/
                       fields:
                         properties:
                           key:
