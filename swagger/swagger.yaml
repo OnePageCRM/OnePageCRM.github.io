@@ -2394,7 +2394,7 @@ paths:
                   enum: [note, call, deal]
                   example: deal
                 contact_id:
-                  format: bson_id
+                  format: bson-id
                   type: string
                   description: Contact to be associated with the attachment
                   example: 5ae06ef9d55673108fe8877f
@@ -2774,7 +2774,7 @@ paths:
                   enum: [note, call, deal]
                   example: deal
                 contact_id:
-                  format: bson_id
+                  format: bson-id
                   type: string
                   description: Contact to be associated with the attachment
                   example: 5ae06ef9d55673108fe8877f
@@ -3274,7 +3274,7 @@ paths:
                   enum: [note, call, deal]
                   example: deal
                 contact_id:
-                  format: bson_id
+                  format: bson-id
                   type: string
                   description: Contact to be associated with the attachment
                   example: 5ae06ef9d55673108fe8877f
@@ -3477,7 +3477,7 @@ paths:
                   enum: [note, call, deal]
                   example: deal
                 contact_id:
-                  format: bson_id
+                  format: bson-id
                   type: string
                   description: Contact to be associated with the attachment
                   example: 5ae06ef9d55673108fe8877f
@@ -7833,18 +7833,18 @@ components:
         id:
           description: ID of the deal
           type: string
-          format: bson_id
+          format: bson-id
           readOnly: true
           example: 5aaa9b059007ba08c9ebaf58
         contact_id:
           description: ID of the contact, to whom the deal belongs
           type: string
-          format: bson_id
+          format: bson-id
           example: 5aaa9b059007ba08c9ebaf58
         owner_id:
           description: ID of the user, to whom the deal belongs
           type: string
-          format: bson_id
+          format: bson-id
           example: 5aba31e99007ba0f570c12f7
         name:
           description: Name of the deal (max 60 chars)
@@ -8142,7 +8142,7 @@ components:
       properties:
         id:
           type: string
-          format: bson_id
+          format: bson-id
           description: ID of the attachment
           readOnly: true
           example: 5afc1ea9d556730b780096db
