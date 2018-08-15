@@ -7794,13 +7794,13 @@ components:
           type: string
           description: Status of the action
           enum:
-            - asap
-            - date
-            - date_time
-            - waiting
-            - queued
-            - queued_with_date
-            - done
+          - asap
+          - date
+          - date_time
+          - waiting
+          - queued
+          - queued_with_date
+          - done
           example: date
           default: date
         date:
@@ -8375,13 +8375,14 @@ components:
         already populated but it may be updated if needed, to better fit your organization.
       properties:
         id:
-          description: ID of the status (read only)
           type: string
+          format: bson-id
+          description: ID of the status
+          readOnly: true
           example: 5aead4809007ba56ffca942e
         status:
           description: Type of the status
           type: string
-          example: lead
           enum:
           - lead
           - prospect
@@ -8391,54 +8392,63 @@ components:
           - custom1
           - custom2
           - customX
+          example: prospect
+          default: lead
         text:
-          description: Status text to be displayed.
           type: string
-          example: Lead
+          description: Display text of the status
+          example: Prospect
         description:
-          description: A description of what this status is for.
           type: string
-          example: You intend to sell to.
+          description: Longer description of what the status is for
+          example: Actively trying to sell to these people
         color:
-          description: Six character hex representation of the status text color
           type: string
-          example: f96600
+          description: The color of the status (six character hex value)
           enum:
-          - 666666
-          - 3399ff
-          - cc0000
-          - f96600
-          - 000000
-          - ff00ff
-          - 009900
+          - '666666'
+          - '3399ff'
+          - 'cc0000'
+          - 'f96600'
+          - '000000'
+          - 'ff00ff'
+          - '009900'
+          example: 'f96600'
         counts:
-          description: Number of contacts the api user has with this status (read only).
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user owns, with the status
+          readOnly: true
           example: 3
         total_count:
-          description: >-
-            Number of contacts this user’s team has with this status (read
-            only).
-          type: string
+          type: integer
+          format: int32
+          description: Number of contacts the entire team owns, with the status
+          readOnly: true
           example: 3
         action_stream_count:
-          description: >-
-            The number of contacts that this api user has actions with and that
-            have this status
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user has actions with, who also have the status
+          readOnly: true
           example: 2
         team_counts:
-          description: Number of contacts with this status grouped by user
           type: array
+          description: Number of contacts, with the status (for each team member)
+          readOnly: true
           items:
             properties:
               user_id:
-                description: ID of one ot the api user’s team members
                 type: string
+                format: bson-id
+                description: ID of the team member
+                readOnly: true
                 example: 5aba31e99007ba0f570c12f7
               counts:
-                description: Number of contacts user_id owns with this status
                 type: integer
+                format: int32
+                description: Number of contacts the team member owns, with the status
+                readOnly: true
                 example: 4
     Lead_source:
       description: >-
