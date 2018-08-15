@@ -7622,12 +7622,14 @@ components:
         created_at:
           type: string
           format: date-time
-          description: The contact's creation date.
+          description: Creation time of the contact
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
-          description: The contact's last modification date.
+          description: Last modification time of the contact
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         title:
           type: string
@@ -7706,12 +7708,14 @@ components:
         created_at:
           type: string
           format: date-time
-          description: The action's creation date.
+          description: Creation time of the company
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
-          description: The action's last modification date.
+          description: Last modification time of the company
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         contacts_count:
           type: integer
@@ -7831,7 +7835,7 @@ components:
         created_at:
           type: string
           format: date-time
-          description: Time of creation of the action
+          description: Creation time of the action
           readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
@@ -7974,15 +7978,15 @@ components:
           example: Jane D.
           default: Shortened name of logged API user
         created_at:
-          description: Creation date and time of the deal
           type: string
           format: date-time
+          description: Creation time of the deal
           readOnly: true
           example: '2018-03-15T16:10:45Z'
         modified_at:
-          description: Last modification time of the deal
           type: string
           format: date-time
+          description: Last modification time of the deal
           readOnly: true
           example: '2018-03-15T16:10:45Z'
         has_related_notes:
@@ -8073,7 +8077,7 @@ components:
         created_at:
           type: string
           format: date-time
-          description: Creation date and time of the note
+          description: Creation time of the note
           readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
@@ -8146,7 +8150,7 @@ components:
         created_at:
           type: string
           format: date-time
-          description: Creation date and time of the call
+          description: Creation time of the call
           readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
