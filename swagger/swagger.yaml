@@ -7546,14 +7546,14 @@ components:
             account_email:
               type: string
               description: Google contacts email
-              example: '{foo}@{bar}.ie'
+              example: jane.doe@{googles-mail-service}.com
             id:
               type: string
               description: Google contact id
               example: 342c5b5c08d4b0b2
             saved_at:
               type: integer
-              description: timestamp that this google_contact was saved
+              description: Time the contact was saved to google
               example: 1522840153
         letter:
           type: string
@@ -7597,7 +7597,7 @@ components:
               value:
                 type: string
                 description: Email address
-                example: joe.bloggs@example.com
+                example: joe.bloggs@{foo.bar}
         sales_closed_for:
           type: string
           description: A list of user ID's that closed sales for this contacts. (read-only)
@@ -8019,11 +8019,6 @@ components:
           description: ID of the note
           readOnly: true
           example: 5afc1b69d556730b580596cb
-        author:
-          type: string
-          description: Author of the note
-          readOnly: true
-          example: Joe B.
         contact_id:
           type: string
           format: bson-id
@@ -8037,26 +8032,35 @@ components:
             I met Jane Doe at the ABC conference. She's interested in hearing about XYZ.
         date:
           type: string
+          format: date
           description: Creation date of the note
           example: '2018-05-16'
+        linked_deal_id:
+          type: string
+          format: bson-id
+          description: ID the of the deal, to which the note is linked (`null` if no linked deal)
+          example:
+        author:
+          type: string
+          description: Author of the note
+          readOnly: true
+          example: Joe B.
         attachments:
           type: array
           readOnly: true
           items:
             $ref: '#/components/schemas/Attachment'
-        linked_deal_id:
-          type: string
-          description: ID the of the deal, to which this note is linked (`null` if no linked deal)
-          example:
         created_at:
           type: string
           format: date-time
           description: Creation date and time of the note
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
           description: The note's last modification date
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
     Call:
       description: >-
@@ -8158,10 +8162,10 @@ components:
           description: Name of the storage provider (where the attachment file is stored)
           readOnly: true
           enum:
-            - amazon
-            - google_drive
-            - dropbox
-            - evernote
+          - amazon
+          - google_drive
+          - dropbox
+          - evernote
           example: amazon
         url:
           type: string
