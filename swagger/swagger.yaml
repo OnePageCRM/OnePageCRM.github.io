@@ -67,7 +67,7 @@ info:
           </tr>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-TS</td>
-            <td>The current timestamp in Unix time (seconds elapsed since Epoch)</td>
+            <td>The current timestamp in UNIX Epoch time (seconds elapsed since 1970-01-01)</td>
           </tr>
           <tr>
             <td class="strong nowrap">X-OnePageCRM-Auth</td>
@@ -7951,16 +7951,16 @@ components:
         author:
           description: The user who created the deal
           type: string
-          readOnly: true
-          example: Joe B.
+          example: Jane D.
+          default: Shortened name of logged API user
         created_at:
-          description: Creation date and time for the deal
+          description: Creation date and time of the deal
           type: string
           format: date-time
           readOnly: true
           example: '2018-03-15T16:10:45Z'
         modified_at:
-          description: Deal’s last modification time
+          description: Last modification time of the deal
           type: string
           format: date-time
           readOnly: true
@@ -8043,8 +8043,8 @@ components:
         author:
           type: string
           description: Author of the note
-          readOnly: true
-          example: Joe B.
+          example: Jane D.
+          default: Shortened name of logged API user
         attachments:
           type: array
           readOnly: true
@@ -8059,7 +8059,7 @@ components:
         modified_at:
           type: string
           format: date-time
-          description: The note's last modification date
+          description: Last modification time of the note
           readOnly: true
           example: '2018-05-16T11:52:09Z'
     Call:
@@ -8069,40 +8069,34 @@ components:
       properties:
         id:
           type: string
-          description: Id of the call
+          format: bson-id
+          description: ID of the call
+          readOnly: true
           example: 5afc1b69d556730b580596cb
-        author:
+        contact_id:
           type: string
-          description: Author's name. The last name is abbreviated. (read only)
-          example: Joe Bloggs
+          format: bson-id
+          description: ID of the contact, to whom the call belongs
+          example: 5ae06ef9d55673108fe8877f
         text:
           type: string
           description: >-
-            The text in the note of the call - truncated to 10000 characters.
-            You may use BBCode: `[b]bold[/b]`, `[i]italics[/i]` and new line
-            (`\n`).
-          example: Mary is interested in coming into the office on Tuesday
+            Extra details related to the call. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
+          example: Mary is interested in coming into the office on Tuesday.
         call_result:
           type: string
-          description: >-
-            The result of the call. Default values: 'interested',
-            'not_interested', 'no_answer' or 'left_message'. You can add other
-            values in the main application. You can not add other values with
-            the API. If not specified, defaults to 'interested'.
+          format: bson-id
+          description: ID of the `call_result` which best describes the result of the call
           example: interested
         call_time_int:
-          description: >-
-            Time the call occurred at. Must be in unix epoch time format. If not
-            specified, defaults to current time.
           type: integer
+          format: unix-timestamp
+          description: >-
+            Time the call occurred in UNIX Epoch time (defaults to current time, if left blank)
           example: 1525273653
-        contact_id:
-          type: string
-          description: id of the contact this call belongs to. (read only)
-          example: 5ae06ef9d55673108fe8877f
         via:
           type: string
-          description: Through what application did this call take place?
+          description: Through which application did the call take place
           enum:
           - unknown
           - skype
@@ -8113,29 +8107,39 @@ components:
           default: unknown
         phone_number:
           type: string
-          description: Phone number
-          example: 123 456 7891 (mobile)
+          description: Phone number used to make the call
+          example: (912) 644-1770 (mobile)
         recording_link:
           type: string
-          description: URL of a recording of the call conversation.
-          example: ''
+          description: URL of the recording of the call conversation
+          example:
+        author:
+          type: string
+          description: Author of the call
+          example: Jane D.
+          default: Shortened name of logged API user
         attachments:
           type: array
+          readOnly: true
           items:
             $ref: '#/components/schemas/Attachment'
         created_at:
           type: string
           format: date-time
-          description: The call's creation date.
+          description: Creation date and time of the call
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
-          description: The call's last modification date.
+          description: Last modification time of the call
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         index:
           type: integer
-          description: Result index
+          format: int32
+          description: Index of the call (in the results set)
+          readOnly: true
           example: 4
     Attachment:
       description: >-
@@ -9335,7 +9339,7 @@ components:
       required: false
       description: >-
         Specifies the start of the date range to filter resources, which have been added or edited
-        (use with `date_filter` - date must be in format `YYYY-MM-DD` or unix timestamp)
+        (use with `date_filter` - date must be in format `YYYY-MM-DD` or UNIX timestamp)
       schema:
         type: string
         format: date-time
@@ -9345,7 +9349,7 @@ components:
       name: until
       description: >-
         Specifies the end of the date range to filter resources, which have been added or edited
-        (use with `date_filter` - date must be in format `YYYY-MM-DD` or unix timestamp)
+        (use with `date_filter` - date must be in format `YYYY-MM-DD` or UNIX timestamp)
       schema:
         type: string
         format: date-time
@@ -9355,7 +9359,7 @@ components:
       name: modified_since
       description: >-
         Return only resources that were modified since specified time (cannot be used with `date_filter`
-        - date must be in format `YYYY-MM-DD` or unix timestamp)
+        - date must be in format `YYYY-MM-DD` or UNIX timestamp)
       schema:
         type: string
         format: date-time
@@ -9365,7 +9369,7 @@ components:
       name: unmodified_since
       description: >-
         Return only resources that were unmodified since specified time (cannot be used with `date_filter`
-        - date must be in format `YYYY-MM-DD` or unix timestamp)
+        - date must be in format `YYYY-MM-DD` or UNIX timestamp)
       schema:
         type: string
         format: date-time
