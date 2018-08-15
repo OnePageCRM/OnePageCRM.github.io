@@ -8963,24 +8963,28 @@ components:
       properties:
         status:
           type: integer
-          description: HTTP status code for the response
+          format: int32
+          description: HTTP status code of the response
+          example: 400
         message:
           type: string
-          description: Summary of the failure reason
+          description: Summary of the reason for the failure
+          example: Some generic error message
         error_name:
           type: string
-          description: Key identifying which error happened
+          description: Key used to identify which error has occurred
+          example: some_generic_error_message
         error_message:
           type: string
-          description: Slightly longer description of the failure reason
+          description: Message to be shown to the user with more details about the error
+          example: Could not find suitable error message, initiating self-destruct sequence...
         errors:
-          type: array
-          description: Specific errors, commonly associated with invalid parameters
-          items:
-            properties:
-              attribute_name:
-                type: string
-                description: Reason why this parameter is invalid
+          description: Specific errors (commonly associated with invalid parameters)
+          properties:
+            attribute_name:
+              type: string
+              description: Reason why this parameter is invalid
+              example: '{attribute_name} is invalid or missing'
   parameters:
     path_user_id:
       name: user_id
@@ -9768,6 +9772,29 @@ components:
         Unauthorized. Authorization data is absent, invalid or expired.
         Generally this means that a login form should be displayed to a user.
         Code 401 means user just needs to login. Generally, fault is on no one.
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: integer
+                format: int32
+                description: HTTP status code of the response
+                example: 401
+              message:
+                type: string
+                description: Summary of the reason for the failure
+                example: Authorization data not found
+              error_name:
+                type: string
+                description: Key used to identify which error has occurred
+                example: authorization_data_not_found
+              error_message:
+                type: string
+                description: Message to be shown to the user with more details about the error
+                example: Cannot find suitable authorization data or data provided is not complete.
+              errors:
+                type: object
     403:
       description: >-
         Forbidden. Issued when user is logged in, but does not have permission
