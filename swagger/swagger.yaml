@@ -8015,45 +8015,48 @@ components:
       properties:
         id:
           type: string
-          description: Id of the note
+          format: bson-id
+          description: ID of the note
+          readOnly: true
           example: 5afc1b69d556730b580596cb
         author:
           type: string
           description: Author of the note
-          example: Joe Bloggs
+          readOnly: true
+          example: Joe B.
         contact_id:
           type: string
-          description: id of the contact this note belongs to. (read only)
+          format: bson-id
+          description: ID of the contact, to whom the note belongs
           example: 5ae06ef9d55673108fe8877f
         text:
           type: string
           description: >-
-            The text in the body of the note (required). You may use BBCode:
-            `[b]bold[/b]`, `[i]italics[/i]` and new line (`\n`).
+            Extra details related to the note. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
           example: >-
-            I met Jane Doe at the ABC conference and she is interested in
-            hearing more about XYZ
+            I met Jane Doe at the ABC conference. She's interested in hearing about XYZ.
         date:
           type: string
-          description: Date the note was created
+          description: Creation date of the note
           example: '2018-05-16'
         attachments:
           type: array
+          readOnly: true
           items:
             $ref: '#/components/schemas/Attachment'
         linked_deal_id:
           type: string
-          description: null if there is no linked deal
-          example: ''
+          description: ID the of the deal, to which this note is linked (`null` if no linked deal)
+          example:
         created_at:
           type: string
           format: date-time
-          description: The note's creation date.
+          description: Creation date and time of the note
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
-          description: The note's last modification date.
+          description: The note's last modification date
           example: '2018-05-16T11:52:09Z'
     Call:
       description: >-
