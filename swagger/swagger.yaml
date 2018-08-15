@@ -8929,16 +8929,18 @@ components:
       properties:
         id:
           type: string
-          description: Id of the web hook
+          format: bson-id
+          description: ID of the webhook
+          readOnly: true
           example: 5417f8291da41712270G0042
         name:
           type: string
-          description: The name of the web hook
+          description: Name of the webhook (max 140 chars)
           example: Awesome integration
         hook_url:
           type: string
           description: URL of the webhook
-          example: https://{foo.bar}/api/v1/{endpoint}.format"
+          example: https://{webhook.catching.machine}
         secretkey:
           type: string
           description: Secret key of the webhook
