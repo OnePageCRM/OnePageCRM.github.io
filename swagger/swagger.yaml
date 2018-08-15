@@ -7396,7 +7396,9 @@ components:
       properties:
         id:
           type: string
-          description: ID of the user (read only)
+          format: bson-id
+          description: ID of the user
+          readOnly: true
           example: 5aba31e99007ba0f570c12f7
         first_name:
           type: string
@@ -7415,10 +7417,9 @@ components:
           description: Name of the company that the user works for
           example: Big Company Inc.
         account_rights:
-          description: List of permissions which the user possesses (read only)
           type: array
-          items:
-            type:
+          description: List of permissions which the user possesses
+          readOnly: true
           enum:
           - account_owner
           - admin
@@ -7429,6 +7430,8 @@ components:
           - pipeline
           - export
           - private_contacts
+          items:
+            type: string
           example:
           - activity
           - edit_target
@@ -7436,22 +7439,26 @@ components:
           - export
           - private_contacts
         photo_url:
-          description: Url of the user’s profile picture
           type: string
+          description: URL of the user’s profile picture
+          readOnly: true
           example: https://{foo.bar}/jane-doe.jpg
         country_code:
-          description: ISO country code of the user's address
           type: string
+          description: ISO-3166 country code of the user's address
+          readOnly: true
           example: IE
         bcc_email:
+          type: string
           description: >-
             BCC email dropbox address of the user (you can only see your own BCC email address)
-          type: string
+          readOnly: true
           example: 5abg31e93007ba0f470c92q6@users.onepagecrm.com
         google_contacts_email:
+          type: string
           description: >-
             Google Contacts email address of the user (you can only see your own Google Contacts email address)
-          type: string
+          readOnly: true
           example: jane.doe@{googles-mail-service}.com
     Contact:
       description: >-
@@ -7528,7 +7535,7 @@ components:
           example: 3
         photo_url:
           type: string
-          description: Url of the contact's photo (read only)
+          description: URL of the contact's photo (read only)
           example: https://{foo.bar}/joe-bloggs.jpg
         custom_fields:
           description: A list of extra data fields for the contact
@@ -7561,7 +7568,7 @@ components:
           example: b
         url:
           type: array
-          description: Urls associated with the contact
+          description: URLs associated with the contact
           items:
             properties:
               type:
@@ -7659,7 +7666,7 @@ components:
           example: 012 345 6789
         url:
           type: string
-          description: Company Url
+          description: Company URL
           example: http://example.com
         company_fields:
           type: array
@@ -8930,7 +8937,7 @@ components:
           example: Awesome integration
         hook_url:
           type: string
-          description: Url of the webhook
+          description: URL of the webhook
           example: https://{foo.bar}/api/v1/{endpoint}.format"
         secretkey:
           type: string
