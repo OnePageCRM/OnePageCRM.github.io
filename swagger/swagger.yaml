@@ -7768,57 +7768,77 @@ components:
       properties:
         id:
           type: string
-          description: ID of the action (read only)
+          format: bson-id
+          description: ID of the action
+          readOnly: true
           example: 5aeac8789007ba56ffca92b9
         assignee_id:
           type: string
+          format: bson-id
           description: ID of the user, to whom the action is assigned
           example: 5aaa9b009007ba08c9ebaef7
         contact_id:
           type: string
-          description: ID of the contact, for whom the action is for
+          format: bson-id
+          description: ID of the contact, for whom the action is associated
           example: 5aaa9b009007ba08c9ebaef7
         text:
           type: string
-          description: The main text/description of the action
+          description: The main text/description of the action (max 140 chars)
           example: '#1 Email Jane introducing our organization'
         status:
           type: string
-          description: >-
-            Status of the action (i.e. `asap`, `date`, `date_time`, `waiting`, `queued`, `queued_with_date`, or `done`)
+          description: Status of the action
+          enum:
+            - asap
+            - date
+            - date_time
+            - waiting
+            - queued
+            - queued_with_date
+            - done
           example: date
+          default: date
         date:
           type: string
+          format: date
           description: >-
             Due date for the action (status must be one of `date`, `date_time` or `queued_with_date`)
           example: '2018-05-16'
+          default: Today's date
         exact_time:
           type: integer
-          description: The exact time the action is due (status must be `date_time`)
+          format: unix-timestamp
+          description: The UNIX Epoch time the action is due (status must be `date_time`)
           example: 1526472000
         position:
           type: integer
-          description: >-
-            The position of the action in the queued actions (read only)
+          format: int32
+          description: The position of the action (in the list of queued actions)
+          readOnly: true
           example: 2
         done:
           type: boolean
-          description: True if the action has been completed (read only)
+          description: True if the action has been completed
+          readOnly: true
           example: false
         done_at:
           type: string
-          description: >-
-            The date the action was completed (read only - only returned if the action has been completed)
+          format: date
+          description: The date the action was completed (only returned, if action complete)
+          readOnly: true
           example: '2018-05-16'
         created_at:
           type: string
           format: date-time
-          description: Date of creation of the action (read only)
+          description: Time of creation of the action
+          readOnly: true
           example: '2018-05-16T11:52:09Z'
         modified_at:
           type: string
           format: date-time
-          description: Last modification date of the action (read only)
+          description: Last modification time of the action
+          readOnly: true
           example: '2018-05-16T12:52:09Z'
     Deal:
       description: >-
