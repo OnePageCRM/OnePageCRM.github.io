@@ -1064,23 +1064,14 @@ paths:
                           properties:
                             deal_field:
                               $ref: '#/components/schemas/Deal_field'
-                      total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
-                      page:
-                        description: Current page number
-                        type: integer
-                        example: 1
-                      per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
-                      max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
-
+                            total_count:
+                              $ref: '#components/schemas/Page_data/properties/total_count'
+                            page:
+                              $ref: '#components/schemas/Page_data/properties/page'
+                            per_page:
+                              $ref: '#components/schemas/Page_data/properties/per_page'
+                            max_page:
+                              $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -1449,21 +1440,13 @@ paths:
                             custom_field:
                               $ref: '#/components/schemas/Custom_field'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -1687,21 +1670,13 @@ paths:
                             company_field:
                               $ref: '#/components/schemas/Company_field'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -2146,21 +2121,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -2518,21 +2485,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -2987,21 +2946,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -3641,21 +3592,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4168,21 +4111,13 @@ paths:
                             filter:
                               $ref: '#/components/schemas/Filter'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4197,9 +4132,9 @@ paths:
           $ref: '#/components/responses/500'
   /filters/{filter_id}:
     get:
-      summary: Get a specific custom filter
+      summary: Get (and run) a specific custom filter
       description: >-
-        This endpoint returns all contacts that meet the conditions of the specific filter.
+        This endpoint returns all details of the specified filter, as well as all contacts that meet the criteria of the filter.
       tags:
       - Filters
       parameters:
@@ -4227,6 +4162,14 @@ paths:
                     properties:
                       filter:
                         $ref: '#/components/schemas/Filter'
+                      total_count:
+                        $ref: '#components/schemas/Page_data/properties/total_count'
+                      page:
+                        $ref: '#components/schemas/Page_data/properties/page'
+                      per_page:
+                        $ref: '#components/schemas/Page_data/properties/per_page'
+                      max_page:
+                        $ref: '#components/schemas/Page_data/properties/max_page'
                       contacts:
                         type: array
                         items:
@@ -4287,21 +4230,13 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4474,21 +4409,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4551,21 +4478,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4623,21 +4542,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4695,21 +4606,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4784,21 +4687,13 @@ paths:
                                   items:
                                     example: 5aba31e99007ba0f570c92ab
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -5103,21 +4998,13 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Maximum number of items shown on per page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
                       lead_sources:
                         type: array
                         items:
@@ -5911,21 +5798,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -6048,21 +5927,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -6202,21 +6073,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -6332,21 +6195,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -6459,21 +6314,13 @@ paths:
                             email_message:
                               $ref: "#/components/schemas/Email_message"
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -7028,21 +6875,13 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -7129,21 +6968,13 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -7189,21 +7020,13 @@ paths:
                         items:
                           $ref: "#/components/schemas/Webhook"
                       total_count:
-                        description: Total number of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/total_count'
                       page:
-                        description: Current page number
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/page'
                       per_page:
-                        description: Number of items returned in each page
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/per_page'
                       max_page:
-                        description: The page number of the last page of items
-                        type: integer
-                        example: 1
+                        $ref: '#components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -8404,13 +8227,16 @@ components:
         text:
           type: string
           description: Display text of the status
+          maxLength: 20 chars
           example: Prospect
         description:
           type: string
           description: Longer description of what the status is for
+          maxLength: 33 chars
           example: Actively trying to sell to these people
         color:
           type: string
+          format: hex-color
           description: The color of the status (six character hex value)
           enum:
           - '666666'
@@ -8507,25 +8333,29 @@ components:
         they can be used through the API.
       properties:
         id:
-          description: Id of the custom filter
           type: string
-          example: 5ae9cc2a9007ba5b856c7bb8
+          format: bson-id
+          description: ID of the custom filter
+          readOnly: true
+          example: 5b606e239007ba1e528d9557
         name:
-          description: Name of the Filter.
           type: string
-          example: Display only stared contacts
+          description: Name of the custom filter
+          readOnly: true
+          example: Jane's large deals
         conditions:
-          description: Conditions of the filter
           type: array
+          description: Conditions of the custom filter
+          readOnly: true
           items:
             type: string
           example:
-          - - star
-            - selected
-            - ''
-          - - tags
-            - is_not
-            - VIP
+          - - deal_owner_id
+            - is
+            - 5aba31e99007ba0f570c12f7
+          - - deal_value
+            - greater
+            - '1000'
     Tag:
       properties:
         name:
@@ -8989,6 +8819,51 @@ components:
               type: string
               description: Reason why this parameter is invalid
               example: '{attribute_name} is invalid or missing'
+    Success:
+      description: Response of successful request
+      properties:
+        status:
+          type: integer
+          description: Response code
+          example: 0
+        message:
+          type: string
+          description: Response message
+          example: OK
+        timestamp:
+          type: integer
+          description: Response time
+          example: 1528373119
+        data:
+          type: object
+          properties:
+            total_count:
+              $ref: '#components/schemas/Page_data/properties/total_count'
+            page:
+              $ref: '#components/schemas/Page_data/properties/page'
+            per_page:
+              $ref: '#components/schemas/Page_data/properties/per_page'
+            max_page:
+              $ref: '#components/schemas/Page_data/properties/max_page'
+    Page_data:
+      description: Pagination meta-data related to response
+      properties:
+        total_count:
+          description: Total number of items
+          type: integer
+          example: 1
+        page:
+          description: Current page number
+          type: integer
+          example: 1
+        per_page:
+          description: Number of items returned in each page
+          type: integer
+          example: 10
+        max_page:
+          description: The page number of the last page of items
+          type: integer
+          example: 1
   parameters:
     path_user_id:
       name: user_id
