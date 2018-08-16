@@ -841,7 +841,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/statuses/{status_id}':
+  /statuses/{status_id}:
     get:
       summary: Get a specific status
       description: ''
@@ -1047,7 +1047,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/deal_fields/{deal_field_id}':
+  /deal_fields/{deal_field_id}:
     get:
       summary: Get a specific deal field
       description: ''
@@ -1381,7 +1381,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/custom_fields/{custom_field_id}':
+  /custom_fields/{custom_field_id}:
     get:
       summary: Get a specific custom field
       description: ''
@@ -1779,7 +1779,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/predefined_actions/{predefined_action_id}':
+  /predefined_actions/{predefined_action_id}:
     get:
       summary: Get a specific predefined action
       description: ''
@@ -3188,7 +3188,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/attachments/{attachment_id}':
+  /attachments/{attachment_id}:
     delete:
       summary: Delete a specific attachment
       description: ''
@@ -4212,7 +4212,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/linked_contacts':
+  /companies/{company_id}/linked_contacts:
     get:
       summary: Get contacts linked with a specific company
       description: ''
@@ -4358,7 +4358,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/linked_contacts/{contact_id}':
+  /companies/{company_id}/linked_contacts/{contact_id}:
     delete:
       summary: Unlink a contact from a company
       description: ''
@@ -4388,7 +4388,7 @@ paths:
           $ref: '#/components/responses/409'
         500:
           $ref: '#/components/responses/500'
-  '/companies/{company_id}/synced_status':
+  /companies/{company_id}/synced_status:
     post:
       summary: Enable company status sync
       description: >-
