@@ -372,17 +372,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     $ref: '#/components/schemas/Bootstrap'
                   lead_sources:
@@ -444,17 +438,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       auth_key:
@@ -475,17 +463,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     type: array
                     items:
@@ -519,17 +501,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       user:
@@ -582,17 +558,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       user:
@@ -623,17 +593,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       items:
@@ -671,17 +635,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     $ref: '#/components/schemas/Lead_source'
         400:
@@ -711,17 +669,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     $ref: '#/components/schemas/Lead_source'
         400:
@@ -758,17 +710,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     $ref: '#/components/schemas/Lead_source'
         400:
@@ -819,17 +765,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       statuses:
@@ -876,17 +816,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       Statises:
@@ -923,17 +857,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       status:
@@ -977,17 +905,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       status:
@@ -1045,17 +967,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal_fields:
@@ -1110,17 +1026,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal_field:
@@ -1153,17 +1063,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal_field:
@@ -1207,17 +1111,12 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
+                  data:
                     properties:
                       deal_field:
                         $ref: '#/components/schemas/Deal_field'
@@ -1273,17 +1172,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       cost_setup:
@@ -1332,17 +1225,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       cost_setup:
@@ -1374,17 +1261,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       cost_setup:
@@ -1420,17 +1301,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       custom_fields:
@@ -1485,17 +1360,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       custom_field:
@@ -1528,17 +1397,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       custom_field:
@@ -1582,17 +1445,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       custom_field:
@@ -1650,17 +1507,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company_fields:
@@ -1715,17 +1566,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company_field:
@@ -1758,17 +1603,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company_field:
@@ -1812,17 +1651,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company_field:
@@ -1876,17 +1709,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       predefined_actions:
@@ -1931,17 +1758,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       predefined_action:
@@ -1974,17 +1795,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       predefined_action:
@@ -2026,17 +1841,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       predefined_action:
@@ -2101,17 +1910,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       notes:
@@ -2175,17 +1978,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       note:
@@ -2218,17 +2015,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       note:
@@ -2281,17 +2072,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       note:
@@ -2398,17 +2183,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       id:
@@ -2465,17 +2244,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       calls:
@@ -2543,17 +2316,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       call:
@@ -2586,17 +2353,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       call:
@@ -2653,17 +2414,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       call:
@@ -2770,17 +2525,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       id:
@@ -2829,17 +2578,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     type: array
                     items:
@@ -2926,17 +2669,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deals:
@@ -3019,17 +2756,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal:
@@ -3062,17 +2793,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal:
@@ -3144,17 +2869,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal:
@@ -3262,17 +2981,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       id:
@@ -3345,17 +3058,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       quota:
@@ -3460,17 +3167,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       attachment:
@@ -3572,17 +3273,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       actions:
@@ -3645,17 +3340,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3688,17 +3377,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3757,17 +3440,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3824,17 +3501,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3867,17 +3538,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3910,17 +3575,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3954,17 +3613,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -3997,17 +3650,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -4047,17 +3694,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -4091,17 +3732,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       filters:
@@ -4147,17 +3782,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       filter:
@@ -4210,17 +3839,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       companies:
@@ -4265,17 +3888,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company:
@@ -4334,17 +3951,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company:
@@ -4389,17 +4000,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       actions:
@@ -4458,17 +4063,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deals:
@@ -4522,17 +4121,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       notes:
@@ -4586,17 +4179,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       calls:
@@ -4645,17 +4232,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       linked_contacts:
@@ -4734,17 +4315,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       linked_contact:
@@ -4840,17 +4415,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company:
@@ -4882,17 +4451,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       company:
@@ -4962,17 +4525,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contacts:
@@ -5111,17 +4668,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5200,17 +4751,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5307,17 +4852,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5403,17 +4942,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data: {}
                   lead_sources:
                     items:
@@ -5484,17 +5017,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5538,17 +5065,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5580,17 +5101,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5623,17 +5138,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       filter:
@@ -5707,17 +5216,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -5778,17 +5281,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       actions:
@@ -5850,17 +5347,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       action:
@@ -5907,17 +5398,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deals:
@@ -6001,17 +5486,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       deal:
@@ -6053,17 +5532,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       notes:
@@ -6123,17 +5596,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       note:
@@ -6175,17 +5642,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       calls:
@@ -6249,17 +5710,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       call:
@@ -6294,17 +5749,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       email_messages:
@@ -6350,17 +5799,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       lead_sources:
@@ -6422,17 +5865,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       lead_sources:
@@ -6494,17 +5931,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6538,17 +5969,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6581,17 +6006,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6624,17 +6043,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6678,17 +6091,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6721,17 +6128,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6776,17 +6177,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contact:
@@ -6855,17 +6250,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contacts:
@@ -6948,17 +6337,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       contacts:
@@ -7002,17 +6385,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       webhooks:
@@ -7055,17 +6432,11 @@ paths:
               schema:
                 properties:
                   status:
-                    type: integer
-                    description: Response code
-                    example: 0
+                    $ref: '#/components/schemas/Success/properties/status'
                   message:
-                    type: string
-                    description: Response message
-                    example: OK
+                    $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
-                    type: integer
-                    description: Response time
-                    example: 1528373119
+                    $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
                       webhook:
