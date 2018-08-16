@@ -8446,11 +8446,7 @@ components:
           items:
             properties:
               user_id:
-                type: string
-                format: bson-id
-                description: ID of the team member
-                readOnly: true
-                example: 5aba31e99007ba0f570c12f7
+                $ref: '#/components/schemas/User/properties/id'
               counts:
                 type: integer
                 format: int32
@@ -8463,39 +8459,47 @@ components:
         pre-populated, and can be later edited to fit individual needs.
       properties:
         id:
+          type: string
+          format: bson-id
           description: ID of the lead source
-          type: string
-          example: Advertisement
+          readOnly: true
+          example: advertisement
         text:
-          description: Description of this type of lead source
           type: string
+          description: Description of the lead source
+          maxLength: 40 chars
           example: Advertisement
         counts:
-          description: Number of contacts the api user has with this status
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user owns, with the lead source
+          readOnly: true
           example: 4
         total_count:
-          description: Number of contacts this user’s team has with this status
           type: integer
+          format: int32
+          description: Number of contacts the entire team owns, with the lead source
+          readOnly: true
           example: 7
         action_stream_count:
-          description: >-
-            The number of contacts that this api user has actions with and that
-            have this lead source
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user has actions with, who also have the lead source
+          readOnly: true
           example: 2
         team_counts:
-          description: Number of contacts with this lead_source grouped by user
           type: array
+          description: Number of contacts, with the lead source (for each team member)
+          readOnly: true
           items:
             properties:
               user_id:
-                description: ID of one ot the api user’s team members
-                type: string
-                example: 5aba31e99007ba0f570c12f7
+                $ref: '#/components/schemas/User/properties/id'
               counts:
-                description: Number of contacts user_id owns with this lead source
                 type: integer
+                format: int32
+                description: Number of contacts the team member owns, with the lead source
+                readOnly: true
                 example: 4
     Filter:
       description: >-
