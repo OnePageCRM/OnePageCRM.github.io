@@ -8165,6 +8165,7 @@ components:
           description: The reminder time. This is ignored if reminder type is 'never'
           example: 6
     Error:
+      description: Structure of response for failed request
       properties:
         status:
           type: integer
@@ -8191,10 +8192,11 @@ components:
               description: Reason why this parameter is invalid
               example: '{attribute_name} is invalid or missing'
     Success:
-      description: Response of successful request
+      description: Structure of response for successful request
       properties:
         status:
           type: integer
+          format: int32
           description: Response code
           example: 0
         message:
@@ -8203,6 +8205,7 @@ components:
           example: OK
         timestamp:
           type: integer
+          format: unix-timestamp
           description: Response time
           example: 1528373119
         data:
@@ -8220,20 +8223,24 @@ components:
       description: Pagination meta-data related to response
       properties:
         total_count:
-          description: Total number of items
           type: integer
+          format: int32
+          description: Total number of items
           example: 1
         page:
-          description: Current page number
           type: integer
+          format: int32
+          description: Current page number
           example: 1
         per_page:
-          description: Number of items returned in each page
           type: integer
+          format: int32
+          description: Number of items returned in each page
           example: 10
         max_page:
-          description: The page number of the last page of items
           type: integer
+          format: int32
+          description: The page number of the last page of items
           example: 1
   parameters:
     path_user_id:
