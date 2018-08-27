@@ -7777,33 +7777,36 @@ components:
       description: Extra user-configurable data fields for Contacts. Only editable by admins.
       properties:
         id:
-          description: Id of the custom field
           type: string
+          format: bson-id
+          description: ID of the custom field
+          readOnly: true
           example: 5aad9b039007ba18c9ebad13
         name:
-          description: Name of the custom field. Used for identification of custom fields.
           type: string
+          description: Name of the custom field
+          maxLength: 60 chars
           example: Favorite season
         type:
-          description: Type of custom field.
           type: string
+          description: Type of the custom field
           enum:
-          - single_line_text
+          - anniversary
+          - date
           - multi_line_text
           - multiple_choice
-          - select_box
-          - date
           - number
-          - anniversary
-          example: multiple_choice
+          - select_box
+          - single_line_text
+          example: select_box
         position:
-          description: The position of this custom field in the list of custom fields
           type: integer
+          format: int32
+          description: The position of the custom field in the list
           example: 2
         choices:
           description: >-
-            An array of possible choices. This needs to be present only for
-            custom fields of type multiple_choice or select_box
+            A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
           example:
           - Spring
@@ -7814,76 +7817,80 @@ components:
       description: Extra user-configurable data fields for Companies. Only editable by admins.
       properties:
         id:
-          description: Id of the company field
           type: string
+          format: bson-id
+          description: ID of the company field
+          readOnly: true
           example: 5aad9b039007ba28c9ebad56
         name:
-          description: >-
-            Name of the company field. Used for identification of company
-            fields.
           type: string
-          example: Size of company
+          description: Name of the company field
+          maxLength: 60 chars
+          example: Company size
         type:
-          description: Type of custom field.
           type: string
+          description: Type of the company field
           enum:
-          - single_line_text
+          - anniversary
+          - date
           - multi_line_text
           - multiple_choice
-          - select_box
-          - date
           - number
-          - anniversary
-          example: multiple_choice
+          - select_box
+          - single_line_text
+          example: select_box
         position:
-          description: The position of this company field in the list of company fields
           type: integer
+          format: int32
+          description: The position of the company field in the list
           example: 2
         choices:
           description: >-
-            An array of possible choices. This needs to be present only for
-            company fields of type multiple_choice or select_box
+            A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
           example:
-          - big
-          - medium
-          - small
+          - Small
+          - Medium
+          - Large
     Deal_field:
       description: Extra user-configurable data fields for Deals. Only editable by admins.
       properties:
         id:
-          description: Id of the deal field
           type: string
+          format: bson-id
+          description: ID of the deal field
+          readOnly: true
           example: 5aad9b039007ba28c9ebad56
         name:
-          description: Name of the deal field. Used for identification of deal fields.
           type: string
-          example: Size of deal
+          description: Name of the deal field
+          maxLength: 60 chars
+          example: Deal size
         type:
-          description: Type of deal field.
+          description: Type of the deal field
           type: string
           enum:
-          - single_line_text
+          - anniversary
+          - date
           - multi_line_text
           - multiple_choice
-          - select_box
-          - date
           - number
-          - anniversary
-          example: multiple_choice
+          - select_box
+          - single_line_text
+          example: select_box
         position:
-          description: The position of this deal field in the list of deal fields
           type: integer
+          format: int32
+          description: The position of the deal field in the list
           example: 2
         choices:
           description: >-
-            An array of possible choices. This needs to be present only for deal
-            fields of type multiple_choice or select_box
+            A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
           example:
-          - big
-          - medium
-          - small
+          - Small
+          - Medium
+          - Large
     Cost_setup:
       description: >-
         The cost field is special deal field used when deals have costs associated with them.
