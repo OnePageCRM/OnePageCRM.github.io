@@ -7728,24 +7728,30 @@ components:
             - greater
             - '1000'
     Tag:
+      description: >-
+        An additional means of labeling and/or identifying contacts in OnePageCRM.
       properties:
         name:
-          description: Name of the tag
           type: string
+          description: Name of the tag
           example: VIP
         counts:
-          description: Number of contacts the api user has with this tag (read only)
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user owns, with the tag
+          readOnly: true
           example: 2
         total_count:
-          description: Number of contacts this user’s team has with this tag (read only)
           type: integer
+          format: int32
+          description: Number of contacts the entire team owns, with the tag
+          readOnly: true
           example: 4
         action_stream_count:
-          description: >-
-            The number of contacts that this api user has actions with and that
-            have this Tag
           type: integer
+          format: int32
+          description: Number of contacts the (logged API) user has actions with, who also have the tag
+          readOnly: true
           example: 1
     Predefined_action:
       description: >-
