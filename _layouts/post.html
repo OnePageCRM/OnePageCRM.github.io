@@ -8,9 +8,8 @@ layout: default
                 <div class="slider-wrapper height-350">
                     <div id="particles-js" style="background-image:url(/assets/images/LargeGroup_devs.jpg);">
                         <div class="slider-fixed-text">
-                            {% if page.title%}
-                             <h2>{{page.title}}</h2>
-                            {% endif %} 
+                            <h1>OnePageCRM - Developers Workspace</h1>
+                            <p class="flying-text">News, posts and ideas</p>
                         </div>
                     </div>
                 </div>
@@ -28,6 +27,7 @@ layout: default
                              <img src="{{ page.post_image }}" alt="{{past.title}}">
                            {% endif %}
                         </div>
+                        {% if page.title%}<h3>{{page.title}}</h3>{% endif %}<br>
                         <div class="blog-details">
                             {{ content }}
                         </div>
