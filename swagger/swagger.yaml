@@ -7759,16 +7759,19 @@ components:
         the web application.
       properties:
         id:
-          description: Id of the predefined action
           type: string
+          format: bson-id
+          description: ID of the predefined action
+          readOnly: true
           example: 5acddaa7d556733c507tf405
         text:
-          description: Text describing this predefined action
           type: string
+          description: Description text of the predefined action
           example: '#1 Email [firstname] introducing our organization'
         days:
-          description: Suggested the number of days until the action becomes due.
           type: integer
+          format: int32
+          description: Suggested number of days until the action becomes due
           example: 4
     Custom_field:
       description: Extra user-configurable data fields for Contacts. Only editable by admins.
