@@ -3,7 +3,7 @@ layout: post
 title: "Developing Microservices in the Cloud for the Cloud"
 slug: "developing-microservices-in-the-cloud-for-the-cloud"
 category: blog
-post_image: "/assets/images/articles/developing-microservices-in-the-cloud-for-the-cloud.jpg"
+post_image: "/assets/images/articles/developing-microservices-in-the-cloud-for-the-cloud.png"
 author: leonard
 date: 2018-08-09 13:00:00
 excerpt: "Things are rather less straightforward when developing a service oriented
