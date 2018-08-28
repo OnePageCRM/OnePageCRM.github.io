@@ -7919,17 +7919,19 @@ components:
           type: number
           example: 10.1
     Deal_stage:
-      description: The stages that deals go through
+      description: The various stages that a deal goes through in the sales pipeline.
       properties:
         stage:
-          description: >-
-            Integer between 0 and 100 indicated how close a deal is to being
-            complete.
           type: integer
+          format: int32
+          description: >-
+            Integer in the range 0 to 100 (exclusive) indicating how close a deal is to being closed
+          readOnly: true
           example: 80
         label:
-          description: A possible stage that a deal can in
           type: string
+          description: Text description for the deal stage of the deal
+          readOnly: true
           example: Negotiation
     Contacts_count:
       description: >-
@@ -8493,7 +8495,7 @@ components:
       required: false
       description: Return deals (of status `pending`) with specified deal stage
       schema:
-        type: string
+        type: integer
         example: 60
     query_user_id:
       name: user_id
