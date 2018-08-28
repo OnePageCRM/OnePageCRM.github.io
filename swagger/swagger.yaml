@@ -8168,11 +8168,11 @@ components:
           type: string
           description: Secret key of the webhook
     Reminder:
-      description: Action reminder settings
+      description: Sales action reminder email details.
       properties:
         type:
           type: string
-          description: The type of reminder
+          description: The criteria which should cause a sales reminder email to be sent
           enum:
           - never
           - every_day
@@ -8180,7 +8180,8 @@ components:
           example: new_task
         hour:
           type: integer
-          description: The reminder time. This is ignored if reminder type is 'never'
+          format: int32
+          description: The time the sales reminder time is to be sent (assuming the criteria is met)
           example: 6
     Error:
       description: Structure of response for failed request
