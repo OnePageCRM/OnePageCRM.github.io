@@ -7903,31 +7903,28 @@ components:
           - Large
     Cost_setup:
       description: >-
-        The cost field is special deal field used when deals have costs associated with them.
-        The cost field can be used for Margin-based deals. We subtract the deal cost from the deal amount to display the margin. <br>
-        You can also calculate commission based on margin instead of amount. <br>
-        The cost_field is disabled by default.
+        Settings related to deals e.g. cost, commission. Disabled by default.
       properties:
         cost_enabled:
-          description: Is the cost field enabled?
           type: boolean
+          description: Is the cost field enabled for deals?
           example: false
-        # cost_required is deprecated
         cost_required:
-          description: Is a 'cost' value required when closing a deal
+          # cost_required field is deprecated
           type: boolean
+          description: Is the cost field required when saving a deal?
           example: false
         commission_base:
-          description: How should commission be calculated?
           type: string
+          description: The base by which commission is to be calculated for deals
           enum:
           - amount
           - margin
           example: amount
         commission_percentage:
-          description: What percent of the deal amount is commission?
           type: number
-          example: 10.1
+          description: The default percentage commission is to be calculated at
+          example: 9.5
     Deal_stage:
       description: The various stages that a deal goes through in the sales pipeline.
       properties:
