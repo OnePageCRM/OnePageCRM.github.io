@@ -8357,33 +8357,6 @@ components:
           format: int32
           description: The time the sales reminder time is to be sent (assuming the criteria is met)
           example: 6
-    Error:
-      description: Structure of response for failed request
-      properties:
-        status:
-          type: integer
-          format: int32
-          description: HTTP status code of the response
-          example: 400
-        message:
-          type: string
-          description: Summary of the reason for the failure
-          example: Some generic error message
-        error_name:
-          type: string
-          description: Key used to identify which error has occurred
-          example: some_generic_error_message
-        error_message:
-          type: string
-          description: Message to be shown to the user with more details about the error
-          example: Could not find suitable error message, initiating self-destruct sequence...
-        errors:
-          description: Specific errors (commonly associated with invalid parameters)
-          properties:
-            attribute_name:
-              type: string
-              description: Reason why this parameter is invalid
-              example: '{attribute_name} is invalid or missing'
     Success:
       description: Structure of response for successful request
       properties:
@@ -8435,6 +8408,33 @@ components:
           format: int32
           description: The page number of the last page of items
           example: 1
+    Error:
+      description: Structure of response for failed request
+      properties:
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code of the response
+          example: 400
+        message:
+          type: string
+          description: Summary of the reason for the failure
+          example: Some generic error message
+        error_name:
+          type: string
+          description: Key used to identify which error has occurred
+          example: some_generic_error_message
+        error_message:
+          type: string
+          description: Message to be shown to the user with more details about the error
+          example: Could not find suitable error message, initiating self-destruct sequence...
+        errors:
+          description: Specific errors (commonly associated with invalid parameters)
+          properties:
+            attribute_name:
+              type: string
+              description: Reason why this parameter is invalid
+              example: '{attribute_name} is invalid or missing'
   parameters:
     path_user_id:
       name: user_id
