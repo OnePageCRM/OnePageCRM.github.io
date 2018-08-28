@@ -7486,99 +7486,106 @@ components:
           items:
             $ref: '#/components/schemas/Attachment'
     Settings:
-      description: User settings
+      description: Application settings for the logged API user e.g. localization and for the account e.g. deal stages.
       properties:
         reminder:
           $ref: '#/components/schemas/Reminder'
         time_zone:
-          description: Name of the timezone
           type: string
-          example: Europe/Dublin
+          description: The time zone, for the API logged user
+          example: America/Los_Angeles
         not_working_days:
+          type: string
           description: >-
-            Days that the user doesn't work. This is used when calculating
-            suggested next action day for predefined actions.
-          type: string
+            The days of the week, on which the user does not work (used to calculate the due date of promoted actions)
           enum:
-          - sunday
-          - weekend
           - none
+          - weekend
+          - sunday
           example: weekend
+          default: none
         date_format:
-          description: The format of date strings
           type: string
+          description: The logged API user's preferred format for date strings
           example: '%d/%m/%Y'
         time_with_ampm:
-          description: Use AM/PM of 24 clock for time
           type: boolean
-          example: false
+          description: Use AM/PM (12-hour clock) for the time component of dates
+          example: true
         listing_size:
-          description: When on the app, listing size is the number of actions to show at a time in the action stream
           type: integer
-          example: 25
+          format: int32
+          description: The number of items requested per page when scrolling
+          example: 10
+          default: 25
         currency:
-          description: Users Currency
           type: string
-          example: EUR
+          description: The currency for the account (only editable by admins)
+          example: USD
         currency_symbol:
-          description: Currency Symbol
           type: string
-          example: €
+          description: The currency symbol for the account (only editable by admins)
+          example: $
         separator:
-          description: Decimal point seperator for currency
           type: string
+          description: Symbol used to represent a decimal separator
           example: '.'
         delimiter:
-          description: thousands delimiter for currency
           type: string
+          description: Symbol used to represent a thousands delimiter
           example: ','
         popular_countries:
-          description: The last 5 countries that were selected when adding contacts or companies.
           type: array
+          description: The last 5 countries that were used in contact/company addresses
           items:
             type: string
+          readOnly: true
           example:
           - US
+          - UK
+          - IE
+          - AU
+          - DE
         deal_stages:
           $ref: '#/components/schemas/Deal_stage'
         default_contact_type:
-          description: ''
           type: string
+          description: Denotes whether the logged API user, thinks of sales as people or organizations
           enum:
           - company
           - individual
           example: company
         show_tidy_stream:
-          description: Should contacts with no actions be displayed in the action stream?
           type: boolean
+          description: Only show contacts with actions in the action stream?
           example: false
         show_company_fields_with_contact:
-          description: Show Organization fields in contact view
           type: boolean
+          description: Show organizational fields in contact view?
           example: true
         company_phone_enabled:
-          description: Is the company phone enabled?
           type: boolean
+          description: Is the company phone field enabled?
           example: true
         company_url_enabled:
-          description: Is the company URL enabled?
           type: boolean
+          description: Is the company URL field enabled?
           example: true
         company_address_enabled:
-          description: Is the company address enabled?
           type: boolean
+          description: Is the company address field enabled?
           example: true
         company_description_enabled:
-          description: Is the company description enabled?
           type: boolean
+          description: Is the company description field enabled?
           example: true
         send_push_notifications:
-          description: Should this user recieve push notifications?
           type: boolean
+          description: Should the user recieve push notifications?
           example: true
         clipper_beta:
-          description: Has user enabled the clipper beta feature
           type: boolean
+          description: Has the user enabled the clipper beta feature?
           example: false
     Status:
       description: >-
@@ -7925,6 +7932,7 @@ components:
           type: number
           description: The default percentage commission is to be calculated at
           example: 9.5
+          default: 10.0
     Deal_stage:
       description: The various stages that a deal goes through in the sales pipeline.
       properties:
