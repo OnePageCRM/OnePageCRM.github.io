@@ -7945,192 +7945,297 @@ components:
           example: Negotiation
     Contacts_count:
       description: >-
-        This returns the total number of contacts for each user and
-        for the whole team, arranged by how many contacts have a last name
-        beginning with each letter of the alphabet.
+        Counters showing the number of contacts per letter. The `all` object represents the entire account,
+        while the `users` array contains the same breakdown but per user.
       properties:
         all:
           type: array
           items:
             properties:
               1:
-                description: Contacts which start with a non alphabetic character are included here
                 type: integer
+                format: int32
+                description: Contacts who's name begins with a non-alphabetic character
                 example: 1
               a:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with A
                 example: 2
               b:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with B
                 example: 2
               c:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with C
                 example: 1
               d:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with D
                 example: 1
               e:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with E
                 example: 0
               f:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with F
                 example: 0
               g:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with G
                 example: 3
               h:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with H
                 example: 0
               i:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with I
                 example: 3
               j:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with J
                 example: 0
               k:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with K
                 example: 0
               l:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with L
                 example: 2
               m:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with M
                 example: 2
               n:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with N
                 example: 3
               o:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with O
                 example: 0
               p:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with P
                 example: 2
               q:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Q
                 example: 0
               r:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with R
                 example: 0
               s:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with S
                 example: 0
               t:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with T
                 example: 1
               u:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with U
                 example: 1
               v:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with V
                 example: 1
               w:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with W
                 example: 0
               x:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with X
                 example: 1
               y:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Y
                 example: 1
               z:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Z
                 example: 0
               total_count:
                 type: integer
+                format: int32
                 example: 27
         users:
           type: array
           items:
             properties:
               1:
-                description: Contacts which start with a non alphabetic character are included here
                 type: integer
+                format: int32
+                description: Contacts who's name begins with a non-alphabetic character
                 example: 1
               a:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with A
                 example: 2
               b:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with B
                 example: 2
               c:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with C
                 example: 1
               d:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with D
                 example: 1
               e:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with E
                 example: 0
               f:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with F
                 example: 0
               g:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with G
                 example: 3
               h:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with H
                 example: 0
               i:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with I
                 example: 3
               j:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with J
                 example: 0
               k:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with K
                 example: 0
               l:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with L
                 example: 2
               m:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with M
                 example: 2
               n:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with N
                 example: 3
               o:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with O
                 example: 0
               p:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with P
                 example: 2
               q:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Q
                 example: 0
               r:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with R
                 example: 0
               s:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with S
                 example: 0
               t:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with T
                 example: 1
               u:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with U
                 example: 1
               v:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with V
                 example: 1
               w:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with W
                 example: 0
               x:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with X
                 example: 1
               y:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Y
                 example: 1
               z:
                 type: integer
+                format: int32
+                description: Contacts who's name begins with Z
                 example: 0
               total_count:
                 type: integer
+                format: int32
                 example: 27
               user_id:
-                description: user id
-                type: string
-                example: 5aaa9b009007ba08c9ebaef7
+                $ref: '#/components/schemas/User/properties/id'
     Team_stream:
       description: >-
         Team stream is similar to the action Action Stream but shows the whole
