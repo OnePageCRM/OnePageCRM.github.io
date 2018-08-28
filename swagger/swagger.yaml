@@ -8302,7 +8302,7 @@ components:
         all:
           type: integer
           format: int32
-          description: Counters for the entire account (`team_stream`, `action_stream?team=true`)
+          description: Counters for the entire account (`team_stream`/`action_stream?team=true`)
           readOnly: true
           example: 10
         users:
