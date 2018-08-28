@@ -7949,6 +7949,7 @@ components:
         while the `users` array contains the same breakdown but per user.
       properties:
         all:
+          desciptions: Counters for the entire account
           type: array
           items:
             properties:
@@ -8120,6 +8121,7 @@ components:
                 readOnly: true
                 example: 27
         users:
+          desciptions: Counters per user
           type: array
           items:
             properties:
@@ -8294,28 +8296,29 @@ components:
                 $ref: '#/components/schemas/User/properties/id'
     Team_stream:
       description: >-
-        Team stream is similar to the action Action Stream but shows the whole
-        team's stream.
+        Counters showing the number of entries in the action stream. The `all` object represents the entire account,
+        while the `users` array contains the same breakdown but per user.
       properties:
+        all:
+          type: integer
+          format: int32
+          description: Counters for the entire account (`team_stream`, `action_stream?team=true`)
+          readOnly: true
+          example: 10
         users:
-          description: >-
-            List of Hash's each containing a user's id and the number of actions
-            that user has
           type: array
+          description: Counters broken down per user (`team_stream?user_id={ID}`)
+          readOnly: true
           items:
             properties:
               user_id:
-                description: User id
-                type: string
-                example: 5aba31e99007ba0f570c92a5
+                $ref: '#/components/schemas/User/properties/id'
               counts:
-                description: The number of actions that user_id has
                 type: integer
+                format: int32
+                description: The number of entries in the action steam for the user
+                readOnly: true
                 example: 5
-        all:
-          description: Total number of actions for the stream
-          type: integer
-          example: 10
     Webhook:
       description: >-
         A simple, effective way to be notified when things happen in OnePageCRM. For more information,
