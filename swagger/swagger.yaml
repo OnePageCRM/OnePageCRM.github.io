@@ -7408,68 +7408,78 @@ components:
           readOnly: true
           example: '2018-05-16T13:06:53Z'
     Email_message:
-      description: Email message
+      description: Email correspondance exchanged with a contact, captured by OnePageCRM.
       properties:
         id:
           type: string
-          description: Id of the email message
+          format: bson-id
+          description: ID of the email message
+          readOnly: true
           example: 5b07c04a9007ba0231f4dcf2
         contact_id:
           type: string
-          description: Contact id
+          format: bson-id
+          description: ID of the contact, with whom the email messaged was exchanged
           example: 5aba338b9007ba0f570c9392
         send_time:
           type: string
           format: date-time
-          description: Sent time in UTC (iso8601 format)
+          description: The time the email message was sent
           example: '2018-05-25T07:47:28Z'
         message_id:
           type: string
-          description: Id of the email message
+          description: ID of the email message
           example: CBNlTUjddeY9vF8cArqStad7QVjpeU_dqp+oJNaWX-SPVd2+_Dg@mail.gmail.com
         sender:
           type: string
-          description: sender
-          example: foo bar <foobar@gmail.com>
+          description: Email address of the sender
+          example: jane.doe@{foo.bar}
         recipients:
-          description: Email recipients
+          description: The email addresses of the recipients of the email message
           properties:
             to:
               type: array
               items:
                 type: string
                 description: to
-                example: a_fake.email@something.com
+                example: joe.bloggs@{bar.foo}
             cc:
               type: array
               items:
                 type: string
                 description: cc
-                example: b_fake.email@something.com
+                example: '{joes.boss}@{bar.foo}'
             bcc:
               type: array
               items:
                 type: string
                 description: bcc
-                example: c_fake.email@something.com
+                example: '{janes.boss}@{foo.bar}'
         url:
           type: string
-          description: url where the email is stored. This may be an empty string depending if not relevent
+          description: The URL where more details of the email are stored (otherwise empty)
+          readOnly: true
           example: 5aba31ea9007ba0f570c92d4
         subject:
           type: string
-          description: email subject
-          example: email subject
+          description: The subject of the email message
+          example: Important Sales Subject
         plain_content:
           type: string
-          description: The body of the email
+          description: The body of the email message
+          example: Important Sales Message
         status:
           type: string
-          description: email status
+          description: The status of the email message
+          readOnly: true
+          enum:
+          - waiting
+          - sent
+          - failed
           example: sent
         incoming_email:
-          type: string
-          description: emails incoming for this email address
+          type: boolean
+          description: Are there emails incoming for this email address?
           example: false
         attachments:
           type: array
