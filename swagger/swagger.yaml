@@ -7825,6 +7825,7 @@ components:
           description: >-
             A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
+          maxLength: 60 choices
           example:
           - Spring
           - Summer
@@ -7848,7 +7849,6 @@ components:
           type: string
           description: Type of the company field
           enum:
-          - anniversary
           - date
           - multi_line_text
           - multiple_choice
@@ -7865,6 +7865,7 @@ components:
           description: >-
             A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
+          maxLength: 60 choices
           example:
           - Small
           - Medium
@@ -7887,7 +7888,6 @@ components:
           description: Type of the deal field
           type: string
           enum:
-          - anniversary
           - date
           - multi_line_text
           - multiple_choice
@@ -7904,6 +7904,7 @@ components:
           description: >-
             A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
+          maxLength: 60 choices
           example:
           - Small
           - Medium
