@@ -27,7 +27,7 @@ info:
 
     <br>
     To send and receive <code>XML</code> or <code>JSON</code> you need to include the correct
-    <code>content-type</code> header and replace the <code>.format</code> in the url.
+    <code>content-type</code> header and replace the <code>.format</code> in the URL.
 
     <br>
     <table class="table table-striped table-bordered">
@@ -3025,7 +3025,7 @@ paths:
         This request will return all the information needed to upload a file to S3. <br> <br>
 
         Steps to upload a file to S3: <br>
-        -> Make a `POST` request to the `url` in the response (to this request). <br>
+        -> Make a `POST` request to the `URL` in the response (to this request). <br>
         -> Include all the params returned as part of the `fields` construct in the response. <br>
         -> These should be sent as headers of the upload request to S3. <br>
         -> Most can be sent as they are, but the `key` field must be constructed. <br>
@@ -6599,6 +6599,7 @@ components:
           description: List of titles which can be used to prefix the names of contacts
           items:
             type: string
+          maxLength: 7 chars
           readOnly: true
           example:
           - Mr
@@ -6680,15 +6681,21 @@ components:
       properties:
         id:
           type: string
-          description: ID of the contact (read only)
+          format: bson-id
+          description: ID of the contact
+          readOnly: true
           example: 5aba31ea9007ba0f570c92d4
         first_name:
           type: string
           description: First name of the contact
+          maxLength: 25 chars
+          readOnly: true
           example: Joe
         last_name:
           type: string
           description: Last name of the contact
+          maxLength: 25 chars
+          readOnly: true
           example: Bloggs
         job_title:
           type: string
@@ -6696,6 +6703,7 @@ components:
           example: Engineer
         company_id:
           type: string
+          format: bson-id
           description: ID of the company, to which the contact belongs
           example: 5aba31ea9007ba0f570c92d5
         company_name:
@@ -6704,80 +6712,102 @@ components:
           example: Morgan's Forensic Lab
         company_size:
           type: integer
-          description: Number of contacts within the contact's company (read only)
+          format: int32
+          description: Number of contacts within the contact's company
+          readOnly: true
           example: 1
         owner_id:
           type: string
-          description: ID of the user who owns the contact
+          format: bson-id
+          description: ID of the user, to whom the contact belongs
           example: 5aba31e99007ba0f570c92a5
         status:
           type: string
           description: Status of the contact
           example: Prospect
         status_id:
-          $ref: '#/components/schemas/Status/properties/id'
+          type: string
+          format: bson-id
+          description: ID of the status of the contact
+          example: prospect
         tags:
           type: array
           items:
             $ref: '#/components/schemas/Tag/properties/name'
         starred:
           type: boolean
-          description: Starred status of the contact
+          description: Is the contact starred?
           example: false
         background:
           type: string
           description: Background infomation about the contact
+          maxLength: 10240 chars
           example: >-
             I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
             solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon,
             Arizona and Utah for capital building projects. Her current supplier is crazy expensive! I've asked
             to be able to tender for their next order.
         lead_source_id:
-          $ref: '#/components/schemas/Lead_source/properties/id'
+          type: string
+          format: bson-id
+          description: ID of the lead source of the contact
+          example: advertisement
         pending_deal:
           type: boolean
-          description: True if contact has one or more pending deals (read only)
+          description: Does the contact have one or more pending deals?
+          readOnly: true
           example: true
         total_pendings:
           type: number
-          description: The total value of all pending deals for the contact (read only)
+          description: The total value of all pending deals for the contact
+          readOnly: true
           example: 1200.99
         total_deals_count:
-          type: string
-          description: Number of deals for the contact (read only)
+          type: integer
+          format: int32
+          description: Number of deals for the contact
+          readOnly: true
           example: 3
         photo_url:
           type: string
-          description: URL of the contact's photo (read only)
+          description: URL of the contact's photo
+          readOnly: true
           example: https://{foo.bar}/joe-bloggs.jpg
         custom_fields:
-          description: A list of extra data fields for the contact
           type: array
           items:
             $ref: '#/components/schemas/Custom_field'
         address_list:
           type: array
-          description: ''
+          maxLength: 1 address
           items:
-            $ref: '#/components/schemas/Company/properties/address'
+            $ref: '#/components/schemas/Address'
         google_contacts_data:
           description: The google contacts data associated with this contact
+          readOnly: true
           properties:
             account_email:
               type: string
               description: Google contacts email
-              example: jane.doe@{googles-mail-service}.com
+              readOnly: true
+              example: jane.doe@{googles-mail-service}
             id:
               type: string
               description: Google contact id
+              readOnly: true
               example: 342c5b5c08d4b0b2
             saved_at:
               type: integer
+              format: unix-timestamp
               description: Time the contact was saved to google
+              readOnly: true
               example: 1522840153
         letter:
           type: string
           description: The first letter of the contacts last name
+          maxLength: 1 char
+          minLength: 1 char
+          readOnly: true
           example: b
         url:
           type: array
@@ -6786,12 +6816,13 @@ components:
             properties:
               type:
                 type: string
-                description: The type of url
+                description: The type of URL
+                enum: [website, blog, twitter, linkedin, xing, facebook, google_plus, other]
                 example: linkedin
               value:
                 type: string
-                description: The url associated with the contact
-                example: http://www.linkedin.com/{some.user}
+                description: The URL associated with the contact
+                example: https://www.linkedin.com/{joe.bloggs}
         phones:
           type: array
           description: Phone numbers associated with the contact
@@ -6800,11 +6831,12 @@ components:
               type:
                 type: string
                 description: The type of phone number
+                enum: [work, mobile, home, direct, fax, skype, company, other]
                 example: work
               value:
                 type: string
-                description: Phone number
-                example: 012 345 6789
+                description: The phone number associated with the contact
+                example: (912) 644-1770
         emails:
           type: array
           description: Email addresses associated with the contact
@@ -6813,31 +6845,35 @@ components:
               type:
                 type: string
                 description: The type of email address
+                enum: [work, home, other]
                 example: work
               value:
                 type: string
-                description: Email address
+                description: The email address associated with the contact
                 example: joe.bloggs@{foo.bar}
         sales_closed_for:
           type: string
-          description: A list of user ID's that closed sales for this contacts. (read-only)
-          example: 5aba31e99007ba0f570c92a5
+          description: A list of user IDs, for whom the sales cycle is closed
+          readOnly: true
+          example: [ 5aba31e99007ba0f570c12f7 ]
         closed_sales:
           type: array
-          description: A list of closed sales objects. (read-only)
+          description: A list of closed sales objects
           items:
             properties:
               user_id:
-                description: Id of the user that closed the sales cycle
                 type: string
-                example: 5aba31e99007ba0f570c92a5
+                format: bson-id
+                description: ID of the user, for whom the sales cycle is closed
+                example: 5aba31e99007ba0f570c12f7
               closed_at:
-                description: timestamp that the sales cycle was closed
                 type: integer
+                format: unix-timestamp
+                description: Time that the sales cycle was closed
                 example: 1524818902
               comment:
-                description: Closing comment
                 type: string
+                description: An optional message detailing why the sales cycle was closed
                 example:
         created_at:
           type: string
@@ -6854,6 +6890,7 @@ components:
         title:
           type: string
           description: The title of the contact
+          enum: [Mr, Mrs, Ms]
           example: Mr
     Company:
       description: >-
@@ -7385,6 +7422,29 @@ components:
           description: Index of the call (in the results set)
           readOnly: true
           example: 4
+    Address:
+      description: The physical address of a contact or company.
+      properties:
+        address:
+          type: string
+          description: Property name/number and street name
+          example: Unit 5, Business Innovation Centre
+        city:
+          type: string
+          description: Name of the city
+          example: Upper Newcastle
+        state:
+          type: string
+          description: Name of the state
+          example: Galway
+        zip_code:
+          type: string
+          description: Zip code
+          example: H91 Y0T0
+        country_code:
+          type: string
+          description: ISO-3166 country code
+          example: IE
     Attachment:
       description: >-
         Additional files associated with Deals, Notes or Calls. They can be uploaded and stored in S3,
