@@ -8347,7 +8347,7 @@ components:
           type: string
           description: Secret key of the webhook
     Reminder:
-      description: Sales action reminder email details.
+      description: Details about the sales action reminder email.
       properties:
         type:
           type: string
@@ -8363,21 +8363,24 @@ components:
           description: The time the sales reminder time is to be sent (assuming the criteria is met)
           example: 6
     Success:
-      description: Structure of response for successful request
+      description: Structure of response for successful request.
       properties:
         status:
           type: integer
           format: int32
           description: Response code
+          readOnly: true
           example: 0
         message:
           type: string
           description: Response message
+          readOnly: true
           example: OK
         timestamp:
           type: integer
           format: unix-timestamp
           description: Response time
+          readOnly: true
           example: 1528373119
         data:
           type: object
@@ -8391,54 +8394,64 @@ components:
             max_page:
               $ref: '#components/schemas/Page_data/properties/max_page'
     Page_data:
-      description: Pagination meta-data related to response
+      description: Pagination meta-data related to response.
       properties:
         total_count:
           type: integer
           format: int32
           description: Total number of items
+          readOnly: true
           example: 1
         page:
           type: integer
           format: int32
           description: Current page number
+          readOnly: true
           example: 1
         per_page:
           type: integer
           format: int32
           description: Number of items returned in each page
+          readOnly: true
           example: 10
         max_page:
           type: integer
           format: int32
           description: The page number of the last page of items
+          readOnly: true
           example: 1
     Error:
-      description: Structure of response for failed request
+      description: Structure of response for failed request.
       properties:
         status:
           type: integer
           format: int32
           description: HTTP status code of the response
+          readOnly: true
           example: 400
         message:
           type: string
           description: Summary of the reason for the failure
+          readOnly: true
           example: Some generic error message
         error_name:
           type: string
           description: Key used to identify which error has occurred
+          readOnly: true
           example: some_generic_error_message
         error_message:
           type: string
           description: Message to be shown to the user with more details about the error
+          readOnly: true
           example: Could not find suitable error message, initiating self-destruct sequence...
         errors:
           description: Specific errors (commonly associated with invalid parameters)
+          readOnly: true
           properties:
             attribute_name:
               type: string
               description: Reason why this parameter is invalid
+              readOnly: true
               example: '{attribute_name} is invalid or missing'
   parameters:
     path_user_id:
