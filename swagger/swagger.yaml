@@ -6479,62 +6479,77 @@ components:
   schemas:
     Bootstrap:
       description: >-
-        Bootstrap is a general wrapper around useful user details including user settings, properties and account details
+        Bootstrap is a general wrapper around useful information you might need to interact with your
+        OnePageCRM account using the API.
       properties:
         user_id:
           type: string
-          description: Id of the user
+          format: bson-id
+          description: ID of the logged API user
+          readOnly: true
           example: 5aba31e99007ba0f570c12f7
         auth_key:
           type: string
-          description: Encoded string used to sign API requests.
+          description: Key used to sign API requests as a means of authentication
+          readOnly: true
           example: c+g0Y3VGHdIztKbHcjVcOuwf34EmFlXI9Qot5hTvb2F=
         user:
           $ref: '#/components/schemas/User'
+          description: The logged API user
+          readOnly: true
         team:
           type: array
-          description: An array of Users objects that are on this team
+          description: List of users who make up the rest of the logged API user's team
+          readOnly: true
           items:
             $ref: '#/components/schemas/User'
         account_type:
           type: string
-          description: >-
-            Which type of account the user has. This will be one of: free, pro
-            or trial.
+          description: Descriptor for the type of the logged API user's account
           enum:
           - pro
           - trial
           - free
+          readOnly: true
           example: pro
         settings:
           $ref: '#/components/schemas/Settings'
+          description: Settings for the logged API user
+          readOnly: true
         cost_setup:
           $ref: '#/components/schemas/Cost_setup'
+          description: Cost setup for the logged API user
+          readOnly: true
         custom_fields:
-          description: A list of custom field objects that are avaliable for the account
           type: array
+          description: List of custom fields for the logged API user's account
+          readOnly: true
           items:
             $ref: '#/components/schemas/Custom_field'
         company_fields:
-          description: A list of company fields objects that are avaliable for the account
           type: array
+          description: List of company fields for the logged API user's account
+          readOnly: true
           items:
             $ref: '#/components/schemas/Company_field'
         deal_fields:
-          description: A list of deal field objects that are avaliable for the account
           type: array
+          description: List of deal fields for the logged API user's account
+          readOnly: true
           items:
             $ref: '#/components/schemas/Deal_field'
         filters:
-          description: An array of Filters
           type: array
+          description: List of custom filters for the logged API's user's account
+          readOnly: true
           items:
             $ref: '#/components/schemas/Filter'
         call_results:
-          description: A list of call result types
           type: array
+          description: List of call results for the logged API's user's account
           items:
             type: string
+          readOnly: true
           example:
             interested: Interested
             not_interested: Not interested
@@ -6542,10 +6557,11 @@ components:
             no_answer: No answer
             other: Other
         call_results_order:
-          description: An ordered list of call result types
           type: array
+          description: Order for the list of call results for the logged API's user's account
           items:
             type: string
+          readOnly: true
           example:
           - interested
           - not_interested
@@ -6553,32 +6569,37 @@ components:
           - no_answer
           - other
         next_action_dates:
-          description: Users quick select options for next action dates
-          properties:
-            number:
-              description: Number of periods
-              type: integer
-              example: 5
-            period:
-              description: Period type
-              type: string
-              enum:
-              - days
-              - weeks
-              - months
-              example: days
-        predefined_actions:
-          description: an array of predefined actions
           type: array
+          description: Quick date options for ease of date selection when creating new actions
+          readOnly: true
+          items:
+            properties:
+              number:
+                type: integer
+                format: int32
+                description: Number of periods
+                readOnly: true
+                example: 5
+              period:
+                type: string
+                description: Period type
+                enum:
+                - days
+                - weeks
+                - months
+                readOnly: true
+                example: days
+        predefined_actions:
+          type: array
+          readOnly: true
           items:
             $ref: '#/components/schemas/Predefined_action'
         contact_titles:
-          description: >-
-            List of titles which can be chosen from. Only returned if the
-            account owner has title_enabled set.
           type: array
+          description: List of titles which can be used to prefix the names of contacts
           items:
             type: string
+          readOnly: true
           example:
           - Mr
           - Mrs
@@ -6644,16 +6665,14 @@ components:
           example: IE
         bcc_email:
           type: string
-          description: >-
-            BCC email dropbox address of the user (you only see your own BCC email address)
+          description: BCC email dropbox address of the user (you only see your own)
           readOnly: true
           example: 5abg31e93007ba0f470c92q6@users.onepagecrm.com
         google_contacts_email:
           type: string
-          description: >-
-            Google Contacts email address of the user (you only see your own Google Contacts email address)
+          description: Google Contacts email address of the user (you only see your own)
           readOnly: true
-          example: jane.doe@{googles-mail-service}.com
+          example: jane.doe@{googles.mail.service}
     Contact:
       description: >-
         Information about the people you are actively trying to sell to, and related sub-resources like
