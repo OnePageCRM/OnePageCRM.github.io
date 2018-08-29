@@ -8337,7 +8337,8 @@ components:
           example: 5417f8291da41712270G0042
         name:
           type: string
-          description: Name of the webhook (max 140 chars)
+          description: Name of the webhook
+          maxLength: 140 chars
           example: Awesome integration
         hook_url:
           type: string
@@ -8346,6 +8347,7 @@ components:
         secretkey:
           type: string
           description: Secret key of the webhook
+          example:
     Reminder:
       description: Details about the sales action reminder email.
       properties:
