@@ -7251,10 +7251,9 @@ components:
           example: 5ae06ef9d55673108fe8877f
         text:
           type: string
-          description: >-
-            Extra details related to the note. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
-          example: >-
-            I met Jane Doe at the ABC conference. She's interested in hearing about XYZ.
+          description: Extra details related to the note(supports `[b]bold[/b]` and `[i]italic[/i]` formatting)
+          maxLength: 7168 chars
+          example: I met Jane Doe at the ABC conference. She's interested in hearing about XYZ.
         date:
           type: string
           format: date
@@ -7267,9 +7266,9 @@ components:
           example:
         author:
           type: string
-          description: Author of the note
+          description: Shortened name of the creator of the note
           example: Jane D.
-          default: Shortened name of logged API user
+          default: Logged API user
         attachments:
           type: array
           readOnly: true
@@ -7305,8 +7304,8 @@ components:
           example: 5ae06ef9d55673108fe8877f
         text:
           type: string
-          description: >-
-            Extra details related to the call. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
+          description: Extra details related to the call (supports `[b]bold[/b]` and `[i]italic[/i]` formatting)
+          maxLength: 7168 chars
           example: Mary is interested in coming into the office on Tuesday.
         call_result:
           type: string
@@ -7340,9 +7339,9 @@ components:
           example:
         author:
           type: string
-          description: Author of the call
+          description: Shortened name of the creator of the call
           example: Jane D.
-          default: Shortened name of logged API user
+          default: Logged API user
         attachments:
           type: array
           readOnly: true
