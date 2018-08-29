@@ -7071,9 +7071,9 @@ components:
           type: string
           example: Solar panels
         text:
-          description: >-
-            Extra notes related to the deal. Supports `[b]bold[/b]` and `[i]italic[/i]` formatting (max 7168 chars)
           type: string
+          description: Extra notes related to the deal (supports `[b]bold[/b]` and `[i]italic[/i]` formatting)
+          maxLength: 7168 chars
           example: Fingers crossed!
         stage:
           description: >-
@@ -7172,26 +7172,14 @@ components:
               value:
                 type: string
                 description: Value for the extra deal field
-                example: big
+                example: Large
         author:
-          description: The user who created the deal
           type: string
+          description: Shortened name of the creator of the deal
           example: Jane D.
-          default: Shortened name of logged API user
-        created_at:
-          type: string
-          format: date-time
-          description: Creation time of the deal
-          readOnly: true
-          example: '2018-03-15T16:10:45Z'
-        modified_at:
-          type: string
-          format: date-time
-          description: Last modification time of the deal
-          readOnly: true
-          example: '2018-03-15T16:10:45Z'
+          default: Logged API user
         has_related_notes:
-          description: True if the deal has related notes
+          description: Does the deal have related notes?
           type: boolean
           readOnly: true
           example: true
@@ -7201,7 +7189,7 @@ components:
           items:
             $ref: '#/components/schemas/Attachment'
         contact_info:
-          description: Information about the contact, to whom the deal belongs (read only)
+          description: Information about the contact, to whom the deal belongs (read only).
           readOnly: true
           properties:
             contact_name:
@@ -7215,7 +7203,7 @@ components:
               readOnly: true
               example: Big Company Inc.
         owner:
-          description: Information about the deal owner (read only)
+          description: Information about the deal owner (read only).
           readOnly: true
           properties:
             id:
@@ -7233,6 +7221,18 @@ components:
               description: Email address of the deal owner
               readOnly: true
               example: joe.bloggs@{foo.bar}
+        created_at:
+          type: string
+          format: date-time
+          description: Creation time of the deal
+          readOnly: true
+          example: '2018-03-15T16:10:45Z'
+        modified_at:
+          type: string
+          format: date-time
+          description: Last modification time of the deal
+          readOnly: true
+          example: '2018-03-15T16:10:45Z'
     Note:
       description: >-
         Allow you to keep track of additional information related to your contacts. Notes can include any
