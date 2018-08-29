@@ -6985,11 +6985,12 @@ components:
         contact_id:
           type: string
           format: bson-id
-          description: ID of the contact, for whom the action is associated
+          description: ID of the contact, with whom the action is associated
           example: 5aaa9b009007ba08c9ebaef7
         text:
           type: string
-          description: The main text/description of the action (max 140 chars)
+          description: The main text/description of the action
+          maxLength: 140 chars
           example: '#1 Email Jane introducing our organization'
         status:
           type: string
@@ -7002,7 +7003,7 @@ components:
           - queued
           - queued_with_date
           - done
-          example: date
+          example: date_time
           default: date
         date:
           type: string
@@ -7024,7 +7025,7 @@ components:
           example: 2
         done:
           type: boolean
-          description: True if the action has been completed
+          description: Has the action been marked as complete?
           readOnly: true
           example: false
         done_at:
