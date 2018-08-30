@@ -981,13 +981,13 @@ paths:
                             deal_field:
                               $ref: '#/components/schemas/Deal_field'
                             total_count:
-                              $ref: '#components/schemas/Page_data/properties/total_count'
+                              $ref: '#/components/schemas/Page_data/properties/total_count'
                             page:
-                              $ref: '#components/schemas/Page_data/properties/page'
+                              $ref: '#/components/schemas/Page_data/properties/page'
                             per_page:
-                              $ref: '#components/schemas/Page_data/properties/per_page'
+                              $ref: '#/components/schemas/Page_data/properties/per_page'
                             max_page:
-                              $ref: '#components/schemas/Page_data/properties/max_page'
+                              $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -1315,13 +1315,13 @@ paths:
                             custom_field:
                               $ref: '#/components/schemas/Custom_field'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -1521,13 +1521,13 @@ paths:
                             company_field:
                               $ref: '#/components/schemas/Company_field'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -1924,13 +1924,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -2258,13 +2258,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -2683,13 +2683,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -3287,13 +3287,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -3746,13 +3746,13 @@ paths:
                             filter:
                               $ref: '#/components/schemas/Filter'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -3792,13 +3792,13 @@ paths:
                       filter:
                         $ref: '#/components/schemas/Filter'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
                       contacts:
                         type: array
                         items:
@@ -3853,13 +3853,13 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4014,13 +4014,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4077,13 +4077,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4135,13 +4135,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4193,13 +4193,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4268,13 +4268,13 @@ paths:
                                   items:
                                     example: 5aba31e99007ba0f570c92ab
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4555,13 +4555,13 @@ paths:
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
                       lead_sources:
                         type: array
                         items:
@@ -5295,13 +5295,13 @@ paths:
                             action:
                               $ref: '#/components/schemas/Action'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -5412,13 +5412,13 @@ paths:
                             deal:
                               $ref: '#/components/schemas/Deal'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -5546,13 +5546,13 @@ paths:
                             note:
                               $ref: '#/components/schemas/Note'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -5656,13 +5656,13 @@ paths:
                             call:
                               $ref: '#/components/schemas/Call'
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -5763,13 +5763,13 @@ paths:
                             email_message:
                               $ref: "#/components/schemas/Email_message"
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6264,13 +6264,13 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6351,13 +6351,13 @@ paths:
                             contact:
                               $ref: "#/components/schemas/Contact"
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -6397,13 +6397,13 @@ paths:
                         items:
                           $ref: "#/components/schemas/Webhook"
                       total_count:
-                        $ref: '#components/schemas/Page_data/properties/total_count'
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
-                        $ref: '#components/schemas/Page_data/properties/page'
+                        $ref: '#/components/schemas/Page_data/properties/page'
                       per_page:
-                        $ref: '#components/schemas/Page_data/properties/per_page'
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
-                        $ref: '#components/schemas/Page_data/properties/max_page'
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
           $ref: "#/components/responses/400"
         401:
@@ -8468,13 +8468,13 @@ components:
           type: object
           properties:
             total_count:
-              $ref: '#components/schemas/Page_data/properties/total_count'
+              $ref: '#/components/schemas/Page_data/properties/total_count'
             page:
-              $ref: '#components/schemas/Page_data/properties/page'
+              $ref: '#/components/schemas/Page_data/properties/page'
             per_page:
-              $ref: '#components/schemas/Page_data/properties/per_page'
+              $ref: '#/components/schemas/Page_data/properties/per_page'
             max_page:
-              $ref: '#components/schemas/Page_data/properties/max_page'
+              $ref: '#/components/schemas/Page_data/properties/max_page'
     Page_data:
       description: Pagination meta-data related to response.
       properties:
