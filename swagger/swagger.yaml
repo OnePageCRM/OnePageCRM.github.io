@@ -408,6 +408,8 @@ paths:
                     $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
+        401:
+          $ref: '#/components/responses/401'
   /logout:
     post:
       summary: Log the user out of all applications (including mobile)
@@ -422,6 +424,8 @@ paths:
           $ref: '#/components/responses/201'
         400:
           $ref: '#/components/responses/400'
+        401:
+          $ref: '#/components/responses/401'
   /change_auth_key:
     post:
       summary: Invalidate auth key and return a new auth key
@@ -449,6 +453,10 @@ paths:
                         description: New Api Key
                         type: string
                         example: wbJBo+odEikiDOjdnL+P+0fl+Dbgk84747jFtyOZghs=
+        400:
+          $ref: '#/components/responses/400'
+        401:
+          $ref: '#/components/responses/401'
   /users:
     get:
       summary: Get the list of users (for the logged API user's account)
@@ -8511,39 +8519,6 @@ components:
           description: The page number of the last page of items
           readOnly: true
           example: 1
-    Error:
-      description: Structure of response for failed request.
-      properties:
-        status:
-          type: integer
-          format: int32
-          description: HTTP status code of the response
-          readOnly: true
-          example: 400
-        message:
-          type: string
-          description: Summary of the reason for the failure
-          readOnly: true
-          example: Some generic error message
-        error_name:
-          type: string
-          description: Key used to identify which error has occurred
-          readOnly: true
-          example: some_generic_error_message
-        error_message:
-          type: string
-          description: Message to be shown to the user with more details about the error
-          readOnly: true
-          example: Could not find suitable error message, initiating self-destruct sequence...
-        errors:
-          description: Specific errors (commonly associated with invalid parameters)
-          readOnly: true
-          properties:
-            attribute_name:
-              type: string
-              description: Reason why this parameter is invalid
-              readOnly: true
-              example: '{attribute_name} is invalid or missing'
   parameters:
     path_user_id:
       name: user_id
@@ -9325,7 +9300,37 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            properties:
+              status:
+                type: integer
+                format: int32
+                description: HTTP status code of the response
+                readOnly: true
+                example: 400
+              message:
+                type: string
+                description: Summary of the reason for the failure
+                readOnly: true
+                example: Some generic error message
+              error_name:
+                type: string
+                description: Key used to identify which error has occurred
+                readOnly: true
+                example: some_generic_error_message
+              error_message:
+                type: string
+                description: Message to be shown to the user with more details about the error
+                readOnly: true
+                example: Could not find suitable error message, initiating self-destruct sequence...
+              errors:
+                description: Specific errors (commonly associated with invalid parameters)
+                readOnly: true
+                properties:
+                  attribute_name:
+                    type: string
+                    description: Reason why this parameter is invalid
+                    readOnly: true
+                    example: '{attribute_name} is invalid or missing'
     401:
       description: >-
         Unauthorized. Authorization data is absent, invalid or expired.
@@ -9339,21 +9344,26 @@ components:
                 type: integer
                 format: int32
                 description: HTTP status code of the response
+                readOnly: true
                 example: 401
               message:
                 type: string
                 description: Summary of the reason for the failure
+                readOnly: true
                 example: Authorization data not found
               error_name:
                 type: string
                 description: Key used to identify which error has occurred
+                readOnly: true
                 example: authorization_data_not_found
               error_message:
                 type: string
                 description: Message to be shown to the user with more details about the error
+                readOnly: true
                 example: Cannot find suitable authorization data or data provided is not complete.
               errors:
                 type: object
+                readOnly: true
     403:
       description: >-
         Forbidden. Issued when user is logged in, but does not have permission
