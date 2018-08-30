@@ -6898,7 +6898,7 @@ components:
         title:
           type: string
           description: The title of the contact
-          enum: [Mr, Mrs, Ms]
+          enum: [ Mr, Mrs, Ms ]
           example: Mr
     Company:
       description: >-
@@ -6908,11 +6908,13 @@ components:
       properties:
         id:
           type: string
-          description: id of the company
+          format: bson-id
+          description: ID of the company
+          readOnly: true
           example: 5aba31e99007ba0f570c92ac
         name:
           type: string
-          description: name of the company
+          description: Name of the company
           example: Crockett & Tubbs Security
         description:
           type: string
@@ -6921,11 +6923,11 @@ components:
         phone:
           type: string
           description: Phone number of the company
-          example: 012 345 6789
+          example: (912) 644-1771
         url:
           type: string
-          description: Company URL
-          example: http://example.com
+          description: URL of the company
+          example: https://{foo.bar}
         company_fields:
           type: array
           items:
@@ -6943,7 +6945,8 @@ components:
           example: true
         synced_status_id:
           type: boolean
-          description: The status that all contacts within this company are synced to
+          format: bson-id
+          description: ID of the status, that all contacts within this company are synced to
           example: 5aaa9b039007ba08c9ebaf0a
         syncing_tags:
           type: boolean
@@ -6951,30 +6954,12 @@ components:
           example: false
         synced_tags:
           type: array
-          description: >-
-            The tags that all contacts within this company share.
+          description: Tags that all contacts within this company share
           items:
-            properties:
-              tag:
-                $ref: "#/components/schemas/Tag"
+            type: string
+          example: [ Java, Android, iOS ]
         address:
-          description: The company address
-          properties:
-            address:
-              type: string
-              example: 123 Fake street
-            city:
-              type: string
-              example: Big City
-            state:
-              type: string
-              example: Awesome State
-            zip_code:
-              type: string
-              example: 0123456
-            country_code:
-              type: string
-              example: IE
+          $ref: '#/components/schemas/Address'
         created_at:
           type: string
           format: date-time
@@ -6989,25 +6974,34 @@ components:
           example: '2018-05-16T11:52:09Z'
         contacts_count:
           type: integer
+          format: int32
           description: Number of contacts in this company
-          example: 4
+          readOnly: true
+          example: 3
         won_deals_count:
           type: integer
+          format: int32
           description: Number of deals closed with contacts in this company
-          example: 14
+          readOnly: true
+          example: 5
         total_won_amount:
-          type: integer
+          type: number
           description: The total value of the won deals with contacts in this company
-          example: 2650
-        total_pending_amount:
+          readOnly: true
+          example: 999.99
+        pending_deals_count:
           type: integer
-          description: The total value of the pending deals with contacts in this company
-          example: 5800
-        total_pending_count:
-          type: integer
+          format: int32
           description: Number of the pending deals with contacts in this company
-          example: 5800
+          readOnly: true
+          example: 1
+        total_pending_amount:
+          type: number
+          description: The total value of the pending deals with contacts in this company
+          readOnly: true
+          example: 99.99
         contacts:
+          # TODO: inspect nesting below!?
           type: array
           items:
             properties:
@@ -7030,8 +7024,10 @@ components:
               company:
                 $ref: '#/components/schemas/Company'
         pending_deals:
+          # TODO: inspect nesting below!?
           type: array
           items:
+            type: object
             properties:
               deal:
                 $ref: '#/components/schemas/Deal'
