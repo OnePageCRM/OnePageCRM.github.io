@@ -6266,11 +6266,26 @@ paths:
                   data:
                     properties:
                       contacts:
-                        type: "array"
+                        type: array
                         items:
                           properties:
                             contact:
                               $ref: "#/components/schemas/Contact"
+                            next_actions:
+                              type: array
+                              items:
+                                $ref: "#/components/schemas/Action"
+                            next_action:
+                              $ref: "#/components/schemas/Action"
+                            queued_actions:
+                              type: array
+                              items:
+                                $ref: "#/components/schemas/Action"
+                            next_action_conflicts:
+                              type: array
+                              items: {} # TODO: remove null from array ??
+                            company:
+                              $ref: "#/components/schemas/Company"
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
