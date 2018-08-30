@@ -6928,6 +6928,8 @@ components:
           type: string
           description: URL of the company
           example: https://{foo.bar}
+        address:
+          $ref: '#/components/schemas/Address'
         company_fields:
           type: array
           items:
@@ -6958,20 +6960,6 @@ components:
           items:
             type: string
           example: [ Java, Android, iOS ]
-        address:
-          $ref: '#/components/schemas/Address'
-        created_at:
-          type: string
-          format: date-time
-          description: Creation time of the company
-          readOnly: true
-          example: '2018-05-16T11:52:09Z'
-        modified_at:
-          type: string
-          format: date-time
-          description: Last modification time of the company
-          readOnly: true
-          example: '2018-05-16T11:52:09Z'
         contacts_count:
           type: integer
           format: int32
@@ -7001,9 +6989,11 @@ components:
           readOnly: true
           example: 99.99
         contacts:
-          # TODO: inspect nesting below!?
+          description: List of contacts in the comapny
+          maxLength:
           type: array
           items:
+            type: object
             properties:
               contact:
                 $ref: '#/components/schemas/Contact'
@@ -7017,20 +7007,28 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/Action'
-              queued_action_conflicts:
+              next_action_conflicts:
                 type: array
-                items:
-                  $ref: '#/components/schemas/Action'
-              company:
-                $ref: '#/components/schemas/Company'
+                items: {} # TODO define schema
         pending_deals:
-          # TODO: inspect nesting below!?
           type: array
           items:
             type: object
             properties:
               deal:
                 $ref: '#/components/schemas/Deal'
+        created_at:
+          type: string
+          format: date-time
+          description: Creation time of the company
+          readOnly: true
+          example: '2018-05-16T11:52:09Z'
+        modified_at:
+          type: string
+          format: date-time
+          description: Last modification time of the company
+          readOnly: true
+          example: '2018-05-16T11:52:09Z'
     Action:
       description: >-
         Completable tasks related to Contacts. ASAP first, then dated actions ordered by due date (overdue first),
