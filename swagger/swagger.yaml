@@ -2155,13 +2155,6 @@ paths:
             schema:
               properties:
                 # TODO: validate fields to be sent here since sub-endpoint!?
-                contact_id:
-                  type: string
-                  format: bson-id
-                  description: Contact to be associated with the attachment
-                  nullable: false
-                  required: true
-                  example: 5ae06ef9d55673108fe8877f
                 reference_id:
                   type: string
                   format: bson-id
@@ -2173,11 +2166,10 @@ paths:
                   enum: [ deal, note, call ]
                   required: true
                   example: note
+                contact_id:
+                  $ref: '#/components/schemas/Note/properties/contact_id'
                 name:
-                  type: string
-                  description: Name of the attachment file
-                  required: true
-                  example: mario.jpg
+                  $ref: '#/components/schemas/Attachment/properties/filename'
                 key:
                   type: string
                   description: >-
@@ -2185,11 +2177,7 @@ paths:
                   required: true
                   example: 5ae06ef9d55673108fe8877f/1530520812224/mario.jpg
                 size:
-                  type: integer
-                  format: int32
-                  required: true
-                  description: Size of attachment file file (in bytes)
-                  example: 3841
+                  $ref: '#/components/schemas/Attachment/properties/size'
                 link_type:
                   type: string
                   description: Type of external link (for external `storage_provider`s)
