@@ -6733,7 +6733,8 @@ components:
         tags:
           type: array
           items:
-            $ref: '#/components/schemas/Tag/properties/name'
+            type: string
+          example: [ Java, Android, iOS ]
         starred:
           type: boolean
           description: Is the contact starred?
@@ -6776,7 +6777,14 @@ components:
         custom_fields:
           type: array
           items:
-            $ref: '#/components/schemas/Custom_field'
+            type: object
+            properties:
+              custom_field:
+                $ref: '#/components/schemas/Custom_field'
+              value:
+                type: string
+                description: Value for the custom field
+                example: Summer
         address_list:
           type: array
           maxLength: 1 address
@@ -6921,9 +6929,14 @@ components:
         company_fields:
           type: array
           items:
+            type: object
             properties:
               company_field:
                 $ref: '#/components/schemas/Company_field'
+              value:
+                type: string
+                description: Value for the company field
+                example: Large
         syncing_status:
           type: boolean
           description: Should all contacts in this company share the same status?
@@ -7223,12 +7236,13 @@ components:
         deal_fields:
           type: array
           items:
+            type: object
             properties:
               deal_field:
                 $ref: '#/components/schemas/Deal_field'
               value:
                 type: string
-                description: Value for the extra deal field
+                description: Value for the deal field
                 example: Large
         author:
           type: string
