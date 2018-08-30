@@ -1959,9 +1959,8 @@ paths:
       parameters: []
       requestBody:
         description: >-
-          'contact_id' and 'text' are required when creating a note. If a date
-          isn't provided, it will default to today's date. linked_deal_id is an
-          optional param
+          The fields `contact_id` and `text` are required. <br>
+          If `date` isn't provided, it will default to today. <br>
         required: true
         content:
           application/json:
@@ -1973,10 +1972,18 @@ paths:
                   $ref: '#/components/schemas/Note/properties/text'
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
+                linked_deal_id:
+                  type: string
+                  format: bson-id
+                  required: false
+                  example: ''
                 user_ids_to_notify:
                   type: array
                   description: A list of user IDs to notify
+                  required: false
                   items:
+                    type: string
+                    format: bson-id
                     example: 5aba31e99007ba0f570c12f7
       responses:
         201:
@@ -2053,9 +2060,8 @@ paths:
       - $ref: '#/components/parameters/path_note_id'
       requestBody:
         description: >-
-          'contact_id' and 'text' are required when create a note. If a date
-          isn't provided, it will default to today's date. linked_deal_id is an
-          optional param
+          The fields `contact_id` and `text` are required. <br>
+          If `date` isn't provided, it will default to today. <br>
         required: true
         content:
           application/json:
@@ -2067,10 +2073,18 @@ paths:
                   $ref: '#/components/schemas/Note/properties/text'
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
+                linked_deal_id:
+                  type: string
+                  format: bson-id
+                  required: false
+                  example: ''
                 user_ids_to_notify:
                   type: array
                   description: A list of user IDs to notify
+                  required: false
                   items:
+                    type: string
+                    format: bson-id
                     example: 5aba31e99007ba0f570c12f7
       responses:
         200:
@@ -2140,49 +2154,54 @@ paths:
           application/json:
             schema:
               properties:
+                contact_id:
+                  type: string
+                  format: bson-id
+                  description: Contact to be associated with the attachment
+                  nullable: false
+                  required: true
+                  example: 5ae06ef9d55673108fe8877f
                 reference_id:
                   type: string
-                  description: >-
-                    The ID of the note, call or deal associated with this
-                    attachment. To associate to a new empty note: leave blank
-                    and use `reference_type=note`. Similarly for calls/deals
+                  format: bson-id
+                  description: ID of the note associated with the attachment
                   example: 5afc1b69d556730b580596cb
                 reference_type:
                   type: string
-                  description: >-
-                    What type of resource is associated with this attachment.
-                  enum: [note, call, deal]
-                  example: deal
-                contact_id:
-                  format: bson-id
-                  type: string
-                  description: Contact to be associated with the attachment
-                  example: 5ae06ef9d55673108fe8877f
+                  description: Type of resource is associated with the attachment
+                  enum: [ deal, note, call ]
+                  required: true
+                  example: note
                 name:
                   type: string
-                  description: File name displayed to the user
+                  description: Name of the attachment file
+                  required: true
                   example: mario.jpg
                 key:
                   type: string
                   description: >-
-                    This is the same key used in the attachments/s3_form. It is of the following form{contact_id}/{timestamp}/{filename}
-                  example: 5b32511fbc906a40758ae1ee/1530520812224/mario.png
-                external_url:
-                  required: false
-                  type: string
-                  description: >-
-                    External URL for the file
-                link_type:
-                  type: string
-                  description: >-
-                    Type of external link
-                  enum: ['Dropbox', 'Google_drive', 'Evernote', '']
-                  required: false
-                  example: ''
+                    The same key used in the `attachments/s3_form`, composed as `{contact_id}/{timestamp}/{filename}`
+                  required: true
+                  example: 5ae06ef9d55673108fe8877f/1530520812224/mario.jpg
                 size:
                   type: integer
-                  description: >-
-                    Size of file
+                  format: int32
+                  required: true
+                  description: Size of attachment file file (in bytes)
+                  example: 3680
+                link_type:
+                  type: string
+                  description: Type of external link (for external `storage_provider`s)
+                  enum: [ dropbox, google_drive, evernote ]
+                  nullable: true
+                  required: false
+                  example: ''
+                external_url:
+                  type: string
+                  description: URL for the file (for use with external `storage_provider`s)
+                  nullable: true
+                  required: false
+                  example: ''
       responses:
         201:
           description: Created
@@ -2315,6 +2334,8 @@ paths:
                   type: array
                   description: A list of user IDs to notify
                   items:
+                    type: string
+                    format: bson-id
                     example: 5aba31e99007ba0f570c12f7
       responses:
         201:
@@ -2413,6 +2434,8 @@ paths:
                   type: array
                   description: A list of user IDs to notify
                   items:
+                    type: string
+                    format: bson-id
                     example: 5aba31e99007ba0f570c12f7
       responses:
         200:
