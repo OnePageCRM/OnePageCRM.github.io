@@ -2154,6 +2154,7 @@ paths:
           application/json:
             schema:
               properties:
+                # TODO: validate fields to be sent here since sub-endpoint!?
                 contact_id:
                   type: string
                   format: bson-id
@@ -2188,7 +2189,7 @@ paths:
                   format: int32
                   required: true
                   description: Size of attachment file file (in bytes)
-                  example: 3680
+                  example: 3841
                 link_type:
                   type: string
                   description: Type of external link (for external `storage_provider`s)
@@ -2217,22 +2218,8 @@ paths:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
-                      id:
-                        type: string
-                        description: Id of the note
-                        example: 5afc1ea9d556730b780096db
-                      storage_provider:
-                        type: string
-                        description: Where the attachment is stored
-                        example: amazon
-                      filename:
-                        type: string
-                        description: The filename of the attachment
-                        example: mario.jpeg
-                      url:
-                        type: string
-                        description: External URL for the file
-                        example: 'https://{...}/mario.jpeg'
+                      attachment:
+                        $ref: '#/components/schemas/Attachment'
         400:
           $ref: '#/components/responses/400'
         401:
