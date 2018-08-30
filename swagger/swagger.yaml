@@ -6685,6 +6685,11 @@ components:
           description: ID of the contact
           readOnly: true
           example: 5aba31ea9007ba0f570c92d4
+        title:
+          type: string
+          description: The title of the contact
+          enum: [ Mr, Mrs, Ms ]
+          example: Mr
         first_name:
           type: string
           description: First name of the contact
@@ -6701,6 +6706,15 @@ components:
           type: string
           description: Job title of the contact
           example: Engineer
+        starred:
+          type: boolean
+          description: Is the contact starred?
+          example: false
+        photo_url:
+          type: string
+          description: URL of the contact's photo
+          readOnly: true
+          example: https://{foo.bar}/joe-bloggs.jpg
         company_id:
           type: string
           format: bson-id
@@ -6710,113 +6724,6 @@ components:
           type: string
           description: Name of the company, to whom the contact belongs
           example: Morgan's Forensic Lab
-        company_size:
-          type: integer
-          format: int32
-          description: Number of contacts within the contact's company
-          readOnly: true
-          example: 1
-        owner_id:
-          type: string
-          format: bson-id
-          description: ID of the user, to whom the contact belongs
-          example: 5aba31e99007ba0f570c92a5
-        status:
-          type: string
-          description: Status of the contact
-          example: Prospect
-        status_id:
-          type: string
-          format: bson-id
-          description: ID of the status of the contact
-          example: prospect
-        tags:
-          type: array
-          items:
-            type: string
-          example: [ Java, Android, iOS ]
-        starred:
-          type: boolean
-          description: Is the contact starred?
-          example: false
-        background:
-          type: string
-          description: Background infomation about the contact
-          maxLength: 10240 chars
-          example: >-
-            I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
-            solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon,
-            Arizona and Utah for capital building projects. Her current supplier is crazy expensive! I've asked
-            to be able to tender for their next order.
-        lead_source_id:
-          type: string
-          format: bson-id
-          description: ID of the lead source of the contact
-          example: advertisement
-        pending_deal:
-          type: boolean
-          description: Does the contact have one or more pending deals?
-          readOnly: true
-          example: true
-        total_pendings:
-          type: number
-          description: The total value of all pending deals for the contact
-          readOnly: true
-          example: 1200.99
-        total_deals_count:
-          type: integer
-          format: int32
-          description: Number of deals for the contact
-          readOnly: true
-          example: 3
-        photo_url:
-          type: string
-          description: URL of the contact's photo
-          readOnly: true
-          example: https://{foo.bar}/joe-bloggs.jpg
-        custom_fields:
-          type: array
-          items:
-            type: object
-            properties:
-              custom_field:
-                $ref: '#/components/schemas/Custom_field'
-              value:
-                type: string
-                description: Value for the custom field
-                example: Summer
-        address_list:
-          type: array
-          maxLength: 1 address
-          items:
-            $ref: '#/components/schemas/Address'
-        google_contacts_data:
-          description: The google contacts data associated with this contact
-          readOnly: true
-          properties:
-            account_email:
-              type: string
-              description: Google contacts email
-              readOnly: true
-              example: jane.doe@{googles-mail-service}
-            id:
-              type: string
-              description: Google contact id
-              readOnly: true
-              example: 342c5b5c08d4b0b2
-            saved_at:
-              type: integer
-              format: unix-timestamp
-              description: Time the contact was saved to google
-              readOnly: true
-              example: 1522840153
-        letter:
-          type: string
-          description: The first letter of the contacts last name
-          maxLength: 1 char
-          minLength: 1 char
-          readOnly: true
-          example: b
         url:
           type: array
           description: URLs associated with the contact
@@ -6859,14 +6766,93 @@ components:
                 type: string
                 description: The email address associated with the contact
                 example: joe.bloggs@{foo.bar}
-        sales_closed_for:
+        address_list:
+          type: array
+          maxLength: 1 address
+          items:
+            $ref: '#/components/schemas/Address'
+        status:
           type: string
+          description: Status of the contact
+          example: Prospect
+        status_id:
+          type: string
+          format: bson-id
+          description: ID of the status of the contact
+          example: prospect
+        tags:
+          type: array
+          items:
+            type: string
+          example: [ Java, Android, iOS ]
+        lead_source_id:
+          type: string
+          format: bson-id
+          description: ID of the lead source of the contact
+          example: advertisement
+        background:
+          type: string
+          description: Background infomation about the contact
+          maxLength: 10240 chars
+          example: >-
+            I met Joe Bloggs at the annual Eco Conference in Florida. Her company currently provides
+            solar panels (along with a lot of other stuff) to the State Government of California, Nevada, Oregon,
+            Arizona and Utah for capital building projects. Her current supplier is crazy expensive! I've asked
+            to be able to tender for their next order.
+        owner_id:
+          type: string
+          format: bson-id
+          description: ID of the user, to whom the contact belongs
+          example: 5aba31e99007ba0f570c92a5
+        custom_fields:
+          type: array
+          items:
+            type: object
+            properties:
+              custom_field:
+                $ref: '#/components/schemas/Custom_field'
+              value:
+                type: string
+                description: Value for the custom field
+                example: Summer
+        letter:
+          type: string
+          description: The first letter of the contacts last name
+          readOnly: true
+          example: b
+        pending_deal:
+          type: boolean
+          description: Does the contact have one or more pending deals?
+          readOnly: true
+          example: true
+        total_pendings:
+          type: number
+          description: The total value of all pending deals for the contact
+          readOnly: true
+          example: 999.99
+        total_deals_count:
+          type: integer
+          format: int32
+          description: Number of deals associated with the contact
+          readOnly: true
+          example: 3
+        company_size:
+          type: integer
+          format: int32
+          description: Number of contacts within the contact's company
+          readOnly: true
+          example: 1
+        sales_closed_for:
+          type: array
           description: A list of user IDs, for whom the sales cycle is closed
           readOnly: true
+          items:
+            type: string
           example: [ 5aba31e99007ba0f570c12f7 ]
         closed_sales:
           type: array
           description: A list of closed sales objects
+          readOnly: true
           items:
             properties:
               user_id:
@@ -6883,6 +6869,26 @@ components:
                 type: string
                 description: An optional message detailing why the sales cycle was closed
                 example:
+        google_contacts_data:
+          description: The google contacts data associated with this contact
+          readOnly: true
+          properties:
+            account_email:
+              type: string
+              description: Google contacts email
+              readOnly: true
+              example: jane.doe@{googles-mail-service}
+            id:
+              type: string
+              description: Google contact id
+              readOnly: true
+              example: 342c5b5c08d4b0b2
+            saved_at:
+              type: integer
+              format: unix-timestamp
+              description: Time the contact was saved to google
+              readOnly: true
+              example: 1522840153
         created_at:
           type: string
           format: date-time
@@ -6895,11 +6901,6 @@ components:
           description: Last modification time of the contact
           readOnly: true
           example: '2018-05-16T11:52:09Z'
-        title:
-          type: string
-          description: The title of the contact
-          enum: [ Mr, Mrs, Ms ]
-          example: Mr
     Company:
       description: >-
         Referred to as 'organizations' in the web application. Companies are logical collections of Contacts and
