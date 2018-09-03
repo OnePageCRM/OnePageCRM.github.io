@@ -1,0 +1,18 @@
+<!-- Look the author details up from the site config. -->
+{% assign author = site.data.authors[page.author] %}
+
+<div class="author-box">
+    <div class="author-img">
+        {% if author.image %}
+         <img src="{{ author.image }}" alt="Author image" />
+        {% else %}
+         <img src="/assets/images/default-user-image.jpg" alt="Author image" />
+        {% endif %} 
+    </div>
+    <div class="author-details">
+        <div class="author-name">
+            <h4 class="">{{ author.name }}</h4>
+        </div>
+        <p class="author-bio">{{ author.bio }}</p>
+    </div>
+</div>

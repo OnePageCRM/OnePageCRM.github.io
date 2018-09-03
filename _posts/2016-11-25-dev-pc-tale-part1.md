@@ -40,7 +40,7 @@ After completing the order, we just had to wait for our new toy to be delivered.
 And after few days this big box appeared in the office...
 
 <div style="text-align: center">
-<img src="/img/devpc/part1-box.jpg" class="img-responsive" alt="Delivery time!" />
+<img src="/assets/images/devpc/part1-box.jpg" class="img-responsive" alt="Delivery time!" />
 <em>Xmas gift in November!</em>
 </div>
 <br />
@@ -61,7 +61,7 @@ We [used the Internet][8] proper installation image on a USB to install the
 OS on the machine.
 
 <div style="text-align: center">
-<img src="/img/devpc/part1-usb.jpg" class="img-responsive" alt="Transferring data" />
+<img src="/assets/images/devpc/part1-usb.jpg" class="img-responsive" alt="Transferring data" />
 <em>Server setup <strong>has not</strong> been supported by any brewery company.</em>
 </div>
 <br />
@@ -76,14 +76,14 @@ Liam’s (voluntarily dismantled) personal computer, we ‘borrowed’ it’s gr
 card so we could temporarily it to connect to DPC.
 
 <div style="text-align: center">
-<img src="/img/devpc/part1-before.jpg" class="img-responsive" alt="Preparation for update" />
+<img src="/assets/images/devpc/part1-before.jpg" class="img-responsive" alt="Preparation for update" />
 <em>Everyone wanted to mess inside, but Cillian and Liam were first</em>
 </div>
 
 <br /><br />
 
 <div style="text-align: center">
-<img src="/img/devpc/part1-after.jpg" class="img-responsive" alt="AMD Radeon inside" />
+<img src="/assets/images/devpc/part1-after.jpg" class="img-responsive" alt="AMD Radeon inside" />
 <em>Don't show it to Liam's PC... may be jealous and could ask for divorce...</em>
 </div>
 
@@ -103,7 +103,7 @@ Once we discovered the reasons behind the previous problems, a few simple fixes
 and BIOS settings updates, we were finally been welcomed by **proper** installation screen.
 
 <div style="text-align: center">
-<img src="/img/devpc/part1-grub.jpg" class="img-responsive" alt="CentOS 7 GRUB" />
+<img src="/assets/images/devpc/part1-grub.jpg" class="img-responsive" alt="CentOS 7 GRUB" />
 <em>Let the party begin!</em>
 </div>
 

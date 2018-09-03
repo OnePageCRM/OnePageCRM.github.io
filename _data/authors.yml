@@ -1,0 +1,100 @@
+# Author details.
+
+author_one:
+    name: Robert Rawlins
+    email: robert@sorryapp.com
+    web: http://twitter.com/sirrawlins
+    bio: Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasis.
+    image: http://lorempixel.com/125/125/people/
+author_two:
+    name: Robin Geall
+    email: robin@sorryapp.com
+    web: http://twitter.com/robingeall
+    bio: Spnash Lorem ipsum is a pseudo-Latin text used in web design.
+peter:
+    name: Peter Armstrong
+    display_name: Peter
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: peter@onepagecrm.com
+    web: http://peterarmstrong.ie
+    #twitter: company
+    github: peterOnePageCRM
+    bio: 'Peter is a software engineer at OnePageCRM.'
+    image: '/assets/images/authors/peter.jpg'
+john:
+    name: John Maguire
+    display_name: John
+    #gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: john@onepagecrm.com
+    #twitter: company
+    github: JohnMaguir
+    bio: |
+        Software Engineer who loves to convert the vision of a project or app into the real thing.  Sporting fanatic who enjoys GAA football and hurling, Aussie Rules, athletics with a number of triathlons completed.
+    image: '/assets/images/authors/john.png'
+pawel:
+    name: Paweł Smoliński
+    display_name: Paweł
+    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
+    email: pawel@onepagecrm.com
+    github: ZipoKing
+    twitter: ZipoKing
+    bio: |
+        CTO in OnePageCRM. Linux fanatic married to a computer. Pawel enjoys supporting the local economy by spending a lot of time in local pubs!
+    image: '/assets/images/authors/pawel.png'
+dan:
+    name: Dan Fahy
+    display_name: Dan
+    email: dan@onepagecrm.com
+    bio: 'Dan is a software engineer at OnePageCRM.'
+    image: '/assets/images/authors/dan.jpg'
+ruairi:
+    name: Ruairi Fahy
+    display_name: Ruairi
+    email: ruairi@onepagecrm.com
+    bio: 'Ruairi is a developer at OnePageCRM.'
+    #image: '/img/ruairi.jpg'
+cillian:
+    name: Cillian Myles
+    display_name: Cillian
+    email: cillian@onepagecrm.com
+    github: CillianMyles
+    bio: |
+        Our in-house lead Android engineer, API consumer, and technical jargon translator. Cillian enjoys great design, smart defaults, power-user features, olympic weightlifting and is vegan.
+    image: '/assets/images/authors/cillian.png'
+elano:
+    name: Elano Vasconcelos
+    display_name: Elano
+    email: elano@onepagecrm.com
+    bio: |
+        iOS mobile Software Engineer in OnePageCRM with over 7 years experience working with iOS and Android. Other interests include games, RPG, TV shows, movies and the gym.
+    image: '/assets/images/authors/elano.png'
+liam:
+    name: Liam Krewer
+    display_name: Liam
+    email: elano@onepagecrm.com
+    bio: "Liam works as a full stack web developer at OnePageCRM."
+    image: '/assets/images/authors/liam.jpg'
+leonard:
+    name: Leonard Reidy
+    display_name: Leonard
+    email: leonard@onepagecrm.com
+    github: leonardreidy
+    bio: |
+        Developer at OnePageCRM. Building applications with AWS/Serverless, Rails, Node, CoffeeScript, React, and Reflux. Passionate about web application development, electronic music, and baroque music, among other things!
+    image: '/assets/images/authors/leonard.jpg'
+kevin:
+    name: Kevin Farrell
+    display_name: Kevin
+    email: kevinf@onepagecrm.com
+    github: kevGalway
+    bio: |
+        Climbing the never ending learning curve of web development. Currently interested in API design, best practices and in general getting things talking nicely to each other! When not pretending that I can code, I can be found playing the Chinese board game called 'Go' or failing badly at Yoga.
+    image: '/assets/images/authors/kevin.jpg'
+matt:
+    name: Matt Moran
+    display_name: Matt
+    bio: |
+        Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
+    image: '/assets/images/authors/matt.jpg'
+
+  

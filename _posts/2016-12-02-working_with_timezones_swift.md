@@ -3,15 +3,12 @@ layout: post
 title: "Working with timezones (Swift)"
 slug: "working_with_timezones_swift"
 category: blog
+post_image: "/assets/images/articles/timezone.png"
 author: elano
 date: 2016-12-02 09:00:00
 ---
 
 The new OnePageCRM mobile app for iOS was developed in Swift 2.3 and one of many things that I needed to worry about was timezones.
-
-<div style="text-align: center">
-<img class="img-responsive" src="/img/timezone.png" />
-</div>
 
 One of the fields returned by the API in the login request (https://app.onepagecrm.com/api/v3/login.json) is the time zone configured in that account, for example:  
 

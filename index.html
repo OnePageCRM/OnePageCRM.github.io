@@ -1,34 +1,30 @@
 ---
-layout: api
-title: API
+layout: default
+title: "OnePageCRM - Developers Workspace"
+sub_title: "News, posts and ideas"
+slider_image: "/assets/images/LargeGroup_devs.jpg"
 ---
 
+    {% include slider.html %}
 
-{% for section in site.api_sections %}
-  {% assign attr = section[0] %}
-  {% assign label = section[1] %}
-
-  {% for page in site.categories[attr] reversed %}
-
-  <div class="api-element">
-    <h2 class="top-padding" id="{{ page.slug }}">{{ page.title }}
-      {% if page.tags contains 'beta' %}
-        <span class="pull-right label label-warning">Beta</span>
-      {% endif %}
-    </h2> 
-    {{ page.content }}
-
-    <span class="row"><a class="pull-right btn btn-default" href="#top">Back To Top</a></span>
-  </div>
-  {% endfor %}
-{% endfor %}
-
-
-
-<script>
-$('body').scrollspy({ 
-    target: '#api-nav',
-    offset: 40
-  })
-
-</script>
+    <div class="appix-blog-content section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% include post_loops.html %}
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar-contents">
+                      {% include sidebar.html %}
+                    </div>
+                </div>
+            </div>
+            <!-- pagination -->
+            <div class="row">
+                <div class="col-md-12">
+                  {% include pagination.html %}
+                </div>
+            </div>
+            <!-- end pagination -->
+        </div>
+    </div>

@@ -1,0 +1,82 @@
+    <!-- Start Footer Top -->
+    <div class="footer-area section-ptb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="column">
+                        <div class="widget-title">
+                            <h3>About Us</h3>
+                        </div>
+                        <p>Vestibulum quis cursus mivitae mollis metus. Nulam eu lects gravida, bibendum enim in, vulputate erat. Vestibulum ullamcorper ornare magna</p>
+                        <div class="themeix-social-area">
+                            <a class="themeix-tool" href="http://twitter.com/{{site.twitter_username}}">
+                                <i class="fa fa-twitter"></i>
+                                <div id="colorbox" class="themeix-color twitter-color"></div>
+                            </a>
+                            <a class="themeix-tool" href="http://facebook.com/{{site.facebook_username}}">
+                                <i class="fa fa-facebook"></i>
+                                <div id="colorboxs" class="themeix-color facebook-color"></div>
+                            </a>
+                            <a class="themeix-tool" href="http://plus.google.com/{{site.google_plus_username}}">
+                                <i class="fa fa-google-plus"></i>
+                                <div id="colorboxss" class="themeix-color google-color"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="column">
+                        <div class="widget-title">
+                            <h3>Most Popular Tags</h3>
+                        </div>
+                        <div class="tag-clouds">
+                            {% for tag in site.tags | limit: 9 %}
+                              {% assign t = tag | first %}
+                              {% assign posts = tag | last %}
+                              <a href="/pages/tagpage/"> {{ t }} </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="column">
+                        <div class="widget-title">
+                            <h3>Get Support</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul>
+                                <li><a href="http://facebook.com/{{site.facebook_username}}">Facebook Page</a></li>
+                                <li><a href="http://twitter.com/{{site.twitter_username}}">Twitter Page</a></li>
+                                <li><a href="http://instragram.com/{{site.instragram_username}}">instragram page</a></li>
+                                <li><a href="http://linkedin.com/{{site.linkedin_username}}">linkedin Page</a></li>
+                                <li><a href="http://pinterest.com/{{site.pinterest_username}}">Pinterest Page</a></li>
+                                <li><a href="http://dribbble.com/{{site.dribble_username}}">Dribble Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="column">
+                        <div class="widget-content">
+                            <section class="gh-subscribe">
+                                <div class="widget-title">
+                                    <h3>Subscribe Now</h3>
+                                    <p>Don’t miss our latest realeses and important updates</p>
+                                </div>
+                                <form method="post" action="{{ site.mailchimp_link }}" class="subscribe_form validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                                    <input class="confirm" type="hidden" name="confirm" />
+                                    <input class="location" type="hidden" name="location" />
+                                    <input class="referrer" type="hidden" name="referrer" />
+                                    <div class="form-group">
+                                        <input class="subscribe-email email" type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email" required />
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                    </div>
+                                </form>
+                            </section> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Top -->

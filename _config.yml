@@ -1,7 +1,7 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'OnePageCRM Developer Portal'
+title: 'OnePageCRM - Developers Workspace'
 
-name: 'OnePageCRM Developer'
+name: 'OnePageCRM - Developers Workspace'
 
 url: 'http://developer.onepagecrm.com'
 rss_path: "/blog"
@@ -24,79 +24,89 @@ baseurl: ''
 host: 0.0.0.0
 port: 4000
 
-authors:
-  peter:
-    name: Peter Armstrong
-    display_name: Peter
-    #gravatar: c66919cb194f96c696c1da0c47354a6a
-    email: peter@onepagecrm.com
-    web: http://peterarmstrong.ie
-    #twitter: company
-    github: peterOnePageCRM
-    description: 'Peter is a software engineer at OnePageCRM.'
-    image: '/img/peter.jpg'
-  john:
-    name: John Maguire
-    display_name: John
-    #gravatar: c66919cb194f96c696c1da0c47354a6a
-    email: john@onepagecrm.com
-    #twitter: company
-    github: JohnMaguir
-    description: 'John is a software engineer at OnePageCRM.'
-    image: '/img/john.jpg'
-  pawel:
-    name: Paweł Smoliński
-    display_name: Paweł
-    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
-    email: pawel@onepagecrm.com
-    github: ZipoKing
-    twitter: ZipoKing
-    description: |
-      Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it.<br />
-      Also supports local economy by spending a lot of time in local pubs.
-    image: '/img/pawel.jpg'
-  dan:
-    name: Dan Fahy
-    display_name: Dan
-    email: dan@onepagecrm.com
-    description: 'Dan is a software engineer at OnePageCRM.'
-    image: '/img/dan.jpg'
-  ruairi:
-    name: Ruairi Fahy
-    display_name: Ruairi
-    email: ruairi@onepagecrm.com
-    description: 'Ruairi is a developer at OnePageCRM.'
-    #image: '/img/ruairi.jpg'
-  cillian:
-    name: Cillian Myles
-    display_name: Cillian
-    email: cillian@onepagecrm.com
-    github: CillianMyles
-    description: "Cillian is a software engineer at OnePageCRM."
-    image: '/img/cillian.jpg'
-  elano:
-    name: Elano Vasconcelos
-    display_name: Elano
-    email: elano@onepagecrm.com
-    description: "Elano is a software engineer at OnePageCRM."
-    image: '/img/elano_2.jpg'
-  liam:
-    name: Liam Krewer
-    display_name: Liam
-    email: elano@onepagecrm.com
-    description: "Liam works as a full stack web developer at OnePageCRM."
-    image: '/img/liam.jpg'
-  leonard:
-    name: Leonard Reidy
-    display_name: Leonard
-    email: leonard@onepagecrm.com
-    github: leonardreidy
-    description: "Leonard is a software engineer at OnePageCRM"
-    image: '/img/leonard.jpg'
-  matt:
-    name: Matt Moran
-    display_name: Matt
-    email: matt@onepagecrm.com
-    github: ehmatt
-    description: "Matt is a software engineer at OnePageCRM"
-    image: '/img/matt.jpg'
+# Build settings
+markdown:               kramdown
+theme:                  minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate:               6
+permalink:              pretty
+
+#authors:
+#  peter:
+#    name: Peter Armstrong
+#    display_name: Peter
+#    #gravatar: c66919cb194f96c696c1da0c47354a6a
+#    email: peter@onepagecrm.com
+#    web: http://peterarmstrong.ie
+#    #twitter: company
+#    github: peterOnePageCRM
+#    description: 'Peter is a software engineer at OnePageCRM.'
+#    image: '/assets/images/authors/peter.jpg'
+#  john:
+#    name: John Maguire
+#    display_name: John
+#    #gravatar: c66919cb194f96c696c1da0c47354a6a
+#    email: john@onepagecrm.com
+#    #twitter: company
+#    github: JohnMaguir
+#    description: 'John is a software engineer at OnePageCRM.'
+#    image: '/assets/images/authors/john.jpg'
+#  pawel:
+#    name: Paweł Smoliński
+#    display_name: Paweł
+#    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
+#    email: pawel@onepagecrm.com
+#    github: ZipoKing
+#    twitter: ZipoKing
+#    description: |
+#      Linux fanatic married to a computer. In OnePageCRM holds CTO position and very likes it.<br />
+#      Also supports local economy by spending a lot of time in local pubs.
+#    image: '/assets/images/authors/pawel.jpg'
+#  dan:
+#    name: Dan Fahy
+#    display_name: Dan
+#    email: dan@onepagecrm.com
+#    description: 'Dan is a software engineer at OnePageCRM.'
+#    image: '/assets/images/authors/dan.jpg'
+#  ruairi:
+#    name: Ruairi Fahy
+#    display_name: Ruairi
+#    email: ruairi@onepagecrm.com
+#    description: 'Ruairi is a developer at OnePageCRM.'
+#    #image: '/img/ruairi.jpg'
+#  cillian:
+#    name: Cillian Myles
+#    display_name: Cillian
+#    email: cillian@onepagecrm.com
+#    github: CillianMyles
+#    description: "Cillian is a software engineer at OnePageCRM."
+#    image: '/assets/images/authors/cillian.jpg'
+#  elano:
+#    name: Elano Vasconcelos
+#    display_name: Elano
+#    email: elano@onepagecrm.com
+#    description: "Elano is a software engineer at OnePageCRM."
+#    image: '/assets/images/authors/elano_2.jpg'
+#  liam:
+#    name: Liam Krewer
+#    display_name: Liam
+#    email: elano@onepagecrm.com
+#    description: "Liam works as a full stack web developer at OnePageCRM."
+#    image: '/img/liam.jpg'
+#  leonard:
+#    name: Leonard Reidy
+#    display_name: Leonard
+#    email: leonard@onepagecrm.com
+#    github: leonardreidy
+#    description: "Leonard is a software engineer at OnePageCRM"
+#    image: '/assets/images/authors/leonard.jpg'
+#  matt:
+#    name: Matt Moran
+#    display_name: Matt
+#    email: matt@onepagecrm.com
+#    github: ehmatt
+#    description: "Matt is a software engineer at OnePageCRM"
+#    image: '/img/matt.jpg'

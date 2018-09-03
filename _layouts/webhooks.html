@@ -3,13 +3,16 @@ layout: default
 title: Webhooks
 ---
 
+<section class="webhook-section pt-5" id="webhook">
+<div class="container">
+  <div class="row">
+		<div id="" class="col-md-4">
+			{% include webhook_navigation.html %}
+		</div>
 
-<div id="" class="col-md-3">
-  {% include webhook_navigation.html %}
+		<div id="content" class="col-md-8 maincontent api-content">
+			{{ content }}
+		</div>
+	</div>
 </div>
-
-<div id="content" class="col-md-9 maincontent api-content">
-  <!-- <div class="container"> -->
-  {{ content }}
-  <!-- </div> -->
-</div>
+</section>

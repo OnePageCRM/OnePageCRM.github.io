@@ -1,0 +1,71 @@
+   
+   {% for post in paginator.posts %}
+
+    
+        <div class="blog-item post tag-video">
+            <div class="video-post-format post tag-image ">
+                
+                <div class="blog-image">
+                  {% if post.post_image %}
+                      <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
+                  {% endif %}
+                </div>
+                
+                {% if post.video_url %}
+                <div class="blog-image blog-iframe">
+                    <div class="embed-media">
+                        <iframe width="560" height="315" src="{{post.video_url}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                {% endif %}
+                <p id="post-meta">{{ category_content }}</p>
+
+                <div class="blog-details">
+                    <h3 class="blog-post-title"><a href="{{ post.url}} ">{{ post.title }}</a></h3>
+                    {% assign author = site.data.authors[post.author] %}
+                    <p><span class="author">{{ author.name }}</span>, <span class="date">{{ post.date | date_to_string }}</span></p>
+                    <!--<ul class="blog-author-name">
+                        {% assign author = site.data.authors[post.author] %}
+                        <li><i class="fa fa-user" aria-hidden="true"></i><a href="{{post.author_web}}">{{ author.name }}</a></li>
+                        <!--<li><i class="fa fa-folder-open"></i><a href="/pages/tagpage/">{{ post.category | limit: 1 }}</a></li>-->
+                   <!-- </ul>-->
+                    <div class="blog-excerpt">
+                        <div class="kg-card-markdown">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/sze17ICWvSk" frameborder="0" allowfullscreen></iframe>
+                           {{ post.excerpt | strip_html | truncatewords: 35 }}
+                        </div>
+                    </div>
+                    <div class="read-more">
+                        <div class="themeix-button-group">
+                            <a href="{{ post.url }}" class="themeix-btn themeix-danger">read more</a>
+                        </div>
+                    </div>
+                    <div class="share-icon">
+                        <span>share on</span>
+                        <ul class="social-icon">
+                            <!--<li>
+                                <a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>-->
+                            <li>
+                                <a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via=OnePageCRM&related={{ site.twitter_username }}" class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <!--<li>
+                                <a href="https://facebook.com/sharer.php?u={{ post.url }}{{ page.url }}" class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>-->
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}&t={{ post.title }}" class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ post.url }}&title={{ post.title }}&summary=&source="  class="sharebutton linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <!--<li>
+                                <a href="https://plus.google.com/share?url={{ post.url }}{{ page.url }}"  class="sharebutton google" target="_blank"><i class="fa fa-google-plus"></i></a>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+

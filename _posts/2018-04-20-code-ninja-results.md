@@ -3,16 +3,17 @@ layout: post
 title: "CodeNinja Results"
 slug: "code-ninja-2017-18-results"
 category: blog
+post_image: "/assets/images/articles/results-feature.jpg"
 author: cillian
 date: 2018-04-26 09:00:00
 excerpt: "The results are in... CodeNinja concludes after its third year running in Galway, crowning this years winner!"
-graphic: /img/codeninja/results-feature.jpg
+graphic: /assets/images/codeninja/results-feature.jpg
 ---
 
 The results are in... CodeNinja concludes after its third year running in Galway, crowning this years winner!
 
 <div class="text-align: center">
-    <img src="/img/codeninja/pic-04.jpg" alt="" class="img-responsive"
+    <img src="/assets/images/codeninja/pic-04.jpg" alt="" class="img-responsive"
      style="width: 100%; position: relative;" /><br />
 </div>
 
@@ -53,17 +54,17 @@ target="_blank">José Ignacio</a>, an undergraduate Software Development student
 </div>
 
 <div class="text-align: center">
-    <img src="/img/codeninja/pic-02.jpg" alt="" class="img-responsive"
+    <img src="/assets/images/codeninja/pic-02.jpg" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
 <div class="text-align: center">
-    <img src="/img/codeninja/pic-03.jpg" alt="" class="img-responsive"
+    <img src="/assets/images/codeninja/pic-03.jpg" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
 <div class="text-align: center">
-    <img src="/img/codeninja/pic-05.jpg" alt="" class="img-responsive"
+    <img src="/assets/images/codeninja/pic-05.jpg" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 

@@ -3,6 +3,7 @@ layout: post
 title: "Managing webhooks with AWS services"
 slug: "aws-webhooks"
 category: blog
+post_image: "/assets/images/articles/aws_webhooks_top.png"
 author: pawel
 date: 2018-04-12 09:00:00
 excerpt: "Here in OnePageCRM we are utilizing some of Amazon Web Services in
@@ -11,11 +12,6 @@ excerpt: "Here in OnePageCRM we are utilizing some of Amazon Web Services in
           which is being provided by our partner Nylas."
 graphic: /img/aws-webhooks/top.png
 ---
-
-<div class="text-align: center">
-    <img src="/img/aws-webhooks/top.png" alt="" class="img-responsive"
-     style="width: 100%; position: relative" /><br />
-</div>
 
 _**Disclaimer:** This post contains a short description from a technology point of
 view on how we are serving webhooks in our system. If you are interested in more 
@@ -31,7 +27,7 @@ In this post I will  discuss  how the whole system operates.
 
 ### The medium: webhook
 
-<img src="/img/aws-webhooks/webhooks.svg" alt="Webhooks" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws-webhooks/webhooks.svg" alt="Webhooks" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 What is that “webhook” you may ask. Following [Wikipedia definition][wikipedia]
 webhook is nothing else than user-defined HTTP callback which is usually 
 triggered by some event like pushing new commit to your repository, comments 
@@ -45,7 +41,7 @@ webhook will be processed is only under the matter of developer creativity!
 
 ### The actor: Nylas webhook
 
-<img src="/img/aws-webhooks/nylas-email-sync.svg" alt="Nylas" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws-webhooks/nylas-email-sync.svg" alt="Nylas" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 Let’s start at the moment when you will send an email to your customer or you 
 will receive such and this contact exists in your OnePageCRM account (i.e. your 
 contact has proper email address assigned). When you have our email sync 
@@ -60,7 +56,7 @@ within the OnePageCRM system itself.
 
 ### The doorkeeper: Amazon API Gateway
 
-<img src="/img/aws/api-gateway.svg" alt="Amazon API Gatway" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws/api-gateway.svg" alt="Amazon API Gatway" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 As mentioned Nylas Sync Engine sends a webhook, which is a simple `HTTP POST` 
 request, speaks with a service called [Amazon API Gateway][apigateway]. We 
 can call this service a very powerful front door which can be used to build very 
@@ -81,7 +77,7 @@ it is required by Nylas Sync Engine.
 
 ### The operation room: Amazon Lambda
 
-<img src="/img/aws/lambda.svg" alt="AWS Lambda" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws/lambda.svg" alt="AWS Lambda" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 When our webhook is received by API Gateway it is further delivered to and processed 
 by [AWS Lambda][lambda] service. Lambda is Amazon’s serverless function execution 
 service which allows us to run our code in “pure cloud” without the need of 
@@ -108,7 +104,7 @@ response with such object will be prepared by default) and sent back to the clie
 
 ### The servant: NodeJS
 
-<img src="/img/aws/nodejs-sdk.svg" alt="NodeJS SDK" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws/nodejs-sdk.svg" alt="NodeJS SDK" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 AWS Lambda allows developers to run code with use of various programming languages; 
 when this post was written, it was possible to write Lambda function with NodeJS, 
 Java, C# or Python. In our case we have chosen NodeJS as we have a number of very 
@@ -165,7 +161,7 @@ defining corresponding lambda functions:
 
 ### The messenger: Amazon SQS
 
-<img src="/img/aws/sqs.svg" alt="Amazon SQS" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws/sqs.svg" alt="Amazon SQS" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 [Amazon Simple Queue Service][sqs] is the perfect method to implement communication 
 between different independent elements of the system. It is being built as system 
 of message queues where various system components can either send or receive 
@@ -181,7 +177,7 @@ stored within your account or not.
 
 ### The glue: Amazon CloudFormation
 
-<img src="/img/aws/cloudformation.svg" alt="Amazon CloudFormation" style="margin: 0 10px 10px 0; width: 100px; float: left" />
+<img src="/assets/images/aws/cloudformation.svg" alt="Amazon CloudFormation" style="margin: 0 10px 10px 0; width: 100px; float: left" />
 As you can see, we are using a number of different services from Amazon Web 
 Services palette. And, as you may expect, manual configuration of all of those 
 will be small hell even for an experienced system administrator. In order 

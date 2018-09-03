@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		{{page.url | relative }}
+		{% assign pageUrl = page.url | remove:".html" | replace: "/pages/","" %}
+          <h1>{{ pageUrl }}</h1>
+		</div>
+	</div>
+</div>

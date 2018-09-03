@@ -1,5 +1,5 @@
 ---
-layout: webhooks
+layout: webhooks_more
 title: "Create Contact via URL"
 ---
 
@@ -21,52 +21,17 @@ As the records come into your internal database, you could add a link to each on
 
 <table class="table">
   <thead>
-    <tr>
-      <th>
-        Firstname
-      </th>
-      <th>
-        Lastname
-      </th>
-      <th>
-        Company
-      </th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>
-        Johnny
-      </td>
-      <td>
-        Bravo
-      </td>
-      <td>
-        Cartoon Network
-      </td>
-      <td>
-        <a target="blank" href="http://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&company=Cartoon%20Network">Add to OnePageCRM </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Kung Foo
-      </td>
-      <td>
-        Panda
-      </td>
-      <td>
-        Dreamworks
-      </td>
-      <td>
-        <a target="blank" href="http://app.onepagecrm.com/add_new_contact?firstname=Kung%20Foo&lastname=Panda&company=Dreamworks">Add to OnePageCRM </a>
-      </td>
-    </tr>
+    <tr><th>Firstname</th><th>Lastname</th><th>Company</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Johnny</td><td>Bravo</td><td>Cartoon Network</td><td><a target="_blank" href="http://app.onepagecrm.com/add_new_contact?firstname=Johny&lastname=Bravo&company=Cartoon%20Network">Add to OnePageCRM </a></td></tr>
+    <tr><td>Kung Foo</td><td>Panda</td><td>Dreamworks</td><td><a target="_blank" href="http://app.onepagecrm.com/add_new_contact?firstname=Kung%20Foo&lastname=Panda&company=Dreamworks">Add to OnePageCRM </a></td></tr>
   </tbody>
 </table>
 
 Clicking on a link will open OnePageCRM in a new tab, with the Add Contact form open and filled out with the relevant details.
 
-<img class="img-responsive" src="/img/quickcontact.png"/>
+<img class="img-responsive" src="/assets/images/quickcontact.png"/>
 
 You can then edit the contacts details, and when you are happy, hit save.
 

@@ -69,6 +69,6 @@ As the records come into your internal database, you could add a link to each on
 
 Clicking on a link will open OnePageCRM in a new tab, with the Add Contact form open and filled out with the relevant details.
 
-<img class="img-responsive" src="/img/quickcontact.png"/>
+<img class="img-responsive" src="/assets/images/quickcontact.png"/>
 
 You can then edit the contacts details, and when you are happy, hit save.

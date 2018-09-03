@@ -3,17 +3,12 @@ layout: post
 title: "Rails to AWS lambda: Communication and authentication"
 slug: "rails_to_aws_lambda_communication_and_authentication"
 category: blog
+post_image: "/assets/images/articles/lambda.png"
 author: liam
 date: 2018-03-02 09:00:00
 excerpt: "Here at OnePageCRM our stack predominantly consists of a Ruby on Rails backend with a coffeescript Frontend of ReactJS and some legacy JQuery"
 ---
 
-
-
-<div class="text-align: center">
-    <img src="/img/aws/lambda.svg" alt="" class="img-responsive"
-     style="width: 100%; position: relative" /><br />
-</div>
 
 
 Here at OnePageCRM our stack predominantly consists of a Ruby on Rails backend with a coffeescript Frontend of ReactJS and some legacy JQuery. But that doesn't mean we don't like to branch out and delve into new technologies.

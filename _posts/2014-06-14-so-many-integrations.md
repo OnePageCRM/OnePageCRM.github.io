@@ -26,7 +26,7 @@ The reason so many applications exist is because they're are just so many divers
 
 This question had been bouncing around in my head since I started here at OnePageCRM. It was only when we launched our new add apps page that it all clicked.
 
-<img class="img-responsive" src="/img/Integrations_2014.png">
+<img class="img-responsive" src="/assets/images/Integrations_2014.png">
 
 This clear simple layout shows where each integration slots into the sales process.
 

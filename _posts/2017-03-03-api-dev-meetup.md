@@ -3,6 +3,7 @@ layout: post
 title: "All about APIs @ Galway Developer Meetup"
 slug: "all-about-apis-meetup"
 category: blog
+post_image: "/assets/images/articles/rapper-api.png"
 author: pawel
 date: 2017-03-03 09:00:00
 ---
@@ -21,13 +22,11 @@ Recently, we hosted a Developer Event in [McSwiggans Pub & Restaurant][1]
 in our home of [Galway][Galway]. This was the second [Galway Developer Meetup][2]
 where we covered the API topic in some detail.
 
-<div class="text-align: center">
-<img src="/img/api-meetup/rapper-api.png" alt="" class="img-responsive"`
- style="width: 50%; position: relative; left: 25%" /><br />
+<div style="text-align: center">
 <div class="img-responsive">
-<img src="/img/api-meetup/java.png" alt="Java API" style="width: 35%" />
-<img src="/img/api-meetup/jason.png" alt="JSON" style="width: 35%" />
-<img src="/img/api-meetup/restapi.png" alt="REST API" style="width: 20%" />
+<img src="/assets/images/api-meetup/java.png" alt="Java API" style="width: 35%" />
+<img src="/assets/images/api-meetup/jason.png" alt="JSON" style="width: 35%" />
+<img src="/assets/images/api-meetup/restapi.png" alt="REST API" style="width: 20%" />
 </div>
 <em>Java JSON REST API with some wrapper on the top of it.
 <span style="font-size: 70%">Graphics &copy; Alan O'Rourke</span></em>
@@ -45,10 +44,10 @@ We had 4 spearkers on the night covering the following:
 * **In-app purchase APIs**: Finn Krewer from [9th Impact][5] game development
   company shared his knowledge about purchase APIs across various mobile platforms.
 
-<div class="text-align: center">
+<div style="text-align: center">
 <div class="img-responsive">
-<img src="/img/api-meetup/lambda.png" alt="AWS Lambda" style="width: 45%" />
-<img src="/img/api-meetup/api-gateway.png" alt="AWS API Gateway" style="width: 45%" />
+<img src="/assets/images/api-meetup/lambda.png" alt="AWS Lambda" style="width: 45%" />
+<img src="/assets/images/api-meetup/api-gateway.png" alt="AWS API Gateway" style="width: 45%" />
 
 </div>
 <em>
