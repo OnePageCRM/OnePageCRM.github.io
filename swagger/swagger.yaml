@@ -8487,7 +8487,7 @@ components:
         secretkey:
           type: string
           description: Secret key of the webhook
-          example:
+          example: ''
     Reminder:
       description: Details about the sales action reminder email.
       properties:
