@@ -7091,11 +7091,13 @@ components:
           type: string
           format: bson-id
           description: ID of the contact, with whom the action is associated
+          required: true
           example: 5aba31ea9007ba0f570c92d4
         text:
           type: string
           description: The main text/description of the action
           maxLength: 140 chars
+          required: true
           example: '#1 Email Jane introducing our organization'
         status:
           type: string
