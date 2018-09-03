@@ -15,7 +15,7 @@ app.run(function($rootScope, $store)
     $rootScope.firstname = $store.get('first_name');
     $rootScope.lastname = $store.get('last_name');
     $rootScope.headers = {};
-    $rootScope.baseURL = "http://staging.onepagecrm.com/api/v3/"
+    $rootScope.baseURL = "https://staging.onepagecrm.com/api/v3/"
 });
 
 app.controller("AuthController", function($scope, $rootScope, $http, $store) {
