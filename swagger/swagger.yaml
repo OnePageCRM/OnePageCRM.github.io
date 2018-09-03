@@ -831,12 +831,8 @@ paths:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
-                      Statises:
-                        type: array
-                        items:
-                          properties:
-                            status:
-                              $ref: '#/components/schemas/Status'
+                      status:
+                        $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
         401:
