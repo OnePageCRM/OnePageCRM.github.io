@@ -1960,9 +1960,6 @@ paths:
       - Notes
       parameters: []
       requestBody:
-        description: >-
-          The fields `contact_id` and `text` are required. <br>
-          If `date` isn't provided, it will default to today. <br>
         required: true
         content:
           application/json:
@@ -2061,9 +2058,6 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_note_id'
       requestBody:
-        description: >-
-          The fields `contact_id` and `text` are required. <br>
-          If `date` isn't provided, it will default to today. <br>
         required: true
         content:
           application/json:
@@ -7357,17 +7351,20 @@ components:
           type: string
           format: bson-id
           description: ID of the contact, to whom the note belongs
+          required: true
           example: 5ae06ef9d55673108fe8877f
         text:
           type: string
           description: Extra details related to the note(supports `[b]bold[/b]` and `[i]italic[/i]` formatting)
           maxLength: 7168 chars
+          required: true
           example: I met Jane Doe at the ABC conference. She's interested in hearing about XYZ.
         date:
           type: string
           format: date
           description: Creation date of the note
           example: '2018-05-16'
+          default: Today's date
         linked_deal_id:
           type: string
           format: bson-id
