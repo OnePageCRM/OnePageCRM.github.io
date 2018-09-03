@@ -1220,17 +1220,13 @@ paths:
             schema:
               properties:
                 cost_enabled:
-                  type: boolean
-                  example: false
+                  $ref: '#/components/schemas/Cost_setup/properties/cost_enabled'
                 cost_required:
-                  type: boolean
-                  example: false
+                  $ref: '#/components/schemas/Cost_setup/properties/cost_required'
                 commission_base:
-                  type: string
-                  example: margin
+                  $ref: '#/components/schemas/Cost_setup/properties/commission_base'
                 commission_percentage:
-                  type: number
-                  example: 10.0
+                  $ref: '#/components/schemas/Cost_setup/properties/commission_percentage'
       responses:
         200:
           description: OK
