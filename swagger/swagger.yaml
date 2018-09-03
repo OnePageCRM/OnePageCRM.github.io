@@ -1367,7 +1367,7 @@ paths:
                 choices:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
-        200:
+        201:
           description: OK
           content:
             application/json:
@@ -7921,6 +7921,7 @@ components:
           type: string
           description: Name of the custom field
           maxLength: 60 chars
+          required: true
           example: Favorite season
         type:
           type: string
@@ -7933,6 +7934,7 @@ components:
           - number
           - select_box
           - single_line_text
+          required: true
           example: select_box
         position:
           type: integer
