@@ -607,9 +607,21 @@ paths:
                   timestamp:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
-                    properties:
-                      items:
-                        $ref: '#/components/schemas/Lead_source'
+                    type: array
+                    items:
+                      properties:
+                        id:
+                          $ref: '#/components/schemas/Lead_source/properties/id'
+                        text:
+                          $ref: '#/components/schemas/Lead_source/properties/text'
+                        counts:
+                          $ref: '#/components/schemas/Lead_source/properties/counts'
+                        total_count:
+                          $ref: '#/components/schemas/Lead_source/properties/total_count'
+                        action_stream_count:
+                          $ref: '#/components/schemas/Lead_source/properties/action_stream_count'
+                        team_counts:
+                          $ref: '#/components/schemas/Lead_source/properties/team_counts'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -636,7 +648,7 @@ paths:
                 text:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
-        200:
+        201:
           description: OK
           content:
             application/json:
@@ -779,13 +791,11 @@ paths:
                   timestamp:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
-                    properties:
-                      statuses:
-                        type: array
-                        items:
-                          properties:
-                            status:
-                              $ref: '#/components/schemas/Status'
+                    type: array
+                    items:
+                      properties:
+                        status:
+                          $ref: '#/components/schemas/Status'
         400:
           $ref: '#/components/responses/400'
         401:
