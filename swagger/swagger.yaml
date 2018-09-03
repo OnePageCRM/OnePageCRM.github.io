@@ -649,7 +649,7 @@ paths:
                   $ref: '#/components/schemas/Lead_source/properties/text'
       responses:
         201:
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
@@ -1180,7 +1180,7 @@ paths:
       parameters: []
       responses:
         201:
-          description: OK Operation Successful
+          description: Created
           content:
             application/json:
               schema:
@@ -1233,7 +1233,7 @@ paths:
                   example: 10.1
       responses:
         200:
-          description: OK Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1269,7 +1269,7 @@ paths:
       parameters: []
       responses:
         200:
-          description: OK Operation Successful
+          description: OK
           content:
             application/json:
               schema:
@@ -1368,7 +1368,7 @@ paths:
                   $ref: '#/components/schemas/Custom_field/properties/choices'
       responses:
         201:
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
@@ -5207,8 +5207,8 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       responses:
-        200:
-          description: OK
+        201:
+          description: Created
           content:
             application/json:
               schema:
