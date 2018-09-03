@@ -1975,6 +1975,7 @@ paths:
                   type: string
                   format: bson-id
                   required: false
+                  nullable: true
                   example: ''
                 user_ids_to_notify:
                   type: array
@@ -2073,6 +2074,7 @@ paths:
                   type: string
                   format: bson-id
                   required: false
+                  nullable: true
                   example: ''
                 user_ids_to_notify:
                   type: array
@@ -2300,14 +2302,11 @@ paths:
                 via:
                   $ref: '#/components/schemas/Call/properties/via'
                 recording_link:
-                  type: string
-                  description: URL of the recording of the call conversation
-                  required: false
-                  nullable: true
-                  example: ''
+                  $ref: '#/components/schemas/Call/properties/recording_link'
                 user_ids_to_notify:
                   type: array
                   description: A list of user IDs to notify
+                  required: false
                   items:
                     type: string
                     format: bson-id
@@ -2404,14 +2403,11 @@ paths:
                 via:
                   $ref: '#/components/schemas/Call/properties/via'
                 recording_link:
-                  type: string
-                  description: URL of the recording of the call conversation
-                  required: false
-                  nullable: true
-                  example: ''
+                  $ref: '#/components/schemas/Call/properties/recording_link'
                 user_ids_to_notify:
                   type: array
                   description: A list of user IDs to notify
+                  required: false
                   items:
                     type: string
                     format: bson-id
@@ -7408,6 +7404,7 @@ components:
           type: string
           format: bson-id
           description: ID of the contact, to whom the call belongs
+          required: true
           example: 5ae06ef9d55673108fe8877f
         text:
           type: string
@@ -7425,6 +7422,7 @@ components:
           description: >-
             Time the call occurred in UNIX Epoch time (defaults to current time, if left blank)
           example: 1525273653
+          default: Current timestamp
         via:
           type: string
           description: Through which application did the call take place
@@ -7472,7 +7470,7 @@ components:
           format: int32
           description: Index of the call (in the results set)
           readOnly: true
-          example: 4
+          example: 1
     Address:
       description: The physical address of a contact or company.
       properties:
