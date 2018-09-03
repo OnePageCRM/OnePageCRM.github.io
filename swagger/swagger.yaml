@@ -1230,7 +1230,7 @@ paths:
                   example: margin
                 commission_percentage:
                   type: number
-                  example: 10.1
+                  example: 10.0
       responses:
         200:
           description: OK
@@ -7964,6 +7964,7 @@ components:
           type: string
           description: Name of the company field
           maxLength: 60 chars
+          required: true
           example: Company size
         type:
           type: string
@@ -7975,6 +7976,7 @@ components:
           - number
           - select_box
           - single_line_text
+          required: true
           example: select_box
         position:
           type: integer
@@ -8003,6 +8005,7 @@ components:
           type: string
           description: Name of the deal field
           maxLength: 60 chars
+          required: true
           example: Deal size
         type:
           description: Type of the deal field
@@ -8014,6 +8017,7 @@ components:
           - number
           - select_box
           - single_line_text
+          required: true
           example: select_box
         position:
           type: integer
@@ -8030,17 +8034,18 @@ components:
           - Medium
           - Large
     Cost_setup:
-      description: >-
-        Settings related to deals e.g. cost, commission. Disabled by default.
+      description: Settings related to deals e.g. cost, commission. Disabled by default.
       properties:
         cost_enabled:
           type: boolean
           description: Is the cost field enabled for deals?
+          required: true
           example: false
         cost_required:
           # cost_required field is deprecated
           type: boolean
           description: Is the cost field required when saving a deal?
+          required: true
           example: false
         commission_base:
           type: string
@@ -8048,12 +8053,13 @@ components:
           enum:
           - amount
           - margin
+          required: true
           example: amount
         commission_percentage:
           type: number
           description: The default percentage commission is to be calculated at
-          example: 9.5
-          default: 10.0
+          required: true
+          example: 10.0
     Deal_stage:
       description: The various stages that a deal goes through in the sales pipeline.
       properties:
