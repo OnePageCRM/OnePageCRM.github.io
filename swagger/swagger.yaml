@@ -3220,18 +3220,35 @@ paths:
             application/json:
               schema:
                 properties:
-                  name:
-                    description: 'Country name '
-                    type: string
-                    example: Ireland
-                  code:
-                    description: ISO code
-                    type: string
-                    example: IE
-                  phone_prefix:
-                    description: Phone Prefix
-                    type: string
-                    example: '+353'
+                  status:
+                    $ref: '#/components/schemas/Success/properties/status'
+                  message:
+                    $ref: '#/components/schemas/Success/properties/message'
+                  timestamp:
+                    $ref: '#/components/schemas/Success/properties/timestamp'
+                  data:
+                    properties:
+                      countries:
+                        type: array
+                        items:
+                          properties:
+                            country:
+                              properties:
+                                name:
+                                  type: string
+                                  description: Name of the country
+                                  readOnly: true
+                                  example: Ireland
+                                code:
+                                  type: string
+                                  description: ISO-3166 country code
+                                  readOnly: true
+                                  example: IE
+                                phone_prefix:
+                                  type: string
+                                  description: Phone prefix of the country
+                                  readOnly: true
+                                  example: '+353'
   /actions:
     get:
       summary: Get a list of actions
