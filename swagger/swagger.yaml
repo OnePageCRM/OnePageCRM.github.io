@@ -6821,7 +6821,7 @@ components:
                 example: joe.bloggs@{foo.bar}
         address_list:
           type: array
-          maxLength: 1 address
+          maxItems: 1 address
           items:
             $ref: '#/components/schemas/Address'
         status:
@@ -8046,7 +8046,7 @@ components:
           description: >-
             A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
-          maxLength: 60 choices
+          maxItems: 60 choices
           example:
           - Small
           - Medium
@@ -8063,7 +8063,7 @@ components:
         name:
           type: string
           description: Name of the deal field
-          maxLength: 60 chars
+          maxItems: 60 chars
           required: true
           example: Deal size
         type:
@@ -8087,7 +8087,7 @@ components:
           description: >-
             A list of possible choices (for fields of type `multiple_choice` or `select_box`)
           type: string
-          maxLength: 60 choices
+          maxItems: 60 choices
           example:
           - Small
           - Medium
