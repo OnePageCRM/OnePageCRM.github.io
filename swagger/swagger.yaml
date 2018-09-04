@@ -2702,38 +2702,38 @@ paths:
               properties:
                 contact_id:
                   $ref: '#/components/schemas/Deal/properties/contact_id'
+                owner_id:
+                  $ref: '#/components/schemas/Deal/properties/owner_id'
                 name:
                   $ref: '#/components/schemas/Deal/properties/name'
                 text:
                   $ref: '#/components/schemas/Deal/properties/text'
-                owner_id:
-                  $ref: '#/components/schemas/Deal/properties/owner_id'
-                amount:
-                  $ref: '#/components/schemas/Deal/properties/amount'
-                months:
-                  $ref: '#/components/schemas/Deal/properties/months'
-                date:
-                  $ref: '#/components/schemas/Deal/properties/date'
-                status:
-                  $ref: '#/components/schemas/Deal/properties/status'
                 stage:
                   $ref: '#/components/schemas/Deal/properties/stage'
-                deal_fields:
-                  $ref: '#/components/schemas/Deal/properties/deal_fields'
+                status:
+                  $ref: '#/components/schemas/Deal/properties/status'
                 expected_close_date:
                   $ref: '#/components/schemas/Deal/properties/expected_close_date'
                 close_date:
                   $ref: '#/components/schemas/Deal/properties/close_date'
+                date:
+                  $ref: '#/components/schemas/Deal/properties/date'
+                amount:
+                  $ref: '#/components/schemas/Deal/properties/amount'
+                months:
+                  $ref: '#/components/schemas/Deal/properties/months'
                 cost:
                   $ref: '#/components/schemas/Deal/properties/cost'
+                commission_base:
+                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                commission_type:
+                  $ref: '#/components/schemas/Deal/properties/commission_type'
                 commission:
                   $ref: '#/components/schemas/Deal/properties/commission'
                 commission_percentage:
                   $ref: '#/components/schemas/Deal/properties/commission_percentage'
-                commission_type:
-                  $ref: '#/components/schemas/Deal/properties/commission_type'
-                commission_base:
-                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                deal_fields:
+                  $ref: '#/components/schemas/Deal/properties/deal_fields'
       responses:
         201:
           description: Created
@@ -2815,38 +2815,38 @@ paths:
               properties:
                 contact_id:
                   $ref: '#/components/schemas/Deal/properties/contact_id'
+                owner_id:
+                  $ref: '#/components/schemas/Deal/properties/owner_id'
                 name:
                   $ref: '#/components/schemas/Deal/properties/name'
                 text:
                   $ref: '#/components/schemas/Deal/properties/text'
-                owner_id:
-                  $ref: '#/components/schemas/Deal/properties/owner_id'
-                amount:
-                  $ref: '#/components/schemas/Deal/properties/amount'
-                months:
-                  $ref: '#/components/schemas/Deal/properties/months'
-                date:
-                  $ref: '#/components/schemas/Deal/properties/date'
-                status:
-                  $ref: '#/components/schemas/Deal/properties/status'
                 stage:
                   $ref: '#/components/schemas/Deal/properties/stage'
-                deal_fields:
-                  $ref: '#/components/schemas/Deal/properties/deal_fields'
+                status:
+                  $ref: '#/components/schemas/Deal/properties/status'
                 expected_close_date:
                   $ref: '#/components/schemas/Deal/properties/expected_close_date'
                 close_date:
                   $ref: '#/components/schemas/Deal/properties/close_date'
+                date:
+                  $ref: '#/components/schemas/Deal/properties/date'
+                amount:
+                  $ref: '#/components/schemas/Deal/properties/amount'
+                months:
+                  $ref: '#/components/schemas/Deal/properties/months'
                 cost:
                   $ref: '#/components/schemas/Deal/properties/cost'
+                commission_base:
+                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                commission_type:
+                  $ref: '#/components/schemas/Deal/properties/commission_type'
                 commission:
                   $ref: '#/components/schemas/Deal/properties/commission'
                 commission_percentage:
                   $ref: '#/components/schemas/Deal/properties/commission_percentage'
-                commission_type:
-                  $ref: '#/components/schemas/Deal/properties/commission_type'
-                commission_base:
-                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                deal_fields:
+                  $ref: '#/components/schemas/Deal/properties/deal_fields'
       responses:
         200:
           description: OK
@@ -2968,22 +2968,8 @@ paths:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
                     properties:
-                      id:
-                        type: string
-                        description: Id of the note
-                        example: 5afc1ea9d556730b780096db
-                      storage_provider:
-                        type: string
-                        description: Where the attachment is stored
-                        example: amazon
-                      filename:
-                        type: string
-                        description: The filename of the attachment
-                        example: mario.jpeg
-                      url:
-                        type: string
-                        description: External URL for the file
-                        example: 'https://{...}/mario.jpeg'
+                      attachment:
+                        $ref: '#/components/schemas/Attachment'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -7141,24 +7127,29 @@ components:
         deal stage, closed date or expected close date. Deals support file attachments.
       properties:
         id:
-          description: ID of the deal
           type: string
           format: bson-id
+          description: ID of the deal
           readOnly: true
           example: 5aaa9b059007ba08c9ebaf58
         contact_id:
-          description: ID of the contact, to whom the deal belongs
           type: string
           format: bson-id
+          description: ID of the contact, to whom the deal belongs
+          required: true
           example: 5aaa9b059007ba08c9ebaf58
         owner_id:
-          description: ID of the user, to whom the deal belongs
           type: string
           format: bson-id
+          description: ID of the user, to whom the deal belongs
+          required: false
           example: 5aba31e99007ba0f570c12f7
+          default: Logged API user's ID
         name:
-          description: Name of the deal (max 60 chars)
           type: string
+          description: Name of the deal
+          maxLength: 60 chars
+          required: true
           example: Solar panels
         text:
           type: string
@@ -7166,93 +7157,103 @@ components:
           maxLength: 7168 chars
           example: Fingers crossed!
         stage:
-          description: >-
-            A numerical representation of the progress of a pending deal (number ranging from 0 to 100 exclusive)
           type: integer
           format: int32
+          description: >-
+            A numerical representation of the progress of a pending deal (number ranging from 0 to 100 exclusive)
           example: 50
         status:
-          description: Status of the deal
           type: string
+          description: Status of the deal
           enum:
           - pending
           - won
           - lost
           example: pending
+          default: pending
         expected_close_date:
+          type: string
+          format: date
           description: The date the deal is expected to close (status should be `pending`)
-          type: string
-          format: date
           example: '2018-04-15'
+          deafult: Today's date
         close_date:
+          type: string
+          format: date
           description: The date the deal actually closed (status should be `won` or `lost`)
-          type: string
-          format: date
           example: '2018-04-15'
+          deafult: Today's date
         date:
-          description: Expected close date (for `pending` deals), close date (for deals of status `won` or `lost`)
           type: string
           format: date
+          description: Expected close date (for `pending` deals), close date (for deals of status `won` or `lost`)
           readOnly: true
           example: '2018-04-15'
+          deafult: Today's date
         amount:
-          description: The monitary value of the deal (per month, if multi-month deal)
           type: number
           format: float
+          description: The monitary value of the deal (per month, if multi-month deal)
           example: 99.99
+          default: 0.0
         months:
-          description: Number of months the deal is to be paid for (1 for regular deals, 2+ for multi-month)
           type: integer
           format: int32
+          description: Number of months the deal is to be paid for (1 for regular deals, 2+ for multi-month)
           example: 1
+          default: 1
         cost:
+          type: number
+          format: float
           description: The monitary cost of the deal
-          type: number
-          format: float
-          example: 0
+          example: 0.0
+          default: 0.0
         margin:
-          description: Profit margin for the deal (`amount` minus `cost`)
           type: number
           format: float
+          description: Profit margin for the deal (`amount` minus `cost`)
           readOnly: true
           example: 99.99
         total_amount:
-          description: Product of amount and months (will only differ from `amount` field, if multi-month deal)
           type: number
           format: float
+          description: Product of amount and months (will only differ from `amount` field, if multi-month deal)
           readOnly: true
           example: 99.99
         total_cost:
-          description: Product of cost and months (will only differ from `cost` field, if multi-month deal)
           type: number
           format: float
+          description: Product of cost and months (will only differ from `cost` field, if multi-month deal)
           readOnly: true
           example: 0
         commission_base:
-          description: Base used to calculate the commission of the deal
           type: string
+          description: Base used to calculate the commission of the deal
           enum:
           - amount
           - margin
           example: none
         commission_type:
-          description: Type of commission for the deal
           type: string
+          description: Type of commission for the deal
           enum:
           - none
           - percentage
           - absolute
           example: none
+          default: none
         commission:
+          type: number
+          format: float
           description: Commission payable for the deal
-          type: number
-          format: float
-          example: 0
+          example: 0.0
+          default: 0.0
         commission_percentage:
-          description: Commission percentage for the deal
           type: number
           format: float
-          example: 0
+          description: Commission percentage for the deal
+          example: 0.0
+          default: 0.0
         deal_fields:
           type: array
           items:
@@ -7270,8 +7271,8 @@ components:
           example: Jane D.
           default: Logged API user
         has_related_notes:
-          description: Does the deal have related notes?
           type: boolean
+          description: Does the deal have related notes?
           readOnly: true
           example: true
         attachments:
