@@ -557,7 +557,7 @@ paths:
                 company_name:
                   $ref: '#/components/schemas/User/properties/company_name'
                 bcc_email:
-                  example: "true"
+                  example: 'true'
       responses:
         200:
           description: OK
@@ -5151,9 +5151,9 @@ paths:
   /contacts/filters/{filter_id}:
     get:
       summary: Show contacts that meet the criteria of a filter
-      description: ""
+      description:
       tags:
-      - "Contacts"
+      - Contacts
       parameters:
       - $ref: '#/components/parameters/path_filter_id'
       responses:
@@ -5194,12 +5194,12 @@ paths:
   /contacts/delete:
     delete:
       summary: Delete multiple contacts
-      description: ""
+      description:
       tags:
-      - "Contacts"
+      - Contacts
       parameters:
-      - name: "ids"
-        in: "query"
+      - name: ids
+        in: query
         required: true
         description: Comma seperated list of contact ids to delete
         schema:
@@ -5762,9 +5762,9 @@ paths:
       summary: Get all email messages for a specific contact
       description:
       tags:
-      - "Contacts"
+      - Contacts
       parameters:
-      - $ref: "#/components/parameters/path_contact_id"
+      - $ref: '#/components/parameters/path_contact_id'
       - $ref: '#/components/parameters/query_page'
       - $ref: '#/components/parameters/query_per_page'
       responses:
@@ -5787,7 +5787,7 @@ paths:
                         items:
                           properties:
                             email_message:
-                              $ref: "#/components/schemas/Email_message"
+                              $ref: '#/components/schemas/Email_message'
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
@@ -5797,17 +5797,17 @@ paths:
                       max_page:
                         $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
   /contacts/{contact_id}/assign_tag/{tag_name}:
     put:
       summary: Assign a tag to a specific contact
@@ -6288,23 +6288,23 @@ paths:
                         items:
                           properties:
                             contact:
-                              $ref: "#/components/schemas/Contact"
+                              $ref: '#/components/schemas/Contact'
                             next_actions:
                               type: array
                               items:
-                                $ref: "#/components/schemas/Action"
+                                $ref: '#/components/schemas/Action'
                             next_action:
-                              $ref: "#/components/schemas/Action"
+                              $ref: '#/components/schemas/Action'
                             queued_actions:
                               type: array
                               items:
-                                $ref: "#/components/schemas/Action"
+                                $ref: '#/components/schemas/Action'
                             next_action_conflicts:
                               type: array
                               items: {}
                               example: []
                             company:
-                              $ref: "#/components/schemas/Company"
+                              $ref: '#/components/schemas/Company'
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
@@ -6314,17 +6314,17 @@ paths:
                       max_page:
                         $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
   /team_stream:
     get:
       summary: Get a list of contacts prioritized by their next action
@@ -6391,23 +6391,23 @@ paths:
                         items:
                           properties:
                             contact:
-                              $ref: "#/components/schemas/Contact"
+                              $ref: '#/components/schemas/Contact'
                             next_actions:
                               type: array
                               items:
-                                $ref: "#/components/schemas/Action"
+                                $ref: '#/components/schemas/Action'
                             next_action:
-                              $ref: "#/components/schemas/Action"
+                              $ref: '#/components/schemas/Action'
                             queued_actions:
                               type: array
                               items:
-                                $ref: "#/components/schemas/Action"
+                                $ref: '#/components/schemas/Action'
                             next_action_conflicts:
                               type: array
                               items: {}
                               example: []
                             company:
-                              $ref: "#/components/schemas/Company"
+                              $ref: '#/components/schemas/Company'
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
@@ -6417,17 +6417,17 @@ paths:
                       max_page:
                         $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
   /webhooks:
     get:
       summary: Get all webhooks (associated with the logged API user's account)
@@ -6453,7 +6453,7 @@ paths:
                       webhooks:
                         type: array
                         items:
-                          $ref: "#/components/schemas/Webhook"
+                          $ref: '#/components/schemas/Webhook'
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
                       page:
@@ -6463,17 +6463,17 @@ paths:
                       max_page:
                         $ref: '#/components/schemas/Page_data/properties/max_page'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
   /webhooks/{webhook_id}:
     get:
       summary: Get a specific webhook
@@ -6481,7 +6481,7 @@ paths:
       tags:
       - Web Hooks
       parameters:
-      - $ref: "#/components/parameters/path_webhook_id"
+      - $ref: '#/components/parameters/path_webhook_id'
       responses:
         200:
           description: OK
@@ -6496,41 +6496,41 @@ paths:
                   timestamp:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
-                    $ref: "#/components/schemas/Webhook"
+                    $ref: '#/components/schemas/Webhook'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
     delete:
       summary: Delete a specific webhook
-      description: ""
+      description:
       tags:
       - Web Hooks
       parameters:
-      - $ref: "#/components/parameters/path_webhook_id"
+      - $ref: '#/components/parameters/path_webhook_id'
       responses:
         200:
-          $ref: "#/components/responses/200"
+          $ref: '#/components/responses/200'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         404:
-          $ref: "#/components/responses/404"
+          $ref: '#/components/responses/404'
         409:
-          $ref: "#/components/responses/409"
+          $ref: '#/components/responses/409'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
 components:
   schemas:
     Bootstrap:
