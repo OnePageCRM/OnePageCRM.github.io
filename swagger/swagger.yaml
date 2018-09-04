@@ -4275,15 +4275,18 @@ paths:
                                   type: array
                                   items:
                                     $ref: '#/components/schemas/Action'
-                                queued_action_conflicts:
+                                next_action_conflicts:
                                   type: array
-                                  items:
-                                    $ref: '#/components/schemas/Action'
+                                  items: {}
+                                  example: []
                                 company:
                                   $ref: '#/components/schemas/Company'
                                 linked_with:
                                   type: array
+                                  description: IDs of contacts, to which the contact/company is linked
                                   items:
+                                    type: string
+                                    format: bson-id
                                     example: 5aba31e99007ba0f570c92ab
                       total_count:
                         $ref: '#/components/schemas/Page_data/properties/total_count'
