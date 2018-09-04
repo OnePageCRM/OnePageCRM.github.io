@@ -6444,7 +6444,7 @@ paths:
   /webhooks/{webhook_id}:
     get:
       summary: Get a specific webhook
-      description: ""
+      description:
       tags:
       - Web Hooks
       parameters:
@@ -6463,9 +6463,7 @@ paths:
                   timestamp:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data:
-                    properties:
-                      webhook:
-                        $ref: "#/components/schemas/Webhook"
+                    $ref: "#/components/schemas/Webhook"
         400:
           $ref: "#/components/responses/400"
         401:
