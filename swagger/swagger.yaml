@@ -2577,38 +2577,38 @@ paths:
                           properties:
                             result:
                               type: string
+                              format: bson-id
+                              description: ID of the call result
                               example: interested
-                              description: id of the call result
                             text:
                               type: string
+                              description: Display text of the call result
                               example: Interested
-                              description: Display name of the call result
                             counts:
                               type: integer
+                              format: int32
+                              description: The number of calls for the logged API user, with the call result
+                              readOnly: true
                               example: 5
-                              description: >-
-                                The number of this users calls with this call
-                                result.
                             total_counts:
                               type: integer
+                              format: int32
+                              description: The number of calls for the entire account, with the call result
+                              readOnly: true
                               example: 5
-                              description: The total number of calls with this call result
                             team_counts:
-                              description: >-
-                                Number of calls with this call results grouped
-                                by user
                               type: array
+                              description: The number of calls for each user, with the call result
+                              readOnly: true
                               items:
                                 properties:
                                   user_id:
-                                    description: ID of one ot the API user’s team members
-                                    type: string
-                                    example: 5aba31e99007ba0f570c12f7
+                                    $ref: '#/components/schemas/User/properties/id'
                                   counts:
-                                    description: >-
-                                      Number of calls that the user with user_id
-                                      has with this call result
                                     type: integer
+                                    format: int32
+                                    description: Number of calls for the user, with the call result
+                                    readOnly: true
                                     example: 4
         400:
           $ref: '#/components/responses/400'
