@@ -7740,6 +7740,7 @@ components:
           type: string
           description: Display text of the status
           maxLength: 20 chars
+          required: true
           example: Prospect
         description:
           type: string
@@ -7750,6 +7751,7 @@ components:
           type: string
           format: hex-color
           description: The color of the status (six character hex value)
+          required: true
           enum:
           - '666666'
           - '3399ff'
