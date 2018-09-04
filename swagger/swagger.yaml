@@ -7911,11 +7911,13 @@ components:
         text:
           type: string
           description: Description text of the predefined action
+          required: true
           example: '#1 Email [firstname] introducing our organization'
         days:
           type: integer
           format: int32
           description: Suggested number of days until the action becomes due
+          required: true
           example: 4
     Custom_field:
       description: Extra user-configurable data fields for Contacts. Only editable by admins.
