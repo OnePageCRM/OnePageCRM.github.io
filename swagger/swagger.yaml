@@ -4795,10 +4795,10 @@ paths:
                         type: array
                         items:
                           $ref: '#/components/schemas/Action'
-                      queued_action_conflicts:
+                      next_action_conflicts:
                         type: array
-                        items:
-                          $ref: '#/components/schemas/Action'
+                        items: {}
+                        example: []
                       company:
                         $ref: '#/components/schemas/Company'
         400:
@@ -4835,40 +4835,47 @@ paths:
                   $ref: '#/components/schemas/Contact/properties/last_name'
                 job_title:
                   $ref: '#/components/schemas/Contact/properties/job_title'
-                owner_id:
-                  $ref: '#/components/schemas/Contact/properties/owner_id'
+                starred:
+                  $ref: '#/components/schemas/Contact/properties/starred'
                 company_id:
                   $ref: '#/components/schemas/Contact/properties/company_id'
                 company_name:
                   $ref: '#/components/schemas/Contact/properties/company_name'
-                background:
-                  $ref: '#/components/schemas/Contact/properties/background'
-                status_id:
-                  $ref: '#/components/schemas/Contact/properties/status_id'
-                lead_source_id:
-                  $ref: '#/components/schemas/Lead_source/properties/id'
-                address_list:
-                  $ref: '#/components/schemas/Contact/properties/address_list'
-                phones:
-                  $ref: '#/components/schemas/Contact/properties/phones'
                 urls:
                   $ref: '#/components/schemas/Contact/properties/url'
+                phones:
+                  $ref: '#/components/schemas/Contact/properties/phones'
                 emails:
                   $ref: '#/components/schemas/Contact/properties/emails'
+                address_list:
+                  $ref: '#/components/schemas/Contact/properties/address_list'
+                status_id:
+                  $ref: '#/components/schemas/Contact/properties/status_id'
                 tags:
                   $ref: '#/components/schemas/Contact/properties/tags'
+                lead_source_id:
+                  $ref: '#/components/schemas/Lead_source/properties/id'
+                background:
+                  $ref: '#/components/schemas/Contact/properties/background'
+                owner_id:
+                  $ref: '#/components/schemas/Contact/properties/owner_id'
                 custom_fields:
                   type: array
+                  description: Extra user-configurable data fields for Contacts. Only editable by admins.
                   items:
+                    type: object
                     properties:
-                      id:
-                        $ref: '#/components/schemas/Custom_field/properties/id'
-                      name:
-                        $ref: '#/components/schemas/Custom_field/properties/name'
+                      custom_field:
+                        properties:
+                          id:
+                            type: string
+                            format: bson-id
+                            description: ID of the custom field
+                            example: 5aad9b039007ba28c9ebad56
                       value:
-                        example: Winter
-                starred:
-                  $ref: '#/components/schemas/Contact/properties/starred'
+                        type: string
+                        description: Value for the custom field
+                        example: Large
       responses:
         200:
           description: OK
@@ -4896,35 +4903,30 @@ paths:
                         type: array
                         items:
                           $ref: '#/components/schemas/Action'
-                      queued_action_conflicts:
+                      next_action_conflicts:
                         type: array
-                        items:
-                          $ref: '#/components/schemas/Action'
+                        items: {}
+                        example: []
                       company:
                         $ref: '#/components/schemas/Company'
                   lead_sources:
+                    type: array
                     items:
                       $ref: '#/components/schemas/Lead_source'
                   statuses:
+                    type: array
                     items:
-                      $ref: '#/components/schemas/Status'
+                      type: object
+                      properties:
+                        status:
+                          $ref: '#/components/schemas/Status'
                   tags:
-                    description: >-
-                      Tags provide a means to classify contacts by however many
-                      tags you choose to attach to them. There are 2 types of
-                      tags, tags and system tags
                     properties:
                       tags:
-                        description: >-
-                          An array of custom tags. A custom tag is a user
-                          created tag used for categorising contacts
                         type: array
                         items:
                           $ref: '#/components/schemas/Tag'
                       system_tags:
-                        description: >-
-                          An array of system tags. A system tag is a system
-                          generate tag used for categorising contacts
                         type: array
                         items:
                           $ref: '#/components/schemas/Tag'
@@ -4974,28 +4976,23 @@ paths:
                     $ref: '#/components/schemas/Success/properties/timestamp'
                   data: {}
                   lead_sources:
+                    type: array
                     items:
                       $ref: '#/components/schemas/Lead_source'
                   statuses:
+                    type: array
                     items:
-                      $ref: '#/components/schemas/Status'
+                      type: object
+                      properties:
+                        status:
+                          $ref: '#/components/schemas/Status'
                   tags:
-                    description: >-
-                      Tags provide a means to classify contacts by however many
-                      tags you choose to attach to them. There are 2 types of
-                      tags, tags and system tags
                     properties:
                       tags:
-                        description: >-
-                          An array of custom tags. A custom tag is a user
-                          created tag used for categorising contacts
                         type: array
                         items:
                           $ref: '#/components/schemas/Tag'
                       system_tags:
-                        description: >-
-                          An array of system tags. A system tag is a system
-                          generate tag used for categorising contacts
                         type: array
                         items:
                           $ref: '#/components/schemas/Tag'
@@ -6857,6 +6854,7 @@ components:
           format: bson-id
           description: ID of the user, to whom the contact belongs
           example: 5aba31e99007ba0f570c92a5
+          default: Logged API user's ID
         custom_fields:
           type: array
           items:
