@@ -4578,10 +4578,10 @@ paths:
                               type: array
                               items:
                                 $ref: '#/components/schemas/Action'
-                            queued_action_conflicts:
+                            next_action_conflicts:
                               type: array
-                              items:
-                                $ref: '#/components/schemas/Action'
+                              items: {}
+                              example: []
                             company:
                               $ref: '#/components/schemas/Company'
                       total_count:
@@ -4592,38 +4592,31 @@ paths:
                         $ref: '#/components/schemas/Page_data/properties/per_page'
                       max_page:
                         $ref: '#/components/schemas/Page_data/properties/max_page'
-                      lead_sources:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/Lead_source'
-                      statuses:
-                        type: array
-                        items:
+                  lead_sources:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lead_source'
+                  statuses:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        status:
                           $ref: '#/components/schemas/Status'
+                  tags:
+                    properties:
                       tags:
-                        description: >-
-                          Tags provide a means to classify contacts by however
-                          many tags you choose to attach to them. There are 2
-                          types of tags, tags and system tags
-                        properties:
-                          tags:
-                            description: >-
-                              An array of custom tags. A custom tag is a user
-                              created tag used for categorising contacts
-                            type: array
-                            items:
-                              $ref: '#/components/schemas/Tag'
-                          system_tags:
-                            description: >-
-                              An array of system tags. A system tag is a system
-                              generate tag used for categorising contacts
-                            type: array
-                            items:
-                              $ref: '#/components/schemas/Tag'
-                      contacts_count:
-                        $ref: '#/components/schemas/Contacts_count'
-                      team_stream:
-                        $ref: '#/components/schemas/Team_stream'
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                      system_tags:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                  contacts_count:
+                    $ref: '#/components/schemas/Contacts_count'
+                  team_stream:
+                    $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
         401:
