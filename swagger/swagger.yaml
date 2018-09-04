@@ -557,6 +557,10 @@ paths:
                 company_name:
                   $ref: '#/components/schemas/User/properties/company_name'
                 bcc_email:
+                  type: string
+                  required: false
+                  description: >-
+                    Should the BCC email address be re-generated for this user (you can only update this field for yourself)
                   example: 'true'
       responses:
         200:
