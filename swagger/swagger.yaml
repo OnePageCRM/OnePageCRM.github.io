@@ -7808,6 +7808,7 @@ components:
           type: string
           description: Description of the lead source
           maxLength: 40 chars
+          required: true
           example: Advertisement
         counts:
           type: integer
