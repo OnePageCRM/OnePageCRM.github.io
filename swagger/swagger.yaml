@@ -2733,7 +2733,22 @@ paths:
                 commission_percentage:
                   $ref: '#/components/schemas/Deal/properties/commission_percentage'
                 deal_fields:
-                  $ref: '#/components/schemas/Deal/properties/deal_fields'
+                  type: array
+                  description: Extra user-configurable data fields for Deals. Only editable by admins.
+                  items:
+                    type: object
+                    properties:
+                      deal_field:
+                        properties:
+                          id:
+                            type: string
+                            format: bson-id
+                            description: ID of the deal field
+                            example: 5aad9b039007ba28c9ebad56
+                      value:
+                        type: string
+                        description: Value for the deal field
+                        example: Large
       responses:
         201:
           description: Created
@@ -2846,7 +2861,22 @@ paths:
                 commission_percentage:
                   $ref: '#/components/schemas/Deal/properties/commission_percentage'
                 deal_fields:
-                  $ref: '#/components/schemas/Deal/properties/deal_fields'
+                  type: array
+                  description: Extra user-configurable data fields for Deals. Only editable by admins.
+                  items:
+                    type: object
+                    properties:
+                      deal_field:
+                        properties:
+                          id:
+                            type: string
+                            format: bson-id
+                            description: ID of the deal field
+                            example: 5aad9b039007ba28c9ebad56
+                      value:
+                        type: string
+                        description: Value for the deal field
+                        example: Large
       responses:
         200:
           description: OK
