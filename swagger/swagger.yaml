@@ -4325,8 +4325,10 @@ paths:
             schema:
               properties:
                 contact_id:
-                  description: The id of the contact to link with this company
                   type: string
+                  format: bson-id
+                  description: The ID of the contact to link with the company
+                  required: true
                   example: 5ae06ef9d55673108fe8877b
       responses:
         201:
@@ -4347,26 +4349,29 @@ paths:
                         properties:
                           contact:
                             $ref: '#/components/schemas/Contact'
-                          next_actions:
-                            type: array
-                            items:
+                            next_actions:
+                              type: array
+                              items:
+                                $ref: '#/components/schemas/Action'
+                            next_action:
                               $ref: '#/components/schemas/Action'
-                          next_action:
-                            $ref: '#/components/schemas/Action'
-                          queued_actions:
-                            type: array
-                            items:
-                              $ref: '#/components/schemas/Action'
-                          queued_action_conflicts:
-                            type: array
-                            items:
-                              $ref: '#/components/schemas/Action'
-                          company:
-                            $ref: '#/components/schemas/Company'
-                          linked_with:
-                            type: array
-                            items:
-                              example: 5aba31e99007ba0f570c92ab
+                            queued_actions:
+                              type: array
+                              items:
+                                $ref: '#/components/schemas/Action'
+                            next_action_conflicts:
+                              type: array
+                              items: {}
+                              example: []
+                            company:
+                              $ref: '#/components/schemas/Company'
+                            linked_with:
+                              type: array
+                              description: IDs of contacts, to which the contact/company is linked
+                              items:
+                                type: string
+                                format: bson-id
+                                example: 5aba31e99007ba0f570c92ab
         400:
           $ref: '#/components/responses/400'
         401:
@@ -4427,7 +4432,7 @@ paths:
             schema:
               properties:
                 status_id:
-                  $ref: '#/components/schemas/Status/properties/id'
+                  $ref: '#/components/schemas/Company/properties/synced_status_id'
       responses:
         201:
           description: Created
