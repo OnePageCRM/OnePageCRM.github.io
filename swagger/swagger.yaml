@@ -4353,29 +4353,29 @@ paths:
                         properties:
                           contact:
                             $ref: '#/components/schemas/Contact'
-                            next_actions:
-                              type: array
-                              items:
-                                $ref: '#/components/schemas/Action'
-                            next_action:
+                          next_actions:
+                            type: array
+                            items:
                               $ref: '#/components/schemas/Action'
-                            queued_actions:
-                              type: array
-                              items:
-                                $ref: '#/components/schemas/Action'
-                            next_action_conflicts:
-                              type: array
-                              items: {}
-                              example: []
-                            company:
-                              $ref: '#/components/schemas/Company'
-                            linked_with:
-                              type: array
-                              description: IDs of contacts, to which the contact/company is linked
-                              items:
-                                type: string
-                                format: bson-id
-                                example: 5aba31e99007ba0f570c92ab
+                          next_action:
+                            $ref: '#/components/schemas/Action'
+                          queued_actions:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Action'
+                          next_action_conflicts:
+                            type: array
+                            items: {}
+                            example: []
+                          company:
+                            $ref: '#/components/schemas/Company'
+                          linked_with:
+                            type: array
+                            description: IDs of contacts, to which the contact/company is linked
+                            items:
+                              type: string
+                              format: bson-id
+                              example: 5aba31e99007ba0f570c92ab
         400:
           $ref: '#/components/responses/400'
         401:
