@@ -6256,7 +6256,8 @@ paths:
                                 $ref: "#/components/schemas/Action"
                             next_action_conflicts:
                               type: array
-                              items: {} # TODO: remove null from array ??
+                              items: {}
+                              example: []
                             company:
                               $ref: "#/components/schemas/Company"
                       total_count:
@@ -6358,7 +6359,8 @@ paths:
                                 $ref: "#/components/schemas/Action"
                             next_action_conflicts:
                               type: array
-                              items: {} # TODO: remove null from array ??
+                              items: {}
+                              example: []
                             company:
                               $ref: "#/components/schemas/Company"
                       total_count:
@@ -6925,10 +6927,13 @@ components:
         name:
           type: string
           description: Name of the company
+          maxLength: 55 chars
+          required: true
           example: Crockett & Tubbs Security
         description:
           type: string
           description: Description of the company
+          maxLength: 10240 chars
           example: For all your security needs
         phone:
           type: string
@@ -6963,7 +6968,7 @@ components:
         syncing_tags:
           type: boolean
           description: Should all contacts in this company share the same tags?
-          example: false
+          example: true
         synced_tags:
           type: array
           description: Tags that all contacts within this company share
@@ -7000,8 +7005,8 @@ components:
           example: 99.99
         contacts:
           description: List of contacts in the comapny
-          maxLength:
           type: array
+          readOnly: true
           items:
             type: object
             properties:
@@ -7019,9 +7024,11 @@ components:
                   $ref: '#/components/schemas/Action'
               next_action_conflicts:
                 type: array
-                items: {} # TODO define schema
+                items: {}
+                example: []
         pending_deals:
           type: array
+          readOnly: true
           items:
             type: object
             properties:
