@@ -3916,14 +3916,21 @@ paths:
                   $ref: '#/components/schemas/Company/properties/address'
                 company_fields:
                   type: array
+                  description: Extra user-configurable data fields for Companies. Only editable by admins.
                   items:
+                    type: object
                     properties:
-                      id:
-                        $ref: '#/components/schemas/Company_field/properties/id'
-                      name:
-                        $ref: '#/components/schemas/Company_field/properties/name'
+                      company_field:
+                        properties:
+                          id:
+                            type: string
+                            format: bson-id
+                            description: ID of the company field
+                            example: 5aad9b039007ba28c9ebad56
                       value:
-                        example: "big"
+                        type: string
+                        description: Value for the company field
+                        example: Large
       responses:
         200:
           description: OK
