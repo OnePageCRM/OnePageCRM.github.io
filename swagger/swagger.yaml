@@ -4974,7 +4974,8 @@ paths:
                     $ref: '#/components/schemas/Success/properties/message'
                   timestamp:
                     $ref: '#/components/schemas/Success/properties/timestamp'
-                  data: {}
+                  data:
+                    type: object
                   lead_sources:
                     type: array
                     items:
@@ -5030,7 +5031,11 @@ paths:
             schema:
               properties:
                 image:
-                  example: '{A base64 encoded jpg or png image}'
+                  type: string
+                  format: b64-encoded
+                  description: Base64 encoded string of image data
+                  example: >-
+                    iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gkFCR0iiEuUHQAAA8tJREFUaN7tmX1IlHccwD/PvZRpGb0ZTcK6C9ksanIVvQ0rV4RTK5cy9keLbETOGmRBW1SMmX9sLCrbjDKrJfRqucqgyBoUW3EmRYZFXRmzFmmvXL502rM/vkIpPXenPl6Xe37wcHDP73e/3+f7/v2douai0g2GiW4yDBADxAAxQAwQA8QA+X+CNALNATzZq5Y9VT1BIhyQpULaeYhKAE8XAniAiLGQeFj2jFmgI8jwZPkcMhmSSuCbp+D4DkxWkVxnh9qigZh0SL8NaU6wzZV39s/92sM/ELWNfnv0hYk5kPESZu2FAaM6pqVmIHQwxG2GZSpMz4fw4d731hgW/zZs0H4X/YU8TyqhLAeuFYIZUHyYj30mOL6HyLgAOnv5z3LI5kbtOf0+ghl74NsmmPwT9OzX2iRUQDFD7ErIeAzJJ3WDAFD87hDVFlP4MBXGroaBY3yvubAWnD+KdmxzIOFI+0945xgcS/YpclO77NkM3DoIhR9DYTRc/937GvtcWacCwz4LgjwSFgnzr8GUXyBkgEj46U049RX8aoLzWdDwSEON7XPargUZ+TX0j4HY5bCoFlJOQeTUFmmrcHkD/DYQij+F6jOv1zXVeXd6HYelQ6uGzpCn7iFcyoErm8AKVJfC3VLoPQhGLobru8UcA3BP42ce0chIoRHwyUbIVCF+B4Tb5ND1NVCWDe5/gqzWqsiD6rPe58QshPku+LIMbCldW8Z0GKS+BoqmQ/4g8QdvjhvhgIQiWFoP9pQgrH5NQEMtnMuCzSY4vUAil6b3hUi+aQomEHNPiM+HEakSqUyII++Mhn2xklvei34kdoVUprMOQGY9TPgBrGESkWovw4k0yAuBi2vA4/YdJN4ZiMna2mTGrYXFbkgshsHjRUvNjeDMhi19oGQ2VJVIorQEBqRz29hmy/P8LlxaD1e3yy/eOQquozo10oqOGnEdAk+d9vvwKJi2TXqKuFwIHaJfEqzc4dcp/QN5VAFbwuB4Ejz42/vc0Zmw8D6knoP+ozp2+GcuKE2HTQq4inUOv1ag6jjsmwS7hkLFVu/zP5gC8QXtu7BwFcF+BxSMgMoC3w1ap66DLIC7Gs4ugVwF/swA9z2NXzf7NjHPC7i4DraGQsk8qCkXoQXM2ZU3ypfyPIiaJK1rq77jDXEqbWT20Cld541iOYXSuVs2fYJjD+Dfv+CPROgVDo5VUvpX5L02j8oCsM+TwOHMhidVsrtVn5igdMmfoSpSmlja2LjnLd8FRR7xZnZWjYDxzovGIB8GiAFigBggBogBYoB0J5D/ACApEz8hyMzGAAAAAElFTkSuQmCC
       responses:
         201:
           description: Created
@@ -5078,7 +5083,11 @@ paths:
             schema:
               properties:
                 image:
-                  example: '{A base64 encoded jpg or png image}'
+                  type: string
+                  format: b64-encoded
+                  description: Base64 encoded string of image data
+                  example: >-
+                    iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gkFCR0iiEuUHQAAA8tJREFUaN7tmX1IlHccwD/PvZRpGb0ZTcK6C9ksanIVvQ0rV4RTK5cy9keLbETOGmRBW1SMmX9sLCrbjDKrJfRqucqgyBoUW3EmRYZFXRmzFmmvXL502rM/vkIpPXenPl6Xe37wcHDP73e/3+f7/v2douai0g2GiW4yDBADxAAxQAwQA8QA+X+CNALNATzZq5Y9VT1BIhyQpULaeYhKAE8XAniAiLGQeFj2jFmgI8jwZPkcMhmSSuCbp+D4DkxWkVxnh9qigZh0SL8NaU6wzZV39s/92sM/ELWNfnv0hYk5kPESZu2FAaM6pqVmIHQwxG2GZSpMz4fw4d731hgW/zZs0H4X/YU8TyqhLAeuFYIZUHyYj30mOL6HyLgAOnv5z3LI5kbtOf0+ghl74NsmmPwT9OzX2iRUQDFD7ErIeAzJJ3WDAFD87hDVFlP4MBXGroaBY3yvubAWnD+KdmxzIOFI+0945xgcS/YpclO77NkM3DoIhR9DYTRc/937GvtcWacCwz4LgjwSFgnzr8GUXyBkgEj46U049RX8aoLzWdDwSEON7XPargUZ+TX0j4HY5bCoFlJOQeTUFmmrcHkD/DYQij+F6jOv1zXVeXd6HYelQ6uGzpCn7iFcyoErm8AKVJfC3VLoPQhGLobru8UcA3BP42ce0chIoRHwyUbIVCF+B4Tb5ND1NVCWDe5/gqzWqsiD6rPe58QshPku+LIMbCldW8Z0GKS+BoqmQ/4g8QdvjhvhgIQiWFoP9pQgrH5NQEMtnMuCzSY4vUAil6b3hUi+aQomEHNPiM+HEakSqUyII++Mhn2xklvei34kdoVUprMOQGY9TPgBrGESkWovw4k0yAuBi2vA4/YdJN4ZiMna2mTGrYXFbkgshsHjRUvNjeDMhi19oGQ2VJVIorQEBqRz29hmy/P8LlxaD1e3yy/eOQquozo10oqOGnEdAk+d9vvwKJi2TXqKuFwIHaJfEqzc4dcp/QN5VAFbwuB4Ejz42/vc0Zmw8D6knoP+ozp2+GcuKE2HTQq4inUOv1ag6jjsmwS7hkLFVu/zP5gC8QXtu7BwFcF+BxSMgMoC3w1ap66DLIC7Gs4ugVwF/swA9z2NXzf7NjHPC7i4DraGQsk8qCkXoQXM2ZU3ypfyPIiaJK1rq77jDXEqbWT20Cld541iOYXSuVs2fYJjD+Dfv+CPROgVDo5VUvpX5L02j8oCsM+TwOHMhidVsrtVn5igdMmfoSpSmlja2LjnLd8FRR7xZnZWjYDxzovGIB8GiAFigBggBogBYoB0J5D/ACApEz8hyMzGAAAAAElFTkSuQmCC
       responses:
         201:
           description: Created
@@ -6755,11 +6764,13 @@ components:
         job_title:
           type: string
           description: Job title of the contact
+          maxLength: 1000 chars
           example: Engineer
         starred:
           type: boolean
           description: Is the contact starred?
-          example: false
+          example: true
+          deafult: false
         photo_url:
           type: string
           description: URL of the contact's photo
@@ -6773,6 +6784,7 @@ components:
         company_name:
           type: string
           description: Name of the company, to whom the contact belongs
+          maxLength: 55 chars
           example: Morgan's Forensic Lab
         url:
           type: array
@@ -6840,6 +6852,7 @@ components:
           format: bson-id
           description: ID of the lead source of the contact
           example: advertisement
+          default: lead
         background:
           type: string
           description: Background infomation about the contact
