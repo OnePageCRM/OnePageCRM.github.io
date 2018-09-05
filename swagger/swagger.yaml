@@ -5656,21 +5656,29 @@ paths:
       parameters:
       - $ref: '#/components/parameters/path_contact_id'
       requestBody:
-        description: >-
-          'contact_id' and 'text' are required when create a note. If a date
-          isn't provided, it will default to today's date. linked_deal_id is an
-          optional param
         required: true
         content:
           application/json:
             schema:
               properties:
-                contact_id:
-                  $ref: '#/components/schemas/Note/properties/contact_id'
                 text:
                   $ref: '#/components/schemas/Note/properties/text'
                 date:
                   $ref: '#/components/schemas/Note/properties/date'
+                linked_deal_id:
+                  type: string
+                  format: bson-id
+                  required: false
+                  nullable: true
+                  example: ''
+                user_ids_to_notify:
+                  type: array
+                  description: A list of user IDs to notify
+                  required: false
+                  items:
+                    type: string
+                    format: bson-id
+                    example: 5aba31e99007ba0f570c12f7
       responses:
         201:
           description: Created
@@ -5771,8 +5779,6 @@ paths:
           application/json:
             schema:
               properties:
-                contact_id:
-                  $ref: '#/components/schemas/Call/properties/contact_id'
                 call_time_int:
                   $ref: '#/components/schemas/Call/properties/call_time_int'
                 text:
@@ -5785,6 +5791,14 @@ paths:
                   $ref: '#/components/schemas/Call/properties/via'
                 recording_link:
                   $ref: '#/components/schemas/Call/properties/recording_link'
+                user_ids_to_notify:
+                  type: array
+                  description: A list of user IDs to notify
+                  required: false
+                  items:
+                    type: string
+                    format: bson-id
+                    example: 5aba31e99007ba0f570c12f7
       responses:
         201:
           description: Created
@@ -7695,7 +7709,7 @@ components:
           type: string
           description: The URL where more details of the email are stored (otherwise empty)
           readOnly: true
-          example: 5aba31ea9007ba0f570c92d4
+          example: '{foo.bar}/emails/{email_id}'
         subject:
           type: string
           description: The subject of the email message
