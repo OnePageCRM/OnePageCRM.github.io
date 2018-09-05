@@ -3423,7 +3423,7 @@ paths:
       - name: done
         in: query
         required: false
-        description: Mark the action as completed
+        description: Mark the action as complete
         schema:
           type: boolean
           example: true
@@ -4399,10 +4399,10 @@ paths:
       - name: contact_id
         in: path
         required: true
-        description: Contact to unlink from company
+        description: ID of the contact to be un-linked, from the company
         schema:
           type: string
-          minimum: 1
+          format: bson-id
       responses:
         200:
           $ref: '#/components/responses/200'
