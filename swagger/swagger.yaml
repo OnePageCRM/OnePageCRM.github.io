@@ -6454,7 +6454,11 @@ paths:
             schema:
               properties:
                 company_name:
-                  example: 'Fancy New Company Inc.'
+                  type: string
+                  description: The name of the company the contact is joining (leave blank to remain without a company)
+                  maxLength: 55 chars
+                  required: false
+                  example: Fancy New Company Inc.
       responses:
         200:
           description: OK
@@ -6472,6 +6476,22 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
+                      next_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action:
+                        $ref: '#/components/schemas/Action'
+                      queued_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action_conflicts:
+                        type: array
+                        items: {}
+                        example: []
+                      company:
+                        $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
         401:
