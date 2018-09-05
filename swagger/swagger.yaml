@@ -5211,16 +5211,47 @@ paths:
       tags:
       - Contacts
       parameters:
-      - name: ids
-        in: query
-        required: true
-        description: Comma seperated list of contact ids to delete
-        schema:
-          type: string
-          minimum: 1
+      - $ref: '#/components/parameters/query_contacts_delete_ids'
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: '#/components/schemas/Success/properties/status'
+                  message:
+                    $ref: '#/components/schemas/Success/properties/message'
+                  timestamp:
+                    $ref: '#/components/schemas/Success/properties/timestamp'
+                  data:
+                    type: object
+                  lead_sources:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lead_source'
+                  statuses:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        status:
+                          $ref: '#/components/schemas/Status'
+                  tags:
+                    properties:
+                      tags:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                      system_tags:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                  contacts_count:
+                    $ref: '#/components/schemas/Contacts_count'
+                  team_stream:
+                    $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -9394,6 +9425,14 @@ components:
         type: integer
         default: 1
         example: 1
+    query_contacts_delete_ids:
+      name: ids
+      in: query
+      required: true
+      description: Comma seperated list of contact IDs, to be deleted
+      schema:
+        type: string
+        minimum: 1
   responses:
     200:
       description: OK
