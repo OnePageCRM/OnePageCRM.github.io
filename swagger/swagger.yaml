@@ -6333,7 +6333,10 @@ paths:
             schema:
               properties:
                 comment:
-                  example: Joe in not interested in buying windmills at this time
+                  type: string
+                  maxLength: 140 chars
+                  required: false
+                  example: Joe is not interested in buying windmills at this time.
       responses:
         200:
           description: OK
@@ -6351,6 +6354,22 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
+                      next_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action:
+                        $ref: '#/components/schemas/Action'
+                      queued_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action_conflicts:
+                        type: array
+                        items: {}
+                        example: []
+                      company:
+                        $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -6388,6 +6407,22 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
+                      next_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action:
+                        $ref: '#/components/schemas/Action'
+                      queued_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action_conflicts:
+                        type: array
+                        items: {}
+                        example: []
+                      company:
+                        $ref: '#/components/schemas/Company'
         400:
           $ref: '#/components/responses/400'
         401:
@@ -7143,15 +7178,19 @@ components:
                 type: string
                 format: bson-id
                 description: ID of the user, for whom the sales cycle is closed
+                readOnly: true
                 example: 5aba31e99007ba0f570c12f7
               closed_at:
                 type: integer
                 format: unix-timestamp
                 description: Time that the sales cycle was closed
+                readOnly: true
                 example: 1524818902
               comment:
                 type: string
+                maxLength: 140 chars
                 description: An optional message detailing why the sales cycle was closed
+                readOnly: true
                 example:
         google_contacts_data:
           description: The google contacts data associated with this contact
