@@ -7153,7 +7153,9 @@ components:
           type: string
           format: bson-id
           description: ID of the user, to whom the action is assigned
+          required: false
           example: 5aaa9b009007ba08c9ebaef7
+          default: Logged API user's ID
         contact_id:
           type: string
           format: bson-id
@@ -7195,8 +7197,7 @@ components:
           type: integer
           format: int32
           description: The position of the action (in the list of queued actions)
-          readOnly: true
-          example: 2
+          example: 1
         done:
           type: boolean
           description: Has the action been marked as complete?
