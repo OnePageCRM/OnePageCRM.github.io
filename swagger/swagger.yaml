@@ -6027,6 +6027,47 @@ paths:
                     properties:
                       contact:
                         $ref: '#/components/schemas/Contact'
+                      next_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action:
+                        $ref: '#/components/schemas/Action'
+                      queued_actions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Action'
+                      next_action_conflicts:
+                        type: array
+                        items: {}
+                        example: []
+                      company:
+                        $ref: '#/components/schemas/Company'
+                  lead_sources:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lead_source'
+                  statuses:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        status:
+                          $ref: '#/components/schemas/Status'
+                  tags:
+                    properties:
+                      tags:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                      system_tags:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+                  contacts_count:
+                    $ref: '#/components/schemas/Contacts_count'
+                  team_stream:
+                    $ref: '#/components/schemas/Team_stream'
         400:
           $ref: '#/components/responses/400'
         401:
