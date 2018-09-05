@@ -5178,6 +5178,14 @@ paths:
                     properties:
                       filter:
                         $ref: '#/components/schemas/Filter'
+                      total_count:
+                        $ref: '#/components/schemas/Page_data/properties/total_count'
+                      page:
+                        $ref: '#/components/schemas/Page_data/properties/page'
+                      per_page:
+                        $ref: '#/components/schemas/Page_data/properties/per_page'
+                      max_page:
+                        $ref: '#/components/schemas/Page_data/properties/max_page'
                       contacts:
                         type: array
                         items:
