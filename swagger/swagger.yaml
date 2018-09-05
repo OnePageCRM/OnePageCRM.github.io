@@ -5514,40 +5514,53 @@ paths:
           application/json:
             schema:
               properties:
-                contact_id:
-                  $ref: '#/components/schemas/Deal/properties/contact_id'
+                owner_id:
+                  $ref: '#/components/schemas/Deal/properties/owner_id'
                 name:
                   $ref: '#/components/schemas/Deal/properties/name'
                 text:
                   $ref: '#/components/schemas/Deal/properties/text'
-                owner_id:
-                  $ref: '#/components/schemas/Deal/properties/owner_id'
-                amount:
-                  $ref: '#/components/schemas/Deal/properties/amount'
-                months:
-                  $ref: '#/components/schemas/Deal/properties/months'
-                date:
-                  $ref: '#/components/schemas/Deal/properties/date'
-                status:
-                  $ref: '#/components/schemas/Deal/properties/status'
                 stage:
                   $ref: '#/components/schemas/Deal/properties/stage'
-                deal_fields:
-                  $ref: '#/components/schemas/Deal/properties/deal_fields'
+                status:
+                  $ref: '#/components/schemas/Deal/properties/status'
                 expected_close_date:
                   $ref: '#/components/schemas/Deal/properties/expected_close_date'
                 close_date:
                   $ref: '#/components/schemas/Deal/properties/close_date'
+                date:
+                  $ref: '#/components/schemas/Deal/properties/date'
+                amount:
+                  $ref: '#/components/schemas/Deal/properties/amount'
+                months:
+                  $ref: '#/components/schemas/Deal/properties/months'
                 cost:
                   $ref: '#/components/schemas/Deal/properties/cost'
+                commission_base:
+                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                commission_type:
+                  $ref: '#/components/schemas/Deal/properties/commission_type'
                 commission:
                   $ref: '#/components/schemas/Deal/properties/commission'
                 commission_percentage:
                   $ref: '#/components/schemas/Deal/properties/commission_percentage'
-                commission_type:
-                  $ref: '#/components/schemas/Deal/properties/commission_type'
-                commission_base:
-                  $ref: '#/components/schemas/Deal/properties/commission_base'
+                deal_fields:
+                  type: array
+                  description: Extra user-configurable data fields for Deals. Only editable by admins.
+                  items:
+                    type: object
+                    properties:
+                      deal_field:
+                        properties:
+                          id:
+                            type: string
+                            format: bson-id
+                            description: ID of the deal field
+                            example: 5aad9b039007ba28c9ebad56
+                      value:
+                        type: string
+                        description: Value for the deal field
+                        example: Large
       responses:
         201:
           description: Created
