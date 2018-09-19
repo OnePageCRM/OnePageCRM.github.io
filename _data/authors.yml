@@ -1,16 +1,5 @@
 # Author details.
 
-author_one:
-    name: Robert Rawlins
-    email: robert@sorryapp.com
-    web: http://twitter.com/sirrawlins
-    bio: Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasis.
-    image: http://lorempixel.com/125/125/people/
-author_two:
-    name: Robin Geall
-    email: robin@sorryapp.com
-    web: http://twitter.com/robingeall
-    bio: Spnash Lorem ipsum is a pseudo-Latin text used in web design.
 peter:
     name: Peter Armstrong
     display_name: Peter
@@ -58,6 +47,7 @@ cillian:
     display_name: Cillian
     email: cillian@onepagecrm.com
     github: CillianMyles
+    web: https://cillianmyles.github.io
     bio: |
         Our in-house lead Android engineer, API consumer, and technical jargon translator. Cillian enjoys great design, smart defaults, power-user features, olympic weightlifting and is vegan.
     image: '/assets/images/authors/cillian.png'
