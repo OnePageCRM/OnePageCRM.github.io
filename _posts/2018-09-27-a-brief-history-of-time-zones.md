@@ -32,6 +32,19 @@ graphic: /assets/images/timezones/tesseract.jpg
   padding-left: 5px;
 }
 
+.card {
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+}
+
+.no-margins {
+  margin: 0px !important;
+}
+
 </style>
 
 In the movie Interstellar (great watch by the way - would totally watch it again even though I've seen it at least five times), towards the final scenes (spoiler alert), Coop (Matthew McConaughey) travels through a black hole (caution: as in an otherwise scientifically accurate film, we are undeniably leaving the realms of the known here). In so doing, he gains the ability to travel through the time dimension at will - the same way we "underprivileged" folk can travel through the three physical dimensions any way we desire.
@@ -55,7 +68,10 @@ We intrinsically understand that there is a fourth dimension. Hold on I will pro
 Yes of course there are the obvious three physical dimensions, but a time component is crucial if we are to gain anything meaningful from a physical location. A place (in three dimensional space) is meaningless without a time. Likewise a time without a space coordinate is just as useless.
 
 <div id="4d-space-light-cone" style="width:100%; margin-bottom:20px; text-align:center">
-  <img class="" src="/assets/images/timezones/4d-space-light-cone.jpg">
+  <img alt=""
+    class="img-responsive"
+    style="width:60%"
+    src="/assets/images/timezones/4d-space-light-cone.jpg">
 </div>
 
 I'm here today to add another layer of complexity to the scenario which you may never have even considered (unlikely as I presume you at the very least have an interest in software development, since you're reading this). In today's world, daylight savings could very well mean "Cloudy Friday", because our "smart" devices "automagically" handle a lot of the difficult problems we face.
@@ -63,8 +79,11 @@ I'm here today to add another layer of complexity to the scenario which you may 
 Problems like, for example, adding an extra hour of sunlight when the days are supposed to be longer, and taking it back again when that is supposed to happen. We don't want to know more about these theoretically interesting (but actually very complicated) problems. In the spirit of Newton we want to stand on the shoulders of giants and not "reinvent the wheel". In reality, we just don't want to have to deal with the problems because... well... they're hard!
 
 <br>
-<div id="shouldnt-be-hard" style="width:100%; text-align:center">
-  <img class="" src="/assets/images/timezones/shouldnt-be-hard.png">
+<div id="shouldnt-be-hard" style="width:100%; margin-bottom:20px; text-align:center">
+  <img alt=""
+    class="img-responsive"
+    style="width:100%"
+    src="/assets/images/timezones/shouldnt-be-hard.png">
 </div>
 <br>
 
@@ -72,10 +91,17 @@ How about when you have an application, which serves users from all over the wor
 
 The additional layer I'm referring to is of course time zones. A time zone is defined as "a region of the globe which observes a uniform standard time", but some might describe it as an abstract construct used to torment the souls of software developers and/or shorten their lifespan (granted that one might be a bit of a stretch).
 
-Okay... so I may be slightly exaggerating the complexity of time zones, considering the fact that we (as a species) have put people on the moon, and sent probes out of our own solar system which are still sending us back data. Nonetheless, I have had some bad experiences with using time zones in software which have made me somewhat biased. I will share with you my bad experience and how I fixed it, but first... let's go over some basics!
+Okay... so I may be slightly exaggerating the complexity of time zones, considering the fact that we (as a species) have put people on the moon, and sent probes out of our own solar system which are still sending us back data. Nonetheless, I have had some bad experiences with using time zones in software which has made me somewhat biased. I will share with you my bad experience and how I fixed it, but first... let's go over some basics!
+
+<br>
+
+`// the basics`
 
 <div id="world-map-timezones" style="width:100%; text-align:center">
-  <img class="" src="/assets/images/timezones/world-map-timezones.png">
+  <img alt=""
+    class="img-responsive"
+    style="width:100%"
+    src="/assets/images/timezones/world-map-timezones.png">
 </div>
 
 Coordinated Universal Time (or `UTC` for short - guess that's what happens when English and French speakers have to work together to find a suitable abbreviation) is the absolute uniform standard time, by which all other times are measured. These other times (or zones) are measured by how much they are offset from `UTC` (also often referred to `GMT` - Greenwich Mean Time). For example New York city uses the Eastern Time time zone which can also be written as `GMT-5` or `UTC-5`, which means it's exactly 5 hours behind `GMT` or `UTC`.
@@ -96,8 +122,16 @@ Granted these APIs have been a part of Java since the earliest versions, but I c
 
 Firstly let's imagine all the times we parse and serialize date-times in, for example, the OnePageCRM Android application. The mobile app interacts with OnePage data by means of the API. So for our example, that means sending info about date-times as well as receiving info about date-times (among other things).
 
-<div id="data-flow" style="width:100%; text-align:center">
-  <img class="" src="/assets/images/timezones/data-flow.jpg">
+<div style="width:100%; height: 100%; text-align:center;">
+  <div class="card">
+    <img alt=""
+      class="no-margins img-responsive"
+      style="width:100%; height:100%;"
+      src="/assets/images/timezones/data-flow.jpg">
+  </div>
+  <div style="margin-top:-15px; padding-bottom:15px;">
+    <small><code>Data flow</code></small>
+  </div>
 </div>
 
 Process of displaying a date to a user in the Android app:
