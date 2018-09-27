@@ -140,15 +140,15 @@ Firstly let's imagine all the times we parse and serialize date-times in, for ex
 
 Process of displaying a date to a user in the Android app:
 * -> The API response containing date-times is parsed
-* -> JSON is *converted* into POJOs (Plain Old Java Objects)
+* -> JSON is **_converted_** into POJOs (Plain Old Java Objects)
 * -> Data is then stored in a local database using ORM (Object Relational Mapping)
-* -> This refers to POJOs being *converted* into database entries
+* -> This refers to POJOs being **_converted_** into database entries
 * -> To show the date-times to the user, we query them from the database
-* -> The date-times are again *converted*, this time from db entries back to POJOs
+* -> The date-times are again **_converted_**, this time from db entries back to POJOs
 * -> The UI needs a `String` to bind to the UI, not a POJO or `Date`
-* -> Finally the POJOs are again *converted* using formatters (fancier version of `#toString`)
+* -> Finally the POJOs are again **_converted_** using formatters (fancier version of `#toString`)
 
-Every single time a *conversion* happens in the above process, we have to make sure that we are using the correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the system apply its own (i.e. `JVM`'s default) time zone, we are going to make a mess for ourselves, and by extension our customers.
+Every time a **_conversion_** happens in the above process, we have to make sure that we are using the correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the system apply its own (i.e. `JVM`'s default) time zone, we are going to make a mess for ourselves, and by extension our customers.
 
 <br>
 
