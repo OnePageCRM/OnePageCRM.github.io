@@ -87,6 +87,9 @@ without a time. Likewise a time without a space coordinate is just as useless.
     class="img-responsive"
     style="width:60%"
     src="/assets/images/timezones/4d-space-light-cone.jpg">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small><a target="_blank" href="http://www.astronomytrek.com/7-profound-questions-about-time">Image source</a></small>
+     </div>
 </div>
 
 I'm here today to add another layer of complexity to the scenario which you may never have even considered
@@ -101,11 +104,14 @@ shoulders of giants and not "reinvent the wheel". In reality, we just don't want
 problems because... well... they're hard!
 
 <br>
-<div id="shouldnt-be-hard" style="width:100%; margin-bottom:20px; text-align:center">
+<div id="shouldnt-be-hard" style="width:100%; text-align:center">
   <img alt=""
     class="img-responsive"
     style="width:100%"
     src="/assets/images/timezones/shouldnt-be-hard.png">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small><a target="_blank" href="https://xkcd.com/1349/">xkcd.com</a></small>
+    </div>
 </div>
 <br>
 
@@ -133,6 +139,9 @@ basics!
     class="img-responsive"
     style="width:100%"
     src="/assets/images/timezones/world-map-timezones.png">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small><a target="_blank" href="https://en.wikipedia.org/wiki/Time_zone#/media/File:Standard_World_Time_Zones.png">Image source</a></small>
+    </div>
 </div>
 
 Coordinated Universal Time (or `UTC` for short - guess that's what happens when English and French speakers
