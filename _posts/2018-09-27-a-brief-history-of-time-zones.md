@@ -280,4 +280,4 @@ poor hardware, sub-standard design or process. I'm sure you've heard them all. W
 is, we are completely in control of everything we do. Every piece of code we write is an extension of
 ourselves, acting as a looking glass into a snapshot of our self at that point in time. We are the masters
 of our fates. We are the captains of our souls. We are the Joseph Coopers travelling through time and space
-as we desire, but `1`'s and `0`'s are our tesseract.
+as we desire, but `1`'s and `0`'s are our tesseract. 
