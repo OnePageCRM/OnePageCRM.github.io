@@ -161,13 +161,13 @@ Every time a **_conversion_** happens in the above process, we have to make sure
 
 `// changes to fix the problems`
 
-Since I know you're dying to hear how we solved this existential crisis, I'll begin to introduce the solution - the Java 8 Time APIs, authored by Stephen Colebourne. To be more specific, a <a target="_blank" href="http://www.threeten.org/threetenbp">backport</a> of the Java 8 Time APIs called `ThreeTenBP`, which are based on <a target="_blank" href="http://www.joda.org/joda-time">Joda-Time</a> defined by <a target="_blank" href="https://jcp.org/en/jsr/detail?id=310">JSR 310</a>. Even though Android now supports Java 8, it was better to use the backport since the Java 8 support in Android is missing some key classes for the Time APIs, as well as only being available on the newer versions of Android.
+Since I know you're dying to hear how we solved this existential crisis, I'll begin to introduce the solution - the Java 8 Time APIs, authored by Stephen Colebourne. To be more specific, a <a target="_blank" href="https://www.threeten.org/threetenbp">backport</a> of the Java 8 Time APIs called `ThreeTenBP`, which are based on <a target="_blank" href="http://www.joda.org/joda-time">Joda-Time</a> defined by <a target="_blank" href="https://jcp.org/en/jsr/detail?id=310">JSR 310</a>. Even though Android now supports Java 8, it was better to use the backport since the Java 8 support in Android is missing some key classes for the Time APIs, as well as only being available on the newer versions of Android.
 
 To get into some of the "nitty gritty" of the changes:
 * -> Moved from old `Date` and `Calendar` APIs to new Java 8 Time APIs
-* -> Change from `java.util.Date` to `java.time.LocalDate` and `java.time.Instant`
-* -> Remove all `Dates` and related serializers and/or helpers
-* -> Using <code><a target="_blank" href="https://github.com/JakeWharton/ThreeTenABP">ThreeTenABP</a></code> for the Android app, and <code><a target="_blank" href="http://www.threeten.org/threetenbp">ThreeTenBP</a></code> for the OnePage <code><a target="_blank" href="https://github.com/OnePageCRM/java-wrapper">Java API Wrapper</a></code> project
+* -> Changed from `java.util.Date` to `java.time.LocalDate` and `java.time.Instant`
+* -> Removed **all** `Dates` and related serializers and/or helpers
+* -> Using <code><a target="_blank" href="https://github.com/JakeWharton/ThreeTenABP">ThreeTenABP</a></code> for Android, and <code><a target="_blank" href="https://www.threeten.org/threetenbp">ThreeTenBP</a></code> for the OnePage <code><a target="_blank" href="https://github.com/OnePageCRM/java-wrapper">Java API Wrapper</a></code> project
 
 <br>
 
