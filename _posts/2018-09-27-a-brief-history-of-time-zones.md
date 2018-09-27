@@ -5,8 +5,8 @@ slug: "a-brief-history-of-time-zones"
 category: blog
 post_image: "/assets/images/timezones/tesseract.jpg"
 author: cillian
-date: 2018-09-27 00:00:00
-excerpt: "Sample Excerpt!"
+date: 2018-09-27 09:00:00
+excerpt: "How about when you have an application, which serves users from all over the world? Where you need to display date-times which are correct for all the different users? Who may work together on the same team, but live in different parts/zones of the world? Well then buckle your seat belts and prepare for liftoff!  🚀🚀🚀"
 graphic: /assets/images/timezones/tesseract.jpg
 ---
 
@@ -49,6 +49,8 @@ graphic: /assets/images/timezones/tesseract.jpg
 
 In the movie Interstellar (great watch by the way - would totally watch it again even though I've seen it at least five times), towards the final scenes (spoiler alert), Coop (Matthew McConaughey) travels through a black hole (caution: as in an otherwise scientifically accurate film, we are undeniably leaving the realms of the known here). In so doing, he gains the ability to travel through the time dimension at will - the same way we "underprivileged" folk can travel through the three physical dimensions any way we desire.
 
+<br>
+
 We intrinsically understand that there is a fourth dimension. Hold on I will prove it to you.
 
 <blockquote class="github-blockquote">
@@ -87,7 +89,7 @@ Problems like, for example, adding an extra hour of sunlight when the days are s
 </div>
 <br>
 
-How about when you have an application, which serves users from all over the world? Where you need to display date-times which are correct for all the different users? Who may work together on the same team, but live in different parts/zones of the world? Well then buckle your seat belts and prepare for liftoff!
+How about when you have an application, which serves users from all over the world? Where you need to display date-times which are correct for all the different users? Who may work together on the same team, but live in different parts/zones of the world? Well then buckle your seat belts and prepare for liftoff!  🚀🚀🚀
 
 The additional layer I'm referring to is of course time zones. A time zone is defined as "a region of the globe which observes a uniform standard time", but some might describe it as an abstract construct used to torment the souls of software developers and/or shorten their lifespan (granted that one might be a bit of a stretch).
 
@@ -104,13 +106,13 @@ Okay... so I may be slightly exaggerating the complexity of time zones, consider
     src="/assets/images/timezones/world-map-timezones.png">
 </div>
 
-Coordinated Universal Time (or `UTC` for short - guess that's what happens when English and French speakers have to work together to find a suitable abbreviation) is the absolute uniform standard time, by which all other times are measured. These other times (or zones) are measured by how much they are offset from `UTC` (also often referred to `GMT` - Greenwich Mean Time). For example New York city uses the Eastern Time time zone which can also be written as `GMT-5` or `UTC-5`, which means it's exactly 5 hours behind `GMT` or `UTC`.
+Coordinated Universal Time (or `UTC` for short - guess that's what happens when English and French speakers have to work together to find a suitable abbreviation) is the absolute uniform standard time, by which all other times are measured. These other times (or zones) are measured by how much they are offset from `UTC` (also often referred to `GMT` - Greenwich Mean Time). For example New York city uses the EST (Eastern Standard Time) time zone which can also be written as `GMT-5` or `UTC-5`, which means it's exactly 5 hours behind `GMT` or `UTC`.
 
 <br>
 
 `// a sensible solution exists`
 
-So let's start making some sense of all of this. We have specific points in time to be stored. We have many people viewing and editing these date-times, who live in different zones, but should see the same time for them (relative to “true time”). The most obvious and sane solution is store all these times in a uniform standard format, and let each client (who should know their own zone) do the necessary conversion and/or adjustments when displaying or parsing times themselves. Piece of cake right?
+So let's start making some sense of all of this. We have specific points in time to be stored. We have many people viewing and editing these date-times, who live in different zones, but should see the same time for them (relative to “true time”). The most obvious and sane solution is store all these times in a uniform standard format, and let each client (who should know their own zone) do the necessary conversion and/or adjustments when displaying or parsing date-times themselves. Piece of cake right?
 
 <br>
 
@@ -121,6 +123,8 @@ The only problem with that is Java, more specifically the `java.util.Date` and `
 Granted these APIs have been a part of Java since the earliest versions, but I can't adequately explain how big of an issue this is. It may not sound like the biggest deal in the world, but I can assure you it has some pretty serious implications.
 
 Firstly let's imagine all the times we parse and serialize date-times in, for example, the OnePageCRM Android application. The mobile app interacts with OnePage data by means of the API. So for our example, that means sending info about date-times as well as receiving info about date-times (among other things).
+
+<br>
 
 <div style="width:100%; height: 100%; text-align:center;">
   <div class="card">
@@ -170,6 +174,8 @@ Since making the switch, we have seen numerous benefits:
 * -> Logical separation of types: dates, times & date-times (which were all previously `Date` objects)
 * -> Ability to inject mocked clock objects for testing
 * -> Improved maintainability by using better, more modern APIs (immutability, conversions etc.)
+
+<br>
 
 As the issue was somewhat of a large refactor to the codebase, I feel it's necessary to formally thank some folks for really great work which directly helped us solve these problems.
 
