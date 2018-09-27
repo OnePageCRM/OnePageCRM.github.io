@@ -3,11 +3,11 @@ layout: post
 title: "A Brief History of Time (Zones)"
 slug: "a-brief-history-of-time-zones"
 category: blog
-post_image: "/assets/images/..."
+post_image: "/assets/images/timezones/tesseract.jpg"
 author: cillian
 date: 2018-09-27 00:00:00
 excerpt: "Sample Excerpt!"
-graphic: /assets/images/...
+graphic: /assets/images/timezones/tesseract.jpg
 ---
 
 <style>
@@ -54,13 +54,19 @@ We intrinsically understand that there is a fourth dimension. Hold on I will pro
 
 Yes of course there are the obvious three physical dimensions, but a time component is crucial if we are to gain anything meaningful from a physical location. A place (in three dimensional space) is meaningless without a time. Likewise a time without a space coordinate is just as useless.
 
-[4 DIMENSIONS IMAGE]
+<div id="4d-space-light-cone" style="width:100%; margin-bottom:20px; text-align:center">
+  <img class="" src="/assets/images/timezones/4d-space-light-cone.jpg">
+</div>
 
 I'm here today to add another layer of complexity to the scenario which you may never have even considered (unlikely as I presume you at the very least have an interest in software development, since you're reading this). In today's world, daylight savings could very well mean "Cloudy Friday", because our "smart" devices "automagically" handle a lot of the difficult problems we face.
 
 Problems like, for example, adding an extra hour of sunlight when the days are supposed to be longer, and taking it back again when that is supposed to happen. We don't want to know more about these theoretically interesting (but actually very complicated) problems. In the spirit of Newton we want to stand on the shoulders of giants and not "reinvent the wheel". In reality, we just don't want to have to deal with the problems because... well... they're hard!
 
-[SHOULDN’T BE HARD IMAGE | https://imgs.xkcd.com/comics/shouldnt_be_hard.png]
+<br>
+<div id="shouldnt-be-hard" style="width:100%; text-align:center">
+  <img class="" src="/assets/images/timezones/shouldnt-be-hard.png">
+</div>
+<br>
 
 How about when you have an application, which serves users from all over the world? Where you need to display date-times which are correct for all the different users? Who may work together on the same team, but live in different parts/zones of the world? Well then buckle your seat belts and prepare for liftoff!
 
@@ -68,21 +74,31 @@ The additional layer I'm referring to is of course time zones. A time zone is de
 
 Okay... so I may be slightly exaggerating the complexity of time zones, considering the fact that we (as a species) have put people on the moon, and sent probes out of our own solar system which are still sending us back data. Nonetheless, I have had some bad experiences with using time zones in software which have made me somewhat biased. I will share with you my bad experience and how I fixed it, but first... let's go over some basics!
 
-[TIME ZONES IMAGE]
+<div id="world-map-timezones" style="width:100%; text-align:center">
+  <img class="" src="/assets/images/timezones/world-map-timezones.png">
+</div>
 
 Coordinated Universal Time (or `UTC` for short - guess that's what happens when English and French speakers have to work together to find a suitable abbreviation) is the absolute uniform standard time, by which all other times are measured. These other times (or zones) are measured by how much they are offset from `UTC` (also often referred to `GMT` - Greenwich Mean Time). For example New York city uses the Eastern Time time zone which can also be written as `GMT-5` or `UTC-5`, which means it's exactly 5 hours behind `GMT` or `UTC`.
+
+<br>
 
 `// a sensible solution exists`
 
 So let's start making some sense of all of this. We have specific points in time to be stored. We have many people viewing and editing these date-times, who live in different zones, but should see the same time for them (relative to “true time”). The most obvious and sane solution is store all these times in a uniform standard format, and let each client (who should know their own zone) do the necessary conversion and/or adjustments when displaying or parsing times themselves. Piece of cake right?
 
+<br>
+
 `// define the problem`
 
-The only problem with that is Java, more specifically the `java.util.Date` and `Calendar` APIs. Java `Date`s themselves do not have any time zones (as they shouldn't), but their `#toString` methods, or any usage of something like `SimpleDateFormat` to parse or serialize them, will in fact use the `JVM`'s default time zone to do so. Granted these APIs have been a part of Java since the earliest versions, but I can't adequately explain how big of an issue this is. It may not sound like the biggest deal in the world, but I can assure you it has some pretty serious implications.
+The only problem with that is Java, more specifically the `java.util.Date` and `Calendar` APIs. Java `Date`s themselves do not have any time zones (as they shouldn't), but their `#toString` methods, or any usage of something like `SimpleDateFormat` to parse or serialize them, will in fact use the `JVM`'s default time zone to do so.
+
+Granted these APIs have been a part of Java since the earliest versions, but I can't adequately explain how big of an issue this is. It may not sound like the biggest deal in the world, but I can assure you it has some pretty serious implications.
 
 Firstly let's imagine all the times we parse and serialize date-times in, for example, the OnePageCRM Android application. The mobile app interacts with OnePage data by means of the API. So for our example, that means sending info about date-times as well as receiving info about date-times (among other things).
 
-[DATA FLOW IMAGE]
+<div id="data-flow" style="width:100%; text-align:center">
+  <img class="" src="/assets/images/timezones/data-flow.jpg">
+</div>
 
 Process of displaying a date to a user in the Android app:
 * -> The API response containing date-times is parsed
@@ -96,15 +112,19 @@ Process of displaying a date to a user in the Android app:
 
 Every single time a *conversion* happens in the above process, we have to make sure that we are using the correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the system apply its own (i.e. `JVM`'s default) time zone, we are going to make a mess for ourselves, and by extension our customers.
 
+<br>
+
 `// changes to fix the problems`
 
 Since I know you're dying to hear how we solved this existential crisis, I'll begin to introduce the solution - the Java 8 Time APIs, authored by Stephen Colebourne. To be more specific, a [backport] of the Java 8 Time APIs called `ThreeTenBP`, which are based on [Joda-Time] defined by [JSR 310]. Even though Android now supports Java 8, it was better to use the backport since the Java 8 support in Android is missing some key classes for the Time APIs, as well as only being available on the newer versions of Android.
 
 To get into some of the "nitty gritty" of the changes:
-* -> Moved from old `Date` and `Calendar` APIs to new Java 8 time APIs
+* -> Moved from old `Date` and `Calendar` APIs to new Java 8 Time APIs
 * -> Change from `java.util.Date` to `java.time.LocalDate` and `java.time.Instant`
 * -> Remove all `Dates` and related serializers and/or helpers
-* -> Using [`ThreeTenABP`] for the Android app, and [`ThreeTenBP`] for the OnePage [Java API Wrapper] project
+* -> Using [`ThreeTenABP`] for the Android app, and [`ThreeTenBP`] for the OnePage [`Java API Wrapper`] project
+
+<br>
 
 `// benefits of the switch`
 
@@ -123,6 +143,8 @@ Huge thanks to:
 * -> [Stephen Colebourne] for authoring, curating and backporting a truly fantastic set of APIs
 * -> [Jake Wharton] for porting the [backport] over to Android (providing a sensible and efficient alternative to loading the time zone information from a JAR file)
 * -> [Basil Bourque] for giving one of those [answers] on stackoverflow which deserves bounty, but sadly has not even received the most upvotes
+
+<br>
 
 `// witty outro`
 
