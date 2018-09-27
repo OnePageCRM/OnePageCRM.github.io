@@ -45,6 +45,11 @@ graphic: /assets/images/timezones/tesseract.jpg
   margin: 0px !important;
 }
 
+li {
+  color: #3a4e63;
+  margin-bottom: 8px;
+}
+
 </style>
 
 In the movie Interstellar (great watch by the way - would totally watch it again even though I've seen it at least five times), towards the final scenes (spoiler alert), Coop (Matthew McConaughey) travels through a black hole (caution: as in an otherwise scientifically accurate film, we are undeniably leaving the realms of the known here). In so doing, he gains the ability to travel through the time dimension at will - the same way we "underprivileged" folk can travel through the three physical dimensions any way we desire.
@@ -147,6 +152,8 @@ Process of displaying a date to a user in the Android app:
 * -> The date-times are again **_converted_**, this time from db entries back to POJOs
 * -> The UI needs a `String` to bind to the UI, not a POJO or `Date`
 * -> Finally the POJOs are again **_converted_** using formatters (fancier version of `#toString`)
+
+<br>
 
 Every time a **_conversion_** happens in the above process, we have to make sure that we are using the correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the system apply its own (i.e. `JVM`'s default) time zone, we are going to make a mess for ourselves, and by extension our customers.
 
