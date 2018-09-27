@@ -10,15 +10,47 @@ excerpt: "Sample Excerpt!"
 graphic: /assets/images/...
 ---
 
+<style>
+
+.github-blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: .53m 10px;
+}
+
+.github-blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: .1em;
+  margin-right: .25em;
+  vertical-align: -.43m;
+}
+
+.github-blockquote p {
+  display: inline;
+  padding-left: 5px;
+}
+
+</style>
+
 In the movie Interstellar (great watch by the way - would totally watch it again even though I've seen it at least five times), towards the final scenes (spoiler alert), Coop (Matthew McConaughey) travels through a black hole (caution: as in an otherwise scientifically accurate film, we are undeniably leaving the realms of the known here). In so doing, he gains the ability to travel through the time dimension at will - the same way we "underprivileged" folk can travel through the three physical dimensions any way we desire.
 
 We intrinsically understand that there is a fourth dimension. Hold on I will prove it to you.
 
-"I'll meet you at the Empire State building, New York city."
-"... when?"
+<blockquote class="github-blockquote">
+  <p>"I'll meet you at the Empire State building, New York city."</p>
+</blockquote>
+<blockquote class="github-blockquote">
+  <p>"... when?"</p>
+</blockquote>
 
-"I'll meet you at 6pm, Thursday September 13, 2018."
-"... where?"
+<blockquote class="github-blockquote">
+  <p>"I'll meet you at 6pm, Thursday September 13, 2018."</p>
+</blockquote>
+<blockquote class="github-blockquote">
+  <p>"... where?"</p>
+</blockquote>
 
 Yes of course there are the obvious three physical dimensions, but a time component is crucial if we are to gain anything meaningful from a physical location. A place (in three dimensional space) is meaningless without a time. Likewise a time without a space coordinate is just as useless.
 
@@ -53,14 +85,14 @@ Firstly let's imagine all the times we parse and serialize date-times in, for ex
 [DATA FLOW IMAGE]
 
 Process of displaying a date to a user in the Android app:
-- The API response containing date-times is parsed
-- JSON is *converted* into POJOs (Plain Old Java Objects)
-- Data is then stored in a local database using ORM (Object Relational Mapping)
-- This refers to POJOs being *converted* into database entries
-- To show the date-times to the user, we query them from the database
-- The date-times are again *converted*, this time from db entries back to POJOs
-- The UI needs a `String` to bind to the UI, not a POJO or `Date`
-- Finally the POJOs are again *converted* using formatters (fancier version of `#toString`)
+* -> The API response containing date-times is parsed
+* -> JSON is *converted* into POJOs (Plain Old Java Objects)
+* -> Data is then stored in a local database using ORM (Object Relational Mapping)
+* -> This refers to POJOs being *converted* into database entries
+* -> To show the date-times to the user, we query them from the database
+* -> The date-times are again *converted*, this time from db entries back to POJOs
+* -> The UI needs a `String` to bind to the UI, not a POJO or `Date`
+* -> Finally the POJOs are again *converted* using formatters (fancier version of `#toString`)
 
 Every single time a *conversion* happens in the above process, we have to make sure that we are using the correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the system apply its own (i.e. `JVM`'s default) time zone, we are going to make a mess for ourselves, and by extension our customers.
 
@@ -69,33 +101,37 @@ Every single time a *conversion* happens in the above process, we have to make s
 Since I know you're dying to hear how we solved this existential crisis, I'll begin to introduce the solution - the Java 8 Time APIs, authored by Stephen Colebourne. To be more specific, a [backport] of the Java 8 Time APIs called `ThreeTenBP`, which are based on [Joda-Time] defined by [JSR 310]. Even though Android now supports Java 8, it was better to use the backport since the Java 8 support in Android is missing some key classes for the Time APIs, as well as only being available on the newer versions of Android.
 
 To get into some of the "nitty gritty" of the changes:
-- Moved from old `Date` and `Calendar` APIs to new Java 8 time APIs
-- Change from `java.util.Date` to `java.time.LocalDate` and `java.time.Instant`
-- Remove all `Dates` and related serializers and/or helpers
-- Using [`ThreeTenABP`] for the Android app, and [`ThreeTenBP`] for the OnePage [Java API Wrapper] project
+* -> Moved from old `Date` and `Calendar` APIs to new Java 8 time APIs
+* -> Change from `java.util.Date` to `java.time.LocalDate` and `java.time.Instant`
+* -> Remove all `Dates` and related serializers and/or helpers
+* -> Using [`ThreeTenABP`] for the Android app, and [`ThreeTenBP`] for the OnePage [Java API Wrapper] project
 
 `// benefits of the switch`
 
 Does no longer wanting to quit your job count as a benefit of fixing time zone issues? Just kidding... But in all seriousness, the Java 8 Time APIs are so much better to work with it makes me quiver even typing the word "Date", when it's not stuck to the end of another word like "Local".
 
 Since making the switch, we have seen numerous benefits:
-- Dates are completely independent of time zones (which they absolutely should be)
-- Only things which need to have a time zone do: date-times
-- Logical separation of types: dates, times & date-times (which were all previously `Date` objects)
-- Ability to inject mocked clock objects for testing
-- Improved maintainability by using better, more modern APIs (immutability, conversions etc.)
+* -> Dates are completely independent of time zones (which they absolutely should be)
+* -> Only things which need to have a time zone do: date-times
+* -> Logical separation of types: dates, times & date-times (which were all previously `Date` objects)
+* -> Ability to inject mocked clock objects for testing
+* -> Improved maintainability by using better, more modern APIs (immutability, conversions etc.)
 
 As the issue was somewhat of a large refactor to the codebase, I feel it's necessary to formally thank some folks for really great work which directly helped us solve these problems.
 
 Huge thanks to:
-- [Stephen Colebourne] for authoring, curating and backporting a truly fantastic set of APIs
-- [Jake Wharton] for porting the [backport] over to Android (providing a sensible and efficient alternative to loading the time zone information from a JAR file)
-- [Basil Bourque] for giving one of those [answers] on stackoverflow which deserves bounty, but sadly has not even received the most upvotes
+* -> [Stephen Colebourne] for authoring, curating and backporting a truly fantastic set of APIs
+* -> [Jake Wharton] for porting the [backport] over to Android (providing a sensible and efficient alternative to loading the time zone information from a JAR file)
+* -> [Basil Bourque] for giving one of those [answers] on stackoverflow which deserves bounty, but sadly has not even received the most upvotes
 
 `// witty outro`
 
-"What time is it?" -- Richard Deacon as The King
-"Any time you want it to be." -- Frank Baxter as the Scientist
-    (from the Bell System film "About Time")
+<blockquote class="github-blockquote">
+  <p>"What time is it?" -- Richard Deacon as The King</p>
+</blockquote>
+
+<blockquote class="github-blockquote">
+  <p>"Any time you want it to be." -- Frank Baxter as the Scientist (from the film "About Time")</p>
+</blockquote>
 
 As engineers, we sometimes complain about limiting factors "outside of our control". Think: legacy code, poor hardware, sub-standard design or process. I'm sure you've heard them all. When the truth of the matter is, we are completely in control of everything we do. Every piece of code we write is an extension of ourselves, acting as a looking glass into a snapshot of our self at that point in time. We are the masters of our fates. We are the captains of our souls. We are the Joseph Coopers travelling through time and space as we desire, but `1`'s and `0`'s are our tesseract.
