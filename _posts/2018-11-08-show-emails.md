@@ -63,7 +63,7 @@ It's important to highlight 4 fields from the above JSON:
 
  **- html_content:** The content of the email (with html tags for formatting).<br/>
  **- plain_content:** The content of the email (without any formatting).<br/>
- **- type:**  The type of email (it can be email_send or bcc_email). The first one is for when you send an email from<** within [OnePageCRM](https://help.onepagecrm.com/article/386-how-to-connect-your-gmail-account-create-templates-and-send-bulk-emails), the second is when the email is captured by the email [dropbox method (BCC).](https://help.onepagecrm.com/article/187-how-to-use-email-dropbox-address)<br/>
+ **- type:**  The type of email (it can be email_send or bcc_email). The first one is for when you send an email from within [OnePageCRM](https://help.onepagecrm.com/article/386-how-to-connect-your-gmail-account-create-templates-and-send-bulk-emails), the second is when the email is captured by the email [dropbox method (BCC).](https://help.onepagecrm.com/article/187-how-to-use-email-dropbox-address)<br/>
  **- url:** This field contains a link (only when the email is of type bcc_email). For this type of email, the html_content is empty, and to get the content with tags it's necessary request the content from this url.
 
 The email layout in the OnePageCRM mobile app is a little different from the html_content in the JSON. We have to parse and rearrange the string html_content, in order to display it on the screen.
