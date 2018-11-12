@@ -12,7 +12,7 @@ graphic: /assets/images/ios/email_image2.png
 
 Here at OnePageCRM, we always want to bring more functionality to the mobile applications. Being able to see emails and their attachments was one of the features that has been requested for a long time.
 
-The most recent update for the [iOS app](https://itunes.apple.com/ie/app/onepagecrm-simple-sales-crm/id692777054?mt=8), added this much anticipated possibility.
+The most recent update for the <a target="_blank" href="https://itunes.apple.com/ie/app/onepagecrm-simple-sales-crm/id692777054?mt=8">iOS application</a>, added this much anticipated possibility.
 
 <div class="text-align: center">
     <img src="/assets/images/ios/ios_email_contact_view.png" alt="" class="img-responsive"
@@ -20,7 +20,7 @@ The most recent update for the [iOS app](https://itunes.apple.com/ie/app/onepage
      <br /><br />
 </div>
 
-As iOS developer here at OnePageCRM I will explain the steps we took to add this functionality to the OnePageCRM iOS app.
+As an iOS developer here at OnePageCRM I will explain the steps we took to add this functionality to the iOS application.
 
 The first thing that we needed to change, to be able to add this functionality, was a new API endpoint: <b>/api/v3/contacts/{contact_id}/email_messages.json</b>
 
@@ -63,10 +63,10 @@ It's important to highlight 4 fields from the above JSON:
 
  **- html_content:** The content of the email (with html tags for formatting).<br/>
  **- plain_content:** The content of the email (without any formatting).<br/>
- **- type:**  The type of email (it can be email_send or bcc_email). The first one is for when you send an email from within [OnePageCRM](https://help.onepagecrm.com/article/386-how-to-connect-your-gmail-account-create-templates-and-send-bulk-emails), the second is when the email is captured by the email [dropbox method (BCC).](https://help.onepagecrm.com/article/187-how-to-use-email-dropbox-address)<br/>
- **- url:** This field contains a link (only when the email is of type bcc_email). For this type of email, the html_content is empty, and to get the content with tags it's necessary request the content from this url.
+ **- type:**  The type of email (it can be 'email_send' or 'bcc_email'). The first one is for when you send an email from within [OnePageCRM](https://help.onepagecrm.com/article/386-how-to-connect-your-gmail-account-create-templates-and-send-bulk-emails), the second is when the email is captured by the email [dropbox method (BCC).](https://help.onepagecrm.com/article/187-how-to-use-email-dropbox-address)<br/>
+ **- url:** This field contains a link (only when the email is of type bcc_email). For this type of email, the 'html_content' is empty, and to get the content with tags it's necessary to request the content from this url.
 
-The email layout in the OnePageCRM mobile app is a little different from the html_content in the JSON. We have to parse and rearrange the string html_content, in order to display it on the screen.
+The email layout in the OnePageCRM mobile app is a little different from the 'html_content' in the JSON. We have to parse and rearrange the string 'html_content', in order to display it on the screen.
 
 To show the email's content for the user, we use the [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) view. This view is a type of web view that can show HTML tags with the correct formatting. Emails have text, images, font, colors and attachments - the app needs to show all of them.
 
