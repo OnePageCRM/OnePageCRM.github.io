@@ -3,10 +3,10 @@ layout: post
 title: "Showing Emails in OnePageCRM Mobile"
 slug: "ios-show-emails"
 category: blog
-post_image: "/assets/images/ios/email_image2.png"
+post_image: /assets/images/ios/email_image2.png
 author: elano
-date: 2018-11-12 09:00:00
-excerpt: "OnePageCRM automatically opens a call result form, following the end of a phone call, so users can log it easily in the CRM."
+date: 2018-11-08 09:00:00
+excerpt: "Here at OnePageCRM, we always want to bring more functionality to the mobile applications. Being able to see emails and their attachments was one of the features that has been requested for a long time."
 graphic: /assets/images/ios/email_image2.png
 ---
 
