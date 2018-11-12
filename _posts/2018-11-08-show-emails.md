@@ -38,7 +38,7 @@ The response from this endpoint, contains an array of email messages, which woul
           ],
           "send_time": "2018-11-01T14:44:56Z",
           "message_id": "CADVjCOqcL=e_-cEjNfevrR7-yp3xKmnxsvamJfps_xqtDFv8bA@mail.gmail.com",
-          "sender": "elano@xap.ie",
+          "sender": "blog@bigcompany.co.uk",
           "recipients": {
             "to": [
               "jbloggs@bigcompany.co.uk"
