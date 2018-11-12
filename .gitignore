@@ -6,3 +6,5 @@ Gemfile.lock
 .idea
 *.iml
 run.sh
+*/swagger.yml
+*/swagger.yaml
