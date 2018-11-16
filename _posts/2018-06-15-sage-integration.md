@@ -11,7 +11,7 @@ graphic: /assets/images/sage/sagelogo.jpg
 ---
 
 
-Here at OnePageCRM, we’ve started working on an integration with Sage Accounting, an online accounting application. Sage provides a variety of cloud based accounting software, allowing users to keep track of money and clients, create quotes, invoices and the ability to connect to your bank account. 
+Here at OnePageCRM, we’ve started working on an integration with Sage Accounting, an online accounting application. Sage Accounting provides a variety of cloud based accounting software, allowing users to keep track of money and clients, create quotes, invoices and the ability to connect to your bank account. 
 
 When I started working in OnePageCRM, I was given the Sage Accounting integration as my main project. Over the course of a few months I gained insight into web development, integrating with other software, and user interactions. Let me share my experience. OnePageCRM is currently integrated with two other financial apps, Xero and Quote Roller, therefore as the basic functionality was in place for these integrations I was able to use it as a model. The Sage Accounting integration is quite simple: when a user clicks on a deal in OnePageCRM, a pop up window appears with the various invoice or estimate fields.  Once the user is satisfied with the information they click ‘send’, and voila!  The invoice or estimate is sent to Sage Accounting. 
 
@@ -41,4 +41,3 @@ Developing this integration for OnePageCRM has been a valuable and interesting e
 
 Have you any experience with Sage Accounting software? I would love to hear more; leave us your comments below. 
 
-*This integration is not live however will be released in beta soon.*
