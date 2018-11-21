@@ -16,7 +16,7 @@ Here at OnePageCRM, we’ve started working on an integration with Sage Accounti
 When I started working in OnePageCRM, I was given the Sage Accounting integration as my main project. Over the course of a few months I gained insight into web development, integrating with other software, and user interactions. Let me share my experience. OnePageCRM is currently integrated with two other financial apps, Xero and Quote Roller, therefore as the basic functionality was in place for these integrations I was able to use it as a model. The Sage Accounting integration is quite simple: when a user clicks on a deal in OnePageCRM, a pop up window appears with the various invoice or estimate fields.  Once the user is satisfied with the information they click ‘send’, and voila!  The invoice or estimate is sent to Sage Accounting. 
 
 <div class="text-align: center">
-    <img src="/assets/images/sage/pic-02.png" alt="" class="img-responsive"
+    <img src="/assets/images/sage/pic-02v2.png" alt="" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
