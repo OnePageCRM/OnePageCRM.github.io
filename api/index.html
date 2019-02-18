@@ -36,8 +36,11 @@ title: API v3.0 Docs
 <script src="./swagger-ui-standalone-preset.js"> </script>
 <script>
     window.onload = function() {
+        const PRODUCTION = true               // CHANGE THIS TO FALSE FOR LOCAL DEV
+        const LOCAL_URL = "./swagger.yaml"    // THIS CAN BE CHANGED TOO IF NEEDED
+        const PROD_URL = "https://raw.githubusercontent.com/OnePageCRM/swagger/master/swagger.yaml"
         const ui = SwaggerUIBundle({
-            url: "https://raw.githubusercontent.com/OnePageCRM/swagger/master/swagger.yaml",
+            url: (PRODUCTION === true) ? PROD_URL : LOCAL_URL,
             dom_id: '#swagger-ui',
             deepLinking: true,
             displayOperationId: false,
