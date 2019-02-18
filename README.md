@@ -16,7 +16,7 @@ Alternatively you may wish to ask your question(s) on our [Developer Forum][6].
 
 Please note that our [API documentation][4] includes an interactive browser, where you can test out your API requests.
 
-Additionally, a javascript API browser still exits in this repo at `/api_browser`.
+Additionally, a Javascript API browser still exits in this repo at `/api_browser`.
 It's built in `Angular.js` and only supports `GET` requests.
 
 <br>
@@ -26,7 +26,8 @@ It's built in `Angular.js` and only supports `GET` requests.
 If you find a bug in our documentation, or think something could be clearer, we'd love to hear from you.
 Just open a ticket in this repo, the [Swagger repo][5], or our [Developer Forum][6] and one of our developers will get to it when time allows.
 
-Alternatively, if you would like to make the changes yourself, we'd love to accept pull requests. Just fork the repo make your changes and submit a pull request related to the ticket you've opened.
+Alternatively, if you would like to make the changes yourself, we'd love to accept pull requests.
+Just fork the repo make your changes and submit a pull request related to the ticket you've opened.
 
 <br>
 
@@ -58,6 +59,13 @@ If you've made local changes to the repository, you can start the server with th
 
 When you're finished with the changes, make a pull request.
 As soon as the pull request is merged into `master`, it will be automatically deployed by GitHub pages.
+
+<br>
+
+## Useful Links
+- API documentation: [https://developer.onepagecrm.com/api][4]
+- Developer forum: [http://forum.developer.onepagecrm.com][6]
+- Swagger repo: [https://github.com/OnePageCRM/swagger][5]
 
 <br>
 
