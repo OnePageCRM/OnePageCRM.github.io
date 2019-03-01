@@ -26,6 +26,8 @@ The main purpose of the OAI is to head the collaborative project to define the O
 
 Put simply they are trying to make it easier to define and document APIs in the hopes that it will improve the interoperability of systems and reduce the barrier to communication between independent services.
 
+<br>
+
 ### Swagger Specification
 
 Swagger came into the equation when its v2.0 specification was donated by SmartBear to the OAI to be adopted as the OpenAPI Specification v3.0.
@@ -35,6 +37,8 @@ Swagger is an open description format for APIs, meaning any API that adheres to 
 In addition to defining an API, Swagger has some really nice benefits such as generating code, documentation, and even test cases given the API description file. 
 
 Swagger switches the focus to a design-first approach to APIs, even though it can be added retrospectively to implementation-first APIs. The design-first approach forces you to think more comprehensively about the problem domain and the most appropriate and logical solution which fits this domain.
+
+<br>
 
 ### Our API Documentation
 
@@ -47,6 +51,8 @@ It was becoming less and less of an inviting task.
 Coupling these complaints of the previous system along with the many additional benefits of Swagger, it was a "no-brainer". OnePageCRM's API documentation has now undoubtedly gotten some Swagger about it (pun very much intended)!
 
 One of the reasons that documentation takes up so much development time is because it needs to be very organized and navigable. You have to worry about where to put examples, how to organize your methods, and how much detail to provide for each call. 
+
+<br>
 
 ### The Results
 
@@ -63,4 +69,3 @@ We also hope that this will be the first step towards having the next major vers
 In the process of rewriting our documentation we have exposed lots of new features of the API. We hope you enjoy using them!
 
 We would love to hear your thoughts about our new API documentation in the comments below.
-
