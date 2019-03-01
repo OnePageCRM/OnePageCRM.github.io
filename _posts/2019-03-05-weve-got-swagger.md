@@ -20,7 +20,11 @@ As application developers, we can understand the importance of both using and pr
 
 But for the realization of a truly connected world, we need to first "set in stone" an agreed-upon format to describe the ways we exchange data. There is simply no way around the fact that when things become standardized, they are generally easier to use and more widely accessible.
 
-[OAI IMAGE]
+<br>
+
+![OAI (OpenAPI Initiative)](/assets/images/api/weve-got-swagger/oai-logo.png)
+
+<br>
 
 Here is where the OAI (OpenAPI Initiative) comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
 
