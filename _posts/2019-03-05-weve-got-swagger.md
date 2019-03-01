@@ -43,8 +43,12 @@ Swagger switches the focus to a design-first approach to APIs, even though it ca
 ### Our API Documentation
 
 Previously, OnePageCRM had provided its API documentation using Jekyll and GitHub Pages. This was a bit of a pain for a few reasons:
-Lack of Separation - the API documentation was scattered across multiple files and folders within the developer site project. It was not clear where or how to make a change, but more importantly, there was no logical separation between it and the rest of the project.
-Design Requirements - when adding to or updating the API docs, you would have to add the details of the change (e.g. new field, resource, endpoint etc.), as well as the layout or cosmetics (e.g. Should we put a table here? What colour should this label be? etc.).
+
+**Lack of Separation**<br>
+The API documentation was scattered across multiple files and folders within the developer site project. It was not clear where or how to make a change, but more importantly, there was no logical separation between it and the rest of the project.
+
+**Design Requirements**<br>
+When adding to or updating the API docs, you would have to add the details of the change (e.g. new field, resource, endpoint etc.), as well as the layout or cosmetics (e.g. Should we put a table here? What colour should this label be? etc.).
 
 It was becoming less and less of an inviting task.
 
