@@ -85,7 +85,7 @@ The definition of our API now lives within its own completely separate project a
 
 Since we use Swagger, we don’t have to worry about how to organize or display the API documentation (for the most part). We simply manipulate the definition of our API, and Swagger takes care of displaying the end product in a way that is clean, easy to read and understand.
 
-Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own :-P).
+Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own 😜).
 
 <br>
 
