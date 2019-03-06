@@ -14,8 +14,6 @@ I can send my kettle a tweet, and it will begin to boil... these are exciting ti
 
 Modern businesses need to use code in order to access important data, and the best way to connect and share data is through APIs. APIs are supposed to connect people and allow access to external services and the sharing of great developments.
 
-<br>
-
 As application developers, we can understand the importance of both using and providing APIs. Of course we want to leverage the expertise of others if it’s available to us, like we should provide our expertise to others if we are already solving a complex problem.
 
 But for the realization of a truly connected world, we need to first "set in stone" an agreed-upon format to describe the ways we exchange data. There is simply no way around the fact that when things become standardized, they are generally easier to use and more widely accessible.
@@ -48,8 +46,6 @@ Put simply they are trying to make it easier to define and document APIs in the 
 Swagger came into the equation when its [v2.0 specification][3]{:target="_blank"} was donated by [SmartBear][4]{:target="_blank"} to the OAI to be adopted as the [OpenAPI Specification v3.0][2]{:target="_blank"}.
 
 Swagger is an open description format for APIs, meaning any API that adheres to the Swagger specification is easy to understand, easy to adjust, and easy to consume. Quite simply, it makes it easier for distributed systems to communicate with one another. A consumer can understand and communicate with a remote service with a minimal amount of implementation logic.
-
-<br>
 
 In addition to defining an API, Swagger has some really nice benefits such as generating code, documentation, and even test cases given the API description file. 
 
@@ -98,7 +94,7 @@ One of the reasons that documentation takes up so much development time is becau
 
 Using Swagger we were able to solve the two biggest problems with our old documentation, and it has helped us reduce a lot of the difficulty and time-consuming nature of maintaining great API documentation.
 
-The definition of our API now lives within its own completely separate project and [repository][6]{:target="_blank"}. Our [developer site][7]{:target="_blank"} (which hosts the docs) is configured to fetch the documentation from this separate repo, and present it with all the correct formatting and styling etc.
+The definition of our API now lives within its own completely separate project and [repository][6]{:target="_blank"}. Our [developer site][7]{:target="_blank"} (which hosts the docs) is configured to fetch the documentation from this separate repo, and presents it with all the correct formatting and styling etc.
 
 <br>
 
