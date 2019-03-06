@@ -33,7 +33,7 @@ But for the realization of a truly connected world, we need to first "set in sto
     </div>
 </div>
 
-Here is where the OAI (OpenAPI Initiative) comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
+Here is where the [OAI (OpenAPI Initiative)][1] comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
 
 The main purpose of the OAI is to head the collaborative project to define the OAS (OpenAPI Specification). 
 
@@ -147,3 +147,11 @@ We also hope that this will be the first step towards having the next major vers
 In the process of rewriting our documentation we have exposed lots of new features of the API. We hope you enjoy using them!
 
 We would love to hear your thoughts about our new API documentation in the comments below.
+
+[1]: https://www.openapis.org/about
+[2]: https://github.com/OAI/OpenAPI-Specification/blob/master/README.md
+[3]: https://swagger.io/specification
+[4]: https://smartbear.com
+[5]: https://developer.onepagecrm.com/api
+[6]: https://github.com/OnePageCRM/swagger
+[7]: https://github.com/OnePageCRM/OnePageCRM.github.io
