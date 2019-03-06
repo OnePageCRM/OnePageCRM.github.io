@@ -102,6 +102,23 @@ Since we use Swagger, we don’t have to worry about how to organize or display 
 
 <br>
 
+<div id="oai-logo" style="width:100%; margin-bottom:20px; text-align:center">
+  <img 
+    alt="Swagger Cat"
+    class="img-responsive"
+    style="width:50%"
+    src="/assets/images/api/weve-got-swagger/swagger-cat.jpg">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small>
+        <a target="_blank" href="https://memegenerator.net/instance/72258418/swagger-cat-weve-got-swagger">
+          Image source
+        </a>
+      </small>
+    </div>
+</div>
+
+<br>
+
 ### Future
 
 Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own 😜).
