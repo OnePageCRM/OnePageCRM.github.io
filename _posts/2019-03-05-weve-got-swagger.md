@@ -26,11 +26,11 @@ But for the realization of a truly connected world, we need to first "set in sto
   <img 
     alt="OAI (OpenAPI Initiative)"
     class="img-responsive"
-    style="width:60%"
+    style="width:40%"
     src="/assets/images/api/weve-got-swagger/oai-logo.png">
     <div style="margin-top:-15px; padding-bottom:15px;">
       <small><a target="_blank" href="https://github.com/OAI/OpenAPI-Style-Guide">Image source</a></small>
-     </div>
+    </div>
 </div>
 
 Here is where the OAI (OpenAPI Initiative) comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
