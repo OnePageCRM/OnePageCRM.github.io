@@ -4,7 +4,7 @@ title: "We've got Swagger"
 slug: "weve-got-swagger"
 category: blog
 author: cillian
-date: 2019-03-01 09:00:00
+date: 2019-03-05 09:00:00
 graphic: "/assets/images/api/weve-got-swagger/feature-graphic.png"
 post_image: "/assets/images/api/weve-got-swagger/feature-graphic.png"
 excerpt: "But for the realization of a truly connected world, we need to first 'set in stone' an agreed-upon format to describe the ways we exchange data. There is simply no way around the fact that when things become standardized, they are generally easier to use and more widely accessible."
