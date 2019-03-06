@@ -1,9 +1,8 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'OnePageCRM - Developers Workspace'
 
-name: 'OnePageCRM - Developers Workspace'
-
-url: 'http://developer.onepagecrm.com'
+title: ' Developer Workspace'
+name: 'Developer Workspace'
+url: 'https://developer.onepagecrm.com'
 rss_path: "/blog"
 codeurl: 'http://www.onepagecrm.com'
 
