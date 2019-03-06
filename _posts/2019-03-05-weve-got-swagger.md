@@ -33,9 +33,9 @@ But for the realization of a truly connected world, we need to first "set in sto
     </div>
 </div>
 
-Here is where the [OAI (OpenAPI Initiative)][1] comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
+Here is where the [OAI (OpenAPI Initiative)][1]{:target="_blank"} comes in. This is an open governance structure under the Linux Foundation, founded by a consortium of forward-looking industry experts from companies like Google, Microsoft and IBM.
 
-The main purpose of the OAI is to head the collaborative project to define the OAS (OpenAPI Specification). 
+The main purpose of the OAI is to head the collaborative project to define the [OAS (OpenAPI Specification)][2]{:target="_blank"}. 
 
 Put simply they are trying to make it easier to define and document APIs in the hopes that it will improve the interoperability of systems and reduce the barrier to communication between independent services.
 
@@ -43,7 +43,7 @@ Put simply they are trying to make it easier to define and document APIs in the 
 
 ### Swagger Specification
 
-Swagger came into the equation when its v2.0 specification was donated by SmartBear to the OAI to be adopted as the OpenAPI Specification v3.0.
+Swagger came into the equation when its [v2.0 specification][3]{:target="_blank"} was donated by [SmartBear][4]{:target="_blank"} to the OAI to be adopted as the [OpenAPI Specification v3.0][2]{:target="_blank"}.
 
 Swagger is an open description format for APIs, meaning any API that adheres to the Swagger specification is easy to understand, easy to adjust, and easy to consume. Quite simply, it makes it easier for distributed systems to communicate with one another. A consumer can understand and communicate with a remote service with a minimal amount of implementation logic.
 
@@ -86,7 +86,7 @@ It was becoming less and less of an inviting task.
 
 <br>
 
-Coupling these complaints of the previous system along with the many additional benefits of Swagger, it was a "no-brainer". OnePageCRM's API documentation has now undoubtedly gotten some Swagger about it (pun very much intended)!
+Coupling these complaints of the previous system along with the many additional benefits of Swagger, it was a "no-brainer". [OnePageCRM's API documentation][5]{:target="_blank"} has now undoubtedly gotten some Swagger about it (pun very much intended)!
 
 One of the reasons that documentation takes up so much development time is because it needs to be very organized and navigable. You have to worry about where to put examples, how to organize your methods, and how much detail to provide for each call. 
 
@@ -96,7 +96,7 @@ One of the reasons that documentation takes up so much development time is becau
 
 Using Swagger we were able to solve the two biggest problems with our old documentation, and it has helped us reduce a lot of the difficulty and time-consuming nature of maintaining great API documentation.
 
-The definition of our API now lives within its own completely separate project and repository. Our developer site (which hosts the docs) is configured to fetch the documentation from this separate repo, and present it with all the correct formatting and styling etc.
+The definition of our API now lives within its own completely separate project and [repository][6]{:target="_blank"}. Our [developer site][7]{:target="_blank"} (which hosts the docs) is configured to fetch the documentation from this separate repo, and present it with all the correct formatting and styling etc.
 
 Since we use Swagger, we don’t have to worry about how to organize or display the API documentation (for the most part). We simply manipulate the definition of our API, and Swagger takes care of displaying the end product in a way that is clean, easy to read and understand.
 
