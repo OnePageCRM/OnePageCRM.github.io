@@ -28,7 +28,7 @@ But for the realization of a truly connected world, we need to first "set in sto
     class="img-responsive"
     style="width:40%"
     src="/assets/images/api/weve-got-swagger/oai-logo.png">
-    <div style="margin-top:-15px; padding-bottom:15px;">
+    <div style="margin-top:0px; padding-bottom:15px;">
       <small><a target="_blank" href="https://github.com/OAI/OpenAPI-Style-Guide">Image source</a></small>
     </div>
 </div>
@@ -69,6 +69,23 @@ It was becoming less and less of an inviting task.
 
 <br>
 
+<div id="oai-logo" style="width:100%; margin-bottom:20px; text-align:center">
+  <img 
+    alt="I don't like it"
+    class="img-responsive"
+    style="width:80%"
+    src="/assets/images/api/weve-got-swagger/i-dont-like-it.gif">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small>
+        <a target="_blank" href="https://giphy.com/gifs/reactionseditor-do-not-want-dislike-3owzVQ23NzdKvVALUA">
+          Image source
+        </a>
+      </small>
+    </div>
+</div>
+
+<br>
+
 Coupling these complaints of the previous system along with the many additional benefits of Swagger, it was a "no-brainer". OnePageCRM's API documentation has now undoubtedly gotten some Swagger about it (pun very much intended)!
 
 One of the reasons that documentation takes up so much development time is because it needs to be very organized and navigable. You have to worry about where to put examples, how to organize your methods, and how much detail to provide for each call. 
@@ -90,6 +107,25 @@ Since we use Swagger, we don’t have to worry about how to organize or display 
 Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own 😜).
 
 We also hope that this will be the first step towards having the next major version of our API be a design-first approach.
+
+<br>
+
+<div id="oai-logo" style="width:100%; margin-bottom:20px; text-align:center">
+  <img 
+    alt="Everything's coming up Millhouse"
+    class="img-responsive"
+    style="width:60%"
+    src="/assets/images/api/weve-got-swagger/coming-up-millhouse.gif">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <small>
+        <a target="_blank" href="https://giphy.com/gifs/season-10-the-simpsons-10x19-3o6MbdDgPPdxki4jD2">
+          Image source
+        </a>
+      </small>
+    </div>
+</div>
+
+<br>
 
 In the process of rewriting our documentation we have exposed lots of new features of the API. We hope you enjoy using them!
 
