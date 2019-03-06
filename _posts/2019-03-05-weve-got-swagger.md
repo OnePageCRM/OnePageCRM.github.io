@@ -81,13 +81,13 @@ Using Swagger we were able to solve the two biggest problems with our old docume
 
 The definition of our API now lives within its own completely separate project and repository. Our developer site (which hosts the docs) is configured to fetch the documentation from this separate repo, and present it with all the correct formatting and styling etc.
 
-<br>
-
 Since we use Swagger, we don’t have to worry about how to organize or display the API documentation (for the most part). We simply manipulate the definition of our API, and Swagger takes care of displaying the end product in a way that is clean, easy to read and understand.
 
-Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own 😜).
-
 <br>
+
+### Future
+
+Additionally Swagger can generate API clients in a multitude of languages helping to boost our potential integrations and just generally make the lives of devs who have to work with the OnePageCRM API easier (we're all about improving the lives of devs, including our own 😜).
 
 We also hope that this will be the first step towards having the next major version of our API be a design-first approach.
 
