@@ -1,0 +1,34 @@
+# Site title and subtitle. This is used in _includes/header.html
+
+title: ' Developer Workspace'
+name: 'Developer Workspace'
+url: 'https://developer.onepagecrm.com'
+rss_path: "/blog"
+codeurl: 'http://www.onepagecrm.com'
+
+api_sections: [
+    ['doc', 'Documentation'],
+    ['tut', 'Tutorial'],
+    ['ref', 'Reference'],
+    ['dev', 'Developers'],
+    ['post', 'Posts'],
+    ['intro', 'Introduction'],
+    ['basics', 'Basics & Logging In'],
+    ['mainresources', 'Main Methods'],
+    ['otherresources', 'Beta Methods']
+]
+exclude: ['README.md']
+
+baseurl: ''
+host: 0.0.0.0
+port: 4000
+
+# Build settings
+markdown:               kramdown
+theme:                  minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate:               6
+permalink:              pretty
