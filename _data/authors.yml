@@ -86,5 +86,9 @@ matt:
     bio: |
         Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
     image: '/assets/images/authors/matt.jpg'
+vlad:
+    name: Vladimir Konnov
+    display_name: Vladimir
+    image: '/assets/images/authors/vladimir.png'
 
   
