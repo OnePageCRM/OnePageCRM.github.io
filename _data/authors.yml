@@ -89,6 +89,8 @@ matt:
 vlad:
     name: Vladimir Konnov
     display_name: Vladimir
+    bio: |
+        Remote software developer at OnePageCRM. Enjoys music, learning languages, regional cuisines and traveling!
     image: '/assets/images/authors/vladimir.png'
 
   

@@ -55,6 +55,10 @@ graphic: /assets/images/articles/developing-microservices-in-the-cloud-for-the-c
   padding-left: 5px;
 }
 
+li{
+ list-style-type: none;
+}
+
 </style>
 
 To develop a traditional web application, you stood up a collection of services and resources locally that attempted to emulate the production environment as nearly as possible. This meant installing, configuring, provisioning, and securing web servers, application servers, mail servers, database servers and databases, in-memory data structure stores, and so on, typically on a physical machine, such as a laptop or desktop. All this before writing a line of application code! Later, servers, databases, services and applications would be hosted elsewhere, typically offsite. Then, either you managed it yourself, remotely perhaps, or your overworked but heroically cheerful system administrator lent a hand. Or maybe you’d farm it out to a service provider. Your life was complicated, sure. But the development process itself was familiar, reasonably well understood, and Google had answers for everything; sample code so shiny you could groom yourself in its reflection; and life was good, simple and clean. In a nutshell, the development process had three essential steps:
