@@ -802,6 +802,11 @@ ul.blog-author-name li i {
 .blog-details img{
 	margin: 20px 0;
 }
+.blog-details ul{
+	list-style: inherit;
+    margin-left: 30px;
+    color: #3a4e63;
+}
 .themeix-second-button .btn-read {
     background-color: #3A4E63;
     color: #fff;

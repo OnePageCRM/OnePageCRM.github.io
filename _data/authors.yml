@@ -86,5 +86,9 @@ matt:
     bio: |
         Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
     image: '/assets/images/authors/matt.jpg'
-
-  
+evelyn:
+    name: Evelyn O'Donnell
+    display_name: Evelyn
+    bio: |
+        Marketing Coordinator at OnePageCRM with a background in Mobile and Digital marketing. My creative side is fueled by lots of travelling and unwinding in the outdoors.
+    image: '/assets/images/authors/evelyn.jpg'
