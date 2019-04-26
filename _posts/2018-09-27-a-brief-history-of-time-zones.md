@@ -48,8 +48,8 @@ graphic: /assets/images/timezones/tesseract.jpg
 }
 
 li {
-  color: #3a4e63;
   margin-bottom: 8px;
+  list-style-type: none;
 }
 
 </style>

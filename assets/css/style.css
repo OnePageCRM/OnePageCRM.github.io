@@ -21,8 +21,7 @@ body {
     background: #b3d4fc;
     text-shadow: none;
 }
-ol,
-ul {
+ol, ul {
     list-style: none;
 }
 a:hover {
@@ -757,6 +756,15 @@ h3.blog-post-title {
 }
 .single-blog-item .blog-details {
     padding-top: 0;
+}
+.single-blog-item ul,
+.single-blog-item ol{
+	margin-left: 30px;
+	list-style-type: initial;
+	color: #3a4e63;
+}
+.single-blog-item ol{
+	list-style-type: decimal;
 }
 .blog-post-title a {
     font-size: 24px;

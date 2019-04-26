@@ -5,6 +5,7 @@ slug: "api-client-gem"
 category: blog
 author: peter
 date: 2015-07-21 13:24:22
+excerpt: "I have published a basic API wrapper to RubyGems.org. The gem does not abstract all API calls to ruby methods but simply gives the GET, POST, PUT and DELETE methods. The gem handles the authentication with the OnePageCRM API."
 ---
 
 I have published a basic API wrapper to RubyGems.org.
