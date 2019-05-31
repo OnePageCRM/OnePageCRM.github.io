@@ -184,7 +184,7 @@ that means sending info about date-times as well as receiving info about date-ti
   <div class="card">
     <img alt=""
       class="no-margins img-responsive"
-      style="width:100%; height:100%;"
+      style="width:100%"
       src="/assets/images/timezones/data-flow.jpg">
   </div>
   <div style="margin-top:-15px; padding-bottom:15px;">
