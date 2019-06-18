@@ -25,7 +25,7 @@ The main problem with **MVC** is that a lot of code goes into the Controller, so
 
 <br/>
 
-```
+```swift
 final class ContactTableManager: NSObject {
 
 }
@@ -46,7 +46,7 @@ Imagine now that you have to show a list of contacts on a table where the contac
 
 <br/>
 
-```
+```swift
 let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell
 let contact = contacts[indexPath.row]
 
@@ -61,10 +61,9 @@ Let's see with **MVVM**:
 
 <br/>
 
-```
+```swift
 final class ContactViewModel: NSObject
 {
-
 	let name: String
 	let isBold: Bool
 
@@ -85,7 +84,7 @@ Now to configure the cell you'll need:
 
 <br/>
 
-```
+```swift
 let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell`
 let contact = contacts[indexPath.row]`
 let model = ContactViewModel(contact: contact)`
@@ -98,7 +97,7 @@ All the logic is in the `ContactViewModel`, so what do I need to test now? Just 
 
 <br/>
 
-```
+```swift
 protocol SimpleCell {
     var label: UILabel { get set }
 }
@@ -117,4 +116,4 @@ And there you go, check it out and see for yourself. It saved me lots of time an
      <br /><br />
 </div>
 
-There are other aspects of **MVVM**, but the main goal of the example is to improve the testability of the code! I'd love to hear you thoughts in the comments. What you think?
+There are many other aspects to **MVVM**, but the main goal of the example is to improve the testability of the code! I'd love to hear you thoughts in the comments. What you think?
