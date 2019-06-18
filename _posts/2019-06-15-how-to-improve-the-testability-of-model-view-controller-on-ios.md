@@ -53,6 +53,7 @@ let contact = contacts[indexPath.row]
 Cell.textLabel.text = contact.name
 Cell.textLabel.font = contact.isBold ? boldFont : normalFont
 ```
+
 <br />
 
 It doesn’t take a huge amount of code, but can you imagine what you need to do just to test it? You'll need the Controller, table and the cell just to test the cell. And that’s where the problem may arise, as it can take a long time just to test the setup of the cell. 
@@ -85,9 +86,9 @@ Now to configure the cell you'll need:
 <br/>
 
 ```swift
-let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell`
-let contact = contacts[indexPath.row]`
-let model = ContactViewModel(contact: contact)`
+let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell
+let contact = contacts[indexPath.row]
+let model = ContactViewModel(contact: contact)
 
 model.configure(cell: cell)
 ```
