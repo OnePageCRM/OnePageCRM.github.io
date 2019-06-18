@@ -1,0 +1,107 @@
+---
+layout: post
+title: "How to improve the testability of Model View Controller on iOS"
+slug: "how-to-improve-the-testability-of-model-view-controller-on-ios"
+category: blog
+post_image: /assets/images/mvvm/mvvm-header-image.png
+author: elano
+date: 2019-06-15 09:00:00
+excerpt: "When you develop an application, you can choose one of many architectures. For iOS the easiest and most  common is MVC (Model View Controller). But it’s only after you dive right into the project, you may find that it can often be difficult to test and change the code."
+graphic: /assets/images/mvvm/mvvm-header-image.png
+---
+
+When you develop an application, you can choose one of many architectures. For iOS the easiest and most  common is **MVC** (Model View Controller). But it’s only after you dive right into the project, you may find that it can often be difficult to test and change the code.
+
+Each architecture that you choose will have good and bad aspects. Always bearing in mind that the ultimate goal is to improve the testability of the code. If what you're doing will improve this aspect, then you're on the right path.
+
+In this post, I'll write a little about **MVVM** (Model View ViewModel) and my experience with using it to improve the testability of the OnePageCRM mobile app.
+
+<div class="text-align: center">
+    <img src="/assets/images/mvvm/mvvm-flow.png" alt="Flow of the MVVM" class="img-responsive" style="" />
+     <br /><br />
+</div>
+
+The main problem of the MVC is that a lot goes into the Controller, so it gets bigger and difficult to test. The use of TableView is very common, so to start, I created a **manager** to incorporate all the UITableViewDataSource and UITableViewDelegate protocol.
+
+```
+final class ContactTableManager: NSObject {
+
+}
+
+extension ContactTableManager: UITableViewDataSource, UITableViewDelegate {
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {}
+
+	func numberOfSections(in tableView: UITableView) -> Int {}
+}
+```
+<br />
+
+This way the Controller can still have button events and other delegate protocols, but the table part which can be huge isn't there anymore.
+
+Imagine now that you have to show a list of contacts on a table and the contact name could be bold or not. Normally on MVC you'll do something like:
+
+```
+let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell
+let contact = contacts[indexPath.row]
+
+Cell.textLabel.text = contact.name
+Cell.textLabel.font = contact.isBold ? boldFont : normalFont
+```
+<br />
+
+It doesn’t take a huge amount of code, but can you imagine what you need to do just to test it? You'll need the Controller, table and the cell just to test the cell. And that’s where the problem may arise, as it can take a long time to even test the setup of the cell. Let's see with MVVM:
+
+```
+final class ContactViewModel: NSObject
+{
+
+	let name: String
+	let isBold: Bool
+
+	init(contact: Contact) {
+		self.name = contact.name
+		self.isBold = contact.isBold
+	}
+
+	func configure(cell: ContactTableViewCell) {
+		cell.textLabel.text = contact.name
+		cell.textLabel.font = contact.isBold ? boldFont : normalFont
+	}
+}
+```
+<br />
+
+Now to configure the cell you'll need:
+
+```
+let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! ContactTableViewCell`
+let contact = contacts[indexPath.row]`
+let model = ContactViewModel(contact: contact)`
+
+model.configure(cell: cell)
+```
+<br />
+
+All the logic is in the ContactViewModel, so what do I need to test now? Just the model. Actually you could say that to test it's necessary to create the cell, but if we make a little change and add a protocol to the cell I can test the logic with just a simple class - easy! :)
+
+```
+protocol SimpleCell {
+    var label: UILabel { get set }
+}
+
+func configure(cell: SimpleCell) {
+		cell.label.text = contact.name
+		cell.label.font = contact.isBold ? boldFont : normalFont
+	}
+```
+<br />
+
+And there you go, check it out and see for yourself. It saved me lots of time so hope it works for you too.
+
+<div class="text-align: center">
+    <img src="/assets/images/mvvm/mvvm.jpg" alt="MVVM" class="img-responsive" style="" />
+     <br /><br />
+</div>
+
+There are other aspects of MVVM, but the main goal of the example is to improve the testability of the code! What you think?
