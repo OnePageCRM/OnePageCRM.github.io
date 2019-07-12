@@ -16,6 +16,16 @@ Each architecture that you might choose has both good and bad aspects. It's very
 
 In this post, I'll talk a little bit about **MVVM** (Model View ViewModel) and my experience with using it to improve the testability of the OnePageCRM mobile app.
 
+<div style="width:100%; margin-bottom:20px; text-align:center">
+  <img alt=""
+    class="img-responsive"
+    style="width:100%;"
+    src="/assets/images/mvvm/mvvm-flow.png">
+    <div style="margin-top:-15px; padding-bottom:15px;">
+      <code>MVVM Flow</code>
+    </div>
+</div>
+
 The main problem with **MVC** is that a lot of code goes into the Controller, so it becomes bigger and more difficult to test. The use of `TableView` is very common, so to start, I created a manager to incorporate both the `UITableViewDataSource` and `UITableViewDelegate` protocols.
 
 <br/>
@@ -108,6 +118,3 @@ func configure(cell: SimpleCell) {
 And there you go, check it out and see for yourself. It saved me lots of time and I hope it works for you too.
 
 There are many other aspects to **MVVM**, but the main goal of the example is to improve the testability of the code! I'd love to hear you thoughts in the comments. What you think?
-
----
-<a style="font-size: 0.8em" target="_blank" href="https://dev.to/onmyway133/a-taste-of-mvvm-and-reactive-paradigm-24p5">*Main image source</a>
