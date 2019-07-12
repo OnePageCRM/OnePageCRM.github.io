@@ -3,11 +3,11 @@ layout: post
 title: "How to improve the testability of Model View Controller on iOS"
 slug: "how-to-improve-the-testability-of-model-view-controller-on-ios"
 category: blog
-post_image: /assets/images/mvvm/mvvm-header-imagev2.jpg
+post_image: /assets/images/mvvm/mvvm-header-image.png
 author: elano
-date: 2019-06-15 09:00:00
+date: 2019-07-11 09:00:00
 excerpt: "When you develop an application, you can choose one of many architectures. For iOS the easiest and most common is MVC (Model View Controller). But it’s only after you dive right into the project, you may find that it can often be difficult to test and change the code."
-graphic: /assets/images/mvvm/mvvm-header-imagev2.jpg
+graphic: /assets/images/mvvm/mvvm-header-image.png
 ---
 
 When you develop a mobile application, you can choose one of many architectures. For iOS the easiest and most common is **MVC** (Model View Controller). But sometimes after you dive deeper into the project, you may find that it can often be difficult to test and change the code.
