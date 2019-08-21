@@ -92,5 +92,9 @@ vlad:
     bio: |
         Software developer at OnePageCRM. Enjoys music, learning languages, regional cuisines and traveling!
     image: '/assets/images/authors/vladimir.png'
-
-  
+victor:
+    name: Victor Pukman
+    display_name: Victor
+    bio: |
+        Software Engineer at OnePageCRM. Enjoys developing features which help people to solve real problems. Experience in Ruby and CoffeeScript. In his spare time, plays music and exploring new places.
+    image: '/assets/images/authors/victor.png'
