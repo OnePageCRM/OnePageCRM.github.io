@@ -3,19 +3,15 @@
 peter:
     name: Peter Armstrong
     display_name: Peter
-    #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: peter@onepagecrm.com
     web: http://peterarmstrong.ie
-    #twitter: company
     github: peterOnePageCRM
     bio: 'Peter is a software engineer at OnePageCRM.'
     image: '/assets/images/authors/peter.jpg'
 john:
     name: John Maguire
     display_name: John
-    #gravatar: c66919cb194f96c696c1da0c47354a6a
     email: john@onepagecrm.com
-    #twitter: company
     github: JohnMaguir
     bio: |
         Software Engineer who loves to convert the vision of a project or app into the real thing.  Sporting fanatic who enjoys GAA football and hurling, Aussie Rules, athletics with a number of triathlons completed.
@@ -41,13 +37,12 @@ ruairi:
     display_name: Ruairi
     email: ruairi@onepagecrm.com
     bio: 'Ruairi is a developer at OnePageCRM.'
-    #image: '/img/ruairi.jpg'
 cillian:
     name: Cillian Myles
     display_name: Cillian
     email: cillian@onepagecrm.com
     github: CillianMyles
-    web: https://cillianmyles.github.io
+    web: https://cillianmyles.com
     bio: |
         Our in-house lead Android engineer, API consumer, and technical jargon translator. Cillian enjoys great design, smart defaults, power-user features, olympic weightlifting and is vegan.
     image: '/assets/images/authors/cillian.png'
@@ -92,5 +87,9 @@ vlad:
     bio: |
         Software developer at OnePageCRM. Enjoys music, learning languages, regional cuisines and traveling!
     image: '/assets/images/authors/vladimir.png'
-
-  
+victor:
+    name: Victor Pukman
+    display_name: Victor
+    bio: |
+        Software Engineer at OnePageCRM. Enjoys developing features which help people to solve real problems. Experience in Ruby and CoffeeScript. In his spare time, Victor plays music and enjoys exploring new places.
+    image: '/assets/images/authors/victor.png'
