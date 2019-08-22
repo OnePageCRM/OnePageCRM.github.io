@@ -41,7 +41,7 @@ The right way to achieve this is to set `blockStyleFn` callback for the editor. 
 In our case it looks like this:
 
 <br/>
-```CoffeeScript
+```coffeescript
 blockStyleFn: (contentBlock) =>
   type = contentBlock.getType()
   colorName = ReactModules.settings.quoteBlockColor
@@ -93,7 +93,7 @@ Whilst coding the color update, I also rewrote some other parts of the Quick Quo
 This is the code before:
 
 <br/>
-```CoffeeScript
+```coffeescript
 # here we re-assemble Quick Quotes blocks (lines) to configure and join together
 for block in blocks
   contentState = editorState.getCurrentContent()
@@ -119,7 +119,7 @@ for block in blocks
 The solution here is to initialize `editorState` in the beginning and update its content only in the end:
 
 <br/>
-```CoffeeScript
+```coffeescript
 editorState = Draft.EditorState.createEmpty()
 rawObject = Draft.convertToRaw(editorState.getCurrentContent())
 
