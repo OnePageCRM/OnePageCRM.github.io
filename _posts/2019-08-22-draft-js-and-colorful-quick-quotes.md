@@ -54,7 +54,7 @@ blockStyleFn: (contentBlock) =>
 And then in CSS we need to define these classes:
 
 <br/>
-```css
+```scss
 .draft-editor {
     .qq-block {
         padding-left: 10px;
