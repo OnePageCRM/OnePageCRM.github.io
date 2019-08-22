@@ -34,7 +34,7 @@ Beside text editing, users are allowed to format the text in different ways - cu
 Another cool feature built in React is [Quick Quotes](https://www.onepagecrm.com/blog/boost-sales-quick-quotes){:target="_blank"}. It allows users to quickly send quotes directly from within OnePageCRM using deal items and their own email client. The original release had the quote text with one plain text color block, however our latest update allows users to customize the colour of the Quote block to quickly catch the reader's attention. Using Draft.js I was able to customize this color component and here’s how I did it...
 
 <br/>
-### Realization
+### Implementation
 
 The right way to achieve this is to set `blockStyleFn` callback for the editor. It allows to specify classes that should be applied to blocks at the render time. In context of Draft.js and QuickQuotes, the block is a piece of text - one line with text or even an empty line.
 
