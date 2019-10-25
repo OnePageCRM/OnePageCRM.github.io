@@ -236,6 +236,10 @@ section.pt-25 {
     padding-bottom: 80px;
 }
 
+.height-500 {
+    height: 500px;
+}
+
 .height-450 {
     height: 450px;
 }
