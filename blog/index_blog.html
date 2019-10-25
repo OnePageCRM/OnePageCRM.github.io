@@ -3,87 +3,91 @@ layout: default
 title: "OnePageCRM - Developers Workspace"
 sub_title: "News, posts and ideas"
 paginate:
-  category: blog
-  per_page: 6
-  limit: false
+category: blog
+per_page: 6
+limit: false
 ---
 
 <!-- Start Slider Area -->
 <div class="slider-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="slider-wrapper height-350">
-                <div id="particles-js" style="background-image:url(/assets/images/LargeGroup_devs.jpg);">
-                    <div class="slider-fixed-text">
-                        <h1>OnePageCRM - Developers Workspace</h1>
-                        <p class="flying-text">News, posts and ideas</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="slider-wrapper height-350">
+        <div id="particles-js" style="background-image:url(/assets/images/dev-team.jpg);">
+          <div class="slider-fixed-text">
+            <h1>OnePageCRM - Developers Workspace</h1>
+            <p class="flying-text">News, posts and ideas</p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!--End Slider Area -->
 
 <div class="page-wrapper py-5">
   <div class="container">
-	  <div class="row">
-	    <div class="col-md-8">
-      {% for post in paginator.posts %}
-      {% assign author = site.authors[post.author] %}
-		  <div class="tag-post-wrapper">
-		    <div class="category-post py-3">
-		      <div class="category-post-info">
-				<div class="blog-image">
-                  {% if post.post_image %}
-                      <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
-                    {% endif %}
-                </div>
-            <h3 class="blog-post-title">
-              <a href="{{ post.url }}" target="_blank" title="{{ post.title }}"> {{ post.title }}</a>
-            </h3>
-            {% assign author = site.data.authors[post.author] %}
-            <p><span class="author">{{ author.name }}</span>, <span class="date">{{ post.date | date_to_string }}</span></p>
+    <div class="row">
+      <div class="col-md-8">
+        {% for post in paginator.posts %}
+        {% assign author = site.authors[post.author] %}
+        <div class="tag-post-wrapper">
+          <div class="category-post py-3">
+            <div class="category-post-info">
+              <div class="blog-image">
+                {% if post.post_image %}
+                <a href="{{ post.url }}"><img src="{{ post.post_image }}" alt="{{ post.title }}"></a>
+                {% endif %}
+              </div>
+              <h3 class="blog-post-title">
+                <a href="{{ post.url }}" target="_blank" title="{{ post.title }}"> {{ post.title }}</a>
+              </h3>
+              {% assign author = site.data.authors[post.author] %}
+              <p><span class="author">{{ author.name }}</span>, <span
+                  class="date">{{ post.date | date_to_string }}</span></p>
 
-            <div class="text-justify">
-              {{ post.excerpt }}
-            </div>
-		    <div class="read-more">
-              <div class="themeix-button-group">
-                <a href="{{ post.url }}" class="themeix-btn themeix-danger">read more</a>
+              <div class="text-justify">
+                {{ post.excerpt }}
+              </div>
+              <div class="read-more">
+                <div class="themeix-button-group">
+                  <a href="{{ post.url }}" class="themeix-btn themeix-danger">read more</a>
+                </div>
+              </div>
+              <div class="share-icon">
+                <span>share on</span>
+                <ul class="social-icon">
+                  <li>
+                    <a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via=OnePageCRM&related={{ site.twitter_username }}"
+                      class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}&t={{ post.title }}"
+                      class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ post.url }}&title={{ post.title }}&summary=&source="
+                      class="sharebutton linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </li>
+                </ul>
               </div>
             </div>
-			<div class="share-icon">
-                <span>share on</span>
-				<ul class="social-icon">
-					<li>
-						<a href="https://twitter.com/intent/tweet?text={{ post.title }}&url={{ site.url }}{{ page.url }}&via=OnePageCRM&related={{ site.twitter_username }}" class="sharebutton twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}&t={{ post.title }}" class="sharebutton facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ post.url }}&title={{ post.title }}&summary=&source="  class="sharebutton linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-					</li>
-				</ul>
-			</div>
           </div>
-		    </div>
-		  </div>
-	    {% endfor %}
-		</div>
-		<div class="col-md-4">
-		  <div class="sidebar-contents">
-			{% include sidebar.html %}
-		  </div>
-		</div>
-	  </div>
-	  <!-- pagination -->
-        <div class="row">
-            <div class="col-md-12">
-                {% include pagination.html %}
-            </div>
         </div>
-		<!-- end pagination -->
-   </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-4">
+        <div class="sidebar-contents">
+          {% include sidebar.html %}
+        </div>
+      </div>
+    </div>
+    <!-- pagination -->
+    <div class="row">
+      <div class="col-md-12">
+        {% include pagination.html %}
+      </div>
+    </div>
+    <!-- end pagination -->
+  </div>
 </div>

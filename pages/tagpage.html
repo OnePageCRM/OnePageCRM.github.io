@@ -7,10 +7,10 @@ layout: default
     <div class="container-fluid">
         <div class="row">
             <div class="slider-wrapper height-350">
-                <div id="particles-js" style="background-image:url(/assets/images/LargeGroup_devs.jpg);">
+                <div id="particles-js" style="background-image:url(/assets/images/dev-team.jpg);">
                     <div class="slider-fixed-text">
-                         <h1>OnePageCRM - Developers Workspace</h1>
-                            <p class="flying-text">News, posts and ideas</p>
+                        <h1>OnePageCRM - Developers Workspace</h1>
+                        <p class="flying-text">News, posts and ideas</p>
                     </div>
                 </div>
             </div>
@@ -20,64 +20,66 @@ layout: default
 <!--End Slider Area -->
 
 <div class="page-wrapper py-5">
-<div class="container">
-	<div class="row">
-	<div class="col-md-8">
-		{% assign counter = 0 %}
-		{% for category in site.categories %}
-		  <div class="tag-post-wrapper" id="{{ category | first }}"> 
-		    <div class="category-heading">
-		        <h2> Category : {{ category | first }}</h2>
-		    </div>
-		    <div class="category-post py-3">
-	    	 {% for posts in category %}
-		     {% for post in posts %}
-		    <div class="colblock"">    
-		        <div class="category-post-info">
-		        <h3 class="blog-post-title">
-		            <a href="{{ post.url }}" target="_blank" title="{{ post.title }}"> {{ post.title }}</a>
-		        </h3> 
-		        {{test}}                       
-		        {% assign post_text = post.excerpt  %}
-		         {{ post_text | truncatewords: 25 }}
-		             <div class="read-more">
-                        <div class="themeix-button-group">
-                            <a href="{{ post.url }}" class="themeix-btn themeix-danger">read more</a>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% assign counter = 0 %}
+                {% for category in site.categories %}
+                <div class="tag-post-wrapper" id="{{ category | first }}">
+                    <div class="category-heading">
+                        <h2> Category : {{ category | first }}</h2>
                     </div>
-		        </div>
-		    </div>
-		     {% endfor %}
-		     {% endfor %}
-		     </div>
-		     </div>
-	      {% endfor %}
-	</div>
-   <div class="col-md-4">
-  <div class="sidebar-contents">
-      <section class="recent-posts">
-          <div class="widget-title">
-              <h3>Recent Posts</h3>
-          </div>
-          <ul>
-              <li><a href="#">Latin text by the classical</a></li>
-              <li><a href="#">The Best of Hans Zimmer</a></li>
-              <li><a href="#">We denounce with righteous</a></li>
-              <li><a href="#">Most text editors like MS Word</a></li>
-              <li><a href="#">Welcome to Ghost</a></li>
-          </ul>
-      </section>
-      <div class="twitter-feed">
-          <section class="twitter-widget">
-              <div class="widget-title">
-                  <h3>Tweet Feed</h3>
-              </div>
-              <a href="https://twitter.com/themeix_ltd" class="twitter-timeline" data-chrome="nofooter noborders noheader" data-tweet-limit="3"></a>
-              <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </section>
-      </div>
-  </div>
-</div>
-</div>
-</div>
+                    <div class="category-post py-3">
+                        {% for posts in category %}
+                        {% for post in posts %}
+                        <div class="colblock">
+                            <div class=" category-post-info">
+                                <h3 class="blog-post-title">
+                                    <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">
+                                        {{ post.title }}</a>
+                                </h3>
+                                {{test}}
+                                {% assign post_text = post.excerpt  %}
+                                {{ post_text | truncatewords: 25 }}
+                                <div class="read-more">
+                                    <div class="themeix-button-group">
+                                        <a href="{{ post.url }}" class="themeix-btn themeix-danger">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar-contents">
+                    <section class="recent-posts">
+                        <div class="widget-title">
+                            <h3>Recent Posts</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Latin text by the classical</a></li>
+                            <li><a href="#">The Best of Hans Zimmer</a></li>
+                            <li><a href="#">We denounce with righteous</a></li>
+                            <li><a href="#">Most text editors like MS Word</a></li>
+                            <li><a href="#">Welcome to Ghost</a></li>
+                        </ul>
+                    </section>
+                    <div class="twitter-feed">
+                        <section class="twitter-widget">
+                            <div class="widget-title">
+                                <h3>Tweet Feed</h3>
+                            </div>
+                            <a href="https://twitter.com/themeix_ltd" class="twitter-timeline"
+                                data-chrome="nofooter noborders noheader" data-tweet-limit="3"></a>
+                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

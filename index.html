@@ -2,29 +2,29 @@
 layout: default
 title: "Developer Workspace"
 sub_title: "News, posts and ideas"
-slider_image: "/assets/images/LargeGroup_devs.jpg"
+slider_image: "/assets/images/dev-team.jpg"
 ---
 
-    {% include slider.html %}
+{% include slider.html %}
 
-    <div class="appix-blog-content section-ptb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% include post_loops.html %}
-                </div>
-                <div class="col-md-4">
-                    <div class="sidebar-contents">
-                      {% include sidebar.html %}
-                    </div>
+<div class="appix-blog-content section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% include post_loops.html %}
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar-contents">
+                    {% include sidebar.html %}
                 </div>
             </div>
-            <!-- pagination -->
-            <div class="row">
-                <div class="col-md-12">
-                  {% include pagination.html %}
-                </div>
-            </div>
-            <!-- end pagination -->
         </div>
+        <!-- pagination -->
+        <div class="row">
+            <div class="col-md-12">
+                {% include pagination.html %}
+            </div>
+        </div>
+        <!-- end pagination -->
     </div>
+</div>
