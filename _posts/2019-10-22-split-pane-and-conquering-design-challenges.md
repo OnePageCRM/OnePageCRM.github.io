@@ -6,16 +6,18 @@ category: blog
 post_image: /assets/images/split_pane/header_image.png
 author: ania
 date: 2019-10-22 09:00:00
-excerpt: "I’ve always thought about frontend coding as something magical. It brings the beautiful static design into the life. Makes it pretty but also readable and useful. It makes it accessible for different users, browsers, platforms, devices or machines. (This can be the most challenging part of our job, but also - when successful - the most satisfying)."
+excerpt: "I’ve always thought about frontend coding as something magical. It brings beautiful static designs to life. It turns them into something pretty, but also readable and useful. It makes them accessible for different users, browsers, platforms and devices (this can be the most challenging part of our job, but also - when successful - the most satisfying)."
 graphic: /assets/images/split_pane/header_image.png
 ---
 
-I’ve always thought about frontend coding as something magical. It brings the beautiful static design into the life. Makes it pretty but also readable and useful. It makes it accessible for different users, browsers, platforms, devices or machines. (This can be the most challenging part of our job, but also - when successful - the most satisfying).
+I’ve always thought about frontend coding as something magical. It brings beautiful static designs to life. It turns them into something pretty, but also readable and useful. It makes them accessible for different users, browsers, platforms and devices (this can be the most challenging part of our job, but also - when successful - the most satisfying).
 
-Frontend combines two different spheres: the art of creation and the world of tech. And that is why I like it so much.
+Frontend combines two different spheres: the art of creation, and the world of technology. This is why I like it so much!
 
-I know that CSS is not considered a tech language, its main role is prettification but it exists in the tech world and it is constantly being improved and developed.
-Fortunately, I can now do many things in CSS that I could only ever have imagined a few years ago. I can work with [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/){:target="_blank"}, [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/){:target="_blank"} and [Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*){:target="_blank"} which are great features.
+I know that `CSS` is not strictly considered a tech language - its main role is prettification. Nonetheless it does exist in the world of tech, and it is constantly being improved and developed.
+Fortunately, I can do things now in `CSS` that, a few years ago, I would never had imagined. 
+[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/){:target="_blank"}, [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/){:target="_blank"} and [Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*){:target="_blank"}
+are each great examples of this.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
@@ -25,8 +27,10 @@ Fortunately, I can now do many things in CSS that I could only ever have imagine
     <p><a href="https://www.commitstrip.com/en/2019/04/29/front-end-traditions/" target="_blank">Image source</a></p>
 </div>
 
-
-They say “front-enders” are learning all the time. We are never bored. New languages are created, new ideas, tools and concepts are emerging. This is very inspiring but overwhelming at the same time. Luckily, to know technics is not so important. The most important thing is to be able to solve problems and be a creative thinker. And that is the most interesting part of this job. I’m always open to learning new things in design; in fact, I look forward to it - nothing can kill creativity more than boredom.
+They say frontend developers are learning all the time. We are never bored. New languages are created, new ideas, tools and concepts are constantly emerging. 
+This is very inspiring but can be overwhelming at the same time. Luckily, to know specific technologies is not so important. 
+The most important thing is to be able to solve problems and be a creative thinker. And that is the most interesting part of this job.
+I’m always open to learning new things in design; in fact, I look forward to it. The only thing which kills my creativity is boredom.
 
 I’ve been working with OnePageCRM for almost 10 years. As the app is growing, we’re constantly challenged to design something new on a weekly basis. For the most part, these changes are small but what really excites me is when there is a big UI change and I love getting stuck into these types of projects.
 
