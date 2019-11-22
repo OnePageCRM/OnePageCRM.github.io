@@ -27,12 +27,13 @@ are each great examples of this.
     <p><a href="https://www.commitstrip.com/en/2019/04/29/front-end-traditions/" target="_blank">Image source</a></p>
 </div>
 
-They say frontend developers are learning all the time. We are never bored. New languages are created, new ideas, tools and concepts are constantly emerging. 
+They say frontend developers are learning all the time. We are never bored. New languages are created. New ideas, tools and concepts are constantly emerging. 
 This is very inspiring but can be overwhelming at the same time. Luckily, to know specific technologies is not so important. 
 The most important thing is to be able to solve problems and be a creative thinker. And that is the most interesting part of this job.
 I’m always open to learning new things in design; in fact, I look forward to it. The only thing which kills my creativity is boredom.
 
-I’ve been working with OnePageCRM for almost 10 years. As the app is growing, we’re constantly challenged to design something new on a weekly basis. For the most part, these changes are small but what really excites me is when there is a big UI change and I love getting stuck into these types of projects.
+I’ve been working with OnePageCRM for almost 10 years now. As the app is growing, we’re constantly challenged to design something new on a weekly basis.
+For the most part, these changes are small. What really excites me is when there is a big UI change. I simply love getting stuck into these types of projects.
 
 Hence, this blog post is about my experience with a new design project called “Split Pane”.
 
@@ -48,7 +49,9 @@ Hence, this blog post is about my experience with a new design project called �
 
 ### The idea of Split Pane
 
-The idea of Split Pane was to give every user the option to easily switch between Single View column and Split Pane. You would use Single View column if you want an ultra focused view of the contact and all it’s details and the Split Pane for quick light touches when qualifying leads. You can read more here.
+The idea of Split Pane was to give every user the option to easily switch between Single Column and Split Pane views.
+You would use Single Column view if you want an ultra focused view of the contact and all it’s details, and Split Pane view for quick light touches when qualifying leads.
+You can read more [here](https://www.onepagecrm.com/blog/split-pane-action-stream-view/){:target="_blank"}.
 
 And this is the part where our CEO made a confession, Split Pane has been available long before Single column view so the idea was not new, but the concept of changing the layout in a split second without reloading the page, now this was going to be a challenge.
 
