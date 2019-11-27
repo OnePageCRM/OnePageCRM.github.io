@@ -5,7 +5,7 @@ slug: "split-pane-and-conquering-design-challenges"
 category: blog
 post_image: /assets/images/split_pane/header_image.png
 author: ania
-date: 2019-10-22 09:00:00
+date: 2019-11-27 09:00:00
 excerpt: "I’ve always thought about frontend coding as something magical. It brings beautiful static designs to life. It turns them into something pretty, but also readable and useful. It makes them accessible for different users, browsers, platforms and devices (this can be the most challenging part of our job, but also - when successful - the most satisfying)."
 graphic: /assets/images/split_pane/header_image.png
 ---
