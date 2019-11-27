@@ -95,12 +95,12 @@ I ran into some big problems with the
 [responsiveness](https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=en){:target="_blank"}
 and
 [pixel perfect design](https://www.nirmal.com.au/exactly-pixel-perfect-web-design/){:target="_blank"}.
-Is it even possible to put both those extreme designs into one page? I had to find a compromise.
+Is it even possible to apply both these extreme design concepts at the same time? I had to find a compromise.
 
 I received three concepts of the precisely designed layout for small, medium and large screens.
 
-The plan was to have perfect alignments, line spacing, typography and sizing and at the same time make the elements fluid and fit well for different resolutions and views.
-I had to add a little bit from both designs concepts (responsive and pixel perfect) and create something in between.
+The plan was to have perfect alignments, line spacing, typography and sizing, and at the same time make the elements fluid and fit well for different resolutions and views.
+I had to use a little bit from both design concepts (responsive and pixel perfect) and create something in between.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
