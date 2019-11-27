@@ -149,8 +149,9 @@ I am using those classes mainly for style the main structure of the page.
 </div>
 
 
-* [Media queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp){:target="_blank"} - This is necessary rule in a  responsive design.
-In my project it is used mostly for creating the breaking points of small, medium and large screens.
+* [Media queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp){:target="_blank"} -
+This is a necessary rule in any responsive design.
+In this project, it is used mostly for creating the breaking points of small, medium and large screens.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
