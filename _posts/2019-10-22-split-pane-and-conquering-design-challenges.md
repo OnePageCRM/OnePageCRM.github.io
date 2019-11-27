@@ -89,9 +89,13 @@ As a result, the main page or UI can look different for two users, even in the s
 
 ### What was the hardest part?
 
-The main task was to improve the existing layout of the current application. Adapt it to the new design by rewriting the CSS code and most importantly not to break anything along the way.
+The main task was to improve the existing layout of the current application, adapt it to the new design by rewriting the `CSS` code, and most importantly not to break anything along the way.
 
-I met some big problems with the [responsiveness](https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=en){:target="_blank"} and [pixel perfect design](https://www.nirmal.com.au/exactly-pixel-perfect-web-design/){:target="_blank"}. Is it even possible to put both those extreme designs into one page? I had to find a compromise.
+I ran into some big problems with the
+[responsiveness](https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=en){:target="_blank"}
+and
+[pixel perfect design](https://www.nirmal.com.au/exactly-pixel-perfect-web-design/){:target="_blank"}.
+Is it even possible to put both those extreme designs into one page? I had to find a compromise.
 
 I received three concepts of the precisely designed layout for small, medium and large screens.
 
