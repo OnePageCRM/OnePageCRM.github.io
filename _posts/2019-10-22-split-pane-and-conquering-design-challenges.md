@@ -112,10 +112,10 @@ I had to use a little bit from both design concepts (responsive and pixel perfec
 
 <strong>Here are the main points I had to consider:</strong>
 
-* Obviously, to fit the elements smoothly into the two layouts, different resolutions and browsers and keep control of almost every pixel.
-* Keep in mind that we display different content for different users (roles of the user, their settings, instant editing). Any bug or issue  could completely destroy the design built on the very dependent of each others elements.
-* Ensure the design was the same no matter what the browser. I have to admit I didn’t avoid some hacks - (we still support IE11 after all).
-* Keep the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself){:target="_blank"} code - it is a basic job for every programmer but this is not easy in a big app with a lot of history
+* (Obviously) fit the elements smoothly into the two layouts, for different browsers and resolutions, and keep control of almost every pixel.
+* Keep in mind that we display different content for different users (roles of the user, their settings, instant editing). Any bug or issue could completely destroy the design, which is built on, and depends on, these rules.
+* Ensure the design was the same no matter what the browser. I have to admit I couldn’t avoid all hacks (we still support IE11 after all).
+* Keep the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself){:target="_blank"} (Don't Repeat Yourself) principal in mind. It's a basic job for every programmer, but it's not such an easy task when working with an app the size of OnePageCRM.
 <br><br>
 
 ### What CSS  rule was the most helpful?
