@@ -118,11 +118,12 @@ I had to use a little bit from both design concepts (responsive and pixel perfec
 * Keep the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself){:target="_blank"} (Don't Repeat Yourself) principal in mind. It's a basic job for every programmer, but it's not such an easy task when working with an app the size of OnePageCRM.
 <br><br>
 
-### What CSS  rule was the most helpful?
+### What CSS rule was the most helpful?
 
-Luckily CSS as a language with a limited set of rules can be also very clever and surprisly capacious.
+Luckily `CSS` (as a language with a limited set of rules) can also be very clever and surprisingly comprehensive.
 
-Finally, I could find a solution for almost every problem. All I had to do was to analyze the issue and think about all the possibilities and dependencies, make some prototypes then use the best solution.
+In the end, I could find a solution for almost every problem.
+All I had to do was to analyze the issue and think about all the possibilities and dependencies, make some prototypes, and then use the best solution.
 
 * [Cascading](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade){:target="_blank"} - This is a basic feature of css. In this case it was the concept of two body classes toggled when a user is changing the view. It gave me a lot of freedom in styling differently the same content for each of the layouts. I am using those classes mainly for style the main structure of the page.
 
