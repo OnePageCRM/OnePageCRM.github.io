@@ -29,10 +29,14 @@ are each great examples of this.
     <p><a href="https://www.commitstrip.com/en/2019/04/29/front-end-traditions/" target="_blank">Image source</a></p>
 </div>
 
-They say frontend developers are learning all the time. We are never bored. New languages are created. New ideas, tools and concepts are constantly emerging. 
-This is very inspiring but can be overwhelming at the same time. Luckily, to know specific technologies is not so important. 
-The most important thing is to be able to solve problems and be a creative thinker. And that is the most interesting part of this job.
-I’m always open to learning new things in design; in fact, I look forward to it. The only thing which kills my creativity is boredom.
+They say frontend developers are learning all the time. We are never bored.
+New languages are created. New ideas, tools and concepts are constantly emerging. 
+This is very inspiring but can be overwhelming at the same time.
+Luckily, to know specific technologies is not so important. 
+The most important thing is to be able to solve problems and be a creative thinker.
+And that is the most interesting part of this job.
+I’m always open to learning new things in design. In fact, I look forward to it. 
+The only thing which kills my creativity is boredom.
 
 I’ve been working with OnePageCRM for almost 10 years now. As the app is growing, we’re constantly challenged to design something new on a weekly basis.
 For the most part, these changes are small. What really excites me is when there is a big UI change. I simply love getting stuck into these types of projects.
