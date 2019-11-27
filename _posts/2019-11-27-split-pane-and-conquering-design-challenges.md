@@ -10,12 +10,15 @@ excerpt: "I’ve always thought about frontend coding as something magical. It b
 graphic: /assets/images/split_pane/header_image.png
 ---
 
-I’ve always thought about frontend coding as something magical. It brings beautiful static designs to life. It turns them into something pretty, but also readable and useful. It makes them accessible for different users, browsers, platforms and devices (this can be the most challenging part of our job, but also - when successful - the most satisfying).
+I’ve always thought about frontend coding as something magical.
+It brings beautiful static designs to life. It turns them into something pretty, but also readable and useful.
+It makes them accessible for different users, browsers, platforms and devices (this can be the most challenging part of our job, but also - when successful - the most satisfying).
 
 Frontend combines two different spheres: the art of creation, and the world of technology. This is why I like it so much!
 
-I know that `CSS` is not strictly considered a tech language - its main role is prettification. Nonetheless it does exist in the world of tech, and it is constantly being improved and developed.
-Fortunately, I can do things now in `CSS` that, a few years ago, I would never have imagined. 
+I know that `CSS` is not strictly considered a tech language - its main role is prettification.
+Nonetheless it does exist in the world of tech, and it is constantly being improved and developed.
+Fortunately, I can do things now in `CSS` that, a few years ago, I would never have imagined.
 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/){:target="_blank"},
 [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/){:target="_blank"} and
 [Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*){:target="_blank"}
