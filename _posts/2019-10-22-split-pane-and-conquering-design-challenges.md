@@ -183,14 +183,23 @@ This is a very helpful `CSS` rule for instant content changing, and ensuring the
 </div>
 
 
-* [Calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc){:target="_blank"} rule all together with `overflow hidden` or `overflow ellipsis` and `min/max-width` - I use this a lot. It is very helpful for ever-changing content focused on small ‘one-line’ areas.
+* [Calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc){:target="_blank"} -
+The `calc()` rule together with `overflow hidden` or `overflow ellipsis` and `min/max-width` are used quite a lot.
+It is very helpful for continuously changing content focused on small ‘one-line’ areas.
 
-* Additional ‘special’ CSS classes - Sometimes I needed the ‘special’ css classes for ‘special’ situations.
 
+* Additional ‘special’ `CSS` classes -
+Sometimes I needed the ‘special’ `CSS` classes for ‘special’ situations.
 
-Implementing Split Pane was not an easy task but one I really enjoyed. It was the perfect opportunity to improve old code, learn new things and to resolve new ‘interesting’ problems.
+<br>
 
-This blog has given me food for thought, maybe in the next article I will describe in detail all improvements and CSS tricks I used in our design. You’ll have to wait and see…..
+Implementing Split Pane was not an easy task but one I really enjoyed.
+It was the perfect opportunity to improve old code, learn new things and to resolve new ‘interesting’ problems.
+
+This blog has given me food for thought.
+Maybe in the next post I will describe (in detail) all the improvements and `CSS` tricks I used in our design.
+I guess you’ll have to come back and see!
+<br><br>
 
 
 -----
