@@ -193,8 +193,10 @@ Sometimes I needed the ‘special’ `CSS` classes for ‘special’ situations.
 
 <br>
 
+### Closing thoughts
+
 Implementing Split Pane was not an easy task but one I really enjoyed.
-It was the perfect opportunity to improve old code, learn new things and to resolve new ‘interesting’ problems.
+It was the perfect opportunity to improve old code, learn new things and to resolve interesting new problems.
 
 This blog has given me food for thought.
 Maybe in the next post I will describe (in detail) all the improvements and `CSS` tricks I used in our design.
