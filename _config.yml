@@ -26,9 +26,12 @@ port: 4000
 # Build settings
 markdown:               kramdown
 theme:                  minima
-plugins:
+plugins_dir:
   - jekyll-feed
   - jekyll-paginate
 
 paginate:               6
 permalink:              pretty
+
+# Gems
+gems: [jekyll-paginate]
