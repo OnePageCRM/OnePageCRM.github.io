@@ -53,7 +53,8 @@ The idea of Split Pane was to give every user the option to easily switch betwee
 You would use Single Column view if you want an ultra focused view of the contact and all it’s details, and Split Pane view for quick light touches when qualifying leads.
 You can read more [here](https://www.onepagecrm.com/blog/split-pane-action-stream-view/){:target="_blank"}.
 
-And this is the part where our CEO made a confession, Split Pane has been available long before Single column view so the idea was not new, but the concept of changing the layout in a split second without reloading the page, now this was going to be a challenge.
+And this is the part where our CEO made a confession, Split Pane had been available long before Single Column view.
+So the idea was not new, but the concept of changing the layout in a split second without reloading the page, now that was going to be a challenge!
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
