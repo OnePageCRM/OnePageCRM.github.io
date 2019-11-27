@@ -77,10 +77,13 @@ When creating the frontend design for an app like OnePageCRM, I had to keep lots
 For example I needed to make sure I kept the simplified design, but also ensure that it remained elegant, given that there is lots of content in small boxes next to one another surrounded by icons, tooltips and popups.
 All of those elements have to look nice and clear, be readable, useful, pixel perfect and responsive, all at the same time.
 
-In addition, with our new switching view feature, they have to fit smoothly into two layouts where one of them has two (or three if we consider the left menu) separate panels with separate scrolls and fixed positioned elements which always have to be visible. The elements must fit perfectly when user is changing the view or the size of the window or editing data on the page. It could’ve been a nightmare from the HTML and CSS point of view.
+In addition, with our new view switching feature, they have to fit smoothly into two layouts where one of them has two (or three if we consider the left menu) separate panels, with separate scrolls and fixed positioned elements, which always have to be visible.
+The elements must fit perfectly when the user is changing the view or the size of the window or editing data on the page.
+It could have easily been a nightmare from the `HTML` and `CSS` point of view.
 
-Not to mention the OnePageCRM app has a lot of options and functions where the user can change the settings with some of them user specific (account owner, administrator, user, focused user).<br>
-In result the main page or UI can look different for two users even in the same browser, resolution and view.
+Not to mention, the OnePageCRM app already has a lot of options and functions where the user can change their settings, as well as some in-built user specific settings (for account owner, administrator, user, focused user).
+
+As a result, the main page or UI can look different for two users, even in the same browser, resolution and view.
 <br><br>
 
 
