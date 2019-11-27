@@ -125,7 +125,11 @@ Luckily `CSS` (as a language with a limited set of rules) can also be very cleve
 In the end, I could find a solution for almost every problem.
 All I had to do was to analyze the issue and think about all the possibilities and dependencies, make some prototypes, and then use the best solution.
 
-* [Cascading](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade){:target="_blank"} - This is a basic feature of css. In this case it was the concept of two body classes toggled when a user is changing the view. It gave me a lot of freedom in styling differently the same content for each of the layouts. I am using those classes mainly for style the main structure of the page.
+* [Cascading](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade){:target="_blank"} - 
+This is a basic feature of `CSS`.
+In this case, it was a concept of two `body` classes toggled when a user is changing the view.
+It gave me a lot of freedom in styling the same content differently for each of the layouts.
+I am using those classes mainly for style the main structure of the page.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
