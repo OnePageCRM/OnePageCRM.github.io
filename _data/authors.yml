@@ -93,3 +93,9 @@ victor:
     bio: |
         Software Engineer at OnePageCRM. Enjoys developing features which help people to solve real problems. Experience in Ruby and CoffeeScript. In his spare time, Victor plays music and enjoys exploring new places.
     image: '/assets/images/authors/victor.png'
+ania:
+    name: Ania Narolska-Cielecka
+    display_name: Ania
+    bio: |
+        Experienced and enthusiastic Front End Engineer. Interested in creative work, new web design and interesting UI challenges. Outside of my role at OnePageCRM, I enjoy art and reading.
+    image: '/assets/images/authors/ania.png'
