@@ -57,7 +57,7 @@ Hence, this blog post is about my experience with a new design project called â€
 
 The idea of Split Pane was to give every user the option to easily switch between Single Column and Split Pane views.
 You would use Single Column view if you want an ultra focused view of the contact and all itâ€™s details, and Split Pane view for quick light touches when qualifying leads.
-You can read more [here](https://www.onepagecrm.com/blog/split-pane-action-stream-view/){:target="_blank"}.
+You can read more about it [here](https://www.onepagecrm.com/blog/split-pane-action-stream-view/){:target="_blank"}.
 
 And this is the part where our CEO made a confession, Split Pane had been available long before Single Column view.
 So the idea was not new, but the concept of changing the layout in a split second without reloading the page, now that was going to be a challenge!
@@ -74,7 +74,7 @@ So the idea was not new, but the concept of changing the layout in a split secon
 
 So my first question was; How can I let the user access two layouts for the same page?
 
-This is, in fact, very simple in `CSS`.
+This is actually very simple in `CSS`.
 We are using two `CSS` classes for the `<body>` of the page, one set of `CSS` rules for common elements of the two views, and two different sets of rules just for the differences in each layout.
 Quick and simple.
 
@@ -97,7 +97,7 @@ As a result, the main page or UI can look different for two users, even in the s
 
 The main task was to improve the existing layout of the current application, adapt it to the new design by rewriting the `CSS` code, and most importantly not to break anything along the way.
 
-I ran into some big problems with the
+I ran into some problems with the
 [responsiveness](https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=en){:target="_blank"}
 and
 [pixel perfect design](https://www.nirmal.com.au/exactly-pixel-perfect-web-design/){:target="_blank"}.
@@ -135,7 +135,7 @@ All I had to do was to analyze the issue and think about all the possibilities a
 This is a basic feature of `CSS`.
 In this case, it was a concept of two `body` classes toggled when a user is changing the view.
 It gave me a lot of freedom in styling the same content differently for each of the layouts.
-I am using those classes mainly for style the main structure of the page.
+I am using those classes mainly for styling the main structure of the page.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
   <img alt=""
