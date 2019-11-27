@@ -159,11 +159,17 @@ In this project, it is used mostly for creating the breaking points of small, me
     style="width:80%;"
     src="/assets/images/split_pane/breakpoints.png" />
 </div>
+<br>
 
 
-Compromise 1: Some of the elements on the page need  to have a fixed size like left menu, logo and top menus. The Contact list and Contact view could adapt to the available space.
+### Compromise 1
+Some of the elements on the page need to have a fixed size like the left menu, logo and top menus.
+The Contact list and Contact view could be more dynamic and adopt the available/remaining space.
+<br><br>
 
-Compromise 2:  On very small screens, we are hiding the right panel and the view is back to its basic fixed one column state.
+
+### Compromise 2
+On very small screens, we are hiding the right panel and the view is back to its basic fixed Single Column state.
 
 * [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/){:target="_blank"} - Flexbox can be a very powerful rule used to create the whole structure of the page. I use it mostly for small elements like contact lists, activities, bars or some tables. This is the most helpful CSS rule for content changing instantly and ensuring the page is responsive when there are many elements in the same block which have to fit  to one another almost like a puzzle but at the same time be able to change based on the resolution.
 <div style="width:100%; margin-bottom:20px; text-align:center">
