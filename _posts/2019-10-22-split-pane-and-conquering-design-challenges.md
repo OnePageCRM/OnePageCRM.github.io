@@ -72,8 +72,10 @@ This is, in fact, very simple in `CSS`.
 We are using two `CSS` classes for the `<body>` of the page, one set of `CSS` rules for common elements of the two views, and two different sets of rules just for the differences in each layout.
 Quick and simple.
 
-Unfortunately, this  method can also be a little bit tricky.
-When creating the frontend design for an app like OnePageCRM I had to think about lots of details - like how to make sure I kept the simplified design but also ensure that it remained elegant given that there are lots of content in small boxes next to one another surrounded by icons, tooltips and popups. All of those elements have to look nice and clear, be readable, useful, pixel perfect and responsive at the same time.
+Unfortunately this method is not without its difficulties either.
+When creating the frontend design for an app like OnePageCRM, I had to keep lots of things in mind.
+For example I needed to make sure I kept the simplified design, but also ensure that it remained elegant, given that there is lots of content in small boxes next to one another surrounded by icons, tooltips and popups.
+All of those elements have to look nice and clear, be readable, useful, pixel perfect and responsive, all at the same time.
 
 In addition, with our new switching view feature, they have to fit smoothly into two layouts where one of them has two (or three if we consider the left menu) separate panels with separate scrolls and fixed positioned elements which always have to be visible. The elements must fit perfectly when user is changing the view or the size of the window or editing data on the page. It could’ve been a nightmare from the HTML and CSS point of view.
 
