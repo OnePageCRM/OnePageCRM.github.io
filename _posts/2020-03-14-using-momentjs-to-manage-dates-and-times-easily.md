@@ -19,52 +19,49 @@ Getting a new project is always an exciting part of being a Software Engineer in
     src="/assets/images/managejs/NA_Quick_select.jpg">
 </div>
 
-After doing some initial research, I realized that the best way to implement this feature was to use a lightweight and powerful library called [MomentJS](https://momentjs.com/){:target="_blank"}. In this post, I want to highlight some of the great features of MomentJS and my experience working with it.
+After doing some initial research, I realized that the best way to implement this feature was to use a lightweight and powerful library called [`MomentJS`](https://momentjs.com/){:target="_blank"}. In this post, I want to highlight some of the great features of `MomentJS` and my experience working with it.
 
-First, you need to install the library using package manager, I used [npm](https://www.npmjs.com/package/moment){:target="_blank"}
+First, you need to install the library using a package management tool. I used [npm](https://www.npmjs.com/package/moment){:target="_blank"}:
 
 ```coffeescript
 npm install moment
 ```
 <br/>
-
-Don't forget to include it
+Don't forget to include it:
 
 ```coffeescript
 var moment = require('moment')
 ```
 <br/>
-
-Simply call `moment` in your code
+Simply call `moment` in your code:
 
 ```coffeescript
 moment() # -> Moment {...}
 ```
 <br/>
-
-It returns a MomentJS object that points to the current date and time.
-This call is equal to
+It returns a `MomentJS` object that points to the current date and time.
+This call is equal to:
 
 ```coffeescript
 moment(new Date()) # -> Moment {...}
 ```
 <br/>
-Now, you can consume it per your needs.
-For example, you want to display date and time in user prefered format, then call `format` method
+Now, you can consume it as per your needs.
+For example, you want to display date and time in some user preferred format, then call the `format` method:
 
 ```coffeescript
 moment().format("MM/DD/YYYY") # -> "02/06/2020"
 moment().format("HH:mm") # -> "16:26"
 ```
 <br/>
-Method `format` is widely used to display dates for users in an appropriate way. It can be used for debugging purposes as well.
-For example, when you need to quickly convert MomentJS object to string and check the date or time value, just call `format` without any parameter
+The method `format` is widely used to display dates for users in an appropriate way. It can be used for debugging purposes as well.
+For example, when you need to quickly convert a `MomentJS` object to string and check the date or time value, just call `format` without any parameter:
 
 ```coffeescript
 moment().format() # -> "2020-02-12T18:09:06+03:00"
 ```
 <br/>
-Local formats are also useful because it is short to write. But remember that the date and time will be shown in local time.
+Local formats are also useful, and quite easy to output (but remember that the date and time will be shown in local time!):
 
 ```coffeescript
 moment().format('L')  # -> "02/07/2020" month/day/year
@@ -72,7 +69,7 @@ moment().format('LL') # -> "February 7, 2020"
 moment().format('LT') # -> "7:37 PM"
 ```
 <br/>
-Also `calendar` method can be helpful for a quick look.
+Also the `calendar` method can be helpful for a quick check or manipulation:
 
 ```coffeescript
 moment().calendar() # -> "Today at 5:21 PM"
@@ -80,7 +77,7 @@ moment().add(1, 'days').calendar() # -> "Tomorrow at 5:22 PM"
 moment('25-01-1990', 'DD-MM-YYYY').calendar() # -> "01/25/1990" month/day/year
 ```
 <br/>
-To quickly get unix format time, use 'X' format parameter or `unix` method
+To quickly get [Unix time](https://en.wikipedia.org/wiki/Unix_time){:target="_blank"}, pass 'X' as the format parameter, or use the `unix` method:
 
 ```coffeescript
 var a = moment()
@@ -89,7 +86,7 @@ a.unix()      # -> 1581094632   # same but returned as a number
 a.format('x') # -> "1581094632798" # with milliseconds
 ```
 <br/>
-To understand what is going on with offset, `utcOffset` method is helpful. Use it to set the value as well.
+To understand what is going on with offset, the `utcOffset` method is helpful. Use it to set the value as well:
 
 ```coffeescript
 moment().utcOffset() # -> 180 # which means +3 hours
@@ -97,7 +94,7 @@ moment("2020-02-07T19:49:37+03:00").format('LT') # -> "7:49 PM"
 moment("2020-02-07T19:49:37+03:00").utcOffset(0).format('LT') # -> "4:49 PM"
 ```
 <br/>
-If you already have a date as a string, from the API or whatever, it's easy to convert it to MomentJS object
+If you already have a date as a string, from an API for example, it's easy to convert it to a `MomentJS` object:
 
 ```coffeescript
 moment("01/31/2020", "MM/DD/YYYY") # -> Moment {...}
