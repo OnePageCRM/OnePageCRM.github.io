@@ -6,7 +6,7 @@ category: blog
 post_image: /assets/images/managejs/header_image.png
 author: victor
 date: 2020-03-24 09:00:00
-excerpt: "Getting a new project is always an exciting part of being a Software Engineer in OnePageCRM, and on this occasion, when I heard the brief on our latest feature: Next Action Quick Date Select and Next Action Quick Edit, I was excited, as it meant I was going to check out a new library.  "
+excerpt: "Getting a new project is always an exciting part of being a Software Engineer in OnePageCRM, and on this occasion, when I heard the brief on our latest feature: Next Action Quick Date Select and Next Action Quick Edit, I was excited, as it meant I was going to check out a new library."
 graphic: /assets/images/managejs/header_image.png
 ---
 
