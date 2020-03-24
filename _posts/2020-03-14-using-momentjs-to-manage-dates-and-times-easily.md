@@ -102,14 +102,15 @@ moment("01/31/2020", "MM/DD/YYYY") # -> Moment {...}
 <br/>
 The second parameter is the date format.
 Interestingly, when you are not sure about the exact format, you can provide multiple formats.
-MomentJS will determine which format to use by itself
+`MomentJS` will determine which format to use by itself:
 
 ```coffeescript
 moment("06-02-2020", ["MM-DD-YYYY", "YYYY-MM-DD"]) # -> "MM-DD-YYYY" will be chosen
 ```
 <br/>
-During parsing datetime we are not always sure about input data. I found that it can be easily covered by using `isValid` method
-For example,
+When parsing date-times, we are not always sure about the format of information.
+I found that we can easily address these concerns by checking with the `isValid` method.
+For example:
 
 ```coffeescript
 moment("01/31/2020", "MM/DD/YYYY").isValid() # -> true
@@ -117,8 +118,8 @@ moment("", "MM/DD/YYYY").isValid() # -> false
 moment("hello", "MM/DD/YYYY").isValid() # -> false
 ```
 <br/>
-When you want to change the date, methods `add` and `subtract` are helpful.
-But remember that it changes the original date, for example:
+When you want to change a date, the methods `add` and `subtract` are helpful
+(but remember that it changes the original date). For example:
 
 ```coffeescript
 today = moment()
@@ -126,8 +127,8 @@ today.add(1, 'days').format('LL') # -> "February 13, 2020"
 today.format('LL') # ->  "February 13, 2020" # same date now!!!
 ```
 <br/>
-To keep the original date untouched, use the `clone` method.
-Here is an example how to calculate Tomorrow and upcoming Friday dates
+If you want to keep the original date unedited, use the `clone` method.
+Here is an example how to calculate Tomorrow and upcoming Friday dates:
 
 ```coffeescript
 today = moment()
@@ -136,8 +137,8 @@ tomorrow = today.clone().add(1, 'days')
 friday = today.clone().add(5 - day, 'days')
 ```
 <br/>
-Very often, on the user’ side it's convenient to show relative time instead of full date format.
-Use `fromNow` method for this
+Frequently, it's more convenient to show relative time on the user's side, instead of the full date-time format.
+We can use the `fromNow` method for this:
 
 ```coffeescript
 a = moment()
@@ -145,8 +146,7 @@ a.fromNow() # -> "a few seconds ago"
 moment("10/02/2020", "DD/MM/YYYY").fromNow() # -> "4 days ago"
 ```
 <br/>
-If you want, you can implement your  own logic using the `diff` method.
-For example
+If you want, you can implement your  own logic using the `diff` method. For example:
 
 ```coffeescript
 date = moment("13/02/2020", "DD/MM/YYYY")
@@ -158,7 +158,7 @@ else
   "#{hoursAgo} hours ago"     #-> 5 hours ago
 ```
 <br/>
-Methods such as `isBefore` and `isSame` also can help here:
+Methods like `isBefore` and `isSame` can help here also:
 
 ```coffeescript
 moment('2020-01-01').isBefore('2020-01-02') # -> true
@@ -169,14 +169,15 @@ moment('2020-01-01').isBefore('2020-01-02', 'year') # -> false #check only year
 moment('2020-01-01').isSame('2020-01-01') # -> true
 moment('2020-01-01').isSame('2020-08-01', 'year') # -> true #check only year
 ```
-
-Instead of year you can pass other units of time such as month, day, hour, minute or second.
+(Note: instead of year, you can pass other units of time such as month, day, hour, minute or second).
 
 <br/><br/>
 ### Conclusion
 
-MomentJS is an awesome JS library that allows you to manipulate, parse and validate dates and times easily. It simplifies the development process significantly, which means it’s good to have it in your arsenal.
-I’d strongly recommend you visit the official [doc page](https://momentjs.com/docs/){:target="_blank"}, as it contains exhaustive information about the library and many usage examples.
+`MomentJS` is an awesome `JS` library that allows you to manipulate, parse and validate dates and times easily.
+It simplifies the development process significantly, which means it’s a great addition to your arsenal.
+I’d strongly recommend you visit the official [docs page](https://momentjs.com/docs/){:target="_blank"},
+as it contains exhaustive information about the library and many usage examples.
 
 <br/><br/>
 ### Links
@@ -185,6 +186,7 @@ I’d strongly recommend you visit the official [doc page](https://momentjs.com/
 2. MomentJS exhaustive documentation [https://momentjs.com/docs/](https://momentjs.com/docs/){:target="_blank"}
 3. When you're dealing with timezones [https://momentjs.com/timezone/](https://momentjs.com/timezone/){:target="_blank"}
 
+<br/>
 
 -----
 Image references:
