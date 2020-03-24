@@ -5,7 +5,7 @@ slug: "using-momentjs-to-manage-dates-and-times-easily"
 category: blog
 post_image: /assets/images/managejs/header_image.png
 author: victor
-date: 2020-03-09 09:00:00
+date: 2020-03-24 09:00:00
 excerpt: "Getting a new project is always an exciting part of being a Software Engineer in OnePageCRM, and on this occasion, when I heard the brief on our latest feature: Next Action Quick Date Select and Next Action Quick Edit, I was excited, as it meant I was going to check out a new library.  "
 graphic: /assets/images/managejs/header_image.png
 ---
@@ -108,7 +108,7 @@ Interestingly, when you are not sure about the exact format, you can provide mul
 moment("06-02-2020", ["MM-DD-YYYY", "YYYY-MM-DD"]) # -> "MM-DD-YYYY" will be chosen
 ```
 <br/>
-When parsing date-times, we are not always sure about the format of information.
+When parsing date-times, we are not always sure about the format of the information.
 I found that we can easily address these concerns by checking with the `isValid` method.
 For example:
 
