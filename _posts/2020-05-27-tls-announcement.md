@@ -17,10 +17,10 @@ When you visit any secure https site, including OnePageCRM, your connection is e
 
 There are many versions of SSL/TLS.
 
-* SSL 2.0 => Depreciated in 2011.
-* SSL 3.0 => Depreciated in 2015.
-* TLS 1.0 => Depreciated in 2020.
-* TLS 1.1 => Depreciated in 2020.
+* SSL 2.0 => Deprecated in 2011.
+* SSL 3.0 => Deprecated in 2015.
+* TLS 1.0 => Deprecated in 2020.
+* TLS 1.1 => Deprecated in 2020.
 * TLS 1.2 => Current version widely supported.
 
 If you are using a modern web browser and visit a site that doesn't support TLSv1.2, then you will see an error message telling you the site isn't secure. Browsers are very good at keeping you informed as they will warn you when a site is not secure.
