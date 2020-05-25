@@ -18,13 +18,13 @@ There are many versions of SSL/TLS.
 
 * SSL 2.0 => Deprecated in 2011.
 * SSL 3.0 => Deprecated in 2015.
-* TLS 1.0 => Deprecated in 2020.
-* TLS 1.1 => Deprecated in 2020.
+* TLS 1.0 => Deprecated in March 2020.
+* TLS 1.1 => Deprecated in March 2020.
 * TLS 1.2 => Current version widely supported.
 
 If you are using a modern web browser and visit a site that doesn't support TLSv1.2, then you will see an error message telling you the site isn't secure. Browsers are very good at keeping you informed as they will warn you when a site is not secure.
 
-At OnePageCRM, we will be removing support for TLS1.0 and TLS 1.1 on July 1st 2020 as part of our best practice and to ensure we are up to date with the most secure version. This is in line with Google Chromes <a href="https://security.googleblog.com/2018/10/modernizing-transport-security.html" target="_blank">recommendations </a>   
+<b>At OnePageCRM, we will be removing support for TLS1.0 and TLS 1.1 on July 1st 2020 as part of our best practice and to ensure we are up to date with the most secure version.</b> This is in line with Google Chromes <a href="https://security.googleblog.com/2018/10/modernizing-transport-security.html" target="_blank">recommendations </a>   
 
 
 If you’re using the OnePageCRM API, there are some steps or, in true OnePageCRM style, Actions which you need to take…
