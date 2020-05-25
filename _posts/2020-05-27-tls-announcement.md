@@ -10,7 +10,6 @@ excerpt: "OnePageCRM will be removing support for TLS1.0 and TLS 1.1 on the 1st 
 graphic: /assets/images/tls_update.png
 ---
 
-
 Security is very important to us here at OnePageCRM, so we must continuously update every aspect of our software stack to ensure that our applications and your data remains safe and secure.
 
 When you visit any secure https site, including OnePageCRM, your connection is encrypted. The setup of this encryption happens during an initial handshake between your browser and our servers. This encryption is called Transport Layer Security (TLS) or, formally, Secure Sockets Layer (SSL).
