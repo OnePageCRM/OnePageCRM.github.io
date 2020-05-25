@@ -5,7 +5,7 @@ slug: "announcement-api-endpoint-update-to-tls-v1.2"
 category: blog
 post_image: /assets/images/tls_update.png
 author: kevin
-date: 2020-05-25 09:00:00
+date: 2020-05-25 09:30:00
 excerpt: "OnePageCRM will be removing support for TLS1.0 and TLS 1.1 on the 1st July. Please review as you will be required to update if you are using the OnePageCRM API."
 graphic: /assets/images/tls_update.png
 ---
