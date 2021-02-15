@@ -40,7 +40,7 @@ After trying out a few Speech Recognition tools I signed up to <a href="https://
 I could then convert an audio file to text using just one line of code (a single request to Google)! <a href="https://www.youtube.com/watch?v=VIQAHfY4VwY" target="_blank">Here</a> is the video I sampled from (it’s our GDPR webinar, you should watch it!) and this was the output
 
 <div class="text-align: center">
-    <img src="/assets/images/api-tutorial/speech_result.png" alt="" class="img-responsive"
+    <img src="/assets/images/api-tutorial/speech_result.png" alt="OnePageCRM" class="img-responsive"
      style="width: 75%; position: relative" /><br />
 </div>
 
@@ -56,7 +56,7 @@ In typical RESTful fashion, a `GET` request will display all our notes for this 
 Here is the contents of a shell file that automates this entire process from audio file to Note in OnePageCRM which I have saved as `speech_to_onepagecrm.sh`. Note that I am using CURL here but you could use your preferred way of interacting with web services or even one of our client libraries.
 
 <div class="text-align: center">
-    <img src="/assets/images/api-tutorial/speech_sh.png" alt="" class="img-responsive"
+    <img src="/assets/images/api-tutorial/speech_sh.png" alt="OnePageCRM" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 
@@ -66,7 +66,7 @@ Lets ignore the fact that I need to specify the name of the audio file and the i
 Let’s have a brief look at the output returned from OnePageCRM/
 
 <div class="text-align: center">
-    <img src="/assets/images/api-tutorial/note_sample.png" alt="" class="img-responsive"
+    <img src="/assets/images/api-tutorial/note_sample.png" alt="OnePageCRM" class="img-responsive"
      style="width: 75%; position: relative" /><br />
 </div>
 
@@ -86,14 +86,14 @@ I now have another one liner which will perform optical character recognition on
 Here is the result from the OCR server (parsed and cropped for ease of reading)
 
 <div class="text-align: center">
-    <img src="/assets/images/api-tutorial/ocr_result.png" alt="" class="img-responsive"
+    <img src="/assets/images/api-tutorial/ocr_result.png" alt="OnePageCRM" class="img-responsive"
      style="width: 75%; position: relative" /><br />
 </div>
 
 Similar commands to Feature 1 are used to parse the output and post the result as a note to OnePageCRM. Wrapping the above in a shell script called “ocr.sh” gives the following: 
 
 <div class="text-align: center">
-    <img src="/assets/images/api-tutorial/ocr_sh.png" alt="" class="img-responsive"
+    <img src="/assets/images/api-tutorial/ocr_sh.png" alt="OnePageCRM" class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>    
 

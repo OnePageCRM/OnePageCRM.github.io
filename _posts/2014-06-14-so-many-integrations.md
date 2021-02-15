@@ -15,7 +15,7 @@ Since I have a background in Mechanical/Energy Engineering, I knew I would need 
 
 The first and most striking insight this book has given me to date is about the architecture of modern SaaS applications. It is hugely important to design everything to be independent modules. I'm sure an experienced SaaS developer takes this for granted, or perhaps can't even remember thinking any differently! -Given all the inherent advantages of Software Oriented Architecture over more traditional siloed approach.
 
-<img class="img-responsive" src="http://pro.iankoenig.com/images/silo.jpg" /> (Source pro.iankoenig.com)
+<img alt="OnePageCRM" class="img-responsive" src="http://pro.iankoenig.com/images/silo.jpg" /> (Source pro.iankoenig.com)
 
 
 What is more interesting though is that this insight into Software Oriented Architecture has lead me to better understand why so many applications exist and why they all matter from a business perspective. (The unlikely source)
@@ -26,7 +26,7 @@ The reason so many applications exist is because they're are just so many divers
 
 This question had been bouncing around in my head since I started here at OnePageCRM. It was only when we launched our new add apps page that it all clicked.
 
-<img class="img-responsive" src="/assets/images/Integrations_2014.png">
+<img alt="OnePageCRM" class="img-responsive" src="/assets/images/Integrations_2014.png">
 
 This clear simple layout shows where each integration slots into the sales process.
 

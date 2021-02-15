@@ -25,7 +25,7 @@ Fortunately, I can do things now in `CSS` that, a few years ago, I would never h
 are each great examples of this.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/Strip-Deprime-de-la-codeuse-650-finalenglishV2.jpg">
@@ -48,7 +48,7 @@ Hence, this blog post is about my experience with a new design project called â€
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/split_pane/Split-Pane-Action-Stream-2.png">
@@ -66,7 +66,7 @@ And this is the part where our CEO made a confession, Split Pane had been availa
 So the idea was not new, but the concept of changing the layout in a split second without reloading the page, now that was going to be a challenge!
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/Strip-Niji-PSD-vs-CSS-650-finalenglish.jpg">
@@ -112,7 +112,7 @@ The plan was to have perfect alignments, line spacing, typography and sizing, an
 I had to use a little bit from both design concepts (responsive and pixel perfect) and create something in between.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/Strip-The-4-th-of-may-650-finalenglsih-1.jpg" />
@@ -141,7 +141,7 @@ It gave me a lot of freedom in styling the same content differently for each of 
 I am using those classes mainly for styling the main structure of the page.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/single.png" />
@@ -150,7 +150,7 @@ I am using those classes mainly for styling the main structure of the page.
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/split.png" />
@@ -163,7 +163,7 @@ This is a necessary rule in any responsive design.
 In this project, it is used mostly for creating the breaking points of small, medium and large screens.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/breakpoints.png" />
@@ -185,7 +185,7 @@ Flexbox can be a very powerful rule used to create the structure of the entire p
 I use it mostly for small elements like contact lists, activities, bars and tables.
 This is a very helpful `CSS` rule for instant content changing, and ensuring the page is responsive when there are many elements in the same block, which have to fit to one another, but at the same time be able to change based on the resolution.
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/split_pane/breakpoints2.png" />

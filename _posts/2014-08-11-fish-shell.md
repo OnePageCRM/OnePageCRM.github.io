@@ -156,4 +156,3 @@ If you do, let us know how you get on by posting a comment or sharing your confi
 
 
   [1]: http://fishshell.com
-  [2]: https://github.com/bpinto/oh-my-fish

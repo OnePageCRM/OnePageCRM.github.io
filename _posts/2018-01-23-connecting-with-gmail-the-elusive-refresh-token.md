@@ -21,7 +21,7 @@ A small issue with this is that Google do not always provide the `refresh_token`
 Using this method of connecting with Gmail, we noticed some users having to reconnect their Gmail accounts due to authorization issues. On further inspection it was observed that  these accounts were not being supplied with `refresh_tokens`, meaning that we had no way of retrieving a fresh `access_token` when the old one expired. In order for Google to supply a `refresh-token`, the user must explicitly grant access to the account..
 
 <div style="text-align: center">
-<img class="img-responsive" src="/assets/images/gmail_auth_screen.png" />
+<img alt="OnePageCRM" class="img-responsive" src="/assets/images/gmail_auth_screen.png" />
 </div>
 
 It was difficult to understand exactly why this was happening because it was only a problem for some users but not all. After some research  we discovered a parameter that could be added to the authorization URL that would ensure the user was asked to explicitly grant access to their account.

@@ -22,7 +22,7 @@ Every time a  user in OnePageCRM composes  a new email message, he uses the Draf
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/draft/image_1.png">
@@ -76,7 +76,7 @@ As a result, the Quick Quotes block now has a color. Even if the user wants to e
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/draft/image_2_qq.png">
@@ -153,7 +153,7 @@ Draft.js is a powerful tool. It allows to you make complex stuff work quite smoo
 Here are some resources I found very useful in my time using Draft.js:
 
  1. Draft.js official docs [https://draftjs.org/docs/getting-started](https://draftjs.org/docs/getting-started){:target="_blank"}
- 2. Very good explanation articles on [https://learn-draftjs.now.sh](https://learn-draftjs.now.sh/){:target="_blank"} ([GitHub repository](https://github.com/fatman-/learn-draftjs){:target="_blank"})
+ 2. Very good explanation articles on  ([GitHub repository](https://github.com/fatman-/learn-draftjs){:target="_blank"}))
  3. A configurable rich text editor built with Draft.js [https://www.draftail.org](https://www.draftail.org/){:target="_blank"}
  4. More resources about Draft.js collected in one place [https://github.com/nikgraf/awesome-draft-js](https://github.com/nikgraf/awesome-draft-js){:target="_blank"}
 

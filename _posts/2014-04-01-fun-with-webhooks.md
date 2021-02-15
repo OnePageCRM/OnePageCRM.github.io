@@ -10,7 +10,7 @@ excerpt: Dan is working with us here at OnePageCRM. He's planning to make a 'dea
 ---
 
 
-This is Dan: <img class="img-responsive" src="/assets/images/authors/dan.jpg"/>
+This is Dan: <img alt ="OnePageCRM"  class="img-responsive" src="/assets/images/authors/dan.jpg"/>
 
 Dan is working with us here at OnePageCRM. He's just finished his degree in Energy/Mechanical Engineering and he's now becoming a web developer.
 He's learning fast and is already making great contributions to our developer site.

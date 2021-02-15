@@ -69,9 +69,9 @@ There exist almost too authentication methods for HTTP requests to count. Thankf
 
 [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication){:target='_blank'} is very straightforward and offers no encryption by default, which is why it should be exclusively used with secure HTTPS requests. It appends username and password to the front of the URL:
 
-```
+
     https://username:password@example.com
-```
+
 
 <br/>
 ### Cookies
@@ -87,7 +87,7 @@ Typically a session cookie (ie. one used for authentication) is created by the s
 <br/>
 ### Token
 
-[Tokens](https://jwt.io/introduction/){:target='_blank'} work in the same vein as cookies, except we skip the automated browser functionality which includes the cookie with every request. One reason to manually do what cookies do for free is the domain limitation of cookies. A session cookie can only be sent to the domain where it originated. So authentication data set by example.com cannot be sent to google.com. 
+[Tokens](https://jwt.io/introduction/){:target='_blank'} work in the same vein as cookies, except we skip the automated browser functionality which includes the cookie with every request. One reason to manually do what cookies do for free is the domain limitation of cookies. A session cookie can only be sent to the domain where it originated. So authentication data set by example⋅com cannot be sent to google⋅com. 
 
 One major downside of tokens is that they are lost on page refresh/redirect as they are usually handled by javascript. Cookies, on the other hand, can be kept for years. But this inconvenience is greatly reduced by the rise of [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application){:target='_blank'}, where the page is almost never reloaded / changed.
 

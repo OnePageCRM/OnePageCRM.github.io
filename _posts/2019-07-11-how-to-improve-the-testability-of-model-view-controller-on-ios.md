@@ -17,7 +17,7 @@ Each architecture that you might choose has both good and bad aspects. It's very
 In this post, I'll talk a little bit about **MVVM** (Model View ViewModel) and my experience with using it to improve the testability of the OnePageCRM mobile app.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt=""
+  <img alt="OnePageCRM"
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/mvvm/mvvm-flow.png">
