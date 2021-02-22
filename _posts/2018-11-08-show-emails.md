@@ -15,7 +15,7 @@ Here at OnePageCRM, we always want to bring more functionality to the mobile app
 The most recent update for the <a target="_blank" href="https://itunes.apple.com/ie/app/onepagecrm-simple-sales-crm/id692777054?mt=8">iOS application</a>, added this much anticipated possibility.
 
 <div class="text-align: center">
-    <img src="/assets/images/ios/ios_email_contact_view.png "alt="Email contact view in iOS"  class="img-responsive"
+    <img src="/assets/images/ios/ios_email_contact_view.png" alt="Email contact view in iOS"  class="img-responsive"
      style="width: 50%; position: relative; left: 25%;" />
      <br /><br />
 </div>
@@ -71,7 +71,7 @@ The email layout in the OnePageCRM mobile app is a little different from the `"h
 To show the email's content for the user, we use the <a target="_blank" href="https://developer.apple.com/documentation/webkit/wkwebview">WKWebView</a> view. This view is a type of web view that can show HTML tags with the correct formatting. Emails have text, images, font, colors and attachments - the app needs to show all of them.
 
 <div class="text-align: center">
-    <img src="/assets/images/ios/ios_email_email_view.png "alt="iOS Email view" class="img-responsive"
+    <img src="/assets/images/ios/ios_email_email_view.png" alt="iOS Email view" class="img-responsive"
      style="width: 50%; position: relative; left: 25%;" />
      <br /><br />
 </div>
