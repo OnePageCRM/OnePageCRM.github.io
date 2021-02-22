@@ -26,7 +26,7 @@ It's built in `Angular.js` and only supports `GET` requests.
 If you find a bug in our documentation, or think something could be clearer, we'd love to hear from you.
 Just open a ticket in this repo, the [Swagger repo][5], or our [Developer Forum][6] and one of our developers will get to it when time allows.
 
-Alternatively, if you would like to make the changes yourself, we'd love to accept pull requests.
+Alternatively, if you would like to e the changes yourself, we'd love to accept pull requests.
 Just fork the repo make your changes and submit a pull request related to the ticket you've opened.
 
 <br>
