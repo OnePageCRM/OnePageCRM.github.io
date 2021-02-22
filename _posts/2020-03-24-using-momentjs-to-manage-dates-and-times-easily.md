@@ -13,7 +13,7 @@ graphic: /assets/images/managejs/header_image.png
 Getting a new project is always an exciting part of being a Software Engineer in OnePageCRM, and on this occasion, when I heard the brief on our latest feature: Next Action Quick Date Select and Next Action Quick Edit, I was excited, as it meant I was going to check out a new library. With this update, users can easily update the date of a Next Action right from the Action Stream from a predefined list of options for example: today, tomorrow, etc. It’s also possible to edit the Next Action text right from the Contact view. This saves the user time and allows them to organize their day better.
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <imgalt="quick select"
+  <img alt="quick select"
     class="img-responsive"
     style="width:80%;"
     src="/assets/images/managejs/NA_Quick_select.jpg">

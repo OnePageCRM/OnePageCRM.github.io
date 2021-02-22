@@ -19,7 +19,7 @@ The OPCRM API offers detailed documentation and an active Developer Forum, two t
 
 Speed Dialer allows you to make calls to a list of contacts in the CRM. Any starred contact with a Next Action and a phone number will appear in the app. The Speed Dialer ensures you have all your prospects in a predefined call list before you hit the road.
 
-<img alt ="OnePageCRM"  class="img-responsive" src="/assets/images/speed-dialer-info-graphic.png" />
+<img alt ="Speed dialler info"  class="img-responsive" src="/assets/images/speed-dialer-info-graphic.png" />
 
 It’s quite a straight-forward implementation, not a fancy app; it does something simple, and it does it well. We would love to hear your feedback on the app, and if there is anything you really like, or want to see added or improved. 
 

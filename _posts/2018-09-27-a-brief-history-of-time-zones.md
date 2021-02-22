@@ -83,7 +83,7 @@ to gain anything meaningful from a physical location. A place (in three dimensio
 without a time. Likewise a time without a space coordinate is just as useless.
 
 <div id="4d-space-light-cone" style="width:100%; margin-bottom:20px; text-align:center">
-  <imgalt="Question about time"
+  <img alt="Question about time"
     class="img-responsive"
     style="width:60%"
     src="/assets/images/timezones/4d-space-light-cone.jpg">
@@ -105,7 +105,7 @@ problems because... well... they're hard!
 
 <br>
 <div id="shouldnt-be-hard" style="width:100%; text-align:center">
-  <imgalt="Timezones shouldnt be hard" 
+  <img alt="Timezones shouldnt be hard" 
     class="img-responsive"
     style="width:100%"
     src="/assets/images/timezones/shouldnt-be-hard.png">
@@ -135,7 +135,7 @@ basics!
 `// the basics`
 
 <div id="world-map-timezones" style="width:100%; text-align:center">
-  <imgalt="Timezones world"
+  <img alt="Timezones world"
     class="img-responsive"
     style="width:100%"
     src="/assets/images/timezones/world-map-timezones.png">
@@ -182,7 +182,7 @@ that means sending info about date-times as well as receiving info about date-ti
 
 <div style="width:100%; height: 100%; text-align:center;">
   <div class="card">
-    <imgalt="Data Flow for timezones"
+    <img alt="Data Flow for timezones"
       class="no-margins img-responsive"
       style="width:100%"
       src="/assets/images/timezones/data-flow.jpg">

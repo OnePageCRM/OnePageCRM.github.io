@@ -33,7 +33,7 @@ At the moment, it looks like HipChat is winning the argument as all of the devel
 
 This argument reminds me of a similar argument about our own application recently. About one year ago, we introduced two different layouts for OnePageCRM - 'Sales' mode and 'Qualification' mode.
 
-<img alt ="OnePageCRM"  class="img-responsive img-rounded" src="/assets/images/layout_modes.png" />
+<img alt  alt="Layout Modes"  class="img-responsive img-rounded" src="/assets/images/layout_modes.png" />
 
 The customer success team were comfortable using Qualification mode and were really resistant to change. About six months ago, a request came from the CEO - to use the new mode exclusively for two weeks, and after that decide which layout they prefer.
 They never changed back and now all love the new Sales mode.

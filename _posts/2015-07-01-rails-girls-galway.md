@@ -14,7 +14,7 @@ The [Rails Girls][1] movement was born in Finland a few years back and now has b
 
 Saturday morning started off with the participants all installing an Ubuntu Virtual Machine on a variety of laptops of all conditions and ages!
 
-<img alt ="OnePageCRM"  class="img-responsive" src="/assets/images/railsgirls_teabreak.jpg"/>
+<img alt ="Rais girl teabreak""  class="img-responsive" src="/assets/images/railsgirls_teabreak.jpg"/>
 <small>Time for a quick tea break</small>
 
 After a few talks introducing the session, the team got stuck into creating their first Rails application.

@@ -22,7 +22,7 @@ The microservices architectural pattern is best understood by contrasting it to 
 
 
 <div style="text-align: center">
-    <img src="/assets/images/microservices/monolithic-architecture.jpg"alt="Monolith architecture"  class="img-responsive" style="width: 50%" /><br />
+    <img src="/assets/images/microservices/monolithic-architecture.jpg "alt="Monolith architecture"  class="img-responsive" style="width: 50%" /><br />
 </div>
 
 
