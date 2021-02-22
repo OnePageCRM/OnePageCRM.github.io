@@ -13,7 +13,7 @@ When I started working here in OnePageCRM nearly a year ago, I was asked to read
 ## Don't Make Me Think
 The first book was '[Don't Make Me Think][1]' by Steve Krug.
 
-<img alt="Do not make e me think"  class="img-responsive" src="/assets/images/dontmakeemethink.jpg" />
+<img alt="Do not make me think"  class="img-responsive" src="/assets/images/dontmakeemethink.jpg" />
 
 This book gives a really simple set of guidelines on designing user interfaces for web usability. Simple and easy to read, the author uses his own advice to make the book easy to absorb, without making you think too hard. Although much of his advice was what you could call common sense, I found this book really valuable. As the old saying goes, common sense isn't really that common, and I think this is a book I'll revisit before taking on any design projects in the future.
 
