@@ -13,7 +13,7 @@ When I started working here in OnePageCRM nearly a year ago, I was asked to read
 ## Don't Make Me Think
 The first book was '[Don't Make Me Think][1]' by Steve Krug.
 
-<img alt="OnePageCRM" class="img-responsive" src="/assets/images/dontmakemethink.jpg" />
+<imgalt="Do not mak e me think"  class="img-responsive" src="/assets/images/dontmakemethink.jpg" />
 
 This book gives a really simple set of guidelines on designing user interfaces for web usability. Simple and easy to read, the author uses his own advice to make the book easy to absorb, without making you think too hard. Although much of his advice was what you could call common sense, I found this book really valuable. As the old saying goes, common sense isn't really that common, and I think this is a book I'll revisit before taking on any design projects in the future.
 
@@ -33,7 +33,7 @@ As the company has expanded over the last year, I am watching our company cultur
 ## Getting Things Done
 The final book on the original list is pretty fundamental to OnePageCRM.
 
-<img alt="OnePageCRM" class="img-responseive" src="/assets/images/gettingthingsdone.jpg">
+<imgalt="Getting things done illustration"  class="img-responseive" src="/assets/images/gettingthingsdone.jpg">
 
 The time management methods described in '[Getting Things Done][3]' by David Allen are what inspired the OnePageCRM 'Next Action' sales process.
 Ironically I haven't managed to 'get things done' and this is the last book on the reading list for me to read.

@@ -13,7 +13,7 @@ excerpt: "JWTs are a well defined standard for creating, signing, verifying, enc
 
 
 <div class="text-align: center" style="display:none">
-    <img src="/assets/images/jwt.png" alt="OnePageCRM" class="img-responsive"
+    <img src="/assets/images/jwt.png"alt="Web token illustration"  class="img-responsive"
      style="width: 100%; position: relative" /><br />
 </div>
 

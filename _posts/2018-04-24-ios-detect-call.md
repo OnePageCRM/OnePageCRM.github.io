@@ -24,7 +24,7 @@ UIApplication.shared.open(URL(string: "tel://999888777"), options: [:], completi
 But when you do this, the system asks the user if they want to allow the call be initiated.
 
 <div class="text-align: center">
-    <img src="/assets/images/ios/onepagecrm_contact.PNG" alt="OnePageCRM" class="img-responsive"
+    <img src="/assets/images/ios/onepagecrm_contact.PNG"alt="Contact in OnePageCRM" class="img-responsive"
      style="width: 50%; position: relative; left: 25%;" />
      <br /><br />
 </div>

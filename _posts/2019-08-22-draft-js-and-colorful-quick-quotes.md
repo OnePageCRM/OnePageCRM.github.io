@@ -22,7 +22,7 @@ Every time a  user in OnePageCRM composes  a new email message, he uses the Draf
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt="OnePageCRM"
+  <imgalt="creating a draft" 
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/draft/image_1.png">
@@ -76,7 +76,7 @@ As a result, the Quick Quotes block now has a color. Even if the user wants to e
 
 
 <div style="width:100%; margin-bottom:20px; text-align:center">
-  <img alt="OnePageCRM"
+  <imgalt="quick quotes draft"
     class="img-responsive"
     style="width:100%;"
     src="/assets/images/draft/image_2_qq.png">
