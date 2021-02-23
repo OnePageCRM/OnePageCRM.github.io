@@ -20,7 +20,7 @@ It's really useful for development, but if there is a rogue `binding.pry` left a
 
 The second line that can be a problem is `focus: true`.
 
-<img class="img-responsive" src="/assets/images/focus_true.png" />
+<img class="img-responsive  "alt="Focus in reference to testing"  src="/assets/images/focus_true.png" />
 
 We use this in our Rspec tests to tell [Guard][3] to only run the particular tests we want to work with. It stops Rspec from running your full test suite, which is great when you are developing a new feature. It's not so great when someone else has left a `focus: true` in the repository and after you pull the latest code, your tests run suspiciously fast!
 

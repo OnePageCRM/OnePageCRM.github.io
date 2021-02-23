@@ -40,7 +40,7 @@ After completing the order, we just had to wait for our new toy to be delivered.
 And after few days this big box appeared in the office...
 
 <div style="text-align: center">
-<img src="/assets/images/devpc/part1-box.jpg" class="img-responsive" alt="Delivery time!" />
+<img alt ="deilivery time"  src="/assets/images/devpc/part1-box.jpg" class="img-responsive" alt="Delivery time!" />
 <em>Xmas gift in November!</em>
 </div>
 <br />
@@ -61,7 +61,7 @@ We [used the Internet][8] proper installation image on a USB to install the
 OS on the machine.
 
 <div style="text-align: center">
-<img src="/assets/images/devpc/part1-usb.jpg" class="img-responsive" alt="Transferring data" />
+<img alt ="data transfer"  src="/assets/images/devpc/part1-usb.jpg" class="img-responsive" alt="Transferring data" />
 <em>Server setup <strong>has not</strong> been supported by any brewery company.</em>
 </div>
 <br />
@@ -76,7 +76,7 @@ Liam’s (voluntarily dismantled) personal computer, we ‘borrowed’ it’s gr
 card so we could temporarily it to connect to DPC.
 
 <div style="text-align: center">
-<img src="/assets/images/devpc/part1-before.jpg" class="img-responsive" alt="Preparation for update" />
+<img alt ="preparing for update"  src="/assets/images/devpc/part1-before.jpg" class="img-responsive" alt="Preparation for update" />
 <em>Everyone wanted to mess inside, but Cillian and Liam were first</em>
 </div>
 

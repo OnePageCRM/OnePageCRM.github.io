@@ -46,7 +46,7 @@ React components enable you to use this abstraction for those nitty-gritty HTML 
 
 <div style="text-align: center">
 <img src="/assets/images/react/react-flow-diagram.png" class="img-responsive" alt="Delivery time!" />
-<em>Uni-directional data flow of React (Source: <a href="https://facebook.github.io/flux/docs/overview.html">Facebook</a>)</em>
+<em>Uni-directional data flow of React</em>
 </div>
 <br />
 
