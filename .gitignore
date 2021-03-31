@@ -8,3 +8,4 @@ Gemfile.lock
 run.sh
 */swagger.yml
 */swagger.yaml
+.history/
