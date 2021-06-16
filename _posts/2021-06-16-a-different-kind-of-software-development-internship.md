@@ -11,14 +11,6 @@ graphic: /assets/images/internship-blog/header_image.png
 ---
 I started working with OnePageCRM in May 2020 as a Software Development intern. It has been an overwhelmingly positive experience with ample amounts of opportunities, self-development, and learning.
 
-
-<div style="width:640px;max-width: 100%;text-align:center;margin: 0 auto 20px;">
-  <img alt="software development internship header"
-    class="img-responsive"
-    style="width:100%;"
-    src="/assets/images/internship-blog/header_image.png">
-</div>
-
 I was first introduced to the world of Customer Relationship Management when I had applied for an internship with a financial institution and by chance worked on analytics in this area. The variety of platforms and services used to optimize CRM in the business fascinated me. Early on, I saw the vital importance of and actual results produced by CRM systems when done right.
 <br/><br/>
 ### Joining OnePageCRM
