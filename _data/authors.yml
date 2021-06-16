@@ -16,6 +16,14 @@ john:
     bio: |
         Software Engineer who loves to convert the vision of a project or app into the real thing.  Sporting fanatic who enjoys GAA football and hurling, Aussie Rules, athletics with a number of triathlons completed.
     image: '/assets/images/authors/john.png'
+seosamh:
+    name: Seosamh Ó Roibín
+    display name: Seosamh
+    email: joe@onepagecrm.com
+    github: SeosamhRoibin
+    image: '/assets/images/authors/seosamh.png'
+    bio: |
+        Junior Software Engineer and Student of Computer Science. Mainly interested in front-end web development and data analysis. I enjoy weightlifting, learning about medical science and listening to music.
 pawel:
     name: Paweł Smoliński
     display_name: Paweł
