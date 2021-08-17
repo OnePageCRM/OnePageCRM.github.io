@@ -16,7 +16,7 @@ Multi Factor Authentication is a method of authentication that adds extra steps 
 
 There are also regulations such as PSD2 in the European Union that place an onus on certain industries to ensure enforcement of strong customer authentication.
 
-Multi Factor Authentication is achieved by any combination of "what the user knows" such as their date of birth, "what the user has" such as a hardware token that generates a Time Based One Time Password and "something the user is" so perhaps their fingerprint or other biometric information. 
+Multi Factor Authentication is achieved by any combination of "what the user knows" such as their date of birth, "what the user has" such as a hardware device that generates a Time Based One Time Password and "something the user is" so perhaps their fingerprint or other biometric information. 
 
 As a Software Engineer at OnePageCRM, I have recently worked on the implementation of Two Step Authentication (2SA). The first step in completing this project was to consider which factors provide the greatest security for our users during the login process while ensuring ease of use.
 
