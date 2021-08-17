@@ -12,9 +12,13 @@ graphic: /assets/images/multi-factor-authentication/header_image.png
 
 ### What is Multi Factor Authentication (MFA)?
 
-Multi Factor Authentication is a method of authentication that adds extra steps of verification for gaining access to resources such as an online account, internal system, application or network. Authentication has been traditionally completed by validating a username and password. However, there is now a need for higher security as cybercrime increases and evolves. Techniques such as brute force attacks, and social engineering have weakened conventional security measures for restriction of access, and they no longer provide sufficient guard against vulnerability. There are also regulations such as PSD2 in the European Union that place an onus on certain industries to ensure enforcement of strong customer authentication.
+Multi Factor Authentication is a method of authentication that adds extra steps of verification for gaining access to resources such as an online account, internal system, application or network. Authentication has been traditionally completed by validating a username and password. However, there is now a need for higher security as cybercrime increases and evolves. Techniques such as brute force attacks, and social engineering have weakened conventional security measures for restriction of access, meaning conventional authentication no longer provides sufficient protection against attackers. 
 
-As a Software Engineer at OnePageCRM, I have recently worked on the implementation of Two Step Authentication (2SA), which is a type of Multi Factor Authentication. The first step in completing this project was to consider which factors provide the greatest security for our users during the login process.
+There are also regulations such as PSD2 in the European Union that place an onus on certain industries to ensure enforcement of strong customer authentication.
+
+Multi Factor Authentication is achieved by any combination of "what the user knows" such as their date of birth, "what the user has" such as a hardware token that generates a Time Based One Time Password and "something the user is" so perhaps their fingerprint or other biometric information. 
+
+As a Software Engineer at OnePageCRM, I have recently worked on the implementation of Two Step Authentication (2SA). The first step in completing this project was to consider which factors provide the greatest security for our users during the login process while ensuring ease of use.
 
 The options considered included:
 
@@ -22,13 +26,13 @@ The options considered included:
 
 **Hardware Token Authentication:** This involves using a separate purpose-built device to generate “One Time Passwords”. This is considered one of the most secure ways of providing an extra step but may prove impractical and unnecessary in most settings.
 
-**Software Token Authentication:** Authentication applications such as Google Authenticator and Authy on mobile devices provide similar security to a hardware token whereby a “One Time Password” is provided.
+**Software Token Authentication:** Authentication applications such as Google Authenticator and Authy on mobile devices provide similar security to a hardware token whereby a “Time Based One Time Password” is provided.
 
 **Biometric Verification:** Provide authentication through the users’ face or fingerprint. However, it’s important to note that not all users have access to devices capable of providing this functionality.
 
 **Email Token Verification:** Use email address to verify attempts to gain access.
 
-Let’s examine a sample use case of the Twilio Verify API to provide an extra factor with a user’s phone number at a high level
+Let’s examine a sample use case of the Twilio Verify API to provide an additional knowledge factor to a user verification process. 
 <br><br>
 
 ### Setup of 2SA for user
@@ -83,6 +87,8 @@ The verification check created has a status which will either equal ‘approved�
 This very simple integration can be used to support the high-level steps that allow the use of SMS as an additional factor for the authentication process, thus allowing users access to greater levels of security for their accounts.
 
 All in all, it was a great experience to be able to focus on the complexities of handling the process of 2SA. The Twilio Verify API lightened our workload as it’s much simpler in comparison to other providers of automated SMS messages and phone calls for the set up of MFA.
+
+Multi step authentiation is a simple way to vastly increase the security of your online accounts. Being proactive in securing your data through enabling multi step authentication is one way of decreasing your likelihood of being a victim of cybercrime. In the coming weeks, we will be releasing this for all OnePageCRM users. 
 
 
 
