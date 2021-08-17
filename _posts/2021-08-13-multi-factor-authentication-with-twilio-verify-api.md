@@ -16,7 +16,12 @@ Multi Factor Authentication is a method of authentication that adds extra steps 
 
 There are also regulations such as PSD2 in the European Union that place an onus on certain industries to ensure enforcement of strong customer authentication.
 
-Multi Factor Authentication is achieved by any combination of "what the user knows" such as their date of birth, "what the user has" such as a hardware device that generates a Time Based One Time Password and "something the user is" so perhaps their fingerprint or other biometric information. 
+Multi Factor Authentication is achieved by any combination of the following independent credentials:
+<br><br>
+- "What the user knows", e.g. their date of birth.
+- "What the user has", e.g. hardware device that generates a "Time Based One Time Password". 
+- "Something the user is", e.g. fingerprint or other biometric information. 
+<br><br>
 
 As a Software Engineer at OnePageCRM, I have recently worked on the implementation of Two Step Authentication (2SA). The first step in completing this project was to consider which factors provide the greatest security for our users during the login process while ensuring ease of use.
 
@@ -86,9 +91,11 @@ The verification check created has a status which will either equal ‘approved�
 
 This very simple integration can be used to support the high-level steps that allow the use of SMS as an additional factor for the authentication process, thus allowing users access to greater levels of security for their accounts.
 
+The Multi Factor Authentication project has hightled how important it is to be proactive with online security, and MFA is a great way to increase account security. So giving this extra authentication step to our OnePageCRM customers was a no-brainer! 
+
 All in all, it was a great experience to be able to focus on the complexities of handling the process of 2SA. The Twilio Verify API lightened our workload as it’s much simpler in comparison to other providers of automated SMS messages and phone calls for the set up of MFA.
 
-Multi step authentiation is a simple way to vastly increase the security of your online accounts. Being proactive in securing your data through enabling multi step authentication is one way of decreasing your likelihood of being a victim of cybercrime. In the coming weeks, we will be releasing this for all OnePageCRM users. 
+Multi step authentiation is a simple way to vastly increase the security of your online accounts. Being proactive in securing your data through enabling multi step authentication is one way of decreasing your likelihood of being a victim of cybercrime. 
 
 
 
