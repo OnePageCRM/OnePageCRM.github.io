@@ -3,11 +3,11 @@ layout: post
 title: "MongoDB analysis: Comparing the Models in your Rails app with what is actually in your database"
 slug: "mongodb-analysis-comparing-mongo-and-rails"
 category: blog
-post_image: /assets/images/mongodb-rails-comparison/header_image.png
+post_image: /assets/images/mongodb-rails-comparison/header_image.jpg
 author: john
 date: 2021-12-02 09:30:00
 excerpt: "When you have a large team working on an application where Models and indexes are added, updated and removed quite often it can happen that what you have written in your Models may not exactly match what currently exists in your database."
-graphic: /assets/images/mongodb-rails-comparison/header_image.png
+graphic: /assets/images/mongodb-rails-comparison/header_image.jpg
 ---
 
 ### Why might my database not look like my codebase?
