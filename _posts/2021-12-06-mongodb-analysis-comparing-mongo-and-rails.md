@@ -5,7 +5,7 @@ slug: "mongodb-analysis-comparing-mongo-and-rails"
 category: blog
 post_image: /assets/images/mongodb-rails-comparison/header-image.png
 author: john
-date: 2021-12-02 09:30:00
+date: 2021-12-06 09:30:00
 excerpt: "When you have a large team working on an application where Models and indexes are added, updated and removed quite often it can happen that what you have written in your Models may not exactly match what currently exists in your database."
 graphic: /assets/images/mongodb-rails-comparison/header-image.png
 ---
