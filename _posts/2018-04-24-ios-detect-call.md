@@ -31,7 +31,7 @@ But when you do this, the system asks the user if they want to allow the call be
 
 Since we do not have access to the system menu selections, only performing some action following a successful call initiation was a little tricky.
 
-With iOS 10, Apple introduced `CXCallObserver` that should be used for VOIP calls (that was the original idea). But with this new kit (`CXCallObserver` is part of `CallKit`) we can do some cool things, even if we're not working with VOIP calls.
+With iOS 10, Apple introduced `CXCallObserver` that should be used for <a href="https://getvoip.com/library/what-is-voip/" target="_blank">VOIP calls</a> (that was the original idea). But with this new kit (`CXCallObserver` is part of `CallKit`) we can do some cool things, even if we're not working with VOIP calls.
 
 To successfully observe the end of a call, we can do something like:
 
