@@ -107,3 +107,9 @@ ania:
     bio: |
         Experienced and enthusiastic Front End Engineer. Interested in creative work, new web design and interesting UI challenges. Outside of my role at OnePageCRM, I enjoy art and reading.
     image: '/assets/images/authors/ania.png'
+hassan:
+    name: Hassan Mohsen
+    display_name: Hassan
+    bio: |
+        Software developer at OnePageCRM, Enjoys programming and solving problems, love doing sport, adore technologies and cybersecurity topics.
+    image: '/assets/images/authors/hassan.jpg'
