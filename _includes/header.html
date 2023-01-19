@@ -44,5 +44,9 @@
                 </div>
             </div>
         </nav>
+
+        {% if jekyll.environment == "production" %}
+        <script src="/assets/js/gtm.js"></script>
+        {% endif %}
     </header>
     <!-- End Header Area -->
