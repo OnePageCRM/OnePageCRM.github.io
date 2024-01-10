@@ -10,23 +10,25 @@ excerpt: "When you make an integration with OnePageCRM, you may would like to al
 graphic: /assets/images/api-attachments/header-image.png
 ---
 
-### Introduction
+In this blog post, we’ll explore the process of uploading documents and files from any app through the OnePageCRM API while securely storing them on AWS S3.
 
-In this blog post, we will explore the process of seamlessly uploading attachments to various resources through the OnePageCRM API while securely storing the actual documents on AWS S3. This integration empowers users to effortlessly associate documents with different resources in their OnePageCRM accounts. We will break down the process into three main steps to ensure a comprehensive understanding.
+You’ll learn how to build a custom API integration to effortlessly bring important documents to your OnePageCRM account. 
 
-### Understanding the workflow
+If you ever felt the pressure of manually uploading document after document from different apps to your CRM, this blog post is for you.
+
+## Understanding the workflow
 
 Your uploaded document will be stored on an AWS S3 bucket managed by OnePageCRM. This document can then be referenced from within your OnePageCRM account, such as within a contact's notes. The key steps involved in this process are as follows:
 
-1- Send and initiating request to OnePagrCRM API with the contact ID to which the document will belong.
+1. Send and initiating request to OnePagrCRM API with the contact ID to which the document will belong.
 
-2- From the previoue request, you should receive an s3 pre-signed url along with some other neccessary metadata that you can use to upload your document directly to AWS S3.
+2. From the previoue request, you should receive an s3 pre-signed url along with some other neccessary metadata that you can use to upload your document directly to AWS S3.
 
-3- When you have uploaded your document successfully to AWS S3, Inform OnePageCRM back again sending the document's metadata from S3.
+3. When you have uploaded your document successfully to AWS S3, Inform OnePageCRM back again sending the document's metadata from S3.
 
 You can find more details on those 3 steps below.
 
-#### Step 1: Initiating the Upload Process
+### Step 1: Initiating the Upload Process
 
 You should start first by sending a request to the following endpoint from OnePageCRM's API:
 GET: `/attachments/s3_form?contact_id=<CONTACT_ID>`
