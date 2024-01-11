@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Uploading attachments to different resource through OnePageCRM API"
-slug: "uploading-attachments-through-opc-api"
+title: "Upload Files via OnePageCRM API: Three-Step Tutorial"
+slug: "upload-files-via-onepagecrm-api"
 category: blog
 post_image: /assets/images/api-attachments/header-image.png
 author: sajed
-date: 2023-10-13 09:30:00
-excerpt: "When you make an integration with OnePageCRM, you may would like to allow the users to be able to attach documents to different resources at OnePageCRM while keeping the actual documents on AWS S3."
+date: 2024-03-04 09:30:00
+excerpt: "In this blog post, we’ll explore the process of uploading documents and files from any app through the OnePageCRM API while securely storing them on AWS S3."
 graphic: /assets/images/api-attachments/header-image.png
 ---
 
@@ -16,26 +16,28 @@ You’ll learn how to build a custom API integration to effortlessly bring impor
 
 If you ever felt the pressure of manually uploading document after document from different apps to your CRM, this blog post is for you.
 
-## Understanding the workflow
+## Workflow overview: How to upload files via API
 
-Your uploaded document will be stored on an AWS S3 bucket managed by OnePageCRM. This document can then be referenced from within your OnePageCRM account, such as within a contact's notes. The key steps involved in this process are as follows:
+OnePageCRM has a [free API](https://developer.onepagecrm.com/api) that allows you to easily connect different apps to your CRM account. By following the steps in this tutorial, you can keep all important files inside OnePageCRM.
 
-1. Send and initiating request to OnePagrCRM API with the contact ID to which the document will belong.
+With this API integration, your uploaded files will be stored on an AWS S3 bucket managed by OnePageCRM. These files can then be referenced from within your OnePageCRM account, for example, within [Contact's notes](https://www.onepagecrm.com/blog/organize-client-notes/). 
 
-2. From the previoue request, you should receive an s3 pre-signed url along with some other neccessary metadata that you can use to upload your document directly to AWS S3.
+Here’s how it works:
 
-3. When you have uploaded your document successfully to AWS S3, Inform OnePageCRM back again sending the document's metadata from S3.
+1. Send an initiating request to OnePagrCRM API with the Contact’s ID which the document will belong to.
+2. From this initial request, you’ll receive an `S3 pre-signed URL` along with some other necessary metadata that you can use to upload your files directly to AWS S3.
+3. When you have uploaded your file successfully to AWS S3, inform OnePageCRM by sending back the file’s metadata from S3.
 
-You can find more details on those 3 steps below.
+Let’s dive deeper into these three steps below.
 
-### Step 1: Initiating the Upload Process
+### Step 1. Initiate the uploading process
 
-You should start first by sending a request to the following endpoint from OnePageCRM's API:
-GET: `/attachments/s3_form?contact_id=<CONTACT_ID>`
-where `<CONTACT_ID>` should be replaced with the id of the contact to which the uploaded document will belong.
+You should start first by sending a request to the following endpoint from OnePageCRM's API: 
 
-You should then get a response like the following
-ex:
+`/attachments/s3_form?contact_id=<CONTACT_ID>` where `<CONTACT_ID>` should be replaced with the ID of the contact which the uploaded document will belong to.
+
+You should then get a response similar to this one:
+
 ```
 {
     "status": 0,
@@ -60,17 +62,29 @@ ex:
     }
 }
 ```
-You will notice that you have received a pre-signed url:
-`"url": "https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.com/"` that you can use to upload your document directly to AWS S3, along with other `fields`.
-The received data will help you with the next step.
 
-#### Step 2: Uploading the document to AWS S3
+You will notice that you have received a pre-signed url: 
 
-Now, that you have received the necessary information that you need to upload your document, you can upload it directly to AWS S3 by make a `POST` request to the URL that's received in the previous section which was `https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.com/`
-You will alos need to include all the received parameter from the `fields` in your request's body.
+`"url": "https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.com/"` 
 
-The requests's body has has to be of type `form-data`
-You should add the following fields (from the previous request) to the body in the same order:
+You can use this URL to upload your document directly to AWS S3 alongside other `fields`. 
+
+You’ll use these received data in the second step.
+
+### Step 2. Upload files via API to AWS S3
+
+Once you have received the necessary information, you can upload your file directly to AWS S3 by making a `POST` request to the URL from the previous step.
+
+Here’s this URL: `https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.com/` 
+
+Here’s what to do next with the `POST` request:
+
+- Use the `form-data` type for the request’s body,
+- Include all the received parameters from the `fields` in your request's body,
+- Add several 10 fields from the previous request to the body of your new request (mentioned below),
+- List these fields in the same order as below: 
+
+```
 `acl`
 `success_action_status`
 `policy`
@@ -80,9 +94,17 @@ You should add the following fields (from the previous request) to the body in t
 `x-amz-signature`
 `key`
 `filename`
-`file` of type FILE. this is the file that you woulk like to upload
+`file` 
+```
+
+of type `FILE`. This is the file that you want to upload.
+
+You can use any tool to send this request. In this post, we’ll have an example with a Client for URL (cURL). 
+
+cURL lets you exchange data between your device and a server through a command-line interface (CLI). You can use it from your command line directly. Please refer to [https://curl.se/](https://curl.se/) for more information about cURL.
 
 Here is an example using cURL:
+
 ```
 curl --location 'https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.com/' \
 --form 'acl="private"' \
@@ -97,22 +119,27 @@ curl --location 'https://onepagecrm-up-eu-central-1.s3.eu-central-1.amazonaws.co
 --form 'file=@"<PATH_TO_THE_FILE_TO_UPLOAD>"'
 ```
 
-Where `<PATH_TO_THE_FILE_TO_UPLOAD>` should be replaced with the path to the file you would like to upload,
-`<FILENAME>` should be replaces with the name of the file that you are uploading.
-And you also need to make sure that the other fields are filled with the values that you have received in the previous request from the last section.
+Replace `<PATH_TO_THE_FILE_TO_UPLOAD>` with the path to the file you want to upload.
 
-Notes:
--> Maximum file size is 10 MB / 10485760 bytes.
--> You should not exceed your available storage from your OnePageCRM account
+`<FILENAME>` should be replaced with the name of the file that you are uploading. 
 
+Make sure that other fields are filled with the values that you have received in your first request (see Step 1).
 
-#### Step 3: Informing OnePageCRM back after a successful upload to AWS S3
+Keep in mind a few things:
 
-Now that you have your file uploaded successfully to AWS S3, OnePageCRM app does not know yet about yet, so you should now send one last request to OnePageCRM to notify it that you have uploaded the file successfully to the pre-signed URL, And you should also specify to which resource you would like to attach the uploaded file.
+- The maximum allowed file size is 10 MB/10485760 bytes.
+- You should not exceed your available storage on your OnePageCRM account (go to your [Document’s page](https://app.onepagecrm.com/documents) inside OnePageCRM).
 
-for example, if you would like to attach the uploaded attachment to a `note` inside of the `contact` that you used its ID in the very first request, Then, you should get the ID of that note `<NOTE_ID>` and send a request like the following one:
-POST: `/attachments`
-with a body like the following:
+### Step 3. Inform OnePageCRM about a successful upload to AWS S3
+
+Once you have your file uploaded successfully to AWS S3, OnePageCRM doesn’t know about this yet. That’s why you need to send one last request to OnePageCRM to notify the app that you have uploaded the file successfully to the pre-signed URL. 
+
+In this request, you need to specify which resource you want to attach the uploaded file to.
+
+For example, imagine you want to attach the file to a `note` inside of the `contact` whose ID you used in the very first request. In this case, you need to get the ID of that note `<NOTE_ID>` and send a request similar to: 
+
+POST: `/attachments` with a body like the following one:
+
 ```
 {
   "reference_id": "<NOTE_ID>",
@@ -124,20 +151,22 @@ with a body like the following:
 }
 ```
 
-Where `reference_type` should equal to type of the resource to which you want to attach the uploaded file, `note` in our example. However, you can use any other type.
-`<NOTE_ID>` should be replaced with the ID of the note, that has to be a note inside of the contact whom ID was used.
-`<CONTACT_ID>` should be replaced with the contact ID from the very first request.
-`<FILENAME>` should equal the same file name that's provided in the previous request while uploading the file to AWS S3.
-`<FILE_SIZE>` should equal the size of the file that you have already uploaded, `428174` for example.
+`reference_type` should be equal to the type of the resource where you want to add/attach your uploaded file (`note` in our example). However, you can use any other resource type, such as: `deal`, `call`, `meeting`, `photo` for a Contact, `avatar` for a user’s profile picture, or an `account_document` to upload files to the CRM’s [Document’s page](https://www.onepagecrm.com/blog/documents-repository/).
 
-Now, you can open your OnePageCRM in your browser, head to the contact with the ID that you have used during the process, You should see the file added to the note with the provided ID.
+`<NOTE_ID>` should be replaced with the ID of the note inside of the Contact which ID was used.
 
-### Conclusion
+`<CONTACT_ID>` should be replaced with the Contact’s ID from the very first request.
 
-These steps collectively enable you to seamlessly manage and associate documents with various resources within your OnePageCRM account, all while leveraging the robust capabilities of AWS S3 for secure document storage.
+`<FILENAME>` should be equal to the same file name that is provided in the second request (see Step 2).
 
-As you implement this process, please keep in mind the maximum file size limit of 10 MB and ensure that you do not exceed your available storage within your OnePageCRM account.
+`<FILE_SIZE>` should be equal to the size of the file that you have already uploaded (for example, `428174`).
 
-By following these steps, you can effectively harness the power of OnePageCRM's API and AWS S3 for efficient document management within your CRM platform. Your users will benefit from easy access to relevant documents, enhancing their experience and productivity.
+Once you are finished with all the steps, you can open your OnePageCRM account, head over to the contact whose ID you used—and you’ll see the file added to the specified note. 
 
-Let us know if you made a similar integration!
+## Conclusion
+
+By following these steps, you’ll be able to seamlessly manage and associate files with various resources within your OnePageCRM account, all while leveraging the robust capabilities of AWS S3 for [secure document storage](https://www.onepagecrm.com/blog/documents-repository/). Your users will benefit from easy access to relevant documents, enhancing their experience and productivity.
+
+As you implement this process, please keep in mind the maximum file size limit of 10 MB and ensure that you do not exceed your available storage on your OnePageCRM account.
+
+Let us know if you made a similar integration! OnePageCRM has [a variety of integrations built](https://www.onepagecrm.com/features/integrations/) and keeps expanding its offerings.
