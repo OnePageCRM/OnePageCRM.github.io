@@ -8,6 +8,8 @@ author: daniel
 date: 2024-01-10 09:00:00
 excerpt: "This blog post covers 5 advanced CSS optimization techniques with simple code examples (ready to implement!)."
 graphic: /assets/images/articles/css-blog-post.png
+redirect_from:
+  - /2024/01/10/css-optimization-techniques
 ---
 
 In today's web landscape, where speed and performance are paramount, optimizing CSS goes beyond basic techniques.
