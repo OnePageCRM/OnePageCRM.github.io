@@ -3,7 +3,7 @@ redirect_from:
   - /2018/04/26/code-ninja-2017-18-results/
 layout: post
 title: "CodeNinja Results"
-slug: "code-ninja-2017-18-results"
+slug: "code-ninja-results"
 category: blog
 post_image: "/assets/images/articles/results-feature.jpg"
 author: cillian
