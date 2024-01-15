@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2016/10/28/were-still-here/
 layout: post
 title: "We're Still Here"
 slug: "were-still-here"

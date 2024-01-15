@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2018/09/27/a-brief-history-of-time-zones/
 layout: post
 title: "A Brief History of Time (Zones)"
 slug: "a-brief-history-of-time-zones"

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2017/05/05/organizations-for-mobile/
 layout: post
 title: "Organizations for Mobile"
 slug: "organizations-for-mobile"

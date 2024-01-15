@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2021/03/31/pin-files-to-contacts/
 layout: post
 title: "Pin Files to Contacts"
 slug: "pin-files-to-contacts"

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2019/11/27/split-pane-and-conquering-design-challenges/
 layout: post
 title: "Split Pane and Conquering Design Challenges"
 slug: "split-pane-and-conquering-design-challenges"

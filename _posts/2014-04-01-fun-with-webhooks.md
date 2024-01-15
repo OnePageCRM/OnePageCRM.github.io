@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/04/01/fun-with-webhooks/
 layout: post
 title: "Fun with Webhooks"
 slug: "fun-with-webhooks"

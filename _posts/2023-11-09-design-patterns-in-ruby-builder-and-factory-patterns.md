@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2023/11/09/design-patterns-in-ruby-builder-and-factory-patterns/
 layout: post
 title: "Design patterns in Ruby: Builder and Factory patterns"
 slug: "design-patterns-in-ruby-builder-and-factory-patterns"

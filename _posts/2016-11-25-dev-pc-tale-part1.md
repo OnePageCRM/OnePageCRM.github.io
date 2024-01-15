@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2016/11/25/developers-pc-tale-part1/
 layout: post
 title: "The Tale of Developers PC - Part 1"
 slug: "developers-pc-tale-part1"

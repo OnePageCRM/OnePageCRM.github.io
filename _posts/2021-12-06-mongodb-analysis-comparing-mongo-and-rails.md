@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2021/12/06/mongodb-analysis-comparing-mongo-and-rails/
 layout: post
 title: "MongoDB analysis: Comparing the Models in your Rails app with what is actually in your database"
 slug: "mongodb-analysis-comparing-mongo-and-rails"

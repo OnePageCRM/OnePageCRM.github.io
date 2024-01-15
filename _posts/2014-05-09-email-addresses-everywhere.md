@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/05/30/email-addresses-everywhere/
 layout: post
 title: "Email addresses everywhere!"
 slug: "email-addresses-everywhere"

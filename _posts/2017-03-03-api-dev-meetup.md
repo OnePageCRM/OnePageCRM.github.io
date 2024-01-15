@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2017/03/03/all-about-apis-meetup/
 layout: post
 title: "All about APIs @ Galway Developer Meetup"
 slug: "all-about-apis-meetup"

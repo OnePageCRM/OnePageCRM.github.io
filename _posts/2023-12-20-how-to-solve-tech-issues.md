@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2023/12/20/how-to-solve-tech-issues-effectively-a-simple-problem-solving-framework/
 layout: post
 title: "How to solve tech issues effectively | A simple problem-solving framework"
 slug: "how-to-solve-tech-issues-effectively-a-simple-problem-solving-framework"

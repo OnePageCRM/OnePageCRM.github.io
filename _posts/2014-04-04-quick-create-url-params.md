@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/04/04/quick-create-url-params/
 layout: post
 title: "Create Contact via URL"
 slug: "quick-create-url-params"

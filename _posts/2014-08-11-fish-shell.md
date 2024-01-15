@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/08/11/fish-shell/
 layout: post
 title: "Fish Shell"
 slug: "fish-shell"

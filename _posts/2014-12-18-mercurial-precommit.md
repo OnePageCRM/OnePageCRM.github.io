@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/12/18/mercurial-precommit/
 layout: post
 title: "Mercurial Precommit Hooks"
 slug: "mercurial-precommit"

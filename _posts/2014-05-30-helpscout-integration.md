@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/06/12/helpscout-integration/
 layout: post
 title: "Helpscout Integration"
 slug: "helpscout-integration"
