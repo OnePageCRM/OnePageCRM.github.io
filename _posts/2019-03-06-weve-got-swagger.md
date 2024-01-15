@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2019/03/06/weve-got-swagger/
   - /2019/03/06/weve-got-swagger/
 layout: post
 title: "We've got Swagger"

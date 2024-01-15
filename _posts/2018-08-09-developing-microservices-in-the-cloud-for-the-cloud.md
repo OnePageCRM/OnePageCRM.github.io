@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2018/08/09/developing-microservices-in-the-cloud-for-the-cloud/
   - /2018/08/09/developing-microservices-in-the-cloud-for-the-cloud/
 layout: post
 title: "Developing Microservices in the Cloud for the Cloud"

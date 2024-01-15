@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2015/10/28/android-speed-dialer/
   - /2015/10/28/android-speed-dialer/
 layout: post
 title: "Android Speed Dialer"

@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2016/11/25/developers-pc-tale-part1/
   - /2016/11/25/developers-pc-tale-part1/
 layout: post
 title: "The Tale of Developers PC - Part 1"

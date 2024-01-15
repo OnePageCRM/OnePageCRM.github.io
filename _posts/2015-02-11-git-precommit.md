@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2015/02/11/git-precommit/
   - /2015/02/11/git-precommit/
 layout: post
 title: "Git Pre-Commit Hooks"

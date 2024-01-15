@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2019/07/11/how-to-improve-the-testability-of-model-view-controller-on-ios/
   - /2019/07/11/how-to-improve-the-testability-of-model-view-controller-on-ios/
 layout: post
 title: "How to improve the testability of Model View Controller on iOS"

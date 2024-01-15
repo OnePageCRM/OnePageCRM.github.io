@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2015/07/01/rails-girls-galway/
   - /2015/07/01/rails-girls-galway/
 layout: post
 title: "Rails Girls Galway"

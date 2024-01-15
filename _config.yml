@@ -37,4 +37,4 @@ plugins:
   - jekyll-redirect-from
 
 paginate:               6
-permalink:              /:title/
+permalink:              /blog/:title/

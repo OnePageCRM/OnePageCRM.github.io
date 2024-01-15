@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2018/11/08/ios-show-emails/
   - /2018/11/08/ios-show-emails/
 layout: post
 title: "Showing Emails in OnePageCRM Mobile"

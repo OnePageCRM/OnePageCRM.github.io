@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2020/03/24/using-momentjs-to-manage-dates-and-times-easily/
   - /2020/03/24/using-momentjs-to-manage-dates-and-times-easily/
 layout: post
 title: "Using MomentJS to manage dates and times easily"

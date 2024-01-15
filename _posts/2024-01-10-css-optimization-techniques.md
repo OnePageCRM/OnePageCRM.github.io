@@ -9,6 +9,7 @@ date: 2024-01-10 09:00:00
 excerpt: "This blog post covers 5 advanced CSS optimization techniques with simple code examples (ready to implement!)."
 graphic: /assets/images/articles/css-blog-post.png
 redirect_from:
+  - /blog/2024/01/10/css-optimization-techniques
   - /2024/01/10/css-optimization-techniques
 ---
 

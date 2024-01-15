@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2017/10/13/from-features-to-microservices-intro/
   - /2017/10/13/from-features-to-microservices-intro/
 layout: post
 title: "From Features to Microservices - Intro"

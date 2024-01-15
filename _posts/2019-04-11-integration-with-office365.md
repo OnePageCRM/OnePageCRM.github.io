@@ -1,5 +1,6 @@
 ---
 redirect_from:
+  - /blog/2019/04/11/integration-with-office365/
   - /2019/04/11/integration-with-office365/
 layout: post
 title: "OnePageCRM integrates with Office365"
