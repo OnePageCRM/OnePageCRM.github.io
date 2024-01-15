@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2018/03/08/rails_to_aws_lambda_json_web_tokens/
 layout: post
 title: "Rails to AWS lambda: JSON Web Tokens"
 slug: "rails_to_aws_lambda_json_web_tokens"

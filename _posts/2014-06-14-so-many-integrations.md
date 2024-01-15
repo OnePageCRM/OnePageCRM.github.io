@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/06/16/So-many-Integrations,-such-little-time/
 layout: post
 title: "So many Integrations, such little time"
 slug: "So many Integrations, such little time"

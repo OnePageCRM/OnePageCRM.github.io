@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2018/05/24/ios-detect-call/
 layout: post
 title: "Detecting a call with CallKit"
 slug: "ios-detect-call"

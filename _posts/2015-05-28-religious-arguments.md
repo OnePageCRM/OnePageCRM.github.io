@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2015/05/28/arguments-over-software/
 layout: post
 title: "Arguments Over Software"
 slug: "arguments-over-software"

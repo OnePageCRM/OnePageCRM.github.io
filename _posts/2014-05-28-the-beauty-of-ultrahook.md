@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/06/03/the-beauty-of-ultrahook/
 layout: post
 title: "The Beauty of Ultrahook"
 slug: "the-beauty-of-ultrahook"

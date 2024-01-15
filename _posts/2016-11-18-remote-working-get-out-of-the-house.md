@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2016/11/18/remote-working-Get-out-of-the-house!/
 layout: post
 title: "Remote Working - Get out of the house!"
 slug: "remote-working - Get out of the house!"

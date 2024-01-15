@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2016/11/11/android-development-questions-part-2/
 layout: post
 title: "Android Development Questions [2]"
 slug: "android-development-questions-part-2"

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2021/08/13/multi-factor-authentication-dev-perspective-on-working-with-twilio-verify-api/
 layout: post
 title: "Multi Factor Authentication: A Developer’s Perspective on Working with Twilio Verify API"
 slug: "multi-factor-authentication-dev-perspective-on-working-with-twilio-verify-api"

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2015/10/28/android-speed-dialer/
 layout: post
 title: "Android Speed Dialer"
 slug: "android-speed-dialer"

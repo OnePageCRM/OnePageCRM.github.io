@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2014/03/13/living-with-salespeople/
 layout: post
 title: "Living with Salespeople"
 slug: "living-with-salespeople"

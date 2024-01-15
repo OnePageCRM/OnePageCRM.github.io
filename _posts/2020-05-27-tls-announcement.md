@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2020/05/25/announcement-api-endpoint-update-to-tls-v1.2/
 layout: post
 title: "Announcement: API endpoint update to TLS v1.2"
 slug: "announcement-api-endpoint-update-to-tls-v1.2"

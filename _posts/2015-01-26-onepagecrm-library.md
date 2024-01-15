@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /2015/01/26/onepagecrm-library/
 layout: post
 title: "The OnePageCRM Library"
 slug: "onepagecrm-library"
