@@ -89,6 +89,8 @@ h6 {
   font-size: 14px;
   font-weight: 400;
 }
+ 
+h6 {}
 
 /* ==============================================
  Browser Upgrade Prompt
@@ -1160,12 +1162,12 @@ a.older-posts:hover {
 }
 
 .form span.page-number {
-  margin: 0 auto;
-  text-align: center;
-  display: inline-block;
-  width: auto;
-  float: none;
-  color: #a7a7a7;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    float: none;
+    color: #a7a7a7;
 }
 
 div#disqus_thread {
@@ -1447,6 +1449,8 @@ ul.tagcloud li.widget-active a {
 .about-author .author-box .author-img {
   width: 17%;
   float: left;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .about-author .author-box .author-img img {
   -webkit-border-radius: 31% 30% 27% 31% / 24% 24% 23% 25%;

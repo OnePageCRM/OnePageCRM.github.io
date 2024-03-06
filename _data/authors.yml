@@ -125,3 +125,9 @@ daniel:
   bio: |
     Frontend Engineer who specializes in shaping intuitive user interfaces with React, HTML/CSS, and JavaScript. He's passionate about UX and is a strong advocate for user-driven development.
   image: "/assets/images/authors/daniel_yeboah.jpg"
+sajed:
+  name: Sajed Almorsy
+  display_name: Sajed
+  bio: |
+    A software engineer with a knack for problem-solving, web development, and distributed and scalable systems. In OnePageCRM, Sajed is working on API development and third-party integrations.
+  image: "/assets/images/authors/sajed.jpg"
