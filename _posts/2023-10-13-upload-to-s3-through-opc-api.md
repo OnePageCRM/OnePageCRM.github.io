@@ -3,11 +3,11 @@ layout: post
 title: "Upload Files via OnePageCRM API: Three-Step Tutorial"
 slug: "upload-files-via-onepagecrm-api"
 category: blog
-post_image: /assets/images/api-attachments/header-image.png
+post_image: /assets/images/articles/file-api-onepage.png
 author: sajed
 date: 2024-03-04 09:30:00
 excerpt: "In this blog post, we’ll explore the process of uploading documents and files from any app through the OnePageCRM API while securely storing them on AWS S3."
-graphic: /assets/images/api-attachments/header-image.png
+graphic: /assets/images/articles/file-api-onepage.png
 ---
 
 In this blog post, we’ll explore the process of uploading documents and files from any app through the OnePageCRM API while securely storing them on AWS S3.

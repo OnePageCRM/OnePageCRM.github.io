@@ -1,115 +1,121 @@
 # Author details.
 
 peter:
-    name: Peter Armstrong
-    display_name: Peter
-    email: peter@onepagecrm.com
-    web: http://peterarmstrong.ie
-    github: peterOnePageCRM
-    bio: 'Peter is a software engineer at OnePageCRM.'
-    image: '/assets/images/authors/peter.jpg'
+  name: Peter Armstrong
+  display_name: Peter
+  email: peter@onepagecrm.com
+  web: http://peterarmstrong.ie
+  github: peterOnePageCRM
+  bio: "Peter is a software engineer at OnePageCRM."
+  image: "/assets/images/authors/peter.jpg"
 john:
-    name: John Maguire
-    display_name: John
-    email: john@onepagecrm.com
-    github: JohnMaguir
-    bio: |
-        Senior Software Engineer mostly working in the DevOps world. Loves sport, especially GAA and Aussie rules, can often be spotted running in the mountains.
-    image: '/assets/images/authors/john.png'
+  name: John Maguire
+  display_name: John
+  email: john@onepagecrm.com
+  github: JohnMaguir
+  bio: |
+    Senior Software Engineer mostly working in the DevOps world. Loves sport, especially GAA and Aussie rules, can often be spotted running in the mountains.
+  image: "/assets/images/authors/john.png"
 seosamh:
-    name: Seosamh Ó Roibín
-    display name: Seosamh
-    email: joe@onepagecrm.com
-    github: SeosamhRoibin
-    image: '/assets/images/authors/seosamh.png'
-    bio: |
-        Junior Software Engineer and Student of Computer Science. Mainly interested in front-end web development and data analysis. I enjoy weightlifting, learning about medical science and listening to music.
+  name: Seosamh Ó Roibín
+  display name: Seosamh
+  email: joe@onepagecrm.com
+  github: SeosamhRoibin
+  image: "/assets/images/authors/seosamh.png"
+  bio: |
+    Junior Software Engineer and Student of Computer Science. Mainly interested in front-end web development and data analysis. I enjoy weightlifting, learning about medical science and listening to music.
 pawel:
-    name: Paweł Smoliński
-    display_name: Paweł
-    gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
-    email: pawel@onepagecrm.com
-    github: ZipoKing
-    twitter: ZipoKing
-    bio: |
-        CTO in OnePageCRM. Linux fanatic married to a computer. Pawel enjoys supporting the local economy by spending a lot of time in local pubs!
-    image: '/assets/images/authors/pawel.png'
+  name: Paweł Smoliński
+  display_name: Paweł
+  gravatar: 52b78dfaef1c3a43f529a7a2e5f1364d
+  email: pawel@onepagecrm.com
+  github: ZipoKing
+  twitter: ZipoKing
+  bio: |
+    CTO in OnePageCRM. Linux fanatic married to a computer. Pawel enjoys supporting the local economy by spending a lot of time in local pubs!
+  image: "/assets/images/authors/pawel.png"
 dan:
-    name: Dan Fahy
-    display_name: Dan
-    email: dan@onepagecrm.com
-    bio: 'Dan is a software engineer at OnePageCRM.'
-    image: '/assets/images/authors/dan.jpg'
+  name: Dan Fahy
+  display_name: Dan
+  email: dan@onepagecrm.com
+  bio: "Dan is a software engineer at OnePageCRM."
+  image: "/assets/images/authors/dan.jpg"
 ruairi:
-    name: Ruairi Fahy
-    display_name: Ruairi
-    email: ruairi@onepagecrm.com
-    bio: 'Ruairi is a developer at OnePageCRM.'
+  name: Ruairi Fahy
+  display_name: Ruairi
+  email: ruairi@onepagecrm.com
+  bio: "Ruairi is a developer at OnePageCRM."
 cillian:
-    name: Cillian Myles
-    display_name: Cillian
-    email: cillian@onepagecrm.com
-    github: CillianMyles
-    web: https://cillianmyles.com
-    bio: |
-        Our in-house lead Android engineer, API consumer, and technical jargon translator. Cillian enjoys great design, smart defaults, power-user features, olympic weightlifting and is vegan.
-    image: '/assets/images/authors/cillian.png'
+  name: Cillian Myles
+  display_name: Cillian
+  email: cillian@onepagecrm.com
+  github: CillianMyles
+  web: https://cillianmyles.com
+  bio: |
+    Our in-house lead Android engineer, API consumer, and technical jargon translator. Cillian enjoys great design, smart defaults, power-user features, olympic weightlifting and is vegan.
+  image: "/assets/images/authors/cillian.png"
 elano:
-    name: Elano Vasconcelos
-    display_name: Elano
-    email: elano@onepagecrm.com
-    bio: |
-        iOS mobile Software Engineer in OnePageCRM with over 7 years experience working with iOS and Android. Other interests include games, RPG, TV shows, movies and the gym.
-    image: '/assets/images/authors/elano.png'
+  name: Elano Vasconcelos
+  display_name: Elano
+  email: elano@onepagecrm.com
+  bio: |
+    iOS mobile Software Engineer in OnePageCRM with over 7 years experience working with iOS and Android. Other interests include games, RPG, TV shows, movies and the gym.
+  image: "/assets/images/authors/elano.png"
 liam:
-    name: Liam Krewer
-    display_name: Liam
-    email: elano@onepagecrm.com
-    bio: "Liam works as a full stack web developer at OnePageCRM."
-    image: '/assets/images/authors/liam.jpg'
+  name: Liam Krewer
+  display_name: Liam
+  email: elano@onepagecrm.com
+  bio: "Liam works as a full stack web developer at OnePageCRM."
+  image: "/assets/images/authors/liam.jpg"
 leonard:
-    name: Leonard Reidy
-    display_name: Leonard
-    email: leonard@onepagecrm.com
-    github: leonardreidy
-    bio: |
-        Developer at OnePageCRM. Building applications with AWS/Serverless, Rails, Node, CoffeeScript, React, and Reflux. Passionate about web application development, electronic music, and baroque music, among other things!
-    image: '/assets/images/authors/leonard.jpg'
+  name: Leonard Reidy
+  display_name: Leonard
+  email: leonard@onepagecrm.com
+  github: leonardreidy
+  bio: |
+    Developer at OnePageCRM. Building applications with AWS/Serverless, Rails, Node, CoffeeScript, React, and Reflux. Passionate about web application development, electronic music, and baroque music, among other things!
+  image: "/assets/images/authors/leonard.jpg"
 kevin:
-    name: Kevin Farrell
-    display_name: Kevin
-    email: kevinf@onepagecrm.com
-    github: kevGalway
-    bio: |
-        Climbing the never ending learning curve of web development. Currently interested in API design, best practices and in general getting things talking nicely to each other! When not pretending that I can code, I can be found playing the Chinese board game called 'Go' or failing badly at Yoga.
-    image: '/assets/images/authors/kevin.jpg'
+  name: Kevin Farrell
+  display_name: Kevin
+  email: kevinf@onepagecrm.com
+  github: kevGalway
+  bio: |
+    Climbing the never ending learning curve of web development. Currently interested in API design, best practices and in general getting things talking nicely to each other! When not pretending that I can code, I can be found playing the Chinese board game called 'Go' or failing badly at Yoga.
+  image: "/assets/images/authors/kevin.jpg"
 matt:
-    name: Matt Moran
-    display_name: Matt
-    bio: |
-        Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
-    image: '/assets/images/authors/matt.jpg'
+  name: Matt Moran
+  display_name: Matt
+  bio: |
+    Computer science student currently interning with OnePageCRM, with an interest in pursuing  future in web development. Matt enjoys reading, photography, and gaming.
+  image: "/assets/images/authors/matt.jpg"
 vlad:
-    name: Vladimir Konnov
-    display_name: Vladimir
-    bio: |
-        Software developer at OnePageCRM. Enjoys music, learning languages, regional cuisines and traveling!
-    image: '/assets/images/authors/vladimir.png'
+  name: Vladimir Konnov
+  display_name: Vladimir
+  bio: |
+    Software developer at OnePageCRM. Enjoys music, learning languages, regional cuisines and traveling!
+  image: "/assets/images/authors/vladimir.png"
 victor:
-    name: Victor Pukman
-    display_name: Victor
-    bio: |
-        Software Engineer at OnePageCRM. Enjoys developing features which help people to solve real problems. Experience in Ruby and CoffeeScript. In his spare time, Victor plays music and enjoys exploring new places.
-    image: '/assets/images/authors/victor.png'
+  name: Victor Pukman
+  display_name: Victor
+  bio: |
+    Software Engineer at OnePageCRM. Enjoys developing features which help people to solve real problems. Experience in Ruby and CoffeeScript. In his spare time, Victor plays music and enjoys exploring new places.
+  image: "/assets/images/authors/victor.png"
 ania:
-    name: Ania Narolska-Cielecka
-    display_name: Ania
-    bio: |
-        Experienced and enthusiastic Front End Engineer. Interested in creative work, new web design and interesting UI challenges. Outside of my role at OnePageCRM, I enjoy art and reading.
-    image: '/assets/images/authors/ania.png'
+  name: Ania Narolska-Cielecka
+  display_name: Ania
+  bio: |
+    Experienced and enthusiastic Front End Engineer. Interested in creative work, new web design and interesting UI challenges. Outside of my role at OnePageCRM, I enjoy art and reading.
+  image: "/assets/images/authors/ania.png"
 hassan:
-    name: Hassan Mohsen
-    display_name: Hassan
-    bio: |
-        Software developer at OnePageCRM, Enjoys programming and solving problems, love doing sport, adore technologies and cybersecurity topics.
-    image: '/assets/images/authors/hassan.jpg'
+  name: Hassan Mohsen
+  display_name: Hassan
+  bio: |
+    Software developer at OnePageCRM, Enjoys programming and solving problems, love doing sport, adore technologies and cybersecurity topics.
+  image: "/assets/images/authors/hassan.jpg"
+sajed:
+  name: Sajed Almorsy
+  display_name: Sajed
+  bio: |
+    A software engineer with a knack for problem-solving, web development, and distributed and scalable systems. In OnePageCRM, Sajed is working on API development and third-party integrations.
+  image: "/assets/images/authors/sajed.jpg"
