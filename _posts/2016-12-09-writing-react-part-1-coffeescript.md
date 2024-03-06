@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2016/12/09/writing-react-part-1-coffeescript/
+  - /2016/12/09/writing-react-part-1-coffeescript/
 layout: post
 title: "Writing React - Part 1 : Coffeescript"
 slug: "writing-react-part-1-coffeescript"

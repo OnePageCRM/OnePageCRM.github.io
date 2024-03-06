@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2014/07/21/api-tools-updated/
+  - /2014/07/21/api-tools-updated/
 layout: post
 title: "API Tools Updated"
 category: blog

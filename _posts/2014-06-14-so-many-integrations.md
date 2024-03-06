@@ -1,7 +1,10 @@
 ---
+redirect_from:
+  - /blog/2014/06/16/So-many-Integrations,-such-little-time/
+  - /2014/06/16/So-many-Integrations,-such-little-time/
 layout: post
 title: "So many Integrations, such little time"
-slug: "So many Integrations, such little time"
+slug: "developing-crm-integrations"
 category: blog
 author: dan
 tags: draft

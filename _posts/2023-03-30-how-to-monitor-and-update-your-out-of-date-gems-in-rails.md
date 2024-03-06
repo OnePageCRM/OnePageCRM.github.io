@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2023/03/30/how-to-monitor-and-update-your-out-of-date-gems-in-rails/
+  - /2023/03/30/how-to-monitor-and-update-your-out-of-date-gems-in-rails/
 layout: post
 title: "How to monitor and update your out-of-date Gems in Rails" 
 slug: "how-to-monitor-and-update-your-out-of-date-gems-in-rails"

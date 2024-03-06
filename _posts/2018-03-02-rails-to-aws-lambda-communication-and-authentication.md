@@ -1,7 +1,10 @@
 ---
+redirect_from:
+  - /blog/2018/03/02/rails_to_aws_lambda_communication_and_authentication/
+  - /2018/03/02/rails_to_aws_lambda_communication_and_authentication/
 layout: post
 title: "Rails to AWS lambda: Communication and authentication"
-slug: "rails_to_aws_lambda_communication_and_authentication"
+slug: "rails-to-aws-lambda-communication-authentication"
 category: blog
 post_image: "/assets/images/articles/lambda.png"
 author: liam

@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2015/07/21/api-client-gem/
+  - /2015/07/21/api-client-gem/
 layout: post
 title: "API Client Ruby Gem"
 slug: "api-client-gem"

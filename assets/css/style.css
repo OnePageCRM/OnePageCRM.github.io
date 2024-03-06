@@ -80,16 +80,17 @@ h3 {
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
 }
 
-h5 {
+h5,
+h6 {
+  font-size: 14px;
   font-weight: 400;
 }
-
-h6 {
-}
+ 
+h6 {}
 
 /* ==============================================
  Browser Upgrade Prompt
@@ -928,6 +929,11 @@ h3.blog-post-title {
   margin-bottom: 30px;
 }
 
+.single-blog-item h3,
+.single-blog-item h4 {
+  margin-top: 2rem;
+}
+
 ul.blog-author-name li {
   display: inline-block;
   margin-right: 10px;
@@ -1155,13 +1161,13 @@ a.older-posts:hover {
   transition: all 0.4s linear 0s;
 }
 
-.form . span.page-number {
-  margin: 0 auto;
-  text-align: center;
-  display: inline-block;
-  width: auto;
-  float: none;
-  color: #a7a7a7;
+.form span.page-number {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    float: none;
+    color: #a7a7a7;
 }
 
 div#disqus_thread {
@@ -1445,6 +1451,21 @@ ul.tagcloud li.widget-active a {
   float: left;
   border-radius: 50%;
   overflow: hidden;
+}
+.about-author .author-box .author-img img {
+  -webkit-border-radius: 31% 30% 27% 31% / 24% 24% 23% 25%;
+  -moz-border-radius: 31% 30% 27% 31% / 24% 24% 23% 25%;
+  -ms-border-radius: 31% 30% 27% 31% / 24% 24% 23% 25%;
+  border-radius: 31% 30% 27% 31% / 24% 24% 23% 25%;
+  /* border-radius is for browsers that do not suppert the mask-image*/
+  -webkit-mask-image: url("/assets/images/authors/photo_placeholder.png");
+  mask-image: url("/assets/images/authors/photo_placeholder.png");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .about-author .author-box .author-details {

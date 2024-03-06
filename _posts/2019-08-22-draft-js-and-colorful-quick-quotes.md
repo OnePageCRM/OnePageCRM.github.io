@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2019/08/22/draft-js-and-colorful-quick-quotes/
+  - /2019/08/22/draft-js-and-colorful-quick-quotes/
 layout: post
 title: "Draft.js and colorful Quick Quotes"
 slug: "draft-js-and-colorful-quick-quotes"

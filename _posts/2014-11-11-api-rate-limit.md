@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2014/11/11/api-rate-limit/
+  - /2014/11/11/api-rate-limit/
 layout: post
 title: "API Rate Limit"
 slug: "api-rate-limit"

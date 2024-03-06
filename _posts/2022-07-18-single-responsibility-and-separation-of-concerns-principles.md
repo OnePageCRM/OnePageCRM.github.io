@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2022/07/18/single-responsibility-and-separation-of-concerns-principles/
+  - /2022/07/18/single-responsibility-and-separation-of-concerns-principles/
 layout: post
 title: "Single responsibility and Separation of concerns principles [Real use cases]" 
 slug: "single-responsibility-and-separation-of-concerns-principles"

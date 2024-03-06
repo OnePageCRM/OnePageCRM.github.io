@@ -1,7 +1,10 @@
 ---
+redirect_from:
+  - /blog/2019/07/11/how-to-improve-the-testability-of-model-view-controller-on-ios/
+  - /2019/07/11/how-to-improve-the-testability-of-model-view-controller-on-ios/
 layout: post
 title: "How to improve the testability of Model View Controller on iOS"
-slug: "how-to-improve-the-testability-of-model-view-controller-on-ios"
+slug: "improve-testability-of-model-view-controller-ios"
 category: blog
 post_image: /assets/images/mvvm/mvvm-header-image.png
 author: elano

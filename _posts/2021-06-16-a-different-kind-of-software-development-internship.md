@@ -1,4 +1,7 @@
 ---
+redirect_from:
+  - /blog/2021/06/16/different-kind-software-dev-internship/
+  - /2021/06/16/different-kind-software-dev-internship/
 layout: post
 title: "A Different Kind of Software Development Internship"
 slug: "different-kind-software-dev-internship"

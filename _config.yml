@@ -34,6 +34,7 @@ plugins_dir:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 paginate:               6
-permalink:              pretty
+permalink:              /blog/:title/

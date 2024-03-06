@@ -1,7 +1,10 @@
 ---
+redirect_from:
+  - /blog/2016/11/18/remote-working-Get-out-of-the-house!/
+  - /2016/11/18/remote-working-Get-out-of-the-house!/
 layout: post
 title: "Remote Working - Get out of the house!"
-slug: "remote-working - Get out of the house!"
+slug: "developers-working-remote"
 category: blog
 post_image: "/assets/images/articles/berliner_dom.jpg"
 author: john

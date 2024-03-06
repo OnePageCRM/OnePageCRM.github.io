@@ -113,6 +113,18 @@ hassan:
   bio: |
     Software developer at OnePageCRM, Enjoys programming and solving problems, love doing sport, adore technologies and cybersecurity topics.
   image: "/assets/images/authors/hassan.jpg"
+max:
+  name: Maksim Diak
+  display_name: Max
+  bio: |
+    Full-stack developer at OnePageCRM. Primary areas of expertise are Ruby On Rails and React. Passionate about style and architectural clearness of the code. Getting my hands into the DevOps stuff as well.
+  image: "/assets/images/authors/max-engineer200x200.png"
+daniel:
+  name: Daniel Yeboah
+  display_name: Daniel
+  bio: |
+    Frontend Engineer who specializes in shaping intuitive user interfaces with React, HTML/CSS, and JavaScript. He's passionate about UX and is a strong advocate for user-driven development.
+  image: "/assets/images/authors/daniel_yeboah.jpg"
 sajed:
   name: Sajed Almorsy
   display_name: Sajed
