@@ -3,11 +3,11 @@ layout: post
 title: "Tutorial: How to handle TransactionTooLargeException in Android?"
 slug: "handling-TransactionTooLargeException-android"
 category: blog
-post_image: /assets/images/api-attachments/header-image.png
+post_image: /assets/images/transaction-too-large-exception/TransactionTooLargeException-header.jpg
 author: gamal
 date: 2024-09-10 09:30:00
-excerpt: "When you make an integration with OnePageCRM, you may would like to allow the users to be able to attach documents to different resources at OnePageCRM while keeping the actual documents on AWS S3."
-graphic: /assets/images/api-attachments/header-image.png
+excerpt: "Learn how to solve TransactionTooLargeException in Android. This tutorial has real-life examples with practical and easy-to-follow steps."
+graphic: /assets/images/transaction-too-large-exception/TransactionTooLargeException-header.jpg
 ---
 
 Android development often presents challenges, one of them when dealing with Inter-Process Communication (IPC). 
