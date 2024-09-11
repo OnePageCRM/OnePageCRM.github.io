@@ -79,7 +79,7 @@ In our case (we have a [mobile CRM app](https://play.google.com/store/apps/detai
 
 You can use it to log and identify large transactions. This tool can show what lifecycle events are saving excessively large bundles.
 
-##Step 3: Analyze the results
+## Step 3: Analyze the results
 
 In our case, the problem was with `onSaveInstanceState`.
 
@@ -152,7 +152,7 @@ protected void onSaveInstanceState(Bundle outState) {
 
 This code saved a large list directly in the `Bundle`, which led to the crashes.
 
-####Optimized Implementation (solution)
+#### Optimized Implementation (solution)
 
 We took a different approach to fix this issue:
 
