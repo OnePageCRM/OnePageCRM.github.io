@@ -136,4 +136,4 @@ gamal:
   display_name: Gamal
   bio: |
     An Android Developer with over 6 years of experience, Gamal excels at solving complex problems and is passionate about building clean and scalable app architectures. Since 2022, he's been actively driving and implementing user-focused solutions for OnePageCRM's Android app.
-  image: "assets/images/authors/gamal.jpg"
+  image: "/assets/images/authors/gamal.jpg"
