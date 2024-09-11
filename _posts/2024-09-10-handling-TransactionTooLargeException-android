@@ -183,7 +183,12 @@ In our case, we did extensive testing to confirm that our solution was indeed ef
 
 After deploying the solution, crash reports related to `TransactionTooLargeException` showed that the app's stability improved significantly:
 
-IMAGEIMAGEIMAGEIMAGEIMAEG
+<div style="width:640px;max-width: 100%;text-align:center;margin: 0 auto 20px;">
+  <img alt="TransactionTooLargeException"
+    class="img-responsive"
+    style="width:100%;"
+    src="/assets/images/transaction-too-large-exception/TransactionTooLargeException-graph.jpg">
+</div>
 
 ##Conclusion
 
