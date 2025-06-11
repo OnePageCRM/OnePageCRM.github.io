@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2016/11/04/android-development-questions-part-1/
+  - /blog/2016/11/04/android-development-questions-part-1.html
   - /2016/11/04/android-development-questions-part-1/
 layout: post
 title: "Android Development Questions [1]"

@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/08/12/api-updates/
+  - /blog/2014/08/12/api-updates.html
   - /2014/08/12/api-updates/
 layout: post
 title: "API Updates"

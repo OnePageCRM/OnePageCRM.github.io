@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2018/07/12/api-challenge/
+  - /blog/2018/07/12/api-challenge.html
   - /2018/07/12/api-challenge/
 layout: post
 title: "OnePageCRM API Challenge"

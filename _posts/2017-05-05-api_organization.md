@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2017/05/05/organizations-for-mobile/
+  - /blog/2017/05/05/organizations-for-mobile.html
   - /2017/05/05/organizations-for-mobile/
 layout: post
 title: "Organizations for Mobile"

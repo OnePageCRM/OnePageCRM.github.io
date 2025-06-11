@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2015/01/26/onepagecrm-library/
+  - /blog/2015/01/26/onepagecrm-library.html
   - /2015/01/26/onepagecrm-library/
 layout: post
 title: "The OnePageCRM Library"
