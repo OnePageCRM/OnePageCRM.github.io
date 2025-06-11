@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /webhooksmore/quickcreateurlparams.html
 layout: webhooks_more
 title: "Create Contact via URL"
 ---
