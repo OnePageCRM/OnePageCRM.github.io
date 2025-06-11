@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2016/12/02/working_with_timezones_swift/
+  - /blog/2016/12/02/working_with_timezones_swift.html
   - /2016/12/02/working_with_timezones_swift/
 layout: post
 title: "Working with timezones (Swift)"

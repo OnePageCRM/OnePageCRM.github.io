@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/03/13/living-with-salespeople/
+  - /blog/2014/03/13/living-with-salespeople.html
   - /2014/03/13/living-with-salespeople/
 layout: post
 title: "Living with Salespeople"

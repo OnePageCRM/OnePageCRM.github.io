@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/04/01/fun-with-webhooks/
+  - /blog/2014/04/01/fun-with-webhooks.html
   - /2014/04/01/fun-with-webhooks/
 layout: post
 title: "Fun with Webhooks"

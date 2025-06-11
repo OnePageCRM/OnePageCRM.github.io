@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/12/18/mercurial-precommit/
+  - /blog/2014/12/18/mercurial-precommit.html
   - /2014/12/18/mercurial-precommit/
 layout: post
 title: "Mercurial Precommit Hooks"

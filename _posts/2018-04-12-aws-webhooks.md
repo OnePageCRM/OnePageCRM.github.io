@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2018/04/12/aws-webhooks/
+  - /blog/2018/04/12/aws-webhooks.html
   - /2018/04/12/aws-webhooks/
 layout: post
 title: "Managing webhooks with AWS services"

@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/08/11/fish-shell/
+  - /blog/2014/08/11/fish-shell.html
   - /2014/08/11/fish-shell/
 layout: post
 title: "Fish Shell"

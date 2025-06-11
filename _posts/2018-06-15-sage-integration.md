@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2018/06/15/sage-integration/
+  - /blog/2018/06/15/sage-integration.html
   - /2018/06/15/sage-integration/
 layout: post
 title: "Sage Accounting Integration"

@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/05/30/email-addresses-everywhere/
+  - /blog/2014/05/30/email-addresses-everywhere.html
   - /2014/05/30/email-addresses-everywhere/
 layout: post
 title: "Email addresses everywhere!"

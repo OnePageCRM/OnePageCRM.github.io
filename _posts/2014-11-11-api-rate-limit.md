@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/11/11/api-rate-limit/
+  - /blog/2014/11/11/api-rate-limit.html
   - /2014/11/11/api-rate-limit/
 layout: post
 title: "API Rate Limit"

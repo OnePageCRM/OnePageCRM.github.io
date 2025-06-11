@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2017/03/03/all-about-apis-meetup/
+  - /blog/2017/03/03/all-about-apis-meetup.html
   - /2017/03/03/all-about-apis-meetup/
 layout: post
 title: "All about APIs @ Galway Developer Meetup"

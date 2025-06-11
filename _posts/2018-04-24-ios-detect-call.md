@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2018/05/24/ios-detect-call/
+  - /blog/2018/05/24/ios-detect-call.html
   - /2018/05/24/ios-detect-call/
 layout: post
 title: "Detecting a call with CallKit"

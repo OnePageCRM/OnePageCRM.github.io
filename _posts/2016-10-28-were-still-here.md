@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2016/10/28/were-still-here/
+  - /blog/2016/10/28/were-still-here.html
   - /2016/10/28/were-still-here/
 layout: post
 title: "We're Still Here"

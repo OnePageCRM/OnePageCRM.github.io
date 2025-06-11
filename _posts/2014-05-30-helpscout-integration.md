@@ -1,6 +1,7 @@
 ---
 redirect_from:
   - /blog/2014/06/12/helpscout-integration/
+  - /blog/2014/06/12/helpscout-integration.html
   - /2014/06/12/helpscout-integration/
 layout: post
 title: "Helpscout Integration"

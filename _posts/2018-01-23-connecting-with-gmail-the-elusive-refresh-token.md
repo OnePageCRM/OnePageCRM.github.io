@@ -1,6 +1,8 @@
 ---
 redirect_from:
   - /blog/2018/01/23/connecting_with_gmail_elusive_refresh_token/
+  - /blog/2018/01/22/connecting_with_gmail_elusive_refresh_token.html
+  - /blog/2018/01/23/connecting_with_gmail_elusive_refresh_token.html
   - /2018/01/23/connecting_with_gmail_elusive_refresh_token/
 layout: post
 title: "Connecting with Gmail - The elusive refresh token"
