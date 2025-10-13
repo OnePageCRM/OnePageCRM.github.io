@@ -17,7 +17,7 @@ The API will throttle on a sliding scale and will allow an average of 5 requests
 
 This means that your integration would have to be very busy to hit these limits. If we find these limits are too lenient, we may change the number of permitted requests in the future.
 
-If you find you are coming up against this limit, please get in touch with us on the [developer forum][2].
+If you find you are coming up against this limit, please get in touch with us at <mailto:support@onepagecrm.com>.
 
 ### How we implemented it
 
@@ -38,4 +38,3 @@ We use Dalli and Memcached to store the IP addresses that are accessing the API.
 
 
   [1]: https://github.com/bensomers/improved-rack-throttle
-  [2]: http://forum.developer.onepagecrm.com

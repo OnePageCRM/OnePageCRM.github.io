@@ -23,7 +23,7 @@ If you are interested in this talk (or even attending any future talks - if you 
 
 Just over a year ago we began our journey into using ReactJS with OnePageCRM. Since then we have converted parts of our application into React. It isn't an easy transition, and we experienced a wide variety of problems trying to integrate a new view rendering framework into an existing application without a full rewrite.
 
-One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy / efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please head over to the [forum][1] if you would like to ask any questions.
+One problem with most JS frameworks is a lack of resources on how to design, build and  implement non-trivial systems. Todo list and example apps are all great for showing off how great / easy / efficient your framework is. But learning how to adapt it to your own DSL, frameworks and applications is an uphill struggle. I'm going to give some insights into how we work with React, Reflux and some related libraries - what problems were experienced and how they were fixed / paved over. Please drop a comment if you would like to ask any questions.
 
 
 ##Introduction to React
@@ -259,7 +259,7 @@ Both of these combined mean that Coffeescript's syntax can be used to mimic the 
 
 There we have part 1 of my foray into the world of React with Coffeescript. So far I've looked at what problems React tries to solve, and given a quick insight into how components can be written in JSX, JS and Coffeescript. React's re-usable components and stateful representation of the view give a clean, modular approach to writing views in the front end.
 
-But so far I haven't even scratched the surface of all the cool stuff which React enables you to do. I plan to follow up by showing how components can be reused, nested, inherited and wrapped to form HOCs. If anything wasn't clear, or if you'd like me to cover any related topics, please comment on the [forum][4].
+But so far I haven't even scratched the surface of all the cool stuff which React enables you to do. I plan to follow up by showing how components can be reused, nested, inherited and wrapped to form HOCs. If anything wasn't clear, or if you'd like me to cover any related topics, please leave a comment.
 
 Thank you for reading.
 
@@ -276,7 +276,6 @@ Thank you for reading.
 [1]: https://drive.google.com/file/d/0B-mJaOUNSKhlS1BPM1dwRGpzeXc/view?usp=sharing
 [2]: https://github.com/caffeinated-tech/board-game-demo
 [3]: https://www.meetup.com/rubyreact/events/235620726/
-[4]: http://forum.developer.onepagecrm.com/
 [5]: https://facebook.github.io/react/
 [6]: https://angularjs.org/
 [7]: http://emberjs.com/

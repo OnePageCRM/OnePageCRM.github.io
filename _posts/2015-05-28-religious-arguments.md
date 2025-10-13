@@ -49,9 +49,8 @@ Although I'm more of a Slack fan, I don't really mind what the team ends up usin
 
 If there's anyone out there having a similar internal argument over adopting OnePageCRM vs another CRM system, please get in touch with our support or development team! We would love to hear your story and help you make an informed decision. 
 
-Post in our [developer forum][4] to talk directly with the development team or contact the customer success team on <mailto:support@onepagecrm.com>.
+Contact the customer success team on <mailto:support@onepagecrm.com> and we'll make sure the right person gets back to you.
 
   [1]: http://slack.com
   [2]: http://hipchat.com
   [3]: https://github.com/raelgc/scudcloud
-  [4]: http://forum.developer.onepagecrm.com

@@ -61,7 +61,6 @@ To change the organization on mobile, simply change the text in the Organization
 <img src="/assets/images/api-organization/edit_contact.png" alt="Editing a contact"  class="img-responsive" style="width: 50%" /><br />
 </div>
 
-You can read more in our [API docs][1] and any questions you may have can be asked in our [developer forum][2].
+You can read more in our [API docs][1], and if you have questions just let us know in the comments.
 
  [1]: http://developer.onepagecrm.com/#companies
- [2]: http://forum.developer.onepagecrm.com
