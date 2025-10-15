@@ -107,5 +107,5 @@ So that is the end of my mini hackathon. I got to play with speech recognition a
 
 ### What will you use OnePageCRM for?
 
-I remember not long after I started here, someone posted in our dev chat asking if anyone is working on anything cool, and if so, would we do a short interview about it. Someone replied saying that “<i>we are developers working with OnePageCRM, so working on cool stuff by definition!</i>”. We really do love hearing what people are using our API for so please drop by our developer forum and tell us about the cool things you are building with OnePageCRM!
+I remember not long after I started here, someone posted in our dev chat asking if anyone is working on anything cool, and if so, would we do a short interview about it. Someone replied saying that “<i>we are developers working with OnePageCRM, so working on cool stuff by definition!</i>”. We really do love hearing what people are using our API for, so please tell us about the cool things you are building with OnePageCRM!
    

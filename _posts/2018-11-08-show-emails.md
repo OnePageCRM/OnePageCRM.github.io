@@ -89,4 +89,4 @@ Because of the attachments, the web view is in the first section of a table. The
 
 Ray Tomlinson in the 60s probably never thought that his invention would help to change the world. Today it's impossible to live without emails, and to be able to see your emails with each contact, will help you to ensure you don't miss anything while on the go.
 
-If you’ve any questions or ideas for my next blog post. Let us know in the comments or in our <a target="_blank" href="http://forum.developer.onepagecrm.com">forum</a>.
+If you’ve any questions or ideas for my next blog post, let us know in the comments.

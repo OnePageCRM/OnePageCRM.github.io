@@ -210,8 +210,7 @@ stack as Python script.
 
 And that is how the whole process of webhooks processing looks within OnePageCRM 
 system. You can read about other projects the team are working on in our 
-Blog and any questions can be asked in our [developer forum][forum]. 
-Remember [we are still hiring][hiring], if you think you would like to 
+blog. Remember [we are still hiring][hiring], if you think you would like to 
 try your skills within the world of Rails, MongoDB and NodeJS, then we 
 would love to hear from you!
 
@@ -225,5 +224,4 @@ would love to hear from you!
 [sqs]: https://aws.amazon.com/sqs/
 [awscfn]: https://aws.amazon.com/cloudformation/
 [troposphere]: https://github.com/cloudtools/troposphere
-[forum]: http://forum.developer.onepagecrm.com/
 [hiring]: https://www.onepagecrm.com/hiring
