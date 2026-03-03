@@ -18,8 +18,7 @@ graphic: /img/aws-webhooks/top.png
 ---
 
 _**Disclaimer:** This post contains a short description from a technology point of
-view on how we are serving webhooks in our system. If you are interested in more 
-details, please contact us at [devteam@onepagecrm.com](mailto:devteam@onepagecrm.com)._
+view on how we are serving webhooks in our system._
 
 Here in OnePageCRM we are utilizing some of [Amazon Web Services][aws] in order to 
 provide the best CRM system on the planet. One of our latest features, which is 

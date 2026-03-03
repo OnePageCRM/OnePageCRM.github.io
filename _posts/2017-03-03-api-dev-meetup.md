@@ -69,11 +69,6 @@ from [9th Impact][5] for taking the time to present and speak with our attendees
 We hope that all of you have great time during the meetup either by listening
 to our talks or by sharing some knowledge at the end.
 
-If you have any ideas of subjects which we can work towards for our next
-meeting(s), and/or you want to share your knowledge as well, feel free to
-contact us either via [Meetup.com][9] website or simply drop us an email
-to [devteam (at) onepagecrm.com][10].
-
 If you wish to check out some of the materials from the night including slides
 and sample code from our talks, see the resources section below.
 
@@ -93,8 +88,8 @@ and sample code from our talks, see the resources section below.
  [6]: https://aws.amazon.com/lambda/
  [7]: https://aws.amazon.com/api-gateway/
  [8]: https://www.onepagecrm.com/
- [9]: https://www.meetup.com/rubyreact/
- [10]: mailto:devteam@onepagecrm.com
+
+
  [11]: http://slides.com/caffeinatedtech/a#/
  [12]: https://bitbucket.org/PawelSmolinski/galway-dev-meetup/
  [13]: https://docs.google.com/presentation/d/17vsw4SJufsz_yZaiJPNJufDF-3vAm2ige57iccNR6u8/edit
